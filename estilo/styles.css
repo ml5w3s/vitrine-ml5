@@ -21,7 +21,7 @@ header {
     color: #fff;
     padding-top: 30px;
     min-height: 70px;
-    border-bottom: #77b300 3px solid;
+    border-bottom: #fcae03 3px solid;
 }
 
 header a {
@@ -73,7 +73,7 @@ header a:hover {
 #hero .btn {
     display: inline-block;
     color: #333;
-    background: #77b300;
+    background: #d8810e;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
