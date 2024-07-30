@@ -103,7 +103,7 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ## Contato
 
-Se você tiver dúvidas, sugestões ou feedback, entre em contato através do email [seuemail@exemplo.com](mailto:seuemail@exemplo.com).
+Se você tiver dúvidas, sugestões ou feedback, entre em contato através do email [seuemail@exemplo.com](mailto:marcelo.lauriano@gmail.com).
 
 ---
 
