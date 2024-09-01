@@ -56,6 +56,35 @@
                 <li type="square">Corte de Acetato</li>
             </ul>
         </div>
+        <div>
+                <h2>Selecione o Nível de Explicação</h2>
+
+    <form id="formularioExplicacao">
+        <label>
+            <input type="radio" name="nivel" value="basico" onclick="mostrarDescricao()">
+            01 - Básico:
+            <p>
+                Fornecer o código funcionando e fornecer uma exlicação do que o código faz com um exemplo básico - duração 1h, valor 100,00
+            </p>
+        </label><br>
+
+        <label>
+            <input type="radio" name="nivel" value="intermediario" onclick="mostrarDescricao()">
+            02 - Intermediário
+            <p>
+                Intermediário: Inclui o básico e extente a explicação para uma situação de análise de crédito, onde o algorítimo define, se de acordo com availação, o crédito é aprovado duração 2h, valor 250,00
+            </p>
+        </label><br>
+
+        <label>
+            <input type="radio" name="nivel" value="avancado" onclick="mostrarDescricao()">
+            03 - Avançado:
+            <p>
+                Avançado: inclui intermediário e noção de algebra linear, cálculo diferencial e fundamentos de redes neurais, duração 5 horas, valor 750,00
+            </p>
+        </label>
+    </form>
+        </div>
     </section>
 
     <section id="contato">
