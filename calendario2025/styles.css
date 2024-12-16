@@ -113,6 +113,23 @@ footer {
     text-align: center;
     height: 150px; /* Ajuste conforme necessário */
     overflow: visible; /* Permite que o QR Code ultrapasse o footer */
+
+    /* Estilo para telas menores (Mobile) */
+@media (max-width: 768px) {
+    #footer-content {
+        flex-direction: column; /* Alinha os elementos em coluna */
+        text-align: center;
+    }
+
+    #qr-code {
+        width: 80px; /* Reduz o tamanho do QR Code para dispositivos móveis */
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+}
 }
 
 #footer-content {
