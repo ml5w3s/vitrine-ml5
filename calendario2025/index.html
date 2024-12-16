@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário Interativo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button onclick="changeMonth('janeiro')">Janeiro</button>
+        <button onclick="changeMonth('fevereiro')">Fevereiro</button>
+        <button onclick="changeMonth('marco')">Março</button>
+        <button onclick="changeMonth('abril')">Abril</button>
+        <button onclick="changeMonth('maio')">Maio</button>
+        <button onclick="changeMonth('junho')">junho</button>
+        <button onclick="changeMonth('julho')">Julho</button>
+        <button onclick="changeMonth('agosto')">Agosto</button>
+        <button onclick="changeMonth('setembro')">Setembro</button>
+        <button onclick="changeMonth('outubro')">Outubro</button>
+        <button onclick="changeMonth('novembro')">Novembro</button>
+        <button onclick="changeMonth('dezembro')">Dezembro</button>
+        <!-- Adicionar botões para os outros meses -->
+        <button onclick="changeMonth('2026')">2026</button>
+    </header>
+    
+    <main>
+        <div id="calendar-container">
+            <div id="calendar-image">
+                <img src="capa.png" alt="Capa do Calendário" id="calendar-img">
+            </div>
+            <div id="notes-section">
+                <textarea id="memorando" placeholder="Escreva suas anotações aqui..."></textarea>
+                <button onclick="addNote()">Adicionar Anotação</button>
+                <ul id="notes-list"></ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div id="footer-content">
+            <h2>Para contribuir com nossa iniciativa, acesse o qr code </h2>
+            <p>Obrigado por sua contribuição! 🐱❤️</p>
+            <img src="qr_code.png" alt="QR Code para doação" id="qr-code" onclick="copyPixKey()">
+            <p id="copy-message" style="display: none; color: green;">Chave PIX copiada!</p>
+        </div>
+
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
