@@ -141,7 +141,7 @@ footer {
     right: 20px; /* Distância da borda direita do footer */
     bottom: 50%; /* Ultrapassa a div para cima */
     transform: translateY(50%); /* Centraliza verticalmente o deslocamento */
-    width: 200px; /* Tamanho ajustável do QR Code */
+    width: 100px; /* Tamanho ajustável do QR Code */
     height: auto; /* Mantém a proporção da imagem */
     border-radius: 10px; /* Apenas para dar um acabamento bonito, opcional */
 }
