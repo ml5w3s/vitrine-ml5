@@ -34,6 +34,10 @@ main {
     display: flex;
     width: 90%;
     margin: 0 auto;
+    flex-direction: row; /* Divs ficam lado a lado */
+    justify-content: space-between;
+    gap: 20px; /* Espaçamento entre as divs */
+    padding: 20px;
 }
 
 #calendar-image {
@@ -42,6 +46,10 @@ main {
 }
 
 #calendar-image img {
+    flex: 1; /* Div menor para o textarea */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     max-width: 100%;
     height: auto;
     border: 1px solid #ccc;
@@ -106,6 +114,17 @@ main {
     padding: 5px 10px;
 }
 
+#notes-list {
+    flex: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px; /* Limita a altura da lista */
+}
+
 footer {
     position: relative; /* Para que os elementos internos possam ser posicionados absolutos */
     background-color: #f4f4f4;
@@ -130,6 +149,25 @@ footer {
         font-size: 14px; /* Reduz o tamanho da fonte */
     }
 }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) and (orientation: portrait) {
+    #calendar-container {
+        flex-direction: column; /* As divs ficam em coluna */
+    }
+
+    #notes-section {
+        order: 2; /* Move o textarea abaixo da imagem */
+    }
+
+    #notes-list {
+        order: 3; /* Move a lista para baixo do textarea */
+    }
+
+    #calendar-image {
+        order: 1; /* A imagem permanece no topo */
+    }
 }
 
 #footer-content {

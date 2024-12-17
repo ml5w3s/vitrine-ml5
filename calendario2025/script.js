@@ -88,3 +88,9 @@ function copyPixKey() {
         alert('Não foi possível copiar a chave PIX. Por favor, tente novamente.');
     });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = window.innerWidth <= 768; // Detecta telas menores
+    const styleLink = document.getElementById('style-link');
+    styleLink.href = isMobile ? 'mobile.css' : 'desktop.css'; // Carrega o CSS correto
+});
