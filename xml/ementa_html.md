@@ -37,4 +37,4 @@ Apresentar os fundamentos teóricos e práticos da linguagem HTML (Hipetext Mark
 
 ## Carga Horária
 
-40 horas (pode ser ajustada conforme a necessidade).
+40 horas (pode ser ajustada conforme a necessidade)
