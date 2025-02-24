@@ -39,7 +39,7 @@
 
 ---
 
-## 🔹 Metodologia:
+## 🔹 Metodologia
 
 ✅ Reforço prático com exercícios semanais  
 ✅ Revisão dos erros mais comuns dos alunos  
