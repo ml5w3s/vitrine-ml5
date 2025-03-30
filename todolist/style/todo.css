@@ -1,0 +1,176 @@
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333 ;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Style the input */
+input {
+  margin: 5;
+  border: none;
+  border-radius: 0;
+  width: 40%;
+  height: 27px;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#logo {
+  height: 150px; /* Ajuste conforme necessário */
+  width: auto;
+  position: absolute;
+  right: 0px; /* Encosta na borda direita com um pequeno espaçamento */
+}
+
+/* Style the header */
+.header, .footer {
+  color: #ecb00b;
+  font-weight: bold;
+  background-color: #000;
+  padding: 30px 40px;   /* Espaçamento interno */
+  display: flex;          /* Ativa Flexbox */
+  align-items: center;    /* Alinha os itens verticalmente */
+  justify-content: space-between; /* Mantém espaço entre o título e a imagem */
+}
+
+/* Clear floats after the header */
+.header:after, footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the "Add" button */
+.addBtn {
+  cursor: pointer;
+  background-color: #ecb00b;
+  color: #000;
+  float: left;
+  width: 25%;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #fce300;
+  color: #333;
+}
+
+/* Layout de 2 linhas x 3 colunas */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.day {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+.collapsible {
+  cursor: pointer;
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
