@@ -1,0 +1,154 @@
+<!DOCTUPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Galeria de Imagens</title>
+<!-- Estilos JavaScript -->
+<script type="text/javascript" src="js/galeria/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/galeria/script_modal.js"></script>
+<!-- Estilos CSS-->
+<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+<link rel="stylesheet" type="text/css" href="css/galeria.css"/>
+</head>
+
+<body>	
+<div>
+<h3>Exercício 07 - Galeria de Imagens</h3>
+<p>Esta função do JQuery serve para mostrar/escolher as imagens mostradas abaixo. Segue o exemplo do código para resolução do exercício:
+	<h3>Selecionar a Imagem</h3><br>
+<center><h1>Galeria de Imagens</h1></center>
+<!-- div que centraliza o site -->
+<div id="container">
+<!-- #personalize sua galeria aqui -->
+<div id="dialog1" class="window">
+	<!-- Botal para fechar a janela tem class="close"-->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/01.jpg"/>
+</div>	<!--fecha #dialog-->
+<div id="dialog2" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/02.jpg"/>
+</div>	<!-- fecha #dialog -->
+<div id="dialog3" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<img src="img/03.jpg"/>
+</div> <!-- fecha #dialog-->
+<div id="dialog4" class="window">
+	<!-- Botão para fechar a janela tem class="close"-->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/04.jpg"/>
+</div> <!-- fecha #dialog -->
+<div id="dialog5" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/05.jpg"/>
+</div> <!-- fecha #dialog -->
+<div id="dialog6" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close"> Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src = "img/06.jpg"/>
+</div> <!-- fecha #dialog -->
+<div id="dialog7" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/07.jpg"/>
+</div>	 <!-- fecha #dialog -->
+<div id="dialog8" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/08.jpg">
+
+</div>	<!-- fecha #dialog -->
+		<div id="mask">
+		</div> <!-- fecha div#mask -->		
+		<div class="links" align="center">
+				<!-- #dialog é o id do DIV definido com mostrado a seguir-->
+				<a href="#dialog1" name="modal"> <img src="img/01.jpg" width="200"></a>
+				<a href="#dialog2" name="modal"> <img src="img/02.jpg" width="200"></a>
+				<a href="#dialog3" name="modal"> <img src="img/03.jpg" width="200"></a>
+				<a href="#dialog4" name="modal"> <img src="img/04.jpg" width="200"></a>
+				<a href="#dialog5" name="modal"> <img src="img/05.jpg" width="200"></a>
+				<a href="#dialog6" name="modal"> <img src="img/06.jpg" width="200"></a>
+				<a href="#dialog7" name="modal"> <img src="img/07.jpg" width="200"></a>
+				<a href="#dialog8" name="modal"> <img src="img/08.jpg" width="200"></a>
+
+<p>Segue o código para resolução do exercício:
+		</div> <!-- fecha class links -->
+
+		<!-- div que centraliza o site -->
+<div id="container">
+<!-- #personalize sua galeria aqui -->
+<div id="dialog1" class="window">
+	<!-- Botal para fechar a janela tem class="close"-->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/01.jpg"/>
+</div>	<!--fecha #dialog-->
+<div id="dialog2" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/02.jpg"/>
+</div>	<!-- fecha #dialog -->
+<div id="dialog3" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<img src="img/03.jpg"/>
+</div> <!-- fecha #dialog-->
+<div id="dialog4" class="window">
+	<!-- Botão para fechar a janela tem class="close"-->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/04.jpg"/>
+</div> <!-- fecha #dialog -->
+<div id="dialog5" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/05.jpg"/>
+</div> <!-- fecha #dialog -->
+<div id="dialog6" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close"> Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src = "img/06.jpg"/>
+</div> <!-- fecha #dialog -->
+<div id="dialog7" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/07.jpg"/>
+</div>	 <!-- fecha #dialog -->
+<div id="dialog8" class="window">
+	<!-- Botão para fechar a janela tem class="close" -->
+	<a href="#" class="close">Fechar <span> [X] </span></a>
+	<!-- foto ampliada -->
+	<img src="img/08.jpg">
+
+</div>	<!-- fecha #dialog -->
+		<div id="mask">
+		</div> <!-- fecha div#mask -->		
+		<div class="links" align="center">
+				<!-- #dialog é o id do DIV definido com mostrado a seguir-->
+				<a href="#dialog1" name="modal"> <img src="img/01.jpg" width="200"></a>
+				<a href="#dialog2" name="modal"> <img src="img/02.jpg" width="200"></a>
+				<a href="#dialog3" name="modal"> <img src="img/03.jpg" width="200"></a>
+				<a href="#dialog4" name="modal"> <img src="img/04.jpg" width="200"></a>
+				<a href="#dialog5" name="modal"> <img src="img/05.jpg" width="200"></a>
+				<a href="#dialog6" name="modal"> <img src="img/06.jpg" width="200"></a>
+				<a href="#dialog7" name="modal"> <img src="img/07.jpg" width="200"></a>
+				<a href="#dialog8" name="modal"> <img src="img/08.jpg" width="200"></a>
+<!-- FIM DO CORPO -->		
+</p>
+</div>
+</body>
+</html>

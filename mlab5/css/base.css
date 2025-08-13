@@ -1,0 +1,156 @@
+/* Layout básico 
+./css/base.css
+*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+article{
+  text-align: center;
+}
+
+p{
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 14px;
+}
+
+button{
+  padding:5px 20px;
+  text-align:center;
+  border:#09c solid 1px;
+  border-radius: 15px;
+}
+
+textarea { 
+  height: 125px;
+  background-color: #ff8c00;
+}
+ 
+textarea, iframe { 
+  width: 100%; 
+  margin-bottom: 1rem; 
+}
+
+a{
+  text-align: left;
+  text-decoration: none;
+}
+
+footer{
+  text-align: left;
+  padding: 1em 0;
+}
+
+footer li{
+    list-style: none;
+}
+
+.title{
+  text-align: center;
+}
+
+.left_list{
+  text-align: left;
+}
+
+#ajustes{
+  display: none;
+}
+
+#logo_l4b{
+  size: 50%;
+}
+  
+#texto {
+  display: none;
+}
+
+#exercicio {
+  display: none;
+}
+
+#logo{
+  display: nome;
+}
+
+.container {
+  display: flex; /* or inline-flex */
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 10px 20px; /* row-gap column gap */
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+.item {
+  flex-grow: 1; /* Permite que os itens cresçam para preencher o espaço */
+  flex-basis: 200px; /* Define um tamanho base para o item */
+  /* Outros estilos para visualização */
+  background: #f1f1f1;
+  background-color: #f0f0f0;
+  text-align: center;
+  border-radius: 8px;
+  min-height: 50px;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 10px;
+}
+
+.largo{
+  /* Outros estilos para visualização */
+  width: 100%; /* Opcional: para os itens terem a mesma largura */
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.solo{
+  /* Outros estilos para visualização */
+  width: 100%; /* Opcional: para os itens terem a mesma largura */
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.material-icons{
+  font-seze:72px;
+}
+
+#button{
+  width: 200px;
+  height: 50px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+#output{
+  background-color: #ff8c00;
+}
+
+/* Tablet (2 colunas) */
+@media (min-width: 1024px) {
+  .curso {
+    align-self: auto;
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+/* Tablet */
+@media (max-width: 600px) {
+  .carousel-wrapper.large .item,
+  .carousel-wrapper.small .item {
+    flex: 0 0 100px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 100px) {
+  .carousel-wrapper.large .item,
+  .carousel-wrapper.small .item {
+    flex: 0 0 300px;
+  }
+}

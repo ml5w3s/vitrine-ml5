@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>::Exercícios jQuery - Slide::</title>
+
+<!--Chamando o plugin jQuery-->	
+<script src="../../js/jquery.min.js"></script>
+
+<!--Aplicação de efeitos com jQuery. Método interno-->
+<script type="text/jscript">
+	$(document).ready(function(e){
+		$("h3").click(function(){
+			$("#texto").slideToggle("slow"); <!--Outras opções de slide: slideUP (sobe), slideDown (desce).-->
+		});
+	});
+</script>	
+
+<!--Formatação com CSS. Método interno-->
+<style type="text/css">
+
+	body{
+		background-color: #151515;
+		text-align:center;
+	}
+	#container{
+		width: 1350px;
+		text-align:center;
+		border:#666 1px solid;
+	}
+	h1{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 24px;
+		}
+	
+	h3{
+		font-family: Verdana, Geneva, sans-serif;
+		color:orangered;
+		font-size: 24px;
+		}
+		
+	p{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 14px;
+		}
+	button{
+		padding:5px 20px;
+		text-align:center;
+		background-color:orange;
+		border:#09c solid 1px;
+		border-radius: 15px;
+		}	
+	#box{
+		width: 1250px;
+		margin-left: 35px;
+		text-align:center;
+		display: none;
+		}	
+	</style>
+</head>
+<body>
+<div>
+<h1>Exercício 04 - Efeito Slide</h1>
+<p>Esta função do JQuery serve para mostrar um efeito sobre o slide. Segue o exemplo do código para a resolução do exercício: 
+	<h1>Efeito Slide</h1>
+</p>
+</div>	
+<div>
+
+	<h3 title="Clique para exibir o texto">Clique aqui para ocultar/exibir o texto abaixo</h3>
+			<div id="texto">
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.<br><br>
+
+					Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+</p>
+
+</div>
+
+<div>
+	<h1>Segue o código para realizar o efeito mostrar e ocultar</h1>		
+		
+		<img src="slide_04.png"  alt="script_codigo">
+
+</div>
+</body>
+</html>

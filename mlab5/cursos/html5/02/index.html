@@ -1,0 +1,205 @@
+﻿<!--curso_html5/01/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="../../image/x-icon" href="../../images/ml5w3s.ico">
+
+  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
+  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://seusite.com/cursos">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
+  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#controles{display:none;}</style>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
+  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/mlab5/images/banner_frontend_tablet.png">
+    <img src="/mlab5/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🧱 HTML - Linguagem de marcação para sites na internet</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3> Comparação com exemplo cotidiano, etiqueta</h3>
+  <p>Funciona como uma etiqueta, no início tem a indicação de onde vai a costura inicial deve ser feita, e abaixo onde vai a costura final. Entre essas marcações existem outras informações marcadas.</p>
+  <h4>Informações na etiqueta:</h4>
+  <ul class="left_list">
+    <li> Nome da empresa.</li>
+    <li> CNPJ.</li>
+    <li> Local de produção</li>
+    <li> Material</li>
+    <li> Manuseio</li>
+    <li> Tamanho</li>
+    <li> Marcas de corte</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="images/etiqueta_desktop.png">
+    <source media="(min-width: 600px)" srcset="images/etiqueta_tablet.png">
+    <img src="images/etiqueta_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Tag's, marcadores de exemplo</h3>
+   <p>No exemplo de página a seguir, no início e no seu fim é indicado pela marcação &lt;html&gt; É possível notar que a página tem duas partes distintas bem aparente. A “cabeçalho” da página &lt;head&gt; O corpo da página &lt;body&gt; No corpo ficam marcações bem perceptíveis, diferente do “cabeçalho”</p>
+</article>
+
+<article class="item">
+  <h4>Exemplo</h4>
+  <h5>Papeis desempenhados por essas tag's:</h5>
+  <ul class="left_list">
+    <li> &lt;!DOCTYPE html&gt; – Tipo do documento.</li>
+    <li> &lt;html&gt; – Raiz do documento.</li>
+    <li> &lt;head&gt; – Metadados (ex:  &lttitle&gt;,  &ltmeta&gt;,  &ltlink&gt;).</li>
+    <li> &lt;body&gt; – Conteúdo visível.:</li>
+    <li> &lt;h1&gt; – Título.:</li>
+    <li> &lt;p&gt; – Parágrafo.:</li>
+    <li> &lt;h2&gt; – Sub-título.:</li>
+  </ul>
+</article>
+<article class="item">
+    <img src="images/exemplo.png">
+</article>
+</section>
+
+  <p id="exercicio">Imagens</p>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/mlab5/templates/classico.html">Classico</option>
+      <option value="/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br>
+
+    <h4>Tamanho da imagem</h4>
+    <select id="imageSizeSelect">
+      <option value="/mlab5/images/propaganda/heisenbar_desktop.png">Grande</option>
+      <option value="/mlab5/images/propaganda/heisenbar_tablet.png">Médio</option>
+      <option value="/mlab5/images/propaganda/heisenbar_mobile.png" selected="selected">Pequeno</option>
+    </select>
+    <br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/mlab5/js/ui/components/header.php')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>	

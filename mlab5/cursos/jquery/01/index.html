@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="../../images/ml5w3s.ico">
+
+  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
+  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://seusite.com/cursos">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
+  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
+  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+
+  <!--PLUGIN jQUERY-->
+  <script src="../../js/jquery.min.js" ></script>
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+  <article class="item">
+    <picture>
+      <source media="(min-width: 1024px)" srcset="../../images/banner_legado_desktop.png" alt="Tecnologia Legada">
+      <source media="(min-width: 600px)" srcset="../../images/banner_legado_tablet.png" alt="Tecnologia Legada">
+      <img src="../../images/banner_legado_mobile.png" alt="Tecnologia Legada">
+    </picture>
+    <h3>🧱 JQuery - biblioteca JavaScript de código aberto</h3>
+  </article>
+</section>
+
+  <article class="item">
+    <h3>Ocultar e Mostrar</h3>
+    <p>Esta função do JQuery serve para ocultar e mostrar uma imagem. Segue o exemplo do código para resolução do execrício:</p>
+  </article>
+
+  <article class="item">
+    <h3>Clique para ocultar e exibir a logo</h3> 
+    <button id="ocultar">Ocultar imagem</button>
+    <button id="exibir">Exibir imagem</button>
+  </article>
+
+  <article class="item">
+    <h3>Efeito Show Hide usando JQuery</h3>     
+    <div id="box">
+    <br/>
+      <img id="logo" src="../../images/jquery_mobile.png" alt="Tecnologia Legada">
+    <br/>
+    </div>
+  </article>
+
+  <article class="solo">
+    <h3>Segue o código para realizar o efeito mostrar e ocultar</h3>
+    <img src="../../images/jquery/cod_001.png" alt="script do codigo">
+  </article>
+
+  <article class="item">
+    <div>
+      <a href="../../playground/">Playground</a>
+    </div>
+  </article>
+
+</section>
+
+<!-- RODAPÉ  -->
+<div id="footer-placeholder"></div>
+
+<!-- SCRIPTS -->
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '../../js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '../../js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '../../js/ui/components/footer.html');
+  });
+</script>
+
+</body>
+</html>

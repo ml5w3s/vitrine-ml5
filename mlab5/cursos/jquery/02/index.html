@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<title>::Exercícios jQuery - Fade::</title>
+
+<!--Chamando o plugin jQuery-->	
+<script src="../../js/jquery.min.js"></script>
+
+<!--Aplicação de efeitos com jQuery. Método interno-->
+<script type="text/jscript">
+
+	$(document).ready(function(e) {
+		$("#in").click(function(){
+			$("#fade").fadeIn("slow");
+		});
+		$("#out").click(function(){
+			$("#fade").fadeOut("slow");
+		});
+		$("#to").click(function(){
+			$("#fade").fadeToggle("slow");
+		});
+	});
+</script>
+
+<!--Formatação com CSS. Método interno-->
+<style type="text/css">
+
+	body{
+		background-color: #151515;
+		text-align:center;
+	}
+	#container{
+		width: 1350px;
+		text-align:center;
+		border:#666 1px solid;
+	}
+	h1{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 24px;
+		}
+	
+	h3{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 24px;
+		}
+		
+	p{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 14px;
+		}
+	button{
+		padding:5px 20px;
+		text-align:center;
+		background-color:orange;
+		border:#09c solid 1px;
+		border-radius: 15px;
+		}	
+	#box{
+		width: 1250px;
+		margin-left: 35px;
+		text-align:center;
+		display: none;
+		}	
+	</style>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div>
+<h3>Exercício 02 - Mostrando e Ocultando gradualmente</h3>
+	<p> Esta função do JQuery serve para mostrar/ocultar a imagem gradualmente. 
+		Segue o exemplo do código para resolução do execrício:
+	</p>
+	</div>
+		<div id="container">
+		<h1>FadeIn, FadeOut e FadeToggle</h1>
+			<button id="in">Exibir imagem</button>
+			<button id="out">Ocultar imagem</button>
+			<button id="to">Exibir ou Ocultar</button><br/><br/>
+			<img id="fade" src="../../imagens/logo.jpeg"/>
+	<div>
+		<h1>Segue o código para realizar o efeito mostrar gradualmente</h1>
+		<img src="nome_codigo 02.png" alt="script_codigo">						
+	</div>	
+	</div>
+
+<script>
+    // Carrega os componentes HTML reutilizáveis
+    async function loadComponent(id, file) {
+      const res = await fetch(file);
+      const html = await res.text();
+      document.getElementById(id).innerHTML = html;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadComponent('header-placeholder', '../../js/ui/components/header.html');
+      loadComponent('footer-placeholder', '../../js/ui/components/footer.html');
+    });
+</script>
+
+</body>
+</html>		

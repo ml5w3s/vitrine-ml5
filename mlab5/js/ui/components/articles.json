@@ -1,0 +1,68 @@
+[
+  {
+    "titulo": "Confira",
+    "descricao": "Confira nossos cursos.",
+    "imagem": "../images/cursos/breve_mobile.jpg",
+    "link": "/mlab5/index.html"
+  },
+  {
+    "titulo": "Confira",
+    "descricao": "Confira nossos cursos.",
+    "imagem": "../images/cursos/breve_mobile.jpg",
+    "link": "/mlab5/index.html"
+  },
+  {
+    "titulo": "Confira",
+    "descricao": "Confira nossos cursos.",
+    "imagem": "../images/cursos/breve_mobile.jpg",
+    "link": "/mlab5/index.html"
+  },
+  {
+    "titulo": "Confira",
+    "descricao": "Confira nossos cursos.",
+    "imagem": "../images/cursos/breve_mobile.jpg",
+    "link": "/mlab5/index.html"
+  },
+  {
+    "titulo": "Curso de HTML5",
+    "descricao": "Aprenda HTML5 do zero, criando páginas responsivas e modernas.",
+    "imagem": "../images/cursos/html_mobile.jpg",
+    "link": "/mlab5/cursos/html5.html"
+  },
+  {
+    "titulo": "Jquery",
+    "descricao": "Entenda os fundamentos do JavaScript e crie interatividade para seus projetos.",
+    "imagem": "../images/cursos/linux_mobile.jpg",
+    "link": "/mlab5/cursos/jquery.html"
+  },
+  {
+    "titulo": "PHP",
+    "descricao": "Desenvolva back-ends rápidos e escaláveis usando PHP.",
+    "imagem": "../images/cursos/php_mobile.jpg",
+    "link": "/mlab5/cursos/php.html"
+  },
+  {
+    "titulo": "Python",
+    "descricao": "Construa interfaces dinâmicas com python.",
+    "imagem": "../images/cursos/python_mobile.jpg",
+    "link": "/mlab5/cursos/python.html"
+  },
+  {
+    "titulo": "GIT",
+    "descricao": "Confira um repositório de tecnologia atualizadas diariamente.",
+    "imagem": "../images/cursos/git_mobile.jpg",
+    "link": "/mlab5/cursos/git.html"
+  },
+  {
+    "titulo": "Linux",
+    "descricao": "Confira um repositório de tecnologia atualizadas diariamente.",
+    "imagem": "../images/cursos/linux_mobile.jpg",
+    "link": "/mlab5/cursos/linux.html"
+  },
+    {
+    "titulo": "Java",
+    "descricao": "Desenvolva monolitos sólidos usando Java.",
+    "imagem": "../images/cursos/java_mobile.jpg",
+    "link": "/mlab5/cursos/java.html"
+  }
+]

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="images/ml5w3s.ico">
+
+  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
+  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://seusite.com/cursos">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
+  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
+  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+<div id="header-placeholder"></div>
+
+<!-- ARTIGOS -->
+<section class="container">
+
+  <article class="item">
+    <picture>
+      <source media="(min-width: 1024px)" srcset="images/banner_legado_desktop.png">
+      <source media="(min-width: 600px)" srcset="images/banner_legado_tablet.png">
+      <img src="images/banner_legado_mobile.png">
+    </picture>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 01</h5>
+    <p>Entenda como garantir que uma ação só aconteça depois de outra estar concluída. Perfeito para controlar a ordem de animações, carregamentos ou interações complexas.</p>
+   <a href="01">Entrar</a>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 02</h5>
+    <p>Dê suavidade às transições de elementos na tela. Os efeitos de fade ajudam a guiar a atenção do usuário de forma gradual, mais natural, evitando mudanças bruscas no layout. Refinando o efeito visto na 1ª aula.</p>
+   <a href="02">Entrar</a>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 03</h5>
+    <p>Descubra como exibir descrições ou legendas automaticamente quando o mouse passa sobre imagens ou botões. Um recurso útil para melhorar a usabilidade sem sobrecarregar o visual da página.</p>
+   <a href="03">Entrar</a>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 04</h5>
+    <p>Crie seções retráteis com efeito deslizante. Muito usado em FAQs, menus de ajuda ou detalhes de produtos — mantém a página organizada e interativa.</p>
+   <a href="04">Entrar</a>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 05</h5>
+    <p>Construa um menu que revela subopções apenas quando necessário. Essencial para sites com muitas categorias ou páginas internas, mantendo a navegação enxuta.</p>
+   <a href="05">Entrar</a>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 06</h5>
+    <p>Entenda como garantir que uma ação só aconteça depois de outra estar concluída. Perfeito para controlar a ordem de animações, carregamentos ou interações complexas.</p>
+   <a href="06">Entrar</a>
+  </article>
+
+  <article class="item">
+    <h2><i class="material-icons">face</i></h2>
+    <h5>Aula 07</h5>
+    <p>Aprenda a criar pop-ups leves e funcionais para alertas, formulários ou avisos importantes. Uma forma eficaz de captar a atenção sem sair da página</p>
+   <a href="07">Entrar</a>
+  </article>
+
+</section>
+
+<!-- RODAPÉ  -->
+<div id="footer-placeholder"></div>
+
+<!-- SCRIPTS -->
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', './js/ui/components/header.php')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = './js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', './js/ui/components/footer.html');
+  });
+</script>
+
+</body>
+</html>

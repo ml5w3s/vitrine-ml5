@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<title>Legenda Dinâmica</title>
+	
+	<style type="text/css">
+		#central{
+			width: 725px;
+		}
+
+
+		body{
+			background-color: #151515;
+			text-align:center;
+		}
+		#container{
+			width: 1350px;
+			text-align:center;
+			border:#666 1px solid;
+		}
+		h1{
+			font-family: Verdana, Geneva, sans-serif;
+			color:#ccc;
+			font-size: 24px;
+			}
+		
+		h3{
+			font-family: Verdana, Geneva, sans-serif;
+			color:#ccc;
+			font-size: 24px;
+			}
+			
+		p{
+			font-family: Verdana, Geneva, sans-serif;
+			color:#ccc;
+			font-size: 14px;
+			}
+		button{
+			padding:5px 20px;
+			text-align:center;
+			background-color:orange;
+			border:#09c solid 1px;
+			border-radius: 15px;
+			}	
+		#box{
+			width: 1250px;
+			margin-left: 35px;
+			text-align:center;
+			display: none;
+			}	
+		</style>
+</head>
+<body>
+<div>
+<h3>Exercício 03 - Legenda Dinâmica</h3><br>
+<p>Esta função do JQuery serve para mostrar/ocultar a legenda da imagem. Segue o exemplo da imagem com a legenda:</p>
+	
+<script src="../../js/jquery.min.js" type="text/jscript"></script>
+<script type="text/jscript">
+	$(document).ready(function(e) {
+		$("#container").hover(function (){
+			$("p").stop().fadeToggle("slow");
+		});
+	});
+</script>
+</head>
+<body>
+	<div id="container">
+		<img src="../../imagens/logo.jpeg" width="320px"/>
+		<p>ML5Lab, Mergulhe em Tecnologia.</p>		
+		
+</p>
+</div>
+<div>
+	<h3>Segue o código para realizar o efeito mostrar e ocultar</h3>		
+
+	<img src="legenda_dinamica_03.png" alt="script_codigo">
+</div>
+
+</body>	
+</html>

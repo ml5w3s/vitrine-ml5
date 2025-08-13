@@ -1,0 +1,84 @@
+﻿@charset "utf-8";
+/* CSS Document*/
+
+.links {
+	position:absolute;
+	width:1000px;
+	top:280px;
+	height:0 auto;
+	left:50%;
+	margin-left:-500px;
+	border:1px;
+	border-color:#900;
+}
+
+/* O z-index do div #mask deve ser menor que do div#boxes e do div.window */
+#mask {position:absolute;
+	z-index:10;
+	background-color:#000;
+	display:none;
+	top:0;
+	left:0;
+	z-index:300;
+}
+
+.window {
+	position:fixed;
+	width:800px;
+	height:600px;
+	display:none;
+	z-index:9998;
+	padding:40px;
+	text-align:center;
+}
+img {
+	border:0;
+	z-index:9998;
+}
+.window img {
+	width:800px;
+	height:600px;
+	z-index:9998;
+	
+}
+
+/*Personalize a janela modal aqui. Você pode adicionar uma image de fundo.*/
+#dialog1{
+	width:800px;
+	height:600px;
+}
+#dialog2{
+	width:800px;
+	height:600px;
+}
+.close{
+	display:block;
+	text-align:right;
+	text-decoration:none;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#FFF;
+}
+.close span{
+	color:#F00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sem título</title>
+
+<script src="../../js/jquery.min.js"></script>
+<script type="text/jscript">
+	$(document).ready(function(e) {
+		$(".main").hover(function(e) {
+			$("#sec").stop().slideToggle(500);
+		});
+	});
+</script>
+
+<style type="text/css">
+
+
+body{
+		background-color: #151515;
+		text-align:center;
+	}
+	#container{
+		width: 1350px;
+		text-align:center;
+		border:#666 1px solid;
+	}
+	h1{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 24px;
+		}
+	
+	h3{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 24px;
+		}
+		
+	p{
+		font-family: Verdana, Geneva, sans-serif;
+		color:#ccc;
+		font-size: 14px;
+		}
+	button{
+		padding:5px 20px;
+		text-align:center;
+		background-color:orange;
+		border:#09c solid 1px;
+		border-radius: 15px;
+		}	
+	#box{
+		width: 1250px;
+		margin-left: 35px;
+		text-align:center;
+		display: none;
+		}	
+
+#main{
+	margin: 0 auto;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	background-color:#09F;
+	font-family:Arial, Helvetica, sans-serif;
+	cursor:pointer;
+}
+
+ul{
+	width: 100px;
+	list-style-type:none;
+	background-color:#0C0;
+	text-align:center;
+}
+
+li{
+	width:140px;
+	margin-left:-40px;
+}
+
+#sec{
+	display:none;
+}
+
+#sec li:hover{
+	background-color:#060;
+}
+a{
+	text-decoration:none;
+	color:#000;
+	}
+</style>
+</head>
+<body>
+<div>
+<h3>Exercício 05 - Menu sec</h3>
+<p>Esta função JQuery serve para mostrar o Menu. Segue o exemplo do código para resolução do execrício:
+	<ul id="main">
+		<li class="main">UM
+		<ul id="sec">
+			<li>DOIS</li>
+			<li>TRES</li>
+			<li>QUATRO</li>
+		</ul>
+		</li>
+		</ul>
+<div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+
+	
+	<div>
+		<h3>Segue o código para realizar o efeito mostrar e ocultar</h3>		
+	
+		<img src="menu_sec_05.png" alt="script_codigo">
+</div>
+</div>
+</p>
+</div>
+</body>
+</html>
