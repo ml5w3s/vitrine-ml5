@@ -42,6 +42,18 @@
 <!-- ARTIGOS -->
 <section class="container">
 
+  <!--BANNER-->
+  <article class="item">
+    <picture>
+      <source media="(min-width: 1024px)" srcset="images/banner_cursos_desktop.png">
+      <source media="(min-width: 600px)" srcset="images/banner_cursos_tablet.png">
+      <img src="images/banner_cursos_mobile.png">
+    </picture>
+  </article>
+
+</section>
+<section class="container">
+
   <article class="item">
     <h2><i class="material-icons">shopping_cart_checkout</i></h2>
     <h3>Cursos</h3>
@@ -70,31 +82,29 @@
 
 <!-- SCRIPTS -->
 <script>
-  async function loadComponent(placeholderId, url) {
+  async function loadComponent(placeholderId, file) {
     try {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
-      const html = await response.text();
-      document.getElementById(placeholderId).innerHTML = html;
+      const response = await fetch(file);
+      if (!response.ok) throw new Error(`Erro ao carregar ${file}`);
+      document.getElementById(placeholderId).innerHTML = await res.text();
     } catch (error) {
       console.error(error);
     }
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', '/mlab5/js/ui/components/header.php')
+    loadComponent('header-placeholder', 'js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = './js/ui/components/navbar.js';
+        script.src = 'js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', '/mlab5/js/ui/components/footer.html');
+    loadComponent('footer-placeholder', 'js/ui/components/footer.html');
   });
 </script>
-
 </body>
 </html>
