@@ -45,9 +45,9 @@
   <!--BANNER-->
   <article class="item">
     <picture>
-      <source media="(min-width: 1024px)" srcset="images/banner_cursos_desktop.png">
-      <source media="(min-width: 600px)" srcset="images/banner_cursos_tablet.png">
-      <img src="images/banner_cursos_mobile.png">
+      <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_cursos_desktop.png">
+      <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_cursos_tablet.png">
+      <img src="/vitrine-ml5/mlab5/images/banner_cursos_mobile.png">
     </picture>
   </article>
 
@@ -93,17 +93,17 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', 'js/ui/components/header.html')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = 'js/ui/components/navbar.js';
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', 'js/ui/components/footer.html');
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
   });
 </script>
 </body>
