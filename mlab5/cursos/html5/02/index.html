@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="../../image/x-icon" href="../../images/ml5w3s.ico">
+  <link rel="icon" type="../../image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -14,7 +14,7 @@
   <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
   <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://seusite.com/cursos">
+  <link rel="canonical" href="https://ml5w3s.com.br">
   <meta http-equiv="content-language" content="pt-BR">
 
   <!-- OG -->
@@ -26,8 +26,8 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <style>#controles{display:none;}</style>
 
   <!-- Twitter -->
@@ -47,9 +47,9 @@
 <section class="container">
 <article class="item">
   <picture>
-    <source media="(min-width: 1024px)" srcset="/mlab5/images/banner_frontend_desktop.png">
-    <source media="(min-width: 600px)" srcset="/mlab5/images/banner_frontend_tablet.png">
-    <img src="/mlab5/images/banner_frontend_mobile.png">
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_frontend_mobile.png">
   </picture>
   <h3>🧱 HTML - Linguagem de marcação para sites na internet</h3>
 </article>
@@ -114,9 +114,9 @@
       <legend>Controles</legend>
     <h4>Escolha um template</h4>
     <select id="templateSelect">
-      <option value="/mlab5/templates/classico.html">Classico</option>
-      <option value="/mlab5/templates/moderno.html">Moderno</option>
-      <option value="/mlab5/templates/dark_mode.html">Dark Mode3</option>
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
     </select>
 
     <h4>Personalize</h4>
@@ -133,9 +133,9 @@
 
     <h4>Tamanho da imagem</h4>
     <select id="imageSizeSelect">
-      <option value="/mlab5/images/propaganda/heisenbar_desktop.png">Grande</option>
-      <option value="/mlab5/images/propaganda/heisenbar_tablet.png">Médio</option>
-      <option value="/mlab5/images/propaganda/heisenbar_mobile.png" selected="selected">Pequeno</option>
+      <option value="/vitrine-ml5/mlab5/images/propaganda/heisenbar_desktop.png">Grande</option>
+      <option value="/vitrine-ml5/mlab5/images/propaganda/heisenbar_tablet.png">Médio</option>
+      <option value="/vitrine-ml5/mlab5/images/propaganda/heisenbar_mobile.png" selected="selected">Pequeno</option>
     </select>
     <br>
     </fieldset><br>
@@ -144,7 +144,7 @@
 
 <section class="container">
 <article class="item">
-    <a href="/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
 </article>
 </section>
 
@@ -165,17 +165,17 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', '/mlab5/js/ui/components/header.php')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.php')
       .then(() => {
         const script = document.createElement('script');
-        script.src = '/mlab5/js/ui/components/navbar.js';
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', '/mlab5/js/ui/components/footer.html');
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
   });
 
   document.addEventListener('DOMContentLoaded', () => {
