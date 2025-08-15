@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="../images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="/mlab5/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -26,7 +26,7 @@
 
   <!-- CSS  -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +34,6 @@
   <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
   <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
 </head>
-
 <body>
 
 <div id="header-placeholder"></div>
@@ -42,9 +41,9 @@
 <!--BANNER-->
   <article class="item">
     <picture>
-      <source media="(min-width: 1024px)" srcset="../images/banner_cursos_desktop.png">
-      <source media="(min-width: 600px)" srcset="../images/banner_cursos_tablet.png">
-      <img src="../images/banner_cursos_mobile.png">
+      <source media="(min-width: 1024px)" srcset="/mlab5/images/banner_cursos_desktop.png">
+      <source media="(min-width: 600px)" srcset="/mlab5/images/banner_cursos_tablet.png">
+      <img src="/mlab5/images/banner_cursos_mobile.png">
     </picture>
   </article>
 
@@ -70,10 +69,10 @@
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
-    await loadComponent('header-placeholder', '/mlab5/js/ui/components/header.php')
+    await loadComponent('header-placeholder', '/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = '../js/ui/components/navbar.js';
+        script.src = '/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => console.error("Erro ao carregar o header:", error));
@@ -90,9 +89,8 @@
     container.innerHTML = articles.map(article => `
       <article class="item">
         <img src="${article.imagem}" alt="${article.titulo}">
-        <h2>${article.titulo}</h2>
+        <h2><a href="${article.link}" class="btn">${article.titulo}</a></h2>
         <p>${article.descricao}</p>
-        <a href="${article.link}" class="btn">Saiba mais</a>
       </article>
     `).join('');
   } catch (error) {
@@ -103,6 +101,5 @@
 document.addEventListener('DOMContentLoaded', loadArticles);
 
 </script>
-
 </body>
 </html>
