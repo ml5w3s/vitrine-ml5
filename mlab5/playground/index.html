@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="/mlab5/images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -14,7 +14,7 @@
   <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
   <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://seusite.com/cursos">
+  <link rel="canonical" href="https://ml5w3s.com.br">
   <meta http-equiv="content-language" content="pt-BR">
 
   <!-- OG -->
@@ -26,14 +26,14 @@
 
   <!-- CSS  -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
   <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
   <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
-  <script src="/mlab5/js/jquery.min.js" ></script>
+  <script src="/vitrine-ml5/mlab5/js/jquery.min.js" ></script>
 </head>
 
 <body>
@@ -47,9 +47,9 @@
 
   <article class="item">
     <picture>
-      <source media="(min-width: 1024px)" srcset="/mlab5/images/banner_play_desktop.png">
-      <source media="(min-width: 600px)" srcset="/mlab5/images/banner_play_tablet.png">
-      <img src="/mlab5/images/banner_play_mobile.png">
+      <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_play_desktop.png">
+      <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_play_tablet.png">
+      <img src="/vitrine-ml5/mlab5/images/banner_play_mobile.png">
     </picture>
   </article>
 
@@ -117,17 +117,17 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', '/mlab5/js/ui/components/header.html')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = '/mlab5/js/ui/components/navbar.js';
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', '/mlab5/js/ui/components/footer.html');
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
   });
 
   function runCode() {
@@ -147,7 +147,7 @@
     };
 
     localStorage.setItem('custom_template', JSON.stringify(data));
-    window.open('/mlab5/playground/visualizar.html', '_blank');
+    window.open('/vitrine-ml5/mlab5/playground/visualizar.html', '_blank');
 
     // Salva a escolha do tamanho da imagem
     const imageUrl = document.getElementById('imageSizeSelect').value;
