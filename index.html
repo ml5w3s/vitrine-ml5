@@ -1,126 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitrine ML5</title>
-     <style>
-        body {
-          margin: 0;
-          padding: 0;
-          background-image: url('manjaro-bruce-cat.jpg'); /* ✅ Caminho relativo ou absoluto */
-          background-size: cover;     /* 🔄 Preenche toda a tela */
-          background-repeat: no-repeat;
-          background-attachment: fixed; /* 🧷 Fixa a imagem no viewport */
-          background-position: center center;
-          height: 100vh;
-        }
-
-        main {
-          color: white;
-          padding: 2rem;
-          font-family: sans-serif;
-          background-color: rgba(0, 0, 0, 0.4); /* Para dar contraste */
-        }
-  </style>
-    <link rel="stylesheet" href="estilo/styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/ml5w3s.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/images/ml5w3s.ico">
+  <title>Vitrine ML5</title>
+  <link rel="stylesheet" href="/vitrine-ml5/estilo/portal.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <img src="assets/ml5w3s.jpeg">
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#conteudo">Conteúdo</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Vitrine ML5</div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Projetos</a></li>
+        <li><a href="#">Cursos</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="hero">
-        <div class="container">
-            <h2>Bem-vindo à Vitrine ML5</h2>
-            <p>Aqui você encontra aulas abrangentes sobre informática, design, desenvolvimento e muito mais.</p>
-            <a href="#conteudo" class="btn">Saiba Mais</a>
-        </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bem-vindo à Vitrine ML5</h1>
+      <p>Explore nossos projetos, aulas e recursos interativos.</p>
+      <a href="#projetos" class="btn">Ver Projetos</a>
+    </div>
+  </section>
 
-    <section id="sobre">
-        <div class="container">
-            <h2>Sobre</h2>
-            <p>Nosso objetivo é fornecer conteúdo acessível e de alta qualidade para ajudar estudantes e profissionais a aprimorarem suas habilidades nas áreas de tecnologia.</p>
-        </div>
-    </section>
+  <!-- Grid de Projetos -->
+  <section id="projetos" class="grid">
+    <div class="card">
+      <img src="/vitrine-ml5/images/logo_ml5w3sl4b_desktop.png" alt="Projeto 2">
+      <h3>Mlab5 - Cursos e Treinamentos</h3>
+      <p>Ambiente para aprendizado, cursos e treinamentos.</p>
+      <a href="/vitrine-ml5/mlab5" class="btn-link">Acessar</a>
+    </div>
+    <div class="card">
+      <img src="/vitrine-ml5/assets/manjaro-bruce-cat.jpg" alt="Projeto 1">
+      <h3>Bruce Academy - Comunidade de Cat Lovers</h3>
+      <p>Aulas passo a passo com prática direta no navegador.</p>
+      <a href="#" class="btn-link">Ver Gatinhos</a>
+    </div>
+    <div class="card">
+      <img src="/vitrine-ml5/images/projetos.png" alt="Projeto 2">
+      <h3>Micro Projetos</h3>
+      <p>Explore nossos experimentos e protótipos criativos.</p>
+      <a href="#" class="btn-link">Explorar</a>
+    </div>
+  </section>
 
-    <section id="conteudo">
-        <div class="container">
-            <h2>Conteúdo das Aulas</h2>
-            <ul>
-                <li type="square">Informática Básica</li>
-                <li type="square">Design Gráfico</li>
-                <li type="square">Web Design</li>
-                <li type="square">Desenvolvimento Front-End</li>
-                <li type="square">Desenvolvimento Back-End</li>
-                <li type="square">XML</li>
-                <li type="square">Banco de Dados</li>
-                <li type="square">Análise de Dados</li>
-                <li type="square">JavaScript</li>
-                <li type="square">PHP</li>
-                <li type="square">Python</li>
-                <li type="square">Java</li>
-                <li type="square">Frameworks (Laravel, Django)</li>
-                <li type="square">Análise de dados com python</li>
-                <li type="square">Introdução a inteligência artificial</li>
-                <li type="square">Corte de Acetato</li>
-            </ul>
-        </div>
-        <div class="container">
-                <h2>Selecione o Nível de Explicação</h2>
-
-    <form id="formularioExplicacao">
-        <label>
-            <input type="radio" name="nivel" value="basico" onclick="mostrarDescricao()">
-            01 - Básico:
-            <p>
-                Fornecer o código funcionando e uma exlicação do que o código faz com um exemplo básico - duração 1h, valor 100,00
-            </p>
-        </label><br>
-
-        <label>
-            <input type="radio" name="nivel" value="intermediario" onclick="mostrarDescricao()">
-            02 - Intermediário
-            <p>
-                Intermediário: Inclui o básico, explicação de algorítimos contextualizando com exemplos práticos 2h, valor 250,00
-            </p>
-        </label><br>
-
-        <label>
-            <input type="radio" name="nivel" value="avancado" onclick="mostrarDescricao()">
-            03 - Avançado:
-            <p>
-                Avançado: inclui intermediário e noção noção de todos os pré-requisitos envolvidos, duração de 5 horas, valor 750,00
-            </p>
-        </label>
-    </form>
-        </div>
-    </section>
-
-    <section id="contato">
-        <div class="container">
-            <h2>Contato</h2>
-            <p>Entre em contato através do email <a href="mailto:marcelo.lauriano@gmail.com">marcelolauriano@gmail.com</a>.</p>
-            <a href="gita-docs/doc-land.html" class="btn">Documentação Gita</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Vitrine ML5. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+ <!-- Propaganda -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>PATROCÍNIOS</h1>
+      <p>Conheça nossos patrocinadores.</p>
+      <a href="#https://www.instagram.com/heisenbarasasul/" class="btn"><img src="/vitrine-ml5/images/propaganda/heisenbar_mobile.png"></a>
+    </div>
+  </section>
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Vitrine ML5 - Todos os direitos reservados</p>
+  </footer>
 </body>
 </html>

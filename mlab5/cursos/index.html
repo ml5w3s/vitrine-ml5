@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="/mlab5/images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -26,7 +26,7 @@
 
   <!-- CSS  -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -41,9 +41,9 @@
 <!--BANNER-->
   <article class="item">
     <picture>
-      <source media="(min-width: 1024px)" srcset="/mlab5/images/banner_cursos_desktop.png">
-      <source media="(min-width: 600px)" srcset="/mlab5/images/banner_cursos_tablet.png">
-      <img src="/mlab5/images/banner_cursos_mobile.png">
+      <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_cursos_desktop.png">
+      <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_cursos_tablet.png">
+      <img src="/vitrine-ml5/mlab5/images/banner_cursos_mobile.png">
     </picture>
   </article>
 
@@ -69,19 +69,19 @@
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
-    await loadComponent('header-placeholder', '/mlab5/js/ui/components/header.html')
+    await loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
         script.src = '/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => console.error("Erro ao carregar o header:", error));
-    await loadComponent('footer-placeholder', '/mlab5/js/ui/components/footer.html');
+    await loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
   });
 
   async function loadArticles() {
   try {
-    const response = await fetch('/mlab5/js/ui/components/articles.json');
+    const response = await fetch('/vitrine-ml5/mlab5/js/ui/components/articles.json');
     if (!response.ok) throw new Error('Erro ao carregar articles.json');
     const articles = await response.json();
 

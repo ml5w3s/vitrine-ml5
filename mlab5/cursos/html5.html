@@ -25,7 +25,7 @@
 
   <!-- CSS  -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -50,6 +50,37 @@
     </picture>
   </article>
 
+</section>
+<section class="container">
+
+  <article class="item">
+    <h4>O <b>HTML</b> é a linguagem para construção de páginas web.</h4>
+   <p class="left-align light">Usar o HTML para montar uma página web é como decorar uma casa. Cada móvel tem uma função: Cabe a você definir onde ficará a TV, os quadros as fotos no porta retratos, estante, livros etc.</p><br>
+  <p class="left-align light">Veja na imagem a seguir, como fica essa página, com HTML puro, sem estilo CSS, aplicado</p>
+  </article>
+
+  <article class="item">
+      <img src="/vitrine-ml5/mlab5/cursos/html5/01/images/exemplo_puro_mobile.png">
+  </article>
+
+</section>
+<section class="container">
+
+  <article class="item">
+    <h4>O <b>estilo</b>, a princípio, fica por nossa conta.</h4>
+    <p class="left-align light">Quando você terminar de aprender o HTML, aí sim você vai poder fazer o curso de CSS3 para aprender a escolher as cores, estilos e enfeites do seu jeito.</p>
+  </article>
+
+</section>
+<section class="container">
+
+  <article class="item">
+    <a href="html5/aulas.html">Iniciar</a>
+  </article>
+
+</section>
+<section class="container">
+
   <article class="item">
     <h4>A <b>ML5 Lab</b> não o leva a nenhum lugar, pois é você que vai definir seus caminhos.</h4>
    <p class="left-align light">Pelo campo da programação ou na área criativa do <b>design</b>, siga um roadmap, em nossa plataforma, que o guiará através do <b>desenvolvimento de softwares</b> ou desenvolva um plano estratégico visual, para chegar no ponto de partida de sua carreira.</p>
@@ -58,10 +89,6 @@
   <article class="item">
     <h4>Aventure-se através de nossos cursos, coletando créditos <b>gratuitos</b>.</h4>
     <p class="left-align light">Siga sozinho, ou encontre um mentor, em nossa plataforma para te acompanhar em sua jornada, que pode chegar até a <b>participação de projetos</b>, em nossa aceleradora de open source, ou garanta sua marca em nossa galeria de arte, ganhando experiência em projetos reais..</p>
-  </article>
-
-  <article class="item">
-    <a href="html5/aulas.html">Iniciar</a>
   </article>
 
 </section>
@@ -83,7 +110,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.php')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
         script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
