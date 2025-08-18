@@ -1,0 +1,92 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    overflow: hidden;
+    height: 256px;
+    flex: 1 2;
+    max-width: 30%;
+  }
+
+  .card img {
+    width: auto;
+    object-fit: cover;
+  }
+
+.card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  padding: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+  .attributes {
+    width: 50%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .attr {
+    font-size: 0.8rem;
+    display: flex;
+  }
+
+  .bar {
+    display: flex;
+    width: 60%;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 0.5rem;
+  }
+
+  .low { background: red; }
+  .medium { background: yellow; }
+  .high { background: green; }
+
+  .bar div {
+    flex: 1;
+    opacity: 0.3;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+/* Grid de projetos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+  @media (max-width: 600px) {
+    .card {
+      flex: 1 1 calc(50% - 0.5rem);
+    }
+  }

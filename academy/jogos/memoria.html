@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+  .memory-game {
+    width: 640px;
+    max-width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .memory-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1; /* mantém quadrado sem padding-truque */
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+
+  .front-face, .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    object-fit: cover;
+  }
+
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+  </style>
+</head>
+<body>
+  <h1>🐾 Jogo da Memória ML5</h1>
+
+  <section class="memory-game">
+    <!-- Cada carta vai em pares -->
+    <div class="memory-card" data-framework="luma">
+      <img class="front-face" src="/vitrine-ml5/academy/images/luma_mobile.jpg" alt="Luma">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+    <div class="memory-card" data-framework="luma">
+      <img class="front-face" src="/vitrine-ml5/academy/images/luma_mobile.jpg" alt="Luma">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+
+    <div class="memory-card" data-framework="nati">
+      <img class="front-face" src="/vitrine-ml5/academy/images/nati_mobile.jpg" alt="Nati">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+    <div class="memory-card" data-framework="nati">
+      <img class="front-face" src="/vitrine-ml5/academy/images/nati_mobile.jpg" alt="Nati">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+
+    <div class="memory-card" data-framework="pinga">
+      <img class="front-face" src="/vitrine-ml5/academy/images/pinga_mobile.jpg" alt="Pinga">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+    <div class="memory-card" data-framework="pinga">
+      <img class="front-face" src="/vitrine-ml5/academy/images/pinga_mobile.jpg" alt="Pinga">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+
+    <!-- Outras 3 imagens (coloque as que quiser depois) -->
+    <div class="memory-card" data-framework="extra1">
+      <img class="front-face" src="/vitrine-ml5/academy/images/extra1.jpg" alt="Extra 1">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+    <div class="memory-card" data-framework="extra1">
+      <img class="front-face" src="/vitrine-ml5/academy/images/extra1.jpg" alt="Extra 1">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+
+    <div class="memory-card" data-framework="extra2">
+      <img class="front-face" src="/vitrine-ml5/academy/images/extra2.jpg" alt="Extra 2">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+    <div class="memory-card" data-framework="extra2">
+      <img class="front-face" src="/vitrine-ml5/academy/images/extra2.jpg" alt="Extra 2">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+
+    <div class="memory-card" data-framework="extra3">
+      <img class="front-face" src="/vitrine-ml5/academy/images/extra3.jpg" alt="Extra 3">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+    <div class="memory-card" data-framework="extra3">
+      <img class="front-face" src="/vitrine-ml5/academy/images/extra3.jpg" alt="Extra 3">
+      <img class="back-face" src="/vitrine-ml5/academy/images/manjaro-bruce-cat.jpg" alt="Bruce">
+    </div>
+  </section>
+
+  <script>
+    const cards = document.querySelectorAll('.memory-card');
+
+    let hasFlippedCard = false;
+    let lockBoard = false;
+    let firstCard, secondCard;
+
+    function flipCard() {
+      if (lockBoard) return;
+      if (this === firstCard) return;
+
+      this.classList.add('flip');
+
+      if (!hasFlippedCard) {
+        hasFlippedCard = true;
+        firstCard = this;
+        return;
+      }
+
+      secondCard = this;
+      checkForMatch();
+    }
+
+    function checkForMatch() {
+      let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+      isMatch ? disableCards() : unflipCards();
+    }
+
+    function disableCards() {
+      firstCard.removeEventListener('click', flipCard);
+      secondCard.removeEventListener('click', flipCard);
+
+      resetBoard();
+    }
+
+    function unflipCards() {
+      lockBoard = true;
+      setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+
+        resetBoard();
+      }, 1000);
+    }
+
+    function resetBoard() {
+      [hasFlippedCard, lockBoard] = [false, false];
+      [firstCard, secondCard] = [null, null];
+    }
+
+    (function shuffle() {
+      cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 12);
+        card.style.order = randomPos;
+      });
+    })();
+
+    cards.forEach(card => card.addEventListener('click', flipCard));
+  </script>
+</body>
+</html>

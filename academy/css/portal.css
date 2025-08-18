@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f3f3f3;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+/* Hero */
+.hero {
+  position: relative; /* vira referência para posicionar a img */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 60vh;
+  padding: 2rem;
+  overflow: hidden; /* esconde o que passar da borda */
+}
+
+.hero .banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cobre toda a área sem distorcer */
+  z-index: 0; /* vai para trás */
+  opacity: 0.6; /* opcional: deixa a img mais clara pra ler o texto */
+}
+
+.hero-text {
+  position: relative; /* garante que fique por cima da img */
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  background: white;
+  color: #0067b8;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Grid de projetos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #e7e7e7;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.card p {
+  padding: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  background: #0067b8;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+  .attributes {
+    width: 50%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .attr {
+    font-size: 0.8rem;
+    display: flex;
+  }
+
+  .bar {
+    display: flex;
+    width: 60%;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-left: 0.5rem;
+  }
+
+  .low { background: red; }
+  .medium { background: orange; }
+  .high { background: green; }
+
+  .bar div {
+    flex: 1;
+    opacity: 0.3;
+  }
+
+  .active {
+    opacity: 1;
+  }
+banner{
+z-index: 1;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f3f3f3;
+  margin-top: 2rem;
+}
