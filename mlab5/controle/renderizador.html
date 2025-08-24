@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Renderizador de Aulas</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    article { border: 1px solid #ddd; padding: 16px; margin: 12px 0; border-radius: 8px; }
+    h2, h3 { margin: 0.5em 0; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 6px; overflow-x: auto; }
+    img { max-width: 100%; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Aula Renderizada</h1>
+  <input type="file" id="fileInput" accept="application/json">
+  <div id="conteudo"></div>
+
+  <script>
+    document.getElementById("fileInput").addEventListener("change", carregarAula);
+
+    function carregarAula(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = e => {
+        const aula = JSON.parse(e.target.result);
+        renderizarAula(aula);
+      };
+      reader.readAsText(file);
+    }
+
+    function renderizarAula(aula) {
+      const container = document.getElementById("conteudo");
+      container.innerHTML = `<h2>${aula.aula}</h2>`;
+
+      aula.artigos.forEach((artigo, idx) => {
+        const article = document.createElement("article");
+        article.setAttribute("itemscope", "");
+        article.setAttribute("itemtype", "https://schema.org/Article");
+
+        // Título principal
+        if (artigo.titulo) {
+          const h2 = document.createElement("h2");
+          h2.textContent = artigo.titulo;
+          h2.setAttribute("itemprop", "headline");
+          article.appendChild(h2);
+        }
+
+        // Subtítulo
+        if (artigo.subtitulo) {
+          const h3 = document.createElement("h3");
+          h3.textContent = artigo.subtitulo;
+          h3.setAttribute("itemprop", "alternativeHeadline");
+          article.appendChild(h3);
+        }
+
+        // Texto
+        if (artigo.texto) {
+          const p = document.createElement("p");
+          p.textContent = artigo.texto;
+          p.setAttribute("itemprop", "text");
+          article.appendChild(p);
+        }
+
+        // Lista
+        if (artigo.lista) {
+          const ul = document.createElement("ul");
+          ul.setAttribute("itemprop", "text");
+          artigo.lista.forEach(item => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+          });
+          article.appendChild(ul);
+        }
+
+        // Código
+        if (artigo.codigo) {
+          const pre = document.createElement("pre");
+          const code = document.createElement("code");
+          code.textContent = artigo.codigo;
+          code.setAttribute("itemprop", "text");
+          pre.appendChild(code);
+          article.appendChild(pre);
+        }
+
+        // Imagem
+        if (artigo.imagem) {
+          const img = document.createElement("img");
+          img.src = artigo.imagem;
+          img.alt = artigo.titulo || "Imagem ilustrativa";
+          img.setAttribute("itemprop", "image");
+          article.appendChild(img);
+        }
+
+        container.appendChild(article);
+      });
+    }
+  </script>
+</body>
+</html>

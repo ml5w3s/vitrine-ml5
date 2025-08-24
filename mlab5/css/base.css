@@ -75,6 +75,10 @@ footer li{
   display: nome;
 }
 
+#controles{
+  display:none;
+}
+
 .container {
   display: flex; /* or inline-flex */
   flex-wrap: wrap;

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerador de Aulas JSON</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    form { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+    label { display: block; margin-top: 10px; }
+    textarea, input { width: 100%; padding: 6px; margin-top: 4px; }
+    button { margin-top: 12px; padding: 8px 12px; cursor: pointer; }
+    #saida { white-space: pre; background: #f5f5f5; padding: 10px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Aulas (.JSON)</h1>
+  
+  <button onclick="criarAula()">Criar Nova Aula</button>
+
+  <form id="form-artigo" style="display:none;">
+    <h2>Novo Artigo</h2>
+    <label>Título: <input type="text" id="titulo"></label>
+    <label>Subtítulo: <input type="text" id="subtitulo"></label>
+    <label>Texto: <textarea id="texto"></textarea></label>
+    <label>Lista (um item por linha): <textarea id="lista"></textarea></label>
+    <label>Código: <textarea id="codigo"></textarea></label>
+    <label>Imagem (URL): <input type="url" id="imagem"></label>
+
+    <button type="button" onclick="adicionarArtigo()">Adicionar Artigo</button>
+    <button type="button" onclick="finalizarAula()">Finalizar Aula</button>
+  </form>
+
+  <h2>Pré-visualização do JSON</h2>
+  <div id="saida">{}</div>
+
+  <script>
+    let aula = null;
+
+    function criarAula() {
+      const nome = prompt("Digite o nome da aula:");
+      if (!nome) return;
+
+      aula = {
+        aula: nome,
+        artigos: []
+      };
+
+      document.getElementById("form-artigo").style.display = "block";
+      atualizarSaida();
+    }
+
+    function adicionarArtigo() {
+      if (!aula) return alert("Crie uma aula primeiro!");
+
+      const artigo = {
+        titulo: getValue("titulo"),
+        subtitulo: getValue("subtitulo"),
+        texto: getValue("texto"),
+        lista: getLista("lista"),
+        codigo: getValue("codigo"),
+        imagem: getValue("imagem")
+      };
+
+      aula.artigos.push(artigo);
+      limparFormulario();
+      atualizarSaida();
+    }
+
+    function finalizarAula() {
+      if (!aula) return alert("Nenhuma aula criada!");
+
+      const blob = new Blob([JSON.stringify(aula, null, 2)], {type: "application/json"});
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = aula.aula.replace(/\s+/g, "_") + ".json";
+      link.click();
+    }
+
+    function getValue(id) {
+      const val = document.getElementById(id).value.trim();
+      return val === "" ? null : val;
+    }
+
+    function getLista(id) {
+      const val = document.getElementById(id).value.trim();
+      if (val === "") return null;
+      return val.split("\n").map(item => item.trim()).filter(i => i.length > 0);
+    }
+
+    function limparFormulario() {
+      document.querySelectorAll("#form-artigo input, #form-artigo textarea")
+        .forEach(el => el.value = "");
+    }
+
+    function atualizarSaida() {
+      document.getElementById("saida").textContent = JSON.stringify(aula, null, 2);
+    }
+  </script>
+</body>
+</html>

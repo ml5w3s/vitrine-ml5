@@ -1,0 +1,202 @@
+﻿<!--curso_html5/01/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+
+  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
+  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
+  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
+  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+
+<main id="aula" itemscope itemtype="https://schema.org/Course">
+
+<!-- ARTIGOS -->
+<session>
+  <div id="course-placeholder"></div>
+</session>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error("Erro ao carregar seus componentes:", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+async function loadCourse() {
+  try {
+    const response = await fetch('/vitrine-ml5/mlab5/js/ui/components/html5/01-html5.json');
+    if (!response.ok) throw new Error('Erro ao carregar JSON');
+    const data = await response.json();
+    const course = data.course;
+
+    const container = document.getElementById('course-placeholder');
+
+    // Render cabeçalho do curso
+    let html = `
+      <section itemscope itemtype="https://schema.org/Course">
+        <meta itemprop="name" content="${course.name}">
+        <header>
+          <picture>
+            <source media="(min-width:1024px)" srcset="${course.image.desktop}">
+            <source media="(min-width:768px)" srcset="${course.image.tablet}">
+            <img src="${course.image.mobile}" alt="${course.name}" itemprop="image">
+          </picture>
+          <h1 itemprop="name">${course.name}</h1>
+        </header>
+    `;
+
+    // Render artigos
+    html += course.articles.map(article => {
+      let art = `<article itemscope itemtype="https://schema.org/Article">`;
+
+      if (article.headline) {
+        art += `<h2 itemprop="headline">${article.headline}</h2>`;
+      }
+      if (article.alternativeHeadline) {
+        art += `<h3 itemprop="alternativeHeadline">${article.alternativeHeadline}</h3>`;
+      }
+      if (article.subheadline) {
+        art += `<h4>${article.subheadline}</h4>`;
+      }
+      if (article.text) {
+        art += `<p itemprop="text">${article.text}</p>`;
+      }
+      if (article.list) {
+        art += `<ul>`;
+        art += article.list.map(item => `<li>${item}</li>`).join('');
+        art += `</ul>`;
+      }
+      if (article.image) {
+        art += `
+          <figure>
+            <picture>
+              ${article.image.desktop ? `<source media="(min-width:1024px)" srcset="${article.image.desktop}">` : ''}
+              ${article.image.tablet ? `<source media="(min-width:768px)" srcset="${article.image.tablet}">` : ''}
+              <img src="${article.image.src || article.image.mobile}" alt="${article.image.caption || ''}" itemprop="image">
+            </picture>
+            ${article.image.caption ? `<figcaption>${article.image.caption}</figcaption>` : ''}
+          </figure>
+        `;
+      }
+      if (article.programmingLanguage && article.code) {
+        art += `<pre itemprop="codeSample" itemscope itemtype="https://schema.org/Code">
+                  <code itemprop="text" data-lang="${article.programmingLanguage}">
+                    ${article.code.join('\n')}
+                  </code>
+                </pre>`;
+      }
+
+      art += `</article>`;
+      return art;
+    }).join('');
+
+    // Render exercício
+    if (course.exercise) {
+      html += `
+        <section itemscope itemtype="https://schema.org/Exercise">
+          <h2 itemprop="headline">${course.exercise.headline}</h2>
+          <p itemprop="text">${course.exercise.text}</p>
+          <ol>
+            ${course.exercise.steps.map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </section>
+      `;
+    }
+
+    // Link para playground
+    if (course.playground) {
+      html += `
+        <footer>
+          <a href="${course.playground.url}" target="_blank" rel="noopener">Abrir Playground</a>
+        </footer>
+      `;
+    }
+
+    html += `</section>`;
+    container.innerHTML = html;
+
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', loadCourse);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+
+</body>
+</html>	
