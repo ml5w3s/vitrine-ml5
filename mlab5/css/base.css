@@ -148,6 +148,10 @@ footer li{
   display: nome;
 }
 
+#ajustes {
+  display: none;
+}
+
 #button{
   width: 200px;
   height: 50px;

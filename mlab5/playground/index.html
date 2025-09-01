@@ -55,18 +55,6 @@
 
 <section class="container">
   <article class="item">
-    <script>
-      $(document).ready(function() {
-        $("#link_instrucoes").click(function() {
-          $("#texto").slideToggle("slow"); // abre/fecha instruções
-        });
-
-        $("#link_ajustes").click(function() {
-          $("#ajustes").slideToggle("slow"); // abre/fecha ajustes
-        });
-      });
-    </script>
-
     <h3 id="link_instrucoes">Instruções</h3>
     <div id="texto" style="display:none;">
       <p id="instrucoes"></p>
@@ -86,13 +74,10 @@
 <section class="container">
   <article class="item">
     <h3 id="link_ajustes">Ajustes</h3>
-  </article>
-</section>
-
-<section  class="container">
   <!-- Escolha de Template -->
-  <article id="ajustes" class="item" style="display:none;">
+  <div id="ajustes">
     <!-- conteúdo dos ajustes vem do localStorage -->
+  </div>
   </article>
 </section>
 
@@ -128,6 +113,17 @@
     loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
   });
 
+  // Exibe/oculta intruções/ajustes
+  $(document).ready(function() {
+    $("#link_instrucoes").click(function() {
+      $("#texto").slideToggle("slow"); // abre/fecha instruções
+    });
+
+    $("#link_ajustes").click(function() {
+      $("#ajustes").slideToggle("slow"); // abre/fecha ajustes
+    });
+  });
+
   function runCode() {
     const code = document.getElementById('code-input').value;
     const outputFrame = document.getElementById('output');
@@ -147,16 +143,21 @@
     localStorage.setItem('custom_template', JSON.stringify(data));
     window.open('/vitrine-ml5/mlab5/playground/visualizar.html', '_blank');
 
-function salvarCustomizacao() {
-  const ajustes = {
-    bgColor: document.getElementById('bgColor').value,
-    textColor: document.getElementById('textColor').value,
-    fontFamily: document.getElementById('fontFamily').value,
-  };
+  function salvarCustomizacao() {
+    const ajustes = {
+      bgColor: document.getElementById('bgColor').value,
+      textColor: document.getElementById('textColor').value,
+      fontFamily: document.getElementById('fontFamily').value,
+    };
 
-  localStorage.setItem('ajustes', JSON.stringify(ajustes));
-  window.open('/vitrine-ml5/mlab5/playground/visualizar.html', '_blank');
-}
+    localStorage.setItem('ajustes', JSON.stringify(ajustes));
+
+    // Salva escolha do tamanho da imagem
+    const imageUrl = document.getElementById('imageSizeSelect').value;
+    localStorage.setItem('selectedImage', imageUrl);
+
+    window.open('/vitrine-ml5/mlab5/playground/visualizar.html', '_blank');
+  }
 
     // Salva a escolha do tamanho da imagem
     const imageUrl = document.getElementById('imageSizeSelect').value;
@@ -164,33 +165,33 @@ function salvarCustomizacao() {
     
   }
 
-    document.addEventListener('DOMContentLoaded', () => {
-    const instrucoes = localStorage.getItem('instrucoes');
-      if (instrucoes) {
-        document.getElementById('instrucoes').innerText = instrucoes;
-      }
-    });
-
-    // Carrega ajustes (formulário)
-    const ajustesHTML = localStorage.getItem('ajustes');
-    if (ajustesHTML) {
-      const ajustesDiv = document.getElementById('ajustes');
-      if (ajustesDiv) ajustesDiv.innerHTML = ajustesHTML;
+  document.addEventListener('DOMContentLoaded', () => {
+  const instrucoes = localStorage.getItem('instrucoes');
+    if (instrucoes) {
+      document.getElementById('instrucoes').innerText = instrucoes;
     }
+  });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const imageUrl = localStorage.getItem('selectedImage');
-      if (imageUrl) {
-        const img = document.createElement('img');
-        img.src = imageUrl;
-        img.alt = "Imagem selecionada na aula";
-        img.style.maxWidth = "100%"; // Ajusta responsivamente
+  // Carrega ajustes (formulário)
+  const ajustesHTML = localStorage.getItem('ajustes');
+  if (ajustesHTML) {
+    const ajustesDiv = document.getElementById('ajustes');
+    if (ajustesDiv) ajustesDiv.innerHTML = ajustesHTML;
+  }
 
-        // Insere no local desejado, por exemplo no final do artigo
-        const container = document.querySelector('.container');
-        if (container) container.appendChild(img);
-      }
-    });
+  document.addEventListener('DOMContentLoaded', () => {
+    const imageUrl = localStorage.getItem('selectedImage');
+    if (imageUrl) {
+      const img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = "Imagem selecionada na aula";
+      img.style.maxWidth = "100%"; // Ajusta responsivamente
+
+      // Insere no local desejado, por exemplo no final do artigo
+      const container = document.querySelector('.container');
+      if (container) container.appendChild(img);
+    }
+  });
 
 </script>
 
