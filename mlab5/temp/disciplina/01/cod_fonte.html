@@ -1,4 +1,4 @@
-﻿<!--curso_html5/01/index.html-->
+<!--curso_html5/01/index.html-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos | ML5Lab</title>
 
@@ -27,6 +27,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#controles{display:none;}</style>  
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -43,9 +44,13 @@
 <main id="aula" itemscope itemtype="https://schema.org/Course">
 
 <!-- ARTIGOS -->
+<section class="container">
 <div id="course-placeholder"></div>
+</section>
 
 <div id="footer-placeholder"></div>
+
+</main>
 
 <script>
   async function loadComponent(placeholderId, url) {
@@ -84,29 +89,28 @@ async function loadCourse() {
 
     // Render cabeçalho do curso
     let html = `
-      <section class="container"
-       <meta itemprop="name" content="${course.name}">
+
+        <meta itemprop="name" content="${course.name}">
         <header>
           <picture>
             <source media="(min-width:1024px)" srcset="${course.image.desktop}">
             <source media="(min-width:768px)" srcset="${course.image.tablet}">
             <img src="${course.image.mobile}" alt="${course.name}" itemprop="image">
           </picture>
-          <h1 itemprop="name">${course.name}</h1>
+          <h1 itemprop="headline" itemprop="name">${course.name}</h1>
         </header>
-      </section>
-      <section class="container" itemscope itemtype="https://schema.org/Course">
+
     `;
 
     // Render artigos
     html += course.articles.map(article => {
-      let art = `<article class="item" itemscope itemtype="https://schema.org/Article">`;
+      let art = `<article class="item" itemprop="hasPart" itemscope itemtype="https://schema.org/Article">`;
 
       if (article.headline) {
-        art += `<h2 itemprop="headline">${article.headline}</h2>`;
+        art += `<h2 itemprop="alternativeHeadline">${article.headline}</h2>`;
       }
       if (article.alternativeHeadline) {
-        art += `<h3 itemprop="alternativeHeadline">${article.alternativeHeadline}</h3>`;
+        art += `<h3>${article.alternativeHeadline}</h3>`;
       }
       if (article.subheadline) {
         art += `<h4>${article.subheadline}</h4>`;
@@ -122,7 +126,7 @@ async function loadCourse() {
       if (article.image) {
         art += `
           <figure>
-            <picture>
+            <picture itemprop="image">
               ${article.image.desktop ? `<source media="(min-width:1024px)" srcset="${article.image.desktop}">` : ''}
               ${article.image.tablet ? `<source media="(min-width:768px)" srcset="${article.image.tablet}">` : ''}
               <img src="${article.image.src || article.image.mobile}" alt="${article.image.caption || ''}" itemprop="image">
@@ -146,7 +150,7 @@ async function loadCourse() {
     // Render exercício
     if (course.exercise) {
       html += `
-        <section itemscope itemtype="https://schema.org/Exercise">
+        <section class="container" itemscope itemtype="https://schema.org/Exercise">
           <h2 itemprop="headline">${course.exercise.headline}</h2>
           <p itemprop="text">${course.exercise.text}</p>
           <ol>
@@ -159,9 +163,11 @@ async function loadCourse() {
     // Link para playground
     if (course.playground) {
       html += `
-        <footer>
+        <section class="container">
+        <article class="item">
           <a href="${course.playground.url}" target="_blank" rel="noopener">Abrir Playground</a>
-        </footer>
+        </article>
+        </section>
       `;
     }
 
@@ -196,7 +202,6 @@ document.addEventListener('DOMContentLoaded', loadCourse);
     }
   });
 </script>
-
 
 </body>
 </html>	

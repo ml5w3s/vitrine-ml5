@@ -25,7 +25,7 @@
   <meta property="og:type" content="website">
 
   <!-- CSS  -->
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
@@ -44,7 +44,6 @@
 
 <!-- ARTIGOS -->
 <section class="container">
-
   <article class="item">
     <picture>
       <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_play_desktop.png">
@@ -52,21 +51,24 @@
       <img src="/vitrine-ml5/mlab5/images/banner_play_mobile.png">
     </picture>
   </article>
+</section>
 
+<section class="container">
   <article class="item">
-    <!--Aplicação de efeitos com jQuery. Método interno-->
-    <script type="text/jscript">
-      $(document).ready(function(e){
-        $("h3").click(function(){
-          $("#texto").slideToggle("slow"); <!--Outras opções de slide: slideUP (sobe), slideDown (desce).-->
+    <script>
+      $(document).ready(function() {
+        $("#link_instrucoes").click(function() {
+          $("#texto").slideToggle("slow"); // abre/fecha instruções
+        });
+
+        $("#link_ajustes").click(function() {
+          $("#ajustes").slideToggle("slow"); // abre/fecha ajustes
         });
       });
-    </script> 
-    <h3 id="exibir">Instruções</h3>
-  </article>
+    </script>
 
-  <article class="item">
-    <div id="texto">
+    <h3 id="link_instrucoes">Instruções</h3>
+    <div id="texto" style="display:none;">
       <p id="instrucoes"></p>
     </div>
   </article>
@@ -83,19 +85,14 @@
 
 <section class="container">
   <article class="item">
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $("h3").click(function(){
-          $("#ajustes").slideToggle("slow");
-        });
-      });
-    </script>
-    <h3 id="exibir">Ajustes</h3>
+    <h3 id="link_ajustes">Ajustes</h3>
   </article>
+</section>
 
+<section  class="container">
   <!-- Escolha de Template -->
-  <article class="item">
-    <div id="ajustes"></div>
+  <article id="ajustes" class="item" style="display:none;">
+    <!-- conteúdo dos ajustes vem do localStorage -->
   </article>
 </section>
 
@@ -105,6 +102,7 @@
 
 <!-- SCRIPTS -->
 <script>
+
   async function loadComponent(placeholderId, url) {
     try {
       const response = await fetch(url);
@@ -149,6 +147,17 @@
     localStorage.setItem('custom_template', JSON.stringify(data));
     window.open('/vitrine-ml5/mlab5/playground/visualizar.html', '_blank');
 
+function salvarCustomizacao() {
+  const ajustes = {
+    bgColor: document.getElementById('bgColor').value,
+    textColor: document.getElementById('textColor').value,
+    fontFamily: document.getElementById('fontFamily').value,
+  };
+
+  localStorage.setItem('ajustes', JSON.stringify(ajustes));
+  window.open('/vitrine-ml5/mlab5/playground/visualizar.html', '_blank');
+}
+
     // Salva a escolha do tamanho da imagem
     const imageUrl = document.getElementById('imageSizeSelect').value;
     localStorage.setItem('selectedImage', imageUrl);
@@ -182,7 +191,6 @@
         if (container) container.appendChild(img);
       }
     });
-
 
 </script>
 

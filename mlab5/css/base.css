@@ -7,8 +7,19 @@ body {
   padding: 1rem;
 }
 
-article{
-  text-align: center;
+section.container {
+  margin-bottom: 2em;
+}
+
+article.item {
+ border: 1px solid #ddd;
+ padding: 1em; 
+ margin-bottom: 1em; 
+ border-radius: 8px; 
+}
+    
+h1, h2, h3 { 
+  margin-top: 0.5em; 
 }
 
 p{
@@ -16,11 +27,24 @@ p{
   font-size: 14px;
 }
 
-button{
-  padding:5px 20px;
-  text-align:center;
-  border:#09c solid 1px;
-  border-radius: 15px;
+ul.left_list {
+ list-style: disc; 
+ margin-left: 20px;
+ }
+ 
+pre {
+  background: #f4f4f4;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto; 
+}
+
+figure {
+  text-align: center;
+}
+
+figcaption { 
+  font-style: italic; 
 }
 
 textarea { 
@@ -38,6 +62,13 @@ a{
   text-decoration: none;
 }
 
+button{
+  padding:5px 20px;
+  text-align:center;
+  border:#09c solid 1px;
+  border-radius: 15px;
+}
+
 footer{
   text-align: left;
   padding: 1em 0;
@@ -45,38 +76,6 @@ footer{
 
 footer li{
     list-style: none;
-}
-
-.title{
-  text-align: center;
-}
-
-.left_list{
-  text-align: left;
-}
-
-#ajustes{
-  display: none;
-}
-
-#logo_l4b{
-  size: 50%;
-}
-  
-#texto {
-  display: none;
-}
-
-#exercicio {
-  display: none;
-}
-
-#logo{
-  display: nome;
-}
-
-#controles{
-  display:none;
 }
 
 .container {
@@ -122,6 +121,31 @@ footer li{
 
 .material-icons{
   font-seze:72px;
+}
+
+
+.title{
+  text-align: center;
+}
+
+.left_list{
+  text-align: left;
+}
+
+#logo_l4b{
+  size: 50%;
+}
+  
+#texto {
+  display: none;
+}
+
+#exercicio {
+  display: none;
+}
+
+#logo{
+  display: nome;
 }
 
 #button{

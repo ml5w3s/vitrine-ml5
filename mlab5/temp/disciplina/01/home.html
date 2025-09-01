@@ -75,7 +75,7 @@
 
 async function loadCourse() {
   try {
-    const response = await fetch('/vitrine-ml5/mlab5/js/ui/components/html5/01-html5.json');
+    const response = await fetch('01-temp.json');
     if (!response.ok) throw new Error('Erro ao carregar JSON');
     const data = await response.json();
     const course = data.course;
