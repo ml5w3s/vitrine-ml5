@@ -58,7 +58,7 @@
           "position": 4,
           "alternativeHeadline": "Exemplo",
           "programmingLanguage": "HTML",
-          "code": `
+          "code": "
             <!DOCTYPE html> – Tipo do documento;
             <html> – Raiz do documento;
             <head> – <title>, <meta>, <link>
@@ -66,7 +66,7 @@
             <h1> – Título;
             <p> – Parágrafo;
             <h2> – Sub-título.
-          `
+          "
         },
         {
           "position": 5,
@@ -104,11 +104,11 @@
       sectionBanner.innerHTML = `
         <article class="item">
           <picture itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-            <source media="(min-width:1024px)" srcset="${data.image.desktop}" itemprop="contentUrl">
-            <source media="(min-width:600px)" srcset="${data.image.tablet}" itemprop="contentUrl">
-            <img src="${data.image.mobile}" alt="${data.image.alt}" itemprop="contentUrl">
+            <source media=\(min-width:1024px)\" srcset=\"${data.image.desktop}\" itemprop=\"contentUrl\">
+            <source media=\(min-width:600px)\" srcset=\"${data.image.tablet}\" itemprop=\"contentUrl\">
+            <img src=\"${data.image.mobile}\" alt=\"${data.image.alt}\" itemprop=\"contentUrl\">
           </picture>
-          <h1 itemprop="name">${data.name}</h1>
+          <h1 itemprop=\"name\">${data.name}</h1>
         </article>
       `;
       main.appendChild(sectionBanner);
@@ -122,11 +122,11 @@
         art.setAttribute("itemscope", "");
         art.setAttribute("itemtype", "https://schema.org/Article");
         art.setAttribute("itemprop", "hasPart");
-        art.innerHTML += `<meta itemprop="position" content="${article.position}">`;
+        art.innerHTML += `<meta itemprop=\"position\" content=\"$\{article.position}\">`;
 
-        if (article.headline) art.innerHTML += `<h2 itemprop="headline">${article.headline}</h2>`;
-        if (article.text) art.innerHTML += `<p itemprop="text">${article.text}</p>`;
-        if (article.alternativeHeadline) art.innerHTML += `<h3 itemprop="alternativeHeadline">${article.alternativeHeadline}</h3>`;
+        if (article.headline) art.innerHTML += `<h2 itemprop=\"headline\">${article.headline}</h2>`;
+        if (article.text) art.innerHTML += `<p itemprop=\"text\">${article.text}</p>`;
+        if (article.alternativeHeadline) art.innerHTML += `<h3 itemprop=\"alternativeHeadline\">${article.alternativeHeadline}</h3>`;
 
         if (article.list) {
           const ul = document.createElement("ul");
@@ -136,18 +136,18 @@
         }
 
         if (article.code) {
-          art.innerHTML += `
-            <meta itemprop="programmingLanguage" content="${article.programmingLanguage}">
-            <pre><code itemprop="text">${article.code}</code></pre>
+          art.innerHTML += 
+            `<meta itemprop=\"programmingLanguage\" content=\"$\{article.programmingLanguage}\">
+            <pre><code itemprop=\"text\">$\{article.code}</code></pre>
           `;
         }
 
         if (article.image) {
-          art.innerHTML += `
-            <figure itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-              <img src="${article.image.src || article.image.mobile}" 
-                   alt="${article.image.alt}" itemprop="contentUrl">
-              ${article.image.caption ? `<figcaption itemprop="caption">${article.image.caption}</figcaption>` : ""}
+          art.innerHTML += 
+            `<figure itemprop=\"image\" itemscope itemtype=\"https://schema.org/ImageObject\">
+              <img src=\"$\{article.image.src || article.image.mobile}\" 
+                   alt=\"$\{article.image.alt}\" itemprop=\"contentUrl\">
+              $\{article.image.caption ? `<figcaption itemprop=\"caption\">$\{article.image.caption}</figcaption>` : ""}
             </figure>
           `;
         }
@@ -155,12 +155,12 @@
         if (article.type === "exercise") {
           art.setAttribute("itemtype", "https://schema.org/HowTo");
           const ul = document.createElement("ul");
-          article.steps.forEach(step => ul.innerHTML += `<li itemprop="step">${step}</li>`);
+          article.steps.forEach(step => ul.innerHTML += `<li itemprop=\"step\">${step}</li>`);
           art.appendChild(ul);
         }
 
         if (article.url) {
-          art.innerHTML += `<a href="${article.url}" itemprop="url" class="btn-large">${article.label}</a>`;
+          art.innerHTML += `<a href=\"$\{article.url}\" itemprop=\"url\" class=\"btn-large\">$\{article.label}</a>`;
         }
 
         section.appendChild(art);

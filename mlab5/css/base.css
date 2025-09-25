@@ -1,41 +1,88 @@
-/* Layout básico 
-./css/base.css
-*/
+/* 
+ * Layout básico refatorado 
+ * ./css/base.css
+ */
+
+:root {
+  --cor-primaria: #09c;
+  --cor-destaque: #ff8c00;
+  --cor-fundo-item: #f0f0f0;
+  --cor-fundo-pre: #f4f4f4;
+  --cor-borda-padrao: #ccc;
+  --cor-borda-fraca: #ddd;
+  
+  --fonte-principal: Arial, sans-serif;
+  --fonte-secundaria: Verdana, Geneva, sans-serif;
+  
+  --espacamento-padrao: 1rem;
+  --espacamento-duplo: 2em;
+  
+  --raio-borda-grande: 15px;
+  --raio-borda-medio: 8px;
+  --raio-borda-pequeno: 5px;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--fonte-principal);
   margin: 0;
-  padding: 1rem;
+  padding: var(--espacamento-padrao);
 }
 
-section.container {
-  margin-bottom: 2em;
+/* Classes de layout e componentes */
+
+.content-section {
+  margin-bottom: var(--espacamento-duplo);
 }
 
-article.item {
- border: 1px solid #ddd;
- padding: 1em; 
- margin-bottom: 1em; 
- border-radius: 8px; 
+.item-article {
+  border: 1px solid var(--cor-borda-fraca);
+  padding: var(--espacamento-padrao); 
+  margin-bottom: var(--espacamento-padrao); 
+  border-radius: var(--raio-borda-medio); 
 }
-    
+
+.item-full-width {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--cor-borda-padrao);
+  padding: 20px;
+  text-align: center;
+}
+
+.output-area {
+  background-color: var(--cor-destaque);
+}
+
+.title {
+  text-align: center;
+}
+
+.left_list {
+  list-style: disc; 
+  margin-left: 20px;
+  text-align: left;
+}
+
+/* Estilos de elementos base */
+
 h1, h2, h3 { 
   margin-top: 0.5em; 
 }
 
-p{
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 14px;
+p {
+  font-family: var(--fonte-secundaria);
+  font-size: 14px; /* Mantido em px conforme original, mas 'rem' seria mais acessível */
 }
 
-ul.left_list {
- list-style: disc; 
- margin-left: 20px;
- }
- 
+a {
+  text-align: left;
+  text-decoration: none;
+}
+
 pre {
-  background: #f4f4f4;
-  padding: 1em;
-  border-radius: 5px;
+  background: var(--cor-fundo-pre);
+  padding: var(--espacamento-padrao);
+  border-radius: var(--raio-borda-pequeno);
   overflow-x: auto; 
 }
 
@@ -47,121 +94,94 @@ figcaption {
   font-style: italic; 
 }
 
+textarea,
+input[type="text"],
+input[type="url"] {
+  background-color: var(--cor-destaque);
+  width: 100%;
+  margin-bottom: var(--espacamento-padrao);
+  padding: 8px;
+  border: 1px solid var(--cor-borda-padrao);
+  border-radius: var(--raio-borda-pequeno);
+  box-sizing: border-box;
+}
+
 textarea { 
   height: 125px;
-  background-color: #ff8c00;
+  resize: vertical;
 }
  
-textarea, iframe { 
+iframe { 
   width: 100%; 
-  margin-bottom: 1rem; 
+  margin-bottom: var(--espacamento-padrao); 
 }
 
-a{
-  text-align: left;
-  text-decoration: none;
-}
-
-button{
-  padding:5px 20px;
-  text-align:center;
-  border:#09c solid 1px;
-  border-radius: 15px;
-}
-
-footer{
-  text-align: left;
-  padding: 1em 0;
-}
-
-footer li{
-    list-style: none;
-}
-
-.container {
-  display: flex; /* or inline-flex */
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  gap: 10px 20px; /* row-gap column gap */
-  row-gap: 10px;
-  column-gap: 20px;
-}
-
-.item {
-  flex-grow: 1; /* Permite que os itens cresçam para preencher o espaço */
-  flex-basis: 200px; /* Define um tamanho base para o item */
-  /* Outros estilos para visualização */
-  background: #f1f1f1;
-  background-color: #f0f0f0;
+button, .button-style {
+  padding: 5px 20px;
   text-align: center;
-  border-radius: 8px;
-  min-height: 50px;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin: 10px;
+  border: 1px solid var(--cor-primaria);
+  border-radius: var(--raio-borda-grande);
+  text-decoration: none; /* Adicionado para consistência se usado em links */
+  display: inline-block; /* Adicionado para consistência */
 }
 
-.largo{
-  /* Outros estilos para visualização */
-  width: 100%; /* Opcional: para os itens terem a mesma largura */
-  height: auto;
-  border: 1px solid #ccc;
-  padding: 20px;
-  text-align: center;
-}
-
-.solo{
-  /* Outros estilos para visualização */
-  width: 100%; /* Opcional: para os itens terem a mesma largura */
-  border: 1px solid #ccc;
-  padding: 20px;
-  text-align: center;
-}
-
-.material-icons{
-  font-seze:72px;
-}
-
-
-.title{
-  text-align: center;
-}
-
-.left_list{
-  text-align: left;
-}
-
-#logo_l4b{
-  size: 50%;
-}
-  
-#texto {
-  display: none;
-}
-
-#exercicio {
-  display: none;
-}
-
-#logo{
-  display: nome;
-}
-
-#ajustes {
-  display: none;
-}
-
-#button{
+.button-large {
   width: 200px;
   height: 50px;
   margin-top: 20px;
-  text-decoration: none;
 }
 
-#output{
-  background-color: #ff8c00;
+footer {
+  text-align: left;
+  padding: var(--espacamento-padrao) 0;
 }
+
+footer li {
+    list-style: none;
+}
+
+/* Layout Flexbox */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  gap: 10px 20px;
+}
+
+.item {
+  flex-grow: 1;
+  flex-basis: 200px;
+  background-color: var(--cor-fundo-item);
+  text-align: center;
+  border-radius: var(--raio-borda-medio);
+  min-height: 50px;
+  border: 1px solid var(--cor-borda-padrao);
+  padding: var(--espacamento-padrao);
+  margin: 10px;
+}
+
+/* Ícones e utilitários de estado */
+
+.material-icons {
+  font-size: 72px;
+}
+
+#texto,
+#exercicio,
+#ajustes,
+#logo {
+  display: none;
+}
+
+/* Estilos de ID restantes (usar com moderação) */
+
+#logo_l4b {
+  width: 50%; /* Corrigido de 'size' para 'width' */
+}
+
+/* Media Queries */
 
 /* Tablet (2 colunas) */
 @media (min-width: 1024px) {
@@ -179,10 +199,16 @@ footer li{
   }
 }
 
-/* Mobile */
+/* 
+  Mobile - A regra abaixo parece ter uma lógica incorreta.
+  Um item com 'flex-basis: 300px' não caberá em uma tela com 'max-width: 100px'.
+  A regra foi comentada para evitar comportamento inesperado.
+*/
+/* 
 @media (max-width: 100px) {
   .carousel-wrapper.large .item,
   .carousel-wrapper.small .item {
     flex: 0 0 300px;
   }
-}
+} 
+*/
