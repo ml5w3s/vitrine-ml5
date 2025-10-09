@@ -142,6 +142,35 @@ footer li {
 
 /* Layout Flexbox */
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* separa as colunas */
+  align-items: stretch;           /* garante que as sections tenham a mesma altura */
+  gap: 2rem;                      /* espaçamento entre colunas */
+  width: 100%;
+}
+
+nav section {
+  flex: 1;                        /* ambas crescem igualmente */
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;       /* garante alinhamento vertical igual */
+  gap: 1rem;
+}
+
+nav article {
+  flex: 1;                        /* faz com que cada artigo tenha altura igual dentro da section */
+  display: flex;
+  align-items: center;            /* centraliza verticalmente */
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
