@@ -145,6 +145,17 @@
 </article>
 </section>
 
+<div id="lousa-container" style="position: fixed; bottom: 10px; right: 10px; width: 60%; height: 60%; box-shadow: 0 0 10px rgba(0,0,0,0.5); display: none; background-color: white; z-index: 1000;">
+  <div id="lousa-header" style="background-color: #f1f1f1; padding: 10px; cursor: move; display: flex; justify-content: space-between; align-items: center;">
+    <span>Lousa Digital</span>
+    <div>
+      <button id="lousa-toggle-button" style="background: none; border: none; font-size: 20px; cursor: pointer;">-</button>
+      <button id="lousa-close-button" style="background: none; border: none; font-size: 20px; cursor: pointer;">x</button>
+    </div>
+  </div>
+  <iframe id="lousa-iframe" src="../../../projetos/lousa/index.html" style="width: 100%; height: calc(100% - 40px); border: none;"></iframe>
+</div>
+<button id="lousa-open-button" style="position: fixed; bottom: 10px; right: 10px; z-index: 999;">Abrir Lousa</button>
 </main>
 
 <div id="footer-placeholder"></div>
@@ -197,5 +208,53 @@
   });
 </script>
 
+<script>
+const lousaContainer = document.getElementById('lousa-container');
+const lousaOpenButton = document.getElementById('lousa-open-button');
+const lousaToggleButton = document.getElementById('lousa-toggle-button');
+const lousaCloseButton = document.getElementById('lousa-close-button');
+
+lousaOpenButton.addEventListener('click', () => {
+  lousaContainer.style.display = 'block';
+  lousaOpenButton.style.display = 'none';
+});
+
+lousaCloseButton.addEventListener('click', () => {
+  lousaContainer.style.display = 'none';
+  lousaOpenButton.style.display = 'block';
+});
+
+lousaToggleButton.addEventListener('click', () => {
+  if (lousaContainer.style.height === '40px') {
+    lousaContainer.style.height = '40%';
+    lousaToggleButton.textContent = '-';
+  } else {
+    lousaContainer.style.height = '40px';
+    lousaToggleButton.textContent = '+';
+  }
+});
+
+// Make the div draggable
+const lousaHeader = document.getElementById('lousa-header');
+let isDragging = false;
+let offsetX, offsetY;
+
+lousaHeader.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  offsetX = e.clientX - lousaContainer.offsetLeft;
+  offsetY = e.clientY - lousaContainer.offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    lousaContainer.style.left = (e.clientX - offsetX) + 'px';
+    lousaContainer.style.top = (e.clientY - offsetY) + 'px';
+  }
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+</script>
 </body>
 </html>	

@@ -1,0 +1,450 @@
+<!--curso_html5/07/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 07 - Geolocalização e APIs Web HTML5 | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre a API de Geolocalização do HTML5 e outras APIs web modernas para criar aplicações que utilizam localização e recursos do dispositivo.">
+  <meta name="keywords" content="html5, geolocalização, geolocation api, apis web, localização, gps, coordenadas, navegador">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 07 - Geolocalização e APIs Web HTML5 | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre a API de Geolocalização do HTML5 e outras APIs web modernas para criar aplicações que utilizam localização.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 07 - Geolocalização e APIs Web HTML5 | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre a API de Geolocalização do HTML5 e outras APIs web modernas para criar aplicações que utilizam localização.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🌍 HTML5 - Geolocalização e APIs Web</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Geolocation API</h3>
+  <p>A Geolocation API permite que aplicações web acessem a localização geográfica do usuário, criando experiências personalizadas baseadas em localização. É uma das APIs mais úteis para aplicações modernas.</p>
+  <h4>Características da API:</h4>
+  <ul class="left_list">
+    <li>Acesso à localização GPS</li>
+    <li>Rede de torres de celular</li>
+    <li>Pontos de acesso WiFi</li>
+    <li>IP aproximado</li>
+    <li>Precisão variável</li>
+    <li>Requer permissão do usuário</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Método getCurrentPosition()</h3>
+  <p>O método principal para obter a localização atual do usuário. É assíncrono e retorna as coordenadas via callback.</p>
+  <h4>Parâmetros:</h4>
+  <ul class="left_list">
+    <li>successCallback - Função de sucesso</li>
+    <li>errorCallback - Função de erro (opcional)</li>
+    <li>options - Opções de configuração (opcional)</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo Básico:</h4>
+  <pre><code>function obterLocalizacao() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        console.log('Latitude:', lat);
+        console.log('Longitude:', lng);
+        console.log('Precisão:', position.coords.accuracy);
+      },
+      function(error) {
+        console.error('Erro:', error.message);
+      }
+    );
+  } else {
+    console.log('Geolocalização não suportada');
+  }
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Objeto Position</h3>
+  <p>O objeto retornado contém informações detalhadas sobre a localização e a precisão da medição.</p>
+  <h4>Propriedades do Position:</h4>
+  <ul class="left_list">
+    <li>coords.latitude - Latitude em graus</li>
+    <li>coords.longitude - Longitude em graus</li>
+    <li>coords.accuracy - Precisão em metros</li>
+    <li>coords.altitude - Altitude em metros</li>
+    <li>coords.altitudeAccuracy - Precisão da altitude</li>
+    <li>coords.heading - Direção em graus</li>
+    <li>coords.speed - Velocidade em m/s</li>
+    <li>timestamp - Data/hora da medição</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo Detalhado:</h4>
+  <pre><code>function exibirLocalizacao(position) {
+  const coords = position.coords;
+  
+  console.log('Coordenadas:', {
+    latitude: coords.latitude,
+    longitude: coords.longitude,
+    precisao: coords.accuracy + ' metros',
+    altitude: coords.altitude || 'N/A',
+    velocidade: coords.speed || 'N/A',
+    timestamp: new Date(position.timestamp)
+  });
+  
+  // Exibir no mapa
+  mostrarNoMapa(coords.latitude, coords.longitude);
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Opções de Configuração</h3>
+  <p>As opções permitem controlar como a localização é obtida, balanceando precisão, velocidade e consumo de bateria.</p>
+  <h4>Propriedades das Options:</h4>
+  <ul class="left_list">
+    <li>enableHighAccuracy - Alta precisão (GPS)</li>
+    <li>timeout - Tempo limite em ms</li>
+    <li>maximumAge - Cache máximo em ms</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo com Opções:</h4>
+  <pre><code>const opcoes = {
+  enableHighAccuracy: true,    // Usar GPS
+  timeout: 10000,              // 10 segundos
+  maximumAge: 60000            // Cache de 1 minuto
+};
+
+navigator.geolocation.getCurrentPosition(
+  function(position) {
+    // Localização obtida com alta precisão
+    console.log('GPS ativo:', position.coords);
+  },
+  function(error) {
+    console.error('Erro ou timeout:', error.message);
+  },
+  opcoes
+);</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Monitoramento Contínuo</h3>
+  <p>Para aplicações que precisam acompanhar mudanças de localização, use watchPosition() em vez de getCurrentPosition().</p>
+  <h4>Método watchPosition():</h4>
+  <ul class="left_list">
+    <li>Monitora mudanças de posição</li>
+    <li>Retorna ID para parar monitoramento</li>
+    <li>Ideal para navegação</li>
+    <li>Consome mais bateria</li>
+    <li>Para com clearWatch()</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Monitoramento:</h4>
+  <pre><code>let watchId = null;
+
+function iniciarMonitoramento() {
+  watchId = navigator.geolocation.watchPosition(
+    function(position) {
+      atualizarPosicao(position);
+    },
+    function(error) {
+      console.error('Erro no monitoramento:', error);
+    },
+    { enableHighAccuracy: true, timeout: 5000 }
+  );
+}
+
+function pararMonitoramento() {
+  if (watchId) {
+    navigator.geolocation.clearWatch(watchId);
+    watchId = null;
+  }
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Tratamento de Erros</h3>
+  <p>É essencial tratar adequadamente os erros de geolocalização para proporcionar uma boa experiência ao usuário.</p>
+  <h4>Códigos de Erro:</h4>
+  <ul class="left_list">
+    <li>PERMISSION_DENIED (1) - Usuário negou permissão</li>
+    <li>POSITION_UNAVAILABLE (2) - Localização indisponível</li>
+    <li>TIMEOUT (3) - Tempo limite excedido</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Tratamento:</h4>
+  <pre><code>function tratarErroGeolocalizacao(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      alert('Permissão de localização negada. Ative nas configurações.');
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert('Localização indisponível. Verifique o GPS.');
+      break;
+    case error.TIMEOUT:
+      alert('Tempo limite excedido. Tente novamente.');
+      break;
+    default:
+      alert('Erro desconhecido na geolocalização.');
+      break;
+  }
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Outras APIs Web HTML5</h3>
+  <p>Além da geolocalização, o HTML5 introduziu várias outras APIs que expandem as capacidades das aplicações web.</p>
+  <h4>APIs Importantes:</h4>
+  <ul class="left_list">
+    <li>Device Orientation - Orientação do dispositivo</li>
+    <li>Vibration API - Vibração do dispositivo</li>
+    <li>Battery API - Status da bateria</li>
+    <li>Network Information - Conexão de rede</li>
+    <li>Page Visibility - Visibilidade da página</li>
+    <li>Fullscreen API - Tela cheia</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo: Device Orientation:</h4>
+  <pre><code>// Detectar orientação do dispositivo
+window.addEventListener('deviceorientation', function(event) {
+  const alpha = event.alpha; // Rotação Z
+  const beta = event.beta;   // Rotação X
+  const gamma = event.gamma; // Rotação Y
+  
+  console.log('Orientação:', { alpha, beta, gamma });
+});
+
+// Detectar movimento
+window.addEventListener('devicemotion', function(event) {
+  const acceleration = event.acceleration;
+  const rotation = event.rotationRate;
+  
+  console.log('Movimento:', { acceleration, rotation });
+});</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Casos de Uso Práticos</h3>
+  <p>A geolocalização e outras APIs web abrem possibilidades para diversos tipos de aplicações.</p>
+  <h4>Aplicações Comuns:</h4>
+  <ul class="left_list">
+    <li>Mapas e navegação</li>
+    <li>Encontrar restaurantes próximos</li>
+    <li>Jogos baseados em localização</li>
+    <li>Redes sociais com check-ins</li>
+    <li>Aplicativos de clima local</li>
+    <li>Rastreamento de fitness</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo: App de Clima Local:</h4>
+  <pre><code>function obterClimaLocal() {
+  navigator.geolocation.getCurrentPosition(
+    function(position) {
+      const { latitude, longitude } = position.coords;
+      
+      // Buscar clima pela API
+      fetch(`/api/clima?lat=${latitude}&lon=${longitude}`)
+        .then(response => response.json())
+        .then(dados => {
+          exibirClima(dados);
+        })
+        .catch(error => {
+          console.error('Erro ao buscar clima:', error);
+        });
+    },
+    function(error) {
+      // Fallback para cidade padrão
+      obterClimaPorCidade('São Paulo');
+    }
+  );
+}</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma aplicação usando Geolocalização e APIs Web com:<p>
+  <ul>
+  <li>Título = Aplicação com Geolocalização<br></li>
+  <li>Localização = Obter e exibir coordenadas do usuário<br></li>
+  <li>Monitoramento = Acompanhar mudanças de posição<br></li>
+  <li>Mapa = Integrar com serviço de mapas<br></li>
+  <li>APIs Extras = Usar Device Orientation ou outras APIs<br></li>
+  <li>Tratamento = Implementar tratamento de erros completo<br></li>
+</ul>
+</p>Implemente interface para controlar monitoramento e exibir dados em tempo real.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

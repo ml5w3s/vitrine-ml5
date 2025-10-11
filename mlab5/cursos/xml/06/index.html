@@ -1,0 +1,580 @@
+<!--curso_xml/06/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 06 - XML Schema e Validação Empresarial | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre XML Schema para validação empresarial no Brasil. Criação de schemas customizados, validação rigorosa e aplicações empresariais.">
+  <meta name="keywords" content="xml schema, xsd, validação xml, schema empresarial, validação dados, xml validation, schemas customizados">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 06 - XML Schema e Validação Empresarial | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre XML Schema para validação empresarial no Brasil. Criação de schemas customizados e validação rigorosa.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 06 - XML Schema e Validação Empresarial | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre XML Schema para validação empresarial no Brasil. Criação de schemas customizados e validação rigorosa.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>✅ XML Schema e Validação Empresarial</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>XML Schema (XSD) no Contexto Empresarial</h3>
+  <p>O XML Schema é fundamental para garantir a integridade e consistência dos dados em sistemas empresariais brasileiros. Ele define regras rigorosas de validação que são essenciais para compliance fiscal, trabalhista e regulatório.</p>
+  <h4>Importância do Schema Empresarial:</h4>
+  <ul class="left_list">
+    <li>Validação rigorosa de dados</li>
+    <li>Compliance com regulamentações</li>
+    <li>Integração entre sistemas</li>
+    <li>Prevenção de erros de processamento</li>
+    <li>Documentação de estruturas de dados</li>
+    <li>Facilita manutenção e evolução</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/xml/06/images/schema_empresarial_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/xml/06/images/schema_empresarial_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/xml/06/images/schema_empresarial_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elementos e Tipos Básicos</h3>
+  <p>XML Schema define tipos de dados específicos que garantem validação precisa, especialmente importante para documentos fiscais e trabalhistas no Brasil.</p>
+  <h4>Tipos Primitivos:</h4>
+  <ul class="left_list">
+    <li>xs:string - Texto livre</li>
+    <li>xs:decimal - Números decimais</li>
+    <li>xs:integer - Números inteiros</li>
+    <li>xs:date - Datas (YYYY-MM-DD)</li>
+    <li>xs:dateTime - Data e hora</li>
+    <li>xs:boolean - Verdadeiro/Falso</li>
+    <li>xs:positiveInteger - Inteiros positivos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Schema Básico:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.empresa.com.br/schema"
+           xmlns:tns="http://www.empresa.com.br/schema"
+           elementFormDefault="qualified"&gt;
+
+  &lt;!-- Tipo para CPF --&gt;
+  &lt;xs:simpleType name="tipoCPF"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:pattern value="[0-9]{11}"/&gt;
+      &lt;xs:length value="11"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;!-- Tipo para CNPJ --&gt;
+  &lt;xs:simpleType name="tipoCNPJ"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:pattern value="[0-9]{14}"/&gt;
+      &lt;xs:length value="14"/&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;!-- Elemento empresa --&gt;
+  &lt;xs:element name="empresa"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name="cnpj" type="tipoCNPJ"/&gt;
+        &lt;xs:element name="razaoSocial" type="xs:string"/&gt;
+        &lt;xs:element name="nomeFantasia" type="xs:string"/&gt;
+        &lt;xs:element name="dataFundacao" type="xs:date"/&gt;
+        &lt;xs:element name="ativo" type="xs:boolean"/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+&lt;/xs:schema&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Restrições e Validações Personalizadas</h3>
+  <p>As restrições em XML Schema permitem criar validações específicas para o contexto brasileiro, como validação de CPF, CNPJ, CEP e outros documentos.</p>
+  <h4>Tipos de Restrições:</h4>
+  <ul class="left_list">
+    <li>xs:pattern - Expressões regulares</li>
+    <li>xs:minLength/maxLength - Tamanho do texto</li>
+    <li>xs:minInclusive/maxInclusive - Valores numéricos</li>
+    <li>xs:enumeration - Lista de valores válidos</li>
+    <li>xs:totalDigits - Dígitos decimais</li>
+    <li>xs:fractionDigits - Casas decimais</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Validações Brasileiras:</h4>
+  <pre><code>&lt;!-- Validação de CEP --&gt;
+&lt;xs:simpleType name="tipoCEP"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:pattern value="[0-9]{8}"/&gt;
+    &lt;xs:length value="8"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+
+&lt;!-- Validação de UF --&gt;
+&lt;xs:simpleType name="tipoUF"&gt;
+  &lt;xs:restriction base="xs:string"&gt;
+    &lt;xs:enumeration value="AC"/&gt;
+    &lt;xs:enumeration value="AL"/&gt;
+    &lt;xs:enumeration value="AP"/&gt;
+    &lt;xs:enumeration value="AM"/&gt;
+    &lt;xs:enumeration value="BA"/&gt;
+    &lt;xs:enumeration value="CE"/&gt;
+    &lt;xs:enumeration value="DF"/&gt;
+    &lt;xs:enumeration value="ES"/&gt;
+    &lt;xs:enumeration value="GO"/&gt;
+    &lt;xs:enumeration value="MA"/&gt;
+    &lt;xs:enumeration value="MT"/&gt;
+    &lt;xs:enumeration value="MS"/&gt;
+    &lt;xs:enumeration value="MG"/&gt;
+    &lt;xs:enumeration value="PA"/&gt;
+    &lt;xs:enumeration value="PB"/&gt;
+    &lt;xs:enumeration value="PR"/&gt;
+    &lt;xs:enumeration value="PE"/&gt;
+    &lt;xs:enumeration value="PI"/&gt;
+    &lt;xs:enumeration value="RJ"/&gt;
+    &lt;xs:enumeration value="RN"/&gt;
+    &lt;xs:enumeration value="RS"/&gt;
+    &lt;xs:enumeration value="RO"/&gt;
+    &lt;xs:enumeration value="RR"/&gt;
+    &lt;xs:enumeration value="SC"/&gt;
+    &lt;xs:enumeration value="SP"/&gt;
+    &lt;xs:enumeration value="SE"/&gt;
+    &lt;xs:enumeration value="TO"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+
+&lt;!-- Validação de valor monetário --&gt;
+&lt;xs:simpleType name="tipoValorMonetario"&gt;
+  &lt;xs:restriction base="xs:decimal"&gt;
+    &lt;xs:minInclusive value="0.00"/&gt;
+    &lt;xs:totalDigits value="15"/&gt;
+    &lt;xs:fractionDigits value="2"/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/xml/06/images/validacoes_brasileiras_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/xml/06/images/validacoes_brasileiras_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/xml/06/images/validacoes_brasileiras_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Tipos Complexos e Composição</h3>
+  <p>Os tipos complexos permitem criar estruturas hierárquicas que refletem a realidade dos documentos empresariais brasileiros, como endereços, dados fiscais e informações trabalhistas.</p>
+  <h4>Composição de Tipos:</h4>
+  <ul class="left_list">
+    <li>xs:sequence - Elementos em ordem</li>
+    <li>xs:choice - Um dos elementos</li>
+    <li>xs:all - Todos os elementos (qualquer ordem)</li>
+    <li>xs:group - Grupos de elementos</li>
+    <li>xs:attributeGroup - Grupos de atributos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Tipo Complexo:</h4>
+  <pre><code>&lt;!-- Tipo endereço --&gt;
+&lt;xs:complexType name="tipoEndereco"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="logradouro" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;xs:element name="numero" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;xs:element name="complemento" type="xs:string" minOccurs="0" maxOccurs="1"/&gt;
+    &lt;xs:element name="bairro" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;xs:element name="cidade" type="xs:string" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;xs:element name="uf" type="tipoUF" minOccurs="1" maxOccurs="1"/&gt;
+    &lt;xs:element name="cep" type="tipoCEP" minOccurs="1" maxOccurs="1"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;!-- Tipo pessoa --&gt;
+&lt;xs:complexType name="tipoPessoa"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="nome" type="xs:string"/&gt;
+    &lt;xs:element name="cpf" type="tipoCPF"/&gt;
+    &lt;xs:element name="dataNascimento" type="xs:date"/&gt;
+    &lt;xs:element name="endereco" type="tipoEndereco"/&gt;
+    &lt;xs:element name="telefone" type="xs:string" minOccurs="0"/&gt;
+    &lt;xs:element name="email" type="xs:string" minOccurs="0"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;!-- Tipo empresa estendido --&gt;
+&lt;xs:complexType name="tipoEmpresaCompleta"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="cnpj" type="tipoCNPJ"/&gt;
+    &lt;xs:element name="razaoSocial" type="xs:string"/&gt;
+    &lt;xs:element name="nomeFantasia" type="xs:string"/&gt;
+    &lt;xs:element name="endereco" type="tipoEndereco"/&gt;
+    &lt;xs:element name="responsavel" type="tipoPessoa"/&gt;
+    &lt;xs:element name="dataFundacao" type="xs:date"/&gt;
+    &lt;xs:element name="ativo" type="xs:boolean"/&gt;
+  &lt;/xs:sequence&gt;
+  &lt;xs:attribute name="versao" type="xs:string" use="required" default="1.0"/&gt;
+&lt;/xs:complexType&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Schemas para Documentos Fiscais</h3>
+  <p>Criar schemas específicos para documentos fiscais brasileiros garante validação adequada de NFe, NFS-e e outros documentos obrigatórios.</p>
+  <h4>Elementos Fiscais:</h4>
+  <ul class="left_list">
+    <li>Validação de códigos fiscais</li>
+    <li>Estruturas de impostos</li>
+    <li>Validação de alíquotas</li>
+    <li>Cálculos fiscais</li>
+    <li>Datas e prazos</li>
+    <li>Códigos de operação</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Schema para Produto Fiscal:</h4>
+  <pre><code>&lt;!-- Tipo produto fiscal --&gt;
+&lt;xs:complexType name="tipoProduto"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="codigo" type="xs:string"/&gt;
+    &lt;xs:element name="descricao" type="xs:string"/&gt;
+    &lt;xs:element name="ncm"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:pattern value="[0-9]{8}"/&gt;
+          &lt;xs:length value="8"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="cfop"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:pattern value="[1-7][0-9]{3}"/&gt;
+          &lt;xs:length value="4"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="unidade" type="xs:string"/&gt;
+    &lt;xs:element name="quantidade" type="tipoValorMonetario"/&gt;
+    &lt;xs:element name="valorUnitario" type="tipoValorMonetario"/&gt;
+    &lt;xs:element name="valorTotal" type="tipoValorMonetario"/&gt;
+    &lt;xs:element name="impostos" type="tipoImpostos"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;!-- Tipo impostos --&gt;
+&lt;xs:complexType name="tipoImpostos"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="icms" type="tipoICMS"/&gt;
+    &lt;xs:element name="ipi" type="tipoIPI"/&gt;
+    &lt;xs:element name="pis" type="tipoPIS"/&gt;
+    &lt;xs:element name="cofins" type="tipoCOFINS"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;!-- Tipo ICMS --&gt;
+&lt;xs:complexType name="tipoICMS"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="origem"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:integer"&gt;
+          &lt;xs:minInclusive value="0"/&gt;
+          &lt;xs:maxInclusive value="9"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="cst"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:string"&gt;
+          &lt;xs:pattern value="[0-9]{2}"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="baseCalculo" type="tipoValorMonetario"/&gt;
+    &lt;xs:element name="aliquota"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:decimal"&gt;
+          &lt;xs:minInclusive value="0.00"/&gt;
+          &lt;xs:maxInclusive value="100.00"/&gt;
+          &lt;xs:totalDigits value="5"/&gt;
+          &lt;xs:fractionDigits value="2"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="valor" type="tipoValorMonetario"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Validação em Tempo Real</h3>
+  <p>A validação em tempo real de documentos XML é essencial em sistemas empresariais, garantindo que dados incorretos sejam detectados imediatamente.</p>
+  <h4>Estratégias de Validação:</h4>
+  <ul class="left_list">
+    <li>Validação no momento da entrada</li>
+    <li>Validação antes do envio</li>
+    <li>Validação de integridade</li>
+    <li>Validação de regras de negócio</li>
+    <li>Validação de cálculos</li>
+    <li>Validação de referências</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Validação:</h4>
+  <pre><code>&lt;!-- Schema com validações avançadas --&gt;
+&lt;xs:complexType name="tipoNotaFiscal"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="numero" type="xs:positiveInteger"/&gt;
+    &lt;xs:element name="serie"&gt;
+      &lt;xs:simpleType&gt;
+        &lt;xs:restriction base="xs:integer"&gt;
+          &lt;xs:minInclusive value="1"/&gt;
+          &lt;xs:maxInclusive value="999"/&gt;
+        &lt;/xs:restriction&gt;
+      &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="dataEmissao" type="xs:dateTime"/&gt;
+    &lt;xs:element name="emitente" type="tipoEmpresaCompleta"/&gt;
+    &lt;xs:element name="destinatario" type="tipoEmpresaCompleta"/&gt;
+    &lt;xs:element name="produtos"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name="produto" type="tipoProduto" maxOccurs="unbounded"/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element name="total" type="tipoTotais"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+
+&lt;!-- Validação de totais --&gt;
+&lt;xs:complexType name="tipoTotais"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="valorProdutos" type="tipoValorMonetario"/&gt;
+    &lt;xs:element name="valorImpostos" type="tipoValorMonetario"/&gt;
+    &lt;xs:element name="valorTotal" type="tipoValorMonetario"/&gt;
+  &lt;/xs:sequence&gt;
+  &lt;xs:assert test="valorTotal = valorProdutos + valorImpostos"/&gt;
+&lt;/xs:complexType&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/xml/06/images/validacao_tempo_real_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/xml/06/images/validacao_tempo_real_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/xml/06/images/validacao_tempo_real_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Integração com Sistemas de Validação</h3>
+  <p>A integração de schemas XML com sistemas de validação permite criar ferramentas robustas para garantir a qualidade dos dados em sistemas empresariais.</p>
+  <h4>Ferramentas de Validação:</h4>
+  <ul class="left_list">
+    <li>Validadores online</li>
+    <li>Bibliotecas de programação</li>
+    <li>Ferramentas de desenvolvimento</li>
+    <li>APIs de validação</li>
+    <li>Testes automatizados</li>
+    <li>Relatórios de erro detalhados</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Validação Programática:</h4>
+  <pre><code>&lt;!-- JavaScript para validação --&gt;
+function validarXML(xmlString, schemaURL) {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+  
+  // Verificar se o XML é bem-formado
+  const parseError = xmlDoc.getElementsByTagName("parsererror");
+  if (parseError.length > 0) {
+    throw new Error("XML mal-formado: " + parseError[0].textContent);
+  }
+  
+  // Validação contra schema
+  const validator = new XSLTProcessor();
+  const schema = loadSchema(schemaURL);
+  validator.importStylesheet(schema);
+  
+  const result = validator.transformToDocument(xmlDoc);
+  return result;
+}
+
+// Validação de CPF
+function validarCPF(cpf) {
+  const regex = /^[0-9]{11}$/;
+  if (!regex.test(cpf)) {
+    return false;
+  }
+  
+  // Algoritmo de validação de CPF
+  let soma = 0;
+  for (let i = 0; i < 9; i++) {
+    soma += parseInt(cpf[i]) * (10 - i);
+  }
+  let digito1 = 11 - (soma % 11);
+  if (digito1 >= 10) digito1 = 0;
+  
+  if (parseInt(cpf[9]) !== digito1) {
+    return false;
+  }
+  
+  // Validação segundo dígito...
+  return true;
+}</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie schemas XML para validação empresarial com:<p>
+  <ul>
+  <li>Título = Schemas XML para Validação Empresarial<br></li>
+  <li>Tipos Básicos = CPF, CNPJ, CEP, UF, valores monetários<br></li>
+  <li>Tipos Complexos = Endereço, pessoa, empresa<br></li>
+  <li>Validações = Expressões regulares e restrições<br></li>
+  <li>Documentos Fiscais = Schema para produto com impostos<br></li>
+  <li>Validação Programática = Código JavaScript de validação<br></li>
+</ul>
+</p>Implemente validações rigorosas para documentos brasileiros e regras de negócio.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

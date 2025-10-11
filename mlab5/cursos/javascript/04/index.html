@@ -1,0 +1,1037 @@
+<!--curso_javascript/04/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 04 - DOM e Eventos Modernos | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda manipulação moderna do DOM: querySelector, eventos, classList, dataset e delegação de eventos para interfaces interativas.">
+  <meta name="keywords" content="javascript, dom, eventos, queryselector, classlist, dataset, delegação, manipulação dom">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 04 - DOM e Eventos Modernos | ML5Lab">
+  <meta property="og:description" content="Aprenda manipulação moderna do DOM: querySelector, eventos, classList, dataset e delegação de eventos para interfaces interativas.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 04 - DOM e Eventos Modernos | ML5Lab">
+  <meta name="twitter:description" content="Aprenda manipulação moderna do DOM: querySelector, eventos, classList, dataset e delegação de eventos para interfaces interativas.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🌐 DOM e Eventos Modernos</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Manipulação Moderna do DOM</h3>
+  <p>O DOM (Document Object Model) é a representação em árvore da estrutura HTML, permitindo que JavaScript manipule elementos, estilos e comportamentos de forma dinâmica e eficiente.</p>
+  <h4>Conceitos Fundamentais:</h4>
+  <ul class="left_list">
+    <li><strong>DOM como árvore:</strong> Estrutura hierárquica de nós</li>
+    <li><strong>Seletores modernos:</strong> querySelector e querySelectorAll</li>
+    <li><strong>Manipulação de classes:</strong> classList API</li>
+    <li><strong>Dataset:</strong> Acesso a data-* attributes</li>
+    <li><strong>Delegação de eventos:</strong> Performance otimizada</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Seletores Modernos: querySelector e querySelectorAll</h3>
+  <p>Os métodos <code>querySelector</code> e <code>querySelectorAll</code> revolucionaram a seleção de elementos, permitindo usar seletores CSS avançados de forma nativa.</p>
+  <h4>Vantagens dos Seletores Modernos:</h4>
+  <ul class="left_list">
+    <li>Sintaxe CSS familiar</li>
+    <li>Seletores complexos em uma única chamada</li>
+    <li>Performance otimizada</li>
+    <li>Suporte a pseudo-seletores</li>
+    <li>Flexibilidade máxima</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Seletores Modernos:</h4>
+  <pre><code>// ✅ Seletores básicos
+const titulo = document.querySelector('h1');
+const paragrafos = document.querySelectorAll('p');
+const botao = document.querySelector('#meu-botao');
+const elementos = document.querySelectorAll('.classe-especial');
+
+// ✅ Seletores complexos
+const primeiroParagrafo = document.querySelector('p:first-child');
+const ultimoItem = document.querySelector('li:last-child');
+const elementosPares = document.querySelectorAll('tr:nth-child(even)');
+const inputAtivo = document.querySelector('input:focus');
+
+// ✅ Seletores de atributos
+const linksExternos = document.querySelectorAll('a[href^="http"]');
+const inputsObrigatorios = document.querySelectorAll('input[required]');
+const elementosComData = document.querySelectorAll('[data-toggle]');
+
+// ✅ Seletores combinados
+const paragrafosEmDiv = document.querySelectorAll('div p');
+const filhosDiretos = document.querySelectorAll('ul > li');
+const elementosAdjacentes = document.querySelectorAll('h1 + p');
+
+// ✅ Seletores de pseudo-classes
+const elementoHover = document.querySelector('button:hover');
+const checkboxMarcado = document.querySelector('input[type="checkbox"]:checked');
+const primeiroFilho = document.querySelector('.container > *:first-child');
+
+// ✅ Busca dentro de elementos específicos
+const container = document.querySelector('.container');
+const elementosInternos = container.querySelectorAll('.item');
+const primeiroInterno = container.querySelector(':first-child');
+
+// ✅ Exemplo prático: selecionar elementos de um formulário
+const formulario = document.querySelector('#formulario-contato');
+const inputs = formulario.querySelectorAll('input[type="text"], input[type="email"]');
+const botaoEnviar = formulario.querySelector('button[type="submit"]');
+const mensagens = formulario.querySelectorAll('.mensagem-erro');
+
+// ✅ Converter NodeList para Array (se necessário)
+const elementosArray = Array.from(document.querySelectorAll('.item'));
+// ou usando spread operator
+const elementosSpread = [...document.querySelectorAll('.item')];
+
+// ✅ Verificar se elemento existe
+const elemento = document.querySelector('.elemento-inexistente');
+if (elemento) {
+  console.log('Elemento encontrado:', elemento);
+} else {
+  console.log('Elemento não encontrado');
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Manipulação de Classes com classList</h3>
+  <p>A API <code>classList</code> oferece métodos modernos e eficientes para manipular classes CSS, substituindo o antigo <code>className</code> por uma interface mais robusta.</p>
+  <h4>Métodos do classList:</h4>
+  <ul class="left_list">
+    <li><code>add()</code> - Adiciona classes</li>
+    <li><code>remove()</code> - Remove classes</li>
+    <li><code>toggle()</code> - Alterna classes</li>
+    <li><code>contains()</code> - Verifica se classe existe</li>
+    <li><code>replace()</code> - Substitui uma classe por outra</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de classList:</h4>
+  <pre><code>// ✅ Manipulação básica de classes
+const elemento = document.querySelector('.meu-elemento');
+
+// Adicionar classes
+elemento.classList.add('ativo', 'destaque');
+elemento.classList.add('nova-classe');
+
+// Remover classes
+elemento.classList.remove('inativo');
+elemento.classList.remove('classe-antiga', 'outra-classe');
+
+// Alternar classe (toggle)
+elemento.classList.toggle('visivel');
+elemento.classList.toggle('escondido', true); // força adicionar
+elemento.classList.toggle('escondido', false); // força remover
+
+// Verificar se classe existe
+if (elemento.classList.contains('ativo')) {
+  console.log('Elemento está ativo');
+}
+
+// Substituir classe
+elemento.classList.replace('classe-antiga', 'classe-nova');
+
+// ✅ Exemplo prático: menu responsivo
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const overlay = document.querySelector('.overlay');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('aberto');
+  overlay.classList.toggle('visivel');
+  menuToggle.classList.toggle('ativo');
+  
+  // Alternar aria-expanded para acessibilidade
+  const isOpen = menu.classList.contains('aberto');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// ✅ Exemplo: sistema de tabs
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetTab = button.dataset.tab;
+    
+    // Remover classe ativa de todos os botões e conteúdos
+    tabButtons.forEach(btn => btn.classList.remove('ativo'));
+    tabContents.forEach(content => content.classList.remove('ativo'));
+    
+    // Adicionar classe ativa ao botão clicado e conteúdo correspondente
+    button.classList.add('ativo');
+    document.querySelector(`[data-content="${targetTab}"]`).classList.add('ativo');
+  });
+});
+
+// ✅ Exemplo: tema escuro/claro
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('tema-escuro');
+  
+  // Salvar preferência no localStorage
+  const isDark = body.classList.contains('tema-escuro');
+  localStorage.setItem('tema', isDark ? 'escuro' : 'claro');
+  
+  // Atualizar ícone do toggle
+  const icon = themeToggle.querySelector('i');
+  icon.textContent = isDark ? '☀️' : '🌙';
+});
+
+// ✅ Carregar tema salvo
+const temaSalvo = localStorage.getItem('tema');
+if (temaSalvo === 'escuro') {
+  body.classList.add('tema-escuro');
+  themeToggle.querySelector('i').textContent = '☀️';
+}
+
+// ✅ Animações com classes
+const animarElemento = (elemento) => {
+  elemento.classList.add('animando');
+  
+  // Remover classe após animação
+  elemento.addEventListener('animationend', () => {
+    elemento.classList.remove('animando');
+  }, { once: true });
+};
+
+// ✅ Sistema de validação com classes
+const validarCampo = (campo) => {
+  const valor = campo.value.trim();
+  const isValid = valor.length > 0;
+  
+  campo.classList.toggle('valido', isValid);
+  campo.classList.toggle('invalido', !isValid);
+  
+  return isValid;
+};
+
+// Aplicar validação em tempo real
+document.querySelectorAll('input[required]').forEach(campo => {
+  campo.addEventListener('blur', () => validarCampo(campo));
+  campo.addEventListener('input', () => validarCampo(campo));
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Dataset - Acesso a Data Attributes</h3>
+  <p>A propriedade <code>dataset</code> fornece acesso limpo aos atributos <code>data-*</code>, permitindo armazenar informações customizadas nos elementos HTML de forma padronizada.</p>
+  <h4>Vantagens do Dataset:</h4>
+  <ul class="left_list">
+    <li>Acesso padronizado a data attributes</li>
+    <li>Conversão automática de nomes (kebab-case → camelCase)</li>
+    <li>Integração com HTML semântico</li>
+    <li>Dados customizados nos elementos</li>
+    <li>Facilita configuração de componentes</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Dataset:</h4>
+  <pre><code>// ✅ HTML com data attributes
+/*
+<div class="produto" 
+     data-id="123" 
+     data-preco="29.99" 
+     data-categoria="eletrônicos"
+     data-em-estoque="true"
+     data-config='{"cor": "azul", "tamanho": "M"}'>
+  <h3>Smartphone XYZ</h3>
+  <button data-action="comprar">Comprar</button>
+</div>
+*/
+
+// ✅ Acesso via dataset
+const produto = document.querySelector('.produto');
+
+// Acesso simples
+console.log(produto.dataset.id); // "123"
+console.log(produto.dataset.preco); // "29.99"
+console.log(prodaset.categoria); // "eletrônicos"
+
+// Conversão automática de tipos
+const preco = parseFloat(produto.dataset.preco); // 29.99
+const emEstoque = produto.dataset.emEstoque === 'true'; // true
+
+// ✅ Modificar dataset
+produto.dataset.preco = '24.99';
+produto.dataset.promocao = 'true';
+produto.dataset.desconto = '15';
+
+// ✅ Dataset com JSON
+const config = JSON.parse(produto.dataset.config);
+console.log(config.cor); // "azul"
+console.log(config.tamanho); // "M"
+
+// ✅ Exemplo prático: carrinho de compras
+const botoesComprar = document.querySelectorAll('[data-action="comprar"]');
+
+botoesComprar.forEach(botao => {
+  botao.addEventListener('click', (e) => {
+    const produto = e.target.closest('.produto');
+    const produtoData = {
+      id: produto.dataset.id,
+      nome: produto.querySelector('h3').textContent,
+      preco: parseFloat(produto.dataset.preco),
+      categoria: produto.dataset.categoria,
+      emEstoque: produto.dataset.emEstoque === 'true'
+    };
+    
+    adicionarAoCarrinho(produtoData);
+  });
+});
+
+// ✅ Exemplo: sistema de modal
+const modalTriggers = document.querySelectorAll('[data-modal]');
+const modal = document.querySelector('.modal');
+
+modalTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const modalId = trigger.dataset.modal;
+    const modalContent = trigger.dataset.modalContent;
+    const modalSize = trigger.dataset.modalSize || 'medium';
+    
+    // Configurar modal
+    modal.dataset.modalId = modalId;
+    modal.dataset.modalSize = modalSize;
+    modal.classList.add('aberto');
+    
+    // Carregar conteúdo se especificado
+    if (modalContent) {
+      carregarConteudoModal(modalContent);
+    }
+  });
+});
+
+// ✅ Exemplo: componente de rating
+const stars = document.querySelectorAll('.star[data-rating]');
+
+stars.forEach(star => {
+  star.addEventListener('click', () => {
+    const rating = parseInt(star.dataset.rating);
+    const produtoId = star.closest('.produto').dataset.id;
+    
+    // Atualizar visual das estrelas
+    stars.forEach((s, index) => {
+      s.classList.toggle('ativa', index < rating);
+    });
+    
+    // Salvar rating
+    salvarRating(produtoId, rating);
+  });
+});
+
+// ✅ Exemplo: sistema de filtros
+const filtros = document.querySelectorAll('[data-filtrar]');
+
+filtros.forEach(filtro => {
+  filtro.addEventListener('click', () => {
+    const categoria = filtro.dataset.filtrar;
+    const valor = filtro.dataset.valor;
+    
+    // Aplicar filtro
+    filtrarProdutos(categoria, valor);
+    
+    // Atualizar estado ativo
+    filtros.forEach(f => f.classList.remove('ativo'));
+    filtro.classList.add('ativo');
+  });
+});
+
+// ✅ Dataset com arrays
+const elemento = document.querySelector('[data-tags]');
+const tags = elemento.dataset.tags.split(',').map(tag => tag.trim());
+console.log(tags); // ['javascript', 'dom', 'frontend']
+
+// ✅ Dataset dinâmico
+const atualizarDataset = (elemento, novosDados) => {
+  Object.entries(novosDados).forEach(([chave, valor]) => {
+    elemento.dataset[chave] = valor;
+  });
+};
+
+// Uso
+atualizarDataset(produto, {
+  preco: '19.99',
+  desconto: '25',
+  novoItem: 'true'
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Delegação de Eventos e Performance</h3>
+  <p>A delegação de eventos é uma técnica fundamental para otimizar performance e gerenciar eventos em elementos dinâmicos, especialmente útil em listas e componentes interativos.</p>
+  <h4>Vantagens da Delegação:</h4>
+  <ul class="left_list">
+    <li>Performance otimizada</li>
+    <li>Funciona com elementos dinâmicos</li>
+    <li>Menos event listeners</li>
+    <li>Gerenciamento centralizado</li>
+    <li>Facilita manutenção</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Delegação de Eventos:</h4>
+  <pre><code>// ✅ Delegação básica
+const lista = document.querySelector('.lista');
+
+// Em vez de adicionar listener em cada item
+lista.addEventListener('click', (e) => {
+  if (e.target.matches('.item')) {
+    console.log('Item clicado:', e.target.textContent);
+    e.target.classList.toggle('selecionado');
+  }
+});
+
+// ✅ Delegação com múltiplos tipos de elementos
+const container = document.querySelector('.container');
+
+container.addEventListener('click', (e) => {
+  const elemento = e.target;
+  
+  if (elemento.matches('.botao-editar')) {
+    editarItem(elemento.dataset.id);
+  } else if (elemento.matches('.botao-excluir')) {
+    excluirItem(elemento.dataset.id);
+  } else if (elemento.matches('.botao-favoritar')) {
+    favoritarItem(elemento.dataset.id);
+  }
+});
+
+// ✅ Exemplo prático: lista de tarefas
+const listaTarefas = document.querySelector('.lista-tarefas');
+
+// Adicionar tarefa
+function adicionarTarefa(texto) {
+  const li = document.createElement('li');
+  li.className = 'tarefa';
+  li.innerHTML = `
+    <span class="texto">${texto}</span>
+    <button class="btn-concluir" data-action="concluir">✓</button>
+    <button class="btn-excluir" data-action="excluir">✗</button>
+  `;
+  listaTarefas.appendChild(li);
+}
+
+// Delegação de eventos para ações
+listaTarefas.addEventListener('click', (e) => {
+  const botao = e.target;
+  const tarefa = botao.closest('.tarefa');
+  
+  if (botao.matches('[data-action="concluir"]')) {
+    tarefa.classList.toggle('concluida');
+    const texto = tarefa.querySelector('.texto');
+    texto.style.textDecoration = tarefa.classList.contains('concluida') 
+      ? 'line-through' 
+      : 'none';
+  } else if (botao.matches('[data-action="excluir"]')) {
+    tarefa.remove();
+  }
+});
+
+// ✅ Exemplo: sistema de tabs com delegação
+const tabContainer = document.querySelector('.tabs');
+
+tabContainer.addEventListener('click', (e) => {
+  const tabButton = e.target.closest('.tab-button');
+  
+  if (tabButton) {
+    const targetTab = tabButton.dataset.tab;
+    
+    // Remover ativo de todos
+    tabContainer.querySelectorAll('.tab-button').forEach(btn => 
+      btn.classList.remove('ativo')
+    );
+    
+    // Adicionar ativo ao clicado
+    tabButton.classList.add('ativo');
+    
+    // Mostrar conteúdo correspondente
+    tabContainer.querySelectorAll('.tab-content').forEach(content => 
+      content.classList.remove('ativo')
+    );
+    
+    const targetContent = tabContainer.querySelector(`[data-content="${targetTab}"]`);
+    if (targetContent) {
+      targetContent.classList.add('ativo');
+    }
+  }
+});
+
+// ✅ Exemplo: formulário dinâmico
+const formulario = document.querySelector('.formulario');
+
+formulario.addEventListener('click', (e) => {
+  if (e.target.matches('[data-action="adicionar-campo"]')) {
+    const tipo = e.target.dataset.tipo;
+    adicionarCampo(tipo);
+  } else if (e.target.matches('[data-action="remover-campo"]')) {
+    const campo = e.target.closest('.campo');
+    campo.remove();
+  }
+});
+
+formulario.addEventListener('input', (e) => {
+  if (e.target.matches('input[data-validacao]')) {
+    validarCampo(e.target);
+  }
+});
+
+// ✅ Exemplo: galeria de imagens
+const galeria = document.querySelector('.galeria');
+
+galeria.addEventListener('click', (e) => {
+  const imagem = e.target.closest('.imagem-galeria');
+  
+  if (imagem) {
+    const src = imagem.dataset.src;
+    const alt = imagem.dataset.alt;
+    abrirModalImagem(src, alt);
+  }
+});
+
+// ✅ Exemplo: sistema de favoritos
+const produtosContainer = document.querySelector('.produtos');
+
+produtosContainer.addEventListener('click', (e) => {
+  const coracao = e.target.closest('.favoritar');
+  
+  if (coracao) {
+    const produtoId = coracao.dataset.produtoId;
+    const isFavorito = coracao.classList.contains('ativo');
+    
+    if (isFavorito) {
+      coracao.classList.remove('ativo');
+      removerFavorito(produtoId);
+    } else {
+      coracao.classList.add('ativo');
+      adicionarFavorito(produtoId);
+    }
+  }
+});
+
+// ✅ Performance: throttle para scroll
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+  if (scrollTimeout) {
+    clearTimeout(scrollTimeout);
+  }
+  
+  scrollTimeout = setTimeout(() => {
+    // Código que executa após parar de scrollar
+    atualizarPosicaoScroll();
+  }, 100);
+});
+
+// ✅ Performance: debounce para input
+let inputTimeout;
+const campoBusca = document.querySelector('.campo-busca');
+
+campoBusca.addEventListener('input', (e) => {
+  if (inputTimeout) {
+    clearTimeout(inputTimeout);
+  }
+  
+  inputTimeout = setTimeout(() => {
+    buscar(e.target.value);
+  }, 300);
+});</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Prática: Menu Interativo e Modal</h3>
+  <p>Vamos criar um menu interativo responsivo e um sistema de modal usando todas as técnicas modernas de manipulação do DOM aprendidas.</p>
+  <h4>Objetivos da Prática:</h4>
+  <ul class="left_list">
+    <li>Criar menu responsivo com animações</li>
+    <li>Implementar sistema de modal reutilizável</li>
+    <li>Usar delegação de eventos eficientemente</li>
+    <li>Aplicar dataset para configuração</li>
+    <li>Implementar acessibilidade básica</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Menu Interativo e Modal:</h4>
+  <pre><code>// ✅ Classe para Menu Responsivo
+class MenuResponsivo {
+  constructor(menuElement) {
+    this.menu = menuElement;
+    this.toggle = menuElement.querySelector('.menu-toggle');
+    this.overlay = menuElement.querySelector('.menu-overlay');
+    this.nav = menuElement.querySelector('.menu-nav');
+    this.isOpen = false;
+    
+    this.init();
+  }
+  
+  init() {
+    this.bindEvents();
+    this.setupAccessibility();
+  }
+  
+  bindEvents() {
+    // Toggle do menu
+    this.toggle.addEventListener('click', () => this.toggleMenu());
+    
+    // Fechar com overlay
+    this.overlay.addEventListener('click', () => this.closeMenu());
+    
+    // Fechar com ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.closeMenu();
+      }
+    });
+    
+    // Fechar ao clicar em link
+    this.nav.addEventListener('click', (e) => {
+      if (e.target.matches('a[href^="#"]')) {
+        this.closeMenu();
+      }
+    });
+  }
+  
+  toggleMenu() {
+    if (this.isOpen) {
+      this.closeMenu();
+    } else {
+      this.openMenu();
+    }
+  }
+  
+  openMenu() {
+    this.isOpen = true;
+    this.menu.classList.add('menu-aberto');
+    this.toggle.classList.add('ativo');
+    this.overlay.classList.add('visivel');
+    document.body.classList.add('menu-aberto');
+    
+    // Foco no primeiro link
+    const primeiroLink = this.nav.querySelector('a');
+    if (primeiroLink) {
+      primeiroLink.focus();
+    }
+  }
+  
+  closeMenu() {
+    this.isOpen = false;
+    this.menu.classList.remove('menu-aberto');
+    this.toggle.classList.remove('ativo');
+    this.overlay.classList.remove('visivel');
+    document.body.classList.remove('menu-aberto');
+    
+    // Retornar foco ao toggle
+    this.toggle.focus();
+  }
+  
+  setupAccessibility() {
+    this.toggle.setAttribute('aria-expanded', 'false');
+    this.toggle.setAttribute('aria-controls', 'menu-nav');
+    this.nav.setAttribute('id', 'menu-nav');
+    this.nav.setAttribute('aria-hidden', 'true');
+  }
+}
+
+// ✅ Classe para Modal
+class Modal {
+  constructor() {
+    this.modal = null;
+    this.overlay = null;
+    this.isOpen = false;
+    this.focusableElements = [];
+    this.lastFocusedElement = null;
+    
+    this.init();
+  }
+  
+  init() {
+    this.createModalHTML();
+    this.bindEvents();
+  }
+  
+  createModalHTML() {
+    // Criar estrutura do modal
+    const modalHTML = `
+      <div class="modal-overlay" data-modal-overlay>
+        <div class="modal-container" data-modal-container>
+          <div class="modal-header">
+            <h2 class="modal-title" data-modal-title></h2>
+            <button class="modal-close" data-modal-close aria-label="Fechar modal">
+              <span>×</span>
+            </button>
+          </div>
+          <div class="modal-body" data-modal-body></div>
+          <div class="modal-footer" data-modal-footer></div>
+        </div>
+      </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    this.modal = document.querySelector('.modal-overlay');
+    this.overlay = this.modal;
+    this.container = this.modal.querySelector('.modal-container');
+    this.title = this.modal.querySelector('[data-modal-title]');
+    this.body = this.modal.querySelector('[data-modal-body]');
+    this.footer = this.modal.querySelector('[data-modal-footer]');
+    this.closeBtn = this.modal.querySelector('[data-modal-close]');
+  }
+  
+  bindEvents() {
+    // Fechar modal
+    this.closeBtn.addEventListener('click', () => this.close());
+    this.overlay.addEventListener('click', (e) => {
+      if (e.target === this.overlay) {
+        this.close();
+      }
+    });
+    
+    // ESC para fechar
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isOpen) {
+        this.close();
+      }
+    });
+    
+    // Trap de foco
+    this.modal.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        this.trapFocus(e);
+      }
+    });
+  }
+  
+  open(options = {}) {
+    const {
+      title = '',
+      content = '',
+      footer = '',
+      size = 'medium',
+      closable = true
+    } = options;
+    
+    // Configurar conteúdo
+    this.title.textContent = title;
+    this.body.innerHTML = content;
+    this.footer.innerHTML = footer;
+    
+    // Configurar tamanho
+    this.container.className = `modal-container modal-${size}`;
+    
+    // Configurar fechamento
+    this.closeBtn.style.display = closable ? 'block' : 'none';
+    
+    // Salvar elemento que tinha foco
+    this.lastFocusedElement = document.activeElement;
+    
+    // Mostrar modal
+    this.modal.classList.add('modal-aberto');
+    document.body.classList.add('modal-aberto');
+    this.isOpen = true;
+    
+    // Configurar acessibilidade
+    this.setupAccessibility();
+    
+    // Focar no modal
+    this.container.focus();
+    
+    // Buscar elementos focáveis
+    this.updateFocusableElements();
+  }
+  
+  close() {
+    this.modal.classList.remove('modal-aberto');
+    document.body.classList.remove('modal-aberto');
+    this.isOpen = false;
+    
+    // Retornar foco
+    if (this.lastFocusedElement) {
+      this.lastFocusedElement.focus();
+    }
+  }
+  
+  setupAccessibility() {
+    this.modal.setAttribute('aria-hidden', 'false');
+    this.container.setAttribute('tabindex', '-1');
+    this.container.setAttribute('role', 'dialog');
+    this.container.setAttribute('aria-modal', 'true');
+  }
+  
+  updateFocusableElements() {
+    const focusableSelectors = [
+      'button:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      'a[href]',
+      '[tabindex]:not([tabindex="-1"])'
+    ];
+    
+    this.focusableElements = this.modal.querySelectorAll(focusableSelectors.join(', '));
+  }
+  
+  trapFocus(e) {
+    const firstElement = this.focusableElements[0];
+    const lastElement = this.focusableElements[this.focusableElements.length - 1];
+    
+    if (e.shiftKey) {
+      if (document.activeElement === firstElement) {
+        e.preventDefault();
+        lastElement.focus();
+      }
+    } else {
+      if (document.activeElement === lastElement) {
+        e.preventDefault();
+        firstElement.focus();
+      }
+    }
+  }
+}
+
+// ✅ Inicialização dos componentes
+document.addEventListener('DOMContentLoaded', () => {
+  // Inicializar menu
+  const menuElement = document.querySelector('.menu-responsivo');
+  if (menuElement) {
+    new MenuResponsivo(menuElement);
+  }
+  
+  // Inicializar modal
+  const modal = new Modal();
+  
+  // Configurar botões que abrem modal
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-modal-trigger]');
+    
+    if (trigger) {
+      const modalType = trigger.dataset.modalTrigger;
+      const modalOptions = {
+        title: trigger.dataset.modalTitle || 'Modal',
+        content: trigger.dataset.modalContent || '<p>Conteúdo do modal</p>',
+        size: trigger.dataset.modalSize || 'medium',
+        closable: trigger.dataset.modalClosable !== 'false'
+      };
+      
+      // Exemplos de diferentes tipos de modal
+      switch (modalType) {
+        case 'confirmacao':
+          modalOptions.title = 'Confirmar ação';
+          modalOptions.content = '<p>Tem certeza que deseja continuar?</p>';
+          modalOptions.footer = `
+            <button class="btn btn-secondary" data-modal-close>Cancelar</button>
+            <button class="btn btn-primary" onclick="confirmarAcao()">Confirmar</button>
+          `;
+          break;
+          
+        case 'formulario':
+          modalOptions.title = 'Novo item';
+          modalOptions.content = `
+            <form class="modal-form">
+              <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+              </div>
+              <div class="form-group">
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao"></textarea>
+              </div>
+            </form>
+          `;
+          modalOptions.footer = `
+            <button class="btn btn-secondary" data-modal-close>Cancelar</button>
+            <button class="btn btn-primary" onclick="salvarItem()">Salvar</button>
+          `;
+          break;
+      }
+      
+      modal.open(modalOptions);
+    }
+  });
+});
+
+// ✅ Funções auxiliares
+function confirmarAcao() {
+  console.log('Ação confirmada');
+  modal.close();
+}
+
+function salvarItem() {
+  const form = document.querySelector('.modal-form');
+  const formData = new FormData(form);
+  
+  console.log('Dados do formulário:', Object.fromEntries(formData));
+  modal.close();
+}</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma interface interativa completa com DOM moderno:<p>
+  <ul>
+  <li>Título = Interface Interativa com DOM Moderno<br></li>
+  <li>Menu responsivo com animações suaves<br></li>
+  <li>Sistema de modal reutilizável e acessível<br></li>
+  <li>Delegação de eventos para performance<br></li>
+  <li>Uso de dataset para configuração<br></li>
+  <li>Manipulação de classes com classList<br></li>
+  <li>Implementação de acessibilidade básica<br></li>
+</ul>
+</p>Inclua componentes como tabs, accordion e galeria de imagens com interações modernas.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

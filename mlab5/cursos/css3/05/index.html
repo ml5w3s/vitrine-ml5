@@ -1,0 +1,518 @@
+<!--curso_css3/05/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 05 - Transições e Animações CSS3 | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre transições e animações CSS3 para criar interfaces dinâmicas. Domine transition, @keyframes, animation e propriedades de timing.">
+  <meta name="keywords" content="css3, transições, animações, transition, keyframes, animation, timing, easing, interface dinâmica">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 05 - Transições e Animações CSS3 | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre transições e animações CSS3 para criar interfaces dinâmicas e interativas.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 05 - Transições e Animações CSS3 | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre transições e animações CSS3 para criar interfaces dinâmicas e interativas.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>✨ CSS3 - Transições e Animações</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Transições CSS3</h3>
+  <p>As transições CSS3 permitem criar mudanças suaves entre estados de elementos, melhorando significativamente a experiência do usuário com animações fluidas e naturais.</p>
+  <h4>Vantagens das Transições:</h4>
+  <ul class="left_list">
+    <li>Mudanças suaves entre estados</li>
+    <li>Melhor experiência do usuário</li>
+    <li>Performance otimizada pelo navegador</li>
+    <li>Fácil de implementar</li>
+    <li>Suporte amplo nos navegadores</li>
+    <li>Reduz necessidade de JavaScript</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/transicoes_conceitos_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/transicoes_conceitos_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/css3/05/images/transicoes_conceitos_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Propriedade transition</h3>
+  <p>A propriedade transition é a base das transições CSS, definindo como as mudanças de propriedades devem ser animadas.</p>
+  <h4>Propriedades da Transition:</h4>
+  <ul class="left_list">
+    <li>transition-property - Propriedades a animar</li>
+    <li>transition-duration - Duração da animação</li>
+    <li>transition-timing-function - Função de timing</li>
+    <li>transition-delay - Atraso para iniciar</li>
+    <li>transition - Shorthand das propriedades</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Transição:</h4>
+  <pre><code>/* Transição básica */
+.botao {
+  background-color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #0056b3;
+}
+
+/* Transição múltipla */
+.card {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Transição específica */
+.elemento {
+  transition: opacity 0.5s ease 0.2s;
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Funções de Timing</h3>
+  <p>As funções de timing controlam a velocidade da animação ao longo do tempo, criando diferentes sensações de movimento.</p>
+  <h4>Funções Disponíveis:</h4>
+  <ul class="left_list">
+    <li>ease - Lento, rápido, lento (padrão)</li>
+    <li>linear - Velocidade constante</li>
+    <li>ease-in - Lento no início</li>
+    <li>ease-out - Lento no fim</li>
+    <li>ease-in-out - Lento no início e fim</li>
+    <li>cubic-bezier() - Função personalizada</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Timing:</h4>
+  <pre><code>/* Diferentes sensações */
+.rapido { transition: all 0.2s ease; }
+.normal { transition: all 0.3s ease-in-out; }
+.lento { transition: all 0.8s ease-out; }
+
+/* Função personalizada */
+.personalizado {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Transições específicas */
+.elemento {
+  transition: 
+    width 0.3s ease-in,
+    height 0.3s ease-out,
+    opacity 0.2s linear;
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/timing_functions_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/timing_functions_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/css3/05/images/timing_functions_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Animações com @keyframes</h3>
+  <p>As animações CSS3 permitem criar movimentos complexos e contínuos usando a regra @keyframes para definir os estágios da animação.</p>
+  <h4>Conceitos das Animações:</h4>
+  <ul class="left_list">
+    <li>@keyframes - Define estágios da animação</li>
+    <li>from/to ou porcentagens - Pontos da animação</li>
+    <li>animation-name - Nome da animação</li>
+    <li>animation-duration - Duração total</li>
+    <li>animation-iteration-count - Número de repetições</li>
+    <li>animation-direction - Direção da animação</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Criando Keyframes:</h4>
+  <pre><code>/* Animação básica */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Animação com múltiplos estágios */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Animação complexa */
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Propriedades de Animation</h3>
+  <p>As propriedades de animation controlam como as animações @keyframes são executadas, incluindo duração, repetição e direção.</p>
+  <h4>Propriedades Principais:</h4>
+  <ul class="left_list">
+    <li>animation-name - Nome da animação</li>
+    <li>animation-duration - Duração em segundos</li>
+    <li>animation-timing-function - Função de timing</li>
+    <li>animation-delay - Atraso para iniciar</li>
+    <li>animation-iteration-count - Número de repetições</li>
+    <li>animation-direction - Direção (normal/reverse/alternate)</li>
+    <li>animation-fill-mode - Estado antes/depois</li>
+    <li>animation-play-state - Pausar/executar</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Aplicando Animações:</h4>
+  <pre><code>/* Aplicação básica */
+.elemento {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Configuração detalhada */
+.botao {
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Shorthand */
+.loading {
+  animation: spin 1s linear infinite;
+}
+
+/* Múltiplas animações */
+.complexo {
+  animation: 
+    fadeIn 0.5s ease-in,
+    slideIn 0.8s ease-out 0.3s;
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/animation_properties_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/animation_properties_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/css3/05/images/animation_properties_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Estados de Animação</h3>
+  <p>animation-fill-mode e animation-play-state permitem controlar o estado dos elementos antes, durante e após as animações.</p>
+  <h4>animation-fill-mode:</h4>
+  <ul class="left_list">
+    <li>none - Não aplica estilos (padrão)</li>
+    <li>forwards - Mantém estado final</li>
+    <li>backwards - Aplica estado inicial</li>
+    <li>both - Aplica inicial e final</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Estados:</h4>
+  <pre><code>/* Mantém estado final */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Controle de execução */
+.pausavel {
+  animation: rotate 2s linear infinite;
+}
+
+.pausavel:hover {
+  animation-play-state: paused;
+}
+
+/* Estado inicial aplicado */
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+  animation-fill-mode: backwards;
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Animações de Performance</h3>
+  <p>Para animações suaves e performáticas, é importante usar propriedades que não causem repaint ou reflow do navegador.</p>
+  <h4>Propriedades Performáticas:</h4>
+  <ul class="left_list">
+    <li>transform - Muda posição/rotação sem reflow</li>
+    <li>opacity - Muda transparência suavemente</li>
+    <li>filter - Efeitos visuais otimizados</li>
+    <li>will-change - Dica para otimização</li>
+    <li>Evitar: width, height, margin, padding</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Otimização de Performance:</h4>
+  <pre><code>/* ✅ Performático */
+.elemento {
+  transform: translateX(100px);
+  opacity: 0.5;
+  will-change: transform, opacity;
+}
+
+/* ❌ Evitar */
+.elemento-lento {
+  width: 200px;
+  height: 100px;
+  margin-left: 50px;
+}
+
+/* Hardware acceleration */
+.acelerado {
+  transform: translateZ(0);
+  /* ou */
+  transform: translate3d(0, 0, 0);
+}
+
+/* Exemplo otimizado */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/performance_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/css3/05/images/performance_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/css3/05/images/performance_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Casos de Uso Práticos</h3>
+  <p>Transições e animações são fundamentais para criar interfaces modernas e interativas que guiam a atenção do usuário.</p>
+  <h4>Aplicações Comuns:</h4>
+  <ul class="left_list">
+    <li>Hover effects em botões e cards</li>
+    <li>Loading spinners e indicadores</li>
+    <li>Transições de página</li>
+    <li>Micro-interações</li>
+    <li>Feedback visual de ações</li>
+    <li>Animações de entrada/saída</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos Práticos:</h4>
+  <pre><code>/* Botão com hover suave */
+.btn {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Card com efeito de entrada */
+@keyframes slideInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.card {
+  animation: slideInUp 0.6s ease-out;
+}</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie interfaces dinâmicas usando Transições e Animações CSS3 com:<p>
+  <ul>
+  <li>Título = Interface Dinâmica com CSS3<br></li>
+  <li>Transições = Hover effects em botões e cards<br></li>
+  <li>Animações = Loading spinner e elementos de entrada<br></li>
+  <li>Keyframes = Animações complexas com múltiplos estágios<br></li>
+  <li>Performance = Use transform e opacity para otimização<br></li>
+  <li>Timing = Diferentes funções de easing para variadas sensações<br></li>
+</ul>
+</p>Crie micro-interações que melhorem a experiência do usuário.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+<!--curso_jquery/01/index.html-->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,95 +6,478 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="../../images/ml5w3s.ico">
-
-  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 01 - Introdução ao jQuery | ML5Lab</title>
 
   <!-- SEO  -->
-  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
-  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="description" content="Aprenda os fundamentos do jQuery: seletores, manipulação DOM, eventos básicos e sintaxe da biblioteca JavaScript mais popular.">
+  <meta name="keywords" content="jquery, introdução, seletores, dom, javascript, biblioteca, programação web">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://seusite.com/cursos">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
   <meta http-equiv="content-language" content="pt-BR">
 
   <!-- OG -->
-  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
-  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:title" content="Aula 01 - Introdução ao jQuery | ML5Lab">
+  <meta property="og:description" content="Aprenda os fundamentos do jQuery: seletores, manipulação DOM, eventos básicos e sintaxe da biblioteca JavaScript mais popular.">
   <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
   <meta property="og:url" content="http://ml5w3s.com.br">
   <meta property="og:type" content="website">
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../../css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../../css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
-  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:title" content="Aula 01 - Introdução ao jQuery | ML5Lab">
+  <meta name="twitter:description" content="Aprenda os fundamentos do jQuery: seletores, manipulação DOM, eventos básicos e sintaxe da biblioteca JavaScript mais popular.">
   <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
 
   <!--PLUGIN jQUERY-->
-  <script src="../../js/jquery.min.js" ></script>
-  <script src="script.js"></script>
+  <script src="/vitrine-ml5/mlab5/js/jquery.min.js"></script>
 </head>
 
 <body>
 
-<!-- CABEÇALHO -->
+<!-- COMPONENTES -->
 <div id="header-placeholder"></div>
 <main id="aulas">
 
 <!-- ARTIGOS -->
 <section class="container">
-  <article class="item">
-    <picture>
-      <source media="(min-width: 1024px)" srcset="../../images/banner_legado_desktop.png" alt="Tecnologia Legada">
-      <source media="(min-width: 600px)" srcset="../../images/banner_legado_tablet.png" alt="Tecnologia Legada">
-      <img src="../../images/banner_legado_mobile.png" alt="Tecnologia Legada">
-    </picture>
-    <h3>🧱 JQuery - biblioteca JavaScript de código aberto</h3>
-  </article>
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_legado_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_legado_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_legado_mobile.png">
+  </picture>
+  <h3>🧱 Introdução ao jQuery</h3>
+</article>
 </section>
 
-  <article class="item">
-    <h3>Ocultar e Mostrar</h3>
-    <p>Esta função do JQuery serve para ocultar e mostrar uma imagem. Segue o exemplo do código para resolução do execrício:</p>
-  </article>
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>O que é jQuery?</h3>
+  <p>jQuery é uma biblioteca JavaScript rápida, pequena e rica em recursos que simplifica a manipulação do DOM, o tratamento de eventos, as animações e as interações AJAX para desenvolvimento web.</p>
+  <h4>Principais vantagens do jQuery:</h4>
+  <ul class="left_list">
+    <li><strong>Sintaxe simplificada:</strong> Código mais limpo e legível</li>
+    <li><strong>Compatibilidade:</strong> Funciona em todos os navegadores</li>
+    <li><strong>Seletores CSS:</strong> Usa seletores familiares para encontrar elementos</li>
+    <li><strong>Encadeamento:</strong> Permite executar múltiplas operações em uma linha</li>
+    <li><strong>Plugins:</strong> Extensível com milhares de plugins disponíveis</li>
+  </ul>
+</article>
 
-  <article class="item">
-    <h3>Clique para ocultar e exibir a logo</h3> 
-    <button id="ocultar">Ocultar imagem</button>
-    <button id="exibir">Exibir imagem</button>
-  </article>
-
-  <article class="item">
-    <h3>Efeito Show Hide usando JQuery</h3>     
-    <div id="box">
-    <br/>
-      <img id="logo" src="../../images/jquery_mobile.png" alt="Tecnologia Legada">
-    <br/>
-    </div>
-  </article>
-
-  <article class="item-full-width">
-    <h3>Segue o código para realizar o efeito mostrar e ocultar</h3>
-    <img src="../../images/jquery/cod_001.png" alt="script do codigo">
-  </article>
-
-  <article class="item">
-    <div>
-      <a href="../../playground/">Playground</a>
-    </div>
-  </article>
-
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/01/images/introducao_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/01/images/introducao_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/jquery/01/images/introducao_mobile.png">
+  </picture>
+</article>
 </section>
 
-<!-- RODAPÉ  -->
+<section class="container">
+<article class="item">
+  <h3>Incluindo o jQuery</h3>
+  <p>Para usar o jQuery, você precisa incluí-lo em sua página HTML. Existem várias formas de fazer isso:</p>
+  <h4>Métodos de inclusão:</h4>
+  <ul class="left_list">
+    <li><strong>CDN:</strong> Carregamento direto da internet</li>
+    <li><strong>Download local:</strong> Arquivo baixado no servidor</li>
+    <li><strong>Package managers:</strong> NPM, Bower, etc.</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de inclusão:</h4>
+  <pre><code><!-- ✅ Inclusão via CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- ✅ Inclusão local -->
+<script src="/caminho/para/jquery.min.js"></script>
+
+<!-- ✅ Inclusão no head ou antes do fechamento do body -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha Página</title>
+    <!-- jQuery deve vir antes dos scripts que o utilizam -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Seu conteúdo HTML -->
+    
+    <!-- Ou incluir antes do fechamento do body -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html></code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Sintaxe Básica do jQuery</h3>
+  <p>A sintaxe do jQuery é projetada para tornar mais fácil navegar em um documento, selecionar elementos DOM, criar animações, lidar com eventos e desenvolver aplicações AJAX.</p>
+  <h4>Estrutura básica:</h4>
+  <ul class="left_list">
+    <li><strong>$(document).ready():</strong> Aguarda o DOM estar pronto</li>
+    <li><strong>Seletores:</strong> $("seletor") para encontrar elementos</li>
+    <li><strong>Ações:</strong> Métodos para manipular elementos</li>
+    <li><strong>Encadeamento:</strong> Múltiplas operações em sequência</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de sintaxe:</h4>
+  <pre><code>// ✅ Aguardar o DOM estar pronto
+$(document).ready(function() {
+    // Seu código jQuery aqui
+});
+
+// ✅ Sintaxe abreviada (mais comum)
+$(function() {
+    // Seu código jQuery aqui
+});
+
+// ✅ Seletores básicos
+$("p")           // Todos os parágrafos
+$("#meuId")      // Elemento com id="meuId"
+$(".minhaClasse") // Elementos com class="minhaClasse"
+
+// ✅ Encadeamento de métodos
+$("p")
+  .addClass("destaque")
+  .fadeIn(1000)
+  .click(function() {
+    alert("Parágrafo clicado!");
+  });
+
+// ✅ Manipulação básica
+$("#meuBotao").click(function() {
+    $("p").hide(); // Esconde todos os parágrafos
+});
+
+$("#mostrar").click(function() {
+    $("p").show(); // Mostra todos os parágrafos
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Seletores jQuery</h3>
+  <p>jQuery usa seletores CSS para encontrar elementos HTML. Os seletores são uma das características mais poderosas do jQuery.</p>
+  <h4>Tipos de seletores:</h4>
+  <ul class="left_list">
+    <li><strong>Seletores básicos:</strong> Elemento, ID, Classe</li>
+    <li><strong>Seletores hierárquicos:</strong> Descendente, filho, irmão</li>
+    <li><strong>Seletores de atributo:</strong> Por atributos específicos</li>
+    <li><strong>Seletores de filtro:</strong> :first, :last, :even, :odd</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de seletores:</h4>
+  <pre><code>// ✅ Seletores básicos
+$("div")              // Todos os elementos div
+$("#header")          // Elemento com id="header"
+$(".menu")            // Elementos com class="menu"
+$("div.menu")         // Divs com class="menu"
+
+// ✅ Seletores hierárquicos
+$("div p")            // Parágrafos dentro de divs
+$("div > p")          // Parágrafos filhos diretos de divs
+$("h1 + p")           // Parágrafo imediatamente após h1
+$("h1 ~ p")           // Todos os parágrafos após h1
+
+// ✅ Seletores de atributo
+$("input[type='text']")     // Inputs do tipo text
+$("a[href^='http']")        // Links que começam com http
+$("img[alt]")               // Imagens com atributo alt
+$("input[name$='email']")   // Inputs com name terminando em email
+
+// ✅ Seletores de filtro
+$("p:first")           // Primeiro parágrafo
+$("p:last")            // Último parágrafo
+$("tr:even")           // Linhas pares da tabela
+$("tr:odd")            // Linhas ímpares da tabela
+$("li:nth-child(3)")   // Terceiro item da lista
+$("p:visible")         // Parágrafos visíveis
+$("p:hidden")          // Parágrafos ocultos
+
+// ✅ Seletores de formulário
+$(":input")            // Todos os inputs
+$(":text")             // Inputs do tipo text
+$(":password")         // Inputs do tipo password
+$(":radio")            // Radio buttons
+$(":checkbox")         // Checkboxes
+$(":submit")           // Botões submit
+$(":button")           // Botões
+$(":selected")         // Opções selecionadas
+$(":checked")          // Checkboxes/radios marcados</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Manipulação Básica do DOM</h3>
+  <p>jQuery oferece métodos simples e poderosos para manipular elementos HTML: mostrar, ocultar, alterar conteúdo e atributos.</p>
+  <h4>Métodos fundamentais:</h4>
+  <ul class="left_list">
+    <li><strong>show()/hide():</strong> Mostrar e ocultar elementos</li>
+    <li><strong>html()/text():</strong> Alterar conteúdo HTML/texto</li>
+    <li><strong>addClass()/removeClass():</strong> Gerenciar classes CSS</li>
+    <li><strong>attr()/prop():</strong> Manipular atributos e propriedades</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos práticos:</h4>
+  <pre><code>// ✅ Mostrar e ocultar
+$("#meuElemento").show();        // Mostra o elemento
+$("#meuElemento").hide();        // Oculta o elemento
+$("#meuElemento").toggle();      // Alterna entre mostrar/ocultar
+
+// ✅ Alterar conteúdo
+$("#titulo").text("Novo Título");                    // Altera texto
+$("#conteudo").html("<p>Novo conteúdo</p>");        // Altera HTML
+$("#input").val("Novo valor");                       // Altera valor de input
+
+// ✅ Manipular classes
+$("#elemento").addClass("ativo");                    // Adiciona classe
+$("#elemento").removeClass("ativo");                 // Remove classe
+$("#elemento").toggleClass("ativo");                 // Alterna classe
+$("#elemento").hasClass("ativo");                    // Verifica se tem classe
+
+// ✅ Manipular atributos
+$("#imagem").attr("src", "nova-imagem.jpg");        // Altera atributo
+$("#link").attr("href", "nova-pagina.html");        // Altera href
+$("#input").prop("checked", true);                   // Marca checkbox
+
+// ✅ Exemplo prático completo
+$(document).ready(function() {
+    $("#btnOcultar").click(function() {
+        $("#logo").hide();
+    });
+    
+    $("#btnMostrar").click(function() {
+        $("#logo").show();
+    });
+    
+    $("#btnAlternar").click(function() {
+        $("#logo").toggle();
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Eventos Básicos</h3>
+  <p>jQuery simplifica o tratamento de eventos, permitindo que você responda às interações do usuário de forma eficiente e compatível entre navegadores.</p>
+  <h4>Eventos comuns:</h4>
+  <ul class="left_list">
+    <li><strong>click:</strong> Clique do mouse</li>
+    <li><strong>mouseenter/mouseleave:</strong> Entrada/saída do mouse</li>
+    <li><strong>keydown/keyup:</strong> Teclas pressionadas</li>
+    <li><strong>submit:</strong> Envio de formulário</li>
+    <li><strong>change:</strong> Mudança em campos de formulário</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de eventos:</h4>
+  <pre><code>// ✅ Eventos básicos
+$("#botao").click(function() {
+    alert("Botão clicado!");
+});
+
+$("#campo").change(function() {
+    console.log("Campo alterado: " + $(this).val());
+});
+
+$("#formulario").submit(function(e) {
+    e.preventDefault(); // Previne envio padrão
+    alert("Formulário enviado!");
+});
+
+// ✅ Eventos de mouse
+$("#elemento").mouseenter(function() {
+    $(this).addClass("hover");
+});
+
+$("#elemento").mouseleave(function() {
+    $(this).removeClass("hover");
+});
+
+// ✅ Eventos de teclado
+$(document).keydown(function(e) {
+    if (e.keyCode === 27) { // Tecla ESC
+        $("#modal").hide();
+    }
+});
+
+// ✅ Múltiplos eventos
+$("#elemento").on({
+    mouseenter: function() {
+        $(this).addClass("hover");
+    },
+    mouseleave: function() {
+        $(this).removeClass("hover");
+    },
+    click: function() {
+        alert("Elemento clicado!");
+    }
+});
+
+// ✅ Delegação de eventos
+$("#container").on("click", ".item", function() {
+    $(this).remove();
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Exemplo Prático - Ocultar e Mostrar</h3>
+  <p>Vamos criar um exemplo prático que demonstra os conceitos básicos do jQuery: seletores, eventos e manipulação do DOM.</p>
+</article>
+
+<article class="item">
+  <h4>HTML do exemplo:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Exemplo jQuery - Ocultar e Mostrar</h1>
+    
+    <button id="ocultar">Ocultar Imagem</button>
+    <button id="mostrar">Mostrar Imagem</button>
+    <button id="alternar">Alternar</button>
+    
+    <div id="container">
+        <img id="logo" src="logo.png" alt="Logo">
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $("#ocultar").click(function() {
+                $("#logo").hide();
+            });
+            
+            $("#mostrar").click(function() {
+                $("#logo").show();
+            });
+            
+            $("#alternar").click(function() {
+                $("#logo").toggle();
+            });
+        });
+    </script>
+</body>
+</html></code></pre>
+</article>
+
+<article class="item">
+  <h4>CSS para estilização:</h4>
+  <pre><code>body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#container {
+    margin: 20px 0;
+}
+
+#logo {
+    max-width: 200px;
+    height: auto;
+}</code></pre>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/01/images/exemplo_pratico_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/01/images/exemplo_pratico_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/jquery/01/images/exemplo_pratico_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma página HTML com jQuery que demonstre os conceitos básicos aprendidos:<p>
+  <ul>
+  <li>Título = Introdução ao jQuery - Exercício Prático<br></li>
+  <li>Implemente seletores para diferentes elementos<br></li>
+  <li>Adicione eventos de clique e hover<br></li>
+  <li>Crie botões para mostrar/ocultar elementos<br></li>
+  <li>Use métodos para alterar conteúdo e classes<br></li>
+  <li>Implemente manipulação de atributos<br></li>
+  <li>Adicione efeitos visuais básicos<br></li>
+</ul>
+</p>Inclua pelo menos 3 elementos interativos diferentes com funcionalidades únicas.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
 <div id="footer-placeholder"></div>
 
-<!-- SCRIPTS -->
 <script>
   async function loadComponent(placeholderId, url) {
     try {
@@ -107,17 +491,38 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', '../../js/ui/components/header.html')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = '../../js/ui/components/navbar.js';
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', '../../js/ui/components/footer.html');
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
   });
 </script>
 

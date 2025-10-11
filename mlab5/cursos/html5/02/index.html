@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="../../image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -28,7 +28,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="/vitrine-ml5/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <style>#controles{display:none;}</style>
+  <style>#exercicios, #controles{display:none;}</style>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -74,9 +74,9 @@
 
 <article class="item">
   <picture>
-    <source media="(min-width: 1024px)" srcset="images/etiqueta_desktop.png">
-    <source media="(min-width: 600px)" srcset="images/etiqueta_tablet.png">
-    <img src="images/etiqueta_mobile.png">
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_mobile.png">
   </picture>
 </article>
 </section>
@@ -101,16 +101,23 @@
   </ul>
 </article>
 <article class="item">
-    <img src="images/exemplo.png">
+    <img src="/vitrine-ml5/mlab5/cursos/html5/02/images/exemplo.png">
 </article>
 </section>
 
-  <p id="exercicio">Imagens</p>
+<span id="exercicio">
+<p>Crie uma pagina usando HTML, pode copiar o texto que tenha:<p>
+  <ul>
+  <li>Título = O Caminho do Desenvolvimento Front-End<br></li>
+  <li>Parágrafo = O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.</li>
+  <li>Sub-Titulo = Fundamentos Essenciais<br></li>
+  <li>Parágrafo = HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade.</li>
+</ul>
+</p>Propaganda.</p>
+</span>
 
   <form id="controles">
     <fieldset>
-      <legend>Controles</legend>
-
       <legend>Controles</legend>
     <h4>Escolha um template</h4>
     <select id="templateSelect">
@@ -129,15 +136,7 @@
         <option value="Georgia, serif">Georgia</option>
         <option value="'Courier New', monospace">Courier New</option>
       </select><br>
-    </label><br>
-
-    <h4>Tamanho da imagem</h4>
-    <select id="imageSizeSelect">
-      <option value="/vitrine-ml5/mlab5/images/propaganda/heisenbar_desktop.png">Grande</option>
-      <option value="/vitrine-ml5/mlab5/images/propaganda/heisenbar_tablet.png">Médio</option>
-      <option value="/vitrine-ml5/mlab5/images/propaganda/heisenbar_mobile.png" selected="selected">Pequeno</option>
-    </select>
-    <br>
+    </label><br><br>
     </fieldset><br>
     <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
   </form>
@@ -165,7 +164,7 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.php')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
         script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
@@ -180,7 +179,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const exercicio = document.getElementById('exercicio')?.innerText || "";
-    const playgroundLink = document.querySelector('a[href="/mlab5/playground"]'); 
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
 
     if (playgroundLink) {
       playgroundLink.addEventListener('click', (event) => {

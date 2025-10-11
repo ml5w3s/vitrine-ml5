@@ -1,91 +1,1075 @@
+<!--curso_jquery/04/index.html-->
 <!DOCTYPE html>
-
-<html>
-
+<html lang="pt-br">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>::Exercícios jQuery - Slide::</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 04 - Slides e Carrosséis | ML5Lab</title>
 
-<!--Chamando o plugin jQuery-->	
-<script src="../../js/jquery.min.js"></script>
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda a criar slideshows e carrosséis com jQuery: galerias de imagens, controles de navegação e efeitos de transição.">
+  <meta name="keywords" content="jquery, slideshow, carrossel, galeria, imagens, navegação, transições">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
 
-<!--Aplicação de efeitos com jQuery. Método interno-->
-<script type="text/jscript">
-	$(document).ready(function(e){
-		$("h3").click(function(){
-			$("#texto").slideToggle("slow"); <!--Outras opções de slide: slideUP (sobe), slideDown (desce).-->
-		});
-	});
-</script>	
+  <!-- OG -->
+  <meta property="og:title" content="Aula 04 - Slides e Carrosséis | ML5Lab">
+  <meta property="og:description" content="Aprenda a criar slideshows e carrosséis com jQuery: galerias de imagens, controles de navegação e efeitos de transição.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
 
-<!--Formatação com CSS. Método interno-->
-<style type="text/css">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 04 - Slides e Carrosséis | ML5Lab">
+  <meta name="twitter:description" content="Aprenda a criar slideshows e carrosséis com jQuery: galerias de imagens, controles de navegação e efeitos de transição.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
 
-	body{
-		background-color: #151515;
-		text-align:center;
-	}
-	#container{
-		width: 1350px;
-		text-align:center;
-		border:#666 1px solid;
-	}
-	h1{
-		font-family: Verdana, Geneva, sans-serif;
-		color:#ccc;
-		font-size: 24px;
-		}
-	
-	h3{
-		font-family: Verdana, Geneva, sans-serif;
-		color:orangered;
-		font-size: 24px;
-		}
-		
-	p{
-		font-family: Verdana, Geneva, sans-serif;
-		color:#ccc;
-		font-size: 14px;
-		}
-	button{
-		padding:5px 20px;
-		text-align:center;
-		background-color:orange;
-		border:#09c solid 1px;
-		border-radius: 15px;
-		}	
-	#box{
-		width: 1250px;
-		margin-left: 35px;
-		text-align:center;
-		display: none;
-		}	
-	</style>
+  <!--PLUGIN jQUERY-->
+  <script src="/vitrine-ml5/mlab5/js/jquery.min.js"></script>
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_legado_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_legado_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_legado_mobile.png">
+  </picture>
+  <h3>🎠 Slides e Carrosséis</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Slideshow Básico</h3>
+  <p>Um slideshow é uma apresentação de imagens ou conteúdo que muda automaticamente ou através de controles do usuário. Vamos aprender a criar slideshows interativos com jQuery.</p>
+  <h4>Componentes de um slideshow:</h4>
+  <ul class="left_list">
+    <li><strong>Container:</strong> Área que contém as imagens</li>
+    <li><strong>Slides:</strong> Elementos individuais (imagens/conteúdo)</li>
+    <li><strong>Controles:</strong> Botões de navegação</li>
+    <li><strong>Indicadores:</strong> Pontos ou números para mostrar posição</li>
+    <li><strong>Autoplay:</strong> Mudança automática de slides</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/04/images/slideshow_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/04/images/slideshow_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/jquery/04/images/slideshow_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Estrutura HTML para Slideshow</h3>
+  <p>A estrutura HTML é fundamental para criar um slideshow funcional e acessível.</p>
+  <h4>Elementos essenciais:</h4>
+  <ul class="left_list">
+    <li><strong>Container principal:</strong> Define a área do slideshow</li>
+    <li><strong>Wrapper de slides:</strong> Contém todos os slides</li>
+    <li><strong>Slides individuais:</strong> Cada imagem ou conteúdo</li>
+    <li><strong>Controles de navegação:</strong> Botões anterior/próximo</li>
+    <li><strong>Indicadores:</strong> Mostram posição atual</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Estrutura HTML básica:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+        
+        .slideshow-slides {
+            display: none;
+            text-align: center;
+        }
+        
+        .slideshow-slides.active {
+            display: block;
+        }
+        
+        .slideshow-slides img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .slideshow-controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .slideshow-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .slideshow-indicators {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background: #007bff;
+        }
+    </style>
 </head>
 <body>
-<div>
-<h1>Exercício 04 - Efeito Slide</h1>
-<p>Esta função do JQuery serve para mostrar um efeito sobre o slide. Segue o exemplo do código para a resolução do exercício: 
-	<h1>Efeito Slide</h1>
-</p>
-</div>	
-<div>
+    <div class="slideshow-container">
+        <div class="slideshow-wrapper">
+            <div class="slideshow-slides active">
+                <img src="imagem1.jpg" alt="Imagem 1">
+                <div class="slide-caption">Primeira imagem</div>
+            </div>
+            
+            <div class="slideshow-slides">
+                <img src="imagem2.jpg" alt="Imagem 2">
+                <div class="slide-caption">Segunda imagem</div>
+            </div>
+            
+            <div class="slideshow-slides">
+                <img src="imagem3.jpg" alt="Imagem 3">
+                <div class="slide-caption">Terceira imagem</div>
+            </div>
+        </div>
+        
+        <div class="slideshow-controls">
+            <button class="slideshow-btn" id="prev">Anterior</button>
+            <button class="slideshow-btn" id="next">Próximo</button>
+            <button class="slideshow-btn" id="play-pause">Pausar</button>
+        </div>
+        
+        <div class="slideshow-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </div>
+</body>
+</html></code></pre>
+</article>
+</section>
 
-	<h3 title="Clique para exibir o texto">Clique aqui para ocultar/exibir o texto abaixo</h3>
-			<div id="texto">
-				<p>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.<br><br>
+<section class="container">
+<article class="item">
+  <h3>JavaScript para Slideshow</h3>
+  <p>O JavaScript controla a lógica do slideshow, incluindo navegação, indicadores e autoplay.</p>
+  <h4>Funcionalidades principais:</h4>
+  <ul class="left_list">
+    <li><strong>Navegação:</strong> Anterior/próximo slide</li>
+    <li><strong>Indicadores:</strong> Pular para slide específico</li>
+    <li><strong>Autoplay:</strong> Mudança automática</li>
+    <li><strong>Controles:</strong> Play/pause do autoplay</li>
+    <li><strong>Transições:</strong> Efeitos entre slides</li>
+  </ul>
+</article>
 
-					Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-</p>
+<article class="item">
+  <h4>Código JavaScript completo:</h4>
+  <pre><code>$(document).ready(function() {
+    var currentSlide = 0;
+    var totalSlides = $('.slideshow-slides').length;
+    var autoplayInterval;
+    var isAutoplay = true;
+    
+    // Função para mostrar slide específico
+    function showSlide(index) {
+        // Remove active de todos os slides
+        $('.slideshow-slides').removeClass('active').fadeOut(300);
+        
+        // Adiciona active ao slide atual
+        $('.slideshow-slides').eq(index).addClass('active').fadeIn(300);
+        
+        // Atualiza indicadores
+        $('.indicator').removeClass('active');
+        $('.indicator').eq(index).addClass('active');
+        
+        currentSlide = index;
+    }
+    
+    // Função para próximo slide
+    function nextSlide() {
+        var next = (currentSlide + 1) % totalSlides;
+        showSlide(next);
+    }
+    
+    // Função para slide anterior
+    function prevSlide() {
+        var prev = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prev);
+    }
+    
+    // Função para iniciar autoplay
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 3000);
+    }
+    
+    // Função para parar autoplay
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+    
+    // Event listeners
+    $('#next').click(function() {
+        stopAutoplay();
+        nextSlide();
+        if (isAutoplay) {
+            setTimeout(startAutoplay, 5000);
+        }
+    });
+    
+    $('#prev').click(function() {
+        stopAutoplay();
+        prevSlide();
+        if (isAutoplay) {
+            setTimeout(startAutoplay, 5000);
+        }
+    });
+    
+    $('#play-pause').click(function() {
+        if (isAutoplay) {
+            stopAutoplay();
+            $(this).text('Reproduzir');
+            isAutoplay = false;
+        } else {
+            startAutoplay();
+            $(this).text('Pausar');
+            isAutoplay = true;
+        }
+    });
+    
+    // Clique nos indicadores
+    $('.indicator').click(function() {
+        var slideIndex = $(this).data('slide');
+        stopAutoplay();
+        showSlide(slideIndex);
+        if (isAutoplay) {
+            setTimeout(startAutoplay, 5000);
+        }
+    });
+    
+    // Navegação por teclado
+    $(document).keydown(function(e) {
+        switch(e.keyCode) {
+            case 37: // Seta esquerda
+                prevSlide();
+                stopAutoplay();
+                if (isAutoplay) {
+                    setTimeout(startAutoplay, 5000);
+                }
+                break;
+            case 39: // Seta direita
+                nextSlide();
+                stopAutoplay();
+                if (isAutoplay) {
+                    setTimeout(startAutoplay, 5000);
+                }
+                break;
+            case 32: // Espaço
+                e.preventDefault();
+                $('#play-pause').click();
+                break;
+        }
+    });
+    
+    // Pausar autoplay ao passar mouse
+    $('.slideshow-container').hover(
+        function() {
+            stopAutoplay();
+        },
+        function() {
+            if (isAutoplay) {
+                startAutoplay();
+            }
+        }
+    );
+    
+    // Inicializar
+    startAutoplay();
+});</code></pre>
+</article>
+</section>
 
-</div>
+<section class="container">
+<article class="item">
+  <h3>Carrossel com Múltiplos Itens</h3>
+  <p>Um carrossel mostra múltiplos itens visíveis ao mesmo tempo, permitindo navegação lateral através do conteúdo.</p>
+  <h4>Características do carrossel:</h4>
+  <ul class="left_list">
+    <li><strong>Múltiplos itens:</strong> Vários elementos visíveis</li>
+    <li><strong>Navegação lateral:</strong> Movimento horizontal</li>
+    <li><strong>Loop infinito:</strong> Retorna ao início</li>
+    <li><strong>Responsivo:</strong> Adapta-se ao tamanho da tela</li>
+    <li><strong>Controles touch:</strong> Suporte a gestos</li>
+  </ul>
+</article>
 
-<div>
-	<h1>Segue o código para realizar o efeito mostrar e ocultar</h1>		
-		
-		<img src="slide_04.png"  alt="script_codigo">
+<article class="item">
+  <h4>HTML do carrossel:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrossel jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 300px;
+            margin: 0 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+        
+        .carousel-prev {
+            left: 10px;
+        }
+        
+        .carousel-next {
+            right: 10px;
+        }
+        
+        .carousel-indicators {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .carousel-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+        }
+        
+        .carousel-dot.active {
+            background: #007bff;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-item {
+                min-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel-wrapper" id="carousel-wrapper">
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Item 1</h3>
+                <p>Descrição do primeiro item</p>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="item2.jpg" alt="Item 2">
+                <h3>Item 2</h3>
+                <p>Descrição do segundo item</p>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="item3.jpg" alt="Item 3">
+                <h3>Item 3</h3>
+                <p>Descrição do terceiro item</p>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="item4.jpg" alt="Item 4">
+                <h3>Item 4</h3>
+                <p>Descrição do quarto item</p>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="item5.jpg" alt="Item 5">
+                <h3>Item 5</h3>
+                <p>Descrição do quinto item</p>
+            </div>
+        </div>
+        
+        <button class="carousel-controls carousel-prev" id="carousel-prev">‹</button>
+        <button class="carousel-controls carousel-next" id="carousel-next">›</button>
+        
+        <div class="carousel-indicators" id="carousel-indicators">
+            <!-- Indicadores serão gerados dinamicamente -->
+        </div>
+    </div>
+</body>
+</html></code></pre>
+</article>
+</section>
 
-</div>
+<section class="container">
+<article class="item">
+  <h3>JavaScript do Carrossel</h3>
+  <p>O JavaScript do carrossel controla o movimento lateral e a navegação entre os itens.</p>
+</article>
+
+<article class="item">
+  <h4>Código JavaScript do carrossel:</h4>
+  <pre><code>$(document).ready(function() {
+    var currentIndex = 0;
+    var itemsPerView = 3;
+    var totalItems = $('.carousel-item').length;
+    var totalPages = Math.ceil(totalItems / itemsPerView);
+    var itemWidth = $('.carousel-item').outerWidth(true);
+    
+    // Ajustar itens por visualização baseado no tamanho da tela
+    function adjustItemsPerView() {
+        if ($(window).width() <= 768) {
+            itemsPerView = 1;
+        } else if ($(window).width() <= 1024) {
+            itemsPerView = 2;
+        } else {
+            itemsPerView = 3;
+        }
+        totalPages = Math.ceil(totalItems / itemsPerView);
+        generateIndicators();
+    }
+    
+    // Gerar indicadores dinamicamente
+    function generateIndicators() {
+        var indicators = '';
+        for (var i = 0; i < totalPages; i++) {
+            var activeClass = (i === 0) ? 'active' : '';
+            indicators += '<span class="carousel-dot ' + activeClass + '" data-page="' + i + '"></span>';
+        }
+        $('#carousel-indicators').html(indicators);
+    }
+    
+    // Mover carrossel
+    function moveCarousel(index) {
+        var translateX = -(index * itemsPerView * itemWidth);
+        $('#carousel-wrapper').css('transform', 'translateX(' + translateX + 'px)');
+        
+        // Atualizar indicadores
+        $('.carousel-dot').removeClass('active');
+        $('.carousel-dot[data-page="' + index + '"]').addClass('active');
+        
+        currentIndex = index;
+    }
+    
+    // Próxima página
+    function nextPage() {
+        var nextIndex = (currentIndex + 1) % totalPages;
+        moveCarousel(nextIndex);
+    }
+    
+    // Página anterior
+    function prevPage() {
+        var prevIndex = (currentIndex - 1 + totalPages) % totalPages;
+        moveCarousel(prevIndex);
+    }
+    
+    // Event listeners
+    $('#carousel-next').click(function() {
+        nextPage();
+    });
+    
+    $('#carousel-prev').click(function() {
+        prevPage();
+    });
+    
+    // Clique nos indicadores
+    $(document).on('click', '.carousel-dot', function() {
+        var pageIndex = $(this).data('page');
+        moveCarousel(pageIndex);
+    });
+    
+    // Navegação por teclado
+    $(document).keydown(function(e) {
+        switch(e.keyCode) {
+            case 37: // Seta esquerda
+                prevPage();
+                break;
+            case 39: // Seta direita
+                nextPage();
+                break;
+        }
+    });
+    
+    // Suporte a touch/swipe
+    var startX = 0;
+    var endX = 0;
+    
+    $('#carousel-wrapper').on('touchstart', function(e) {
+        startX = e.originalEvent.touches[0].clientX;
+    });
+    
+    $('#carousel-wrapper').on('touchend', function(e) {
+        endX = e.originalEvent.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        var threshold = 50;
+        var diff = startX - endX;
+        
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                nextPage(); // Swipe left - próximo
+            } else {
+                prevPage(); // Swipe right - anterior
+            }
+        }
+    }
+    
+    // Redimensionamento da janela
+    $(window).resize(function() {
+        adjustItemsPerView();
+        moveCarousel(0);
+    });
+    
+    // Inicializar
+    adjustItemsPerView();
+    moveCarousel(0);
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Galerias de Imagens</h3>
+  <p>Uma galeria de imagens permite visualizar múltiplas imagens com funcionalidades como zoom, navegação e lightbox.</p>
+  <h4>Funcionalidades da galeria:</h4>
+  <ul class="left_list">
+    <li><strong>Grid de imagens:</strong> Layout em grade</li>
+    <li><strong>Lightbox:</strong> Visualização ampliada</li>
+    <li><strong>Zoom:</strong> Ampliação das imagens</li>
+    <li><strong>Filtros:</strong> Categorização de imagens</li>
+    <li><strong>Lazy loading:</strong> Carregamento sob demanda</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Galeria com lightbox:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria de Imagens jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            opacity: 0.8;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .lightbox img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 20px;
+        }
+        
+        .lightbox-prev {
+            left: 20px;
+        }
+        
+        .lightbox-next {
+            right: 20px;
+        }
+        
+        .gallery-filters {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 0 5px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .filter-btn.active {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="nature">Natureza</button>
+        <button class="filter-btn" data-filter="city">Cidade</button>
+        <button class="filter-btn" data-filter="people">Pessoas</button>
+    </div>
+    
+    <div class="gallery" id="gallery">
+        <div class="gallery-item" data-category="nature">
+            <img src="nature1.jpg" alt="Natureza 1">
+            <div class="gallery-overlay">
+                <h3>Natureza 1</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="city">
+            <img src="city1.jpg" alt="Cidade 1">
+            <div class="gallery-overlay">
+                <h3>Cidade 1</h3>
+            </div>
+        </div>
+        
+        <div class="gallery-item" data-category="people">
+            <img src="people1.jpg" alt="Pessoas 1">
+            <div class="gallery-overlay">
+                <h3>Pessoas 1</h3>
+            </div>
+        </div>
+        
+        <!-- Mais itens da galeria... -->
+    </div>
+    
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-image">
+            <div class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</div>
+            <div class="lightbox-nav lightbox-next" id="lightbox-next">›</div>
+        </div>
+    </div>
+</body>
+</html></code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>JavaScript da Galeria</h3>
+  <p>O JavaScript da galeria controla os filtros, lightbox e navegação entre imagens.</p>
+</article>
+
+<article class="item">
+  <h4>Código JavaScript da galeria:</h4>
+  <pre><code>$(document).ready(function() {
+    var currentImageIndex = 0;
+    var galleryImages = [];
+    var currentFilter = 'all';
+    
+    // Coletar todas as imagens da galeria
+    function collectImages() {
+        galleryImages = [];
+        $('.gallery-item').each(function() {
+            galleryImages.push({
+                src: $(this).find('img').attr('src'),
+                alt: $(this).find('img').attr('alt'),
+                category: $(this).data('category')
+            });
+        });
+    }
+    
+    // Filtros da galeria
+    $('.filter-btn').click(function() {
+        var filter = $(this).data('filter');
+        
+        // Atualizar botão ativo
+        $('.filter-btn').removeClass('active');
+        $(this).addClass('active');
+        
+        // Filtrar itens
+        $('.gallery-item').each(function() {
+            var category = $(this).data('category');
+            if (filter === 'all' || category === filter) {
+                $(this).fadeIn(300);
+            } else {
+                $(this).fadeOut(300);
+            }
+        });
+        
+        currentFilter = filter;
+    });
+    
+    // Abrir lightbox
+    $('.gallery-item').click(function() {
+        var imgSrc = $(this).find('img').attr('src');
+        var imgAlt = $(this).find('img').attr('alt');
+        
+        // Encontrar índice da imagem atual
+        currentImageIndex = $('.gallery-item').index($(this));
+        
+        // Mostrar lightbox
+        $('#lightbox-image').attr('src', imgSrc).attr('alt', imgAlt);
+        $('#lightbox').fadeIn(300);
+        
+        // Coletar imagens visíveis para navegação
+        collectVisibleImages();
+        
+        // Prevenir scroll do body
+        $('body').css('overflow', 'hidden');
+    });
+    
+    // Fechar lightbox
+    $('#lightbox-close').click(function() {
+        closeLightbox();
+    });
+    
+    $('#lightbox').click(function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+    
+    function closeLightbox() {
+        $('#lightbox').fadeOut(300);
+        $('body').css('overflow', 'auto');
+    }
+    
+    // Navegação no lightbox
+    function collectVisibleImages() {
+        var visibleImages = [];
+        $('.gallery-item:visible').each(function() {
+            visibleImages.push({
+                src: $(this).find('img').attr('src'),
+                alt: $(this).find('img').attr('alt')
+            });
+        });
+        return visibleImages;
+    }
+    
+    function showLightboxImage(index) {
+        var visibleImages = collectVisibleImages();
+        if (visibleImages.length > 0) {
+            index = index % visibleImages.length;
+            if (index < 0) index = visibleImages.length - 1;
+            
+            $('#lightbox-image').attr('src', visibleImages[index].src)
+                                .attr('alt', visibleImages[index].alt);
+            currentImageIndex = index;
+        }
+    }
+    
+    $('#lightbox-next').click(function() {
+        var visibleImages = collectVisibleImages();
+        var nextIndex = (currentImageIndex + 1) % visibleImages.length;
+        showLightboxImage(nextIndex);
+    });
+    
+    $('#lightbox-prev').click(function() {
+        var visibleImages = collectVisibleImages();
+        var prevIndex = (currentImageIndex - 1 + visibleImages.length) % visibleImages.length;
+        showLightboxImage(prevIndex);
+    });
+    
+    // Navegação por teclado no lightbox
+    $(document).keydown(function(e) {
+        if ($('#lightbox').is(':visible')) {
+            switch(e.keyCode) {
+                case 27: // ESC
+                    closeLightbox();
+                    break;
+                case 37: // Seta esquerda
+                    $('#lightbox-prev').click();
+                    break;
+                case 39: // Seta direita
+                    $('#lightbox-next').click();
+                    break;
+            }
+        }
+    });
+    
+    // Lazy loading para imagens
+    function lazyLoadImages() {
+        $('.gallery-item img').each(function() {
+            var img = $(this);
+            var src = img.data('src') || img.attr('src');
+            
+            if (src) {
+                var image = new Image();
+                image.onload = function() {
+                    img.attr('src', src);
+                    img.fadeIn(300);
+                };
+                image.src = src;
+            }
+        });
+    }
+    
+    // Inicializar
+    collectImages();
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Exemplo Prático - Galeria Completa</h3>
+  <p>Vamos criar uma galeria completa que combina slideshow, carrossel e lightbox em uma aplicação funcional.</p>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/04/images/galeria_completa_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/04/images/galeria_completa_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/jquery/04/images/galeria_completa_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma aplicação HTML com jQuery que implemente slides e carrosséis:<p>
+  <ul>
+  <li>Título = Galeria de Slides e Carrosséis jQuery<br></li>
+  <li>Implemente um slideshow com controles de navegação<br></li>
+  <li>Crie um carrossel com múltiplos itens visíveis<br></li>
+  <li>Desenvolva uma galeria de imagens com lightbox<br></li>
+  <li>Adicione filtros para categorizar conteúdo<br></li>
+  <li>Implemente navegação por teclado e touch<br></li>
+  <li>Use efeitos de transição suaves<br></li>
+</ul>
+</p>Inclua pelo menos 3 tipos diferentes de apresentação de conteúdo (slideshow, carrossel e galeria).</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

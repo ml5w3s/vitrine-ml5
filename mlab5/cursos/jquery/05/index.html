@@ -1,127 +1,1576 @@
+<!--curso_jquery/05/index.html-->
 <!DOCTYPE html>
-
-<html>
+<html lang="pt-br">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sem título</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 05 - Menus e Navegação | ML5Lab</title>
 
-<script src="../../js/jquery.min.js"></script>
-<script type="text/jscript">
-	$(document).ready(function(e) {
-		$(".main").hover(function(e) {
-			$("#sec").stop().slideToggle(500);
-		});
-	});
-</script>
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda a criar menus responsivos e sistemas de navegação com jQuery: dropdowns, accordions, tabs e navegação mobile.">
+  <meta name="keywords" content="jquery, menus, navegação, dropdown, accordion, tabs, responsivo, mobile">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
 
-<style type="text/css">
+  <!-- OG -->
+  <meta property="og:title" content="Aula 05 - Menus e Navegação | ML5Lab">
+  <meta property="og:description" content="Aprenda a criar menus responsivos e sistemas de navegação com jQuery: dropdowns, accordions, tabs e navegação mobile.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
 
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 05 - Menus e Navegação | ML5Lab">
+  <meta name="twitter:description" content="Aprenda a criar menus responsivos e sistemas de navegação com jQuery: dropdowns, accordions, tabs e navegação mobile.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
 
-body{
-		background-color: #151515;
-		text-align:center;
-	}
-	#container{
-		width: 1350px;
-		text-align:center;
-		border:#666 1px solid;
-	}
-	h1{
-		font-family: Verdana, Geneva, sans-serif;
-		color:#ccc;
-		font-size: 24px;
-		}
-	
-	h3{
-		font-family: Verdana, Geneva, sans-serif;
-		color:#ccc;
-		font-size: 24px;
-		}
-		
-	p{
-		font-family: Verdana, Geneva, sans-serif;
-		color:#ccc;
-		font-size: 14px;
-		}
-	button{
-		padding:5px 20px;
-		text-align:center;
-		background-color:orange;
-		border:#09c solid 1px;
-		border-radius: 15px;
-		}	
-	#box{
-		width: 1250px;
-		margin-left: 35px;
-		text-align:center;
-		display: none;
-		}	
+  <!--PLUGIN jQUERY-->
+  <script src="/vitrine-ml5/mlab5/js/jquery.min.js"></script>
+</head>
 
-#main{
-	margin: 0 auto;
-	width: 100px;
-	height: 40px;
-	line-height: 40px;
-	background-color:#09F;
-	font-family:Arial, Helvetica, sans-serif;
-	cursor:pointer;
-}
+<body>
 
-ul{
-	width: 100px;
-	list-style-type:none;
-	background-color:#0C0;
-	text-align:center;
-}
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
 
-li{
-	width:140px;
-	margin-left:-40px;
-}
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_legado_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_legado_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_legado_mobile.png">
+  </picture>
+  <h3>🧭 Menus e Navegação</h3>
+</article>
+</section>
 
-#sec{
-	display:none;
-}
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Menus Dropdown</h3>
+  <p>Menus dropdown são elementos de navegação que mostram submenus quando o usuário interage com eles. São fundamentais para organizar conteúdo hierárquico.</p>
+  <h4>Características dos dropdowns:</h4>
+  <ul class="left_list">
+    <li><strong>Ativação:</strong> Hover ou clique para abrir</li>
+    <li><strong>Posicionamento:</strong> Abaixo do item principal</li>
+    <li><strong>Fechamento:</strong> Automático ou manual</li>
+    <li><strong>Animação:</strong> Transições suaves</li>
+    <li><strong>Acessibilidade:</strong> Suporte a teclado</li>
+  </ul>
+</article>
 
-#sec li:hover{
-	background-color:#060;
-}
-a{
-	text-decoration:none;
-	color:#000;
-	}
-</style>
+<article class="item">
+  <h4>HTML do menu dropdown:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Dropdown jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .navbar {
+            background: #333;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        
+        .nav-item {
+            position: relative;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            background: #555;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: background 0.2s ease;
+        }
+        
+        .dropdown-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-toggle::after {
+            content: '▼';
+            margin-left: 8px;
+            font-size: 10px;
+        }
+        
+        .dropdown-toggle.open::after {
+            transform: rotate(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                transform: none;
+            }
+        }
+    </style>
 </head>
 <body>
-<div>
-<h3>Exercício 05 - Menu sec</h3>
-<p>Esta função JQuery serve para mostrar o Menu. Segue o exemplo do código para resolução do execrício:
-	<ul id="main">
-		<li class="main">UM
-		<ul id="sec">
-			<li>DOIS</li>
-			<li>TRES</li>
-			<li>QUATRO</li>
-		</ul>
-		</li>
-		</ul>
-<div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle">Produtos</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Eletrônicos</a></li>
+                    <li><a href="#" class="dropdown-item">Roupas</a></li>
+                    <li><a href="#" class="dropdown-item">Casa e Jardim</a></li>
+                    <li><a href="#" class="dropdown-item">Esportes</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle">Serviços</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Consultoria</a></li>
+                    <li><a href="#" class="dropdown-item">Suporte</a></li>
+                    <li><a href="#" class="dropdown-item">Manutenção</a></li>
+                </ul>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#" class="nav-link">Sobre</a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html></code></pre>
+</article>
+</section>
 
-	
-	<div>
-		<h3>Segue o código para realizar o efeito mostrar e ocultar</h3>		
-	
-		<img src="menu_sec_05.png" alt="script_codigo">
-</div>
-</div>
-</p>
-</div>
+<section class="container">
+<article class="item">
+  <h3>JavaScript do Menu Dropdown</h3>
+  <p>O JavaScript controla a abertura, fechamento e navegação dos dropdowns.</p>
+</article>
+
+<article class="item">
+  <h4>Código JavaScript do dropdown:</h4>
+  <pre><code>$(document).ready(function() {
+    // Fechar todos os dropdowns
+    function closeAllDropdowns() {
+        $('.dropdown-menu').removeClass('show');
+        $('.dropdown-toggle').removeClass('open');
+    }
+    
+    // Abrir dropdown específico
+    function openDropdown($toggle) {
+        closeAllDropdowns();
+        $toggle.addClass('open');
+        $toggle.siblings('.dropdown-menu').addClass('show');
+    }
+    
+    // Toggle dropdown
+    function toggleDropdown($toggle) {
+        var $menu = $toggle.siblings('.dropdown-menu');
+        
+        if ($menu.hasClass('show')) {
+            closeAllDropdowns();
+        } else {
+            openDropdown($toggle);
+        }
+    }
+    
+    // Event listeners
+    $('.dropdown-toggle').click(function(e) {
+        e.preventDefault();
+        toggleDropdown($(this));
+    });
+    
+    // Fechar dropdown ao clicar fora
+    $(document).click(function(e) {
+        if (!$(e.target).closest('.dropdown').length) {
+            closeAllDropdowns();
+        }
+    });
+    
+    // Fechar dropdown ao pressionar ESC
+    $(document).keydown(function(e) {
+        if (e.keyCode === 27) { // ESC
+            closeAllDropdowns();
+        }
+    });
+    
+    // Navegação por teclado
+    $('.dropdown-toggle').keydown(function(e) {
+        switch(e.keyCode) {
+            case 13: // Enter
+            case 32: // Space
+                e.preventDefault();
+                toggleDropdown($(this));
+                break;
+            case 27: // ESC
+                closeAllDropdowns();
+                break;
+            case 40: // Arrow Down
+                e.preventDefault();
+                openDropdown($(this));
+                $(this).siblings('.dropdown-menu').find('.dropdown-item').first().focus();
+                break;
+        }
+    });
+    
+    // Navegação dentro do dropdown
+    $('.dropdown-item').keydown(function(e) {
+        var $items = $(this).parent().find('.dropdown-item');
+        var currentIndex = $items.index(this);
+        
+        switch(e.keyCode) {
+            case 38: // Arrow Up
+                e.preventDefault();
+                var prevIndex = currentIndex > 0 ? currentIndex - 1 : $items.length - 1;
+                $items.eq(prevIndex).focus();
+                break;
+            case 40: // Arrow Down
+                e.preventDefault();
+                var nextIndex = currentIndex < $items.length - 1 ? currentIndex + 1 : 0;
+                $items.eq(nextIndex).focus();
+                break;
+            case 27: // ESC
+                closeAllDropdowns();
+                $(this).closest('.dropdown').find('.dropdown-toggle').focus();
+                break;
+        }
+    });
+    
+    // Hover para desktop (opcional)
+    if ($(window).width() > 768) {
+        $('.dropdown').hover(
+            function() {
+                $(this).find('.dropdown-toggle').addClass('open');
+                $(this).find('.dropdown-menu').addClass('show');
+            },
+            function() {
+                $(this).find('.dropdown-toggle').removeClass('open');
+                $(this).find('.dropdown-menu').removeClass('show');
+            }
+        );
+    }
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Accordion (Acordeão)</h3>
+  <p>Um accordion é um componente que permite expandir e colapsar seções de conteúdo, economizando espaço na página.</p>
+  <h4>Características do accordion:</h4>
+  <ul class="left_list">
+    <li><strong>Expansão única:</strong> Apenas um item aberto por vez</li>
+    <li><strong>Expansão múltipla:</strong> Vários itens podem estar abertos</li>
+    <li><strong>Animação:</strong> Transições suaves de altura</li>
+    <li><strong>Ícones:</strong> Indicadores visuais de estado</li>
+    <li><strong>Teclado:</strong> Navegação acessível</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>HTML do accordion:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Accordion jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .accordion {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        .accordion-item {
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .accordion-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .accordion-header:hover {
+            background: #e9ecef;
+        }
+        
+        .accordion-header.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .accordion-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .accordion-icon {
+            font-size: 18px;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .accordion-content.active {
+            padding: 20px;
+            max-height: 500px;
+        }
+        
+        .accordion-text {
+            margin: 0;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .accordion-controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .accordion-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .accordion-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion" id="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header" data-target="content1">
+                <h3 class="accordion-title">O que é jQuery?</h3>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content" id="content1">
+                <p class="accordion-text">
+                    jQuery é uma biblioteca JavaScript rápida, pequena e rica em recursos que simplifica 
+                    a manipulação do DOM, tratamento de eventos, animações e interações AJAX.
+                </p>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <button class="accordion-header" data-target="content2">
+                <h3 class="accordion-title">Quais são as vantagens do jQuery?</h3>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content" id="content2">
+                <p class="accordion-text">
+                    As principais vantagens incluem: sintaxe simplificada, compatibilidade entre navegadores, 
+                    seletores CSS familiares, encadeamento de métodos e uma grande comunidade de plugins.
+                </p>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <button class="accordion-header" data-target="content3">
+                <h3 class="accordion-title">Como incluir jQuery em um projeto?</h3>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content" id="content3">
+                <p class="accordion-text">
+                    Você pode incluir jQuery via CDN, download local ou package managers como NPM. 
+                    A forma mais comum é usar o CDN do jQuery no head do documento HTML.
+                </p>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <button class="accordion-header" data-target="content4">
+                <h3 class="accordion-title">jQuery ainda é relevante hoje?</h3>
+                <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content" id="content4">
+                <p class="accordion-text">
+                    Embora o JavaScript moderno (ES6+) tenha muitas funcionalidades nativas, jQuery ainda é 
+                    amplamente usado em projetos legados e é útil para manter compatibilidade com código existente.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="accordion-controls">
+        <button class="accordion-btn" id="expand-all">Expandir Todos</button>
+        <button class="accordion-btn" id="collapse-all">Recolher Todos</button>
+        <button class="accordion-btn" id="toggle-mode">Modo Múltiplo</button>
+    </div>
+</body>
+</html></code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>JavaScript do Accordion</h3>
+  <p>O JavaScript controla a expansão/colapso dos itens do accordion.</p>
+</article>
+
+<article class="item">
+  <h4>Código JavaScript do accordion:</h4>
+  <pre><code>$(document).ready(function() {
+    var multipleMode = false;
+    
+    // Toggle accordion item
+    function toggleAccordionItem($header) {
+        var $content = $('#' + $header.data('target'));
+        var isActive = $header.hasClass('active');
+        
+        if (!multipleMode) {
+            // Modo único - fechar outros
+            $('.accordion-header').removeClass('active');
+            $('.accordion-content').removeClass('active');
+        }
+        
+        if (isActive) {
+            // Fechar item atual
+            $header.removeClass('active');
+            $content.removeClass('active');
+        } else {
+            // Abrir item atual
+            $header.addClass('active');
+            $content.addClass('active');
+        }
+    }
+    
+    // Expandir todos os itens
+    function expandAll() {
+        $('.accordion-header').addClass('active');
+        $('.accordion-content').addClass('active');
+    }
+    
+    // Recolher todos os itens
+    function collapseAll() {
+        $('.accordion-header').removeClass('active');
+        $('.accordion-content').removeClass('active');
+    }
+    
+    // Toggle modo múltiplo
+    function toggleMultipleMode() {
+        multipleMode = !multipleMode;
+        var btnText = multipleMode ? 'Modo Único' : 'Modo Múltiplo';
+        $('#toggle-mode').text(btnText);
+        
+        // Se mudou para modo único, fechar itens extras
+        if (!multipleMode) {
+            var $activeHeaders = $('.accordion-header.active');
+            if ($activeHeaders.length > 1) {
+                $activeHeaders.slice(1).removeClass('active');
+                $('.accordion-content.active').slice(1).removeClass('active');
+            }
+        }
+    }
+    
+    // Event listeners
+    $('.accordion-header').click(function() {
+        toggleAccordionItem($(this));
+    });
+    
+    $('#expand-all').click(function() {
+        expandAll();
+    });
+    
+    $('#collapse-all').click(function() {
+        collapseAll();
+    });
+    
+    $('#toggle-mode').click(function() {
+        toggleMultipleMode();
+    });
+    
+    // Navegação por teclado
+    $('.accordion-header').keydown(function(e) {
+        switch(e.keyCode) {
+            case 13: // Enter
+            case 32: // Space
+                e.preventDefault();
+                toggleAccordionItem($(this));
+                break;
+            case 38: // Arrow Up
+                e.preventDefault();
+                var $prev = $(this).closest('.accordion-item').prev().find('.accordion-header');
+                if ($prev.length) {
+                    $prev.focus();
+                }
+                break;
+            case 40: // Arrow Down
+                e.preventDefault();
+                var $next = $(this).closest('.accordion-item').next().find('.accordion-header');
+                if ($next.length) {
+                    $next.focus();
+                }
+                break;
+            case 36: // Home
+                e.preventDefault();
+                $('.accordion-header').first().focus();
+                break;
+            case 35: // End
+                e.preventDefault();
+                $('.accordion-header').last().focus();
+                break;
+        }
+    });
+    
+    // Inicializar com primeiro item aberto
+    $('.accordion-header').first().addClass('active');
+    $('.accordion-content').first().addClass('active');
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Sistema de Tabs</h3>
+  <p>As tabs organizam conteúdo em painéis separados, permitindo alternar entre diferentes seções sem recarregar a página.</p>
+  <h4>Características das tabs:</h4>
+  <ul class="left_list">
+    <li><strong>Navegação:</strong> Clique para alternar entre tabs</li>
+    <li><strong>Estado ativo:</strong> Visualização clara da tab ativa</li>
+    <li><strong>Conteúdo:</strong> Painéis correspondentes a cada tab</li>
+    <li><strong>Teclado:</strong> Navegação acessível</li>
+    <li><strong>URL:</strong> Hash na URL (opcional)</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>HTML do sistema de tabs:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Tabs jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .tabs-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+            margin-bottom: 0;
+        }
+        
+        .tab-button {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tab-button:hover {
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .tab-button.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+            font-weight: 500;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 30px 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            min-height: 300px;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-text {
+            margin: 0 0 20px 0;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .tab-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tab-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tab-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tabs-controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .tabs-btn {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .tabs-btn:hover {
+            background: #5a6268;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs-nav {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                flex: 1;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs-container">
+        <div class="tabs-nav">
+            <button class="tab-button active" data-tab="tab1">Início</button>
+            <button class="tab-button" data-tab="tab2">Produtos</button>
+            <button class="tab-button" data-tab="tab3">Serviços</button>
+            <button class="tab-button" data-tab="tab4">Contato</button>
+        </div>
+        
+        <div class="tab-content active" id="tab1">
+            <h3>Bem-vindo à nossa empresa</h3>
+            <p class="tab-text">
+                Somos uma empresa dedicada a fornecer soluções inovadoras para nossos clientes. 
+                Com anos de experiência no mercado, oferecemos produtos e serviços de alta qualidade.
+            </p>
+            <p class="tab-text">
+                Nossa missão é superar as expectativas dos nossos clientes através de soluções 
+                personalizadas e atendimento excepcional.
+            </p>
+        </div>
+        
+        <div class="tab-content" id="tab2">
+            <h3>Nossos Produtos</h3>
+            <ul class="tab-list">
+                <li>Produto A - Solução completa para empresas</li>
+                <li>Produto B - Ferramenta de produtividade</li>
+                <li>Produto C - Sistema de gestão</li>
+                <li>Produto D - Plataforma de comunicação</li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="tab3">
+            <h3>Nossos Serviços</h3>
+            <p class="tab-text">
+                Oferecemos uma gama completa de serviços para atender às necessidades 
+                específicas de cada cliente:
+            </p>
+            <ul class="tab-list">
+                <li>Consultoria especializada</li>
+                <li>Suporte técnico 24/7</li>
+                <li>Treinamento e capacitação</li>
+                <li>Manutenção preventiva</li>
+                <li>Implementação de soluções</li>
+            </ul>
+        </div>
+        
+        <div class="tab-content" id="tab4">
+            <h3>Entre em Contato</h3>
+            <p class="tab-text">
+                Estamos sempre disponíveis para ajudar. Entre em contato conosco através dos canais abaixo:
+            </p>
+            <ul class="tab-list">
+                <li>📧 Email: contato@empresa.com</li>
+                <li>📞 Telefone: (11) 99999-9999</li>
+                <li>🏢 Endereço: Rua das Flores, 123 - São Paulo/SP</li>
+                <li>🕒 Horário: Segunda a Sexta, 8h às 18h</li>
+            </ul>
+        </div>
+        
+        <div class="tabs-controls">
+            <button class="tabs-btn" id="prev-tab">← Anterior</button>
+            <button class="tabs-btn" id="next-tab">Próximo →</button>
+        </div>
+    </div>
+</body>
+</html></code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>JavaScript do Sistema de Tabs</h3>
+  <p>O JavaScript controla a navegação entre as tabs e mantém o estado ativo.</p>
+</article>
+
+<article class="item">
+  <h4>Código JavaScript das tabs:</h4>
+  <pre><code>$(document).ready(function() {
+    var currentTab = 0;
+    var totalTabs = $('.tab-button').length;
+    
+    // Ativar tab específica
+    function activateTab(index) {
+        // Remover active de todos os botões e conteúdos
+        $('.tab-button').removeClass('active');
+        $('.tab-content').removeClass('active');
+        
+        // Ativar tab selecionada
+        $('.tab-button').eq(index).addClass('active');
+        $('.tab-content').eq(index).addClass('active');
+        
+        currentTab = index;
+        
+        // Atualizar URL hash (opcional)
+        var tabId = $('.tab-button').eq(index).data('tab');
+        history.pushState(null, null, '#' + tabId);
+    }
+    
+    // Próxima tab
+    function nextTab() {
+        var next = (currentTab + 1) % totalTabs;
+        activateTab(next);
+    }
+    
+    // Tab anterior
+    function prevTab() {
+        var prev = (currentTab - 1 + totalTabs) % totalTabs;
+        activateTab(prev);
+    }
+    
+    // Event listeners para botões das tabs
+    $('.tab-button').click(function() {
+        var index = $('.tab-button').index(this);
+        activateTab(index);
+    });
+    
+    // Controles de navegação
+    $('#next-tab').click(function() {
+        nextTab();
+    });
+    
+    $('#prev-tab').click(function() {
+        prevTab();
+    });
+    
+    // Navegação por teclado
+    $('.tab-button').keydown(function(e) {
+        var index = $('.tab-button').index(this);
+        
+        switch(e.keyCode) {
+            case 13: // Enter
+            case 32: // Space
+                e.preventDefault();
+                activateTab(index);
+                break;
+            case 37: // Arrow Left
+                e.preventDefault();
+                prevTab();
+                break;
+            case 39: // Arrow Right
+                e.preventDefault();
+                nextTab();
+                break;
+            case 36: // Home
+                e.preventDefault();
+                activateTab(0);
+                break;
+            case 35: // End
+                e.preventDefault();
+                activateTab(totalTabs - 1);
+                break;
+        }
+    });
+    
+    // Navegação por setas do teclado (global)
+    $(document).keydown(function(e) {
+        if ($(e.target).closest('.tabs-container').length) {
+            switch(e.keyCode) {
+                case 37: // Arrow Left
+                    if ($(e.target).hasClass('tab-button')) {
+                        prevTab();
+                    }
+                    break;
+                case 39: // Arrow Right
+                    if ($(e.target).hasClass('tab-button')) {
+                        nextTab();
+                    }
+                    break;
+            }
+        }
+    });
+    
+    // Suporte a hash na URL
+    function checkHash() {
+        var hash = window.location.hash.substring(1);
+        if (hash) {
+            var $targetTab = $('.tab-button[data-tab="' + hash + '"]');
+            if ($targetTab.length) {
+                var index = $('.tab-button').index($targetTab);
+                activateTab(index);
+            }
+        }
+    }
+    
+    // Verificar hash ao carregar a página
+    checkHash();
+    
+    // Verificar mudanças no hash
+    $(window).on('hashchange', function() {
+        checkHash();
+    });
+    
+    // Auto-rotacionar tabs (opcional)
+    var autoRotateInterval;
+    
+    function startAutoRotate() {
+        autoRotateInterval = setInterval(nextTab, 5000); // 5 segundos
+    }
+    
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+    
+    // Iniciar auto-rotação
+    startAutoRotate();
+    
+    // Parar auto-rotação ao interagir
+    $('.tabs-container').hover(
+        function() {
+            stopAutoRotate();
+        },
+        function() {
+            startAutoRotate();
+        }
+    );
+    
+    // Parar auto-rotação ao focar em qualquer elemento
+    $('.tab-button, .tab-content').focus(function() {
+        stopAutoRotate();
+    });
+    
+    // Reiniciar auto-rotação após 10 segundos de inatividade
+    var inactivityTimer;
+    
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(startAutoRotate, 10000);
+    }
+    
+    // Detectar atividade do usuário
+    $(document).on('click keydown', function() {
+        stopAutoRotate();
+        resetInactivityTimer();
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Menu Mobile Responsivo</h3>
+  <p>Um menu mobile responsivo se adapta a diferentes tamanhos de tela, oferecendo uma experiência otimizada para dispositivos móveis.</p>
+  <h4>Características do menu mobile:</h4>
+  <ul class="left_list">
+    <li><strong>Hamburger menu:</strong> Ícone de três linhas</li>
+    <li><strong>Overlay:</strong> Menu sobreposto à página</li>
+    <li><strong>Animação:</strong> Transições suaves</li>
+    <li><strong>Touch-friendly:</strong> Botões grandes para touch</li>
+    <li><strong>Fechamento automático:</strong> Fecha ao clicar em link</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>HTML do menu mobile:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Mobile Responsivo jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .navbar {
+            background: #333;
+            padding: 1rem;
+            position: relative;
+            z-index: 1000;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            margin: 0 1rem;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #007bff;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background: white;
+            z-index: 1001;
+            transition: right 0.3s ease;
+            padding: 2rem 0;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.active {
+            right: 0;
+        }
+        
+        .mobile-menu-header {
+            padding: 0 2rem 2rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+        }
+        
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            float: right;
+            color: #666;
+        }
+        
+        .mobile-menu-logo {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .mobile-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .mobile-nav-item {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 1rem 2rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .mobile-nav-link:hover {
+            background: #f8f9fa;
+            color: #007bff;
+        }
+        
+        .mobile-menu-footer {
+            padding: 2rem;
+            border-top: 1px solid #eee;
+            margin-top: 2rem;
+        }
+        
+        .mobile-contact {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+        }
+        
+        .hamburger span {
+            display: block;
+            height: 2px;
+            background: white;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .mobile-menu {
+                width: 100%;
+                right: -100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">MinhaEmpresa</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contato</a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobile-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+    
+    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <button class="mobile-menu-close" id="mobile-close">×</button>
+            <a href="#" class="mobile-menu-logo">MinhaEmpresa</a>
+        </div>
+        
+        <ul class="mobile-nav">
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Início</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Produtos</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Serviços</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Sobre</a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="#" class="mobile-nav-link">Contato</a>
+            </li>
+        </ul>
+        
+        <div class="mobile-menu-footer">
+            <div class="mobile-contact">
+                <p><strong>Contato</strong></p>
+                <p>📧 contato@empresa.com</p>
+                <p>📞 (11) 99999-9999</p>
+            </div>
+        </div>
+    </div>
+    
+    <main style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+        <h1>Conteúdo da Página</h1>
+        <p>Este é o conteúdo principal da página. O menu mobile aparece quando a tela é menor que 768px.</p>
+    </main>
+</body>
+</html></code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>JavaScript do Menu Mobile</h3>
+  <p>O JavaScript controla a abertura, fechamento e animações do menu mobile.</p>
+</article>
+
+<article class="item">
+  <h4>Código JavaScript do menu mobile:</h4>
+  <pre><code>$(document).ready(function() {
+    var $mobileToggle = $('#mobile-toggle');
+    var $mobileMenu = $('#mobile-menu');
+    var $mobileOverlay = $('#mobile-overlay');
+    var $mobileClose = $('#mobile-close');
+    var $hamburger = $('.hamburger');
+    var $body = $('body');
+    
+    // Abrir menu mobile
+    function openMobileMenu() {
+        $mobileMenu.addClass('active');
+        $mobileOverlay.addClass('active');
+        $hamburger.addClass('active');
+        $body.css('overflow', 'hidden');
+        
+        // Focar no primeiro link do menu
+        setTimeout(function() {
+            $mobileMenu.find('.mobile-nav-link').first().focus();
+        }, 300);
+    }
+    
+    // Fechar menu mobile
+    function closeMobileMenu() {
+        $mobileMenu.removeClass('active');
+        $mobileOverlay.removeClass('active');
+        $hamburger.removeClass('active');
+        $body.css('overflow', '');
+        
+        // Retornar foco para o botão toggle
+        $mobileToggle.focus();
+    }
+    
+    // Toggle menu mobile
+    function toggleMobileMenu() {
+        if ($mobileMenu.hasClass('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+    
+    // Event listeners
+    $mobileToggle.click(function(e) {
+        e.preventDefault();
+        toggleMobileMenu();
+    });
+    
+    $mobileClose.click(function(e) {
+        e.preventDefault();
+        closeMobileMenu();
+    });
+    
+    $mobileOverlay.click(function() {
+        closeMobileMenu();
+    });
+    
+    // Fechar menu ao clicar em link
+    $('.mobile-nav-link').click(function() {
+        closeMobileMenu();
+    });
+    
+    // Navegação por teclado
+    $mobileToggle.keydown(function(e) {
+        if (e.keyCode === 13 || e.keyCode === 32) { // Enter ou Space
+            e.preventDefault();
+            toggleMobileMenu();
+        }
+    });
+    
+    $mobileClose.keydown(function(e) {
+        if (e.keyCode === 13 || e.keyCode === 32) { // Enter ou Space
+            e.preventDefault();
+            closeMobileMenu();
+        }
+    });
+    
+    // Navegação por teclado dentro do menu
+    $('.mobile-nav-link').keydown(function(e) {
+        var $links = $('.mobile-nav-link');
+        var currentIndex = $links.index(this);
+        
+        switch(e.keyCode) {
+            case 38: // Arrow Up
+                e.preventDefault();
+                var prevIndex = currentIndex > 0 ? currentIndex - 1 : $links.length - 1;
+                $links.eq(prevIndex).focus();
+                break;
+            case 40: // Arrow Down
+                e.preventDefault();
+                var nextIndex = currentIndex < $links.length - 1 ? currentIndex + 1 : 0;
+                $links.eq(nextIndex).focus();
+                break;
+            case 27: // ESC
+                e.preventDefault();
+                closeMobileMenu();
+                break;
+            case 36: // Home
+                e.preventDefault();
+                $links.first().focus();
+                break;
+            case 35: // End
+                e.preventDefault();
+                $links.last().focus();
+                break;
+        }
+    });
+    
+    // Fechar menu com ESC
+    $(document).keydown(function(e) {
+        if (e.keyCode === 27 && $mobileMenu.hasClass('active')) { // ESC
+            closeMobileMenu();
+        }
+    });
+    
+    // Fechar menu ao redimensionar para desktop
+    $(window).resize(function() {
+        if ($(window).width() > 768 && $mobileMenu.hasClass('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Swipe para fechar menu (touch devices)
+    var startX = 0;
+    var endX = 0;
+    
+    $mobileMenu.on('touchstart', function(e) {
+        startX = e.originalEvent.touches[0].clientX;
+    });
+    
+    $mobileMenu.on('touchend', function(e) {
+        endX = e.originalEvent.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        var threshold = 50;
+        var diff = startX - endX;
+        
+        if (diff > threshold && startX > 250) { // Swipe left a partir da direita
+            closeMobileMenu();
+        }
+    }
+    
+    // Auto-fechar menu após inatividade (opcional)
+    var inactivityTimer;
+    
+    function resetInactivityTimer() {
+        clearTimeout(inactivityTimer);
+        inactivityTimer = setTimeout(function() {
+            if ($mobileMenu.hasClass('active')) {
+                closeMobileMenu();
+            }
+        }, 30000); // 30 segundos
+    }
+    
+    // Detectar atividade do usuário
+    $(document).on('click keydown touchstart', function() {
+        if ($mobileMenu.hasClass('active')) {
+            resetInactivityTimer();
+        }
+    });
+    
+    // Inicializar timer se menu estiver aberto
+    if ($mobileMenu.hasClass('active')) {
+        resetInactivityTimer();
+    }
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Exemplo Prático - Sistema de Navegação Completo</h3>
+  <p>Vamos criar um sistema de navegação completo que combina todos os componentes aprendidos.</p>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/05/images/navegacao_completa_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/jquery/05/images/navegacao_completa_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/jquery/05/images/navegacao_completa_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma aplicação HTML com jQuery que implemente sistemas de navegação:<p>
+  <ul>
+  <li>Título = Sistema de Navegação Completo jQuery<br></li>
+  <li>Implemente um menu dropdown responsivo<br></li>
+  <li>Crie um sistema de accordion interativo<br></li>
+  <li>Desenvolva um sistema de tabs com navegação<br></li>
+  <li>Adicione um menu mobile com animações<br></li>
+  <li>Implemente navegação por teclado<br></li>
+  <li>Use efeitos de transição suaves<br></li>
+</ul>
+</p>Inclua pelo menos 4 tipos diferentes de componentes de navegação.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
 </body>
 </html>

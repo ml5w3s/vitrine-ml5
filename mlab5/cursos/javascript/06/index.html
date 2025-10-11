@@ -1,0 +1,1604 @@
+<!--curso_javascript/06/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+  <title>Aula 06 - Integração com HTML5, CSS3 e APIs | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda integração JavaScript com HTML5, CSS3 e APIs modernas: LocalStorage, Geolocalização, Canvas, Video e Web APIs.">
+  <meta name="keywords" content="javascript, html5, css3, localStorage, geolocalização, canvas, video, web apis, integração">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 06 - Integração HTML5, CSS3 e APIs | ML5Lab">
+  <meta property="og:description" content="Aprenda integração JavaScript com HTML5, CSS3 e APIs modernas: LocalStorage, Geolocalização, Canvas, Video e Web APIs.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 06 - Integração HTML5, CSS3 e APIs | ML5Lab">
+  <meta name="twitter:description" content="Aprenda integração JavaScript com HTML5, CSS3 e APIs modernas: LocalStorage, Geolocalização, Canvas, Video e Web APIs.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_frontend_tablet.png">
+    <img src="/vitrine-ml5/mlab5/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🔗 Integração HTML5, CSS3 e APIs</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Web Storage - LocalStorage e SessionStorage</h3>
+  <p>O Web Storage API permite armazenar dados no navegador de forma persistente (localStorage) ou temporária (sessionStorage), oferecendo uma alternativa moderna aos cookies.</p>
+  <h4>Características do Web Storage:</h4>
+  <ul class="left_list">
+    <li><strong>localStorage:</strong> Persiste entre sessões</li>
+    <li><strong>sessionStorage:</strong> Limpo ao fechar aba</li>
+    <li>Maior capacidade que cookies (5-10MB)</li>
+    <li>Apenas strings (JSON para objetos)</li>
+    <li>Síncrono (não bloqueia UI)</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/06/images/web_storage_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/06/images/web_storage_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/javascript/06/images/web_storage_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>LocalStorage - Armazenamento Persistente</h3>
+  <p>O localStorage permite armazenar dados que persistem entre sessões do navegador, ideal para configurações de usuário, cache de dados e estado da aplicação.</p>
+  <h4>Métodos do LocalStorage:</h4>
+  <ul class="left_list">
+    <li><code>setItem(key, value)</code> - Armazenar dados</li>
+    <li><code>getItem(key)</code> - Recuperar dados</li>
+    <li><code>removeItem(key)</code> - Remover item</li>
+    <li><code>clear()</code> - Limpar tudo</li>
+    <li><code>key(index)</code> - Obter chave por índice</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de LocalStorage:</h4>
+  <pre><code>// ✅ Armazenamento básico
+localStorage.setItem('nome', 'João Silva');
+localStorage.setItem('idade', '30');
+localStorage.setItem('preferencias', JSON.stringify({
+  tema: 'escuro',
+  idioma: 'pt-BR',
+  notificacoes: true
+}));
+
+// ✅ Recuperação de dados
+const nome = localStorage.getItem('nome');
+const idade = localStorage.getItem('idade');
+const preferencias = JSON.parse(localStorage.getItem('preferencias') || '{}');
+
+console.log(nome, idade, preferencias);
+
+// ✅ Classe para gerenciar localStorage
+class StorageManager {
+  constructor(prefixo = 'app_') {
+    this.prefixo = prefixo;
+  }
+  
+  set(key, value) {
+    try {
+      const dados = typeof value === 'object' ? JSON.stringify(value) : value;
+      localStorage.setItem(this.prefixo + key, dados);
+      return true;
+    } catch (erro) {
+      console.error('Erro ao salvar no localStorage:', erro);
+      return false;
+    }
+  }
+  
+  get(key, defaultValue = null) {
+    try {
+      const item = localStorage.getItem(this.prefixo + key);
+      if (item === null) return defaultValue;
+      
+      // Tentar fazer parse como JSON
+      try {
+        return JSON.parse(item);
+      } catch {
+        return item;
+      }
+    } catch (erro) {
+      console.error('Erro ao ler do localStorage:', erro);
+      return defaultValue;
+    }
+  }
+  
+  remove(key) {
+    localStorage.removeItem(this.prefixo + key);
+  }
+  
+  clear() {
+    const keys = Object.keys(localStorage).filter(key => 
+      key.startsWith(this.prefixo)
+    );
+    keys.forEach(key => localStorage.removeItem(key));
+  }
+  
+  getAll() {
+    const dados = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key.startsWith(this.prefixo)) {
+        const chaveLimpa = key.substring(this.prefixo.length);
+        dados[chaveLimpa] = this.get(chaveLimpa);
+      }
+    }
+    return dados;
+  }
+  
+  // Verificar espaço disponível
+  getSpaceUsed() {
+    let total = 0;
+    for (let key in localStorage) {
+      if (localStorage.hasOwnProperty(key)) {
+        total += localStorage[key].length + key.length;
+      }
+    }
+    return total;
+  }
+}
+
+// ✅ Uso da classe
+const storage = new StorageManager('meuapp_');
+
+// Salvar configurações do usuário
+storage.set('config', {
+  tema: 'escuro',
+  idioma: 'pt-BR',
+  autoSave: true,
+  ultimoAcesso: new Date().toISOString()
+});
+
+// Salvar dados de formulário
+storage.set('formulario', {
+  nome: 'João',
+  email: 'joao@email.com',
+  telefone: '11999999999'
+});
+
+// Recuperar dados
+const config = storage.get('config', {});
+const formData = storage.get('formulario', {});
+
+// ✅ Sistema de cache com TTL
+class CacheStorage {
+  constructor(ttl = 3600000) { // 1 hora padrão
+    this.ttl = ttl;
+  }
+  
+  set(key, value, customTtl = null) {
+    const expiry = Date.now() + (customTtl || this.ttl);
+    const item = {
+      value,
+      expiry
+    };
+    localStorage.setItem(`cache_${key}`, JSON.stringify(item));
+  }
+  
+  get(key) {
+    const item = localStorage.getItem(`cache_${key}`);
+    if (!item) return null;
+    
+    try {
+      const parsed = JSON.parse(item);
+      
+      if (Date.now() > parsed.expiry) {
+        localStorage.removeItem(`cache_${key}`);
+        return null;
+      }
+      
+      return parsed.value;
+    } catch (erro) {
+      localStorage.removeItem(`cache_${key}`);
+      return null;
+    }
+  }
+  
+  clear() {
+    const keys = Object.keys(localStorage).filter(key => 
+      key.startsWith('cache_')
+    );
+    keys.forEach(key => localStorage.removeItem(key));
+  }
+}
+
+// ✅ Uso do cache
+const cache = new CacheStorage();
+
+// Armazenar dados da API por 30 minutos
+async function buscarDadosComCache() {
+  const cacheKey = 'dados_api';
+  let dados = cache.get(cacheKey);
+  
+  if (!dados) {
+    console.log('Buscando dados da API...');
+    dados = await fetch('/api/dados').then(r => r.json());
+    cache.set(cacheKey, dados, 30 * 60 * 1000); // 30 minutos
+  } else {
+    console.log('Dados obtidos do cache');
+  }
+  
+  return dados;
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Geolocalização - API de Localização</h3>
+  <p>A API de Geolocalização permite que aplicações web acessem a localização geográfica do usuário, oferecendo funcionalidades como mapas, clima local e serviços baseados em localização.</p>
+  <h4>Características da Geolocalização:</h4>
+  <ul class="left_list">
+    <li>Require permissão do usuário</li>
+    <li>Precisão variável (GPS, rede, IP)</li>
+    <li>Suporte a watchPosition</li>
+    <li>Informações de altitude e velocidade</li>
+    <li>Tratamento de erros robusto</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Geolocalização:</h4>
+  <pre><code>// ✅ Verificar suporte
+if (!navigator.geolocation) {
+  console.error('Geolocalização não suportada');
+  return;
+}
+
+// ✅ Obter localização atual
+function obterLocalizacao() {
+  const opcoes = {
+    enableHighAccuracy: true,
+    timeout: 10000,
+    maximumAge: 300000 // 5 minutos
+  };
+  
+  navigator.geolocation.getCurrentPosition(
+    (posicao) => {
+      console.log('Localização obtida:', posicao);
+      
+      const { latitude, longitude, accuracy } = posicao.coords;
+      
+      // Salvar localização no localStorage
+      localStorage.setItem('ultimaLocalizacao', JSON.stringify({
+        latitude,
+        longitude,
+        accuracy,
+        timestamp: new Date().toISOString()
+      }));
+      
+      // Atualizar interface
+      atualizarInterfaceLocalizacao(latitude, longitude);
+    },
+    (erro) => {
+      console.error('Erro na geolocalização:', erro);
+      
+      switch (erro.code) {
+        case erro.PERMISSION_DENIED:
+          mostrarErro('Permissão de localização negada');
+          break;
+        case erro.POSITION_UNAVAILABLE:
+          mostrarErro('Localização indisponível');
+          break;
+        case erro.TIMEOUT:
+          mostrarErro('Timeout na obtenção da localização');
+          break;
+      }
+    },
+    opcoes
+  );
+}
+
+// ✅ Monitorar mudanças de localização
+let watchId = null;
+
+function iniciarMonitoramento() {
+  const opcoes = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+  };
+  
+  watchId = navigator.geolocation.watchPosition(
+    (posicao) => {
+      const { latitude, longitude } = posicao.coords;
+      console.log('Nova posição:', latitude, longitude);
+      
+      // Atualizar mapa em tempo real
+      atualizarMapa(latitude, longitude);
+      
+      // Verificar se saiu de uma área
+      verificarGeofence(latitude, longitude);
+    },
+    (erro) => {
+      console.error('Erro no monitoramento:', erro);
+    },
+    opcoes
+  );
+}
+
+function pararMonitoramento() {
+  if (watchId) {
+    navigator.geolocation.clearWatch(watchId);
+    watchId = null;
+  }
+}
+
+// ✅ Calcular distância entre pontos
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Raio da Terra em km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon/2) * Math.sin(dLon/2);
+    
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  const distancia = R * c;
+  
+  return distancia;
+}
+
+// ✅ Sistema de geofence
+class GeofenceManager {
+  constructor() {
+    this.fences = [];
+    this.currentPosition = null;
+    this.watchId = null;
+  }
+  
+  adicionarGeofence(id, lat, lng, raio, callback) {
+    const fence = { id, lat, lng, raio, callback };
+    this.fences.push(fence);
+  }
+  
+  removerGeofence(id) {
+    this.fences = this.fences.filter(fence => fence.id !== id);
+  }
+  
+  verificarGeofences(lat, lng) {
+    this.fences.forEach(fence => {
+      const distancia = calcularDistancia(lat, lng, fence.lat, fence.lng);
+      
+      if (distancia <= fence.raio) {
+        fence.callback('entrou', { lat, lng, distancia });
+      }
+    });
+  }
+  
+  iniciarMonitoramento() {
+    this.watchId = navigator.geolocation.watchPosition(
+      (posicao) => {
+        const { latitude, longitude } = posicao.coords;
+        this.currentPosition = { latitude, longitude };
+        this.verificarGeofences(latitude, longitude);
+      },
+      (erro) => console.error('Erro:', erro),
+      { enableHighAccuracy: true }
+    );
+  }
+}
+
+// ✅ Uso do sistema de geofence
+const geofenceManager = new GeofenceManager();
+
+// Adicionar geofence para casa
+geofenceManager.adicionarGeofence('casa', -23.5505, -46.6333, 0.1, (evento, dados) => {
+  console.log(`Você ${evento} em casa!`, dados);
+  
+  // Ações específicas
+  if (evento === 'entrou') {
+    document.body.classList.add('em-casa');
+    mostrarNotificacao('Bem-vindo de volta!');
+  }
+});
+
+// ✅ Integração com APIs de mapa
+async function obterEnderecoPorCoordenadas(lat, lng) {
+  try {
+    const response = await fetch(
+      `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=SUA_API_KEY`
+    );
+    
+    const dados = await response.json();
+    
+    if (dados.results.length > 0) {
+      return dados.results[0].formatted;
+    }
+    
+    return 'Endereço não encontrado';
+  } catch (erro) {
+    console.error('Erro na geocodificação reversa:', erro);
+    return 'Erro ao obter endereço';
+  }
+}
+
+// ✅ Aplicação completa de localização
+class AppLocalizacao {
+  constructor() {
+    this.localizacaoAtual = null;
+    this.mapa = null;
+    this.init();
+  }
+  
+  init() {
+    this.carregarUltimaLocalizacao();
+    this.configurarInterface();
+  }
+  
+  carregarUltimaLocalizacao() {
+    const ultimaLocalizacao = localStorage.getItem('ultimaLocalizacao');
+    if (ultimaLocalizacao) {
+      this.localizacaoAtual = JSON.parse(ultimaLocalizacao);
+      this.atualizarInterface();
+    }
+  }
+  
+  configurarInterface() {
+    const btnLocalizar = document.getElementById('btn-localizar');
+    btnLocalizar?.addEventListener('click', () => this.obterLocalizacao());
+  }
+  
+  obterLocalizacao() {
+    if (!navigator.geolocation) {
+      this.mostrarErro('Geolocalização não suportada');
+      return;
+    }
+    
+    navigator.geolocation.getCurrentPosition(
+      (posicao) => this.processarLocalizacao(posicao),
+      (erro) => this.tratarErroGeolocalizacao(erro),
+      { enableHighAccuracy: true, timeout: 10000 }
+    );
+  }
+  
+  async processarLocalizacao(posicao) {
+    const { latitude, longitude, accuracy } = posicao.coords;
+    
+    this.localizacaoAtual = {
+      latitude,
+      longitude,
+      accuracy,
+      timestamp: new Date().toISOString()
+    };
+    
+    // Salvar localização
+    localStorage.setItem('ultimaLocalizacao', JSON.stringify(this.localizacaoAtual));
+    
+    // Obter endereço
+    const endereco = await obterEnderecoPorCoordenadas(latitude, longitude);
+    
+    // Atualizar interface
+    this.atualizarInterface(endereco);
+  }
+  
+  atualizarInterface(endereco = null) {
+    if (!this.localizacaoAtual) return;
+    
+    const { latitude, longitude, accuracy } = this.localizacaoAtual;
+    
+    document.getElementById('latitude').textContent = latitude.toFixed(6);
+    document.getElementById('longitude').textContent = longitude.toFixed(6);
+    document.getElementById('precisao').textContent = `${Math.round(accuracy)}m`;
+    
+    if (endereco) {
+      document.getElementById('endereco').textContent = endereco;
+    }
+  }
+  
+  tratarErroGeolocalizacao(erro) {
+    let mensagem = 'Erro na geolocalização';
+    
+    switch (erro.code) {
+      case erro.PERMISSION_DENIED:
+        mensagem = 'Permissão de localização negada';
+        break;
+      case erro.POSITION_UNAVAILABLE:
+        mensagem = 'Localização indisponível';
+        break;
+      case erro.TIMEOUT:
+        mensagem = 'Timeout na obtenção da localização';
+        break;
+    }
+    
+    this.mostrarErro(mensagem);
+  }
+  
+  mostrarErro(mensagem) {
+    console.error(mensagem);
+    // Implementar notificação de erro na UI
+  }
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Canvas API - Gráficos e Animações</h3>
+  <p>O Canvas API permite desenhar gráficos, criar animações e manipular pixels diretamente no navegador, oferecendo controle total sobre elementos visuais.</p>
+  <h4>Capacidades do Canvas:</h4>
+  <ul class="left_list">
+    <li>Desenho 2D e 3D (WebGL)</li>
+    <li>Animações complexas</li>
+    <li>Manipulação de pixels</li>
+    <li>Processamento de imagens</li>
+    <li>Jogos e visualizações</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Canvas:</h4>
+  <pre><code>// ✅ Configuração básica do Canvas
+class CanvasApp {
+  constructor(canvasId) {
+    this.canvas = document.getElementById(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.animacaoId = null;
+    this.init();
+  }
+  
+  init() {
+    this.canvas.width = 800;
+    this.canvas.height = 600;
+    this.setupEventListeners();
+  }
+  
+  setupEventListeners() {
+    this.canvas.addEventListener('click', (e) => this.onClick(e));
+    this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e));
+  }
+  
+  // Desenhar formas básicas
+  desenharFormas() {
+    const ctx = this.ctx;
+    
+    // Retângulo
+    ctx.fillStyle = '#3498db';
+    ctx.fillRect(50, 50, 100, 80);
+    
+    // Círculo
+    ctx.fillStyle = '#e74c3c';
+    ctx.beginPath();
+    ctx.arc(200, 90, 40, 0, Math.PI * 2);
+    ctx.fill();
+    
+    // Linha
+    ctx.strokeStyle = '#2ecc71';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(300, 50);
+    ctx.lineTo(400, 130);
+    ctx.stroke();
+    
+    // Texto
+    ctx.fillStyle = '#34495e';
+    ctx.font = '20px Arial';
+    ctx.fillText('Canvas JavaScript', 50, 200);
+  }
+  
+  // Animação simples
+  iniciarAnimacao() {
+    let frame = 0;
+    
+    const animar = () => {
+      this.limparCanvas();
+      
+      // Desenhar círculo animado
+      const x = 400 + Math.cos(frame * 0.1) * 100;
+      const y = 300 + Math.sin(frame * 0.1) * 100;
+      
+      ctx.fillStyle = '#f39c12';
+      ctx.beginPath();
+      ctx.arc(x, y, 20, 0, Math.PI * 2);
+      ctx.fill();
+      
+      frame++;
+      this.animacaoId = requestAnimationFrame(animar);
+    };
+    
+    animar();
+  }
+  
+  pararAnimacao() {
+    if (this.animacaoId) {
+      cancelAnimationFrame(this.animacaoId);
+      this.animacaoId = null;
+    }
+  }
+  
+  limparCanvas() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+  }
+}
+
+// ✅ Sistema de partículas
+class SistemaParticulas {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.particulas = [];
+    this.animacaoId = null;
+  }
+  
+  criarParticula(x, y) {
+    return {
+      x,
+      y,
+      vx: (Math.random() - 0.5) * 4,
+      vy: (Math.random() - 0.5) * 4,
+      vida: 1.0,
+      decaimento: Math.random() * 0.02 + 0.01,
+      tamanho: Math.random() * 5 + 2,
+      cor: `hsl(${Math.random() * 360}, 70%, 50%)`
+    };
+  }
+  
+  adicionarParticulas(x, y, quantidade = 10) {
+    for (let i = 0; i < quantidade; i++) {
+      this.particulas.push(this.criarParticula(x, y));
+    }
+  }
+  
+  atualizarParticulas() {
+    this.particulas = this.particulas.filter(particula => {
+      particula.x += particula.vx;
+      particula.y += particula.vy;
+      particula.vida -= particula.decaimento;
+      
+      return particula.vida > 0;
+    });
+  }
+  
+  desenharParticulas() {
+    this.particulas.forEach(particula => {
+      this.ctx.save();
+      this.ctx.globalAlpha = particula.vida;
+      this.ctx.fillStyle = particula.cor;
+      this.ctx.beginPath();
+      this.ctx.arc(particula.x, particula.y, particula.tamanho, 0, Math.PI * 2);
+      this.ctx.fill();
+      this.ctx.restore();
+    });
+  }
+  
+  iniciar() {
+    const animar = () => {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      
+      this.atualizarParticulas();
+      this.desenharParticulas();
+      
+      this.animacaoId = requestAnimationFrame(animar);
+    };
+    
+    animar();
+  }
+}
+
+// ✅ Manipulação de imagens
+class ImageProcessor {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+  }
+  
+  carregarImagem(url) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        this.canvas.width = img.width;
+        this.canvas.height = img.height;
+        this.ctx.drawImage(img, 0, 0);
+        resolve(img);
+      };
+      img.onerror = reject;
+      img.src = url;
+    });
+  }
+  
+  aplicarFiltro(filtro) {
+    const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+    const data = imageData.data;
+    
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      
+      switch (filtro) {
+        case 'grayscale':
+          const gray = r * 0.299 + g * 0.587 + b * 0.114;
+          data[i] = gray;
+          data[i + 1] = gray;
+          data[i + 2] = gray;
+          break;
+          
+        case 'sepia':
+          data[i] = Math.min(255, (r * 0.393) + (g * 0.769) + (b * 0.189));
+          data[i + 1] = Math.min(255, (r * 0.349) + (g * 0.686) + (b * 0.168));
+          data[i + 2] = Math.min(255, (r * 0.272) + (g * 0.534) + (b * 0.131));
+          break;
+          
+        case 'invert':
+          data[i] = 255 - r;
+          data[i + 1] = 255 - g;
+          data[i + 2] = 255 - b;
+          break;
+      }
+    }
+    
+    this.ctx.putImageData(imageData, 0, 0);
+  }
+  
+  salvarComoImagem() {
+    return this.canvas.toDataURL('image/png');
+  }
+}
+
+// ✅ Jogo simples - Snake
+class SnakeGame {
+  constructor(canvas) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext('2d');
+    this.gridSize = 20;
+    this.tileCount = canvas.width / this.gridSize;
+    
+    this.snake = [{ x: 10, y: 10 }];
+    this.food = this.gerarComida();
+    this.dx = 0;
+    this.dy = 0;
+    this.score = 0;
+    
+    this.setupControls();
+  }
+  
+  gerarComida() {
+    return {
+      x: Math.floor(Math.random() * this.tileCount),
+      y: Math.floor(Math.random() * this.tileCount)
+    };
+  }
+  
+  setupControls() {
+    document.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'ArrowUp':
+          if (this.dy !== 1) {
+            this.dx = 0;
+            this.dy = -1;
+          }
+          break;
+        case 'ArrowDown':
+          if (this.dy !== -1) {
+            this.dx = 0;
+            this.dy = 1;
+          }
+          break;
+        case 'ArrowLeft':
+          if (this.dx !== 1) {
+            this.dx = -1;
+            this.dy = 0;
+          }
+          break;
+        case 'ArrowRight':
+          if (this.dx !== -1) {
+            this.dx = 1;
+            this.dy = 0;
+          }
+          break;
+      }
+    });
+  }
+  
+  update() {
+    const head = { x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy };
+    
+    // Verificar colisões
+    if (head.x < 0 || head.x >= this.tileCount || 
+        head.y < 0 || head.y >= this.tileCount ||
+        this.snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+      this.gameOver();
+      return;
+    }
+    
+    this.snake.unshift(head);
+    
+    // Verificar se comeu a comida
+    if (head.x === this.food.x && head.y === this.food.y) {
+      this.score++;
+      this.food = this.gerarComida();
+    } else {
+      this.snake.pop();
+    }
+  }
+  
+  draw() {
+    // Limpar canvas
+    this.ctx.fillStyle = 'black';
+    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    
+    // Desenhar cobra
+    this.ctx.fillStyle = 'lime';
+    this.snake.forEach(segment => {
+      this.ctx.fillRect(
+        segment.x * this.gridSize,
+        segment.y * this.gridSize,
+        this.gridSize - 2,
+        this.gridSize - 2
+      );
+    });
+    
+    // Desenhar comida
+    this.ctx.fillStyle = 'red';
+    this.ctx.fillRect(
+      this.food.x * this.gridSize,
+      this.food.y * this.gridSize,
+      this.gridSize - 2,
+      this.gridSize - 2
+    );
+    
+    // Desenhar pontuação
+    this.ctx.fillStyle = 'white';
+    this.ctx.font = '20px Arial';
+    this.ctx.fillText(`Score: ${this.score}`, 10, 25);
+  }
+  
+  gameOver() {
+    alert(`Game Over! Score: ${this.score}`);
+    this.reset();
+  }
+  
+  reset() {
+    this.snake = [{ x: 10, y: 10 }];
+    this.food = this.gerarComida();
+    this.dx = 0;
+    this.dy = 0;
+    this.score = 0;
+  }
+  
+  start() {
+    const gameLoop = () => {
+      this.update();
+      this.draw();
+      setTimeout(gameLoop, 150);
+    };
+    
+    gameLoop();
+  }
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/06/images/canvas_api_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/06/images/canvas_api_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/javascript/06/images/canvas_api_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>APIs Modernas do Navegador</h3>
+  <p>JavaScript moderno oferece acesso a diversas APIs do navegador que permitem funcionalidades avançadas como acesso ao clipboard, câmera, microfone e muito mais.</p>
+  <h4>APIs Principais:</h4>
+  <ul class="left_list">
+    <li><strong>Clipboard API:</strong> Copiar/colar texto e imagens</li>
+    <li><strong>File API:</strong> Manipulação de arquivos</li>
+    <li><strong>MediaDevices:</strong> Câmera e microfone</li>
+    <li><strong>Web Workers:</strong> Processamento em background</li>
+    <li><strong>Intersection Observer:</strong> Detecção de scroll</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de APIs Modernas:</h4>
+  <pre><code>// ✅ Clipboard API
+class ClipboardManager {
+  async copiarTexto(texto) {
+    try {
+      await navigator.clipboard.writeText(texto);
+      console.log('Texto copiado para clipboard');
+      return true;
+    } catch (erro) {
+      console.error('Erro ao copiar:', erro);
+      return false;
+    }
+  }
+  
+  async colarTexto() {
+    try {
+      const texto = await navigator.clipboard.readText();
+      return texto;
+    } catch (erro) {
+      console.error('Erro ao colar:', erro);
+      return null;
+    }
+  }
+  
+  async copiarImagem(canvas) {
+    try {
+      const blob = await new Promise(resolve => canvas.toBlob(resolve));
+      await navigator.clipboard.write([
+        new ClipboardItem({ 'image/png': blob })
+      ]);
+      console.log('Imagem copiada para clipboard');
+      return true;
+    } catch (erro) {
+      console.error('Erro ao copiar imagem:', erro);
+      return false;
+    }
+  }
+}
+
+// ✅ File API
+class FileManager {
+  lerArquivo(arquivo) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      
+      reader.onload = (e) => resolve(e.target.result);
+      reader.onerror = reject;
+      
+      // Detectar tipo de arquivo
+      if (arquivo.type.startsWith('text/')) {
+        reader.readAsText(arquivo);
+      } else if (arquivo.type.startsWith('image/')) {
+        reader.readAsDataURL(arquivo);
+      } else {
+        reader.readAsArrayBuffer(arquivo);
+      }
+    });
+  }
+  
+  async processarArquivos(arquivos) {
+    const resultados = [];
+    
+    for (const arquivo of arquivos) {
+      try {
+        const conteudo = await this.lerArquivo(arquivo);
+        resultados.push({
+          nome: arquivo.name,
+          tamanho: arquivo.size,
+          tipo: arquivo.type,
+          conteudo
+        });
+      } catch (erro) {
+        console.error(`Erro ao processar ${arquivo.name}:`, erro);
+      }
+    }
+    
+    return resultados;
+  }
+  
+  // Drag and Drop
+  configurarDragDrop(elemento, callback) {
+    elemento.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      elemento.classList.add('drag-over');
+    });
+    
+    elemento.addEventListener('dragleave', () => {
+      elemento.classList.remove('drag-over');
+    });
+    
+    elemento.addEventListener('drop', (e) => {
+      e.preventDefault();
+      elemento.classList.remove('drag-over');
+      
+      const arquivos = Array.from(e.dataTransfer.files);
+      callback(arquivos);
+    });
+  }
+}
+
+// ✅ MediaDevices API
+class CameraManager {
+  constructor() {
+    this.stream = null;
+    this.video = null;
+  }
+  
+  async iniciarCamera(videoElement) {
+    try {
+      this.stream = await navigator.mediaDevices.getUserMedia({
+        video: { width: 640, height: 480 },
+        audio: false
+      });
+      
+      this.video = videoElement;
+      this.video.srcObject = this.stream;
+      
+      return true;
+    } catch (erro) {
+      console.error('Erro ao acessar câmera:', erro);
+      return false;
+    }
+  }
+  
+  capturarFoto(canvas) {
+    if (!this.video || !this.stream) return null;
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = this.video.videoWidth;
+    canvas.height = this.video.videoHeight;
+    
+    ctx.drawImage(this.video, 0, 0);
+    
+    return canvas.toDataURL('image/png');
+  }
+  
+  pararCamera() {
+    if (this.stream) {
+      this.stream.getTracks().forEach(track => track.stop());
+      this.stream = null;
+    }
+  }
+}
+
+// ✅ Intersection Observer
+class ScrollObserver {
+  constructor(opcoes = {}) {
+    this.observer = new IntersectionObserver(
+      this.handleIntersection.bind(this),
+      {
+        threshold: 0.1,
+        rootMargin: '0px',
+        ...opcoes
+      }
+    );
+  }
+  
+  observar(elemento, callback) {
+    this.observer.observe(elemento);
+    elemento._scrollCallback = callback;
+  }
+  
+  handleIntersection(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target._scrollCallback?.(entry);
+      }
+    });
+  }
+  
+  pararObservacao(elemento) {
+    this.observer.unobserve(elemento);
+  }
+}
+
+// ✅ Web Workers
+class WorkerManager {
+  constructor() {
+    this.workers = new Map();
+  }
+  
+  criarWorker(nome, scriptUrl) {
+    const worker = new Worker(scriptUrl);
+    this.workers.set(nome, worker);
+    return worker;
+  }
+  
+  enviarMensagem(nome, dados) {
+    const worker = this.workers.get(nome);
+    if (worker) {
+      worker.postMessage(dados);
+    }
+  }
+  
+  configurarListener(nome, callback) {
+    const worker = this.workers.get(nome);
+    if (worker) {
+      worker.onmessage = callback;
+    }
+  }
+  
+  terminarWorker(nome) {
+    const worker = this.workers.get(nome);
+    if (worker) {
+      worker.terminate();
+      this.workers.delete(nome);
+    }
+  }
+}
+
+// ✅ Aplicação integrada
+class AppIntegrada {
+  constructor() {
+    this.clipboard = new ClipboardManager();
+    this.fileManager = new FileManager();
+    this.camera = new CameraManager();
+    this.scrollObserver = new ScrollObserver();
+    this.init();
+  }
+  
+  init() {
+    this.configurarInterface();
+    this.configurarEventos();
+  }
+  
+  configurarInterface() {
+    // Configurar drag and drop
+    const dropZone = document.getElementById('drop-zone');
+    if (dropZone) {
+      this.fileManager.configurarDragDrop(dropZone, (arquivos) => {
+        this.processarArquivos(arquivos);
+      });
+    }
+    
+    // Configurar scroll observer
+    document.querySelectorAll('.animate-on-scroll').forEach(elemento => {
+      this.scrollObserver.observar(elemento, (entry) => {
+        entry.target.classList.add('animated');
+      });
+    });
+  }
+  
+  configurarEventos() {
+    // Botão copiar
+    document.getElementById('btn-copiar')?.addEventListener('click', () => {
+      const texto = document.getElementById('texto-copiar').value;
+      this.clipboard.copiarTexto(texto);
+    });
+    
+    // Botão câmera
+    document.getElementById('btn-camera')?.addEventListener('click', () => {
+      this.iniciarCamera();
+    });
+  }
+  
+  async processarArquivos(arquivos) {
+    const resultados = await this.fileManager.processarArquivos(arquivos);
+    console.log('Arquivos processados:', resultados);
+  }
+  
+  async iniciarCamera() {
+    const video = document.getElementById('video-camera');
+    const sucesso = await this.camera.iniciarCamera(video);
+    
+    if (sucesso) {
+      console.log('Câmera iniciada');
+    } else {
+      console.log('Falha ao iniciar câmera');
+    }
+  }
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Prática: Aplicação Integrada com HTML5</h3>
+  <p>Vamos criar uma aplicação completa que integra todas as APIs modernas aprendidas, demonstrando o poder da integração JavaScript com HTML5 e CSS3.</p>
+  <h4>Objetivos da Prática:</h4>
+  <ul class="left_list">
+    <li>Integrar LocalStorage para persistência</li>
+    <li>Usar Geolocalização para mapas</li>
+    <li>Implementar Canvas para visualizações</li>
+    <li>Aplicar APIs modernas do navegador</li>
+    <li>Criar interface responsiva</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Aplicação Integrada Completa:</h4>
+  <pre><code>// ✅ Aplicação principal integrada
+class AppIntegradaCompleta {
+  constructor() {
+    this.storage = new StorageManager('app_');
+    this.clipboard = new ClipboardManager();
+    this.camera = new CameraManager();
+    this.canvas = new CanvasApp('main-canvas');
+    this.geolocation = new AppLocalizacao();
+    
+    this.dados = this.storage.get('dados', []);
+    this.configuracao = this.storage.get('config', {
+      tema: 'claro',
+      notificacoes: true,
+      autoSave: true
+    });
+    
+    this.init();
+  }
+  
+  init() {
+    this.aplicarTema();
+    this.configurarInterface();
+    this.carregarDados();
+    this.iniciarServicos();
+  }
+  
+  aplicarTema() {
+    document.body.className = `tema-${this.configuracao.tema}`;
+  }
+  
+  configurarInterface() {
+    // Configurar formulário
+    const form = document.getElementById('dados-form');
+    form?.addEventListener('submit', (e) => this.salvarDados(e));
+    
+    // Configurar botões
+    document.getElementById('btn-localizar')?.addEventListener('click', () => {
+      this.geolocation.obterLocalizacao();
+    });
+    
+    document.getElementById('btn-camera')?.addEventListener('click', () => {
+      this.iniciarCamera();
+    });
+    
+    document.getElementById('btn-copiar')?.addEventListener('click', () => {
+      this.copiarDados();
+    });
+    
+    // Configurar canvas
+    document.getElementById('btn-animar')?.addEventListener('click', () => {
+      this.canvas.iniciarAnimacao();
+    });
+    
+    // Configurar tema
+    document.getElementById('tema-toggle')?.addEventListener('change', (e) => {
+      this.alterarTema(e.target.value);
+    });
+  }
+  
+  carregarDados() {
+    const container = document.getElementById('dados-container');
+    if (!container) return;
+    
+    if (this.dados.length === 0) {
+      container.innerHTML = '<p>Nenhum dado salvo ainda.</p>';
+      return;
+    }
+    
+    container.innerHTML = this.dados.map(item => `
+      <div class="dados-item">
+        <h3>${item.titulo}</h3>
+        <p>${item.descricao}</p>
+        <small>Criado em: ${new Date(item.timestamp).toLocaleString()}</small>
+        <div class="acoes">
+          <button onclick="app.editarDados('${item.id}')">Editar</button>
+          <button onclick="app.excluirDados('${item.id}')">Excluir</button>
+        </div>
+      </div>
+    `).join('');
+  }
+  
+  async salvarDados(evento) {
+    evento.preventDefault();
+    
+    const formData = new FormData(evento.target);
+    const dados = {
+      id: Date.now().toString(),
+      titulo: formData.get('titulo'),
+      descricao: formData.get('descricao'),
+      timestamp: new Date().toISOString(),
+      localizacao: this.geolocation.localizacaoAtual
+    };
+    
+    this.dados.push(dados);
+    this.storage.set('dados', this.dados);
+    
+    evento.target.reset();
+    this.carregarDados();
+    
+    this.mostrarNotificacao('Dados salvos com sucesso!');
+  }
+  
+  editarDados(id) {
+    const item = this.dados.find(d => d.id === id);
+    if (!item) return;
+    
+    const titulo = prompt('Título:', item.titulo);
+    const descricao = prompt('Descrição:', item.descricao);
+    
+    if (titulo !== null && descricao !== null) {
+      item.titulo = titulo;
+      item.descricao = descricao;
+      item.timestamp = new Date().toISOString();
+      
+      this.storage.set('dados', this.dados);
+      this.carregarDados();
+    }
+  }
+  
+  excluirDados(id) {
+    if (confirm('Tem certeza que deseja excluir este item?')) {
+      this.dados = this.dados.filter(d => d.id !== id);
+      this.storage.set('dados', this.dados);
+      this.carregarDados();
+    }
+  }
+  
+  async copiarDados() {
+    const dadosTexto = this.dados.map(item => 
+      `${item.titulo}: ${item.descricao}`
+    ).join('\n');
+    
+    const sucesso = await this.clipboard.copiarTexto(dadosTexto);
+    
+    if (sucesso) {
+      this.mostrarNotificacao('Dados copiados para clipboard!');
+    }
+  }
+  
+  async iniciarCamera() {
+    const video = document.getElementById('video-camera');
+    const sucesso = await this.camera.iniciarCamera(video);
+    
+    if (sucesso) {
+      document.getElementById('camera-controls').style.display = 'block';
+    }
+  }
+  
+  capturarFoto() {
+    const canvas = document.getElementById('foto-canvas');
+    const foto = this.camera.capturarFoto(canvas);
+    
+    if (foto) {
+      // Salvar foto nos dados
+      const fotoData = {
+        id: Date.now().toString(),
+        tipo: 'foto',
+        dados: foto,
+        timestamp: new Date().toISOString()
+      };
+      
+      this.dados.push(fotoData);
+      this.storage.set('dados', this.dados);
+      
+      this.mostrarNotificacao('Foto capturada e salva!');
+    }
+  }
+  
+  alterarTema(tema) {
+    this.configuracao.tema = tema;
+    this.storage.set('config', this.configuracao);
+    this.aplicarTema();
+  }
+  
+  iniciarServicos() {
+    // Iniciar geolocalização automática
+    if (this.configuracao.autoSave) {
+      this.geolocation.obterLocalizacao();
+    }
+    
+    // Configurar auto-save
+    if (this.configuracao.autoSave) {
+      setInterval(() => {
+        this.storage.set('dados', this.dados);
+      }, 30000); // Salvar a cada 30 segundos
+    }
+  }
+  
+  mostrarNotificacao(mensagem) {
+    // Implementar sistema de notificações
+    const notificacao = document.createElement('div');
+    notificacao.className = 'notificacao';
+    notificacao.textContent = mensagem;
+    
+    document.body.appendChild(notificacao);
+    
+    setTimeout(() => {
+      notificacao.remove();
+    }, 3000);
+  }
+}
+
+// ✅ CSS para a aplicação
+const cssIntegrada = `
+  .tema-escuro {
+    background: #2c3e50;
+    color: #ecf0f1;
+  }
+  
+  .tema-escuro .dados-item {
+    background: #34495e;
+    border: 1px solid #4a5f7a;
+  }
+  
+  .dados-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .acoes {
+    margin-top: 10px;
+  }
+  
+  .acoes button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .notificacao {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #27ae60;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 4px;
+    z-index: 1000;
+  }
+  
+  #camera-controls {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  #video-camera {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  #foto-canvas {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+`;
+
+// ✅ Inicialização
+document.addEventListener('DOMContentLoaded', () => {
+  // Adicionar CSS
+  const style = document.createElement('style');
+  style.textContent = cssIntegrada;
+  document.head.appendChild(style);
+  
+  // Inicializar aplicação
+  window.app = new AppIntegradaCompleta();
+});</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/06/images/app_integrada_desktop.png">
+    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/cursos/javascript/06/images/app_integrada_tablet.png">
+    <img src="/vitrine-ml5/mlab5/cursos/javascript/06/images/app_integrada_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma aplicação web integrada com HTML5, CSS3 e APIs modernas:<p>
+  <ul>
+  <li>Título = Aplicação Web Integrada com HTML5 e APIs<br></li>
+  <li>Implemente LocalStorage para persistência de dados<br></li>
+  <li>Use Geolocalização para funcionalidades baseadas em localização<br></li>
+  <li>Crie visualizações interativas com Canvas<br></li>
+  <li>Integre APIs modernas (Clipboard, File, Camera)<br></li>
+  <li>Implemente sistema de notificações<br></li>
+  <li>Crie interface responsiva e acessível<br></li>
+</ul>
+</p>Inclua funcionalidades como captura de foto, geolocalização, manipulação de arquivos e visualizações em tempo real.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/vitrine-ml5/mlab5/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/vitrine-ml5/mlab5/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
