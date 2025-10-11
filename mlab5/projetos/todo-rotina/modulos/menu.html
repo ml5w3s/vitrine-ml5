@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="../style/todo.css" />
+<!-- Barra de navegação -->
+<nav id="navbar">
+    <div onclick="toggleNav()">Menu</div>
+    <ul id="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="seg.html">Segunda-feira</a></li>
+        <li><a href="ter.html">Terça-feira</a></li>
+        <li><a href="qua.html">Quarta-feira</a></li>
+        <li><a href="qui.html">Quinta-feira</a></li>
+        <li><a href="sex.html">Sexta-feira</a></li>
+        <li><a href="sab.html">Sábado</a></li>
+    </ul>
+</nav>
+<script>
+    /**
+     * Alterna a visibilidade do menu de navegação.
+     */
+    function toggleNav() {
+        const navList = document.getElementsById('day');
+        navList.style.display = navList.style.display === 'none' || navList.style.display === '' ? 'block' : 'none';
+    }
+</script>
