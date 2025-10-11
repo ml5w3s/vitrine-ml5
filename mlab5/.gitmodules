@@ -1,0 +1,3 @@
+[submodule "projetos/todo-rotina"]
+    path = projetos/todo-rotina
+    url = https://github.com/git-fixtures/empty.git
