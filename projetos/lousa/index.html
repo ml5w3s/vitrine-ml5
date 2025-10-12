@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lousa Virtual</title>
+<style>
+  canvas {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+  <canvas id="lousa" width="600" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('lousa');
+    const ctx = canvas.getContext('2d');
+    let desenhando = false;
+    let ultimoX = 0;
+    let ultimoY = 0;
+
+    canvas.addEventListener('mousedown', (e) => {
+      desenhando = true;
+      [ultimoX, ultimoY] = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
+    });
+
+    canvas.addEventListener('mouseup', () => {
+      desenhando = false;
+    });
+
+    canvas.addEventListener('mousemove', (e) => {
+      if (!desenhando) return;
+      const [x, y] = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
+      ctx.beginPath();
+      ctx.moveTo(ultimoX, ultimoY);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+      [ultimoX, ultimoY] = [x, y];
+    });
+  </script>
+</body>
+</html>
