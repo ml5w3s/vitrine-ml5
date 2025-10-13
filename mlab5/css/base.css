@@ -204,12 +204,6 @@ nav article {
   display: none;
 }
 
-/* Estilos de ID restantes (usar com moderação) */
-
-#logo_l4b {
-  width: 50%; /* Corrigido de 'size' para 'width' */
-}
-
 /* Media Queries */
 
 /* Tablet (2 colunas) */
@@ -227,17 +221,3 @@ nav article {
     flex: 0 0 100px;
   }
 }
-
-/* 
-  Mobile - A regra abaixo parece ter uma lógica incorreta.
-  Um item com 'flex-basis: 300px' não caberá em uma tela com 'max-width: 100px'.
-  A regra foi comentada para evitar comportamento inesperado.
-*/
-/* 
-@media (max-width: 100px) {
-  .carousel-wrapper.large .item,
-  .carousel-wrapper.small .item {
-    flex: 0 0 300px;
-  }
-} 
-*/

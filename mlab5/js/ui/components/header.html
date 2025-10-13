@@ -1,19 +1,109 @@
 <!--./js/ui/components/header.html -->
 <header class="container">
-
-<nav>
-  <section class="menu-esquerda">
-    <article class="item">
+  <nav>
+    <div class="logo">
       <a href="/vitrine-ml5/mlab5">
-        <img src="/vitrine-ml5/mlab5/images/logo_mobile.png">
+        <img src="/vitrine-ml5/mlab5/images/logo_mobile.png" alt="Logo ML5Lab">
       </a>
-    </article>
-    <article class="item">
-      <p><a href="/vitrine-ml5/mlab5/formularios/form_cadastro.php">|_Cadastre-se</a></p>
-      <p><a href="/vitrine-ml5/mlab5/formularios/form_login.php">_|_Entrar</a></p>
-      <p><a href="/vitrine-ml5/mlab5/controle/">_|_Administrativo_|</a></p>
-    </article>
-  </section>
-</nav>
+    </div>
 
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="/vitrine-ml5/mlab5/formularios/form_cadastro.php">Cadastre-se</a></li>
+      <li><a href="/vitrine-ml5/mlab5/formularios/form_login.php">Entrar</a></li>
+      <li><a href="/vitrine-ml5/mlab5/controle/">Administrativo</a></li>
+    </ul>
+  </nav>
 </header>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+
+  .logo img {
+    width: 100px;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+
+  .nav-links li {
+    margin-left: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: #f1f1f1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .nav-links.open {
+      left: 0;
+    }
+
+    .nav-links li {
+      margin: 20px 0;
+    }
+
+    .hamburger {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1001;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('header');
+    if(header) {
+        const hamburger = header.querySelector('.hamburger');
+        const navLinks = header.querySelector('.nav-links');
+
+        if(hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+        }
+    }
+  });
+</script>
