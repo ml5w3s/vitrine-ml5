@@ -98,18 +98,8 @@
 <div id="footer-placeholder"></div>
 
 <!-- SCRIPTS -->
+<script src="/vitrine-ml5/mlab5/js/main.js"></script>
 <script>
-  async function loadComponent(placeholderId, url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
-      const html = await response.text();
-      document.getElementById(placeholderId).innerHTML = html;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {

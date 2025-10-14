@@ -60,30 +60,20 @@
 <div id="footer-placeholder"></div>
 
 <!-- SCRIPTS -->
+<script src="/vitrine-ml5/mlab5/js/main.js"></script>
 <script>
-  async function loadComponent(placeholderId, url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
-      const html = await response.text();
-      document.getElementById(placeholderId).innerHTML = html;
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', './js/ui/components/header.php')
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = './js/ui/components/navbar.js';
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', './js/ui/components/footer.html');
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
   });
 </script>
 
