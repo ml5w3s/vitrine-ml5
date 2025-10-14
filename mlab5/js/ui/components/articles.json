@@ -2,31 +2,31 @@
   {
     "titulo": "HTML5",
     "descricao": "Aprenda HTML5 do zero, criando páginas responsivas e modernas.",
-    "imagem": "images/cursos/html_mobile.jpg",
+    "imagem": "/vitrin/mlab5/images/cursos/html_mobile.jpg",
     "link": "/vitrine-ml5/mlab5/cursos/html5.html"
   },
   {
     "titulo": "CSS3",
     "descricao": "Aprenda CSS3 do zero, criando páginas responsivas e modernas.",
-    "imagem": "images/cursos/css_mobile.jpg",
+    "imagem": "/vitrin/mlab5/images/cursos/css_mobile.jpg",
     "link": "/vitrine-ml5/mlab5/cursos/css3.html"
   },
   {
     "titulo": "JavaScript",
     "descricao": "Aprenda JavaScript do zero, criando páginas responsivas e modernas.",
-    "imagem": "images/cursos/js_mobile.jpg",
+    "imagem": "/vitrin/mlab5/images/cursos/js_mobile.jpg",
     "link": "/vitrine-ml5/mlab5/cursos/js.html"
   },
   {
     "titulo": "XML",
     "descricao": "Organize informações de forma legível e padronizada com XML.",
-    "imagem": "images/cursos/xml_mobile.jpg",
+    "imagem": "/vitrin/mlab5/images/cursos/xml_mobile.jpg",
     "link": "/vitrine-ml5/mlab5/cursos/xml.html"
   },
   {
     "titulo": "Jquery",
     "descricao": "Entenda os fundamentos do JavaScript e crie interatividade para seus projetos.",
-    "imagem": "images/cursos/jquery_mobile.jpg",
+    "imagem": "/vitrin/mlab5/images/cursos/jquery_mobile.jpg",
     "link": "/vitrine-ml5/mlab5/cursos/jquery.html"
   }
 ]
