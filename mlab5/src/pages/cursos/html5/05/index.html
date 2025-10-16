@@ -1,0 +1,384 @@
+<!--curso_html5/05/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 05 - Novos Tipos de Input HTML5 | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre os novos tipos de input do HTML5: email, url, tel, number, range, date, color e outros para criar formulários mais intuitivos e validados.">
+  <meta name="keywords" content="html5, input types, formulários, validação, email, tel, number, date, color, range">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 05 - Novos Tipos de Input HTML5 | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre os novos tipos de input do HTML5 para criar formulários mais intuitivos e validados automaticamente.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 05 - Novos Tipos de Input HTML5 | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre os novos tipos de input do HTML5 para criar formulários mais intuitivos e validados automaticamente.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>📝 HTML5 - Novos Tipos de Input</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Evolução dos Formulários HTML5</h3>
+  <p>O HTML5 introduziu novos tipos de input que tornam os formulários mais intuitivos, com validação automática e controles específicos para diferentes tipos de dados. Isso melhora significativamente a experiência do usuário.</p>
+  <h4>Vantagens dos Novos Tipos:</h4>
+  <ul class="left_list">
+    <li>Validação automática pelo navegador</li>
+    <li>Controles nativos otimizados</li>
+    <li>Melhor experiência em dispositivos móveis</li>
+    <li>Redução de código JavaScript</li>
+    <li>Acessibilidade aprimorada</li>
+    <li>Interface mais intuitiva</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/05/images/tipos_input_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/05/images/tipos_input_tablet.png">
+    <img src="/src/pages/cursos/html5/05/images/tipos_input_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Inputs para Texto Específico</h3>
+  <p>Estes tipos de input validam automaticamente o formato do texto inserido, proporcionando feedback imediato ao usuário.</p>
+  <h4>Tipos de Texto:</h4>
+  <ul class="left_list">
+    <li>email - Valida formato de email</li>
+    <li>url - Valida URLs</li>
+    <li>tel - Números de telefone</li>
+    <li>search - Campos de busca</li>
+    <li>password - Senhas (já existia)</li>
+    <li>text - Texto livre (padrão)</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Uso:</h4>
+  <pre><code>&lt;form&gt;
+  &lt;label&gt;Email:&lt;/label&gt;
+  &lt;input type="email" name="email" required&gt;
+  
+  &lt;label&gt;Website:&lt;/label&gt;
+  &lt;input type="url" name="website"&gt;
+  
+  &lt;label&gt;Telefone:&lt;/label&gt;
+  &lt;input type="tel" name="phone"&gt;
+  
+  &lt;label&gt;Busca:&lt;/label&gt;
+  &lt;input type="search" name="search"&gt;
+&lt;/form&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Inputs Numéricos</h3>
+  <p>Para entrada de valores numéricos, o HTML5 oferece tipos específicos que facilitam a digitação e validação.</p>
+  <h4>Tipos Numéricos:</h4>
+  <ul class="left_list">
+    <li>number - Números inteiros e decimais</li>
+    <li>range - Controle deslizante</li>
+    <li>min/max - Define limites</li>
+    <li>step - Define incrementos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo com Number e Range:</h4>
+  <pre><code>&lt;form&gt;
+  &lt;label&gt;Idade:&lt;/label&gt;
+  &lt;input type="number" name="age" 
+         min="0" max="120" step="1"&gt;
+  
+  &lt;label&gt;Volume:&lt;/label&gt;
+  &lt;input type="range" name="volume" 
+         min="0" max="100" step="5" 
+         value="50"&gt;
+&lt;/form&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/05/images/inputs_numericos_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/05/images/inputs_numericos_tablet.png">
+    <img src="/src/pages/cursos/html5/05/images/inputs_numericos_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Inputs de Data e Hora</h3>
+  <p>Para entrada de datas e horários, o HTML5 oferece controles nativos que são especialmente úteis em dispositivos móveis.</p>
+  <h4>Tipos de Data/Hora:</h4>
+  <ul class="left_list">
+    <li>date - Data (ano-mês-dia)</li>
+    <li>time - Horário (hora:minuto)</li>
+    <li>datetime-local - Data e hora local</li>
+    <li>month - Mês e ano</li>
+    <li>week - Semana do ano</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Datas:</h4>
+  <pre><code>&lt;form&gt;
+  &lt;label&gt;Data de Nascimento:&lt;/label&gt;
+  &lt;input type="date" name="birthday"&gt;
+  
+  &lt;label&gt;Horário de Agendamento:&lt;/label&gt;
+  &lt;input type="time" name="appointment"&gt;
+  
+  &lt;label&gt;Data e Hora:&lt;/label&gt;
+  &lt;input type="datetime-local" name="event"&gt;
+  
+  &lt;label&gt;Mês de Início:&lt;/label&gt;
+  &lt;input type="month" name="start"&gt;
+&lt;/form&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Inputs Especiais</h3>
+  <p>Alguns tipos de input oferecem funcionalidades únicas e interfaces específicas para casos especiais.</p>
+  <h4>Tipos Especiais:</h4>
+  <ul class="left_list">
+    <li>color - Seletor de cores</li>
+    <li>file - Upload de arquivos</li>
+    <li>hidden - Campo oculto</li>
+    <li>checkbox - Caixa de seleção</li>
+    <li>radio - Botão de opção</li>
+    <li>submit - Botão de envio</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Inputs Especiais:</h4>
+  <pre><code>&lt;form&gt;
+  &lt;label&gt;Cor Favorita:&lt;/label&gt;
+  &lt;input type="color" name="color" value="#ff0000"&gt;
+  
+  &lt;label&gt;Foto de Perfil:&lt;/label&gt;
+  &lt;input type="file" name="photo" 
+         accept="image/*"&gt;
+  
+  &lt;label&gt;
+    &lt;input type="checkbox" name="terms"&gt;
+    Aceito os termos
+  &lt;/label&gt;
+  
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Atributos de Validação</h3>
+  <p>O HTML5 introduziu novos atributos que permitem validação mais robusta sem JavaScript.</p>
+  <h4>Atributos Principais:</h4>
+  <ul class="left_list">
+    <li>required - Campo obrigatório</li>
+    <li>pattern - Expressão regular</li>
+    <li>minlength/maxlength - Tamanho do texto</li>
+    <li>min/max - Valores mínimo/máximo</li>
+    <li>step - Incremento para números</li>
+    <li>placeholder - Texto de exemplo</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo com Validação:</h4>
+  <pre><code>&lt;form&gt;
+  &lt;label&gt;Nome Completo:&lt;/label&gt;
+  &lt;input type="text" name="name" 
+         required minlength="3" 
+         placeholder="Digite seu nome completo"&gt;
+  
+  &lt;label&gt;CPF:&lt;/label&gt;
+  &lt;input type="text" name="cpf" 
+         pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}"
+         placeholder="000.000.000-00"&gt;
+  
+  &lt;label&gt;Idade:&lt;/label&gt;
+  &lt;input type="number" name="age" 
+         min="18" max="99" required&gt;
+&lt;/form&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/05/images/validacao_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/05/images/validacao_tablet.png">
+    <img src="/src/pages/cursos/html5/05/images/validacao_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Novos Elementos de Formulário</h3>
+  <p>Além dos novos tipos de input, o HTML5 também introduziu novos elementos que complementam os formulários.</p>
+  <h4>Novos Elementos:</h4>
+  <ul class="left_list">
+    <li>datalist - Lista de sugestões</li>
+    <li>output - Exibe resultados de cálculos</li>
+    <li>progress - Barra de progresso</li>
+    <li>meter - Medidor de valores</li>
+    <li>keygen - Geração de chaves (depreciado)</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo com Datalist e Output:</h4>
+  <pre><code>&lt;form&gt;
+  &lt;label&gt;Cidade:&lt;/label&gt;
+  &lt;input list="cidades" name="city"&gt;
+  &lt;datalist id="cidades"&gt;
+    &lt;option value="São Paulo"&gt;
+    &lt;option value="Rio de Janeiro"&gt;
+    &lt;option value="Belo Horizonte"&gt;
+  &lt;/datalist&gt;
+  
+  &lt;label&gt;Progresso:&lt;/label&gt;
+  &lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;
+&lt;/form&gt;</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie um formulário completo usando os novos tipos de input HTML5 com:<p>
+  <ul>
+  <li>Título = Formulário Avançado HTML5<br></li>
+  <li>Dados Pessoais = Nome, email, telefone com validação<br></li>
+  <li>Preferências = Cor, data, horário, número com range<br></li>
+  <li>Upload = Campo para arquivo de foto<br></li>
+  <li>Validação = Use required, pattern, min/max<br></li>
+  <li>Extras = Datalist, progress, output<br></li>
+</ul>
+</p>Implemente validação HTML5 e feedback visual para o usuário.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

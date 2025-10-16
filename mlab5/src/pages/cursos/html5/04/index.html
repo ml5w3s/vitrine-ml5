@@ -1,0 +1,319 @@
+<!--curso_html5/04/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 04 - Elementos de Mídia HTML5 | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre os elementos de mídia do HTML5: video, audio e canvas para criar experiências multimídia ricas em suas páginas web.">
+  <meta name="keywords" content="html5, video, audio, canvas, multimídia, elementos mídia, html5 media">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 04 - Elementos de Mídia HTML5 | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre os elementos de mídia do HTML5: video, audio e canvas para criar experiências multimídia ricas.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 04 - Elementos de Mídia HTML5 | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre os elementos de mídia do HTML5: video, audio e canvas para criar experiências multimídia ricas.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🎬 HTML5 - Elementos de Mídia</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Elementos de Mídia no HTML5</h3>
+  <p>O HTML5 introduziu elementos nativos para trabalhar com mídia, eliminando a necessidade de plugins externos como Flash. Os principais elementos são &lt;video&gt;, &lt;audio&gt; e &lt;canvas&gt;.</p>
+  <h4>Vantagens dos Elementos Nativos:</h4>
+  <ul class="left_list">
+    <li>Não requer plugins externos</li>
+    <li>Melhor performance e compatibilidade</li>
+    <li>Controles nativos do navegador</li>
+    <li>API JavaScript rica</li>
+    <li>Suporte a múltiplos formatos</li>
+    <li>Responsivo por natureza</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/04/images/elementos_midia_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/04/images/elementos_midia_tablet.png">
+    <img src="/src/pages/cursos/html5/04/images/elementos_midia_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;video&gt;</h3>
+  <p>O elemento &lt;video&gt; permite incorporar conteúdo de vídeo diretamente nas páginas web, com controles nativos e suporte a múltiplos formatos.</p>
+  <h4>Formatos Suportados:</h4>
+  <ul class="left_list">
+    <li>MP4 - Mais compatível</li>
+    <li>WebM - Código aberto, boa compressão</li>
+    <li>OGV - Formato livre</li>
+    <li>AVI - Menos comum na web</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo Básico:</h4>
+  <pre><code>&lt;video width="400" height="300" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  Seu navegador não suporta vídeo.
+&lt;/video&gt;</code></pre>
+  
+  <h4>Atributos Importantes:</h4>
+  <ul class="left_list">
+    <li>controls - Mostra controles</li>
+    <li>autoplay - Reproduz automaticamente</li>
+    <li>loop - Reproduz em loop</li>
+    <li>muted - Sem áudio inicial</li>
+    <li>poster - Imagem de preview</li>
+  </ul>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;audio&gt;</h3>
+  <p>O elemento &lt;audio&gt; permite incorporar conteúdo de áudio diretamente nas páginas web, com controles nativos e suporte a múltiplos formatos.</p>
+  <h4>Formatos Suportados:</h4>
+  <ul class="left_list">
+    <li>MP3 - Mais popular</li>
+    <li>WAV - Qualidade alta, arquivo grande</li>
+    <li>OGG - Código aberto</li>
+    <li>AAC - Boa compressão</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Uso:</h4>
+  <pre><code>&lt;audio controls&gt;
+  &lt;source src="musica.mp3" type="audio/mpeg"&gt;
+  &lt;source src="musica.ogg" type="audio/ogg"&gt;
+  Seu navegador não suporta áudio.
+&lt;/audio&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/04/images/audio_video_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/04/images/audio_video_tablet.png">
+    <img src="/src/pages/cursos/html5/04/images/audio_video_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;canvas&gt;</h3>
+  <p>O elemento &lt;canvas&gt; é uma área de desenho que permite criar gráficos, animações e manipular pixels usando JavaScript. É uma das funcionalidades mais poderosas do HTML5.</p>
+  <h4>Usos do Canvas:</h4>
+  <ul class="left_list">
+    <li>Desenho de gráficos 2D</li>
+    <li>Animações interativas</li>
+    <li>Jogos web</li>
+    <li>Manipulação de imagens</li>
+    <li>Visualização de dados</li>
+    <li>Efeitos visuais</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo Básico:</h4>
+  <pre><code>&lt;canvas id="meuCanvas" width="400" height="300"&gt;
+  Seu navegador não suporta canvas.
+&lt;/canvas&gt;
+
+&lt;script&gt;
+  const canvas = document.getElementById('meuCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(10, 10, 100, 100);
+&lt;/script&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>API de Mídia</h3>
+  <p>Os elementos de mídia HTML5 possuem uma API JavaScript rica que permite controlar a reprodução, eventos e propriedades programaticamente.</p>
+  <h4>Métodos Principais:</h4>
+  <ul class="left_list">
+    <li>play() - Inicia reprodução</li>
+    <li>pause() - Pausa reprodução</li>
+    <li>load() - Recarrega o elemento</li>
+    <li>canPlayType() - Verifica formato</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Propriedades Importantes:</h4>
+  <ul class="left_list">
+    <li>currentTime - Tempo atual</li>
+    <li>duration - Duração total</li>
+    <li>volume - Volume (0-1)</li>
+    <li>muted - Estado do mute</li>
+    <li>paused - Se está pausado</li>
+    <li>ended - Se terminou</li>
+  </ul>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Eventos de Mídia</h3>
+  <p>Os elementos de mídia disparam eventos que permitem criar experiências interativas e personalizadas.</p>
+  <h4>Eventos Principais:</h4>
+  <ul class="left_list">
+    <li>loadstart - Início do carregamento</li>
+    <li>loadeddata - Dados carregados</li>
+    <li>play - Início da reprodução</li>
+    <li>pause - Pausa</li>
+    <li>ended - Fim da reprodução</li>
+    <li>error - Erro no carregamento</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/04/images/eventos_midia_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/04/images/eventos_midia_tablet.png">
+    <img src="/src/pages/cursos/html5/04/images/eventos_midia_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma página com elementos de mídia HTML5 contendo:<p>
+  <ul>
+  <li>Título = Experiência Multimídia com HTML5<br></li>
+  <li>Vídeo = Com controles e múltiplos formatos<br></li>
+  <li>Áudio = Com controles personalizados<br></li>
+  <li>Canvas = Com desenho básico usando JavaScript<br></li>
+  <li>Eventos = Implemente eventos para controlar a mídia<br></li>
+  <li>Responsivo = Garanta que funcione em diferentes dispositivos<br></li>
+</ul>
+</p>Use a API de mídia para criar controles personalizados e interações.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

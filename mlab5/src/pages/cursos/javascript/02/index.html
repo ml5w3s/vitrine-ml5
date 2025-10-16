@@ -1,0 +1,666 @@
+<!--curso_javascript/02/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 02 - Estrutura e Paradigma Funcional | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda programação funcional em JavaScript: funções puras, imutabilidade, array methods modernos e transformação de dados.">
+  <meta name="keywords" content="javascript, programação funcional, funções puras, map, filter, reduce, imutabilidade, array methods">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 02 - JavaScript Funcional: Map, Filter, Reduce | ML5Lab">
+  <meta property="og:description" content="Aprenda programação funcional em JavaScript: funções puras, imutabilidade, array methods modernos e transformação de dados.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 02 - JavaScript Funcional: Map, Filter, Reduce | ML5Lab">
+  <meta name="twitter:description" content="Aprenda programação funcional em JavaScript: funções puras, imutabilidade, array methods modernos e transformação de dados.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🧮 JavaScript Funcional - Map, Filter, Reduce</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Programação Funcional em JavaScript</h3>
+  <p>A programação funcional é um paradigma que trata computação como avaliação de funções matemáticas, enfatizando funções puras, imutabilidade e transformação de dados através de métodos como map, filter e reduce.</p>
+  <h4>Princípios da Programação Funcional:</h4>
+  <ul class="left_list">
+    <li><strong>Funções Puras:</strong> Sem efeitos colaterais, resultado previsível</li>
+    <li><strong>Imutabilidade:</strong> Dados não são modificados, mas transformados</li>
+    <li><strong>Composição:</strong> Construir funções complexas a partir de simples</li>
+    <li><strong>Transformação:</strong> Dados fluem através de transformações</li>
+    <li><strong>Declarativo:</strong> Descrever o que fazer, não como fazer</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/javascript/02/images/programacao_funcional_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/javascript/02/images/programacao_funcional_tablet.png">
+    <img src="/src/pages/cursos/javascript/02/images/programacao_funcional_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Funções Puras e Efeitos Colaterais</h3>
+  <p>Funções puras são o coração da programação funcional. Elas sempre retornam o mesmo resultado para os mesmos argumentos e não produzem efeitos colaterais, tornando o código mais previsível e testável.</p>
+  <h4>Características de Funções Puras:</h4>
+  <ul class="left_list">
+    <li>Resultado previsível (mesma entrada = mesma saída)</li>
+    <li>Sem efeitos colaterais (não modifica estado externo)</li>
+    <li>Não depende de variáveis externas mutáveis</li>
+    <li>Facilmente testáveis e debuggáveis</li>
+    <li>Permitem otimizações e memoização</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos: Funções Puras vs Impuras:</h4>
+  <pre><code>// ❌ Função impura - tem efeitos colaterais
+let contador = 0;
+function incrementarImpuro() {
+  contador++; // Modifica variável externa
+  console.log(contador); // Efeito colateral (console)
+  return contador;
+}
+
+// ❌ Função impura - depende de estado externo
+function calcularImpostoImpuro(valor) {
+  const taxa = Math.random(); // Resultado imprevisível
+  return valor * taxa;
+}
+
+// ✅ Função pura - sem efeitos colaterais
+function incrementarPuro(numero) {
+  return numero + 1;
+}
+
+// ✅ Função pura - resultado previsível
+function calcularImposto(valor, taxa) {
+  return valor * taxa;
+}
+
+// ✅ Função pura - transforma dados sem modificar origem
+function formatarNome(usuario) {
+  return {
+    ...usuario,
+    nomeCompleto: `${usuario.nome} ${usuario.sobrenome}`,
+    nomeFormatado: usuario.nome.toUpperCase()
+  };
+}
+
+// ✅ Função pura - composição de funções
+const calcularDesconto = (valor, percentual) => valor * (1 - percentual / 100);
+const aplicarTaxa = (valor, taxa) => valor * (1 + taxa / 100);
+
+const calcularPrecoFinal = (preco, desconto, taxa) => 
+  aplicarTaxa(calcularDesconto(preco, desconto), taxa);
+
+// Uso das funções puras
+const precoFinal = calcularPrecoFinal(100, 10, 5); // 94.5
+console.log(precoFinal);</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Array Methods Modernos: Map</h3>
+  <p>O método <code>map()</code> transforma cada elemento de um array aplicando uma função, retornando um novo array com os elementos transformados. É fundamental para transformação de dados.</p>
+  <h4>Características do Map:</h4>
+  <ul class="left_list">
+    <li>Retorna um novo array (não modifica o original)</li>
+    <li>Aplica função a cada elemento</li>
+    <li>Mantém o mesmo tamanho do array original</li>
+    <li>Composição com outros métodos funcionais</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos Práticos do Map:</h4>
+  <pre><code>// ✅ Transformação básica
+const numeros = [1, 2, 3, 4, 5];
+const dobrados = numeros.map(num => num * 2);
+console.log(dobrados); // [2, 4, 6, 8, 10]
+
+// ✅ Transformar objetos
+const usuarios = [
+  { nome: 'João', idade: 25 },
+  { nome: 'Maria', idade: 30 },
+  { nome: 'Pedro', idade: 35 }
+];
+
+const nomes = usuarios.map(usuario => usuario.nome);
+console.log(nomes); // ['João', 'Maria', 'Pedro']
+
+// ✅ Criar objetos com propriedades calculadas
+const usuariosComIdade = usuarios.map(usuario => ({
+  ...usuario,
+  categoria: usuario.idade >= 30 ? 'adulto' : 'jovem',
+  anoNascimento: new Date().getFullYear() - usuario.idade
+}));
+console.log(usuariosComIdade);
+
+// ✅ Transformar para HTML
+const produtos = [
+  { nome: 'Notebook', preco: 2500 },
+  { nome: 'Mouse', preco: 50 },
+  { nome: 'Teclado', preco: 150 }
+];
+
+const htmlProdutos = produtos.map(produto => `
+  <div class="produto">
+    <h3>${produto.nome}</h3>
+    <p>R$ ${produto.preco.toFixed(2)}</p>
+  </div>
+`).join('');
+
+// ✅ Map com índice
+const items = ['a', 'b', 'c'];
+const itemsNumerados = items.map((item, index) => `${index + 1}. ${item}`);
+console.log(itemsNumerados); // ['1. a', '2. b', '3. c']
+
+// ✅ Função de mapeamento reutilizável
+const formatarMoeda = valor => `R$ ${valor.toFixed(2)}`;
+const preçosFormatados = produtos.map(p => formatarMoeda(p.preco));
+console.log(preçosFormatados); // ['R$ 2500.00', 'R$ 50.00', 'R$ 150.00']</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Array Methods Modernos: Filter</h3>
+  <p>O método <code>filter()</code> cria um novo array com todos os elementos que passam no teste implementado pela função fornecida. É essencial para seleção de dados.</p>
+  <h4>Características do Filter:</h4>
+  <ul class="left_list">
+    <li>Retorna array filtrado (não modifica original)</li>
+    <li>Função deve retornar boolean</li>
+    <li>Pode retornar array menor que o original</li>
+    <li>Composição com map e reduce</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos Práticos do Filter:</h4>
+  <pre><code>// ✅ Filtrar números
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const pares = numeros.filter(num => num % 2 === 0);
+console.log(pares); // [2, 4, 6, 8, 10]
+
+// ✅ Filtrar objetos por propriedade
+const usuarios = [
+  { nome: 'João', idade: 25, ativo: true },
+  { nome: 'Maria', idade: 30, ativo: false },
+  { nome: 'Pedro', idade: 35, ativo: true }
+];
+
+const usuariosAtivos = usuarios.filter(usuario => usuario.ativo);
+console.log(usuariosAtivos);
+
+// ✅ Filtros múltiplos
+const adultosAtivos = usuarios.filter(usuario => 
+  usuario.ativo && usuario.idade >= 18
+);
+
+// ✅ Filtrar por string
+const produtos = [
+  { nome: 'Notebook Dell', categoria: 'computador' },
+  { nome: 'Mouse Logitech', categoria: 'periférico' },
+  { nome: 'Teclado Mecânico', categoria: 'periférico' }
+];
+
+const perifericos = produtos.filter(produto => 
+  produto.categoria === 'periférico'
+);
+
+// ✅ Filtrar com busca textual
+const buscarProduto = (produtos, termo) => 
+  produtos.filter(produto => 
+    produto.nome.toLowerCase().includes(termo.toLowerCase())
+  );
+
+const resultados = buscarProduto(produtos, 'teclado');
+
+// ✅ Filtrar valores únicos
+const numeros = [1, 2, 2, 3, 3, 3, 4, 4, 5];
+const unicos = numeros.filter((num, index, array) => 
+  array.indexOf(num) === index
+);
+console.log(unicos); // [1, 2, 3, 4, 5]
+
+// ✅ Filtrar elementos válidos
+const dados = [1, null, 2, undefined, 3, '', 4, 0, 5];
+const validos = dados.filter(valor => Boolean(valor));
+console.log(validos); // [1, 2, 3, 4, 5]</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Array Methods Modernos: Reduce</h3>
+  <p>O método <code>reduce()</code> executa uma função redutora para cada elemento do array, resultando em um único valor de retorno. É poderoso para agregações e transformações complexas.</p>
+  <h4>Características do Reduce:</h4>
+  <ul class="left_list">
+    <li>Reduz array a um único valor</li>
+    <li>Acumula resultado através de iterações</li>
+    <li>Valor inicial opcional</li>
+    <li>Versátil para diferentes operações</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos Práticos do Reduce:</h4>
+  <pre><code>// ✅ Soma de números
+const numeros = [1, 2, 3, 4, 5];
+const soma = numeros.reduce((total, num) => total + num, 0);
+console.log(soma); // 15
+
+// ✅ Produto de números
+const produto = numeros.reduce((total, num) => total * num, 1);
+console.log(produto); // 120
+
+// ✅ Encontrar valor máximo
+const maximo = numeros.reduce((max, num) => 
+  num > max ? num : max, -Infinity
+);
+console.log(maximo); // 5
+
+// ✅ Contar ocorrências
+const palavras = ['gato', 'cachorro', 'gato', 'pássaro', 'gato'];
+const contagem = palavras.reduce((contador, palavra) => {
+  contador[palavra] = (contador[palavra] || 0) + 1;
+  return contador;
+}, {});
+console.log(contagem); // { gato: 3, cachorro: 1, pássaro: 1 }
+
+// ✅ Agrupar objetos
+const usuarios = [
+  { nome: 'João', idade: 25, cidade: 'São Paulo' },
+  { nome: 'Maria', idade: 30, cidade: 'Rio de Janeiro' },
+  { nome: 'Pedro', idade: 25, cidade: 'São Paulo' }
+];
+
+const agrupadosPorIdade = usuarios.reduce((grupos, usuario) => {
+  const idade = usuario.idade;
+  if (!grupos[idade]) {
+    grupos[idade] = [];
+  }
+  grupos[idade].push(usuario);
+  return grupos;
+}, {});
+
+// ✅ Calcular estatísticas
+const vendas = [100, 200, 150, 300, 250];
+const estatisticas = vendas.reduce((stats, venda) => ({
+  total: stats.total + venda,
+  contagem: stats.contagem + 1,
+  maximo: Math.max(stats.maximo, venda),
+  minimo: Math.min(stats.minimo, venda)
+}), { total: 0, contagem: 0, maximo: -Infinity, minimo: Infinity });
+
+const media = estatisticas.total / estatisticas.contagem;
+
+// ✅ Transformar array em objeto
+const pares = [['nome', 'João'], ['idade', 25], ['cidade', 'São Paulo']];
+const objeto = pares.reduce((obj, [chave, valor]) => {
+  obj[chave] = valor;
+  return obj;
+}, {});
+console.log(objeto); // { nome: 'João', idade: 25, cidade: 'São Paulo' }</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/javascript/02/images/array_methods_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/javascript/02/images/array_methods_tablet.png">
+    <img src="/src/pages/cursos/javascript/02/images/array_methods_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Composição de Métodos Funcionais</h3>
+  <p>A verdadeira força da programação funcional está na composição de métodos como map, filter e reduce, criando pipelines de transformação de dados poderosos e legíveis.</p>
+  <h4>Vantagens da Composição:</h4>
+  <ul class="left_list">
+    <li>Código declarativo e legível</li>
+    <li>Transformações em pipeline</li>
+    <li>Reutilização de lógica</li>
+    <li>Facilita debugging</li>
+    <li>Performance otimizada</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Composição:</h4>
+  <pre><code>// ✅ Pipeline de transformação de dados
+const produtos = [
+  { nome: 'Notebook', preco: 2500, categoria: 'eletrônicos', ativo: true },
+  { nome: 'Mouse', preco: 50, categoria: 'periféricos', ativo: true },
+  { nome: 'Teclado', preco: 150, categoria: 'periféricos', ativo: false },
+  { nome: 'Monitor', preco: 800, categoria: 'eletrônicos', ativo: true },
+  { nome: 'Cabo USB', preco: 25, categoria: 'acessórios', ativo: true }
+];
+
+// Pipeline: filtrar ativos → filtrar eletrônicos → calcular com desconto → ordenar
+const produtosProcessados = produtos
+  .filter(produto => produto.ativo)
+  .filter(produto => produto.categoria === 'eletrônicos')
+  .map(produto => ({
+    ...produto,
+    precoComDesconto: produto.preco * 0.9,
+    desconto: produto.preco * 0.1
+  }))
+  .sort((a, b) => b.precoComDesconto - a.precoComDesconto);
+
+console.log(produtosProcessados);
+
+// ✅ Análise de vendas por categoria
+const vendas = [
+  { produto: 'Notebook', categoria: 'eletrônicos', valor: 2500, quantidade: 2 },
+  { produto: 'Mouse', categoria: 'periféricos', valor: 50, quantidade: 10 },
+  { produto: 'Teclado', categoria: 'periféricos', valor: 150, quantidade: 5 },
+  { produto: 'Monitor', categoria: 'eletrônicos', valor: 800, quantidade: 3 }
+];
+
+const vendasPorCategoria = vendas
+  .map(venda => ({
+    ...venda,
+    total: venda.valor * venda.quantidade
+  }))
+  .reduce((categorias, venda) => {
+    const categoria = venda.categoria;
+    if (!categorias[categoria]) {
+      categorias[categoria] = {
+        totalVendas: 0,
+        totalQuantidade: 0,
+        produtos: []
+      };
+    }
+    categorias[categoria].totalVendas += venda.total;
+    categorias[categoria].totalQuantidade += venda.quantidade;
+    categorias[categoria].produtos.push(venda.produto);
+    return categorias;
+  }, {});
+
+console.log(vendasPorCategoria);
+
+// ✅ Geração de relatório HTML
+const gerarRelatorio = produtos => `
+  <h2>Relatório de Produtos</h2>
+  <div class="resumo">
+    ${produtos
+      .reduce((stats, produto) => ({
+        total: stats.total + produto.preco,
+        quantidade: stats.quantidade + 1
+      }), { total: 0, quantidade: 0 })
+      |> stats => `
+        <p>Total de produtos: ${stats.quantidade}</p>
+        <p>Valor total: R$ ${stats.total.toFixed(2)}</p>
+      `
+    }
+  </div>
+  <div class="produtos">
+    ${produtos
+      .filter(p => p.ativo)
+      .sort((a, b) => b.preco - a.preco)
+      .map(produto => `
+        <div class="produto">
+          <h3>${produto.nome}</h3>
+          <p>R$ ${produto.preco.toFixed(2)}</p>
+          <span class="categoria">${produto.categoria}</span>
+        </div>
+      `)
+      .join('')
+    }
+  </div>
+`;
+
+const relatorioHTML = gerarRelatorio(produtos);</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Prática: Transformar Listas em HTML Dinamicamente</h3>
+  <p>Vamos aplicar todos os conceitos de programação funcional para criar uma aplicação que transforma dados em HTML de forma dinâmica e elegante.</p>
+  <h4>Objetivos da Prática:</h4>
+  <ul class="left_list">
+    <li>Usar funções puras para transformações</li>
+    <li>Aplicar map, filter e reduce</li>
+    <li>Compor métodos em pipeline</li>
+    <li>Gerar HTML dinâmico</li>
+    <li>Implementar funcionalidades interativas</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo Prático Completo:</h4>
+  <pre><code>// ✅ Dados de exemplo
+const funcionarios = [
+  { id: 1, nome: 'João Silva', cargo: 'Desenvolvedor', salario: 5000, departamento: 'TI', ativo: true },
+  { id: 2, nome: 'Maria Santos', cargo: 'Designer', salario: 4000, departamento: 'Design', ativo: true },
+  { id: 3, nome: 'Pedro Costa', cargo: 'Analista', salario: 3500, departamento: 'TI', ativo: false },
+  { id: 4, nome: 'Ana Oliveira', cargo: 'Gerente', salario: 8000, departamento: 'TI', ativo: true },
+  { id: 5, nome: 'Carlos Lima', cargo: 'Designer', salario: 4200, departamento: 'Design', ativo: true }
+];
+
+// ✅ Funções puras para transformação
+const formatarMoeda = valor => `R$ ${valor.toFixed(2).replace('.', ',')}`;
+const calcularSalarioAnual = salario => salario * 12;
+const obterIniciais = nome => nome.split(' ').map(n => n[0]).join('');
+
+// ✅ Componente para card de funcionário
+const criarCardFuncionario = funcionario => `
+  <div class="funcionario-card" data-id="${funcionario.id}">
+    <div class="avatar">${obterIniciais(funcionario.nome)}</div>
+    <h3>${funcionario.nome}</h3>
+    <p class="cargo">${funcionario.cargo}</p>
+    <p class="departamento">${funcionario.departamento}</p>
+    <p class="salario">${formatarMoeda(funcionario.salario)}</p>
+    <p class="salario-anual">Anual: ${formatarMoeda(calcularSalarioAnual(funcionario.salario))}</p>
+    <span class="status ${funcionario.ativo ? 'ativo' : 'inativo'}">
+      ${funcionario.ativo ? 'Ativo' : 'Inativo'}
+    </span>
+  </div>
+`;
+
+// ✅ Gerar estatísticas
+const gerarEstatisticas = funcionarios => {
+  const stats = funcionarios.reduce((acc, func) => ({
+    total: acc.total + 1,
+    ativos: acc.ativos + (func.ativo ? 1 : 0),
+    salarioTotal: acc.salarioTotal + func.salario,
+    porDepartamento: {
+      ...acc.porDepartamento,
+      [func.departamento]: (acc.porDepartamento[func.departamento] || 0) + 1
+    }
+  }), { total: 0, ativos: 0, salarioTotal: 0, porDepartamento: {} });
+
+  return `
+    <div class="estatisticas">
+      <h3>Estatísticas</h3>
+      <p>Total de funcionários: ${stats.total}</p>
+      <p>Funcionários ativos: ${stats.ativos}</p>
+      <p>Salário médio: ${formatarMoeda(stats.salarioTotal / stats.total)}</p>
+      <div class="departamentos">
+        ${Object.entries(stats.porDepartamento)
+          .map(([dept, qtd]) => `<span>${dept}: ${qtd}</span>`)
+          .join(' | ')
+        }
+      </div>
+    </div>
+  `;
+};
+
+// ✅ Função principal para renderizar
+const renderizarFuncionarios = (funcionarios, filtros = {}) => {
+  const funcionariosFiltrados = funcionarios
+    .filter(func => !filtros.ativo || func.ativo === filtros.ativo)
+    .filter(func => !filtros.departamento || func.departamento === filtros.departamento)
+    .filter(func => !filtros.busca || func.nome.toLowerCase().includes(filtros.busca.toLowerCase()));
+
+  const html = `
+    ${gerarEstatisticas(funcionariosFiltrados)}
+    <div class="funcionarios-grid">
+      ${funcionariosFiltrados.map(criarCardFuncionario).join('')}
+    </div>
+  `;
+
+  return html;
+};
+
+// ✅ Uso da aplicação
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('funcionarios-container');
+  
+  // Renderizar todos os funcionários
+  container.innerHTML = renderizarFuncionarios(funcionarios);
+  
+  // Exemplo de filtros
+  const funcionariosAtivos = renderizarFuncionarios(funcionarios, { ativo: true });
+  const funcionariosTI = renderizarFuncionarios(funcionarios, { departamento: 'TI' });
+});</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/javascript/02/images/html_dinamico_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/javascript/02/images/html_dinamico_tablet.png">
+    <img src="/src/pages/cursos/javascript/02/images/html_dinamico_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Implemente uma aplicação funcional para gerenciar produtos de e-commerce:<p>
+  <ul>
+  <li>Título = Sistema de Produtos com Programação Funcional<br></li>
+  <li>Use funções puras para todas as transformações<br></li>
+  <li>Implemente map para transformar dados de produtos<br></li>
+  <li>Use filter para buscar e filtrar produtos<br></li>
+  <li>Aplique reduce para calcular estatísticas<br></li>
+  <li>Componha métodos em pipeline de transformação<br></li>
+  <li>Gere HTML dinâmico com cards de produtos<br></li>
+</ul>
+</p>Inclua funcionalidades de busca, filtro por categoria e cálculo de totais.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

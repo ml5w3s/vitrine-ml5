@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+
+  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
+  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
+  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
+  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+<div id="header-placeholder"></div>
+
+<!-- ARTIGOS -->
+<section class="container">
+
+  <!--BANNER-->
+  <article class="item">
+    <picture>
+      <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+      <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+      <img src="/src/assets/images/banner_frontend_mobile.png">
+    </picture>
+  </article>
+
+</section>
+<section class="container">
+
+  <article class="item">
+    <h4>O <b>HTML</b> é a linguagem para construção de páginas web.</h4>
+   <p class="left-align light">Usar o HTML para montar uma página web é como decorar uma casa. Cada móvel tem uma função: Cabe a você definir onde ficará a TV, os quadros as fotos no porta retratos, estante, livros etc.</p><br>
+  <p class="left-align light">Veja na imagem a seguir, como fica essa página, com HTML puro, sem estilo CSS, aplicado</p>
+  </article>
+
+  <article class="item">
+      <img src="/src/pages/cursos/html5/01/images/exemplo_puro_mobile.png">
+  </article>
+
+</section>
+<section class="container">
+
+  <article class="item">
+    <h4>O <b>estilo</b>, a princípio, fica por nossa conta.</h4>
+    <p class="left-align light">Quando você terminar de aprender o HTML, aí sim você vai poder fazer o curso de CSS3 para aprender a escolher as cores, estilos e enfeites do seu jeito.</p>
+  </article>
+
+</section>
+<section class="container">
+
+  <article class="item">
+    <a href="html5/aulas.html">Iniciar</a>
+  </article>
+
+</section>
+<section class="container">
+
+  <article class="item">
+    <h4>A <b>ML5 Lab</b> não o leva a nenhum lugar, pois é você que vai definir seus caminhos.</h4>
+   <p class="left-align light">Pelo campo da programação ou na área criativa do <b>design</b>, siga um roadmap, em nossa plataforma, que o guiará através do <b>desenvolvimento de softwares</b> ou desenvolva um plano estratégico visual, para chegar no ponto de partida de sua carreira.</p>
+  </article>
+
+  <article class="item">
+    <h4>Aventure-se através de nossos cursos, coletando créditos <b>gratuitos</b>.</h4>
+    <p class="left-align light">Siga sozinho, ou encontre um mentor, em nossa plataforma para te acompanhar em sua jornada, que pode chegar até a <b>participação de projetos</b>, em nossa aceleradora de open source, ou garanta sua marca em nossa galeria de arte, ganhando experiência em projetos reais..</p>
+  </article>
+
+</section>
+
+<!-- RODAPÉ  -->
+<div id="footer-placeholder"></div>
+
+<!-- SCRIPTS -->
+<script src="/src/assets/js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+</script>
+
+</body>
+</html>

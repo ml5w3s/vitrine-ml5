@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="src/assets/images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -13,7 +13,7 @@
   <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
   <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ml5w3s.com.br">
+  <link rel="canonical" href="https://seusite.com/cursos">
   <meta http-equiv="content-language" content="pt-BR">
 
   <!-- OG -->
@@ -24,8 +24,8 @@
   <meta property="og:type" content="website">
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -35,60 +35,47 @@
 </head>
 
 <body>
+
 <!-- CABEÇALHO -->
 <div id="header-placeholder"></div>
 
 <!-- ARTIGOS -->
 <section class="container">
-  <!--BANNER-->
-  <article class="item">
-    <picture>
-      <source media="(min-width: 1024px)" srcset="src/assets/images/banner_cursos_desktop.png">
-      <source media="(min-width: 600px)" srcset="src/assets/images/banner_cursos_tablet.png">
-      <img src="src/assets/images/banner_cursos_mobile.png">
-    </picture>
-  </article>
-</section>
 
-<section class="container">
   <article class="item">
-    <h2><i class="material-icons">shopping_cart_checkout</i></h2>
-    <h3><a class="button-style button-large" href="src/pages/cursos">Cursos</a></h3>
-    <p >Você pode estudar, praticar, discutir e se aprofundar nessa plataforma.</p>
+
   </article>
 
   <article class="item">
-    <h2><i class="material-icons">add_task</i></h2>
-    <h3><a class="button-style button-large" href="src/pages/projetos_basicos.html">Projetos Básicos</a></h3>
-    <p>O seu futuro influencia seu passado.</p>
+
   </article>
 
   <article class="item">
-    <h2><i class="material-icons">flash_on</i></h2>
-    <h3><a class="button-style button-large" href="src/pages/projetos_avancados.html">Experiência</a></h3>
-    <p>Além do pipipip popopó, adquira experiências.</p>
+
   </article>
+
 </section>
 
 <!-- RODAPÉ  -->
 <div id="footer-placeholder"></div>
 
 <!-- SCRIPTS -->
-<script src="src/assets/js/main.js"></script>
+<script src="/src/assets/js/main.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = 'src/assets/js/ui/components/navbar.js';
+        script.src = '/src/assets/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => {
         console.error("Erro ao carregar o header:", error);
       });
 
-    loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html');
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
   });
 </script>
+
 </body>
 </html>

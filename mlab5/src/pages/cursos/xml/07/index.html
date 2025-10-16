@@ -1,0 +1,613 @@
+<!--curso_xml/07/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 07 - XSLT e Transformação de Dados Governamentais | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre XSLT para transformação de dados XML governamentais no Brasil. Transformações de NFe, eSocial, SPED e outros documentos oficiais.">
+  <meta name="keywords" content="xslt, transformação xml, dados governamentais, nfe, esocial, sped, transformação documentos, xsl">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 07 - XSLT e Transformação de Dados Governamentais | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre XSLT para transformação de dados XML governamentais no Brasil. Transformações de documentos oficiais.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 07 - XSLT e Transformação de Dados Governamentais | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre XSLT para transformação de dados XML governamentais no Brasil. Transformações de documentos oficiais.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🔄 XSLT - Transformação de Dados Governamentais</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>XSLT no Contexto Governamental Brasileiro</h3>
+  <p>O XSLT (eXtensible Stylesheet Language Transformations) é fundamental para transformar dados XML governamentais em diferentes formatos, facilitando a visualização, integração e processamento de documentos oficiais no Brasil.</p>
+  <h4>Aplicações do XSLT:</h4>
+  <ul class="left_list">
+    <li>Transformação de NFe para HTML</li>
+    <li>Conversão de dados eSocial</li>
+    <li>Geração de relatórios SPED</li>
+    <li>Transformação de TISS para PDF</li>
+    <li>Integração entre sistemas</li>
+    <li>Visualização de documentos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/07/images/xslt_governamental_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/07/images/xslt_governamental_tablet.png">
+    <img src="/src/pages/cursos/xml/07/images/xslt_governamental_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Estrutura Básica do XSLT</h3>
+  <p>XSLT utiliza templates para transformar elementos XML, permitindo criar saídas em HTML, PDF, texto ou outros formatos XML.</p>
+  <h4>Elementos Principais:</h4>
+  <ul class="left_list">
+    <li>xsl:stylesheet - Elemento raiz</li>
+    <li>xsl:template - Templates de transformação</li>
+    <li>xsl:apply-templates - Aplicação de templates</li>
+    <li>xsl:value-of - Extração de valores</li>
+    <li>xsl:for-each - Iteração sobre elementos</li>
+    <li>xsl:if/xsl:choose - Condicionais</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo Básico de XSLT:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;Relatório de NFe&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;Nota Fiscal Eletrônica&lt;/h1&gt;
+        &lt;xsl:apply-templates select="//infNFe"/&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+
+  &lt;xsl:template match="infNFe"&gt;
+    &lt;div class="nfe"&gt;
+      &lt;h2&gt;Dados da NFe&lt;/h2&gt;
+      &lt;p&gt;&lt;strong&gt;Número:&lt;/strong&gt; &lt;xsl:value-of select="ide/nNF"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Série:&lt;/strong&gt; &lt;xsl:value-of select="ide/serie"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Data Emissão:&lt;/strong&gt; &lt;xsl:value-of select="ide/dhEmi"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Transformação de NFe para HTML</h3>
+  <p>Criar uma transformação XSLT para converter XML de NFe em HTML permite visualizar documentos fiscais de forma amigável e profissional.</p>
+  <h4>Elementos da NFe para Transformar:</h4>
+  <ul class="left_list">
+    <li>Dados do emitente e destinatário</li>
+    <li>Informações dos produtos</li>
+    <li>Cálculos de impostos</li>
+    <li>Totais da nota</li>
+    <li>Informações de transporte</li>
+    <li>Dados de pagamento</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>XSLT para NFe:</h4>
+  <pre><code>&lt;xsl:template match="infNFe"&gt;
+  &lt;div class="nfe-container"&gt;
+    &lt;!-- Cabeçalho da NFe --&gt;
+    &lt;div class="header"&gt;
+      &lt;h1&gt;NOTA FISCAL ELETRÔNICA&lt;/h1&gt;
+      &lt;div class="nfe-info"&gt;
+        &lt;span&gt;Nº &lt;xsl:value-of select="ide/nNF"/&gt;&lt;/span&gt;
+        &lt;span&gt;Série &lt;xsl:value-of select="ide/serie"/&gt;&lt;/span&gt;
+        &lt;span&gt;&lt;xsl:value-of select="ide/dhEmi"/&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Emitente --&gt;
+    &lt;div class="emitente"&gt;
+      &lt;h3&gt;EMITENTE&lt;/h3&gt;
+      &lt;p&gt;&lt;xsl:value-of select="emit/xNome"/&gt;&lt;/p&gt;
+      &lt;p&gt;CNPJ: &lt;xsl:value-of select="emit/CNPJ"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;xsl:value-of select="emit/enderEmit/xLgr"/&gt;, &lt;xsl:value-of select="emit/enderEmit/nro"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;xsl:value-of select="emit/enderEmit/xMun"/&gt; - &lt;xsl:value-of select="emit/enderEmit/UF"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Destinatário --&gt;
+    &lt;div class="destinatario"&gt;
+      &lt;h3&gt;DESTINATÁRIO&lt;/h3&gt;
+      &lt;p&gt;&lt;xsl:value-of select="dest/xNome"/&gt;&lt;/p&gt;
+      &lt;p&gt;CNPJ: &lt;xsl:value-of select="dest/CNPJ"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Produtos --&gt;
+    &lt;div class="produtos"&gt;
+      &lt;h3&gt;PRODUTOS/SERVIÇOS&lt;/h3&gt;
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Código&lt;/th&gt;
+            &lt;th&gt;Descrição&lt;/th&gt;
+            &lt;th&gt;Qtd&lt;/th&gt;
+            &lt;th&gt;Vl. Unit.&lt;/th&gt;
+            &lt;th&gt;Vl. Total&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;xsl:for-each select="det"&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;xsl:value-of select="prod/cProd"/&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="prod/xProd"/&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="prod/qCom"/&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="prod/vUnCom"/&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="prod/vProd"/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Totais --&gt;
+    &lt;div class="totais"&gt;
+      &lt;h3&gt;TOTAIS&lt;/h3&gt;
+      &lt;p&gt;Valor dos Produtos: R$ &lt;xsl:value-of select="total/ICMSTot/vProd"/&gt;&lt;/p&gt;
+      &lt;p&gt;ICMS: R$ &lt;xsl:value-of select="total/ICMSTot/vICMS"/&gt;&lt;/p&gt;
+      &lt;p&gt;PIS: R$ &lt;xsl:value-of select="total/ICMSTot/vPIS"/&gt;&lt;/p&gt;
+      &lt;p&gt;COFINS: R$ &lt;xsl:value-of select="total/ICMSTot/vCOFINS"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Valor Total: R$ &lt;xsl:value-of select="total/ICMSTot/vNF"/&gt;&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/xsl:template&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/07/images/transformacao_nfe_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/07/images/transformacao_nfe_tablet.png">
+    <img src="/src/pages/cursos/xml/07/images/transformacao_nfe_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Transformação de eSocial para Relatórios</h3>
+  <p>XSLT permite transformar dados do eSocial em relatórios HTML, facilitando a visualização de informações trabalhistas e previdenciárias.</p>
+  <h4>Dados do eSocial para Relatórios:</h4>
+  <ul class="left_list">
+    <li>Informações do trabalhador</li>
+    <li>Dados contratuais</li>
+    <li>Remunerações</li>
+    <li>Descontos e adicionais</li>
+    <li>Informações previdenciárias</li>
+    <li>Histórico de eventos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>XSLT para Relatório eSocial:</h4>
+  <pre><code>&lt;xsl:template match="evtRemun"&gt;
+  &lt;div class="relatorio-esocial"&gt;
+    &lt;h2&gt;Relatório de Remuneração - eSocial&lt;/h2&gt;
+    
+    &lt;!-- Dados do Evento --&gt;
+    &lt;div class="evento-info"&gt;
+      &lt;h3&gt;Informações do Evento&lt;/h3&gt;
+      &lt;p&gt;&lt;strong&gt;Período:&lt;/strong&gt; &lt;xsl:value-of select="ideEvento/perApur"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Ambiente:&lt;/strong&gt; 
+        &lt;xsl:choose&gt;
+          &lt;xsl:when test="ideEvento/tpAmb = '1'"&gt;Produção&lt;/xsl:when&gt;
+          &lt;xsl:otherwise&gt;Homologação&lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Dados do Empregador --&gt;
+    &lt;div class="empregador"&gt;
+      &lt;h3&gt;Empregador&lt;/h3&gt;
+      &lt;p&gt;CNPJ: &lt;xsl:value-of select="ideEmpregador/nrInsc"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Dados do Trabalhador --&gt;
+    &lt;div class="trabalhador"&gt;
+      &lt;h3&gt;Trabalhador&lt;/h3&gt;
+      &lt;p&gt;CPF: &lt;xsl:value-of select="ideTrabalhador/cpfTrab"/&gt;&lt;/p&gt;
+      &lt;p&gt;NIS: &lt;xsl:value-of select="ideTrabalhador/niTrab"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Demonstrativos de Valores --&gt;
+    &lt;div class="demonstrativos"&gt;
+      &lt;h3&gt;Demonstrativos de Valores&lt;/h3&gt;
+      &lt;xsl:for-each select="dmDev"&gt;
+        &lt;div class="dm-dev"&gt;
+          &lt;h4&gt;Demonstrativo: &lt;xsl:value-of select="ideDmDev"/&gt;&lt;/h4&gt;
+          &lt;table&gt;
+            &lt;thead&gt;
+              &lt;tr&gt;
+                &lt;th&gt;Código&lt;/th&gt;
+                &lt;th&gt;Descrição&lt;/th&gt;
+                &lt;th&gt;Valor&lt;/th&gt;
+              &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+              &lt;xsl:for-each select="infoPerApur/ideEstabLot/remunPerApur/detRubrica"&gt;
+                &lt;tr&gt;
+                  &lt;td&gt;&lt;xsl:value-of select="codRubr"/&gt;&lt;/td&gt;
+                  &lt;td&gt;&lt;xsl:value-of select="ideTabRubr/dscRubr"/&gt;&lt;/td&gt;
+                  &lt;td&gt;R$ &lt;xsl:value-of select="vrRubr"/&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+              &lt;/xsl:for-each&gt;
+            &lt;/tbody&gt;
+          &lt;/table&gt;
+          &lt;p&gt;&lt;strong&gt;Valor Líquido: R$ &lt;xsl:value-of select="vrLiq"/&gt;&lt;/strong&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/xsl:for-each&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/xsl:template&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Transformação de SPED para HTML</h3>
+  <p>O SPED pode ser transformado em relatórios HTML legíveis, facilitando a análise de dados contábeis e fiscais.</p>
+  <h4>Registros SPED para Transformar:</h4>
+  <ul class="left_list">
+    <li>Registro 0000 - Abertura do arquivo</li>
+    <li>Registro 0005 - Dados complementares</li>
+    <li>Registro 0100 - Dados do contabilista</li>
+    <li>Registros de escrituração</li>
+    <li>Registros de totais</li>
+    <li>Registro 9999 - Encerramento</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>XSLT para SPED:</h4>
+  <pre><code>&lt;xsl:template match="REG0000"&gt;
+  &lt;div class="sped-header"&gt;
+    &lt;h2&gt;SPED Fiscal - Escrituração Fiscal Digital&lt;/h2&gt;
+    &lt;div class="info-arquivo"&gt;
+      &lt;p&gt;&lt;strong&gt;Versão:&lt;/strong&gt; &lt;xsl:value-of select="COD_VER"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Período:&lt;/strong&gt; &lt;xsl:value-of select="DT_INI"/&gt; a &lt;xsl:value-of select="DT_FIN"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Empresa:&lt;/strong&gt; &lt;xsl:value-of select="NOME"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt; &lt;xsl:value-of select="CNPJ"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;UF:&lt;/strong&gt; &lt;xsl:value-of select="UF"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Município:&lt;/strong&gt; &lt;xsl:value-of select="COD_MUN"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/xsl:template&gt;
+
+&lt;xsl:template match="REG0005"&gt;
+  &lt;div class="dados-complementares"&gt;
+    &lt;h3&gt;Dados Complementares&lt;/h3&gt;
+    &lt;p&gt;&lt;strong&gt;Nome Fantasia:&lt;/strong&gt; &lt;xsl:value-of select="FANTASIA"/&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;CEP:&lt;/strong&gt; &lt;xsl:value-of select="CEP"/&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Endereço:&lt;/strong&gt; &lt;xsl:value-of select="END"/&gt;, &lt;xsl:value-of select="NUM"/&gt;&lt;/p&gt;
+    &lt;xsl:if test="COMPL"&gt;
+      &lt;p&gt;&lt;strong&gt;Complemento:&lt;/strong&gt; &lt;xsl:value-of select="COMPL"/&gt;&lt;/p&gt;
+    &lt;/xsl:if&gt;
+    &lt;p&gt;&lt;strong&gt;Bairro:&lt;/strong&gt; &lt;xsl:value-of select="BAIRRO"/&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Telefone:&lt;/strong&gt; &lt;xsl:value-of select="FONE"/&gt;&lt;/p&gt;
+    &lt;xsl:if test="EMAIL"&gt;
+      &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; &lt;xsl:value-of select="EMAIL"/&gt;&lt;/p&gt;
+    &lt;/xsl:if&gt;
+  &lt;/div&gt;
+&lt;/xsl:template&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/07/images/transformacao_sped_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/07/images/transformacao_sped_tablet.png">
+    <img src="/src/pages/cursos/xml/07/images/transformacao_sped_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Transformação de TISS para Relatórios Médicos</h3>
+  <p>XSLT permite transformar dados do TISS em relatórios médicos detalhados, facilitando a análise de procedimentos e custos em saúde.</p>
+  <h4>Elementos TISS para Relatórios:</h4>
+  <ul class="left_list">
+    <li>Dados do prestador</li>
+    <li>Informações do beneficiário</li>
+    <li>Procedimentos realizados</li>
+    <li>Diagnósticos (CID-10)</li>
+    <li>Valores e autorizações</li>
+    <li>Profissionais envolvidos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>XSLT para Relatório TISS:</h4>
+  <pre><code>&lt;xsl:template match="guiaConsulta"&gt;
+  &lt;div class="relatorio-tiss"&gt;
+    &lt;h2&gt;Relatório Médico - TISS&lt;/h2&gt;
+    
+    &lt;!-- Dados do Prestador --&gt;
+    &lt;div class="prestador"&gt;
+      &lt;h3&gt;Prestador de Serviços&lt;/h3&gt;
+      &lt;p&gt;&lt;strong&gt;Nome:&lt;/strong&gt; &lt;xsl:value-of select="dadosBeneficiario/contratado/nomeContratado"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;CNPJ:&lt;/strong&gt; &lt;xsl:value-of select="dadosBeneficiario/contratado/cnpjContratado"/&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Dados do Beneficiário --&gt;
+    &lt;div class="beneficiario"&gt;
+      &lt;h3&gt;Beneficiário&lt;/h3&gt;
+      &lt;p&gt;&lt;strong&gt;Nome:&lt;/strong&gt; &lt;xsl:value-of select="dadosBeneficiario/beneficiario/nomeBeneficiario"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;CPF:&lt;/strong&gt; &lt;xsl:value-of select="dadosBeneficiario/beneficiario/identificadorBeneficiario/cpf"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Data Nascimento:&lt;/strong&gt; &lt;xsl:value-of select="dadosBeneficiario/beneficiario/dataNascimento"/&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;Sexo:&lt;/strong&gt; 
+        &lt;xsl:choose&gt;
+          &lt;xsl:when test="dadosBeneficiario/beneficiario/sexo = 'M'"&gt;Masculino&lt;/xsl:when&gt;
+          &lt;xsl:otherwise&gt;Feminino&lt;/xsl:otherwise&gt;
+        &lt;/xsl:choose&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Procedimentos --&gt;
+    &lt;div class="procedimentos"&gt;
+      &lt;h3&gt;Procedimentos Realizados&lt;/h3&gt;
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;Código&lt;/th&gt;
+            &lt;th&gt;Descrição&lt;/th&gt;
+            &lt;th&gt;Quantidade&lt;/th&gt;
+            &lt;th&gt;Valor Unit.&lt;/th&gt;
+            &lt;th&gt;Valor Total&lt;/th&gt;
+          &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;xsl:for-each select="procedimentosRealizados/procedimentoRealizado"&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;xsl:value-of select="codigoProcedimento"/&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="descricaoProcedimento"/&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="quantidadeExecutada"/&gt;&lt;/td&gt;
+              &lt;td&gt;R$ &lt;xsl:value-of select="valorUnitario"/&gt;&lt;/td&gt;
+              &lt;td&gt;R$ &lt;xsl:value-of select="valorTotalProcedimento"/&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Diagnósticos --&gt;
+    &lt;xsl:if test="diagnosticos/diagnostico"&gt;
+      &lt;div class="diagnosticos"&gt;
+        &lt;h3&gt;Diagnósticos (CID-10)&lt;/h3&gt;
+        &lt;xsl:for-each select="diagnosticos/diagnostico"&gt;
+          &lt;p&gt;
+            &lt;strong&gt;&lt;xsl:value-of select="codigoDiagnostico"/&gt;&lt;/strong&gt; - 
+            &lt;xsl:value-of select="descricaoDiagnostico"/&gt;
+            &lt;xsl:choose&gt;
+              &lt;xsl:when test="tipoDiagnostico = '1'"&gt; (Principal)&lt;/xsl:when&gt;
+              &lt;xsl:otherwise&gt; (Secundário)&lt;/xsl:otherwise&gt;
+            &lt;/xsl:choose&gt;
+          &lt;/p&gt;
+        &lt;/xsl:for-each&gt;
+      &lt;/div&gt;
+    &lt;/xsl:if&gt;
+  &lt;/div&gt;
+&lt;/xsl:template&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Integração com Sistemas e APIs</h3>
+  <p>XSLT pode ser integrado com sistemas empresariais para automatizar transformações de dados governamentais, facilitando a geração de relatórios e integração entre sistemas.</p>
+  <h4>Aplicações de Integração:</h4>
+  <ul class="left_list">
+    <li>APIs REST para transformação</li>
+    <li>Processamento em lote</li>
+    <li>Integração com ERPs</li>
+    <li>Geração automática de relatórios</li>
+    <li>Transformação em tempo real</li>
+    <li>Cache de transformações</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Integração:</h4>
+  <pre><code>&lt;!-- JavaScript para transformação --&gt;
+function transformarXML(xmlString, xsltString) {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+  const xsltDoc = parser.parseFromString(xsltString, "text/xml");
+  
+  const processor = new XSLTProcessor();
+  processor.importStylesheet(xsltDoc);
+  
+  const result = processor.transformToDocument(xmlDoc);
+  return new XMLSerializer().serializeToString(result);
+}
+
+// Transformação de NFe
+function gerarRelatorioNFe(xmlNFe) {
+  const xsltNFe = `
+    &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    &lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+      &lt;xsl:template match="/"&gt;
+        &lt;html&gt;
+          &lt;head&gt;
+            &lt;title&gt;NFe - &lt;xsl:value-of select="//nNF"/&gt;&lt;/title&gt;
+            &lt;style&gt;
+              .nfe { font-family: Arial, sans-serif; }
+              .header { background: #f0f0f0; padding: 10px; }
+              .section { margin: 20px 0; }
+              table { width: 100%; border-collapse: collapse; }
+              th, td { border: 1px solid #ddd; padding: 8px; }
+              th { background: #f2f2f2; }
+            &lt;/style&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+            &lt;xsl:apply-templates select="//infNFe"/&gt;
+          &lt;/body&gt;
+        &lt;/html&gt;
+      &lt;/xsl:template&gt;
+      &lt;!-- Templates específicos aqui --&gt;
+    &lt;/xsl:stylesheet&gt;
+  `;
+  
+  return transformarXML(xmlNFe, xsltNFe);
+}
+
+// Uso da transformação
+const xmlNFe = '&lt;!-- XML da NFe --&gt;';
+const htmlRelatorio = gerarRelatorioNFe(xmlNFe);
+document.getElementById('relatorio').innerHTML = htmlRelatorio;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/07/images/integracao_sistemas_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/07/images/integracao_sistemas_tablet.png">
+    <img src="/src/pages/cursos/xml/07/images/integracao_sistemas_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie transformações XSLT para dados governamentais com:<p>
+  <ul>
+  <li>Título = Transformações XSLT para Documentos Governamentais<br></li>
+  <li>NFe = Transformação para HTML com CSS responsivo<br></li>
+  <li>eSocial = Relatório de remuneração em HTML<br></li>
+  <li>SPED = Relatório de escrituração fiscal<br></li>
+  <li>TISS = Relatório médico com procedimentos<br></li>
+  <li>Integração = JavaScript para transformação automática<br></li>
+</ul>
+</p>Implemente templates reutilizáveis e estilos CSS para apresentação profissional.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

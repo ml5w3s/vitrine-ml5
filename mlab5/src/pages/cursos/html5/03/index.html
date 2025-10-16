@@ -1,0 +1,300 @@
+<!--curso_html5/03/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 03 - Elementos Semânticos HTML5 | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre os novos elementos semânticos do HTML5: header, nav, main, section, article, aside e footer para estruturar melhor suas páginas web.">
+  <meta name="keywords" content="html5, elementos semânticos, header, nav, main, section, article, aside, footer, estrutura html">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 03 - Elementos Semânticos HTML5 | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre os novos elementos semânticos do HTML5 para estruturar melhor suas páginas web.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 03 - Elementos Semânticos HTML5 | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre os novos elementos semânticos do HTML5 para estruturar melhor suas páginas web.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🏗️ HTML5 - Novos Elementos Semânticos</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>O que são Elementos Semânticos?</h3>
+  <p>Os elementos semânticos do HTML5 são tags que descrevem claramente seu significado tanto para o navegador quanto para o desenvolvedor. Eles substituem as antigas divs genéricas, tornando o código mais legível e acessível.</p>
+  <h4>Vantagens dos Elementos Semânticos:</h4>
+  <ul class="left_list">
+    <li>Melhor acessibilidade para leitores de tela</li>
+    <li>Código mais legível e organizado</li>
+    <li>SEO otimizado pelos motores de busca</li>
+    <li>Estrutura clara para outros desenvolvedores</li>
+    <li>Facilita manutenção do código</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/03/images/elementos_semanticos_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/03/images/elementos_semanticos_tablet.png">
+    <img src="/src/pages/cursos/html5/03/images/elementos_semanticos_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;header&gt;</h3>
+  <p>O elemento &lt;header&gt; representa o cabeçalho de uma seção ou página. Pode conter títulos, logos, navegação principal e informações introdutórias.</p>
+  <h4>Características do &lt;header&gt;:</h4>
+  <ul class="left_list">
+    <li>Define o cabeçalho de uma página ou seção</li>
+    <li>Pode conter navegação, logos e títulos</li>
+    <li>Não deve ser usado para conteúdo principal</li>
+    <li>Pode aparecer múltiplas vezes na página</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Uso:</h4>
+  <pre><code>&lt;header&gt;
+  &lt;h1&gt;Meu Site&lt;/h1&gt;
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;nav&gt;</h3>
+  <p>O elemento &lt;nav&gt; representa uma seção de navegação com links para outras páginas ou partes da mesma página.</p>
+  <h4>Quando usar &lt;nav&gt;:</h4>
+  <ul class="left_list">
+    <li>Menu principal do site</li>
+    <li>Navegação entre seções</li>
+    <li>Links de paginação</li>
+    <li>Breadcrumbs (migalhas de pão)</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/03/images/navegacao_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/03/images/navegacao_tablet.png">
+    <img src="/src/pages/cursos/html5/03/images/navegacao_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;main&gt;</h3>
+  <p>O elemento &lt;main&gt; representa o conteúdo principal de uma página. Deve ser único na página e não deve conter conteúdo que se repete em outras páginas.</p>
+  <h4>Características do &lt;main&gt;:</h4>
+  <ul class="left_list">
+    <li>Conteúdo principal único da página</li>
+    <li>Não deve conter navegação, cabeçalho ou rodapé</li>
+    <li>Apenas um elemento &lt;main&gt; por página</li>
+    <li>Facilita navegação por leitores de tela</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Estrutura:</h4>
+  <pre><code>&lt;main&gt;
+  &lt;h1&gt;Conteúdo Principal&lt;/h1&gt;
+  &lt;p&gt;Este é o conteúdo mais importante da página.&lt;/p&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Seção do Conteúdo&lt;/h2&gt;
+    &lt;p&gt;Mais informações aqui...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elementos &lt;section&gt; e &lt;article&gt;</h3>
+  <p>&lt;section&gt; representa uma seção temática de conteúdo, enquanto &lt;article&gt; representa um conteúdo independente e completo.</p>
+  <h4>Diferenças:</h4>
+  <ul class="left_list">
+    <li>&lt;section&gt; - agrupamento temático de conteúdo</li>
+    <li>&lt;article&gt; - conteúdo independente e autocontido</li>
+    <li>Um &lt;article&gt; pode conter várias &lt;section&gt;s</li>
+    <li>Uma &lt;section&gt; pode conter vários &lt;article&gt;s</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/html5/03/images/section_article_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/html5/03/images/section_article_tablet.png">
+    <img src="/src/pages/cursos/html5/03/images/section_article_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elemento &lt;aside&gt;</h3>
+  <p>O elemento &lt;aside&gt; representa conteúdo relacionado ao conteúdo principal, mas que pode ser considerado separado dele.</p>
+  <h4>Usos comuns do &lt;aside&gt;:</h4>
+  <ul class="left_list">
+    <li>Barras laterais com informações adicionais</li>
+    <li>Publicidade</li>
+    <li>Links relacionados</li>
+    <li>Definições de glossário</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h3>Elemento &lt;footer&gt;</h3>
+  <p>O elemento &lt;footer&gt; representa o rodapé de uma página ou seção. Geralmente contém informações sobre o autor, links de navegação secundária e informações de copyright.</p>
+  <h4>Conteúdo típico do &lt;footer&gt;:</h4>
+  <ul class="left_list">
+    <li>Informações de contato</li>
+    <li>Links de navegação secundária</li>
+    <li>Copyright e informações legais</li>
+    <li>Redes sociais</li>
+  </ul>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma página usando os elementos semânticos do HTML5 com:<p>
+  <ul>
+  <li>Título = Estrutura Semântica com HTML5<br></li>
+  <li>Header = Com logo e navegação principal<br></li>
+  <li>Main = Com artigo principal sobre semântica HTML5<br></li>
+  <li>Section = Com seção sobre benefícios da semântica<br></li>
+  <li>Aside = Com informações adicionais sobre HTML5<br></li>
+  <li>Footer = Com informações de contato e copyright<br></li>
+</ul>
+</p>Use os elementos semânticos para criar uma estrutura clara e acessível.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,661 @@
+﻿<!--curso_jquery/03/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 03 - Manipulação Avançada do DOM | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda manipulação avançada do DOM com jQuery: adicionar, remover, modificar elementos, navegação e filtros.">
+  <meta name="keywords" content="jquery, dom, manipulação, elementos, navegação, filtros, html, css">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 03 - Manipulação Avançada do DOM | ML5Lab">
+  <meta property="og:description" content="Aprenda manipulação avançada do DOM com jQuery: adicionar, remover, modificar elementos, navegação e filtros.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/src/assets/css/jquery.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 03 - Manipulação Avançada do DOM | ML5Lab">
+  <meta name="twitter:description" content="Aprenda manipulação avançada do DOM com jQuery: adicionar, remover, modificar elementos, navegação e filtros.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+
+  <!--PLUGIN jQUERY-->
+  <script src="/src/assets/js/jquery.min.js"></script>
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_legado_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_legado_tablet.png">
+    <img src="/src/assets/images/banner_legado_mobile.png">
+  </picture>
+  <h3>🔧 Manipulação Avançada do DOM</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Adicionando Elementos</h3>
+  <p>jQuery oferece diversos métodos para adicionar novos elementos ao DOM de forma dinâmica. Estes métodos permitem inserir conteúdo em diferentes posições relativas aos elementos existentes.</p>
+  <h4>Métodos para adicionar:</h4>
+  <ul class="left_list">
+    <li><strong>append():</strong> Adiciona ao final do conteúdo</li>
+    <li><strong>prepend():</strong> Adiciona ao início do conteúdo</li>
+    <li><strong>after():</strong> Adiciona após o elemento</li>
+    <li><strong>before():</strong> Adiciona antes do elemento</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de adição:</h4>
+  <pre><code>// ✅ append() - adiciona ao final
+$("#container").append("<p>Novo parágrafo no final</p>");
+$("#lista").append("<li>Novo item da lista</li>");
+
+// ✅ prepend() - adiciona ao início
+$("#container").prepend("<p>Novo parágrafo no início</p>");
+$("#lista").prepend("<li>Primeiro item da lista</li>");
+
+// ✅ after() - adiciona após o elemento
+$("#elemento").after("<div>Novo elemento após</div>");
+
+// ✅ before() - adiciona antes do elemento
+$("#elemento").before("<div>Novo elemento antes</div>");
+
+// ✅ Criando elementos complexos
+var novoItem = $("<li>")
+    .addClass("item-novo")
+    .text("Item dinâmico")
+    .click(function() {
+        $(this).remove();
+    });
+
+$("#lista").append(novoItem);
+
+// ✅ Adicionando múltiplos elementos
+var elementos = [
+    "<div class='item'>Item 1</div>",
+    "<div class='item'>Item 2</div>",
+    "<div class='item'>Item 3</div>"
+];
+
+$("#container").append(elementos.join(""));
+
+// ✅ Exemplo prático - lista de tarefas
+$(document).ready(function() {
+    $("#adicionar-tarefa").click(function() {
+        var texto = $("#nova-tarefa").val();
+        if (texto.trim() !== "") {
+            var novaTarefa = $("<li>")
+                .addClass("tarefa")
+                .html(texto + ' <button class="remover">×</button>');
+            
+            $("#lista-tarefas").append(novaTarefa);
+            $("#nova-tarefa").val("");
+        }
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Removendo Elementos</h3>
+  <p>Para remover elementos do DOM, jQuery oferece métodos que permitem remover elementos específicos ou todo seu conteúdo, mantendo a estrutura ou não.</p>
+  <h4>Métodos para remover:</h4>
+  <ul class="left_list">
+    <li><strong>remove():</strong> Remove elemento e todos os filhos</li>
+    <li><strong>empty():</strong> Remove apenas o conteúdo (filhos)</li>
+    <li><strong>detach():</strong> Remove mas mantém dados jQuery</li>
+    <li><strong>unwrap():</strong> Remove elemento pai</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de remoção:</h4>
+  <pre><code>// ✅ remove() - remove completamente
+$("#elemento").remove();           // Remove o elemento
+$(".item").remove();               // Remove todos os elementos com class="item"
+$("li:first").remove();            // Remove primeiro item da lista
+
+// ✅ empty() - remove apenas conteúdo
+$("#container").empty();           // Remove todos os filhos
+$("#lista").empty();               // Remove todos os itens da lista
+
+// ✅ detach() - remove mas preserva dados
+var elemento = $("#elemento").detach();
+// ... fazer algo com o elemento
+$("#outro-container").append(elemento);
+
+// ✅ unwrap() - remove elemento pai
+$("#item").unwrap();               // Remove o pai do elemento
+
+// ✅ Remoção condicional
+$(".item").filter(function() {
+    return $(this).text().length < 10;
+}).remove();                       // Remove itens com menos de 10 caracteres
+
+// ✅ Exemplo prático - lista interativa
+$(document).ready(function() {
+    // Remover item específico
+    $(".remover-item").click(function() {
+        $(this).parent().remove();
+    });
+    
+    // Limpar toda a lista
+    $("#limpar-lista").click(function() {
+        $("#lista").empty();
+    });
+    
+    // Remover itens selecionados
+    $("#remover-selecionados").click(function() {
+        $(".item:checked").parent().remove();
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Modificando Elementos</h3>
+  <p>jQuery oferece métodos para modificar propriedades, conteúdo e estrutura dos elementos existentes de forma dinâmica.</p>
+  <h4>Métodos para modificar:</h4>
+  <ul class="left_list">
+    <li><strong>html():</strong> Altera conteúdo HTML</li>
+    <li><strong>text():</strong> Altera texto (sem HTML)</li>
+    <li><strong>val():</strong> Altera valor de inputs</li>
+    <li><strong>attr():</strong> Altera atributos</li>
+    <li><strong>css():</strong> Altera estilos CSS</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de modificação:</h4>
+  <pre><code>// ✅ Modificar conteúdo HTML
+$("#elemento").html("<strong>Novo conteúdo</strong>");
+$("#lista").html("<li>Item 1</li><li>Item 2</li>");
+
+// ✅ Modificar texto
+$("#titulo").text("Novo Título");
+$("#paragrafo").text("Novo texto sem HTML");
+
+// ✅ Modificar valores de input
+$("#nome").val("João Silva");
+$("#email").val("joao@email.com");
+
+// ✅ Modificar atributos
+$("#imagem").attr("src", "nova-imagem.jpg");
+$("#link").attr("href", "nova-pagina.html");
+$("#input").attr("placeholder", "Digite aqui...");
+
+// ✅ Modificar estilos CSS
+$("#elemento").css("color", "red");
+$("#elemento").css({
+    "background-color": "blue",
+    "font-size": "18px",
+    "margin": "10px"
+});
+
+// ✅ Modificação condicional
+$(".item").each(function() {
+    if ($(this).text().includes("importante")) {
+        $(this).css("font-weight", "bold");
+    }
+});
+
+// ✅ Exemplo prático - editor simples
+$(document).ready(function() {
+    $("#editar").click(function() {
+        var novoTexto = prompt("Digite o novo texto:");
+        if (novoTexto !== null) {
+            $("#conteudo").text(novoTexto);
+        }
+    });
+    
+    $("#destacar").click(function() {
+        $("#conteudo").css({
+            "background-color": "yellow",
+            "font-weight": "bold"
+        });
+    });
+    
+    $("#resetar").click(function() {
+        $("#conteudo").css({
+            "background-color": "",
+            "font-weight": ""
+        });
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Navegação no DOM</h3>
+  <p>jQuery oferece métodos para navegar entre elementos relacionados no DOM, permitindo encontrar elementos pais, filhos e irmãos.</p>
+  <h4>Métodos de navegação:</h4>
+  <ul class="left_list">
+    <li><strong>parent():</strong> Elemento pai</li>
+    <li><strong>children():</strong> Elementos filhos</li>
+    <li><strong>siblings():</strong> Elementos irmãos</li>
+    <li><strong>find():</strong> Busca descendentes</li>
+    <li><strong>closest():</strong> Ancestral mais próximo</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de navegação:</h4>
+  <pre><code>// ✅ Navegação para pais
+$("#item").parent();               // Pai direto
+$("#item").parents("div");         // Todos os pais div
+$("#item").parentsUntil("body");   // Pais até body
+
+// ✅ Navegação para filhos
+$("#container").children();        // Todos os filhos diretos
+$("#container").children("p");     // Apenas filhos parágrafos
+$("#lista").find("li");            // Todos os li descendentes
+
+// ✅ Navegação para irmãos
+$("#item").siblings();             // Todos os irmãos
+$("#item").siblings(".ativo");     // Irmãos com class="ativo"
+$("#item").next();                 // Próximo irmão
+$("#item").prev();                 // Irmão anterior
+$("#item").nextAll();              // Todos os próximos irmãos
+
+// ✅ closest() - ancestral mais próximo
+$("#item").closest("div");         // Div ancestral mais próximo
+$("#item").closest(".container");  // Container ancestral mais próximo
+
+// ✅ Exemplo prático - navegação em menu
+$(document).ready(function() {
+    $(".menu-item").click(function() {
+        // Remove ativo de todos os irmãos
+        $(this).siblings().removeClass("ativo");
+        
+        // Adiciona ativo ao clicado
+        $(this).addClass("ativo");
+        
+        // Encontra submenu
+        var submenu = $(this).find(".submenu");
+        if (submenu.length > 0) {
+            submenu.slideToggle();
+        }
+    });
+    
+    // Navegação em lista
+    $(".lista-item").click(function() {
+        $(this).siblings().removeClass("selecionado");
+        $(this).addClass("selecionado");
+        
+        // Encontra container pai
+        var container = $(this).closest(".lista-container");
+        container.find(".detalhes").hide();
+        $(this).next(".detalhes").show();
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Filtros e Seleção</h3>
+  <p>jQuery oferece métodos para filtrar e refinar seleções de elementos, permitindo trabalhar com subconjuntos específicos.</p>
+  <h4>Métodos de filtro:</h4>
+  <ul class="left_list">
+    <li><strong>filter():</strong> Filtra elementos da seleção atual</li>
+    <li><strong>not():</strong> Remove elementos da seleção</li>
+    <li><strong>first()/last():</strong> Primeiro/último elemento</li>
+    <li><strong>eq():</strong> Elemento em posição específica</li>
+    <li><strong>slice():</strong> Fatia da seleção</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de filtros:</h4>
+  <pre><code>// ✅ filter() - filtrar elementos
+$("li").filter(function() {
+    return $(this).text().length > 20;
+});                               // Li com mais de 20 caracteres
+
+$("div").filter(".ativo");         // Divs com class="ativo"
+
+// ✅ not() - excluir elementos
+$("li").not(".removido");          // Todos os li exceto com class="removido"
+$("p").not(":empty");              // Parágrafos não vazios
+
+// ✅ first()/last() - primeiro/último
+$("li").first();                   // Primeiro li
+$("li").last();                    // Último li
+
+// ✅ eq() - elemento específico
+$("li").eq(0);                     // Primeiro li (índice 0)
+$("li").eq(-1);                    // Último li (índice -1)
+$("li").eq(2);                     // Terceiro li (índice 2)
+
+// ✅ slice() - fatia da seleção
+$("li").slice(0, 3);               // Primeiros 3 li
+$("li").slice(2);                  // A partir do terceiro li
+$("li").slice(-3);                 // Últimos 3 li
+
+// ✅ Exemplo prático - tabela interativa
+$(document).ready(function() {
+    // Destacar primeira e última linha
+    $("table tr").first().addClass("header-row");
+    $("table tr").last().addClass("footer-row");
+    
+    // Destacar linhas pares
+    $("table tr:even").addClass("linha-par");
+    
+    // Filtrar linhas por conteúdo
+    $("#filtrar").click(function() {
+        var termo = $("#busca").val().toLowerCase();
+        $("table tr").not(":first").each(function() {
+            var texto = $(this).text().toLowerCase();
+            if (texto.includes(termo)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    });
+    
+    // Selecionar linhas específicas
+    $("#selecionar-impares").click(function() {
+        $("table tr").not(":first").filter(":odd").addClass("selecionado");
+    });
+});</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Exemplo Prático - Editor Dinâmico</h3>
+  <p>Vamos criar um editor dinâmico que demonstra todas as técnicas de manipulação do DOM aprendidas.</p>
+</article>
+
+<article class="item">
+  <h4>HTML do exemplo:</h4>
+  <pre><code><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editor Dinâmico jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .editor { border: 1px solid #ccc; padding: 20px; margin: 20px 0; }
+        .controls { margin: 10px 0; }
+        button { padding: 8px 16px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .item { padding: 10px; margin: 5px 0; border: 1px solid #ddd; background: #f9f9f9; }
+        .item.ativo { background: #e7f3ff; border-color: #007bff; }
+        .item.removido { opacity: 0.5; text-decoration: line-through; }
+        input, select { padding: 8px; margin: 5px; }
+        .stats { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Editor Dinâmico jQuery</h1>
+        
+        <div class="controls">
+            <h3>Adicionar Elementos</h3>
+            <input type="text" id="novo-texto" placeholder="Digite o texto...">
+            <select id="tipo-elemento">
+                <option value="div">Div</option>
+                <option value="p">Parágrafo</option>
+                <option value="span">Span</option>
+            </select>
+            <button id="adicionar-inicio">Adicionar no Início</button>
+            <button id="adicionar-fim">Adicionar no Fim</button>
+        </div>
+        
+        <div class="controls">
+            <h3>Modificar Elementos</h3>
+            <button id="destacar-ativos">Destacar Ativos</button>
+            <button id="remover-selecionados">Remover Selecionados</button>
+            <button id="limpar-tudo">Limpar Tudo</button>
+        </div>
+        
+        <div class="controls">
+            <h3>Filtros</h3>
+            <button id="mostrar-primeiros">Mostrar Primeiros 3</button>
+            <button id="mostrar-ultimos">Mostrar Últimos 3</button>
+            <button id="mostrar-pares">Mostrar Pares</button>
+            <button id="mostrar-todos">Mostrar Todos</button>
+        </div>
+        
+        <div class="stats" id="estatisticas">
+            <strong>Estatísticas:</strong> <span id="total">0</span> elementos
+        </div>
+        
+        <div class="editor" id="editor">
+            <p>Clique nos elementos para selecioná-los.</p>
+        </div>
+        
+        <script>
+            $(document).ready(function() {
+                var contador = 0;
+                
+                // Atualizar estatísticas
+                function atualizarStats() {
+                    var total = $("#editor .item").length;
+                    $("#total").text(total);
+                }
+                
+                // Adicionar elementos
+                $("#adicionar-inicio").click(function() {
+                    var texto = $("#novo-texto").val();
+                    var tipo = $("#tipo-elemento").val();
+                    if (texto.trim() !== "") {
+                        var elemento = $("<" + tipo + ">")
+                            .addClass("item")
+                            .text(texto)
+                            .click(function() {
+                                $(this).toggleClass("ativo");
+                            });
+                        
+                        $("#editor").prepend(elemento);
+                        $("#novo-texto").val("");
+                        atualizarStats();
+                    }
+                });
+                
+                $("#adicionar-fim").click(function() {
+                    var texto = $("#novo-texto").val();
+                    var tipo = $("#tipo-elemento").val();
+                    if (texto.trim() !== "") {
+                        var elemento = $("<" + tipo + ">")
+                            .addClass("item")
+                            .text(texto)
+                            .click(function() {
+                                $(this).toggleClass("ativo");
+                            });
+                        
+                        $("#editor").append(elemento);
+                        $("#novo-texto").val("");
+                        atualizarStats();
+                    }
+                });
+                
+                // Modificar elementos
+                $("#destacar-ativos").click(function() {
+                    $(".item.ativo").css({
+                        "background-color": "yellow",
+                        "font-weight": "bold"
+                    });
+                });
+                
+                $("#remover-selecionados").click(function() {
+                    $(".item.ativo").remove();
+                    atualizarStats();
+                });
+                
+                $("#limpar-tudo").click(function() {
+                    $("#editor").empty().append("<p>Clique nos elementos para selecioná-los.</p>");
+                    atualizarStats();
+                });
+                
+                // Filtros
+                $("#mostrar-primeiros").click(function() {
+                    $(".item").hide();
+                    $(".item").slice(0, 3).show();
+                });
+                
+                $("#mostrar-ultimos").click(function() {
+                    $(".item").hide();
+                    $(".item").slice(-3).show();
+                });
+                
+                $("#mostrar-pares").click(function() {
+                    $(".item").hide();
+                    $(".item").filter(":even").show();
+                });
+                
+                $("#mostrar-todos").click(function() {
+                    $(".item").show();
+                });
+                
+                // Inicializar
+                atualizarStats();
+            });
+        </script>
+    </div>
+</body>
+</html></code></pre>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/jquery/03/images/editor_dinamico_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/jquery/03/images/editor_dinamico_tablet.png">
+    <img src="/src/pages/cursos/jquery/03/images/editor_dinamico_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma aplicação HTML com jQuery que demonstre manipulação avançada do DOM:<p>
+  <ul>
+  <li>Título = Editor Dinâmico jQuery<br></li>
+  <li>Implemente funcionalidades para adicionar/remover elementos<br></li>
+  <li>Adicione métodos para modificar conteúdo e atributos<br></li>
+  <li>Crie sistema de navegação entre elementos<br></li>
+  <li>Desenvolva filtros e seleção de elementos<br></li>
+  <li>Use métodos de manipulação CSS<br></li>
+  <li>Implemente interatividade com eventos<br></li>
+</ul>
+</p>Inclua pelo menos 10 funcionalidades diferentes de manipulação do DOM.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

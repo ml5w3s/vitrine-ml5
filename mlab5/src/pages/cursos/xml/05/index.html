@@ -1,0 +1,518 @@
+<!--curso_xml/05/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 05 - XML no Governo (eSocial, SPED) | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre XML em sistemas governamentais brasileiros: eSocial, SPED e outros projetos de digitalização do governo federal.">
+  <meta name="keywords" content="xml, esocial, sped, governo, brasil, receita federal, ministerio trabalho, digitalização, documentos fiscais">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 05 - XML no Governo (eSocial, SPED) | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre XML em sistemas governamentais brasileiros: eSocial, SPED e outros projetos de digitalização.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 05 - XML no Governo (eSocial, SPED) | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre XML em sistemas governamentais brasileiros: eSocial, SPED e outros projetos de digitalização.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🏛️ XML - Sistemas Governamentais (eSocial, SPED)</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Digitalização Governamental no Brasil</h3>
+  <p>O governo brasileiro utiliza XML como padrão para diversos sistemas de digitalização, incluindo eSocial, SPED, e-ISS e outros projetos que revolucionaram a administração pública e a relação com empresas e cidadãos.</p>
+  <h4>Projetos Governamentais com XML:</h4>
+  <ul class="left_list">
+    <li>eSocial - Sistema de Escrituração Digital</li>
+    <li>SPED - Sistema Público de Escrituração Digital</li>
+    <li>e-ISS - Imposto sobre Serviços eletrônico</li>
+    <li>e-Financeira - Escrituração Financeira</li>
+    <li>SEI - Sistema Eletrônico de Informações</li>
+    <li>PJe - Processo Judicial Eletrônico</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/05/images/governo_estrutura_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/05/images/governo_estrutura_tablet.png">
+    <img src="/src/pages/cursos/xml/05/images/governo_estrutura_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>eSocial - Sistema de Escrituração Digital</h3>
+  <p>O eSocial é um sistema unificado de escrituração digital das obrigações trabalhistas, previdenciárias e fiscais, utilizando XML para padronizar a comunicação entre empregadores e órgãos governamentais.</p>
+  <h4>Objetivos do eSocial:</h4>
+  <ul class="left_list">
+    <li>Unificação de obrigações trabalhistas</li>
+    <li>Redução de burocracia</li>
+    <li>Melhoria na fiscalização</li>
+    <li>Integração de sistemas governamentais</li>
+    <li>Transparência nas relações trabalhistas</li>
+    <li>Redução de fraudes</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Estrutura do eSocial em XML:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtAdmissao/v_S_01_00_00"&gt;
+  &lt;evtAdmissao Id="ID1000000000000000000000000000001"&gt;
+    &lt;ideEvento&gt;
+      &lt;indRetif&gt;1&lt;/indRetif&gt;
+      &lt;nrRecibo&gt;&lt;/nrRecibo&gt;
+      &lt;tpAmb&gt;2&lt;/tpAmb&gt;
+      &lt;procEmi&gt;1&lt;/procEmi&gt;
+      &lt;verProc&gt;1.0&lt;/verProc&gt;
+    &lt;/ideEvento&gt;
+    &lt;ideEmpregador&gt;
+      &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+      &lt;nrInsc&gt;12345678000195&lt;/nrInsc&gt;
+    &lt;/ideEmpregador&gt;
+    &lt;trabalhador&gt;
+      &lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
+      &lt;nmTrab&gt;João Silva&lt;/nmTrab&gt;
+      &lt;sexo&gt;M&lt;/sexo&gt;
+      &lt;racaCor&gt;1&lt;/racaCor&gt;
+      &lt;estCiv&gt;1&lt;/estCiv&gt;
+      &lt;grauInstr&gt;08&lt;/grauInstr&gt;
+    &lt;/trabalhador&gt;
+  &lt;/evtAdmissao&gt;
+&lt;/eSocial&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Eventos do eSocial</h3>
+  <p>O eSocial utiliza diferentes tipos de eventos XML para representar as diversas situações trabalhistas, cada um com sua estrutura específica e validações próprias.</p>
+  <h4>Principais Eventos:</h4>
+  <ul class="left_list">
+    <li>evtAdmissao - Admissão de trabalhador</li>
+    <li>evtAltContratual - Alteração contratual</li>
+    <li>evtExclusao - Exclusão de trabalhador</li>
+    <li>evtRemun - Remuneração</li>
+    <li>evtDeslig - Desligamento</li>
+    <li>evtTabRubrica - Tabela de rubricas</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Evento de Admissão:</h4>
+  <pre><code>&lt;evtAdmissao Id="ID1000000000000000000000000000001"&gt;
+  &lt;ideEvento&gt;
+    &lt;indRetif&gt;1&lt;/indRetif&gt;              &lt;!-- 1=Original, 2=Retificação --&gt;
+    &lt;tpAmb&gt;2&lt;/tpAmb&gt;                    &lt;!-- 1=Produção, 2=Teste --&gt;
+    &lt;procEmi&gt;1&lt;/procEmi&gt;                &lt;!-- 1=Aplicativo empregador --&gt;
+    &lt;verProc&gt;1.0&lt;/verProc&gt;              &lt;!-- Versão do aplicativo --&gt;
+  &lt;/ideEvento&gt;
+  &lt;ideEmpregador&gt;
+    &lt;tpInsc&gt;1&lt;/tpInsc&gt;                  &lt;!-- 1=CNPJ --&gt;
+    &lt;nrInsc&gt;12345678000195&lt;/nrInsc&gt;     &lt;!-- CNPJ da empresa --&gt;
+  &lt;/ideEmpregador&gt;
+  &lt;trabalhador&gt;
+    &lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;      &lt;!-- CPF do trabalhador --&gt;
+    &lt;nmTrab&gt;João Silva&lt;/nmTrab&gt;         &lt;!-- Nome do trabalhador --&gt;
+    &lt;sexo&gt;M&lt;/sexo&gt;                      &lt;!-- M=Masculino, F=Feminino --&gt;
+    &lt;racaCor&gt;1&lt;/racaCor&gt;                &lt;!-- Código raça/cor --&gt;
+    &lt;estCiv&gt;1&lt;/estCiv&gt;                  &lt;!-- Estado civil --&gt;
+    &lt;grauInstr&gt;08&lt;/grauInstr&gt;           &lt;!-- Grau de instrução --&gt;
+    &lt;dtNascto&gt;1980-05-15&lt;/dtNascto&gt;     &lt;!-- Data nascimento --&gt;
+    &lt;endereco&gt;
+      &lt;brasil&gt;
+        &lt;tpLograd&gt;1&lt;/tpLograd&gt;
+        &lt;dscLograd&gt;Rua das Flores&lt;/dscLograd&gt;
+        &lt;nrLograd&gt;123&lt;/nrLograd&gt;
+        &lt;cep&gt;01234567&lt;/cep&gt;
+        &lt;codMunic&gt;3550308&lt;/codMunic&gt;
+        &lt;uf&gt;SP&lt;/uf&gt;
+      &lt;/brasil&gt;
+    &lt;/endereco&gt;
+  &lt;/trabalhador&gt;
+&lt;/evtAdmissao&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/05/images/eventos_esocial_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/05/images/eventos_esocial_tablet.png">
+    <img src="/src/pages/cursos/xml/05/images/eventos_esocial_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>SPED - Sistema Público de Escrituração Digital</h3>
+  <p>O SPED é um conjunto de instrumentos para cumprimento das obrigações acessórias por via digital, utilizando XML para padronizar a transmissão de informações contábeis e fiscais.</p>
+  <h4>Componentes do SPED:</h4>
+  <ul class="left_list">
+    <li>SPED Fiscal - Escrituração Fiscal Digital (EFD)</li>
+    <li>SPED Contábil - Escrituração Contábil Digital (ECD)</li>
+    <li>SPED Contribuições - EFD Contribuições</li>
+    <li>SPED PIS/PASEP - Contribuições sociais</li>
+    <li>SPED ICMS/IPI - Impostos estaduais</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Estrutura SPED Fiscal:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SpedFiscal xmlns="http://www.sped.fazenda.gov.br"&gt;
+  &lt;Bloco0&gt;
+    &lt;REG0000&gt;
+      &lt;REG&gt;0000&lt;/REG&gt;
+      &lt;COD_VER&gt;105&lt;/COD_VER&gt;
+      &lt;TIPO_ESCRIT&gt;0&lt;/TIPO_ESCRIT&gt;
+      &lt;IND_SIT_ESP&gt;0&lt;/IND_SIT_ESP&gt;
+      &lt;NUM_REC_ANTERIOR&gt;&lt;/NUM_REC_ANTERIOR&gt;
+      &lt;DT_INI&gt;202301&lt;/DT_INI&gt;
+      &lt;DT_FIN&gt;202301&lt;/DT_FIN&gt;
+      &lt;NOME&gt;Empresa Exemplo LTDA&lt;/NOME&gt;
+      &lt;CNPJ&gt;12345678000195&lt;/CNPJ&gt;
+      &lt;UF&gt;SP&lt;/UF&gt;
+      &lt;COD_MUN&gt;3550308&lt;/COD_MUN&gt;
+      &lt;SUFRAMA&gt;&lt;/SUFRAMA&gt;
+      &lt;IND_NAT_PJ&gt;00&lt;/IND_NAT_PJ&gt;
+      &lt;IND_ATIV&gt;1&lt;/IND_ATIV&gt;
+    &lt;/REG0000&gt;
+  &lt;/Bloco0&gt;
+&lt;/SpedFiscal&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Registros do SPED</h3>
+  <p>O SPED utiliza um sistema de registros alfanuméricos para organizar as informações, cada registro representando um tipo específico de informação contábil ou fiscal.</p>
+  <h4>Tipos de Registros:</h4>
+  <ul class="left_list">
+    <li>Registros 0000-0999 - Informações gerais</li>
+    <li>Registros 1000-1999 - Informações do estabelecimento</li>
+    <li>Registros 2000-2999 - Documentos fiscais</li>
+    <li>Registros 3000-3999 - Inventário</li>
+    <li>Registros 5000-5999 - Contas contábeis</li>
+    <li>Registros 9000-9999 - Totais e fechamento</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Registros SPED:</h4>
+  <pre><code>&lt;!-- Registro 0001 - Abertura do Bloco 0 --&gt;
+&lt;REG0001&gt;
+  &lt;REG&gt;0001&lt;/REG&gt;
+  &lt;IND_MOV&gt;0&lt;/IND_MOV&gt;                &lt;!-- 0=Sem movimento, 1=Com movimento --&gt;
+&lt;/REG0001&gt;
+
+&lt;!-- Registro 0005 - Dados Complementares --&gt;
+&lt;REG0005&gt;
+  &lt;REG&gt;0005&lt;/REG&gt;
+  &lt;FANTASIA&gt;Empresa Exemplo&lt;/FANTASIA&gt;
+  &lt;CEP&gt;01234567&lt;/CEP&gt;
+  &lt;END&gt;Rua das Flores, 123&lt;/END&gt;
+  &lt;NUM&gt;123&lt;/NUM&gt;
+  &lt;COMPL&gt;Sala 101&lt;/COMPL&gt;
+  &lt;BAIRRO&gt;Centro&lt;/BAIRRO&gt;
+  &lt;FONE&gt;1133334444&lt;/FONE&gt;
+  &lt;FAX&gt;1133335555&lt;/FAX&gt;
+  &lt;EMAIL&gt;contato@empresa.com&lt;/EMAIL&gt;
+&lt;/REG0005&gt;
+
+&lt;!-- Registro 0100 - Dados do Contabilista --&gt;
+&lt;REG0100&gt;
+  &lt;REG&gt;0100&lt;/REG&gt;
+  &lt;NOME&gt;Contador Responsável&lt;/NOME&gt;
+  &lt;CPF&gt;12345678901&lt;/CPF&gt;
+  &lt;CRC&gt;123456&lt;/CRC&gt;
+  &lt;CNPJ&gt;98765432000123&lt;/CNPJ&gt;
+  &lt;CEP&gt;01234567&lt;/CEP&gt;
+  &lt;END&gt;Rua dos Contadores, 456&lt;/END&gt;
+  &lt;NUM&gt;456&lt;/NUM&gt;
+  &lt;COMPL&gt;Conjunto 201&lt;/COMPL&gt;
+  &lt;BAIRRO&gt;Centro&lt;/BAIRRO&gt;
+  &lt;FONE&gt;1199998888&lt;/FONE&gt;
+  &lt;FAX&gt;1199997777&lt;/FAX&gt;
+  &lt;EMAIL&gt;contador@contabilidade.com&lt;/EMAIL&gt;
+  &lt;COD_MUN&gt;3550308&lt;/COD_MUN&gt;
+&lt;/REG0100&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/05/images/registros_sped_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/05/images/registros_sped_tablet.png">
+    <img src="/src/pages/cursos/xml/05/images/registros_sped_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>e-ISS - Imposto sobre Serviços Eletrônico</h3>
+  <p>O e-ISS é um sistema que permite a emissão de notas fiscais de serviços em formato eletrônico, utilizando XML para padronizar a comunicação entre prestadores de serviços e municípios.</p>
+  <h4>Características do e-ISS:</h4>
+  <ul class="left_list">
+    <li>Emissão eletrônica de NFS-e</li>
+    <li>Validação automática pelo município</li>
+    <li>Armazenamento digital obrigatório</li>
+    <li>Integração com sistemas municipais</li>
+    <li>Redução de papel e burocracia</li>
+    <li>Controle fiscal automatizado</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Estrutura NFS-e em XML:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;nfs-e xmlns="http://www.abrasf.org.br/nfse.xsd"&gt;
+  &lt;nfse&gt;
+    &lt;infNfse Id="NFS-e-123456789"&gt;
+      &lt;identificacaoNfse&gt;
+        &lt;numero&gt;123456&lt;/numero&gt;
+        &lt;codigoVerificacao&gt;ABC123&lt;/codigoVerificacao&gt;
+        &lt;dataEmissao&gt;2023-01-15&lt;/dataEmissao&gt;
+      &lt;/identificacaoNfse&gt;
+      &lt;dataEmissao&gt;2023-01-15&lt;/dataEmissao&gt;
+      &lt;naturezaOperacao&gt;1&lt;/naturezaOperacao&gt;
+      &lt;regimeEspecialTributacao&gt;1&lt;/regimeEspecialTributacao&gt;
+      &lt;optanteSimplesNacional&gt;1&lt;/optanteSimplesNacional&gt;
+      &lt;servico&gt;
+        &lt;valores&gt;
+          &lt;valorServicos&gt;1000.00&lt;/valorServicos&gt;
+          &lt;valorDeducoes&gt;0.00&lt;/valorDeducoes&gt;
+          &lt;valorPis&gt;0.00&lt;/valorPis&gt;
+          &lt;valorCofins&gt;0.00&lt;/valorCofins&gt;
+          &lt;valorInss&gt;0.00&lt;/valorInss&gt;
+          &lt;valorIr&gt;0.00&lt;/valorIr&gt;
+          &lt;valorCsll&gt;0.00&lt;/valorCsll&gt;
+          &lt;issRetido&gt;2&lt;/issRetido&gt;
+          &lt;valorIss&gt;50.00&lt;/valorIss&gt;
+          &lt;valorLiquidoNfse&gt;950.00&lt;/valorLiquidoNfse&gt;
+        &lt;/valores&gt;
+      &lt;/servico&gt;
+    &lt;/infNfse&gt;
+  &lt;/nfse&gt;
+&lt;/nfs-e&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Validação e Schemas Governamentais</h3>
+  <p>Todos os sistemas governamentais utilizam XML Schema (XSD) rigoroso para validação, garantindo conformidade com as regras estabelecidas pelos órgãos competentes.</p>
+  <h4>Schemas Principais:</h4>
+  <ul class="left_list">
+    <li>eSocial - Schemas por versão e evento</li>
+    <li>SPED - Schemas por bloco e registro</li>
+    <li>NFS-e - Schema Abrasf padrão</li>
+    <li>NFe - Schema da Receita Federal</li>
+    <li>TISS - Schema da ANS</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Validação:</h4>
+  <pre><code>&lt;!-- Declaração de namespace e schema --&gt;
+&lt;eSocial xmlns="http://www.esocial.gov.br/schema/evt/evtAdmissao/v_S_01_00_00"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.esocial.gov.br/schema/evt/evtAdmissao/v_S_01_00_00
+         evtAdmissao_v_S_01_00_00.xsd"&gt;
+
+&lt;!-- Validações automáticas --&gt;
+&lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;        &lt;!-- CPF válido --&gt;
+&lt;cnpj&gt;12345678000195&lt;/cnpj&gt;           &lt;!-- CNPJ válido --&gt;
+&lt;dtNascto&gt;1980-05-15&lt;/dtNascto&gt;       &lt;!-- Data válida --&gt;
+&lt;cep&gt;01234567&lt;/cep&gt;                   &lt;!-- CEP válido --&gt;
+&lt;email&gt;contato@empresa.com&lt;/email&gt;    &lt;!-- Email válido --&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/05/images/validacao_governo_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/05/images/validacao_governo_tablet.png">
+    <img src="/src/pages/cursos/xml/05/images/validacao_governo_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Integração com Sistemas Empresariais</h3>
+  <p>A integração dos sistemas governamentais com ERPs empresariais revolucionou a gestão fiscal e trabalhista, automatizando processos que antes eram manuais e propensos a erros.</p>
+  <h4>Benefícios da Integração:</h4>
+  <ul class="left_list">
+    <li>Automação de obrigações acessórias</li>
+    <li>Redução de erros e retrabalho</li>
+    <li>Compliance automático</li>
+    <li>Auditoria simplificada</li>
+    <li>Economia de tempo e recursos</li>
+    <li>Integração com folha de pagamento</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Fluxo de Integração:</h4>
+  <pre><code>&lt;!-- Sistema ERP --&gt;
+&lt;!-- 1. Captura dados da folha --&gt;
+&lt;!-- 2. Gera XML eSocial --&gt;
+&lt;!-- 3. Valida contra schema --&gt;
+&lt;!-- 4. Envia para governo --&gt;
+&lt;!-- 5. Recebe protocolo --&gt;
+&lt;!-- 6. Armazena comprovante --&gt;
+
+&lt;!-- Integração automatizada --&gt;
+&lt;evtRemun Id="ID1000000000000000000000000000001"&gt;
+  &lt;ideEvento&gt;
+    &lt;indRetif&gt;1&lt;/indRetif&gt;
+    &lt;tpAmb&gt;1&lt;/tpAmb&gt;                  &lt;!-- Produção --&gt;
+    &lt;procEmi&gt;1&lt;/procEmi&gt;              &lt;!-- ERP --&gt;
+    &lt;verProc&gt;2.1&lt;/verProc&gt;            &lt;!-- Versão ERP --&gt;
+  &lt;/ideEvento&gt;
+  &lt;ideEmpregador&gt;
+    &lt;tpInsc&gt;1&lt;/tpInsc&gt;
+    &lt;nrInsc&gt;12345678000195&lt;/nrInsc&gt;
+  &lt;/ideEmpregador&gt;
+  &lt;ideTrabalhador&gt;
+    &lt;cpfTrab&gt;12345678901&lt;/cpfTrab&gt;
+  &lt;/ideTrabalhador&gt;
+  &lt;dmDev&gt;
+    &lt;ideDmDev&gt;001&lt;/ideDmDev&gt;
+    &lt;codCateg&gt;101&lt;/codCateg&gt;
+    &lt;vrLiq&gt;3000.00&lt;/vrLiq&gt;
+  &lt;/dmDev&gt;
+&lt;/evtRemun&gt;</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie estruturas XML para sistemas governamentais com:<p>
+  <ul>
+  <li>Título = XML para Sistemas Governamentais<br></li>
+  <li>eSocial = Evento de admissão de trabalhador<br></li>
+  <li>SPED = Registros de abertura e dados complementares<br></li>
+  <li>NFS-e = Nota fiscal de serviço eletrônica<br></li>
+  <li>Validação = Schemas XSD apropriados<br></li>
+  <li>Integração = Fluxo com sistema ERP<br></li>
+</ul>
+</p>Implemente validações rigorosas e estruturas conforme padrões oficiais.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

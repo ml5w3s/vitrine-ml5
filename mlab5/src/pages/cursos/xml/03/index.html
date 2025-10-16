@@ -1,0 +1,494 @@
+<!--curso_xml/03/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 03 - XML e NFe (Nota Fiscal Eletrônica) | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre XML na Nota Fiscal Eletrônica (NFe) no Brasil. Estrutura, validação e processamento de documentos fiscais XML.">
+  <meta name="keywords" content="xml, nfe, nota fiscal eletrônica, brasil, receita federal, documentos fiscais, xml schema, validação">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 03 - XML e NFe (Nota Fiscal Eletrônica) | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre XML na Nota Fiscal Eletrônica (NFe) no Brasil. Estrutura, validação e processamento de documentos fiscais XML.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 03 - XML e NFe (Nota Fiscal Eletrônica) | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre XML na Nota Fiscal Eletrônica (NFe) no Brasil. Estrutura, validação e processamento de documentos fiscais XML.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>📄 XML - Nota Fiscal Eletrônica (NFe)</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>XML na NFe no Brasil</h3>
+  <p>A Nota Fiscal Eletrônica (NFe) é um dos maiores exemplos de uso de XML no Brasil. Desde 2008, a Receita Federal utiliza XML como formato padrão para a transmissão e armazenamento de documentos fiscais, revolucionando o sistema tributário brasileiro.</p>
+  <h4>Importância da NFe em XML:</h4>
+  <ul class="left_list">
+    <li>Padronização nacional de documentos fiscais</li>
+    <li>Interoperabilidade entre sistemas</li>
+    <li>Auditoria e fiscalização automatizada</li>
+    <li>Redução de fraudes fiscais</li>
+    <li>Integração com sistemas ERP</li>
+    <li>Armazenamento digital obrigatório</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/03/images/nfe_estrutura_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/03/images/nfe_estrutura_tablet.png">
+    <img src="/src/pages/cursos/xml/03/images/nfe_estrutura_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Estrutura Básica do XML NFe</h3>
+  <p>O XML da NFe segue uma estrutura hierárquica rigorosa, definida pela Receita Federal, com elementos obrigatórios e opcionais bem específicos.</p>
+  <h4>Elementos Principais:</h4>
+  <ul class="left_list">
+    <li>infNFe - Informações da nota fiscal</li>
+    <li>ide - Identificação da NFe</li>
+    <li>emit - Dados do emitente</li>
+    <li>dest - Dados do destinatário</li>
+    <li>det - Detalhes dos produtos/serviços</li>
+    <li>total - Totais da NFe</li>
+    <li>transp - Dados do transporte</li>
+    <li>cobr - Dados da cobrança</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Estrutura NFe:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;nfeProc xmlns="http://www.portalfiscal.inf.br/nfe"&gt;
+  &lt;NFe&gt;
+    &lt;infNFe Id="NFe35200114200166000187550010000000001234567890"&gt;
+      &lt;ide&gt;
+        &lt;cUF&gt;35&lt;/cUF&gt;
+        &lt;cNF&gt;12345678&lt;/cNF&gt;
+        &lt;natOp&gt;Venda&lt;/natOp&gt;
+        &lt;mod&gt;55&lt;/mod&gt;
+        &lt;serie&gt;1&lt;/serie&gt;
+        &lt;nNF&gt;1&lt;/nNF&gt;
+        &lt;dhEmi&gt;2023-01-15T10:30:00-03:00&lt;/dhEmi&gt;
+      &lt;/ide&gt;
+      &lt;emit&gt;
+        &lt;CNPJ&gt;14200166000187&lt;/CNPJ&gt;
+        &lt;xNome&gt;Empresa Exemplo LTDA&lt;/xNome&gt;
+      &lt;/emit&gt;
+    &lt;/infNFe&gt;
+  &lt;/NFe&gt;
+&lt;/nfeProc&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Validação e Schema NFe</h3>
+  <p>A NFe utiliza XML Schema (XSD) para validação rigorosa dos documentos, garantindo conformidade com as regras fiscais brasileiras.</p>
+  <h4>Schemas Principais:</h4>
+  <ul class="left_list">
+    <li>nfe_v4.00.xsd - Schema principal da NFe</li>
+    <li>tiposBasico_v4.00.xsd - Tipos básicos</li>
+    <li>leiauteNFe_v4.00.xsd - Layout da NFe</li>
+    <li>procNFe_v4.00.xsd - Processamento</li>
+    <li>ConsNFeDest_v4.00.xsd - Consulta</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Validação XML NFe:</h4>
+  <pre><code>&lt;!-- Declaração de namespace --&gt;
+&lt;nfeProc xmlns="http://www.portalfiscal.inf.br/nfe"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.portalfiscal.inf.br/nfe 
+         nfe_v4.00.xsd"&gt;
+
+&lt;!-- Validação de campos obrigatórios --&gt;
+&lt;ide&gt;
+  &lt;cUF&gt;35&lt;/cUF&gt;                    &lt;!-- Obrigatório --&gt;
+  &lt;natOp&gt;Venda&lt;/natOp&gt;             &lt;!-- Obrigatório --&gt;
+  &lt;mod&gt;55&lt;/mod&gt;                    &lt;!-- 55=NFe, 65=NFCe --&gt;
+  &lt;serie&gt;1&lt;/serie&gt;                 &lt;!-- 1-999 --&gt;
+  &lt;nNF&gt;1&lt;/nNF&gt;                    &lt;!-- Numeração sequencial --&gt;
+  &lt;dhEmi&gt;2023-01-15T10:30:00-03:00&lt;/dhEmi&gt;
+  &lt;tpNF&gt;1&lt;/tpNF&gt;                  &lt;!-- 1=Saída, 0=Entrada --&gt;
+  &lt;idDest&gt;1&lt;/idDest&gt;              &lt;!-- 1=Operação interna --&gt;
+&lt;/ide&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/03/images/validacao_nfe_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/03/images/validacao_nfe_tablet.png">
+    <img src="/src/pages/cursos/xml/03/images/validacao_nfe_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Elementos de Produtos e Serviços</h3>
+  <p>A seção de detalhes (det) é uma das mais complexas da NFe, contendo informações detalhadas sobre cada produto ou serviço comercializado.</p>
+  <h4>Estrutura do Elemento det:</h4>
+  <ul class="left_list">
+    <li>nItem - Número sequencial do item</li>
+    <li>prod - Dados do produto</li>
+    <li>imposto - Impostos incidentes</li>
+    <li>infAdProd - Informações adicionais</li>
+    <li>obsItem - Observações do item</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Produto na NFe:</h4>
+  <pre><code>&lt;det nItem="1"&gt;
+  &lt;prod&gt;
+    &lt;cProd&gt;001&lt;/cProd&gt;                    &lt;!-- Código do produto --&gt;
+    &lt;cEAN&gt;7891234567890&lt;/cEAN&gt;           &lt;!-- GTIN/EAN --&gt;
+    &lt;xProd&gt;Produto Exemplo&lt;/xProd&gt;        &lt;!-- Descrição --&gt;
+    &lt;NCM&gt;12345678&lt;/NCM&gt;                  &lt;!-- Classificação fiscal --&gt;
+    &lt;CFOP&gt;5102&lt;/CFOP&gt;                    &lt;!-- Código fiscal --&gt;
+    &lt;uCom&gt;UN&lt;/uCom&gt;                      &lt;!-- Unidade comercial --&gt;
+    &lt;qCom&gt;10.0000&lt;/qCom&gt;                 &lt;!-- Quantidade --&gt;
+    &lt;vUnCom&gt;100.0000000000&lt;/vUnCom&gt;      &lt;!-- Valor unitário --&gt;
+    &lt;vProd&gt;1000.00&lt;/vProd&gt;               &lt;!-- Valor total --&gt;
+    &lt;cEANTrib&gt;7891234567890&lt;/cEANTrib&gt;   &lt;!-- GTIN tributário --&gt;
+    &lt;uTrib&gt;UN&lt;/uTrib&gt;                    &lt;!-- Unidade tributável --&gt;
+    &lt;qTrib&gt;10.0000&lt;/qTrib&gt;               &lt;!-- Quantidade tributável --&gt;
+    &lt;vUnTrib&gt;100.0000000000&lt;/vUnTrib&gt;   &lt;!-- Valor unitário tributável --&gt;
+  &lt;/prod&gt;
+  &lt;imposto&gt;
+    &lt;ICMS&gt;
+      &lt;ICMS00&gt;
+        &lt;orig&gt;0&lt;/orig&gt;                  &lt;!-- Origem da mercadoria --&gt;
+        &lt;CST&gt;00&lt;/CST&gt;                   &lt;!-- Tributação ICMS --&gt;
+        &lt;modBC&gt;3&lt;/modBC&gt;                &lt;!-- Modalidade BC --&gt;
+        &lt;vBC&gt;1000.00&lt;/vBC&gt;              &lt;!-- Base de cálculo --&gt;
+        &lt;pICMS&gt;18.00&lt;/pICMS&gt;            &lt;!-- Alíquota ICMS --&gt;
+        &lt;vICMS&gt;180.00&lt;/vICMS&gt;           &lt;!-- Valor ICMS --&gt;
+      &lt;/ICMS00&gt;
+    &lt;/ICMS&gt;
+  &lt;/imposto&gt;
+&lt;/det&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Impostos na NFe</h3>
+  <p>A NFe contém informações detalhadas sobre todos os impostos incidentes, incluindo ICMS, IPI, PIS, COFINS e ISS, conforme a legislação tributária brasileira.</p>
+  <h4>Tipos de Impostos:</h4>
+  <ul class="left_list">
+    <li>ICMS - Imposto sobre Circulação de Mercadorias</li>
+    <li>IPI - Imposto sobre Produtos Industrializados</li>
+    <li>PIS - Programa de Integração Social</li>
+    <li>COFINS - Contribuição para Financiamento da Seguridade</li>
+    <li>ISS - Imposto sobre Serviços</li>
+    <li>II - Imposto de Importação</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Estrutura de Impostos:</h4>
+  <pre><code>&lt;imposto&gt;
+  &lt;!-- ICMS --&gt;
+  &lt;ICMS&gt;
+    &lt;ICMS00&gt;
+      &lt;orig&gt;0&lt;/orig&gt;                    &lt;!-- 0=Nacional --&gt;
+      &lt;CST&gt;00&lt;/CST&gt;                     &lt;!-- 00=Tributada integralmente --&gt;
+      &lt;modBC&gt;3&lt;/modBC&gt;                  &lt;!-- 3=Valor da operação --&gt;
+      &lt;vBC&gt;1000.00&lt;/vBC&gt;
+      &lt;pICMS&gt;18.00&lt;/pICMS&gt;
+      &lt;vICMS&gt;180.00&lt;/vICMS&gt;
+    &lt;/ICMS00&gt;
+  &lt;/ICMS&gt;
+  
+  &lt;!-- IPI --&gt;
+  &lt;IPI&gt;
+    &lt;cEnq&gt;999&lt;/cEnq&gt;
+    &lt;IPITrib&gt;
+      &lt;CST&gt;50&lt;/CST&gt;                     &lt;!-- 50=Suspensão --&gt;
+    &lt;/IPITrib&gt;
+  &lt;/IPI&gt;
+  
+  &lt;!-- PIS --&gt;
+  &lt;PIS&gt;
+    &lt;PISAliq&gt;
+      &lt;CST&gt;01&lt;/CST&gt;                     &lt;!-- 01=Operação tributável --&gt;
+      &lt;vBC&gt;1000.00&lt;/vBC&gt;
+      &lt;pPIS&gt;1.65&lt;/pPIS&gt;
+      &lt;vPIS&gt;16.50&lt;/vPIS&gt;
+    &lt;/PISAliq&gt;
+  &lt;/PIS&gt;
+&lt;/imposto&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Totais e Informações Complementares</h3>
+  <p>A seção de totais consolida todos os valores da NFe, incluindo impostos, descontos e valores finais, sendo fundamental para a validação fiscal.</p>
+  <h4>Elementos de Totalização:</h4>
+  <ul class="left_list">
+    <li>ICMSTot - Totais do ICMS</li>
+    <li>ISSQNTot - Totais do ISS</li>
+    <li>retTrib - Retenções tributárias</li>
+    <li>vNF - Valor total da NFe</li>
+    <li>vTotTrib - Total dos tributos</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Totais:</h4>
+  <pre><code>&lt;total&gt;
+  &lt;ICMSTot&gt;
+    &lt;vBC&gt;1000.00&lt;/vBC&gt;                 &lt;!-- Base de cálculo ICMS --&gt;
+    &lt;vICMS&gt;180.00&lt;/vICMS&gt;              &lt;!-- Valor ICMS --&gt;
+    &lt;vICMSDeson&gt;0.00&lt;/vICMSDeson&gt;      &lt;!-- ICMS desonerado --&gt;
+    &lt;vFCP&gt;0.00&lt;/vFCP&gt;                  &lt;!-- Fundo Combate Pobreza --&gt;
+    &lt;vBCST&gt;0.00&lt;/vBCST&gt;                &lt;!-- Base ICMS ST --&gt;
+    &lt;vST&gt;0.00&lt;/vST&gt;                    &lt;!-- Valor ICMS ST --&gt;
+    &lt;vFCPST&gt;0.00&lt;/vFCPST&gt;              &lt;!-- FCP ST --&gt;
+    &lt;vFCPSTRet&gt;0.00&lt;/vFCPSTRet&gt;        &lt;!-- FCP ST Retido --&gt;
+    &lt;vProd&gt;1000.00&lt;/vProd&gt;             &lt;!-- Valor dos produtos --&gt;
+    &lt;vFrete&gt;0.00&lt;/vFrete&gt;              &lt;!-- Valor do frete --&gt;
+    &lt;vSeg&gt;0.00&lt;/vSeg&gt;                  &lt;!-- Valor do seguro --&gt;
+    &lt;vDesc&gt;0.00&lt;/vDesc&gt;                &lt;!-- Desconto --&gt;
+    &lt;vII&gt;0.00&lt;/vII&gt;                    &lt;!-- Imposto Importação --&gt;
+    &lt;vIPI&gt;0.00&lt;/vIPI&gt;                  &lt;!-- Valor IPI --&gt;
+    &lt;vIPIDevol&gt;0.00&lt;/vIPIDevol&gt;        &lt;!-- IPI Devolvido --&gt;
+    &lt;vPIS&gt;16.50&lt;/vPIS&gt;                 &lt;!-- Valor PIS --&gt;
+    &lt;vCOFINS&gt;76.50&lt;/vCOFINS&gt;           &lt;!-- Valor COFINS --&gt;
+    &lt;vOutro&gt;0.00&lt;/vOutro&gt;              &lt;!-- Outras despesas --&gt;
+    &lt;vNF&gt;1000.00&lt;/vNF&gt;                 &lt;!-- Valor total NFe --&gt;
+    &lt;vTotTrib&gt;273.00&lt;/vTotTrib&gt;        &lt;!-- Total dos tributos --&gt;
+  &lt;/ICMSTot&gt;
+&lt;/total&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/03/images/totais_nfe_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/03/images/totais_nfe_tablet.png">
+    <img src="/src/pages/cursos/xml/03/images/totais_nfe_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Processamento e Autorização</h3>
+  <p>Após a validação, a NFe é processada pela Receita Federal, que retorna um XML de autorização com protocolo e chave de acesso.</p>
+  <h4>Fluxo de Processamento:</h4>
+  <ul class="left_list">
+    <li>Validação do XML contra o schema</li>
+    <li>Envio para a Receita Federal</li>
+    <li>Processamento e autorização</li>
+    <li>Retorno do protocolo</li>
+    <li>Geração da chave de acesso</li>
+    <li>Armazenamento obrigatório</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>XML de Resposta:</h4>
+  <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;nfeProc xmlns="http://www.portalfiscal.inf.br/nfe"&gt;
+  &lt;NFe xmlns="http://www.portalfiscal.inf.br/nfe"&gt;
+    &lt;!-- XML da NFe original --&gt;
+  &lt;/NFe&gt;
+  &lt;protNFe xmlns="http://www.portalfiscal.inf.br/nfe"&gt;
+    &lt;infProt&gt;
+      &lt;tpAmb&gt;2&lt;/tpAmb&gt;                 &lt;!-- 1=Produção, 2=Homologação --&gt;
+      &lt;verAplic&gt;SP_NFE_PL_008i2&lt;/verAplic&gt;
+      &lt;chNFe&gt;35200114200166000187550010000000001234567890&lt;/chNFe&gt;
+      &lt;dhRecbto&gt;2023-01-15T10:35:00-03:00&lt;/dhRecbto&gt;
+      &lt;nProt&gt;135230001234567&lt;/nProt&gt;
+      &lt;digVal&gt;abc123def456...&lt;/digVal&gt;
+      &lt;cStat&gt;100&lt;/cStat&gt;              &lt;!-- 100=Autorizado --&gt;
+      &lt;xMotivo&gt;Autorizado o uso da NF-e&lt;/xMotivo&gt;
+    &lt;/infProt&gt;
+  &lt;/protNFe&gt;
+&lt;/nfeProc&gt;</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Integração com Sistemas ERP</h3>
+  <p>A NFe em XML permite integração eficiente com sistemas ERP, automatizando processos fiscais e reduzindo erros manuais.</p>
+  <h4>Benefícios da Integração:</h4>
+  <ul class="left_list">
+    <li>Automação da emissão de NFe</li>
+    <li>Sincronização com estoque</li>
+    <li>Controle fiscal automatizado</li>
+    <li>Relatórios fiscais integrados</li>
+    <li>Auditoria simplificada</li>
+    <li>Compliance tributário</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Integração:</h4>
+  <pre><code>&lt;!-- Dados do emitente do ERP --&gt;
+&lt;emit&gt;
+  &lt;CNPJ&gt;14200166000187&lt;/CNPJ&gt;
+  &lt;xNome&gt;Empresa Exemplo LTDA&lt;/xNome&gt;
+  &lt;xFant&gt;Exemplo&lt;/xFant&gt;
+  &lt;enderEmit&gt;
+    &lt;xLgr&gt;Rua das Flores&lt;/xLgr&gt;
+    &lt;nro&gt;123&lt;/nro&gt;
+    &lt;xBairro&gt;Centro&lt;/xBairro&gt;
+    &lt;cMun&gt;3550308&lt;/cMun&gt;              &lt;!-- Código IBGE --&gt;
+    &lt;xMun&gt;São Paulo&lt;/xMun&gt;
+    &lt;UF&gt;SP&lt;/UF&gt;
+    &lt;CEP&gt;01234567&lt;/CEP&gt;
+    &lt;cPais&gt;1058&lt;/cPais&gt;               &lt;!-- Brasil --&gt;
+    &lt;xPais&gt;Brasil&lt;/xPais&gt;
+    &lt;fone&gt;1133334444&lt;/fone&gt;
+  &lt;/enderEmit&gt;
+  &lt;IE&gt;123456789012&lt;/IE&gt;               &lt;!-- Inscrição Estadual --&gt;
+  &lt;CRT&gt;3&lt;/CRT&gt;                        &lt;!-- 3=Regime Normal --&gt;
+&lt;/emit&gt;</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/xml/03/images/integracao_erp_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/xml/03/images/integracao_erp_tablet.png">
+    <img src="/src/pages/cursos/xml/03/images/integracao_erp_mobile.png">
+  </picture>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie uma estrutura XML básica de NFe com:<p>
+  <ul>
+  <li>Título = Estrutura XML de NFe<br></li>
+  <li>Identificação = Elementos ide com dados básicos<br></li>
+  <li>Emitente = Dados da empresa emissora<br></li>
+  <li>Destinatário = Dados do cliente<br></li>
+  <li>Produto = Pelo menos um item com impostos<br></li>
+  <li>Totais = Consolidação de valores e impostos<br></li>
+</ul>
+</p>Use a estrutura oficial da Receita Federal e valide contra o schema XSD.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

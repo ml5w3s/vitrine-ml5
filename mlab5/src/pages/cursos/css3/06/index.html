@@ -1,0 +1,491 @@
+<!--curso_css3/06/index.html-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <title>Aula 06 - Transformações 2D e 3D CSS3 | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Aprenda sobre transformações CSS3 2D e 3D para criar efeitos visuais impressionantes. Domine translate, rotate, scale e perspective.">
+  <meta name="keywords" content="css3, transformações, 2d, 3d, translate, rotate, scale, perspective, transform-origin, efeitos visuais">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br/">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Aula 06 - Transformações 2D e 3D CSS3 | ML5Lab">
+  <meta property="og:description" content="Aprenda sobre transformações CSS3 2D e 3D para criar efeitos visuais impressionantes e interativos.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <style>#exercicios, #controles{display:none;}</style>
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aula 06 - Transformações 2D e 3D CSS3 | ML5Lab">
+  <meta name="twitter:description" content="Aprenda sobre transformações CSS3 2D e 3D para criar efeitos visuais impressionantes e interativos.">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+
+<!-- COMPONENTES -->
+<div id="header-placeholder"></div>
+<main id="aulas">
+
+<!-- ARTIGOS -->
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🔄 CSS3 - Transformações 2D e 3D</h3>
+</article>
+</section>
+
+<section class="container">
+<!--INSTRUÇÕES-->
+<article class="item">
+  <h3>Transformações CSS3</h3>
+  <p>As transformações CSS3 permitem modificar a posição, rotação, escala e perspectiva dos elementos sem afetar o fluxo do documento. São fundamentais para criar efeitos visuais modernos e interativos.</p>
+  <h4>Vantagens das Transformações:</h4>
+  <ul class="left_list">
+    <li>Performance otimizada (hardware acceleration)</li>
+    <li>Efeitos visuais impressionantes</li>
+    <li>Interatividade sem JavaScript</li>
+    <li>Animações suaves</li>
+    <li>Controle preciso de posicionamento</li>
+    <li>Suporte a 2D e 3D</li>
+  </ul>
+</article>
+
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/css3/06/images/transformacoes_conceitos_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/css3/06/images/transformacoes_conceitos_tablet.png">
+    <img src="/src/pages/cursos/css3/06/images/transformacoes_conceitos_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Transformações 2D Básicas</h3>
+  <p>As transformações 2D são as mais comuns e incluem translate, rotate, scale e skew para modificar elementos no plano bidimensional.</p>
+  <h4>Funções 2D Principais:</h4>
+  <ul class="left_list">
+    <li>translate(x, y) - Move o elemento</li>
+    <li>rotate(ângulo) - Rotaciona o elemento</li>
+    <li>scale(x, y) - Redimensiona o elemento</li>
+    <li>skew(x, y) - Inclina o elemento</li>
+    <li>matrix() - Combina todas as transformações</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Transformações 2D:</h4>
+  <pre><code>/* Movimento */
+.elemento {
+  transform: translate(50px, 30px);
+}
+
+/* Rotação */
+.elemento {
+  transform: rotate(45deg);
+}
+
+/* Escala */
+.elemento {
+  transform: scale(1.5);        /* 150% do tamanho */
+  transform: scale(2, 0.5);     /* 200% largura, 50% altura */
+}
+
+/* Inclinação */
+.elemento {
+  transform: skew(15deg, 5deg);
+}
+
+/* Combinação */
+.elemento {
+  transform: translate(20px, 10px) rotate(30deg) scale(1.2);
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>transform-origin</h3>
+  <p>A propriedade transform-origin define o ponto de referência para as transformações, permitindo controlar de onde elas são aplicadas.</p>
+  <h4>Valores de transform-origin:</h4>
+  <ul class="left_list">
+    <li>center - Centro do elemento (padrão)</li>
+    <li>top, bottom - Partes superior/inferior</li>
+    <li>left, right - Partes esquerda/direita</li>
+    <li>Valores específicos - 50px, 30%</li>
+    <li>Combinações - top left, bottom right</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Origin:</h4>
+  <pre><code>/* Rotação do centro */
+.elemento {
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* Rotação do canto superior esquerdo */
+.elemento {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+/* Escala a partir do canto inferior direito */
+.elemento {
+  transform: scale(1.5);
+  transform-origin: bottom right;
+}
+
+/* Ponto específico */
+.elemento {
+  transform: rotate(30deg);
+  transform-origin: 20px 30px;
+}</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/css3/06/images/transform_origin_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/css3/06/images/transform_origin_tablet.png">
+    <img src="/src/pages/cursos/css3/06/images/transform_origin_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Transformações 3D</h3>
+  <p>As transformações 3D adicionam profundidade e perspectiva aos elementos, criando efeitos tridimensionais impressionantes.</p>
+  <h4>Funções 3D:</h4>
+  <ul class="left_list">
+    <li>translate3d(x, y, z) - Movimento 3D</li>
+    <li>rotateX(), rotateY(), rotateZ() - Rotação nos eixos</li>
+    <li>scale3d(x, y, z) - Escala 3D</li>
+    <li>perspective() - Perspectiva individual</li>
+    <li>matrix3d() - Matriz 3D completa</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos de Transformações 3D:</h4>
+  <pre><code>/* Movimento no espaço 3D */
+.elemento {
+  transform: translate3d(50px, 30px, 20px);
+}
+
+/* Rotação nos eixos 3D */
+.elemento {
+  transform: rotateX(45deg);  /* Rotação horizontal */
+  transform: rotateY(30deg);  /* Rotação vertical */
+  transform: rotateZ(60deg);  /* Rotação no plano */
+}
+
+/* Combinação 3D */
+.elemento {
+  transform: 
+    perspective(1000px)
+    rotateX(20deg)
+    rotateY(30deg)
+    translateZ(50px);
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Perspective</h3>
+  <p>A perspectiva define como os elementos 3D são renderizados, criando a ilusão de profundidade e distância.</p>
+  <h4>Tipos de Perspective:</h4>
+  <ul class="left_list">
+    <li>perspective - Aplicada ao container pai</li>
+    <li>perspective() - Aplicada ao elemento individual</li>
+    <li>perspective-origin - Ponto de fuga da perspectiva</li>
+    <li>Valores menores = mais distorção</li>
+    <li>Valores maiores = menos distorção</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Configurando Perspective:</h4>
+  <pre><code>/* Container com perspectiva */
+.container-3d {
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+.elemento-3d {
+  transform: rotateY(45deg);
+}
+
+/* Perspectiva individual */
+.elemento {
+  transform: perspective(500px) rotateX(30deg);
+}
+
+/* Diferentes pontos de fuga */
+.distante { perspective: 2000px; }
+.proximo { perspective: 300px; }
+.lateral { perspective-origin: left center; }</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/css3/06/images/perspective_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/css3/06/images/perspective_tablet.png">
+    <img src="/src/pages/cursos/css3/06/images/perspective_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>backface-visibility</h3>
+  <p>A propriedade backface-visibility controla se a face traseira de um elemento 3D é visível quando rotacionado.</p>
+  <h4>Valores:</h4>
+  <ul class="left_list">
+    <li>visible - Face traseira visível (padrão)</li>
+    <li>hidden - Face traseira oculta</li>
+    <li>Útil para cards que viram</li>
+    <li>Cria efeitos de flip</li>
+    <li>Melhora performance</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplo de Card Flip:</h4>
+  <pre><code>.card-container {
+  perspective: 1000px;
+  width: 200px;
+  height: 300px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}</code></pre>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>transform-style</h3>
+  <p>A propriedade transform-style define como elementos filhos são renderizados no espaço 3D em relação ao elemento pai.</p>
+  <h4>Valores:</h4>
+  <ul class="left_list">
+    <li>flat - Elementos filhos são "achatados" (padrão)</li>
+    <li>preserve-3d - Mantém o espaço 3D dos filhos</li>
+    <li>Essencial para transformações 3D aninhadas</li>
+    <li>Permite criar estruturas 3D complexas</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Estruturas 3D Complexas:</h4>
+  <pre><code>/* Cubo 3D */
+.cubo {
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateY(45deg);
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.frente { transform: translateZ(50px); }
+.tras { transform: translateZ(-50px) rotateY(180deg); }
+.esquerda { transform: rotateY(-90deg) translateZ(50px); }
+.direita { transform: rotateY(90deg) translateZ(50px); }
+.top { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }</code></pre>
+
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/pages/cursos/css3/06/images/transform_style_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/pages/cursos/css3/06/images/transform_style_tablet.png">
+    <img src="/src/pages/cursos/css3/06/images/transform_style_mobile.png">
+  </picture>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>Casos de Uso Práticos</h3>
+  <p>As transformações CSS3 são fundamentais para criar interfaces modernas e efeitos visuais que impressionam o usuário.</p>
+  <h4>Aplicações Comuns:</h4>
+  <ul class="left_list">
+    <li>Hover effects em cards e botões</li>
+    <li>Galeria de imagens com zoom</li>
+    <li>Menus deslizantes</li>
+    <li>Cards que viram (flip)</li>
+    <li>Carrosséis 3D</li>
+    <li>Animações de entrada/saída</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h4>Exemplos Práticos:</h4>
+  <pre><code>/* Card com hover 3D */
+.card {
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateY(10deg) scale(1.05);
+}
+
+/* Menu deslizante */
+.menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.menu.ativo {
+  transform: translateX(0);
+}
+
+/* Zoom em imagem */
+.imagem {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.imagem:hover {
+  transform: scale(1.2);
+}</code></pre>
+</article>
+</section>
+
+<span id="exercicio">
+<p>Crie efeitos visuais usando Transformações CSS3 2D e 3D com:<p>
+  <ul>
+  <li>Título = Efeitos Visuais com Transformações CSS3<br></li>
+  <li>Transformações 2D = translate, rotate, scale em hover<br></li>
+  <li>Perspectiva = Container com perspectiva 3D<br></li>
+  <li>Rotations 3D = Elementos rotacionando nos eixos X, Y, Z<br></li>
+  <li>Card Flip = Card que vira mostrando conteúdo diferente<br></li>
+  <li>Performance = Use transform-origin e backface-visibility<br></li>
+</ul>
+</p>Crie uma galeria ou interface com efeitos 3D impressionantes.</p>
+</span>
+
+  <form id="controles">
+    <fieldset>
+      <legend>Controles</legend>
+    <h4>Escolha um template</h4>
+    <select id="templateSelect">
+      <option value="/vitrine-ml5/mlab5/templates/classico.html">Classico</option>
+      <option value="/vitrine-ml5/mlab5/templates/moderno.html">Moderno</option>
+      <option value="/vitrine-ml5/mlab5/templates/dark_mode.html">Dark Mode3</option>
+    </select>
+
+    <h4>Personalize</h4>
+    <label>Cor de fundo: <input type="color" id="bgColor" value="#ffffff"></label><br>
+    <label>Cor do texto: <input type="color" id="textColor" value="#000000"></label><br><br>
+
+    <label>Fonte:
+      <select id="fontFamily">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select><br>
+    </label><br><br>
+    </fieldset><br>
+    <button onclick="salvarCustomizacao()">Salvar e Visualizar</button>
+  </form>
+
+<section class="container">
+<article class="item">
+    <a href="/src/pages/playground" id="download-button" class="btn-large waves-effect waves-light teal lighten-1" >Playground</a>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const exercicio = document.getElementById('exercicio')?.innerText || "";
+    const playgroundLink = document.querySelector('a[href="/src/pages/playground"]'); 
+
+    if (playgroundLink) {
+      playgroundLink.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        // Salva o texto das instruções
+        localStorage.setItem('instrucoes', exercicio);
+
+        // Salva o HTML do formulário inteiro
+        const controles = document.getElementById('controles');
+        localStorage.setItem('ajustes', controles.outerHTML);
+
+        // Redireciona para o playground
+        window.location.href = playgroundLink.href;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

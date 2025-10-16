@@ -1,0 +1,74 @@
+{
+  "aula": "git-01",
+  "artigos": [
+    {
+      "titulo": "Entendendo o que é versionamento",
+      "subtitulo": "O caos dos arquivos: o problema antes do Git",
+      "texto": null,
+      "lista": [
+        "Imagine uma pasta cheia de versões:",
+        "index_final.html, index_final2.html, index_versão_final_AGORA.html.",
+        "Esse é o caos da falta de controle de versões.",
+        "Cada pessoa salva uma cópia diferente, ninguém sabe qual é a mais recente."
+      ],
+      "codigo": null,
+      "imagem": null
+    },
+    {
+      "titulo": "O que é versionamento de código",
+      "subtitulo": "Com Git, cada mudança é um ponto seguro de retorno.",
+      "texto": null,
+      "lista": [
+        "Versionamento é o ato de registrar o histórico de mudanças em arquivos.",
+        "Cada “versão” é como um checkpoint no tempo.",
+        "Você pode voltar atrás, comparar ou compartilhar versões facilmente.",
+        "Git é um sistema de versionamento distribuído — cada pessoa tem uma cópia completa do projeto."
+      ],
+      "codigo": null,
+      "imagem": null
+    },
+    {
+      "titulo": "Git como uma máquina do tempo",
+      "subtitulo": "O Git transforma pastas comuns em máquinas do tempo digitais",
+      "texto": null,
+      "lista": [
+        "Cada vez que você faz um “commit”, o Git cria um registro de estado.",
+        "Você pode viajar entre versões:"
+      ],
+      "codigo": "v1 → v2 → v3 → v4\n         ↑\n         rollback",
+      "imagem": null
+    },
+    {
+      "titulo": "O repositório: a casa do seu projeto",
+      "subtitulo": null,
+      "texto": null,
+      "lista": [
+        "Um repositório (repo) é uma pasta especial controlada pelo Git.",
+        "Contém:",
+        "Arquivos do projeto",
+        "Histórico de mudanças",
+        "Configurações de controle",
+        "Você pode ter:",
+        "Repositório local (na sua máquina)",
+        "Repositório remoto (no GitHub, por exemplo)"
+      ],
+      "codigo": null,
+      "imagem": null
+    },
+    {
+      "titulo": "GitHub, o espaço social do código",
+      "subtitulo": null,
+      "texto": null,
+      "lista": [
+        "GitHub é o ambiente remoto onde os repositórios podem ser armazenados, vistos e compartilhados.",
+        "Permite colaboração, revisão e hospedagem de projetos.",
+        "Você pode:",
+        "Criar seu perfil",
+        "Hospedar repositórios",
+        "Contribuir com outros projetos"
+      ],
+      "codigo": null,
+      "imagem": null
+    }
+  ]
+}

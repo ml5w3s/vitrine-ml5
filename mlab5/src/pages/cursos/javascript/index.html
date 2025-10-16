@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Moderno - ML5Lab</title>
+    <link rel="stylesheet" href="/src/assets/css/base.css">
+    <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<main id="aulas">
+<section class="container">
+<article class="item">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_frontend_desktop.png">
+    <source media="(min-width: 600px)" srcset="/src/assets/images/banner_frontend_tablet.png">
+    <img src="/src/assets/images/banner_frontend_mobile.png">
+  </picture>
+  <h3>🚀 JavaScript Moderno</h3>
+  <p>Curso completo de JavaScript ES6+ com foco em paradigmas modernos e integração prática com HTML5 e CSS3.</p>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>📚 Ementa do Curso</h3>
+  <ul>
+    <li><strong>Aula 01:</strong> Revisão inteligente e mentalidade moderna</li>
+    <li><strong>Aula 02:</strong> Estrutura e paradigma funcional</li>
+    <li><strong>Aula 03:</strong> Paradigma orientado a objetos (ES6 Classes)</li>
+    <li><strong>Aula 04:</strong> DOM e eventos modernos</li>
+    <li><strong>Aula 05:</strong> Assincronismo e comunicação</li>
+    <li><strong>Aula 06:</strong> Integração com HTML5, CSS3 e APIs</li>
+    <li><strong>Aula 07:</strong> Boas práticas e arquitetura moderna</li>
+  </ul>
+</article>
+
+<article class="item">
+  <h3>🎯 Objetivos</h3>
+  <ul>
+    <li>Dominar JavaScript ES6+ e paradigmas modernos</li>
+    <li>Integrar JS com HTML5 semântico e CSS3 responsivo</li>
+    <li>Desenvolver aplicações interativas e acessíveis</li>
+    <li>Aplicar boas práticas e padrões de código</li>
+    <li>Construir componentes reutilizáveis</li>
+  </ul>
+</article>
+</section>
+
+<section class="container">
+<article class="item">
+  <h3>🔗 Acessar Aulas</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+    <a href="/src/pages/cursos/javascript/01/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 01</a>
+    <a href="/src/pages/cursos/javascript/02/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 02</a>
+    <a href="/src/pages/cursos/javascript/03/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 03</a>
+    <a href="/src/pages/cursos/javascript/04/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 04</a>
+    <a href="/src/pages/cursos/javascript/05/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 05</a>
+    <a href="/src/pages/cursos/javascript/06/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 06</a>
+    <a href="/src/pages/cursos/javascript/07/index.html" class="btn" style="text-align: center; padding: 10px; background: #2196F3; color: white; text-decoration: none; border-radius: 5px;">Aula 07</a>
+  </div>
+</article>
+</section>
+
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  async function loadComponent(placeholderId, url) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Erro ao carregar ${url}`);
+      const html = await response.text();
+      document.getElementById(placeholderId).innerHTML = html;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/src/assets/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  });
+</script>
+
+</body>
+</html>
