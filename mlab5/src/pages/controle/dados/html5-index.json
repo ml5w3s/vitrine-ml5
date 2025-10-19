@@ -1,0 +1,45 @@
+{
+  "courseTitle": "🧭 HTML - Linguagem de marcação para sites na internet",
+  "bannerImages": {
+    "desktop": "/src/assets/images/banner_frontend_desktop.png",
+    "tablet": "/src/assets/images/banner_frontend_tablet.png",
+    "mobile": "/src/assets/images/banner_frontend_mobile.png"
+  },
+  "lessons": [
+    {
+      "title": "Aula 01",
+      "description": "Entenda como garantir que uma ação só aconteça depois de outra estar concluída. Perfeito para controlar a ordem de animações, carregamentos ou interações complexas.",
+      "path": "html5/01.json"
+    },
+    {
+      "title": "Aula 02",
+      "description": "Dê suavidade às transições de elementos na tela. Os efeitos de fade ajudam a guiar a atenção do usuário de forma gradual, mais natural, evitando mudanças bruscas no layout.",
+      "path": "html5/02.json"
+    },
+    {
+      "title": "Aula 03",
+      "description": "Descubra como exibir descrições ou legendas automaticamente quando o mouse passa sobre imagens ou botões. Um recurso útil para melhorar a usabilidade.",
+      "path": "html5/03.json"
+    },
+    {
+      "title": "Aula 04",
+      "description": "Crie seções retráteis com efeito deslizante. Muito usado em FAQs, menus de ajuda ou detalhes de produtos — mantém a página organizada e interativa.",
+      "path": "html5/04.json"
+    },
+    {
+      "title": "Aula 05",
+      "description": "Construa um menu que revela subopções apenas quando necessário. Essencial para sites com muitas categorias ou páginas internas, mantendo a navegação enxuta.",
+      "path": "html5/05.json"
+    },
+    {
+      "title": "Aula 06",
+      "description": "Aprenda a criar animações encadeadas, onde uma animação começa somente após a anterior ter terminado, criando sequências lógicas e visualmente agradáveis.",
+      "path": "html5/06.json"
+    },
+    {
+      "title": "Aula 07",
+      "description": "Aprenda a criar pop-ups leves e funcionais para alertas, formulários ou avisos importantes. Uma forma eficaz de captar a atenção sem sair da página.",
+      "path": "html5/07.json"
+    }
+  ]
+}

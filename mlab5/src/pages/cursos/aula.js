@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Load shared components
-  loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html');
-  loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+  loadComponent('header-placeholder', '/vitrine-ml5/mlab5/src/assets/js/ui/components/header.html');
+  loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/src/assets/js/ui/components/footer.html');
 
   // Get lesson path from URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const lessonPath = urlParams.get('path'); // e.g., 'html5/01.json'
-
+  const lessonPath = localStorage.getItem('selectedLesson'); // e.g., 'html5/01.json'
+console.log(lessonPath);
   if (lessonPath) {
     // Assuming all lesson data is in a 'dados' folder relative to the 'cursos' page
-    fetch(`../controle/dados/${lessonPath}`)
+    fetch(`/vitrine-ml5/mlab5/src/pages/controle/dados/${lessonPath}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -85,3 +84,4 @@ function renderizarAula(aula) {
     container.appendChild(article);
   });
 }
+ 

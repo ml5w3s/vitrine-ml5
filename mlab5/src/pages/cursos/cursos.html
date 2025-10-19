@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="/src/assets/images/ml5w3s.ico">
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/src/assets/images/ml5w3s.ico">
 
   <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
 
@@ -14,7 +14,7 @@
   <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
   <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://mlab5.com.br">
+  <link rel="canonical" href="https://ml5w3s.com.br">
   <meta http-equiv="content-language" content="pt-BR">
 
   <!-- OG -->
@@ -26,7 +26,7 @@
 
   <!-- CSS  -->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/vitrine-ml5/mlab5/src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -42,9 +42,9 @@
 <!--BANNER-->
   <article class="item">
     <picture>
-      <source media="(min-width: 1024px)" srcset="/src/assets/images/banner_cursos_desktop.png">
-      <source media="(min-width: 600px)" srcset="/src/assets/images/banner_cursos_tablet.png">
-      <img src="/src/assets/images/banner_cursos_mobile.png">
+      <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/src/assets/images/banner_cursos_desktop.png">
+      <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/src/assets/images/banner_cursos_tablet.png">
+      <img src="/vitrine-ml5/mlab5/src/assets/images/banner_cursos_mobile.png">
     </picture>
   </article>
 
@@ -69,20 +69,20 @@
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
-    await loadComponent('header-placeholder', '/src/assets/js/ui/components/header.html')
+    await loadComponent('header-placeholder', '/vitrine-ml5/mlab5/src/assets/js/ui/components/header.html')
       .then(() => {
         const script = document.createElement('script');
-        script.src = '/mlab5/js/ui/components/navbar.js';
+        script.src = '/vitrine-ml5/mlab5/assets/js/ui/components/navbar.js';
         document.body.appendChild(script);
       })
       .catch(error => console.error("Erro ao carregar o header:", error));
-    await loadComponent('footer-placeholder', '/src/assets/js/ui/components/footer.html');
+    await loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/src/assets/js/ui/components/footer.html');
   });
 
   async function loadArticles() {
   try {
-    const response = await fetch('/src/assets/js/ui/components/articles.json');
-    if (!response.ok) throw new Error('Erro ao carregar articles.json');
+    const response = await fetch('/vitrine-ml5/mlab5/src/assets/js/ui/components/cursos.json');
+    if (!response.ok) throw new Error('Erro ao carregar cursos.json');
     const articles = await response.json();
 
     const container = document.getElementById('articles-placeholder');
@@ -100,6 +100,30 @@
 
 document.addEventListener('DOMContentLoaded', loadArticles);
 
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const articlesContainer = document.getElementById('articles-placeholder');
+    if (articlesContainer) {
+        articlesContainer.addEventListener('click', (event) => {
+            const link = event.target.closest('a.btn');
+            if (link && link.href.includes('aulas-universal.html')) {
+                try {
+                    // Usar o próprio link para criar a URL, garantindo que o caminho completo seja usado
+                    const url = new URL(link.href, window.location.origin);
+                    const course = url.searchParams.get('course');
+                    if (course) {
+                        event.preventDefault();
+                        localStorage.setItem('selectedCourse', course);
+                        window.location.href = link.href;
+                    }
+                } catch (e) {
+                    console.error('Erro ao processar link do curso:', e);
+                }
+            }
+        });
+    }
+});
 </script>
 </body>
 </html>
