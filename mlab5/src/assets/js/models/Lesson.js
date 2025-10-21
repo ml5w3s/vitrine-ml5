@@ -33,8 +33,6 @@ class Lesson {
         // A lógica de renderização pode variar com base no tipo de aula
         switch (this.type) {
             case 'lousa':
-                // Instancia o LousaComponent no contentContainer
-                // Verifica se LousaComponent está disponível no escopo global
                 if (typeof LousaComponent !== 'undefined') {
                     new LousaComponent(contentContainer, this.content);
                 } else {
@@ -43,8 +41,12 @@ class Lesson {
                 }
                 break;
             case 'playground':
-                // Lógica para carregar o componente Playground
-                contentContainer.innerHTML = `<div class="playground-container">Carregando playground...</div>`;
+                if (typeof PlaygroundComponent !== 'undefined') {
+                    new PlaygroundComponent(contentContainer, this); // Passa a própria instância da Lesson
+                } else {
+                    contentContainer.innerHTML = `<div class="playground-container">Erro: PlaygroundComponent não carregado.</div>`;
+                    console.error("PlaygroundComponent não está disponível.");
+                }
                 break;
             default:
                 contentContainer.innerHTML = `<div class="content-default">${this.content}</div>`;
