@@ -1,0 +1,34 @@
+[
+    {
+        "id": "html5-basico",
+        "title": "HTML5 Básico",
+        "description": "Aprenda os fundamentos do HTML5 para construir suas primeiras páginas web.",
+        "lessons": [
+            {
+                "id": "introducao",
+                "title": "Introdução ao HTML5",
+                "content": "O que é HTML e como ele estrutura a web.",
+                "type": "default"
+            },
+            {
+                "id": "tags-elementos",
+                "title": "Tags e Elementos",
+                "content": "Explore as tags mais comuns e como usá-las.",
+                "type": "playground"
+            }
+        ]
+    },
+    {
+        "id": "css-moderno",
+        "title": "CSS Moderno",
+        "description": "Estilize suas páginas com Flexbox, Grid e outras técnicas modernas.",
+        "lessons": [
+            {
+                "id": "flexbox",
+                "title": "Introdução ao Flexbox",
+                "content": "Aprenda a criar layouts flexíveis.",
+                "type": "lousa"
+            }
+        ]
+    }
+]

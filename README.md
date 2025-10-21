@@ -1,110 +1,98 @@
-# vitrine-ml5
-Site stático como apresentação para ML5
+# Vitrine ML5Lab
 
-Bem-vindo ao repositório **vitrine-ml5**! Este projeto é dedicado à publicação de aulas abrangentes em várias áreas da tecnologia, incluindo informática básica, design gráfico, web design, desenvolvimento front-end e back-end, banco de dados, análise de dados e muito mais.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Linguagem](https://img.shields.io/badge/linguagem-JavaScript-blue)
+![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-green)
 
-## Índice
-
-- [Sobre](#sobre)
-- [Conteúdo das Aulas](#conteúdo-das-aulas)
-  - [Informática Básica](#informática-básica)
-  - [Design Gráfico](#design-gráfico)
-  - [Web Design](#web-design)
-  - [Desenvolvimento Front-End](#desenvolvimento-front-end)
-  - [Desenvolvimento Back-End](#desenvolvimento-back-end)
-  - [Banco de Dados](#banco-de-dados)
-  - [Análise de Dados](#análise-de-dados)
-  - [JavaScript](#javascript)
-  - [PHP](#php)
-  - [Python](#python)
-  - [Java](#java)
-  - [Frameworks](#frameworks)
-  - [Corte de Acetato](#corte-de-acetato)
-- [Como Contribuir](#como-contribuir)
-- [Licença](#licença)
-- [Contato](#contato)
-
-## Sobre
-
-Este repositório foi criado com o objetivo de compartilhar conhecimentos e recursos educacionais em várias áreas da tecnologia. Nosso foco é fornecer conteúdo acessível e de alta qualidade para ajudar estudantes e profissionais a aprimorarem suas habilidades.
-
-## Conteúdo das Aulas
-
-### Informática Básica
-- Introdução ao computador
-- Sistema operacional
-- Aplicativos de escritório (Word, Excel, PowerPoint)
-
-### Design Gráfico
-- Fundamentos do design
-- Ferramentas de design (Photoshop, Illustrator)
-- Criação de logotipos e branding
-
-### Web Design
-- Princípios de web design
-- HTML e CSS
-- Responsividade e frameworks (Bootstrap)
-
-### Desenvolvimento Front-End
-- HTML, CSS e JavaScript
-- Frameworks e bibliotecas (React, Angular, Vue.js)
-- Práticas recomendadas e ferramentas
-
-### Desenvolvimento Back-End
-- Servidores e APIs
-- PHP, Python e Java
-- Frameworks (Laravel, Django)
-
-### Banco de Dados
-- SQL e NoSQL
-- Modelagem de dados
-- Ferramentas e práticas de gerenciamento de banco de dados
-
-### Análise de Dados
-- Conceitos de análise de dados
-- Power BI
-- Ferramentas de visualização e interpretação de dados
-
-### JavaScript
-- Fundamentos do JavaScript
-- ES6+ e além
-- Node.js e frameworks (Express)
-
-### PHP
-- Fundamentos do PHP
-- Desenvolvimento de aplicações web com PHP
-- Framework Laravel
-
-### Python
-- Fundamentos do Python
-- Desenvolvimento web com Django
-- Aplicações de dados e automação
-
-### Java
-- Fundamentos do Java
-- Desenvolvimento de aplicações desktop e web
-- Framework Spring
-
-### Frameworks
-- Laravel (PHP)
-- Django (Python)
-
-### Corte de Acetato
-- Técnicas de corte de acetato
-- Aplicações e ferramentas
-
-## Como Contribuir
-
-Se você deseja contribuir com este projeto, sinta-se à vontade para enviar um pull request. Estamos abertos a melhorias, correções de erros e novos conteúdos. Por favor, siga as diretrizes de contribuição e o código de conduta.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE).
-
-## Contato
-
-Se você tiver dúvidas, sugestões ou feedback, entre em contato através do email [gmail - ml5](mailto:marcelo.lauriano@gmail.com).
+Plataforma de ensino e tecnologia focada em cursos práticos, aulas particulares, e conexão entre profissionais e o mercado de trabalho.
 
 ---
 
-Obrigado por visitar nosso repositório! Esperamos que você encontre este material útil e inspirador.
+## 🚀 Funcionalidades Planejadas
+
+- **Cursos Livres:** Catálogo de cursos de tecnologia para estudo autônomo.
+- **Aulas Particulares:** Plataforma para que professores possam ministrar aulas particulares.
+- **Cursos para Escolas:** Cursos personalizados para instituições de ensino, gerenciados por um mantenedor.
+- **Sistema de Créditos:** Aquisição e uso de créditos para acessar conteúdos e serviços.
+- **Portal de Vagas:** Área para divulgação de vagas de emprego na área de tecnologia.
+- **Monetização:** Exibição de propagandas como forma de monetização da plataforma.
+
+---
+
+## 🛠️ Estrutura do Projeto
+
+O projeto está sendo refatorado para uma arquitetura de SPA (Single-Page Application) com clara separação de responsabilidades.
+
+```
+/vitrine-ml5/
+├── src/               # Código-fonte da aplicação
+│   ├── components/      # Componentes de UI reutilizáveis
+│   ├── services/        # Lógica de negócio e APIs (ApiService, Router)
+│   ├── models/          # Classes de domínio (Course, Lesson)
+│   ├── pages/           # Módulos que renderizam cada página
+│   └── ...
+├── docs/              # Diagramas e documentação do projeto
+├── index.html         # Ponto de entrada da SPA
+└── package.json       # Dependências e scripts
+```
+
+---
+
+## 🏁 Começando
+
+Siga os passos abaixo para configurar e rodar o ambiente de desenvolvimento local.
+
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/en/) (versão LTS recomendada)
+- [npm](https://www.npmjs.com/) (geralmente já vem com o Node.js)
+
+### Instalação
+
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/ml5w3s/vitrine-ml5.git
+   ```
+2. Navegue até a pasta do projeto:
+   ```sh
+   cd vitrine-ml5
+   ```
+3. Instale as dependências (se houver):
+   ```sh
+   npm install
+   ```
+
+### Rodando o Projeto
+
+Para iniciar o servidor de desenvolvimento local, execute:
+
+```sh
+npm start
+```
+
+Isso iniciará um servidor na porta `3000`. Abra [http://localhost:3000](http://localhost:3000) para ver o projeto.
+
+*(Nota: Este comando irá futuramente executar o script definido em `package.json`, como `serve .`)*
+
+### Rodando os Testes
+
+Para executar a suíte de testes automatizados (a ser implementada com Jest), rode:
+
+```sh
+npm test
+```
+
+---
+
+## 💻 Tecnologias Utilizadas
+
+- **Front-end:** HTML5, CSS3, Vanilla JavaScript
+- **Servidor de Dev:** [serve](https://www.npmjs.com/package/serve)
+- **Testes (Planejado):** [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/)
+- **Backend & Banco de Dados (Planejado):** [Firebase](https://firebase.google.com/)
+
+---
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Por favor, leia o futuro arquivo `CONTRIBUTING.md` para mais detalhes sobre o processo.

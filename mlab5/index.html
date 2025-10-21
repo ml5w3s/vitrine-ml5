@@ -35,48 +35,89 @@
 </head>
 
 <body>
-<!-- CABEÇALHO -->
-<div id="header-placeholder"></div>
+  <!-- CABEÇALHO -->
+  <div id="header-placeholder"></div>
 
-<!-- ARTIGOS -->
-<section class="container">
-  <!--BANNER-->
-  <article class="item">
-    <picture>
-      <source media="(min-width: 1024px)" srcset="src/assets/images/banner_cursos_desktop.png">
-      <source media="(min-width: 600px)" srcset="src/assets/images/banner_cursos_tablet.png">
-      <img src="src/assets/images/banner_cursos_mobile.png">
-    </picture>
-  </article>
-</section>
+  <!-- O conteúdo da SPA será renderizado aqui -->
+  <main id="app-root" class="container"></main>
 
-<section class="container">
-  <article class="item">
-    <h2><i class="material-icons">shopping_cart_checkout</i></h2>
-    <h3><a class="button-style button-large" href="src/pages/cursos/cursos.html">Cursos</a></h3>
-    <p >Estudar, praticar, discutir e se aprofundar.</p>
-  </article>
-</section>
+  <!-- RODAPÉ  -->
+  <div id="footer-placeholder"></div>
 
-<!-- RODAPÉ  -->
-<div id="footer-placeholder"></div>
+  <!-- SCRIPTS -->
+  <!-- Componentes -->
+  <script src="src/assets/js/components/LousaComponent.js"></script>
+  <!-- Modelos -->
+  <script src="src/assets/js/models/Lesson.js"></script>
+  <script src="src/assets/js/models/Course.js"></script>
+  <!-- Serviços -->
+  <script src="src/assets/js/services/ApiService.js"></script>
+  <!-- Views -->
+  <script src="src/assets/js/views/HomeView.js"></script>
+  <script src="src/assets/js/views/CourseView.js"></script>
+  <!-- Roteamento -->
+  <script src="src/assets/js/routing/Router.js"></script>
+  
+  <!-- Lógica Principal da Aplicação -->
+  <script src="src/assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Carrega componentes estáticos (header/footer)
+      loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
+        .then(() => {
+          // Garante que o script da navbar seja carregado após o header
+          const script = document.createElement('script');
+          script.src = 'src/assets/js/ui/components/navbar.js';
+          document.body.appendChild(script);
+        });
+      loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html');
 
-<!-- SCRIPTS -->
-<script src="src/assets/js/main.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
-      .then(() => {
-        const script = document.createElement('script');
-        script.src = 'src/assets/js/ui/components/navbar.js';
-        document.body.appendChild(script);
-      })
-      .catch(error => {
-        console.error("Erro ao carregar o header:", error);
+      // Elemento raiz da aplicação
+      const appRoot = document.getElementById('app-root');
+
+      // Instancia o roteador
+      const router = new Router(appRoot);
+
+      // Define a rota para a Home Page (lista de cursos)
+      router.addRoute('/', async () => {
+        appRoot.innerHTML = 'Carregando cursos...';
+        const homeView = await renderHomeView();
+        appRoot.innerHTML = ''; // Limpa o 'Carregando'
+        appRoot.appendChild(homeView);
       });
 
-    loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html');
-  });
-</script>
+      // Define a rota para a página de detalhes do curso
+      router.addRoute('/course/:courseId', async (params) => {
+        const { courseId } = params;
+        appRoot.innerHTML = `Carregando curso ${courseId}...`;
+        const course = await apiService.getCourseById(courseId);
+        if (course) {
+          const courseView = renderCourseView(course);
+          appRoot.innerHTML = ''; // Limpa o 'Carregando'
+          appRoot.appendChild(courseView);
+        } else {
+          appRoot.innerHTML = '<h2>Curso não encontrado</h2>';
+        }
+      });
+
+      // Define a rota para a página de detalhes da aula
+      router.addRoute('/course/:courseId/lesson/:lessonId', async (params) => {
+        const { courseId, lessonId } = params;
+        appRoot.innerHTML = `Carregando aula ${lessonId} do curso ${courseId}...`;
+        const lesson = await apiService.getLessonById(courseId, lessonId);
+        if (lesson) {
+          const lessonView = lesson.render(); // Usa o método render da classe Lesson
+          appRoot.innerHTML = ''; // Limpa o 'Carregando'
+          appRoot.appendChild(lessonView);
+        } else {
+          appRoot.innerHTML = '<h2>Aula não encontrada</h2>';
+        }
+      });
+      
+      // O router já tem listeners para 'load' e 'hashchange', 
+      // mas chamamos aqui para garantir que a rota inicial seja processada após a definição das rotas.
+      router.handleRouteChange();
+    });
+  </script>
 </body>
 </html>
