@@ -1,34 +1,27 @@
 [
-    {
-        "id": "html5-basico",
-        "title": "HTML5 Básico",
-        "description": "Aprenda os fundamentos do HTML5 para construir suas primeiras páginas web.",
-        "lessons": [
-            {
-                "id": "introducao",
-                "title": "Introdução ao HTML5",
-                "content": "O que é HTML e como ele estrutura a web.",
-                "type": "default"
-            },
-            {
-                "id": "tags-elementos",
-                "title": "Tags e Elementos",
-                "content": "Explore as tags mais comuns e como usá-las.",
-                "type": "playground"
-            }
-        ]
-    },
-    {
-        "id": "css-moderno",
-        "title": "CSS Moderno",
-        "description": "Estilize suas páginas com Flexbox, Grid e outras técnicas modernas.",
-        "lessons": [
-            {
-                "id": "flexbox",
-                "title": "Introdução ao Flexbox",
-                "content": "Aprenda a criar layouts flexíveis.",
-                "type": "lousa"
-            }
-        ]
-    }
+  {
+    "id": "css3",
+    "title": "CSS3 - Estilizando a Web",
+    "description": "Aprenda a estilizar suas páginas web com CSS3, criando layouts modernos e responsivos."
+  },
+  {
+    "id": "html5",
+    "title": "HTML - Linguagem de marcação para sites na internet",
+    "description": "Aprenda a base da web. Crie a estrutura de sites e prepare-se para estilizar com CSS e adicionar interatividade com JavaScript."
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript - O Idioma da Web",
+    "description": "Torne suas páginas interativas e dinâmicas com a linguagem de programação fundamental da web."
+  },
+  {
+    "id": "jquery",
+    "title": "jQuery - Escreva Menos, Faça Mais",
+    "description": "Simplifique a manipulação de HTML, o tratamento de eventos e as animações com esta biblioteca JavaScript popular."
+  },
+  {
+    "id": "xml",
+    "title": "XML - Dados Estruturados",
+    "description": "Aprenda a usar XML para armazenar e transportar dados de forma estruturada."
+  }
 ]

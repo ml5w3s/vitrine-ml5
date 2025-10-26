@@ -5,7 +5,7 @@
 async function renderHomeView() {
     const viewElement = document.createElement('div');
     viewElement.className = 'home-view';
-    viewElement.innerHTML = '<h2>Nossos Cursos</h2>';
+    viewElement.innerHTML = '<h1>Cursos</h1>';
 
     const courseListContainer = document.createElement('div');
     viewElement.appendChild(courseListContainer);

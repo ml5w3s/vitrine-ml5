@@ -1,0 +1,1172 @@
+[
+  {
+    "course": {
+      "name": "🚀 JavaScript Moderno - Revisão Inteligente",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "O Papel do JavaScript na Web Moderna",
+          "alternativeHeadline": "Paradigmas Principais:",
+          "text": "JavaScript moderno (ES6+) combina três paradigmas principais e conceitos transversais essenciais para o desenvolvimento web atual, integrando-se perfeitamente com HTML5 semântico e CSS3 responsivo.",
+          "list": [
+            "Imperativo e Estruturado: Base fundamental (controle de fluxo, funções, escopo)",
+            "Funcional: Funções puras, imutabilidade, arrow functions, map/filter/reduce",
+            "Orientado a Objetos: Prototipado e classes ES6, modelagem, encapsulamento",
+            "Boas práticas modernas (const/let, modularização, imutabilidade)",
+            "Manipulação de DOM moderna (querySelector, classList, eventos)",
+            "APIs modernas do navegador (Fetch, LocalStorage, Web Components)",
+            "Assincronismo (Promises, async/await, event loop)"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/01/images/paradigmas_js_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/01/images/paradigmas_js_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/01/images/paradigmas_js_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Let vs Var vs Const - Declarações Modernas",
+          "alternativeHeadline": "Comparação das Declarações:",
+          "text": "O ES6 introduziu novas formas de declaração de variáveis que resolvem problemas do var tradicional e promovem código mais previsível e seguro.",
+          "list": [
+            "var: Escopo de função, hoisting, redeclaração permitida",
+            "let: Escopo de bloco, hoisting sem inicialização, redeclaração proibida",
+            "const: Escopo de bloco, valor imutável, deve ser inicializada"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos Práticos:"
+        },
+        {
+          "position": 6,
+          "headline": "Arrow Functions e Escopo Léxico",
+          "alternativeHeadline": "Características das Arrow Functions:",
+          "text": "Arrow functions não são apenas uma sintaxe mais concisa - elas têm comportamento fundamentalmente diferente em relação ao this e ao escopo, seguindo o escopo léxico.",
+          "list": [
+            "Sintaxe concisa para funções simples",
+            "Não possuem seu próprio this",
+            "Não possuem arguments",
+            "Não podem ser usadas como construtores",
+            "Retorno implícito em expressões simples"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Comparação: Função Tradicional vs Arrow Function:"
+        },
+        {
+          "position": 8,
+          "headline": "Template Literals e Interpolação",
+          "alternativeHeadline": "Vantagens dos Template Literals:",
+          "text": "Template literals (template strings) revolucionaram a forma de trabalhar com strings em JavaScript, oferecendo interpolação de variáveis e strings multilinhas.",
+          "list": [
+            "Interpolação de variáveis com ${}",
+            "Strings multilinhas sem escape",
+            "Expressões JavaScript dentro de ${}",
+            "Melhor legibilidade do código",
+            "Suporte a funções de tag"
+          ]
+        },
+        {
+          "position": 9,
+          "headline": "${titulo}",
+          "alternativeHeadline": "Exemplos de Template Literals:",
+          "text": "Idade: ${idade}",
+          "list": [
+            "${usuario}"
+          ],
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/01/images/template_literals_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/01/images/template_literals_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/01/images/template_literals_mobile.png"
+          }
+        },
+        {
+          "position": 10,
+          "headline": "Destructuring - Desestruturação Moderna",
+          "alternativeHeadline": "Tipos de Desestruturação:",
+          "text": "A desestruturação permite extrair valores de arrays ou propriedades de objetos de forma concisa e elegante, simplificando o acesso a dados complexos.",
+          "list": [
+            "Arrays: Extração por posição",
+            "Objetos: Extração por propriedade",
+            "Aninhada: Acesso a propriedades profundas",
+            "Com valores padrão: Fallback para valores undefined"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplos de Desestruturação:"
+        },
+        {
+          "position": 12,
+          "headline": "Spread e Rest Operators",
+          "alternativeHeadline": "Usos do Spread Operator:",
+          "text": "Os operadores spread (...) e rest (...) são fundamentais para trabalhar com arrays e objetos de forma moderna e eficiente.",
+          "list": [
+            "Copiar arrays e objetos",
+            "Combinar arrays",
+            "Passar argumentos para funções",
+            "Clonagem profunda (com cuidado)",
+            "Capturar argumentos restantes",
+            "Desestruturação de arrays",
+            "Parâmetros de função flexíveis"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplos de Spread e Rest:"
+        },
+        {
+          "position": 14,
+          "headline": "Prática: Converter Código \"Antigo\" em ES6",
+          "alternativeHeadline": "Exercício de Conversão:",
+          "text": "Vamos praticar convertendo código JavaScript tradicional para a sintaxe moderna ES6+, aplicando todas as técnicas aprendidas.",
+          "list": [
+            "Substituir var por let/const",
+            "Converter funções para arrow functions",
+            "Usar template literals",
+            "Aplicar desestruturação",
+            "Utilizar spread/rest operators"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Código para Converter:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/01/images/conversao_codigo_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/01/images/conversao_codigo_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/01/images/conversao_codigo_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Converta o seguinte código JavaScript \"antigo\" para ES6+ moderno:",
+        "steps": [
+          "Título = Conversão de Código JavaScript para ES6+",
+          "Substitua todas as declarações var por let/const apropriadas",
+          "Converta funções tradicionais para arrow functions",
+          "Use template literals para concatenação de strings",
+          "Aplique desestruturação em objetos e arrays",
+          "Utilize spread/rest operators onde apropriado",
+          "Implemente array methods modernos (map, filter, reduce)"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🧮 JavaScript Funcional - Map, Filter, Reduce",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Programação Funcional em JavaScript",
+          "alternativeHeadline": "Princípios da Programação Funcional:",
+          "text": "A programação funcional é um paradigma que trata computação como avaliação de funções matemáticas, enfatizando funções puras, imutabilidade e transformação de dados através de métodos como map, filter e reduce.",
+          "list": [
+            "Funções Puras: Sem efeitos colaterais, resultado previsível",
+            "Imutabilidade: Dados não são modificados, mas transformados",
+            "Composição: Construir funções complexas a partir de simples",
+            "Transformação: Dados fluem através de transformações",
+            "Declarativo: Descrever o que fazer, não como fazer"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/02/images/programacao_funcional_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/02/images/programacao_funcional_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/02/images/programacao_funcional_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Funções Puras e Efeitos Colaterais",
+          "alternativeHeadline": "Características de Funções Puras:",
+          "text": "Funções puras são o coração da programação funcional. Elas sempre retornam o mesmo resultado para os mesmos argumentos e não produzem efeitos colaterais, tornando o código mais previsível e testável.",
+          "list": [
+            "Resultado previsível (mesma entrada = mesma saída)",
+            "Sem efeitos colaterais (não modifica estado externo)",
+            "Não depende de variáveis externas mutáveis",
+            "Facilmente testáveis e debuggáveis",
+            "Permitem otimizações e memoização"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos: Funções Puras vs Impuras:"
+        },
+        {
+          "position": 6,
+          "headline": "Array Methods Modernos: Map",
+          "alternativeHeadline": "Características do Map:",
+          "text": "O método map() transforma cada elemento de um array aplicando uma função, retornando um novo array com os elementos transformados. É fundamental para transformação de dados.",
+          "list": [
+            "Retorna um novo array (não modifica o original)",
+            "Aplica função a cada elemento",
+            "Mantém o mesmo tamanho do array original",
+            "Composição com outros métodos funcionais"
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "${produto.nome}",
+          "alternativeHeadline": "Exemplos Práticos do Map:",
+          "text": "R$ ${produto.preco.toFixed(2)}"
+        },
+        {
+          "position": 8,
+          "headline": "Array Methods Modernos: Filter",
+          "alternativeHeadline": "Características do Filter:",
+          "text": "O método filter() cria um novo array com todos os elementos que passam no teste implementado pela função fornecida. É essencial para seleção de dados.",
+          "list": [
+            "Retorna array filtrado (não modifica original)",
+            "Função deve retornar boolean",
+            "Pode retornar array menor que o original",
+            "Composição com map e reduce"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplos Práticos do Filter:"
+        },
+        {
+          "position": 10,
+          "headline": "Array Methods Modernos: Reduce",
+          "alternativeHeadline": "Características do Reduce:",
+          "text": "O método reduce() executa uma função redutora para cada elemento do array, resultando em um único valor de retorno. É poderoso para agregações e transformações complexas.",
+          "list": [
+            "Reduz array a um único valor",
+            "Acumula resultado através de iterações",
+            "Valor inicial opcional",
+            "Versátil para diferentes operações"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplos Práticos do Reduce:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/02/images/array_methods_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/02/images/array_methods_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/02/images/array_methods_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Composição de Métodos Funcionais",
+          "alternativeHeadline": "Vantagens da Composição:",
+          "text": "A verdadeira força da programação funcional está na composição de métodos como map, filter e reduce, criando pipelines de transformação de dados poderosos e legíveis.",
+          "list": [
+            "Código declarativo e legível",
+            "Transformações em pipeline",
+            "Reutilização de lógica",
+            "Facilita debugging",
+            "Performance otimizada"
+          ]
+        },
+        {
+          "position": 13,
+          "headline": "${produto.nome}",
+          "alternativeHeadline": "Exemplos de Composição:",
+          "text": "Total de produtos: ${stats.quantidade}"
+        },
+        {
+          "position": 14,
+          "headline": "Prática: Transformar Listas em HTML Dinamicamente",
+          "alternativeHeadline": "Objetivos da Prática:",
+          "text": "Vamos aplicar todos os conceitos de programação funcional para criar uma aplicação que transforma dados em HTML de forma dinâmica e elegante.",
+          "list": [
+            "Usar funções puras para transformações",
+            "Aplicar map, filter e reduce",
+            "Compor métodos em pipeline",
+            "Gerar HTML dinâmico",
+            "Implementar funcionalidades interativas"
+          ]
+        },
+        {
+          "position": 15,
+          "headline": "${funcionario.nome}",
+          "alternativeHeadline": "Exemplo Prático Completo:",
+          "text": "${funcionario.cargo}",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/02/images/html_dinamico_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/02/images/html_dinamico_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/02/images/html_dinamico_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Implemente uma aplicação funcional para gerenciar produtos de e-commerce:",
+        "steps": [
+          "Título = Sistema de Produtos com Programação Funcional",
+          "Use funções puras para todas as transformações",
+          "Implemente map para transformar dados de produtos",
+          "Use filter para buscar e filtrar produtos",
+          "Aplique reduce para calcular estatísticas",
+          "Componha métodos em pipeline de transformação",
+          "Gere HTML dinâmico com cards de produtos"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🏗️ JavaScript OO - Classes ES6 e Protótipos",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Orientação a Objetos em JavaScript",
+          "alternativeHeadline": "Conceitos Fundamentais:",
+          "text": "JavaScript é uma linguagem baseada em protótipos, mas o ES6 introduziu a sintaxe de classes que facilita a programação orientada a objetos. Entender ambos os conceitos é fundamental para criar código modular e reutilizável.",
+          "list": [
+            "Protótipos: Base da herança em JavaScript",
+            "Classes ES6: Sintaxe moderna para OO",
+            "Encapsulamento: Controle de acesso a propriedades",
+            "Herança: Reutilização de código",
+            "Polimorfismo: Múltiplas formas de um mesmo método"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/03/images/oo_javascript_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/03/images/oo_javascript_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/03/images/oo_javascript_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Protótipos e Herança",
+          "alternativeHeadline": "Características dos Protótipos:",
+          "text": "Em JavaScript, todos os objetos têm um protótipo interno que permite herança de propriedades e métodos. Esta é a base fundamental da orientação a objetos na linguagem.",
+          "list": [
+            "Cadeia de protótipos (prototype chain)",
+            "Herança dinâmica",
+            "Compartilhamento de métodos",
+            "Acesso via __proto__ ou Object.getPrototypeOf()"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Protótipos:"
+        },
+        {
+          "position": 6,
+          "headline": "Classes ES6 - Sintaxe Moderna",
+          "alternativeHeadline": "Características das Classes:",
+          "text": "As classes ES6 fornecem uma sintaxe mais limpa e familiar para criar objetos e implementar herança, mas ainda são baseadas em protótipos por baixo dos panos.",
+          "list": [
+            "Sintaxe declarativa e limpa",
+            "Método constructor para inicialização",
+            "Métodos de instância e estáticos",
+            "Herança com extends",
+            "Super para acessar classe pai"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Classes ES6:"
+        },
+        {
+          "position": 8,
+          "headline": "Encapsulamento e Abstração",
+          "alternativeHeadline": "Níveis de Encapsulamento:",
+          "text": "O encapsulamento controla o acesso às propriedades e métodos de uma classe, enquanto a abstração simplifica a interface, escondendo detalhes de implementação.",
+          "list": [
+            "Público: Acessível de qualquer lugar",
+            "Privado: Apenas dentro da classe (ES2022)",
+            "Protegido: Classe e subclasses (convenção)",
+            "Readonly: Apenas leitura"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplos de Encapsulamento:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/03/images/encapsulamento_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/03/images/encapsulamento_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/03/images/encapsulamento_mobile.png"
+          }
+        },
+        {
+          "position": 10,
+          "headline": "Composição vs Herança",
+          "alternativeHeadline": "Vantagens da Composição:",
+          "text": "Em JavaScript, a composição muitas vezes é preferível à herança, oferecendo maior flexibilidade e evitando problemas da herança profunda.",
+          "list": [
+            "Maior flexibilidade",
+            "Evita hierarquias complexas",
+            "Reutilização granular",
+            "Princípio \"favor composição sobre herança\""
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplos de Composição:"
+        },
+        {
+          "position": 12,
+          "headline": "Prática: Criar Componente Reutilizável",
+          "alternativeHeadline": "Objetivos da Prática:",
+          "text": "Vamos criar um componente de card interativo reutilizável usando classes ES6, demonstrando encapsulamento, herança e composição na prática.",
+          "list": [
+            "Criar classe base para componente",
+            "Implementar encapsulamento adequado",
+            "Usar herança para especialização",
+            "Aplicar composição para funcionalidades",
+            "Integrar com DOM de forma limpa"
+          ]
+        },
+        {
+          "position": 13,
+          "headline": "${this.produto.nome}",
+          "alternativeHeadline": "Componente Card Interativo:",
+          "text": "${this.produto.descricao}",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/03/images/componente_reutilizavel_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/03/images/componente_reutilizavel_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/03/images/componente_reutilizavel_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie um sistema de componentes reutilizáveis usando classes ES6:",
+        "steps": [
+          "Título = Sistema de Componentes com Classes ES6",
+          "Classe base Component com métodos abstratos",
+          "Implemente encapsulamento com propriedades privadas",
+          "Crie herança para componentes especializados",
+          "Use composição para funcionalidades extras",
+          "Implemente sistema de eventos customizados",
+          "Crie componentes para Modal, Accordion e Tabs"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🌐 DOM e Eventos Modernos",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Manipulação Moderna do DOM",
+          "alternativeHeadline": "Conceitos Fundamentais:",
+          "text": "O DOM (Document Object Model) é a representação em árvore da estrutura HTML, permitindo que JavaScript manipule elementos, estilos e comportamentos de forma dinâmica e eficiente.",
+          "list": [
+            "DOM como árvore: Estrutura hierárquica de nós",
+            "Seletores modernos: querySelector e querySelectorAll",
+            "Manipulação de classes: classList API",
+            "Dataset: Acesso a data-* attributes",
+            "Delegação de eventos: Performance otimizada"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Seletores Modernos: querySelector e querySelectorAll",
+          "alternativeHeadline": "Vantagens dos Seletores Modernos:",
+          "text": "Os métodos querySelector e querySelectorAll revolucionaram a seleção de elementos, permitindo usar seletores CSS avançados de forma nativa.",
+          "list": [
+            "Sintaxe CSS familiar",
+            "Seletores complexos em uma única chamada",
+            "Performance otimizada",
+            "Suporte a pseudo-seletores",
+            "Flexibilidade máxima"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Seletores Modernos:"
+        },
+        {
+          "position": 6,
+          "headline": "Manipulação de Classes com classList",
+          "alternativeHeadline": "Métodos do classList:",
+          "text": "A API classList oferece métodos modernos e eficientes para manipular classes CSS, substituindo o antigo className por uma interface mais robusta.",
+          "list": [
+            "add() - Adiciona classes",
+            "remove() - Remove classes",
+            "toggle() - Alterna classes",
+            "contains() - Verifica se classe existe",
+            "replace() - Substitui uma classe por outra"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de classList:"
+        },
+        {
+          "position": 8,
+          "headline": "Dataset - Acesso a Data Attributes",
+          "alternativeHeadline": "Vantagens do Dataset:",
+          "text": "A propriedade dataset fornece acesso limpo aos atributos data-*, permitindo armazenar informações customizadas nos elementos HTML de forma padronizada.",
+          "list": [
+            "Acesso padronizado a data attributes",
+            "Conversão automática de nomes (kebab-case → camelCase)",
+            "Integração com HTML semântico",
+            "Dados customizados nos elementos",
+            "Facilita configuração de componentes"
+          ]
+        },
+        {
+          "position": 9,
+          "headline": "Smartphone XYZ",
+          "alternativeHeadline": "Exemplos de Dataset:"
+        },
+        {
+          "position": 10,
+          "headline": "Delegação de Eventos e Performance",
+          "alternativeHeadline": "Vantagens da Delegação:",
+          "text": "A delegação de eventos é uma técnica fundamental para otimizar performance e gerenciar eventos em elementos dinâmicos, especialmente útil em listas e componentes interativos.",
+          "list": [
+            "Performance otimizada",
+            "Funciona com elementos dinâmicos",
+            "Menos event listeners",
+            "Gerenciamento centralizado",
+            "Facilita manutenção"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplos de Delegação de Eventos:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Prática: Menu Interativo e Modal",
+          "alternativeHeadline": "Objetivos da Prática:",
+          "text": "Vamos criar um menu interativo responsivo e um sistema de modal usando todas as técnicas modernas de manipulação do DOM aprendidas.",
+          "list": [
+            "Criar menu responsivo com animações",
+            "Implementar sistema de modal reutilizável",
+            "Usar delegação de eventos eficientemente",
+            "Aplicar dataset para configuração",
+            "Implementar acessibilidade básica"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Menu Interativo e Modal:",
+          "text": "Conteúdo do modal"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma interface interativa completa com DOM moderno:",
+        "steps": [
+          "Título = Interface Interativa com DOM Moderno",
+          "Menu responsivo com animações suaves",
+          "Sistema de modal reutilizável e acessível",
+          "Delegação de eventos para performance",
+          "Uso de dataset para configuração",
+          "Manipulação de classes com classList",
+          "Implementação de acessibilidade básica"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "⚡ Assincronismo e Comunicação",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Introdução ao Event Loop",
+          "alternativeHeadline": "Componentes do Event Loop:",
+          "text": "O Event Loop é o mecanismo que permite JavaScript executar código de forma assíncrona em um ambiente single-threaded. Entender como funciona é fundamental para escrever código assíncrono eficiente.",
+          "list": [
+            "Call Stack: Pilha de execução principal",
+            "Web APIs: setTimeout, DOM, AJAX",
+            "Callback Queue: Fila de callbacks prontos",
+            "Microtask Queue: Promises e queueMicrotask",
+            "Event Loop: Coordena a execução"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Promises - Fundamentos",
+          "alternativeHeadline": "Estados de uma Promise:",
+          "text": "Promises representam o resultado eventual de uma operação assíncrona, oferecendo uma alternativa mais limpa aos callbacks aninhados e facilitando o tratamento de erros.",
+          "list": [
+            "Pending: Estado inicial, nem fulfilled nem rejected",
+            "Fulfilled: Operação completada com sucesso",
+            "Rejected: Operação falhou",
+            "Settled: Promise foi resolved ou rejected"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Promises:"
+        },
+        {
+          "position": 6,
+          "headline": "Async/Await - Sintaxe Moderna",
+          "alternativeHeadline": "Vantagens do Async/Await:",
+          "text": "Async/await é uma sintaxe mais limpa para trabalhar com Promises, tornando o código assíncrono mais legível e similar ao código síncrono tradicional.",
+          "list": [
+            "Código mais legível e limpo",
+            "Tratamento de erros simplificado",
+            "Debugging mais fácil",
+            "Composição de operações assíncronas",
+            "Sintaxe familiar para desenvolvedores"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Async/Await:"
+        },
+        {
+          "position": 8,
+          "headline": "Fetch API - Requisições HTTP Modernas",
+          "alternativeHeadline": "Características da Fetch API:",
+          "text": "A Fetch API é a forma moderna de fazer requisições HTTP em JavaScript, oferecendo uma interface mais limpa e flexível que o antigo XMLHttpRequest.",
+          "list": [
+            "Baseada em Promises",
+            "Interface mais limpa",
+            "Suporte a streaming",
+            "Integração com Service Workers",
+            "Configurações flexíveis"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplos de Fetch API:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_mobile.png"
+          }
+        },
+        {
+          "position": 10,
+          "headline": "Tratamento de Erros Robusto",
+          "alternativeHeadline": "Estratégias de Tratamento:",
+          "text": "O tratamento adequado de erros em código assíncrono é crucial para criar aplicações robustas e com boa experiência do usuário.",
+          "list": [
+            "Try/catch com async/await",
+            ".catch() com Promises",
+            "Tratamento específico por tipo de erro",
+            "Retry automático",
+            "Fallbacks e valores padrão"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplos de Tratamento de Erros:"
+        },
+        {
+          "position": 12,
+          "headline": "Prática: Aplicação com Carregamento de Dados",
+          "alternativeHeadline": "Objetivos da Prática:",
+          "text": "Vamos criar uma aplicação completa que demonstra carregamento assíncrono de dados, tratamento de erros e interface responsiva.",
+          "list": [
+            "Carregar dados de API externa",
+            "Implementar loading states",
+            "Tratar erros graciosamente",
+            "Implementar cache local",
+            "Criar interface responsiva"
+          ]
+        },
+        {
+          "position": 13,
+          "headline": "Erro ao carregar dados",
+          "alternativeHeadline": "Aplicação Completa:",
+          "text": "Carregando dados...",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/aplicacao_dados_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/aplicacao_dados_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/05/images/aplicacao_dados_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma aplicação assíncrona completa com carregamento de dados:",
+        "steps": [
+          "Título = Aplicação Assíncrona com Carregamento de Dados",
+          "Implemente sistema de estado reativo",
+          "Use Fetch API para requisições HTTP",
+          "Implemente cache local com TTL",
+          "Trate erros com retry automático",
+          "Adicione loading states e feedback visual",
+          "Crie interface responsiva e acessível"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🔗 Integração HTML5, CSS3 e APIs",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Web Storage - LocalStorage e SessionStorage",
+          "alternativeHeadline": "Características do Web Storage:",
+          "text": "O Web Storage API permite armazenar dados no navegador de forma persistente (localStorage) ou temporária (sessionStorage), oferecendo uma alternativa moderna aos cookies.",
+          "list": [
+            "localStorage: Persiste entre sessões",
+            "sessionStorage: Limpo ao fechar aba",
+            "Maior capacidade que cookies (5-10MB)",
+            "Apenas strings (JSON para objetos)",
+            "Síncrono (não bloqueia UI)"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/06/images/web_storage_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/06/images/web_storage_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/06/images/web_storage_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "LocalStorage - Armazenamento Persistente",
+          "alternativeHeadline": "Métodos do LocalStorage:",
+          "text": "O localStorage permite armazenar dados que persistem entre sessões do navegador, ideal para configurações de usuário, cache de dados e estado da aplicação.",
+          "list": [
+            "setItem(key, value) - Armazenar dados",
+            "getItem(key) - Recuperar dados",
+            "removeItem(key) - Remover item",
+            "clear() - Limpar tudo",
+            "key(index) - Obter chave por índice"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de LocalStorage:"
+        },
+        {
+          "position": 6,
+          "headline": "Geolocalização - API de Localização",
+          "alternativeHeadline": "Características da Geolocalização:",
+          "text": "A API de Geolocalização permite que aplicações web acessem a localização geográfica do usuário, oferecendo funcionalidades como mapas, clima local e serviços baseados em localização.",
+          "list": [
+            "Require permissão do usuário",
+            "Precisão variável (GPS, rede, IP)",
+            "Suporte a watchPosition",
+            "Informações de altitude e velocidade",
+            "Tratamento de erros robusto"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Geolocalização:"
+        },
+        {
+          "position": 8,
+          "headline": "Canvas API - Gráficos e Animações",
+          "alternativeHeadline": "Capacidades do Canvas:",
+          "text": "O Canvas API permite desenhar gráficos, criar animações e manipular pixels diretamente no navegador, oferecendo controle total sobre elementos visuais.",
+          "list": [
+            "Desenho 2D e 3D (WebGL)",
+            "Animações complexas",
+            "Manipulação de pixels",
+            "Processamento de imagens",
+            "Jogos e visualizações"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplos de Canvas:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/06/images/canvas_api_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/06/images/canvas_api_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/06/images/canvas_api_mobile.png"
+          }
+        },
+        {
+          "position": 10,
+          "headline": "APIs Modernas do Navegador",
+          "alternativeHeadline": "APIs Principais:",
+          "text": "JavaScript moderno oferece acesso a diversas APIs do navegador que permitem funcionalidades avançadas como acesso ao clipboard, câmera, microfone e muito mais.",
+          "list": [
+            "Clipboard API: Copiar/colar texto e imagens",
+            "File API: Manipulação de arquivos",
+            "MediaDevices: Câmera e microfone",
+            "Web Workers: Processamento em background",
+            "Intersection Observer: Detecção de scroll"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplos de APIs Modernas:"
+        },
+        {
+          "position": 12,
+          "headline": "Prática: Aplicação Integrada com HTML5",
+          "alternativeHeadline": "Objetivos da Prática:",
+          "text": "Vamos criar uma aplicação completa que integra todas as APIs modernas aprendidas, demonstrando o poder da integração JavaScript com HTML5 e CSS3.",
+          "list": [
+            "Integrar LocalStorage para persistência",
+            "Usar Geolocalização para mapas",
+            "Implementar Canvas para visualizações",
+            "Aplicar APIs modernas do navegador",
+            "Criar interface responsiva"
+          ]
+        },
+        {
+          "position": 13,
+          "headline": "${item.titulo}",
+          "alternativeHeadline": "Aplicação Integrada Completa:",
+          "text": "Nenhum dado salvo ainda.",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/06/images/app_integrada_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/06/images/app_integrada_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/06/images/app_integrada_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma aplicação web integrada com HTML5, CSS3 e APIs modernas:",
+        "steps": [
+          "Título = Aplicação Web Integrada com HTML5 e APIs",
+          "Implemente LocalStorage para persistência de dados",
+          "Use Geolocalização para funcionalidades baseadas em localização",
+          "Crie visualizações interativas com Canvas",
+          "Integre APIs modernas (Clipboard, File, Camera)",
+          "Implemente sistema de notificações",
+          "Crie interface responsiva e acessível"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🏗️ Boas Práticas e Arquitetura Moderna",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Modularização - Import/Export",
+          "alternativeHeadline": "Vantagens da Modularização:",
+          "text": "A modularização é fundamental para criar código JavaScript escalável e manutenível. O ES6 introduziu um sistema de módulos que permite dividir código em arquivos separados e reutilizáveis.",
+          "list": [
+            "Reutilização: Código compartilhado entre projetos",
+            "Manutenibilidade: Facilita manutenção e debugging",
+            "Organização: Estrutura clara e lógica",
+            "Testabilidade: Módulos isolados são mais fáceis de testar",
+            "Performance: Carregamento otimizado e tree-shaking"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/07/images/modularizacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/07/images/modularizacao_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/07/images/modularizacao_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Sistema de Módulos ES6",
+          "alternativeHeadline": "Tipos de Export/Import:",
+          "text": "O sistema de módulos ES6 oferece sintaxe declarativa para importar e exportar funcionalidades entre arquivos, criando uma arquitetura modular robusta.",
+          "list": [
+            "Named exports: Múltiplas exportações nomeadas",
+            "Default export: Exportação principal do módulo",
+            "Namespace import: Importar tudo como objeto",
+            "Re-export: Re-exportar de outros módulos"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Módulos:"
+        },
+        {
+          "position": 6,
+          "headline": "Padrões de Código e Clean Code",
+          "alternativeHeadline": "Princípios do Clean Code:",
+          "text": "Padrões de código consistentes e princípios de Clean Code são essenciais para criar aplicações JavaScript manuteníveis e escaláveis.",
+          "list": [
+            "Nomes significativos: Variáveis e funções descritivas",
+            "Funções pequenas: Uma responsabilidade por função",
+            "DRY: Don't Repeat Yourself",
+            "SRP: Single Responsibility Principle",
+            "Comentários úteis: Explicar o \"porquê\", não o \"o que\""
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Clean Code:"
+        },
+        {
+          "position": 8,
+          "headline": "Padrão MVC e Componentização",
+          "alternativeHeadline": "Componentes do MVC:",
+          "text": "O padrão MVC (Model-View-Controller) e a componentização são fundamentais para criar arquiteturas JavaScript escaláveis e manuteníveis.",
+          "list": [
+            "Model: Dados e lógica de negócio",
+            "View: Interface do usuário",
+            "Controller: Coordenação entre Model e View",
+            "Componentes: Unidades reutilizáveis e independentes"
+          ]
+        },
+        {
+          "position": 9,
+          "headline": "${usuario.nome}",
+          "alternativeHeadline": "Exemplos de MVC e Componentização:",
+          "text": "Nenhum usuário cadastrado."
+        },
+        {
+          "position": 10,
+          "headline": "Projeto Final - Lista de Tarefas",
+          "alternativeHeadline": "Funcionalidades da Aplicação:",
+          "text": "Vamos criar uma aplicação completa de lista de tarefas que demonstra todos os conceitos aprendidos: modularização, MVC, componentização, boas práticas e persistência local.",
+          "list": [
+            "Adicionar, editar e remover tarefas",
+            "Marcar tarefas como concluídas",
+            "Filtrar tarefas por status",
+            "Persistência local com LocalStorage",
+            "Interface responsiva e acessível",
+            "Animações e feedback visual"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Projeto Final Completo:",
+          "text": "🎉 Nenhuma tarefa encontrada!",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/javascript/07/images/projeto_final_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/javascript/07/images/projeto_final_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/javascript/07/images/projeto_final_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma aplicação web completa seguindo boas práticas e arquitetura moderna:",
+        "steps": [
+          "Título = Aplicação Web com Arquitetura Moderna",
+          "Implemente modularização com ES6 modules",
+          "Use padrão MVC para organização",
+          "Aplique princípios de Clean Code",
+          "Crie componentes reutilizáveis",
+          "Implemente persistência local",
+          "Adicione testes unitários básicos"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  }
+]

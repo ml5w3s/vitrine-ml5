@@ -1,0 +1,1027 @@
+[
+  {
+    "course": {
+      "name": "📐 CSS3 - Flexbox Layout",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "O que é Flexbox?",
+          "alternativeHeadline": "Vantagens do Flexbox:",
+          "text": "Flexbox (Flexible Box Layout) é um método de layout CSS3 que permite organizar elementos de forma flexível e responsiva. Ele resolve muitos problemas de alinhamento e distribuição de espaço que eram difíceis com CSS tradicional.",
+          "list": [
+            "Alinhamento perfeito de elementos",
+            "Distribuição automática de espaço",
+            "Ordem flexível dos elementos",
+            "Responsividade nativa",
+            "Menos código CSS",
+            "Suporte amplo nos navegadores"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/03/images/flexbox_conceitos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/03/images/flexbox_conceitos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/03/images/flexbox_conceitos_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Conceitos Fundamentais",
+          "alternativeHeadline": "Terminologia Flexbox:",
+          "text": "Para entender Flexbox, é importante conhecer seus conceitos básicos: flex container, flex items, main axis e cross axis.",
+          "list": [
+            "Flex Container - Elemento pai com display: flex",
+            "Flex Items - Elementos filhos do container",
+            "Main Axis - Eixo principal (horizontal por padrão)",
+            "Cross Axis - Eixo transversal (vertical por padrão)",
+            "Main Start/End - Início e fim do eixo principal",
+            "Cross Start/End - Início e fim do eixo transversal"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo Básico:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/03/images/terminologia_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/03/images/terminologia_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/03/images/terminologia_mobile.png"
+          }
+        },
+        {
+          "position": 6,
+          "headline": "Propriedades do Flex Container",
+          "alternativeHeadline": "Propriedades Principais:",
+          "text": "As propriedades do flex container controlam como os flex items são organizados e distribuídos dentro do container.",
+          "list": [
+            "flex-direction - Direção do eixo principal",
+            "flex-wrap - Quebra de linha dos items",
+            "justify-content - Alinhamento no eixo principal",
+            "align-items - Alinhamento no eixo transversal",
+            "align-content - Alinhamento de linhas múltiplas",
+            "gap - Espaçamento entre items"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "flex-direction:"
+        },
+        {
+          "position": 8,
+          "headline": "align-items e align-content",
+          "alternativeHeadline": "align-items:",
+          "text": "Essas propriedades controlam o alinhamento no eixo transversal (cross axis) dos flex items.",
+          "list": [
+            "stretch - Estica para preencher (padrão)",
+            "flex-start - Alinha no início",
+            "flex-end - Alinha no fim",
+            "center - Centraliza",
+            "baseline - Alinha pela linha de base"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo de Alinhamento:"
+        },
+        {
+          "position": 10,
+          "headline": "Propriedades dos Flex Items",
+          "alternativeHeadline": "Propriedades dos Items:",
+          "text": "As propriedades dos flex items controlam como cada item individual se comporta dentro do flex container.",
+          "list": [
+            "flex-grow - Capacidade de crescer",
+            "flex-shrink - Capacidade de encolher",
+            "flex-basis - Tamanho base inicial",
+            "flex - Shorthand das três acima",
+            "order - Ordem de exibição",
+            "align-self - Alinhamento individual"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Propriedade flex (shorthand):",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/03/images/flex_items_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/03/images/flex_items_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/03/images/flex_items_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Casos de Uso Práticos",
+          "alternativeHeadline": "Exemplos Práticos:",
+          "text": "Flexbox é especialmente útil para resolver problemas comuns de layout que eram difíceis com CSS tradicional.",
+          "list": [
+            "Centralização perfeita de elementos",
+            "Navbar responsiva",
+            "Cards com altura igual",
+            "Distribuição de espaço em formulários",
+            "Layouts de galeria",
+            "Sticky footer"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Centralização Perfeita:"
+        },
+        {
+          "position": 14,
+          "headline": "Responsividade com Flexbox",
+          "alternativeHeadline": "Estratégias Responsivas:",
+          "text": "Flexbox torna a criação de layouts responsivos muito mais simples, com menos media queries necessárias.",
+          "list": [
+            "flex-wrap para quebra automática",
+            "flex-basis para tamanhos mínimos",
+            "Combinação com media queries",
+            "flex-direction para mudança de direção"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Layout Responsivo:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/03/images/responsivo_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/03/images/responsivo_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/03/images/responsivo_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie layouts usando Flexbox CSS3 com:",
+        "steps": [
+          "Título = Layouts Flexíveis com Flexbox",
+          "Centralização = Elemento perfeitamente centralizado",
+          "Navbar = Menu horizontal responsivo",
+          "Cards = Galeria com cards de altura igual",
+          "Formulário = Campos distribuídos uniformemente",
+          "Responsivo = Quebra automática em telas menores"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🎯 CSS3 - Grid Layout",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "O que é CSS Grid?",
+          "alternativeHeadline": "Vantagens do CSS Grid:",
+          "text": "CSS Grid Layout é um sistema de layout bidimensional que permite criar layouts complexos com linhas e colunas. É a evolução natural do Flexbox, oferecendo controle total sobre o posicionamento dos elementos.",
+          "list": [
+            "Layout bidimensional (linhas e colunas)",
+            "Controle preciso de posicionamento",
+            "Áreas nomeadas para organização",
+            "Unidade fr para distribuição flexível",
+            "Alinhamento avançado",
+            "Menos código para layouts complexos"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/04/images/grid_conceitos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/04/images/grid_conceitos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/04/images/grid_conceitos_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Conceitos Fundamentais",
+          "alternativeHeadline": "Terminologia Grid:",
+          "text": "CSS Grid trabalha com conceitos específicos que são essenciais para entender como criar layouts eficientes.",
+          "list": [
+            "Grid Container - Elemento pai com display: grid",
+            "Grid Items - Elementos filhos diretos",
+            "Grid Lines - Linhas divisórias do grid",
+            "Grid Tracks - Espaço entre duas linhas",
+            "Grid Cells - Interseção de linha e coluna",
+            "Grid Areas - Área retangular nomeada"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo Básico:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/04/images/terminologia_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/04/images/terminologia_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/04/images/terminologia_mobile.png"
+          }
+        },
+        {
+          "position": 6,
+          "headline": "Definindo Colunas e Linhas",
+          "alternativeHeadline": "Unidades e Valores:",
+          "text": "As propriedades grid-template-columns e grid-template-rows definem a estrutura do grid, permitindo diferentes tipos de unidades.",
+          "list": [
+            "fr - Unidade fracionária flexível",
+            "px, em, rem - Unidades fixas",
+            "% - Porcentagem do container",
+            "auto - Tamanho baseado no conteúdo",
+            "minmax() - Tamanho mínimo e máximo",
+            "repeat() - Repetir padrão"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Template:"
+        },
+        {
+          "position": 8,
+          "headline": "Posicionamento de Grid Items",
+          "alternativeHeadline": "Propriedades de Posicionamento:",
+          "text": "CSS Grid oferece várias formas de posicionar elementos, desde automático até controle preciso por linhas ou áreas.",
+          "list": [
+            "grid-column-start/end - Início e fim da coluna",
+            "grid-row-start/end - Início e fim da linha",
+            "grid-column/row - Shorthand das propriedades",
+            "grid-area - Posicionamento por área",
+            "span - Estender por múltiplas células"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplos de Posicionamento:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/04/images/posicionamento_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/04/images/posicionamento_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/04/images/posicionamento_mobile.png"
+          }
+        },
+        {
+          "position": 10,
+          "headline": "Grid Areas",
+          "alternativeHeadline": "Definindo Áreas:",
+          "text": "Grid areas permitem nomear seções do grid e posicionar elementos de forma mais semântica e organizada.",
+          "list": [
+            "grid-template-areas - Define áreas nomeadas",
+            "grid-area - Posiciona elemento em área",
+            "Áreas vazias com ponto (.)",
+            "Layout semântico e legível"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Layout com Grid Areas:"
+        },
+        {
+          "position": 12,
+          "headline": "Alinhamento no Grid",
+          "alternativeHeadline": "Propriedades de Alinhamento:",
+          "text": "CSS Grid oferece propriedades avançadas de alinhamento para controlar como os itens se posicionam dentro de suas células.",
+          "list": [
+            "justify-items - Alinhamento horizontal dos itens",
+            "align-items - Alinhamento vertical dos itens",
+            "justify-content - Alinhamento do grid no container",
+            "align-content - Alinhamento vertical do grid",
+            "place-items - Shorthand para items",
+            "place-content - Shorthand para content"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplos de Alinhamento:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/04/images/alinhamento_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/04/images/alinhamento_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/04/images/alinhamento_mobile.png"
+          }
+        },
+        {
+          "position": 14,
+          "headline": "Grid Responsivo",
+          "alternativeHeadline": "Estratégias Responsivas:",
+          "text": "CSS Grid facilita a criação de layouts responsivos com menos media queries, usando funções como auto-fit e minmax.",
+          "list": [
+            "auto-fit - Ajusta colunas automaticamente",
+            "auto-fill - Preenche com colunas vazias",
+            "minmax() - Define tamanhos flexíveis",
+            "Media queries para mudanças maiores"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Grid Responsivo Automático:"
+        },
+        {
+          "position": 16,
+          "headline": "Casos de Uso Práticos",
+          "alternativeHeadline": "Aplicações Comuns:",
+          "text": "CSS Grid é ideal para layouts complexos que antes exigiam muito código CSS ou frameworks.",
+          "list": [
+            "Layouts de site completos",
+            "Galerias de imagens",
+            "Dashboards administrativos",
+            "Cards com alturas variáveis",
+            "Formulários complexos",
+            "Masonry layouts"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Layout de Site Completo:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/04/images/casos_uso_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/04/images/casos_uso_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/04/images/casos_uso_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie layouts usando CSS Grid com:",
+        "steps": [
+          "Título = Layouts Bidimensionais com CSS Grid",
+          "Grid Básico = Template com colunas e linhas definidas",
+          "Grid Areas = Layout nomeado com header, main, sidebar",
+          "Posicionamento = Items posicionados por linhas específicas",
+          "Responsivo = Grid que se adapta automaticamente",
+          "Alinhamento = Controle preciso de alinhamento dos itens"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "✨ CSS3 - Transições e Animações",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Transições CSS3",
+          "alternativeHeadline": "Vantagens das Transições:",
+          "text": "As transições CSS3 permitem criar mudanças suaves entre estados de elementos, melhorando significativamente a experiência do usuário com animações fluidas e naturais.",
+          "list": [
+            "Mudanças suaves entre estados",
+            "Melhor experiência do usuário",
+            "Performance otimizada pelo navegador",
+            "Fácil de implementar",
+            "Suporte amplo nos navegadores",
+            "Reduz necessidade de JavaScript"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/05/images/transicoes_conceitos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/05/images/transicoes_conceitos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/05/images/transicoes_conceitos_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Propriedade transition",
+          "alternativeHeadline": "Propriedades da Transition:",
+          "text": "A propriedade transition é a base das transições CSS, definindo como as mudanças de propriedades devem ser animadas.",
+          "list": [
+            "transition-property - Propriedades a animar",
+            "transition-duration - Duração da animação",
+            "transition-timing-function - Função de timing",
+            "transition-delay - Atraso para iniciar",
+            "transition - Shorthand das propriedades"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Transição:"
+        },
+        {
+          "position": 6,
+          "headline": "Funções de Timing",
+          "alternativeHeadline": "Funções Disponíveis:",
+          "text": "As funções de timing controlam a velocidade da animação ao longo do tempo, criando diferentes sensações de movimento.",
+          "list": [
+            "ease - Lento, rápido, lento (padrão)",
+            "linear - Velocidade constante",
+            "ease-in - Lento no início",
+            "ease-out - Lento no fim",
+            "ease-in-out - Lento no início e fim",
+            "cubic-bezier() - Função personalizada"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Timing:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/05/images/timing_functions_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/05/images/timing_functions_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/05/images/timing_functions_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Animações com @keyframes",
+          "alternativeHeadline": "Conceitos das Animações:",
+          "text": "As animações CSS3 permitem criar movimentos complexos e contínuos usando a regra @keyframes para definir os estágios da animação.",
+          "list": [
+            "@keyframes - Define estágios da animação",
+            "from/to ou porcentagens - Pontos da animação",
+            "animation-name - Nome da animação",
+            "animation-duration - Duração total",
+            "animation-iteration-count - Número de repetições",
+            "animation-direction - Direção da animação"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Criando Keyframes:"
+        },
+        {
+          "position": 10,
+          "headline": "Propriedades de Animation",
+          "alternativeHeadline": "Propriedades Principais:",
+          "text": "As propriedades de animation controlam como as animações @keyframes são executadas, incluindo duração, repetição e direção.",
+          "list": [
+            "animation-name - Nome da animação",
+            "animation-duration - Duração em segundos",
+            "animation-timing-function - Função de timing",
+            "animation-delay - Atraso para iniciar",
+            "animation-iteration-count - Número de repetições",
+            "animation-direction - Direção (normal/reverse/alternate)",
+            "animation-fill-mode - Estado antes/depois",
+            "animation-play-state - Pausar/executar"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Aplicando Animações:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/05/images/animation_properties_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/05/images/animation_properties_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/05/images/animation_properties_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Estados de Animação",
+          "alternativeHeadline": "animation-fill-mode:",
+          "text": "animation-fill-mode e animation-play-state permitem controlar o estado dos elementos antes, durante e após as animações.",
+          "list": [
+            "none - Não aplica estilos (padrão)",
+            "forwards - Mantém estado final",
+            "backwards - Aplica estado inicial",
+            "both - Aplica inicial e final"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplos de Estados:"
+        },
+        {
+          "position": 14,
+          "headline": "Animações de Performance",
+          "alternativeHeadline": "Propriedades Performáticas:",
+          "text": "Para animações suaves e performáticas, é importante usar propriedades que não causem repaint ou reflow do navegador.",
+          "list": [
+            "transform - Muda posição/rotação sem reflow",
+            "opacity - Muda transparência suavemente",
+            "filter - Efeitos visuais otimizados",
+            "will-change - Dica para otimização",
+            "Evitar: width, height, margin, padding"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Otimização de Performance:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/05/images/performance_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/05/images/performance_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/05/images/performance_mobile.png"
+          }
+        },
+        {
+          "position": 16,
+          "headline": "Casos de Uso Práticos",
+          "alternativeHeadline": "Aplicações Comuns:",
+          "text": "Transições e animações são fundamentais para criar interfaces modernas e interativas que guiam a atenção do usuário.",
+          "list": [
+            "Hover effects em botões e cards",
+            "Loading spinners e indicadores",
+            "Transições de página",
+            "Micro-interações",
+            "Feedback visual de ações",
+            "Animações de entrada/saída"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Exemplos Práticos:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie interfaces dinâmicas usando Transições e Animações CSS3 com:",
+        "steps": [
+          "Título = Interface Dinâmica com CSS3",
+          "Transições = Hover effects em botões e cards",
+          "Animações = Loading spinner e elementos de entrada",
+          "Keyframes = Animações complexas com múltiplos estágios",
+          "Performance = Use transform e opacity para otimização",
+          "Timing = Diferentes funções de easing para variadas sensações"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🔄 CSS3 - Transformações 2D e 3D",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Transformações CSS3",
+          "alternativeHeadline": "Vantagens das Transformações:",
+          "text": "As transformações CSS3 permitem modificar a posição, rotação, escala e perspectiva dos elementos sem afetar o fluxo do documento. São fundamentais para criar efeitos visuais modernos e interativos.",
+          "list": [
+            "Performance otimizada (hardware acceleration)",
+            "Efeitos visuais impressionantes",
+            "Interatividade sem JavaScript",
+            "Animações suaves",
+            "Controle preciso de posicionamento",
+            "Suporte a 2D e 3D"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/06/images/transformacoes_conceitos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/06/images/transformacoes_conceitos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/06/images/transformacoes_conceitos_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Transformações 2D Básicas",
+          "alternativeHeadline": "Funções 2D Principais:",
+          "text": "As transformações 2D são as mais comuns e incluem translate, rotate, scale e skew para modificar elementos no plano bidimensional.",
+          "list": [
+            "translate(x, y) - Move o elemento",
+            "rotate(ângulo) - Rotaciona o elemento",
+            "scale(x, y) - Redimensiona o elemento",
+            "skew(x, y) - Inclina o elemento",
+            "matrix() - Combina todas as transformações"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Transformações 2D:"
+        },
+        {
+          "position": 6,
+          "headline": "transform-origin",
+          "alternativeHeadline": "Valores de transform-origin:",
+          "text": "A propriedade transform-origin define o ponto de referência para as transformações, permitindo controlar de onde elas são aplicadas.",
+          "list": [
+            "center - Centro do elemento (padrão)",
+            "top, bottom - Partes superior/inferior",
+            "left, right - Partes esquerda/direita",
+            "Valores específicos - 50px, 30%",
+            "Combinações - top left, bottom right"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplos de Origin:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/06/images/transform_origin_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/06/images/transform_origin_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/06/images/transform_origin_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Transformações 3D",
+          "alternativeHeadline": "Funções 3D:",
+          "text": "As transformações 3D adicionam profundidade e perspectiva aos elementos, criando efeitos tridimensionais impressionantes.",
+          "list": [
+            "translate3d(x, y, z) - Movimento 3D",
+            "rotateX(), rotateY(), rotateZ() - Rotação nos eixos",
+            "scale3d(x, y, z) - Escala 3D",
+            "perspective() - Perspectiva individual",
+            "matrix3d() - Matriz 3D completa"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplos de Transformações 3D:"
+        },
+        {
+          "position": 10,
+          "headline": "Perspective",
+          "alternativeHeadline": "Tipos de Perspective:",
+          "text": "A perspectiva define como os elementos 3D são renderizados, criando a ilusão de profundidade e distância.",
+          "list": [
+            "perspective - Aplicada ao container pai",
+            "perspective() - Aplicada ao elemento individual",
+            "perspective-origin - Ponto de fuga da perspectiva",
+            "Valores menores = mais distorção",
+            "Valores maiores = menos distorção"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Configurando Perspective:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/06/images/perspective_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/06/images/perspective_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/06/images/perspective_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "backface-visibility",
+          "alternativeHeadline": "Valores:",
+          "text": "A propriedade backface-visibility controla se a face traseira de um elemento 3D é visível quando rotacionado.",
+          "list": [
+            "visible - Face traseira visível (padrão)",
+            "hidden - Face traseira oculta",
+            "Útil para cards que viram",
+            "Cria efeitos de flip",
+            "Melhora performance"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo de Card Flip:"
+        },
+        {
+          "position": 14,
+          "headline": "transform-style",
+          "alternativeHeadline": "Valores:",
+          "text": "A propriedade transform-style define como elementos filhos são renderizados no espaço 3D em relação ao elemento pai.",
+          "list": [
+            "flat - Elementos filhos são \"achatados\" (padrão)",
+            "preserve-3d - Mantém o espaço 3D dos filhos",
+            "Essencial para transformações 3D aninhadas",
+            "Permite criar estruturas 3D complexas"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Estruturas 3D Complexas:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/06/images/transform_style_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/06/images/transform_style_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/06/images/transform_style_mobile.png"
+          }
+        },
+        {
+          "position": 16,
+          "headline": "Casos de Uso Práticos",
+          "alternativeHeadline": "Aplicações Comuns:",
+          "text": "As transformações CSS3 são fundamentais para criar interfaces modernas e efeitos visuais que impressionam o usuário.",
+          "list": [
+            "Hover effects em cards e botões",
+            "Galeria de imagens com zoom",
+            "Menus deslizantes",
+            "Cards que viram (flip)",
+            "Carrosséis 3D",
+            "Animações de entrada/saída"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Exemplos Práticos:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie efeitos visuais usando Transformações CSS3 2D e 3D com:",
+        "steps": [
+          "Título = Efeitos Visuais com Transformações CSS3",
+          "Transformações 2D = translate, rotate, scale em hover",
+          "Perspectiva = Container com perspectiva 3D",
+          "Rotations 3D = Elementos rotacionando nos eixos X, Y, Z",
+          "Card Flip = Card que vira mostrando conteúdo diferente",
+          "Performance = Use transform-origin e backface-visibility"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "📱 CSS3 - Media Queries e Responsividade",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Design Responsivo",
+          "alternativeHeadline": "Princípios do Design Responsivo:",
+          "text": "O design responsivo é uma abordagem que faz com que páginas web se adaptem automaticamente a diferentes tamanhos de tela e dispositivos. Media Queries são a base técnica para implementar essa responsividade.",
+          "list": [
+            "Layout fluido e flexível",
+            "Imagens e mídia responsivas",
+            "Tipografia escalável",
+            "Breakpoints estratégicos",
+            "Mobile-first approach",
+            "Performance otimizada"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/07/images/responsividade_conceitos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/07/images/responsividade_conceitos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/07/images/responsividade_conceitos_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Media Queries Básicas",
+          "alternativeHeadline": "Sintaxe das Media Queries:",
+          "text": "Media Queries permitem aplicar estilos CSS condicionalmente baseados nas características do dispositivo ou viewport.",
+          "list": [
+            "@media (condição) { estilos }",
+            "min-width - Largura mínima",
+            "max-width - Largura máxima",
+            "orientation - Orientação (portrait/landscape)",
+            "resolution - Resolução da tela",
+            "Operadores lógicos (and, or, not)"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplos de Media Queries:"
+        },
+        {
+          "position": 6,
+          "headline": "Breakpoints Comuns",
+          "alternativeHeadline": "Breakpoints Tradicionais:",
+          "text": "Breakpoints são pontos específicos onde o layout muda para se adaptar a diferentes tamanhos de tela. Embora existam valores comuns, o ideal é definir breakpoints baseados no conteúdo.",
+          "list": [
+            "Mobile: até 767px",
+            "Tablet: 768px - 1023px",
+            "Desktop: 1024px - 1199px",
+            "Large Desktop: 1200px+",
+            "Ultra-wide: 1440px+"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Estratégia de Breakpoints:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/07/images/breakpoints_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/07/images/breakpoints_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/07/images/breakpoints_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Viewport e Meta Tags",
+          "alternativeHeadline": "Meta Viewport:",
+          "text": "O viewport é crucial para o design responsivo, definindo como a página deve ser renderizada em dispositivos móveis.",
+          "list": [
+            "width=device-width - Largura do dispositivo",
+            "initial-scale=1 - Zoom inicial",
+            "minimum-scale - Zoom mínimo",
+            "maximum-scale - Zoom máximo",
+            "user-scalable - Permitir zoom do usuário"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Configuração do Viewport:"
+        },
+        {
+          "position": 10,
+          "headline": "Imagens Responsivas",
+          "alternativeHeadline": "Estratégias para Imagens:",
+          "text": "Imagens responsivas se adaptam automaticamente ao tamanho da tela, mantendo a qualidade e performance adequadas.",
+          "list": [
+            "CSS max-width: 100%",
+            "Elemento <picture>",
+            "srcset com diferentes resoluções",
+            "Lazy loading",
+            "Formatos modernos (WebP, AVIF)",
+            "Imagens vetoriais (SVG)"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Imagens Responsivas:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/07/images/imagens_responsivas_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/07/images/imagens_responsivas_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/07/images/imagens_responsivas_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Tipografia Responsiva",
+          "alternativeHeadline": "Unidades Responsivas:",
+          "text": "A tipografia responsiva garante que o texto seja legível em todos os dispositivos, usando unidades flexíveis e escalas apropriadas.",
+          "list": [
+            "rem - Baseada no font-size do root",
+            "em - Baseada no font-size do elemento pai",
+            "vw/vh - Baseada no viewport",
+            "% - Porcentagem do elemento pai",
+            "clamp() - Valor entre mínimo e máximo"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Tipografia Fluida:"
+        },
+        {
+          "position": 14,
+          "headline": "Layout Responsivo com Flexbox e Grid",
+          "alternativeHeadline": "Estratégias de Layout:",
+          "text": "Flexbox e CSS Grid tornam a criação de layouts responsivos muito mais simples e eficiente.",
+          "list": [
+            "Flexbox para componentes",
+            "CSS Grid para layouts principais",
+            "auto-fit e auto-fill",
+            "minmax() para flexibilidade",
+            "Combinação de unidades"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Layout Responsivo:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/css3/07/images/layout_responsivo_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/css3/07/images/layout_responsivo_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/07/images/layout_responsivo_mobile.png"
+          }
+        },
+        {
+          "position": 16,
+          "headline": "Testando Responsividade",
+          "alternativeHeadline": "Ferramentas de Teste:",
+          "text": "Testar a responsividade é essencial para garantir que o site funcione bem em todos os dispositivos.",
+          "list": [
+            "DevTools do navegador",
+            "Dispositivos reais",
+            "Emuladores online",
+            "BrowserStack",
+            "Lighthouse para performance",
+            "PageSpeed Insights"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Checklist de Responsividade:",
+          "list": [
+            "✓ Viewport configurado corretamente",
+            "✓ Texto legível sem zoom",
+            "✓ Botões com tamanho adequado para touch",
+            "✓ Imagens que não quebram o layout",
+            "✓ Navegação acessível em mobile",
+            "✓ Performance otimizada",
+            "✓ Testado em dispositivos reais"
+          ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie um site responsivo usando Media Queries CSS3 com:",
+        "steps": [
+          "Título = Site Responsivo com CSS3",
+          "Mobile First = Layout baseado em mobile",
+          "Breakpoints = Adaptação para tablet e desktop",
+          "Imagens = Imagens responsivas com srcset",
+          "Tipografia = Escala fluida com clamp()",
+          "Layout = Flexbox/Grid responsivo"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  }
+]

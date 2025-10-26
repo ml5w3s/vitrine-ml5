@@ -74,22 +74,22 @@ class PlaygroundComponent {
         }
 
 
-        this.containerElement.innerHTML = "` +
-            `<div class=\"playground-wrapper\">
-                <div class=\"playground-instructions\">
+        this.containerElement.innerHTML = `
+            <div class="playground-wrapper">
+                <div class="playground-instructions">
                     ${articlesHtml}
                     ${exerciseHtml}
                 </div>
-                <div class=\"playground-editor\">
+                <div class="playground-editor">
                     ${controlsHtml}
                     <h4>Seu Código:</h4>
-                    <textarea id=\"code-input\" class=\"code-input\" rows=\"15\" cols=\"80\"></textarea>
-                    <button id=\"run-code-button\">Executar Código</button>
+                    <textarea id="code-input" class="code-input" rows="15" cols="80"></textarea>
+                    <button id="run-code-button">Executar Código</button>
                     <h4>Preview:</h4>
-                    <iframe id=\"code-output\" class=\"code-output\" sandbox=\"allow-scripts allow-same-origin"></iframe>
+                    <iframe id="code-output" class="code-output" sandbox="allow-scripts allow-same-origin"></iframe>
                 </div>
             </div>
-        ";
+        `;
         // Preenche o textarea com um código inicial se disponível no lessonContent
         // Por exemplo, o primeiro bloco de código do artigo, se houver
         const initialCodeBlock = articles.find(a => a.code);

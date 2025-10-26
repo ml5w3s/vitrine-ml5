@@ -1,0 +1,1007 @@
+[
+  {
+    "course": {
+      "name": "🏥 XML - Sistemas Hospitalares (TISS)",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "TISS - Troca de Informação em Saúde Suplementar",
+          "alternativeHeadline": "Importância do TISS:",
+          "text": "O TISS é um padrão estabelecido pela ANS (Agência Nacional de Saúde Suplementar) que utiliza XML para padronizar a troca de informações entre operadoras de planos de saúde, prestadores de serviços e beneficiários no Brasil.",
+          "list": [
+            "Padronização de dados de saúde",
+            "Interoperabilidade entre sistemas hospitalares",
+            "Controle de procedimentos médicos",
+            "Gestão de autorizações",
+            "Auditoria médica",
+            "Integração com sistemas de faturamento"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/04/images/tiss_estrutura_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/04/images/tiss_estrutura_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/04/images/tiss_estrutura_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Estrutura do TISS em XML",
+          "alternativeHeadline": "Componentes Principais:",
+          "text": "O TISS define uma estrutura hierárquica rigorosa para documentos XML, garantindo consistência e validação dos dados de saúde entre diferentes sistemas.",
+          "list": [
+            "cabecalho - Informações do cabeçalho",
+            "prestadorParaOperadora - Solicitações",
+            "operadoraParaPrestador - Respostas",
+            "epilogo - Informações de controle",
+            "ans:operadoraANS - Dados da operadora",
+            "ans:prestadorOperadora - Dados do prestador"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo de Estrutura TISS:"
+        },
+        {
+          "position": 6,
+          "headline": "Dados do Prestador de Serviços",
+          "alternativeHeadline": "Informações do Prestador:",
+          "text": "A seção de prestador contém informações essenciais sobre o hospital, clínica ou profissional de saúde que está enviando os dados.",
+          "list": [
+            "CNPJ ou CPF do prestador",
+            "Nome/Razão Social",
+            "Endereço completo",
+            "Telefone e email",
+            "Registro no Conselho Regional",
+            "Código ANS"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Estrutura do Prestador:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/04/images/prestador_dados_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/04/images/prestador_dados_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/04/images/prestador_dados_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Dados do Beneficiário",
+          "alternativeHeadline": "Dados do Beneficiário:",
+          "text": "Informações detalhadas sobre o paciente/beneficiário, incluindo dados pessoais, plano de saúde e informações médicas relevantes.",
+          "list": [
+            "CPF do beneficiário",
+            "Nome completo",
+            "Data de nascimento",
+            "Sexo",
+            "Número do cartão do plano",
+            "Validade do plano",
+            "Dados do responsável (se menor)"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Estrutura do Beneficiário:"
+        },
+        {
+          "position": 10,
+          "headline": "Procedimentos Médicos",
+          "alternativeHeadline": "Informações dos Procedimentos:",
+          "text": "A seção de procedimentos detalha todos os serviços médicos realizados, incluindo códigos TUSS, valores e justificativas clínicas.",
+          "list": [
+            "Código TUSS (Terminologia Unificada da Saúde Suplementar)",
+            "Descrição do procedimento",
+            "Quantidade realizada",
+            "Valor unitário e total",
+            "Data de realização",
+            "Justificativa clínica"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Estrutura de Procedimentos:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/04/images/procedimentos_medicos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/04/images/procedimentos_medicos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/04/images/procedimentos_medicos_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Diagnósticos e CID-10",
+          "alternativeHeadline": "Estrutura de Diagnósticos:",
+          "text": "Os diagnósticos médicos são codificados segundo a Classificação Internacional de Doenças (CID-10) para padronização internacional.",
+          "list": [
+            "Código CID-10",
+            "Descrição do diagnóstico",
+            "Tipo de diagnóstico (principal/secundário)",
+            "Data do diagnóstico",
+            "Observações clínicas"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo de Diagnósticos:"
+        },
+        {
+          "position": 14,
+          "headline": "Autorizações e Solicitações",
+          "alternativeHeadline": "Tipos de Autorização:",
+          "text": "O TISS gerencia autorizações de procedimentos, permitindo que prestadores solicitem autorização antes da realização de tratamentos.",
+          "list": [
+            "Autorização prévia de procedimentos",
+            "Solicitação de internação",
+            "Autorização de exames complementares",
+            "Consulta de cobertura",
+            "Cancelamento de autorizações"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Estrutura de Autorização:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/04/images/autorizacoes_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/04/images/autorizacoes_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/04/images/autorizacoes_mobile.png"
+          }
+        },
+        {
+          "position": 16,
+          "headline": "Integração com Sistemas Hospitalares",
+          "alternativeHeadline": "Benefícios da Integração:",
+          "text": "O TISS em XML permite integração eficiente com sistemas hospitalares, automatizando processos administrativos e melhorando o atendimento ao paciente.",
+          "list": [
+            "Automação de autorizações",
+            "Sincronização com prontuário eletrônico",
+            "Controle de estoque de medicamentos",
+            "Gestão de leitos e recursos",
+            "Relatórios administrativos",
+            "Auditoria médica automatizada"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Fluxo de Integração:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma estrutura XML básica do TISS com:",
+        "steps": [
+          "Título = Estrutura XML TISS para Sistema Hospitalar",
+          "Cabeçalho = Informações de transação e identificação",
+          "Prestador = Dados do hospital ou clínica",
+          "Beneficiário = Dados do paciente e plano de saúde",
+          "Procedimentos = Lista de procedimentos com códigos TUSS",
+          "Diagnósticos = Códigos CID-10 dos diagnósticos"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "📄 XML - Nota Fiscal Eletrônica (NFe)",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "XML na NFe no Brasil",
+          "alternativeHeadline": "Importância da NFe em XML:",
+          "text": "A Nota Fiscal Eletrônica (NFe) é um dos maiores exemplos de uso de XML no Brasil. Desde 2008, a Receita Federal utiliza XML como formato padrão para a transmissão e armazenamento de documentos fiscais, revolucionando o sistema tributário brasileiro.",
+          "list": [
+            "Padronização nacional de documentos fiscais",
+            "Interoperabilidade entre sistemas",
+            "Auditoria e fiscalização automatizada",
+            "Redução de fraudes fiscais",
+            "Integração com sistemas ERP",
+            "Armazenamento digital obrigatório"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/03/images/nfe_estrutura_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/03/images/nfe_estrutura_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/03/images/nfe_estrutura_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Estrutura Básica do XML NFe",
+          "alternativeHeadline": "Elementos Principais:",
+          "text": "O XML da NFe segue uma estrutura hierárquica rigorosa, definida pela Receita Federal, com elementos obrigatórios e opcionais bem específicos.",
+          "list": [
+            "infNFe - Informações da nota fiscal",
+            "ide - Identificação da NFe",
+            "emit - Dados do emitente",
+            "dest - Dados do destinatário",
+            "det - Detalhes dos produtos/serviços",
+            "total - Totais da NFe",
+            "transp - Dados do transporte",
+            "cobr - Dados da cobrança"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo de Estrutura NFe:"
+        },
+        {
+          "position": 6,
+          "headline": "Validação e Schema NFe",
+          "alternativeHeadline": "Schemas Principais:",
+          "text": "A NFe utiliza XML Schema (XSD) para validação rigorosa dos documentos, garantindo conformidade com as regras fiscais brasileiras.",
+          "list": [
+            "nfe_v4.00.xsd - Schema principal da NFe",
+            "tiposBasico_v4.00.xsd - Tipos básicos",
+            "leiauteNFe_v4.00.xsd - Layout da NFe",
+            "procNFe_v4.00.xsd - Processamento",
+            "ConsNFeDest_v4.00.xsd - Consulta"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Validação XML NFe:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/03/images/validacao_nfe_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/03/images/validacao_nfe_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/03/images/validacao_nfe_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Elementos de Produtos e Serviços",
+          "alternativeHeadline": "Estrutura do Elemento det:",
+          "text": "A seção de detalhes (det) é uma das mais complexas da NFe, contendo informações detalhadas sobre cada produto ou serviço comercializado.",
+          "list": [
+            "nItem - Número sequencial do item",
+            "prod - Dados do produto",
+            "imposto - Impostos incidentes",
+            "infAdProd - Informações adicionais",
+            "obsItem - Observações do item"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo de Produto na NFe:"
+        },
+        {
+          "position": 10,
+          "headline": "Impostos na NFe",
+          "alternativeHeadline": "Tipos de Impostos:",
+          "text": "A NFe contém informações detalhadas sobre todos os impostos incidentes, incluindo ICMS, IPI, PIS, COFINS e ISS, conforme a legislação tributária brasileira.",
+          "list": [
+            "ICMS - Imposto sobre Circulação de Mercadorias",
+            "IPI - Imposto sobre Produtos Industrializados",
+            "PIS - Programa de Integração Social",
+            "COFINS - Contribuição para Financiamento da Seguridade",
+            "ISS - Imposto sobre Serviços",
+            "II - Imposto de Importação"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Estrutura de Impostos:"
+        },
+        {
+          "position": 12,
+          "headline": "Totais e Informações Complementares",
+          "alternativeHeadline": "Elementos de Totalização:",
+          "text": "A seção de totais consolida todos os valores da NFe, incluindo impostos, descontos e valores finais, sendo fundamental para a validação fiscal.",
+          "list": [
+            "ICMSTot - Totais do ICMS",
+            "ISSQNTot - Totais do ISS",
+            "retTrib - Retenções tributárias",
+            "vNF - Valor total da NFe",
+            "vTotTrib - Total dos tributos"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo de Totais:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/03/images/totais_nfe_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/03/images/totais_nfe_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/03/images/totais_nfe_mobile.png"
+          }
+        },
+        {
+          "position": 14,
+          "headline": "Processamento e Autorização",
+          "alternativeHeadline": "Fluxo de Processamento:",
+          "text": "Após a validação, a NFe é processada pela Receita Federal, que retorna um XML de autorização com protocolo e chave de acesso.",
+          "list": [
+            "Validação do XML contra o schema",
+            "Envio para a Receita Federal",
+            "Processamento e autorização",
+            "Retorno do protocolo",
+            "Geração da chave de acesso",
+            "Armazenamento obrigatório"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "XML de Resposta:"
+        },
+        {
+          "position": 16,
+          "headline": "Integração com Sistemas ERP",
+          "alternativeHeadline": "Benefícios da Integração:",
+          "text": "A NFe em XML permite integração eficiente com sistemas ERP, automatizando processos fiscais e reduzindo erros manuais.",
+          "list": [
+            "Automação da emissão de NFe",
+            "Sincronização com estoque",
+            "Controle fiscal automatizado",
+            "Relatórios fiscais integrados",
+            "Auditoria simplificada",
+            "Compliance tributário"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Exemplo de Integração:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/03/images/integracao_erp_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/03/images/integracao_erp_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/03/images/integracao_erp_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma estrutura XML básica de NFe com:",
+        "steps": [
+          "Título = Estrutura XML de NFe",
+          "Identificação = Elementos ide com dados básicos",
+          "Emitente = Dados da empresa emissora",
+          "Destinatário = Dados do cliente",
+          "Produto = Pelo menos um item com impostos",
+          "Totais = Consolidação de valores e impostos"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "✅ XML Schema e Validação Empresarial",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "XML Schema (XSD) no Contexto Empresarial",
+          "alternativeHeadline": "Importância do Schema Empresarial:",
+          "text": "O XML Schema é fundamental para garantir a integridade e consistência dos dados em sistemas empresariais brasileiros. Ele define regras rigorosas de validação que são essenciais para compliance fiscal, trabalhista e regulatório.",
+          "list": [
+            "Validação rigorosa de dados",
+            "Compliance com regulamentações",
+            "Integração entre sistemas",
+            "Prevenção de erros de processamento",
+            "Documentação de estruturas de dados",
+            "Facilita manutenção e evolução"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/06/images/schema_empresarial_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/06/images/schema_empresarial_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/06/images/schema_empresarial_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Elementos e Tipos Básicos",
+          "alternativeHeadline": "Tipos Primitivos:",
+          "text": "XML Schema define tipos de dados específicos que garantem validação precisa, especialmente importante para documentos fiscais e trabalhistas no Brasil.",
+          "list": [
+            "xs:string - Texto livre",
+            "xs:decimal - Números decimais",
+            "xs:integer - Números inteiros",
+            "xs:date - Datas (YYYY-MM-DD)",
+            "xs:dateTime - Data e hora",
+            "xs:boolean - Verdadeiro/Falso",
+            "xs:positiveInteger - Inteiros positivos"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo de Schema Básico:"
+        },
+        {
+          "position": 6,
+          "headline": "Restrições e Validações Personalizadas",
+          "alternativeHeadline": "Tipos de Restrições:",
+          "text": "As restrições em XML Schema permitem criar validações específicas para o contexto brasileiro, como validação de CPF, CNPJ, CEP e outros documentos.",
+          "list": [
+            "xs:pattern - Expressões regulares",
+            "xs:minLength/maxLength - Tamanho do texto",
+            "xs:minInclusive/maxInclusive - Valores numéricos",
+            "xs:enumeration - Lista de valores válidos",
+            "xs:totalDigits - Dígitos decimais",
+            "xs:fractionDigits - Casas decimais"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Validações Brasileiras:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/06/images/validacoes_brasileiras_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/06/images/validacoes_brasileiras_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/06/images/validacoes_brasileiras_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Tipos Complexos e Composição",
+          "alternativeHeadline": "Composição de Tipos:",
+          "text": "Os tipos complexos permitem criar estruturas hierárquicas que refletem a realidade dos documentos empresariais brasileiros, como endereços, dados fiscais e informações trabalhistas.",
+          "list": [
+            "xs:sequence - Elementos em ordem",
+            "xs:choice - Um dos elementos",
+            "xs:all - Todos os elementos (qualquer ordem)",
+            "xs:group - Grupos de elementos",
+            "xs:attributeGroup - Grupos de atributos"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo de Tipo Complexo:"
+        },
+        {
+          "position": 10,
+          "headline": "Schemas para Documentos Fiscais",
+          "alternativeHeadline": "Elementos Fiscais:",
+          "text": "Criar schemas específicos para documentos fiscais brasileiros garante validação adequada de NFe, NFS-e e outros documentos obrigatórios.",
+          "list": [
+            "Validação de códigos fiscais",
+            "Estruturas de impostos",
+            "Validação de alíquotas",
+            "Cálculos fiscais",
+            "Datas e prazos",
+            "Códigos de operação"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Schema para Produto Fiscal:"
+        },
+        {
+          "position": 12,
+          "headline": "Validação em Tempo Real",
+          "alternativeHeadline": "Estratégias de Validação:",
+          "text": "A validação em tempo real de documentos XML é essencial em sistemas empresariais, garantindo que dados incorretos sejam detectados imediatamente.",
+          "list": [
+            "Validação no momento da entrada",
+            "Validação antes do envio",
+            "Validação de integridade",
+            "Validação de regras de negócio",
+            "Validação de cálculos",
+            "Validação de referências"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo de Validação:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/06/images/validacao_tempo_real_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/06/images/validacao_tempo_real_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/06/images/validacao_tempo_real_mobile.png"
+          }
+        },
+        {
+          "position": 14,
+          "headline": "Integração com Sistemas de Validação",
+          "alternativeHeadline": "Ferramentas de Validação:",
+          "text": "A integração de schemas XML com sistemas de validação permite criar ferramentas robustas para garantir a qualidade dos dados em sistemas empresariais.",
+          "list": [
+            "Validadores online",
+            "Bibliotecas de programação",
+            "Ferramentas de desenvolvimento",
+            "APIs de validação",
+            "Testes automatizados",
+            "Relatórios de erro detalhados"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Exemplo de Validação Programática:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie schemas XML para validação empresarial com:",
+        "steps": [
+          "Título = Schemas XML para Validação Empresarial",
+          "Tipos Básicos = CPF, CNPJ, CEP, UF, valores monetários",
+          "Tipos Complexos = Endereço, pessoa, empresa",
+          "Validações = Expressões regulares e restrições",
+          "Documentos Fiscais = Schema para produto com impostos",
+          "Validação Programática = Código JavaScript de validação"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🏛️ XML - Sistemas Governamentais (eSocial, SPED)",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Digitalização Governamental no Brasil",
+          "alternativeHeadline": "Projetos Governamentais com XML:",
+          "text": "O governo brasileiro utiliza XML como padrão para diversos sistemas de digitalização, incluindo eSocial, SPED, e-ISS e outros projetos que revolucionaram a administração pública e a relação com empresas e cidadãos.",
+          "list": [
+            "eSocial - Sistema de Escrituração Digital",
+            "SPED - Sistema Público de Escrituração Digital",
+            "e-ISS - Imposto sobre Serviços eletrônico",
+            "e-Financeira - Escrituração Financeira",
+            "SEI - Sistema Eletrônico de Informações",
+            "PJe - Processo Judicial Eletrônico"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/05/images/governo_estrutura_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/05/images/governo_estrutura_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/05/images/governo_estrutura_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "eSocial - Sistema de Escrituração Digital",
+          "alternativeHeadline": "Objetivos do eSocial:",
+          "text": "O eSocial é um sistema unificado de escrituração digital das obrigações trabalhistas, previdenciárias e fiscais, utilizando XML para padronizar a comunicação entre empregadores e órgãos governamentais.",
+          "list": [
+            "Unificação de obrigações trabalhistas",
+            "Redução de burocracia",
+            "Melhoria na fiscalização",
+            "Integração de sistemas governamentais",
+            "Transparência nas relações trabalhistas",
+            "Redução de fraudes"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Estrutura do eSocial em XML:"
+        },
+        {
+          "position": 6,
+          "headline": "Eventos do eSocial",
+          "alternativeHeadline": "Principais Eventos:",
+          "text": "O eSocial utiliza diferentes tipos de eventos XML para representar as diversas situações trabalhistas, cada um com sua estrutura específica e validações próprias.",
+          "list": [
+            "evtAdmissao - Admissão de trabalhador",
+            "evtAltContratual - Alteração contratual",
+            "evtExclusao - Exclusão de trabalhador",
+            "evtRemun - Remuneração",
+            "evtDeslig - Desligamento",
+            "evtTabRubrica - Tabela de rubricas"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplo de Evento de Admissão:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/05/images/eventos_esocial_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/05/images/eventos_esocial_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/05/images/eventos_esocial_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "SPED - Sistema Público de Escrituração Digital",
+          "alternativeHeadline": "Componentes do SPED:",
+          "text": "O SPED é um conjunto de instrumentos para cumprimento das obrigações acessórias por via digital, utilizando XML para padronizar a transmissão de informações contábeis e fiscais.",
+          "list": [
+            "SPED Fiscal - Escrituração Fiscal Digital (EFD)",
+            "SPED Contábil - Escrituração Contábil Digital (ECD)",
+            "SPED Contribuições - EFD Contribuições",
+            "SPED PIS/PASEP - Contribuições sociais",
+            "SPED ICMS/IPI - Impostos estaduais"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Estrutura SPED Fiscal:"
+        },
+        {
+          "position": 10,
+          "headline": "Registros do SPED",
+          "alternativeHeadline": "Tipos de Registros:",
+          "text": "O SPED utiliza um sistema de registros alfanuméricos para organizar as informações, cada registro representando um tipo específico de informação contábil ou fiscal.",
+          "list": [
+            "Registros 0000-0999 - Informações gerais",
+            "Registros 1000-1999 - Informações do estabelecimento",
+            "Registros 2000-2999 - Documentos fiscais",
+            "Registros 3000-3999 - Inventário",
+            "Registros 5000-5999 - Contas contábeis",
+            "Registros 9000-9999 - Totais e fechamento"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplo de Registros SPED:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/05/images/registros_sped_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/05/images/registros_sped_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/05/images/registros_sped_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "e-ISS - Imposto sobre Serviços Eletrônico",
+          "alternativeHeadline": "Características do e-ISS:",
+          "text": "O e-ISS é um sistema que permite a emissão de notas fiscais de serviços em formato eletrônico, utilizando XML para padronizar a comunicação entre prestadores de serviços e municípios.",
+          "list": [
+            "Emissão eletrônica de NFS-e",
+            "Validação automática pelo município",
+            "Armazenamento digital obrigatório",
+            "Integração com sistemas municipais",
+            "Redução de papel e burocracia",
+            "Controle fiscal automatizado"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Estrutura NFS-e em XML:"
+        },
+        {
+          "position": 14,
+          "headline": "Validação e Schemas Governamentais",
+          "alternativeHeadline": "Schemas Principais:",
+          "text": "Todos os sistemas governamentais utilizam XML Schema (XSD) rigoroso para validação, garantindo conformidade com as regras estabelecidas pelos órgãos competentes.",
+          "list": [
+            "eSocial - Schemas por versão e evento",
+            "SPED - Schemas por bloco e registro",
+            "NFS-e - Schema Abrasf padrão",
+            "NFe - Schema da Receita Federal",
+            "TISS - Schema da ANS"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Exemplo de Validação:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/05/images/validacao_governo_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/05/images/validacao_governo_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/05/images/validacao_governo_mobile.png"
+          }
+        },
+        {
+          "position": 16,
+          "headline": "Integração com Sistemas Empresariais",
+          "alternativeHeadline": "Benefícios da Integração:",
+          "text": "A integração dos sistemas governamentais com ERPs empresariais revolucionou a gestão fiscal e trabalhista, automatizando processos que antes eram manuais e propensos a erros.",
+          "list": [
+            "Automação de obrigações acessórias",
+            "Redução de erros e retrabalho",
+            "Compliance automático",
+            "Auditoria simplificada",
+            "Economia de tempo e recursos",
+            "Integração com folha de pagamento"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Fluxo de Integração:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie estruturas XML para sistemas governamentais com:",
+        "steps": [
+          "Título = XML para Sistemas Governamentais",
+          "eSocial = Evento de admissão de trabalhador",
+          "SPED = Registros de abertura e dados complementares",
+          "NFS-e = Nota fiscal de serviço eletrônica",
+          "Validação = Schemas XSD apropriados",
+          "Integração = Fluxo com sistema ERP"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🔄 XSLT - Transformação de Dados Governamentais",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "XSLT no Contexto Governamental Brasileiro",
+          "alternativeHeadline": "Aplicações do XSLT:",
+          "text": "O XSLT (eXtensible Stylesheet Language Transformations) é fundamental para transformar dados XML governamentais em diferentes formatos, facilitando a visualização, integração e processamento de documentos oficiais no Brasil.",
+          "list": [
+            "Transformação de NFe para HTML",
+            "Conversão de dados eSocial",
+            "Geração de relatórios SPED",
+            "Transformação de TISS para PDF",
+            "Integração entre sistemas",
+            "Visualização de documentos"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/07/images/xslt_governamental_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/07/images/xslt_governamental_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/07/images/xslt_governamental_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Estrutura Básica do XSLT",
+          "alternativeHeadline": "Elementos Principais:",
+          "text": "XSLT utiliza templates para transformar elementos XML, permitindo criar saídas em HTML, PDF, texto ou outros formatos XML.",
+          "list": [
+            "xsl:stylesheet - Elemento raiz",
+            "xsl:template - Templates de transformação",
+            "xsl:apply-templates - Aplicação de templates",
+            "xsl:value-of - Extração de valores",
+            "xsl:for-each - Iteração sobre elementos",
+            "xsl:if/xsl:choose - Condicionais"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo Básico de XSLT:"
+        },
+        {
+          "position": 6,
+          "headline": "Transformação de NFe para HTML",
+          "alternativeHeadline": "Elementos da NFe para Transformar:",
+          "text": "Criar uma transformação XSLT para converter XML de NFe em HTML permite visualizar documentos fiscais de forma amigável e profissional.",
+          "list": [
+            "Dados do emitente e destinatário",
+            "Informações dos produtos",
+            "Cálculos de impostos",
+            "Totais da nota",
+            "Informações de transporte",
+            "Dados de pagamento"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "XSLT para NFe:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/07/images/transformacao_nfe_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/07/images/transformacao_nfe_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/07/images/transformacao_nfe_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Transformação de eSocial para Relatórios",
+          "alternativeHeadline": "Dados do eSocial para Relatórios:",
+          "text": "XSLT permite transformar dados do eSocial em relatórios HTML, facilitando a visualização de informações trabalhistas e previdenciárias.",
+          "list": [
+            "Informações do trabalhador",
+            "Dados contratuais",
+            "Remunerações",
+            "Descontos e adicionais",
+            "Informações previdenciárias",
+            "Histórico de eventos"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "XSLT para Relatório eSocial:"
+        },
+        {
+          "position": 10,
+          "headline": "Transformação de SPED para HTML",
+          "alternativeHeadline": "Registros SPED para Transformar:",
+          "text": "O SPED pode ser transformado em relatórios HTML legíveis, facilitando a análise de dados contábeis e fiscais.",
+          "list": [
+            "Registro 0000 - Abertura do arquivo",
+            "Registro 0005 - Dados complementares",
+            "Registro 0100 - Dados do contabilista",
+            "Registros de escrituração",
+            "Registros de totais",
+            "Registro 9999 - Encerramento"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "XSLT para SPED:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/07/images/transformacao_sped_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/07/images/transformacao_sped_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/07/images/transformacao_sped_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Transformação de TISS para Relatórios Médicos",
+          "alternativeHeadline": "Elementos TISS para Relatórios:",
+          "text": "XSLT permite transformar dados do TISS em relatórios médicos detalhados, facilitando a análise de procedimentos e custos em saúde.",
+          "list": [
+            "Dados do prestador",
+            "Informações do beneficiário",
+            "Procedimentos realizados",
+            "Diagnósticos (CID-10)",
+            "Valores e autorizações",
+            "Profissionais envolvidos"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "XSLT para Relatório TISS:"
+        },
+        {
+          "position": 14,
+          "headline": "Integração com Sistemas e APIs",
+          "alternativeHeadline": "Aplicações de Integração:",
+          "text": "XSLT pode ser integrado com sistemas empresariais para automatizar transformações de dados governamentais, facilitando a geração de relatórios e integração entre sistemas.",
+          "list": [
+            "APIs REST para transformação",
+            "Processamento em lote",
+            "Integração com ERPs",
+            "Geração automática de relatórios",
+            "Transformação em tempo real",
+            "Cache de transformações"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Exemplo de Integração:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/xml/07/images/integracao_sistemas_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/xml/07/images/integracao_sistemas_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/xml/07/images/integracao_sistemas_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie transformações XSLT para dados governamentais com:",
+        "steps": [
+          "Título = Transformações XSLT para Documentos Governamentais",
+          "NFe = Transformação para HTML com CSS responsivo",
+          "eSocial = Relatório de remuneração em HTML",
+          "SPED = Relatório de escrituração fiscal",
+          "TISS = Relatório médico com procedimentos",
+          "Integração = JavaScript para transformação automática"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  }
+]

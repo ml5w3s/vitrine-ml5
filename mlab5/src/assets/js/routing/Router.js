@@ -30,7 +30,8 @@ class Router {
      */
     handleRouteChange() {
         const hash = window.location.hash.slice(1) || '/';
-        console.log(`Navegando para: ${hash}`);
+        Debug.log('Router', `Navegando para: ${hash}`);
+        Debug.updateView('Rota Atual', hash);
 
         // Itera sobre as rotas registradas para encontrar uma correspondência
         for (const route of this.routes) {
@@ -57,7 +58,7 @@ class Router {
         }
 
         // Se nenhuma rota for encontrada
-        console.log('404 - Rota não encontrada');
+        Debug.error('Router', `404 - Rota não encontrada: ${hash}`);
         this.rootElement.innerHTML = '<h2>404 - Página Não Encontrada</h2>';
     }
 }

@@ -1,0 +1,1107 @@
+[
+  {
+    "course": {
+      "name": "🧱 HTML - Linguagem de marcação para sites na internet",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Comparação com exemplo cotidiano, etiqueta",
+          "alternativeHeadline": "Informações na etiqueta:",
+          "text": "Funciona como uma etiqueta, no início tem a indicação de onde vai a costura inicial deve ser feita, e abaixo onde vai a costura final. Entre essas marcações existem outras informações marcadas.",
+          "list": [
+            "Nome da empresa.",
+            "CNPJ.",
+            "Local de produção",
+            "Material",
+            "Manuseio",
+            "Tamanho",
+            "Marcas de corte"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/01/images/etiqueta_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/01/images/etiqueta_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/01/images/etiqueta_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Tag's, marcadores de exemplo",
+          "text": "O HTML usa tags, que são como etiquetas ou instruções. Essas tags dizem o que cada parte do conteúdo é. Por exemplo:"
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo",
+          "subheadline": "Papeis desempenhados por essas tag's:",
+          "text": "Quer um título grande? Usa a tag",
+          "list": [
+            "<h1>Nome Empresa LTDA.</h1>",
+            "<p>Produzido no Brasil.</p>",
+            "<img src=\"camiseta.jpg\"> Aqui aparece a imagem.</img>"
+          ]
+        },
+        {
+          "position": 6,
+          "image": {
+            "src": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/01/images/exemplo.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma pagina usando HTML, pode copiar o texto que tenha:",
+        "steps": [
+          "Título = O Caminho do Desenvolvimento Front-End",
+          "Parágrafo = O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
+          "Sub-Titulo = Fundamentos Essenciais",
+          "Parágrafo = HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🧱 HTML - Linguagem de marcação para sites na internet",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Comparação com exemplo cotidiano, etiqueta",
+          "alternativeHeadline": "Informações na etiqueta:",
+          "text": "Funciona como uma etiqueta, no início tem a indicação de onde vai a costura inicial deve ser feita, e abaixo onde vai a costura final. Entre essas marcações existem outras informações marcadas.",
+          "list": [
+            "Nome da empresa.",
+            "CNPJ.",
+            "Local de produção",
+            "Material",
+            "Manuseio",
+            "Tamanho",
+            "Marcas de corte"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Tag's, marcadores de exemplo",
+          "text": "No exemplo de página a seguir, no início e no seu fim é indicado pela marcação <html> É possível notar que a página tem duas partes distintas bem aparente. A “cabeçalho” da página <head> O corpo da página <body> No corpo ficam marcações bem perceptíveis, diferente do “cabeçalho”"
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo",
+          "subheadline": "Papeis desempenhados por essas tag's:",
+          "list": [
+            "<!DOCTYPE html> – Tipo do documento.",
+            "<html> – Raiz do documento.",
+            "<head> – Metadados (ex:  <title>,  <meta>,  <link>).",
+            "<body> – Conteúdo visível.:",
+            "<h1> – Título.:",
+            "<p> – Parágrafo.:",
+            "<h2> – Sub-título.:"
+          ]
+        },
+        {
+          "position": 6,
+          "image": {
+            "src": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/02/images/exemplo.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma pagina usando HTML, pode copiar o texto que tenha:",
+        "steps": [
+          "Título = O Caminho do Desenvolvimento Front-End",
+          "Parágrafo = O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
+          "Sub-Titulo = Fundamentos Essenciais",
+          "Parágrafo = HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🏗️ HTML5 - Novos Elementos Semânticos",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "O que são Elementos Semânticos?",
+          "alternativeHeadline": "Vantagens dos Elementos Semânticos:",
+          "text": "Os elementos semânticos do HTML5 são tags que descrevem claramente seu significado tanto para o navegador quanto para o desenvolvedor. Eles substituem as antigas divs genéricas, tornando o código mais legível e acessível.",
+          "list": [
+            "Melhor acessibilidade para leitores de tela",
+            "Código mais legível e organizado",
+            "SEO otimizado pelos motores de busca",
+            "Estrutura clara para outros desenvolvedores",
+            "Facilita manutenção do código"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/03/images/elementos_semanticos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/03/images/elementos_semanticos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/03/images/elementos_semanticos_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Elemento <header>",
+          "alternativeHeadline": "Características do <header>:",
+          "text": "O elemento <header> representa o cabeçalho de uma seção ou página. Pode conter títulos, logos, navegação principal e informações introdutórias.",
+          "list": [
+            "Define o cabeçalho de uma página ou seção",
+            "Pode conter navegação, logos e títulos",
+            "Não deve ser usado para conteúdo principal",
+            "Pode aparecer múltiplas vezes na página"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo de Uso:"
+        },
+        {
+          "position": 6,
+          "headline": "Elemento <nav>",
+          "alternativeHeadline": "Quando usar <nav>:",
+          "text": "O elemento <nav> representa uma seção de navegação com links para outras páginas ou partes da mesma página.",
+          "list": [
+            "Menu principal do site",
+            "Navegação entre seções",
+            "Links de paginação",
+            "Breadcrumbs (migalhas de pão)"
+          ]
+        },
+        {
+          "position": 7,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/03/images/navegacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/03/images/navegacao_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/03/images/navegacao_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Elemento <main>",
+          "alternativeHeadline": "Características do <main>:",
+          "text": "O elemento <main> representa o conteúdo principal de uma página. Deve ser único na página e não deve conter conteúdo que se repete em outras páginas.",
+          "list": [
+            "Conteúdo principal único da página",
+            "Não deve conter navegação, cabeçalho ou rodapé",
+            "Apenas um elemento <main> por página",
+            "Facilita navegação por leitores de tela"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo de Estrutura:"
+        },
+        {
+          "position": 10,
+          "headline": "Elementos <section> e <article>",
+          "alternativeHeadline": "Diferenças:",
+          "text": "<section> representa uma seção temática de conteúdo, enquanto <article> representa um conteúdo independente e completo.",
+          "list": [
+            "<section> - agrupamento temático de conteúdo",
+            "<article> - conteúdo independente e autocontido",
+            "Um <article> pode conter várias <section>s",
+            "Uma <section> pode conter vários <article>s"
+          ]
+        },
+        {
+          "position": 11,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/03/images/section_article_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/03/images/section_article_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/03/images/section_article_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Elemento <aside>",
+          "alternativeHeadline": "Usos comuns do <aside>:",
+          "text": "O elemento <aside> representa conteúdo relacionado ao conteúdo principal, mas que pode ser considerado separado dele.",
+          "list": [
+            "Barras laterais com informações adicionais",
+            "Publicidade",
+            "Links relacionados",
+            "Definições de glossário"
+          ]
+        },
+        {
+          "position": 13,
+          "headline": "Elemento <footer>",
+          "alternativeHeadline": "Conteúdo típico do <footer>:",
+          "text": "O elemento <footer> representa o rodapé de uma página ou seção. Geralmente contém informações sobre o autor, links de navegação secundária e informações de copyright.",
+          "list": [
+            "Informações de contato",
+            "Links de navegação secundária",
+            "Copyright e informações legais",
+            "Redes sociais"
+          ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma página usando os elementos semânticos do HTML5 com:",
+        "steps": [
+          "Título = Estrutura Semântica com HTML5",
+          "Header = Com logo e navegação principal",
+          "Main = Com artigo principal sobre semântica HTML5",
+          "Section = Com seção sobre benefícios da semântica",
+          "Aside = Com informações adicionais sobre HTML5",
+          "Footer = Com informações de contato e copyright"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🎬 HTML5 - Elementos de Mídia",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Elementos de Mídia no HTML5",
+          "alternativeHeadline": "Vantagens dos Elementos Nativos:",
+          "text": "O HTML5 introduziu elementos nativos para trabalhar com mídia, eliminando a necessidade de plugins externos como Flash. Os principais elementos são <video>, <audio> e <canvas>.",
+          "list": [
+            "Não requer plugins externos",
+            "Melhor performance e compatibilidade",
+            "Controles nativos do navegador",
+            "API JavaScript rica",
+            "Suporte a múltiplos formatos",
+            "Responsivo por natureza"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Elemento <video>",
+          "alternativeHeadline": "Formatos Suportados:",
+          "text": "O elemento <video> permite incorporar conteúdo de vídeo diretamente nas páginas web, com controles nativos e suporte a múltiplos formatos.",
+          "list": [
+            "MP4 - Mais compatível",
+            "WebM - Código aberto, boa compressão",
+            "OGV - Formato livre",
+            "AVI - Menos comum na web"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo Básico:",
+          "list": [
+            "controls - Mostra controles",
+            "autoplay - Reproduz automaticamente",
+            "loop - Reproduz em loop",
+            "muted - Sem áudio inicial",
+            "poster - Imagem de preview"
+          ]
+        },
+        {
+          "position": 6,
+          "headline": "Elemento <audio>",
+          "alternativeHeadline": "Formatos Suportados:",
+          "text": "O elemento <audio> permite incorporar conteúdo de áudio diretamente nas páginas web, com controles nativos e suporte a múltiplos formatos.",
+          "list": [
+            "MP3 - Mais popular",
+            "WAV - Qualidade alta, arquivo grande",
+            "OGG - Código aberto",
+            "AAC - Boa compressão"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplo de Uso:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Elemento <canvas>",
+          "alternativeHeadline": "Usos do Canvas:",
+          "text": "O elemento <canvas> é uma área de desenho que permite criar gráficos, animações e manipular pixels usando JavaScript. É uma das funcionalidades mais poderosas do HTML5.",
+          "list": [
+            "Desenho de gráficos 2D",
+            "Animações interativas",
+            "Jogos web",
+            "Manipulação de imagens",
+            "Visualização de dados",
+            "Efeitos visuais"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo Básico:"
+        },
+        {
+          "position": 10,
+          "headline": "API de Mídia",
+          "alternativeHeadline": "Métodos Principais:",
+          "text": "Os elementos de mídia HTML5 possuem uma API JavaScript rica que permite controlar a reprodução, eventos e propriedades programaticamente.",
+          "list": [
+            "play() - Inicia reprodução",
+            "pause() - Pausa reprodução",
+            "load() - Recarrega o elemento",
+            "canPlayType() - Verifica formato"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Propriedades Importantes:",
+          "list": [
+            "currentTime - Tempo atual",
+            "duration - Duração total",
+            "volume - Volume (0-1)",
+            "muted - Estado do mute",
+            "paused - Se está pausado",
+            "ended - Se terminou"
+          ]
+        },
+        {
+          "position": 12,
+          "headline": "Eventos de Mídia",
+          "alternativeHeadline": "Eventos Principais:",
+          "text": "Os elementos de mídia disparam eventos que permitem criar experiências interativas e personalizadas.",
+          "list": [
+            "loadstart - Início do carregamento",
+            "loadeddata - Dados carregados",
+            "play - Início da reprodução",
+            "pause - Pausa",
+            "ended - Fim da reprodução",
+            "error - Erro no carregamento"
+          ]
+        },
+        {
+          "position": 13,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_mobile.png"
+          }
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma página com elementos de mídia HTML5 contendo:",
+        "steps": [
+          "Título = Experiência Multimídia com HTML5",
+          "Vídeo = Com controles e múltiplos formatos",
+          "Áudio = Com controles personalizados",
+          "Canvas = Com desenho básico usando JavaScript",
+          "Eventos = Implemente eventos para controlar a mídia",
+          "Responsivo = Garanta que funcione em diferentes dispositivos"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "📝 HTML5 - Novos Tipos de Input",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Evolução dos Formulários HTML5",
+          "alternativeHeadline": "Vantagens dos Novos Tipos:",
+          "text": "O HTML5 introduziu novos tipos de input que tornam os formulários mais intuitivos, com validação automática e controles específicos para diferentes tipos de dados. Isso melhora significativamente a experiência do usuário.",
+          "list": [
+            "Validação automática pelo navegador",
+            "Controles nativos otimizados",
+            "Melhor experiência em dispositivos móveis",
+            "Redução de código JavaScript",
+            "Acessibilidade aprimorada",
+            "Interface mais intuitiva"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/05/images/tipos_input_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/05/images/tipos_input_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/05/images/tipos_input_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Inputs para Texto Específico",
+          "alternativeHeadline": "Tipos de Texto:",
+          "text": "Estes tipos de input validam automaticamente o formato do texto inserido, proporcionando feedback imediato ao usuário.",
+          "list": [
+            "email - Valida formato de email",
+            "url - Valida URLs",
+            "tel - Números de telefone",
+            "search - Campos de busca",
+            "password - Senhas (já existia)",
+            "text - Texto livre (padrão)"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo de Uso:"
+        },
+        {
+          "position": 6,
+          "headline": "Inputs Numéricos",
+          "alternativeHeadline": "Tipos Numéricos:",
+          "text": "Para entrada de valores numéricos, o HTML5 oferece tipos específicos que facilitam a digitação e validação.",
+          "list": [
+            "number - Números inteiros e decimais",
+            "range - Controle deslizante",
+            "min/max - Define limites",
+            "step - Define incrementos"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplo com Number e Range:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/05/images/inputs_numericos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/05/images/inputs_numericos_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/05/images/inputs_numericos_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Inputs de Data e Hora",
+          "alternativeHeadline": "Tipos de Data/Hora:",
+          "text": "Para entrada de datas e horários, o HTML5 oferece controles nativos que são especialmente úteis em dispositivos móveis.",
+          "list": [
+            "date - Data (ano-mês-dia)",
+            "time - Horário (hora:minuto)",
+            "datetime-local - Data e hora local",
+            "month - Mês e ano",
+            "week - Semana do ano"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo de Datas:"
+        },
+        {
+          "position": 10,
+          "headline": "Inputs Especiais",
+          "alternativeHeadline": "Tipos Especiais:",
+          "text": "Alguns tipos de input oferecem funcionalidades únicas e interfaces específicas para casos especiais.",
+          "list": [
+            "color - Seletor de cores",
+            "file - Upload de arquivos",
+            "hidden - Campo oculto",
+            "checkbox - Caixa de seleção",
+            "radio - Botão de opção",
+            "submit - Botão de envio"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplo de Inputs Especiais:"
+        },
+        {
+          "position": 12,
+          "headline": "Atributos de Validação",
+          "alternativeHeadline": "Atributos Principais:",
+          "text": "O HTML5 introduziu novos atributos que permitem validação mais robusta sem JavaScript.",
+          "list": [
+            "required - Campo obrigatório",
+            "pattern - Expressão regular",
+            "minlength/maxlength - Tamanho do texto",
+            "min/max - Valores mínimo/máximo",
+            "step - Incremento para números",
+            "placeholder - Texto de exemplo"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo com Validação:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/05/images/validacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/05/images/validacao_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/05/images/validacao_mobile.png"
+          }
+        },
+        {
+          "position": 14,
+          "headline": "Novos Elementos de Formulário",
+          "alternativeHeadline": "Novos Elementos:",
+          "text": "Além dos novos tipos de input, o HTML5 também introduziu novos elementos que complementam os formulários.",
+          "list": [
+            "datalist - Lista de sugestões",
+            "output - Exibe resultados de cálculos",
+            "progress - Barra de progresso",
+            "meter - Medidor de valores",
+            "keygen - Geração de chaves (depreciado)"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Exemplo com Datalist e Output:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie um formulário completo usando os novos tipos de input HTML5 com:",
+        "steps": [
+          "Título = Formulário Avançado HTML5",
+          "Dados Pessoais = Nome, email, telefone com validação",
+          "Preferências = Cor, data, horário, número com range",
+          "Upload = Campo para arquivo de foto",
+          "Validação = Use required, pattern, min/max",
+          "Extras = Datalist, progress, output"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "💾 HTML5 - Armazenamento Local",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Web Storage API",
+          "alternativeHeadline": "Vantagens do Armazenamento Local:",
+          "text": "O HTML5 introduziu a Web Storage API, que permite armazenar dados localmente no navegador do usuário. Isso possibilita criar aplicações web mais interativas e funcionais, mesmo offline.",
+          "list": [
+            "Dados persistem entre sessões",
+            "Melhor performance que cookies",
+            "Maior capacidade de armazenamento",
+            "API simples e intuitiva",
+            "Funciona offline",
+            "Mais seguro que cookies"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/06/images/web_storage_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/06/images/web_storage_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/06/images/web_storage_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "localStorage vs sessionStorage",
+          "alternativeHeadline": "localStorage:",
+          "text": "Existem dois tipos principais de armazenamento web, cada um com características específicas de persistência e escopo.",
+          "list": [
+            "Dados persistem até serem explicitamente removidos",
+            "Sobrevive ao fechamento do navegador",
+            "Compartilhado entre abas do mesmo domínio",
+            "Capacidade: ~5-10MB",
+            "Ideal para configurações e preferências"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "sessionStorage:",
+          "list": [
+            "Dados são removidos ao fechar a aba",
+            "Limitado à sessão atual",
+            "Isolado entre abas diferentes",
+            "Capacidade: ~5-10MB",
+            "Ideal para dados temporários"
+          ]
+        },
+        {
+          "position": 6,
+          "headline": "Métodos da Web Storage API",
+          "alternativeHeadline": "Métodos Principais:",
+          "text": "A API Web Storage oferece métodos simples para manipular dados armazenados localmente.",
+          "list": [
+            "setItem(chave, valor) - Armazena dados",
+            "getItem(chave) - Recupera dados",
+            "removeItem(chave) - Remove item específico",
+            "clear() - Remove todos os dados",
+            "key(índice) - Retorna chave por posição",
+            "length - Número de itens armazenados"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplo Completo:"
+        },
+        {
+          "position": 8,
+          "headline": "Trabalhando com Objetos",
+          "alternativeHeadline": "Conversão de Dados:",
+          "text": "Como o Web Storage só armazena strings, é necessário converter objetos JavaScript usando JSON para armazená-los.",
+          "list": [
+            "JSON.stringify() - Objeto para string",
+            "JSON.parse() - String para objeto",
+            "Tratamento de erros importante",
+            "Validação de dados"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Funções Utilitárias:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/06/images/objetos_json_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/06/images/objetos_json_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/06/images/objetos_json_mobile.png"
+          }
+        },
+        {
+          "position": 10,
+          "headline": "Eventos de Storage",
+          "alternativeHeadline": "Evento storage:",
+          "text": "O Web Storage dispara eventos quando os dados são modificados, permitindo sincronização entre abas e componentes.",
+          "list": [
+            "Disparado quando dados são modificados",
+            "Funciona entre abas do mesmo domínio",
+            "Não dispara na aba que fez a mudança",
+            "Propriedades: key, oldValue, newValue"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplo de Uso:"
+        },
+        {
+          "position": 12,
+          "headline": "Casos de Uso Práticos",
+          "alternativeHeadline": "Aplicações Comuns:",
+          "text": "O armazenamento local é útil em diversas situações, desde configurações simples até dados complexos de aplicação.",
+          "list": [
+            "Preferências do usuário",
+            "Carrinho de compras temporário",
+            "Dados de formulário",
+            "Cache de dados da API",
+            "Configurações de tema",
+            "Histórico de navegação"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo: Sistema de Preferências:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/06/images/casos_uso_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/06/images/casos_uso_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/06/images/casos_uso_mobile.png"
+          }
+        },
+        {
+          "position": 14,
+          "headline": "Limitações e Considerações",
+          "alternativeHeadline": "Limitações:",
+          "text": "Embora poderoso, o Web Storage tem limitações que devem ser consideradas ao desenvolver aplicações.",
+          "list": [
+            "Capacidade limitada (~5-10MB)",
+            "Só armazena strings",
+            "Pode ser limpo pelo usuário",
+            "Modo incógnito pode não funcionar",
+            "Limitado ao mesmo domínio"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Boas Práticas:",
+          "list": [
+            "Sempre tratar erros de armazenamento",
+            "Verificar se o storage está disponível",
+            "Não armazenar dados sensíveis",
+            "Implementar fallbacks para dados importantes",
+            "Limpar dados desnecessários",
+            "Usar nomes de chaves descritivos"
+          ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma aplicação usando Web Storage com:",
+        "steps": [
+          "Título = Aplicação com Armazenamento Local",
+          "Configurações = Sistema de preferências do usuário",
+          "Dados = Formulário que salva dados automaticamente",
+          "Sincronização = Eventos para sincronizar entre abas",
+          "Persistência = Dados que sobrevivem ao fechamento",
+          "Interface = Botões para salvar, carregar e limpar dados"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "🌍 HTML5 - Geolocalização e APIs Web",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+          }
+        },
+        {
+          "position": 2,
+          "headline": "Geolocation API",
+          "alternativeHeadline": "Características da API:",
+          "text": "A Geolocation API permite que aplicações web acessem a localização geográfica do usuário, criando experiências personalizadas baseadas em localização. É uma das APIs mais úteis para aplicações modernas.",
+          "list": [
+            "Acesso à localização GPS",
+            "Rede de torres de celular",
+            "Pontos de acesso WiFi",
+            "IP aproximado",
+            "Precisão variável",
+            "Requer permissão do usuário"
+          ]
+        },
+        {
+          "position": 3,
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_mobile.png"
+          }
+        },
+        {
+          "position": 4,
+          "headline": "Método getCurrentPosition()",
+          "alternativeHeadline": "Parâmetros:",
+          "text": "O método principal para obter a localização atual do usuário. É assíncrono e retorna as coordenadas via callback.",
+          "list": [
+            "successCallback - Função de sucesso",
+            "errorCallback - Função de erro (opcional)",
+            "options - Opções de configuração (opcional)"
+          ]
+        },
+        {
+          "position": 5,
+          "alternativeHeadline": "Exemplo Básico:"
+        },
+        {
+          "position": 6,
+          "headline": "Objeto Position",
+          "alternativeHeadline": "Propriedades do Position:",
+          "text": "O objeto retornado contém informações detalhadas sobre a localização e a precisão da medição.",
+          "list": [
+            "coords.latitude - Latitude em graus",
+            "coords.longitude - Longitude em graus",
+            "coords.accuracy - Precisão em metros",
+            "coords.altitude - Altitude em metros",
+            "coords.altitudeAccuracy - Precisão da altitude",
+            "coords.heading - Direção em graus",
+            "coords.speed - Velocidade em m/s",
+            "timestamp - Data/hora da medição"
+          ]
+        },
+        {
+          "position": 7,
+          "alternativeHeadline": "Exemplo Detalhado:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_mobile.png"
+          }
+        },
+        {
+          "position": 8,
+          "headline": "Opções de Configuração",
+          "alternativeHeadline": "Propriedades das Options:",
+          "text": "As opções permitem controlar como a localização é obtida, balanceando precisão, velocidade e consumo de bateria.",
+          "list": [
+            "enableHighAccuracy - Alta precisão (GPS)",
+            "timeout - Tempo limite em ms",
+            "maximumAge - Cache máximo em ms"
+          ]
+        },
+        {
+          "position": 9,
+          "alternativeHeadline": "Exemplo com Opções:"
+        },
+        {
+          "position": 10,
+          "headline": "Monitoramento Contínuo",
+          "alternativeHeadline": "Método watchPosition():",
+          "text": "Para aplicações que precisam acompanhar mudanças de localização, use watchPosition() em vez de getCurrentPosition().",
+          "list": [
+            "Monitora mudanças de posição",
+            "Retorna ID para parar monitoramento",
+            "Ideal para navegação",
+            "Consome mais bateria",
+            "Para com clearWatch()"
+          ]
+        },
+        {
+          "position": 11,
+          "alternativeHeadline": "Exemplo de Monitoramento:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_mobile.png"
+          }
+        },
+        {
+          "position": 12,
+          "headline": "Tratamento de Erros",
+          "alternativeHeadline": "Códigos de Erro:",
+          "text": "É essencial tratar adequadamente os erros de geolocalização para proporcionar uma boa experiência ao usuário.",
+          "list": [
+            "PERMISSION_DENIED (1) - Usuário negou permissão",
+            "POSITION_UNAVAILABLE (2) - Localização indisponível",
+            "TIMEOUT (3) - Tempo limite excedido"
+          ]
+        },
+        {
+          "position": 13,
+          "alternativeHeadline": "Exemplo de Tratamento:"
+        },
+        {
+          "position": 14,
+          "headline": "Outras APIs Web HTML5",
+          "alternativeHeadline": "APIs Importantes:",
+          "text": "Além da geolocalização, o HTML5 introduziu várias outras APIs que expandem as capacidades das aplicações web.",
+          "list": [
+            "Device Orientation - Orientação do dispositivo",
+            "Vibration API - Vibração do dispositivo",
+            "Battery API - Status da bateria",
+            "Network Information - Conexão de rede",
+            "Page Visibility - Visibilidade da página",
+            "Fullscreen API - Tela cheia"
+          ]
+        },
+        {
+          "position": 15,
+          "alternativeHeadline": "Exemplo: Device Orientation:",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_mobile.png"
+          }
+        },
+        {
+          "position": 16,
+          "headline": "Casos de Uso Práticos",
+          "alternativeHeadline": "Aplicações Comuns:",
+          "text": "A geolocalização e outras APIs web abrem possibilidades para diversos tipos de aplicações.",
+          "list": [
+            "Mapas e navegação",
+            "Encontrar restaurantes próximos",
+            "Jogos baseados em localização",
+            "Redes sociais com check-ins",
+            "Aplicativos de clima local",
+            "Rastreamento de fitness"
+          ]
+        },
+        {
+          "position": 17,
+          "alternativeHeadline": "Exemplo: App de Clima Local:"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício",
+        "text": "Crie uma aplicação usando Geolocalização e APIs Web com:",
+        "steps": [
+          "Título = Aplicação com Geolocalização",
+          "Localização = Obter e exibir coordenadas do usuário",
+          "Monitoramento = Acompanhar mudanças de posição",
+          "Mapa = Integrar com serviço de mapas",
+          "APIs Extras = Usar Device Orientation ou outras APIs",
+          "Tratamento = Implementar tratamento de erros completo"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+      }
+    }
+  }
+]

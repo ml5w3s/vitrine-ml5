@@ -1,0 +1,40 @@
+Plano para Conversão de HTML de Aulas para JSON Semântico
+
+Objetivo:
+Integrar o conteúdo das aulas existentes em arquivos HTML para o novo formato JSON semântico da aplicação SPA, que utiliza a estrutura de 'articles', 'exercise', 'controls' e 'playground'.
+
+Desafio:
+A conversão automática de HTML arbitrário para uma estrutura JSON semântica é complexa devido à natureza livre do HTML. Para garantir a precisão e a semântica correta, será adotada uma abordagem semi-automatizada com a orientação do usuário.
+
+Abordagem Proposta (Passo a Passo):
+
+Passo 1: Leitura do Arquivo HTML da Aula
+---------------------------------------
+- O assistente (eu) lerá o conteúdo de um arquivo HTML de aula específico (ex: mlab5/data/html5/01/index.html).
+- O conteúdo HTML bruto será apresentado ao usuário.
+
+Passo 2: Definição das Regras de Mapeamento (Orientação do Usuário)
+-----------------------------------------------------------------
+- Com base no HTML apresentado e no esquema JSON de referência fornecido pelo usuário, o usuário guiará o assistente na definição de "regras" ou "padrões" para extrair cada pedaço de informação.
+- Exemplos de mapeamento:
+    - Título do Curso: Texto dentro de um `<h3>` específico (ex: o primeiro `<h3>` dentro de `<section class="container"><article class="item">`).
+    - Título do Artigo (`headline`): Texto dentro de `<h3>` ou `<h4>` dentro de `<article class="item">`.
+    - Texto do Artigo (`text`): Conteúdo de tags `<p>`.
+    - Listas (`list`): Conteúdo de tags `<ul>` ou `<ol>`.
+    - Imagens (`image`): Tags `<img>`, extraindo `src`, `alt` e `caption` (se disponível em um `<p>` adjacente).
+    - Blocos de Código (`code`, `programmingLanguage`): Conteúdo de tags `<pre><code>`. O `programmingLanguage` pode ser inferido ou especificado pelo usuário.
+    - Exercício (`exercise`): Seções específicas do HTML identificadas pelo usuário (ex: um `<span>` com `id="exercicio"`). O `headline`, `text` e `steps` (de `<ul>` ou `<ol>`) serão extraídos.
+    - Controles (`controls`): Seções específicas do HTML (ex: um `<form>` com `id="controles"`). Templates e estilos serão extraídos.
+
+Passo 3: Criação da Função de Extração (Implementação do Assistente)
+-------------------------------------------------------------------
+- Com base nas regras de mapeamento definidas no Passo 2, o assistente criará uma função JavaScript (ou um script Python, se necessário) que utilizará DOM parsing (ou manipulação de strings/regex, dependendo da complexidade) para extrair os dados do HTML e construir o objeto JSON da aula.
+- Esta função será testada com o arquivo HTML de exemplo.
+
+Passo 4: Processamento em Lote e Geração do JSON Final
+-----------------------------------------------------
+- Uma vez que a função de extração esteja validada para um arquivo HTML, ela será aplicada a todos os arquivos HTML de aulas de um curso específico (ex: os 7 arquivos HTML da aula de HTML5).
+- O resultado será consolidado em um único arquivo JSON por curso (ex: `mlab5/data/html5.json`), contendo um array de objetos de lição, cada um no formato JSON desejado.
+- O `mlab5/data/courses.json` será atualizado para apontar para esses novos arquivos JSON de curso.
+
+Este processo garante que a semântica do conteúdo seja preservada e corretamente mapeada para a nova estrutura, com a flexibilidade de se adaptar a diferentes layouts HTML.

@@ -1,0 +1,62 @@
+/** debug.css - Estilos para o painel de depuração */
+
+#debug-panel {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 400px;
+    max-height: 50vh;
+    overflow-y: auto;
+    background-color: rgba(30, 30, 30, 0.9);
+    color: #f0f0f0;
+    border: 1px solid #555;
+    border-radius: 8px;
+    z-index: 9999;
+    font-family: monospace;
+    font-size: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.debug-header {
+    padding: 8px 12px;
+    background-color: #333;
+    font-weight: bold;
+    border-bottom: 1px solid #555;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.debug-section {
+    padding: 10px 12px;
+    border-bottom: 1px dashed #444;
+}
+
+.debug-section:last-child {
+    border-bottom: none;
+}
+
+.debug-section h4 {
+    margin: 0 0 8px 0;
+    color: #00aaff;
+    font-size: 13px;
+}
+
+.debug-section p {
+    margin: 0 0 4px 0;
+}
+
+.debug-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.debug-section li {
+    padding: 2px 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.debug-error {
+    color: #ff6b6b;
+}

@@ -26,6 +26,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="src/assets/css/debug.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -56,13 +57,22 @@
   <!-- Views -->
   <script src="src/assets/js/views/HomeView.js"></script>
   <script src="src/assets/js/views/CourseView.js"></script>
+  <script src="src/assets/js/views/LessonCreatorView.js"></script>
+  <script src="src/assets/js/views/PlaygroundView.js"></script>
   <!-- Roteamento -->
   <script src="src/assets/js/routing/Router.js"></script>
+  
+  <!-- Helpers -->
+  <script src="src/assets/js/helpers/Debug.js"></script>
+  <script src="src/assets/js/components/DebugView.js"></script>
   
   <!-- Lógica Principal da Aplicação -->
   <script src="src/assets/js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Inicializa o painel de depuração
+      new DebugView();
+
       // Carrega componentes estáticos (header/footer)
       loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
         .then(() => {
@@ -113,6 +123,23 @@
         } else {
           appRoot.innerHTML = '<h2>Aula não encontrada</h2>';
         }
+      });
+
+      // Define a rota para o Criador de Aulas
+      router.addRoute('/creator', async () => {
+        appRoot.innerHTML = 'Carregando criador de aulas...';
+        const creatorView = renderLessonCreatorView();
+        appRoot.innerHTML = ''; // Limpa o 'Carregando'
+        appRoot.appendChild(creatorView);
+      });
+
+      // Define a rota para o Playground
+      router.addRoute('/course/:courseId/lesson/:lessonId/playground', async (params) => {
+        const { courseId, lessonId } = params;
+        appRoot.innerHTML = `Carregando Playground para aula ${lessonId} do curso ${courseId}...`;
+        const playgroundView = await renderPlaygroundView(courseId, lessonId);
+        appRoot.innerHTML = ''; // Limpa o 'Carregando'
+        appRoot.appendChild(playgroundView);
       });
       
       // O router já tem listeners para 'load' e 'hashchange', 

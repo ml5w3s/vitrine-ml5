@@ -1,8 +1,7 @@
 /**
- * ApiService - Singleton para gerenciar a comunicação com a fonte de dados (API, arquivos JSON).
+ * ApiService - Singleton para gerenciar a comunicação com a fonte de dados (arquivos JSON).
  *
- * Este serviço será responsável por buscar dados de cursos, aulas, etc.,
- * e transformá-los em instâncias das classes do nosso modelo (Course, Lesson).
+ * Este serviço é responsável por buscar dados de cursos e aulas.
  */
 class ApiService {
     constructor() {
@@ -10,60 +9,116 @@ class ApiService {
             return ApiService.instance;
         }
         ApiService.instance = this;
-        // A URL base aponta para a pasta de dados na raiz do projeto mlab5.
         this.baseUrl = './data';
     }
 
     /**
-     * Busca o índice de cursos.
-     * Assume que existe um arquivo 'courses.json' na baseUrl.
-     * @returns {Promise<Course[]>} Uma promessa que resolve para uma lista de instâncias de Course.
+     * Busca o índice de cursos do arquivo courses.json gerado automaticamente.
+     * @returns {Promise<Course[]>} Uma promessa que resolve para um array de instâncias de Course.
      */
     async getCourseIndex() {
+        Debug.log('ApiService', 'Buscando índice de cursos...');
         try {
             const response = await fetch(`${this.baseUrl}/courses.json`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            const coursesData = await response.json();
+            const courseIndexData = await response.json();
+            Debug.table('ApiService', 'Índice de Cursos Recebido', courseIndexData);
 
-            // Mapeia os dados brutos para instâncias da classe Course
-            // É importante que as classes Lesson e Course já estejam carregadas no escopo global
-            // ou importadas caso esteja usando módulos JS.
-            return coursesData.map(courseData => {
-                const lessons = courseData.lessons.map(lessonData => new Lesson(lessonData.id, lessonData.title, lessonData.content, lessonData.type));
-                return new Course(courseData.id, courseData.title, courseData.description, lessons);
-            });
+            if (courseIndexData && Array.isArray(courseIndexData)) {
+                return courseIndexData.map(meta => new Course(meta.id, meta.title, meta.description));
+            }
+            return [];
+
         } catch (error) {
-            console.error("Falha ao buscar o índice de cursos:", error);
-            return []; // Retorna uma lista vazia em caso de erro
+            Debug.error('ApiService', 'Falha ao buscar o índice de cursos:', error);
+            return [];
         }
     }
 
     /**
-     * Busca um curso específico pelo seu ID.
+     * Busca um curso específico pelo seu ID, incluindo todas as suas aulas.
      * @param {string} courseId O ID do curso a ser buscado.
      * @returns {Promise<Course|null>}
      */
     async getCourseById(courseId) {
-        console.log(`Buscando curso com ID: ${courseId}`);
-        const allCourses = await this.getCourseIndex();
-        return allCourses.find(course => course.id === courseId) || null;
+        Debug.log('ApiService', `Buscando curso completo com ID: ${courseId}`);
+        Debug.updateView('Curso', courseId);
+
+        try {
+            const courseIndexData = await this._fetchJson(`${this.baseUrl}/courses.json`);
+            const courseMeta = courseIndexData.find(c => c.id === courseId);
+
+            if (!courseMeta) {
+                throw new Error(`Curso com id '${courseId}' não encontrado no índice.`);
+            }
+
+            const lessonsData = await this._fetchJson(`${this.baseUrl}/${courseId}/aulas.json`);
+            Debug.log('ApiService', `Dados das aulas para o curso '${courseId}' recebidos.`, lessonsData);
+
+            const lessons = lessonsData.map((lessonWrapper, index) => {
+                const lessonContent = lessonWrapper.course; // O conteúdo real está dentro da chave "course"
+                const lessonId = String(index + 1).padStart(2, '0'); // Gera IDs como '01', '02', etc.
+                const lessonTitle = lessonContent.name;
+                
+                // Determina o tipo da aula (ex: 'playground')
+                const lessonType = lessonContent.playground ? 'playground' : 'default';
+
+                // O `content` da aula deve ser o objeto que contém a chave "course",
+                // para ser consistente com o que PlaygroundComponent e Lesson.render() esperam.
+                return new Lesson(lessonId, lessonTitle, lessonWrapper, lessonType);
+            });
+
+            const course = new Course(courseMeta.id, courseMeta.title, courseMeta.description, lessons);
+            Debug.log('ApiService', `Curso '${courseId}' montado com sucesso.`, course);
+            return course;
+
+        } catch (error) {
+            Debug.error('ApiService', `Falha ao buscar ou processar o curso '${courseId}':`, error);
+            return null;
+        }
     }
 
     /**
-     * Busca uma aula específica pelo ID do curso e ID da aula. 
+     * Busca uma aula específica pelo ID do curso e ID da aula.
      * @param {string} courseId O ID do curso ao qual a aula pertence.
      * @param {string} lessonId O ID da aula a ser buscada.
-     * @returns {Promise<Lesson|null>} Uma promessa que resolve para uma instância de Lesson ou null.
+     * @returns {Promise<Lesson|null>}
      */
     async getLessonById(courseId, lessonId) {
-        console.log(`Buscando aula ${lessonId} no curso ${courseId}...`);
-        const course = await this.getCourseById(courseId);
-        if (course && course.lessons) {
-            return course.lessons.find(lesson => lesson.id === lessonId) || null;
+        Debug.log('ApiService', `Buscando aula ${lessonId} no curso ${courseId}...`);
+        Debug.updateView('Aula', lessonId);
+
+        try {
+            const course = await this.getCourseById(courseId);
+            if (course && course.lessons) {
+                const lesson = course.lessons.find(l => l.id === lessonId);
+                if (lesson) {
+                    Debug.log('ApiService', `Aula ${lessonId} encontrada.`, lesson);
+                } else {
+                    throw new Error(`Aula com id '${lessonId}' não encontrada no curso '${courseId}'.`);
+                }
+                return lesson;
+            }
+            return null;
+        } catch (error) {
+            Debug.error('ApiService', `Erro ao buscar a aula ${lessonId}:`, error);
+            return null;
         }
-        return null;
+    }
+
+    /**
+     * Função auxiliar para buscar e parsear JSON com tratamento de erro.
+     * @param {string} url A URL do JSON a ser buscado.
+     * @returns {Promise<any>}
+     */
+    async _fetchJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Falha na requisição para ${url} - Status: ${response.status}`);
+        }
+        return response.json();
     }
 }
 

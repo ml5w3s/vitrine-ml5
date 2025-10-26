@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conversor de HTML para JSON de Aulas</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+<section class="container">
+  <h1>Conversor de HTML para JSON de Aulas</h1>
+  <p>Selecione os arquivos HTML das aulas para converter em um único arquivo JSON.</p>
+</section>
+
+<section class="container">
+  <article class="item">
+    <form id="form-conversor">
+      <label for="file-input">Selecione os arquivos HTML:</label>
+      <input type="file" id="file-input" multiple accept=".html,.htm">
+      <br><br>
+      <button type="button" onclick="converterArquivos()">Converter para JSON</button>
+    </form>
+  </article>
+</section>
+
+<section class="container">
+  <article class="item">
+    <h2>JSON Gerado</h2>
+    <pre id="json-output"></pre>
+    <br>
+    <button id="download-btn" style="display:none;" onclick="baixarJSON()">Baixar JSON</button>
+  </article>
+</section>
+
+<script>
+  let lessonsData = [];
+
+  function converterArquivos() {
+    const fileInput = document.getElementById('file-input');
+    const files = fileInput.files;
+    const jsonOutput = document.getElementById('json-output');
+    const downloadBtn = document.getElementById('download-btn');
+
+    if (files.length === 0) {
+      alert('Por favor, selecione pelo menos um arquivo HTML.');
+      return;
+    }
+
+    lessonsData = [];
+    jsonOutput.textContent = '';
+    downloadBtn.style.display = 'none';
+
+    let filesProcessed = 0;
+
+    for (const file of files) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const htmlContent = event.target.result;
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlContent, 'text/html');
+        const lessonJson = extrairDados(doc);
+        lessonsData.push(lessonJson);
+
+        filesProcessed++;
+        if (filesProcessed === files.length) {
+          jsonOutput.textContent = JSON.stringify(lessonsData, null, 2);
+          downloadBtn.style.display = 'block';
+        }
+      };
+      reader.readAsText(file);
+    }
+  }
+
+  function extrairDados(doc) {
+    const courseName = doc.querySelector('section.container article.item h3')?.innerText.trim();
+
+    const courseImage = {};
+    const coursePicture = doc.querySelector('section.container article.item picture');
+    if (coursePicture) {
+      coursePicture.querySelectorAll('source').forEach(source => {
+        if (source.media.includes('1024px')) courseImage.desktop = source.srcset;
+        if (source.media.includes('600px')) courseImage.tablet = source.srcset;
+      });
+      courseImage.mobile = coursePicture.querySelector('img')?.src;
+    }
+
+    const articles = [];
+    doc.querySelectorAll('main#aulas section.container article.item').forEach((article, index) => {
+      const articleData = { position: index + 1 };
+
+      const headline = article.querySelector('h3')?.innerText.trim();
+      if (headline && headline !== courseName) articleData.headline = headline;
+
+      const alternativeHeadline = article.querySelector('h4')?.innerText.trim();
+      if (alternativeHeadline) articleData.alternativeHeadline = alternativeHeadline;
+
+      const subheadline = article.querySelector('h5')?.innerText.trim();
+      if (subheadline) articleData.subheadline = subheadline;
+
+      const text = article.querySelector('p')?.innerText.trim();
+      if (text) articleData.text = text;
+
+      const list = [];
+      article.querySelectorAll('ul li').forEach(li => {
+        list.push(li.innerText.trim());
+      });
+      if (list.length > 0) articleData.list = list;
+
+      const image = {};
+      const picture = article.querySelector('picture');
+      if (picture) {
+        picture.querySelectorAll('source').forEach(source => {
+          if (source.media.includes('1024px')) image.desktop = source.srcset;
+          if (source.media.includes('600px')) image.tablet = source.srcset;
+        });
+        image.mobile = picture.querySelector('img')?.src;
+        const caption = article.nextElementSibling?.tagName === 'P' ? article.nextElementSibling.innerText.trim() : null;
+        if (caption) image.caption = caption;
+      } else {
+        const img = article.querySelector('img');
+        if (img) {
+          image.src = img.src;
+          const caption = article.nextElementSibling?.tagName === 'P' ? article.nextElementSibling.innerText.trim() : null;
+          if (caption) image.caption = caption;
+        }
+      }
+      if (Object.keys(image).length > 0) articleData.image = image;
+
+      if (Object.keys(articleData).length > 1) {
+        articles.push(articleData);
+      }
+    });
+
+    const exercise = {};
+    const exerciseEl = doc.getElementById('exercicio');
+    if (exerciseEl) {
+      exercise.headline = 'Exercício'; // Placeholder
+      exercise.text = exerciseEl.querySelector('p')?.innerText.trim();
+      const steps = [];
+      exerciseEl.querySelectorAll('ul li').forEach(li => {
+        steps.push(li.innerText.trim());
+      });
+      exercise.steps = steps;
+    }
+
+    const controls = {};
+    const controlsEl = doc.getElementById('controles');
+    if (controlsEl) {
+      const templates = [];
+      controlsEl.querySelectorAll('select#templateSelect option').forEach(option => {
+        templates.push(option.value);
+      });
+      controls.templates = templates;
+
+      controls.styles = {
+        background: controlsEl.querySelector('#bgColor')?.value,
+        foreground: controlsEl.querySelector('#textColor')?.value,
+        fontFamily: controlsEl.querySelector('#fontFamily')?.value,
+      };
+    }
+
+    const playground = {};
+    const playgroundEl = doc.querySelector('a[href*="playground"]');
+    if (playgroundEl) {
+      playground.url = playgroundEl.href;
+    }
+
+    return {
+      course: {
+        name: courseName,
+        image: courseImage,
+        articles: articles,
+        exercise: exercise,
+        controls: controls,
+        playground: playground
+      }
+    };
+  }
+
+  function baixarJSON() {
+    const jsonString = JSON.stringify(lessonsData, null, 2);
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'lessons.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+</script>
+
+</body>
+</html>

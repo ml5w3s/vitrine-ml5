@@ -1,0 +1,389 @@
+[
+  {
+    "course": {
+      "name": "Aula 01 - Introdução ao jQuery",
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Introdução ao jQuery",
+          "text": "Conceitos básicos, seletores e manipulação inicial do DOM."
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 02 - Efeitos e Animações",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/images/banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/images/banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/images/banner_legado_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Efeitos jQuery",
+          "text": "jQuery oferece uma variedade de efeitos visuais que tornam as interfaces mais dinâmicas e atraentes. Os efeitos são divididos em categorias principais: fade, slide, show/hide e animações customizadas.",
+          "list": [
+            "Efeitos Fade: fadeIn, fadeOut, fadeToggle, fadeTo",
+            "Efeitos Slide: slideUp, slideDown, slideToggle",
+            "Show/Hide: show, hide, toggle",
+            "Animações: animate (customizado)"
+          ]
+        },
+        {
+            "position": 2,
+            "headline": "Efeitos Fade",
+            "text": "Os efeitos fade controlam a opacidade dos elementos, criando transições suaves de aparecer e desaparecer.",
+            "list": [
+                "fadeIn(): Aparece gradualmente",
+                "fadeOut(): Desaparece gradualmente",
+                "fadeToggle(): Alterna entre aparecer/desaparecer",
+                "fadeTo(): Define opacidade específica"
+            ],
+            "code": [
+                "// ✅ Efeitos fade básicos",
+                "$('#elemento').fadeIn();",
+                "$('#elemento').fadeOut();",
+                "$('#elemento').fadeToggle();",
+                "// ✅ Fade com duração específica",
+                "$('#elemento').fadeIn(1000);",
+                "// ✅ fadeTo - define opacidade específica",
+                "$('#elemento').fadeTo(1000, 0.5);",
+                "// ✅ Com callbacks",
+                "$('#elemento').fadeIn(1000, function() {",
+                "    alert('Elemento apareceu!');",
+                "});"
+            ],
+            "programmingLanguage": "javascript"
+        },
+        {
+            "position": 3,
+            "headline": "Efeitos Slide",
+            "text": "Os efeitos slide animam a altura dos elementos, criando movimento de deslizar para cima ou para baixo.",
+            "list": [
+                "slideUp(): Desliza para cima (oculta)",
+                "slideDown(): Desliza para baixo (mostra)",
+                "slideToggle(): Alterna entre slideUp/slideDown"
+            ],
+            "code": [
+                "// ✅ Efeitos slide básicos",
+                "$('#elemento').slideUp();",
+                "$('#elemento').slideDown();",
+                "$('#elemento').slideToggle();",
+                "// ✅ Com easing (suavização)",
+                "$('#elemento').slideUp(1000, 'swing');",
+                "// ✅ Exemplo prático - menu acordeão",
+                "$(document).ready(function() {",
+                "    $('.menu-titulo').click(function() {",
+                "        $('.menu-conteudo').slideToggle('slow');",
+                "    });",
+                "});"
+            ],
+            "programmingLanguage": "javascript"
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício Prático",
+        "text": "Crie uma página HTML com jQuery que demonstre todos os efeitos aprendidos:",
+        "steps": [
+          "Título = Galeria de Efeitos jQuery",
+          "Implemente todos os efeitos fade (fadeIn, fadeOut, fadeToggle)",
+          "Adicione efeitos slide (slideUp, slideDown, slideToggle)",
+          "Crie botões para show/hide/toggle",
+          "Desenvolva animações customizadas com animate()",
+          "Use diferentes durações e easing",
+          "Implemente callbacks em algumas animações"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ],
+        "styles": {
+          "background": "#ffffff",
+          "foreground": "#000000",
+          "fontFamily": "Arial, sans-serif"
+        }
+      },
+      "playground": {
+        "url": "/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 03 - Manipulação Avançada do DOM",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/data/images/03_banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/data/images/03_banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/data/images/03_banner_legado_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Adicionando Elementos",
+          "text": "jQuery oferece diversos métodos para adicionar novos elementos ao DOM de forma dinâmica. Estes métodos permitem inserir conteúdo em diferentes posições relativas aos elementos existentes.",
+          "list": [
+            "append(): Adiciona ao final do conteúdo",
+            "prepend(): Adiciona ao início do conteúdo",
+            "after(): Adiciona após o elemento",
+            "before(): Adiciona antes do elemento"
+          ]
+        },
+        {
+            "position": 2,
+            "headline": "Removendo Elementos",
+            "text": "Para remover elementos do DOM, jQuery oferece métodos que permitem remover elementos específicos ou todo seu conteúdo, mantendo a estrutura ou não.",
+            "list": [
+                "remove(): Remove elemento e todos os filhos",
+                "empty(): Remove apenas o conteúdo (filhos)",
+                "detach(): Remove mas mantém dados jQuery",
+                "unwrap(): Remove elemento pai"
+            ]
+        },
+        {
+            "position": 3,
+            "headline": "Modificando Elementos",
+            "text": "jQuery oferece métodos para modificar propriedades, conteúdo e estrutura dos elementos existentes de forma dinâmica.",
+            "list": [
+                "html(): Altera conteúdo HTML",
+                "text(): Altera texto (sem HTML)",
+                "val(): Altera valor de inputs",
+                "attr(): Altera atributos",
+                "css(): Altera estilos CSS"
+            ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício Prático",
+        "text": "Crie uma aplicação HTML com jQuery que demonstre manipulação avançada do DOM:",
+        "steps": [
+          "Título = Editor Dinâmico jQuery",
+          "Implemente funcionalidades para adicionar/remover elementos",
+          "Adicione métodos para modificar conteúdo e atributos",
+          "Crie sistema de navegação entre elementos",
+          "Desenvolva filtros e seleção de elementos"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ]
+      },
+      "playground": {
+        "url": "/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 04 - Slides e Carrosséis",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/data/images/04_banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/data/images/04_banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/data/images/04_banner_legado_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Slideshow Básico",
+          "text": "Um slideshow é uma apresentação de imagens ou conteúdo que muda automaticamente ou através de controles do usuário. Vamos aprender a criar slideshows interativos com jQuery.",
+          "list": [
+            "Container: Área que contém as imagens",
+            "Slides: Elementos individuais (imagens/conteúdo)",
+            "Controles: Botões de navegação",
+            "Indicadores: Pontos ou números para mostrar posição",
+            "Autoplay: Mudança automática de slides"
+          ]
+        },
+        {
+            "position": 2,
+            "headline": "Carrossel com Múltiplos Itens",
+            "text": "Um carrossel mostra múltiplos itens visíveis ao mesmo tempo, permitindo navegação lateral através do conteúdo.",
+            "list": [
+                "Múltiplos itens: Vários elementos visíveis",
+                "Navegação lateral: Movimento horizontal",
+                "Loop infinito: Retorna ao início",
+                "Responsivo: Adapta-se ao tamanho da tela",
+                "Controles touch: Suporte a gestos"
+            ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício Prático",
+        "text": "Crie uma aplicação HTML com jQuery que implemente slides e carrosséis:",
+        "steps": [
+          "Título = Galeria de Slides e Carrosséis jQuery",
+          "Implemente um slideshow com controles de navegação",
+          "Crie um carrossel com múltiplos itens visíveis",
+          "Desenvolva uma galeria de imagens com lightbox",
+          "Adicione filtros para categorizar conteúdo"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ]
+      },
+      "playground": {
+        "url": "/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 05 - Menus e Navegação",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/data/images/05_banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/data/images/05_banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/data/images/05_banner_legado_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Menus Dropdown",
+          "text": "Menus dropdown são elementos de navegação que mostram submenus quando o usuário interage com eles. São fundamentais para organizar conteúdo hierárquico.",
+          "list": [
+            "Ativação: Hover ou clique para abrir",
+            "Posicionamento: Abaixo do item principal",
+            "Fechamento: Automático ou manual",
+            "Animação: Transições suaves",
+            "Acessibilidade: Suporte a teclado"
+          ]
+        },
+        {
+            "position": 2,
+            "headline": "Accordion (Acordeão)",
+            "text": "Um accordion é um componente que permite expandir e colapsar seções de conteúdo, economizando espaço na página.",
+            "list": [
+                "Expansão única: Apenas um item aberto por vez",
+                "Expansão múltipla: Vários itens podem estar abertos",
+                "Animação: Transições suaves de altura",
+                "Ícones: Indicadores visuais de estado",
+                "Teclado: Navegação acessível"
+            ]
+        },
+        {
+            "position": 3,
+            "headline": "Sistema de Tabs",
+            "text": "As tabs organizam conteúdo em painéis separados, permitindo alternar entre diferentes seções sem recarregar a página.",
+            "list": [
+                "Navegação: Clique para alternar entre tabs",
+                "Estado ativo: Visualização clara da tab ativa",
+                "Conteúdo: Painéis correspondentes a cada tab",
+                "Teclado: Navegação acessível"
+            ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício Prático",
+        "text": "Crie uma aplicação HTML com jQuery que implemente sistemas de navegação:",
+        "steps": [
+          "Título = Sistema de Navegação Completo jQuery",
+          "Implemente um menu dropdown responsivo",
+          "Crie um sistema de accordion interativo",
+          "Desenvolva um sistema de tabs com navegação",
+          "Adicione um menu mobile com animações"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ]
+      },
+      "playground": {
+        "url": "/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 06 - Validação de Formulários",
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Validação de Formulários",
+          "text": "Validação client-side e interação com formulários HTML."
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 07 - Galerias e Modais",
+      "image": {
+        "desktop": "/vitrine-ml5/mlab5/data/images/07_banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/data/images/07_banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/data/images/07_banner_legado_mobile.png"
+      },
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Galerias de Imagens",
+          "text": "Galerias de imagens são componentes essenciais para apresentar coleções de fotos de forma organizada e interativa. jQuery facilita a criação de galerias responsivas e com efeitos visuais.",
+          "list": [
+            "Grid simples: Grade de imagens básica",
+            "Lightbox: Visualização ampliada",
+            "Slider: Carrossel de imagens",
+            "Masonry: Layout em tijolos",
+            "Filtrada: Com categorias"
+          ]
+        },
+        {
+            "position": 2,
+            "headline": "Modais Interativos",
+            "text": "Modais são janelas sobrepostas que aparecem sobre o conteúdo principal para exibir informações adicionais ou capturar dados do usuário.",
+            "list": [
+                "Modal de informação: Exibir conteúdo",
+                "Modal de confirmação: Confirmar ações",
+                "Modal de formulário: Capturar dados",
+                "Modal de alerta: Avisos importantes",
+                "Modal personalizado: Conteúdo customizado"
+            ]
+        }
+      ],
+      "exercise": {
+        "headline": "Exercício Prático",
+        "text": "Crie uma aplicação HTML com jQuery que implemente galerias e modais:",
+        "steps": [
+          "Título = Galeria e Modais Interativos jQuery",
+          "Implemente uma galeria de imagens com filtros",
+          "Crie um lightbox para visualização ampliada",
+          "Desenvolva diferentes tipos de modais",
+          "Adicione navegação por teclado e touch"
+        ]
+      },
+      "controls": {
+        "templates": [
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+        ]
+      },
+      "playground": {
+        "url": "/vitrine-ml5/mlab5/playground"
+      }
+    }
+  },
+  {
+    "course": {
+      "name": "Aula 08 - Plugins e Extensões",
+      "articles": [
+        {
+          "position": 1,
+          "headline": "Plugins e Extensões",
+          "text": "Uso de plugins populares e criação de extensões personalizadas."
+        }
+      ]
+    }
+  }
+]
