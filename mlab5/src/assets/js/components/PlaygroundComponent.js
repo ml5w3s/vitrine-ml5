@@ -17,14 +17,21 @@ class PlaygroundComponent {
         this.lessonContent = lesson.content.course; // Acessa o objeto 'course' dentro do content
         this.render();
         this.addEventListeners();
+        this.setInitialCode(); // Call the new method here
     }
 
     render() {
-        const { articles, exercise, controls } = this.lessonContent;
+        const { articles: rawArticles, exercise, controls, playground } = this.lessonContent;
+        const articles = Array.isArray(rawArticles) ? rawArticles : [];
 
         let articlesHtml = '';
-        if (articles) {
+        if (articles.length) {
             articles.forEach(article => {
+                // Skip hidden articles and articles specifically for playground instructions
+                if (article.hidden || article.forPlayground) {
+                    return;
+                }
+
                 articlesHtml += `<article>`;
                 if (article.headline) articlesHtml += `<h4>${article.headline}</h4>`;
                 if (article.alternativeHeadline) articlesHtml += `<h5>${article.alternativeHeadline}</h5>`;
@@ -40,7 +47,8 @@ class PlaygroundComponent {
                     if (article.image.caption) articlesHtml += `<p class="caption">${article.image.caption}</p>`;
                 }
                 if (article.code) {
-                    articlesHtml += `<pre><code class="language-${article.programmingLanguage || 'html'}">${article.code.join('\n')}</code></pre>`;
+                    const codeText = Array.isArray(article.code) ? article.code.join('\n') : String(article.code);
+                    articlesHtml += `<pre><code class="language-${article.programmingLanguage || 'html'}">${codeText}</code></pre>`;
                 }
                 articlesHtml += `</article>`;
             });
@@ -73,12 +81,24 @@ class PlaygroundComponent {
             controlsHtml += `</div>`;
         }
 
+        // Use playground.headline and playground.instructions for the main playground instructions
+        const playgroundHeadline = playground && playground.headline ? `<h3>${playground.headline}</h3>` : '';
+        const playgroundInstructions = playground && playground.instructions ? `<p>${playground.instructions}</p>` : '';
+
 
         this.containerElement.innerHTML = `
             <div class="playground-wrapper">
                 <div class="playground-instructions">
-                    ${articlesHtml}
-                    ${exerciseHtml}
+                    ${playgroundHeadline}
+                    ${playgroundInstructions}
+                    <section class="container">
+                        <article class="item">
+                            <h3 id="link_instrucoes" style="cursor:pointer">Instruções</h3>
+                            <div id="texto" style="display:none;">
+                                <p id="instrucoes"></p>
+                            </div>
+                        </article>
+                    </section>
                 </div>
                 <div class="playground-editor">
                     ${controlsHtml}
@@ -89,12 +109,77 @@ class PlaygroundComponent {
                     <iframe id="code-output" class="code-output" sandbox="allow-scripts allow-same-origin"></iframe>
                 </div>
             </div>
+            <section class="container">
+                <article class="item">
+                    <h3 id="link_ajustes" style="cursor:pointer">Ajustes</h3>
+                    <div id="ajustes" style="display:none;"></div>
+                </article>
+            </section>
         `;
+    }
+
+    setInitialCode() {
+        const { articles } = this.lessonContent;
+        const codeInput = this.containerElement.querySelector('#code-input');
+        if (!codeInput) {
+            console.error("Elemento #code-input não encontrado no PlaygroundComponent.");
+            return;
+        }
+
         // Preenche o textarea com um código inicial se disponível no lessonContent
-        // Por exemplo, o primeiro bloco de código do artigo, se houver
-        const initialCodeBlock = articles.find(a => a.code);
-        if (initialCodeBlock && initialCodeBlock.code) {
-            this.containerElement.querySelector('#code-input').value = initialCodeBlock.code.join('\n');
+        // Procura por um artigo com forPlayground: true e código
+        const initialCodeBlockArticle = Array.isArray(articles) ? articles.find(a => a.forPlayground && a.code) : null;
+        if (initialCodeBlockArticle && initialCodeBlockArticle.code) {
+            const codeText = Array.isArray(initialCodeBlockArticle.code) ? initialCodeBlockArticle.code.join('\n') : String(initialCodeBlockArticle.code);
+            codeInput.value = codeText;
+        } else if (Array.isArray(articles)) {
+            // Fallback: se não encontrar um artigo específico, tenta o primeiro bloco de código geral
+            const firstCodeBlock = articles.find(a => a.code);
+            if (firstCodeBlock && firstCodeBlock.code) {
+                const codeText = Array.isArray(firstCodeBlock.code) ? firstCodeBlock.code.join('\n') : String(firstCodeBlock.code);
+                codeInput.value = codeText;
+            }
+        }
+
+        // Popular instruções
+        const instrucoesEl = this.containerElement.querySelector('#instrucoes');
+        if (instrucoesEl) {
+            let instructionsText = '';
+            // Primeiro tenta do artigo forPlayground
+            const instrArticle = Array.isArray(articles) ? articles.find(a => a.forPlayground && (a.text || a.list)) : null;
+            if (instrArticle) {
+                if (instrArticle.text) instructionsText += instrArticle.text + '\n';
+                if (instrArticle.list) instructionsText += instrArticle.list.map(i => `• ${i}`).join('\n');
+            }
+            // Complementa com localStorage (compatibilidade com versão antiga)
+            const stored = localStorage.getItem('instrucoes');
+            if (stored) {
+                instructionsText += (instructionsText ? '\n\n' : '') + stored;
+            }
+            instrucoesEl.textContent = instructionsText.trim();
+        }
+
+        // Popular ajustes do localStorage (HTML salvo)
+        const ajustesDiv = this.containerElement.querySelector('#ajustes');
+        if (ajustesDiv) {
+            const ajustesHTML = localStorage.getItem('ajustes');
+            if (ajustesHTML) ajustesDiv.innerHTML = ajustesHTML;
+        }
+
+        // Toggle simples para instruções/ajustes
+        const linkInstrucoes = this.containerElement.querySelector('#link_instrucoes');
+        const texto = this.containerElement.querySelector('#texto');
+        if (linkInstrucoes && texto) {
+            linkInstrucoes.addEventListener('click', () => {
+                texto.style.display = texto.style.display === 'none' ? 'block' : 'none';
+            });
+        }
+        const linkAjustes = this.containerElement.querySelector('#link_ajustes');
+        const ajustes = this.containerElement.querySelector('#ajustes');
+        if (linkAjustes && ajustes) {
+            linkAjustes.addEventListener('click', () => {
+                ajustes.style.display = ajustes.style.display === 'none' ? 'block' : 'none';
+            });
         }
     }
 
