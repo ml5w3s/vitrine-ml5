@@ -3,21 +3,22 @@
     "course": {
       "name": "🧱 HTML - Linguagem de marcação para sites na internet",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
-          "position": 1,
+          "position": 0,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
           }
         },
         {
-          "position": 2,
+          "position": 1,
           "headline": "Comparação com exemplo cotidiano, etiqueta",
           "alternativeHeadline": "Informações na etiqueta:",
           "text": "Funciona como uma etiqueta, no início tem a indicação de onde vai a costura inicial deve ser feita, e abaixo onde vai a costura final. Entre essas marcações existem outras informações marcadas.",
@@ -34,99 +35,10 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/01/images/etiqueta_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/01/images/etiqueta_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/01/images/etiqueta_mobile.png"
-          }
-        },
-        {
-          "position": 4,
-          "headline": "Tag's, marcadores de exemplo",
-          "text": "O HTML usa tags, que são como etiquetas ou instruções. Essas tags dizem o que cada parte do conteúdo é. Por exemplo:"
-        },
-        {
-          "position": 5,
-          "alternativeHeadline": "Exemplo",
-          "subheadline": "Papeis desempenhados por essas tag's:",
-          "text": "Quer um título grande? Usa a tag",
-          "list": [
-            "<h1>Nome Empresa LTDA.</h1>",
-            "<p>Produzido no Brasil.</p>",
-            "<img src=\"camiseta.jpg\"> Aqui aparece a imagem.</img>"
-          ]
-        },
-        {
-          "position": 6,
-          "image": {
-            "src": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/01/images/exemplo.png"
-          }
-        }
-      ],
-      "exercise": {
-        "headline": "Exercício",
-        "text": "Crie uma pagina usando HTML, pode copiar o texto que tenha:",
-        "steps": [
-          "Título = O Caminho do Desenvolvimento Front-End",
-          "Parágrafo = O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
-          "Sub-Titulo = Fundamentos Essenciais",
-          "Parágrafo = HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
-        ]
-      },
-      "controls": {
-        "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
-        ],
-        "styles": {
-          "background": "#ffffff",
-          "foreground": "#000000",
-          "fontFamily": "Arial, sans-serif"
-        }
-      },
-      "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
-      }
-    }
-  },
-  {
-    "course": {
-      "name": "🧱 HTML - Linguagem de marcação para sites na internet",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
-      },
-      "articles": [
-        {
-          "position": 1,
-          "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
-          }
-        },
-        {
-          "position": 2,
-          "headline": "Comparação com exemplo cotidiano, etiqueta",
-          "alternativeHeadline": "Informações na etiqueta:",
-          "text": "Funciona como uma etiqueta, no início tem a indicação de onde vai a costura inicial deve ser feita, e abaixo onde vai a costura final. Entre essas marcações existem outras informações marcadas.",
-          "list": [
-            "Nome da empresa.",
-            "CNPJ.",
-            "Local de produção",
-            "Material",
-            "Manuseio",
-            "Tamanho",
-            "Marcas de corte"
-          ]
-        },
-        {
-          "position": 3,
-          "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/02/images/etiqueta_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/html5/etiqueta_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/html5/etiqueta_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5/etiqueta_mobile.png",
+            "caption": "Etiqueta como metáfora de marcação"
           }
         },
         {
@@ -138,31 +50,59 @@
           "position": 5,
           "alternativeHeadline": "Exemplo",
           "subheadline": "Papeis desempenhados por essas tag's:",
+          "text": "Quer um título grande? Usa a tag",
           "list": [
-            "<!DOCTYPE html> – Tipo do documento.",
-            "<html> – Raiz do documento.",
-            "<head> – Metadados (ex:  <title>,  <meta>,  <link>).",
-            "<body> – Conteúdo visível.:",
-            "<h1> – Título.:",
-            "<p> – Parágrafo.:",
-            "<h2> – Sub-título.:"
+            "<h1>Nome Empresa LTDA.</h1>",
+            "<p>Produzido no Brasil.</p>",
+            "<img src=\"camiseta.jpg\"> Aqui aparece a imagem.</img>"
+          ],
+          "programmingLanguage": "HTML",
+          "code": [
+            "<!DOCTYPE html> – Tipo do documento;",
+            "<html> – Raiz do documento;",
+            "<head> – <title>, <meta>, <link>",
+            "<body> – Conteúdo visível;",
+            "<h1> – Título;",
+            "<p> – Parágrafo;",
+            "<h2> – Sub-título."
           ]
         },
         {
           "position": 6,
           "image": {
-            "src": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/02/images/exemplo.png"
+            "src": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5/exemplo.png",
+            "caption": "Estrutura básica de uma página HTML"
           }
+        },
+        {
+          "position": 7,
+          "headline": "Diretrizes para Playground",
+          "text": "USE ESTE ARTICLE APENAS PARA O PLAYGROUND",
+          "forPlayground": true,
+          "hidden": true
+        },
+        {
+          "position": 8,
+          "type": "exercise",
+          "headline": "Exercício 01 de HTML",
+          "text": "Crie uma página usando HTML com:",
+          "steps": [
+            "Título: O Caminho do Desenvolvimento Front-End",
+            "Parágrafo: O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
+            "Subtítulo: Fundamentos Essenciais",
+            "HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
+          ],
+          "hidden": true
         }
       ],
       "exercise": {
-        "headline": "Exercício",
-        "text": "Crie uma pagina usando HTML, pode copiar o texto que tenha:",
+        "headline": "Exercício 01 de HTML",
+        "text": "Crie uma página usando HTML com:",
         "steps": [
-          "Título = O Caminho do Desenvolvimento Front-End",
-          "Parágrafo = O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
-          "Sub-Titulo = Fundamentos Essenciais",
-          "Parágrafo = HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
+          "Título: O Caminho do Desenvolvimento Front-End",
+          "Parágrafo: O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
+          "Subtítulo: Fundamentos Essenciais",
+          "HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
         ]
       },
       "controls": {
@@ -178,7 +118,9 @@
         }
       },
       "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+        "headline": "Praticar no Playground",
+        "url": "#/course/html5/lesson/01/playground",
+        "instructions": "Monte sua atividade abaixo. Siga as diretrizes dadas na aula!"
       }
     }
   },
@@ -186,17 +128,17 @@
     "course": {
       "name": "🏗️ HTML5 - Novos Elementos Semânticos",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -215,9 +157,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/03/images/elementos_semanticos_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/03/images/elementos_semanticos_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/03/images/elementos_semanticos_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/elementos_semanticos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/elementos_semanticos_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/elementos_semanticos_mobile.png"
           }
         },
         {
@@ -251,9 +193,9 @@
         {
           "position": 7,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/03/images/navegacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/03/images/navegacao_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/03/images/navegacao_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/navegacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/navegacao_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/navegacao_mobile.png"
           }
         },
         {
@@ -287,9 +229,9 @@
         {
           "position": 11,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/03/images/section_article_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/03/images/section_article_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/03/images/section_article_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/section_article_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/section_article_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/section_article_mobile.png"
           }
         },
         {
@@ -342,7 +284,7 @@
         }
       },
       "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -350,17 +292,17 @@
     "course": {
       "name": "🎬 HTML5 - Elementos de Mídia",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -382,7 +324,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_mobile.png"
           }
         },
         {
@@ -426,7 +368,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/audio_video_mobile.png"
           }
         },
         {
@@ -490,7 +432,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/eventos_midia_mobile.png"
           }
         }
       ],
@@ -519,7 +461,7 @@
         }
       },
       "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -527,17 +469,17 @@
     "course": {
       "name": "📝 HTML5 - Novos Tipos de Input",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -557,9 +499,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/05/images/tipos_input_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/05/images/tipos_input_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/05/images/tipos_input_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/tipos_input_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/tipos_input_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/tipos_input_mobile.png"
           }
         },
         {
@@ -596,9 +538,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo com Number e Range:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/05/images/inputs_numericos_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/05/images/inputs_numericos_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/05/images/inputs_numericos_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/inputs_numericos_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/inputs_numericos_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/inputs_numericos_mobile.png"
           }
         },
         {
@@ -654,9 +596,9 @@
           "position": 13,
           "alternativeHeadline": "Exemplo com Validação:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/05/images/validacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/05/images/validacao_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/05/images/validacao_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/validacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/imagess/validacao_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/validacao_mobile.png"
           }
         },
         {
@@ -691,9 +633,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/assets/js/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/assets/js/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/assets/js/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -702,7 +644,7 @@
         }
       },
       "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -710,17 +652,17 @@
     "course": {
       "name": "💾 HTML5 - Armazenamento Local",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -740,9 +682,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/06/images/web_storage_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/06/images/web_storage_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/06/images/web_storage_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/web_storage_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/web_storage_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/web_storage_mobile.png"
           }
         },
         {
@@ -803,9 +745,9 @@
           "position": 9,
           "alternativeHeadline": "Funções Utilitárias:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/06/images/objetos_json_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/06/images/objetos_json_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/06/images/objetos_json_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/objetos_json_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/objetos_json_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/objetos_json_mobile.png"
           }
         },
         {
@@ -842,9 +784,9 @@
           "position": 13,
           "alternativeHeadline": "Exemplo: Sistema de Preferências:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/06/images/casos_uso_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/06/images/casos_uso_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/06/images/casos_uso_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/casos_uso_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/casos_uso_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/casos_uso_mobile.png"
           }
         },
         {
@@ -887,9 +829,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/js/ui/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -898,7 +840,7 @@
         }
       },
       "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -906,17 +848,17 @@
     "course": {
       "name": "🌍 HTML5 - Geolocalização e APIs Web",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-        "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/images/banner_frontend_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -936,9 +878,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/geolocalizacao_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/geolocalizacao_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/geolocalizacao_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/geolocalizacao_mobile.png"
           }
         },
         {
@@ -976,9 +918,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo Detalhado:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/objeto_position_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/objeto_position_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5//src/assets/images/objeto_position_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/objeto_position_mobile.png"
           }
         },
         {
@@ -1013,9 +955,9 @@
           "position": 11,
           "alternativeHeadline": "Exemplo de Monitoramento:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/monitoramento_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/monitoramento_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/monitoramento_tablet.png",
+            "mobile": "vitrine-ml5/mlab5/src/assets/images/monitoramento_mobile.png"
           }
         },
         {
@@ -1051,9 +993,9 @@
           "position": 15,
           "alternativeHeadline": "Exemplo: Device Orientation:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/html5/07/images/outras_apis_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/outras_apis_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/outras_apis_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/assets/images/outras_apis_mobile.png"
           }
         },
         {
@@ -1089,9 +1031,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/js/ui/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -1100,7 +1042,7 @@
         }
       },
       "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
+        "url": "//vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
       }
     }
   }

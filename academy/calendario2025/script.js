@@ -1,22 +1,22 @@
 const images = {
-    capa: 'capa.png',
-    contracapa: 'contra-capa.png',
-    janeiro: 'janeiro_sem.png',
-    fevereiro: 'fevereiro_sem.png',
-    marco: 'marco_sem.png',
-    abril: 'abril_sem.png',
-    maio: 'maio_sem.png',
-    junho: 'junho_sem.png',
-    julho: 'julho_sem.png',
-    agosto: 'agosto_sem.png',
-    setembro: 'setembro_sem.png',
-    outubro: 'outubro_sem.png',
-    novembro: 'novembro_sem.png',
-    dezembro: 'dezembro_sem.png',
-    '2026': '2026.png'
+    capa: '/vitrine-ml5/academy/calendario2025/capa.png',
+    contracapa: '/vitrine-ml5/academy/calendario2025/contra-capa.png',
+    janeiro: '/vitrine-ml5/academy/calendario2025/janeiro_sem.png',
+    fevereiro: '/vitrine-ml5/academy/calendario2025/fevereiro_sem.png',
+    marco: '/vitrine-ml5/academy/calendario2025/marco_sem.png',
+    abril: '/vitrine-ml5/academy/calendario2025/abril_sem.png',
+    maio: '/vitrine-ml5/academy/calendario2025/maio_sem.png',
+    junho: '/vitrine-ml5/academy/calendario2025/junho_sem.png',
+    julho: '/vitrine-ml5/academy/calendario2025/julho_sem.png',
+    agosto: '/vitrine-ml5/academy/calendario2025/agosto_sem.png',
+    setembro: '/vitrine-ml5/academy/calendario2025/setembro_sem.png',
+    outubro: '/vitrine-ml5/academy/calendario2025/outubro_sem.png',
+    novembro: '/vitrine-ml5/academy/calendario2025/novembro_sem.png',
+    dezembro: '/vitrine-ml5/academy/calendario2025/dezembro_sem.png',
+    '2026': '/vitrine-ml5/academy/calendario2025/2026.png'
 };
 
-let currentMonth = 'capa'; // Define o mês atual para rastrear anotações
+let currentMonth = '/vitrine-ml5/academy/calendario2025/capa'; // Define o mês atual para rastrear anotações
 
 // Função para trocar o mês
 function changeMonth(month) {

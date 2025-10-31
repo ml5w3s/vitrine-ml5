@@ -10,7 +10,7 @@ function renderCourseView(course) {
     let lessonsHtml = '<h3>Aulas</h3><ul class="lesson-list">';
     if (course.lessons && course.lessons.length > 0) {
         course.lessons.forEach(lesson => {
-            lessonsHtml += `<li><a href="#/course/${course.id}/lesson/${lesson.id}">${lesson.title}</a></li>`;
+            lessonsHtml += `<li><img src="/vitrine-ml5/mlab5/src/assets/images/cursos/${course.id}_mobile.jpg"><a href="#/course/${course.id}/lesson/${lesson.id}">${lesson.title}</a></li>`;
         });
     } else {
         lessonsHtml += '<li>Nenhuma aula disponível para este curso.</li>';
