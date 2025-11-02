@@ -2,11 +2,6 @@
   {
     "course": {
       "name": "🧱 HTML - Linguagem de marcação para sites na internet",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
-      },
       "articles": [
         {
           "position": 0,
@@ -33,56 +28,67 @@
           ]
         },
         {
-          "position": 3,
+          "position": 2,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/assets/images/html5/etiqueta_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/images/html5/etiqueta_tablet.png",
+            "desktop": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5/etiqueta_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5/etiqueta_tablet.png",
             "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5/etiqueta_mobile.png",
-            "caption": "Etiqueta como metáfora de marcação"
+            "caption": "Etiqueta com as marcações"
           }
         },
         {
-          "position": 4,
+          "position": 3,
           "headline": "Tag's, marcadores de exemplo",
-          "text": "No exemplo de página a seguir, no início e no seu fim é indicado pela marcação <html> É possível notar que a página tem duas partes distintas bem aparente. A “cabeçalho” da página <head> O corpo da página <body> No corpo ficam marcações bem perceptíveis, diferente do “cabeçalho”"
+          "text": "Cada linha escrita aparece na tela da forma correta, se estiver cercada pelo devido código, para isso é necessário usar uma marcação antes e depois do conteúdo com as tag's HTML, veja a seguir o resultado do uso desses códigos,",
+          "code": [
+            "<body> – Onde fica todo conteúdo visível;",
+            "<nav> – Navegação;",
+            "<main> – Conteúdo principal;",
+            "<section> – Seção;",
+            "<article> – Artigo;",
+            "<aside> – Conteúdo lateral;",
+            "<footer> – Rodapé;",
+            "<h1> – Título de nível 1;",
+            "<h2> – Título de nível 2;",
+            "<h3> – Título de nível 3;",
+            "<h4> – Título de nível 4;",
+            "<h5> – Título de nível 5;",
+            "<h6> – Título de nível 6;",
+            "<p> – Parágrafo;"
+          ],
+          "forPlayground": false
         },
         {
-          "position": 5,
+          "position": 4,
+          "text": "Entenda que alguns comandos não aparecem na tela, mas são necessários para o bom funcionamento da página. Veja o resultado do uso desses códigos, na imagem a seguir:",
           "alternativeHeadline": "Exemplo",
           "subheadline": "Papeis desempenhados por essas tag's:",
-          "text": "Quer um título grande? Usa a tag",
-          "list": [
-            "<h1>Nome Empresa LTDA.</h1>",
-            "<p>Produzido no Brasil.</p>",
-            "<img src=\"camiseta.jpg\"> Aqui aparece a imagem.</img>"
-          ],
           "programmingLanguage": "HTML",
           "code": [
-            "<!DOCTYPE html> – Tipo do documento;",
-            "<html> – Raiz do documento;",
-            "<head> – <title>, <meta>, <link>",
-            "<body> – Conteúdo visível;",
-            "<h1> – Título;",
-            "<p> – Parágrafo;",
-            "<h2> – Sub-título."
+            "<!DOCTYPE html> – Tipo do documento - não visível na tela;",
+            "<html> – Raiz do documento - não visível na tela;",
+            "<head> – <title>, <meta>, <link> - não visível na tela;",
+            "<h1>Nome Empresa LTDA.</h1>",
+            "<p>Produzido no Brasil.</p>",
+            "<img src=\"camiseta.jpg> Aqui aparece a imagem."
           ]
         },
         {
-          "position": 6,
+          "position": 5,
           "image": {
             "src": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5/exemplo.png",
             "caption": "Estrutura básica de uma página HTML"
           }
         },
         {
-          "position": 7,
+          "position": 6,
           "headline": "Diretrizes para Playground",
           "text": "USE ESTE ARTICLE APENAS PARA O PLAYGROUND",
           "forPlayground": true,
           "hidden": true
         },
         {
-          "position": 8,
+          "position": 7,
           "type": "exercise",
           "headline": "Exercício 01 de HTML",
           "text": "Crie uma página usando HTML com:",

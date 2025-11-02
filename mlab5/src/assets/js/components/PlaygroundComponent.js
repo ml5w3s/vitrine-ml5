@@ -68,7 +68,7 @@ class PlaygroundComponent {
         }
 
         let controlsHtml = '';
-        if (controls && controls.templates) {
+        if (controls && Array.isArray(controls.templates)) {
             controlsHtml += `<div class="playground-controls">`;
             controlsHtml += `<label for="template-select">Template:</label>`;
             controlsHtml += `<select id="template-select">`;
@@ -110,7 +110,7 @@ class PlaygroundComponent {
                     </section>
                 </div>
                 <div class="playground-editor">
-                    ${controlsHtml}
+                    <!-- controlsHtml removido daqui conforme solicitado -->
                     <h4>Seu Código:</h4>
                     <textarea id="code-input" class="code-input" rows="15" cols="80"></textarea>
                     <button id="run-code-button">Executar Código</button>
@@ -135,32 +135,17 @@ class PlaygroundComponent {
             return;
         }
 
-        // Preenche o textarea com um código inicial se disponível no lessonContent
-        // Procura por um artigo com forPlayground: true e código
-        const initialCodeBlockArticle = Array.isArray(articles) ? articles.find(a => a.forPlayground && a.code) : null;
-        if (initialCodeBlockArticle && initialCodeBlockArticle.code) {
-            const codeText = Array.isArray(initialCodeBlockArticle.code) ? initialCodeBlockArticle.code.join('\n') : String(initialCodeBlockArticle.code);
-            codeInput.value = codeText;
-        } else if (Array.isArray(articles)) {
-            // Fallback: se não encontrar um artigo específico, tenta o primeiro bloco de código geral
-            const firstCodeBlock = articles.find(a => a.code);
-            if (firstCodeBlock && firstCodeBlock.code) {
-                const codeText = Array.isArray(firstCodeBlock.code) ? firstCodeBlock.code.join('\n') : String(firstCodeBlock.code);
-                codeInput.value = codeText;
-            }
-        }
+        // O code-input agora inicia vazio por padrão, conforme solicitado.
 
         // Popular instruções
         const instrucoesEl = this.containerElement.querySelector('#instrucoes');
         if (instrucoesEl) {
             let instructionsText = '';
-            // Primeiro tenta do artigo forPlayground
             const instrArticle = Array.isArray(articles) ? articles.find(a => a.forPlayground && (a.text || a.list)) : null;
             if (instrArticle) {
                 if (instrArticle.text) instructionsText += instrArticle.text + '\n';
                 if (instrArticle.list) instructionsText += instrArticle.list.map(i => `• ${i}`).join('\n');
             }
-            // Complementa com localStorage (compatibilidade com versão antiga)
             const stored = localStorage.getItem('instrucoes');
             if (stored) {
                 instructionsText += (instructionsText ? '\n\n' : '') + stored;
@@ -168,11 +153,34 @@ class PlaygroundComponent {
             instrucoesEl.textContent = instructionsText.trim();
         }
 
-        // Popular ajustes do localStorage (HTML salvo)
+        // Popular ajustes com os templates
         const ajustesDiv = this.containerElement.querySelector('#ajustes');
         if (ajustesDiv) {
-            const ajustesHTML = localStorage.getItem('ajustes');
-            if (ajustesHTML) ajustesDiv.innerHTML = ajustesHTML;
+            const templates = ['classico.html', 'dark_mode.html', 'moderno.html'];
+            let templatesHtml = '<h4>Templates</h4>';
+            templates.forEach(template => {
+                const templateName = template.replace('.html', '');
+                templatesHtml += `
+                    <div>
+                        <input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src/assets/js/components/templates/${template}">
+                        <label for="${templateName}">${templateName}</label>
+                    </div>
+                `;
+            });
+            templatesHtml += '<button id="apply-customization-button">Aplicar</button>';
+            ajustesDiv.innerHTML = templatesHtml;
+        }
+    }
+
+    addEventListeners() {
+        const runButton = this.containerElement.querySelector('#run-code-button');
+        if (runButton) {
+            runButton.addEventListener('click', () => this.runCode());
+        }
+
+        const applyCustomizationButton = this.containerElement.querySelector('#apply-customization-button');
+        if (applyCustomizationButton) {
+            applyCustomizationButton.addEventListener('click', () => this.applyCustomization());
         }
 
         // Toggle simples para instruções/ajustes
@@ -192,22 +200,19 @@ class PlaygroundComponent {
         }
     }
 
-    addEventListeners() {
-        const runButton = this.containerElement.querySelector('#run-code-button');
-        if (runButton) {
-            runButton.addEventListener('click', () => this.runCode());
-        }
-
-        const templateSelect = this.containerElement.querySelector('#template-select');
-        if (templateSelect) {
-            templateSelect.addEventListener('change', (event) => this.applyTemplate(event.target.value));
-        }
-    }
-
     runCode() {
         const code = this.containerElement.querySelector('#code-input').value;
         const outputFrame = this.containerElement.querySelector('#code-output');
         outputFrame.srcdoc = code;
+    }
+
+    async applyCustomization() {
+        const selectedTemplate = this.containerElement.querySelector('input[name="template"]:checked');
+        if (selectedTemplate) {
+            await this.applyTemplate(selectedTemplate.value);
+        } else {
+            alert('Por favor, selecione um template.');
+        }
     }
 
     async applyTemplate(templateUrl) {
@@ -217,11 +222,8 @@ class PlaygroundComponent {
             const templateHtml = await response.text();
 
             const codeInput = this.containerElement.querySelector('#code-input');
-            // Injeta o código do usuário no template
             const finalHtml = templateHtml.replace('<!-- CODE_PLACEHOLDER -->', codeInput.value);
             this.containerElement.querySelector('#code-output').srcdoc = finalHtml;
-
-            // Futuramente, aplicar estilos do lesson.controls.styles
         } catch (error) {
             console.error("Erro ao aplicar template:", error);
             this.containerElement.querySelector('#code-output').srcdoc = `<p style="color:red;">Erro ao carregar template: ${error.message}</p>`;
