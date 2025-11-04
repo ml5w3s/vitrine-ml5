@@ -114,6 +114,7 @@ class PlaygroundComponent {
                     <h4>Seu Código:</h4>
                     <textarea id="code-input" class="code-input" rows="15" cols="80"></textarea>
                     <button id="run-code-button">Executar Código</button>
+                    <button id="open-new-page-button">Abrir em nova página</button>
                     <h4>Preview:</h4>
                     <iframe id="code-output" class="code-output" sandbox="allow-scripts allow-same-origin"></iframe>
                 </div>
@@ -166,21 +167,82 @@ class PlaygroundComponent {
                         <label for="${templateName}">${templateName}</label>
                     </div>
                 `;
+                console.log('Valor de template:', template);
+                console.log('Valor de templateName:', templateName);
+
+                const html = `<input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src/assets/js/components/templates/${template}">`;
+                console.log(html);
             });
             templatesHtml += '<button id="apply-customization-button">Aplicar</button>';
             ajustesDiv.innerHTML = templatesHtml;
+
+            let fontOptionsHtml = '<h4>Fontes</h4>';
+            fontOptionsHtml += `
+                <div>
+                    <input type="radio" id="font-arial" name="font" value="Arial, sans-serif">
+                    <label for="font-arial">Arial</label>
+                </div>
+                <div>
+                    <input type="radio" id="font-verdana" name="font" value="Verdana, sans-serif">
+                    <label for="font-verdana">Verdana</label>
+                </div>
+                <div>
+                    <input type="radio" id="font-monospace" name="font" value="monospace">
+                    <label for="font-monospace">Monospace</label>
+                </div>
+            `;
+            ajustesDiv.innerHTML += fontOptionsHtml;
+
+            let customOptionsHtml = '<h4>Customização</h4>';
+            customOptionsHtml += `
+                <div>
+                    <label for="custom-font">Fonte Personalizada:</label>
+                    <select id="custom-font">
+                        <option value="'Times New Roman', serif">Times New Roman</option>
+                        <option value="'Courier New', monospace">Courier New</option>
+                        <option value="'Lucida Console', monospace">Lucida Console</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="custom-background">Cor de Fundo Personalizada:</label>
+                    <input type="color" id="custom-background" value="#ffffff">
+                </div>
+            `;
+            ajustesDiv.innerHTML += customOptionsHtml;
         }
     }
-
+ 
     addEventListeners() {
         const runButton = this.containerElement.querySelector('#run-code-button');
         if (runButton) {
             runButton.addEventListener('click', () => this.runCode());
         }
 
+        const openNewPageButton = this.containerElement.querySelector('#open-new-page-button');
+        if (openNewPageButton) {
+            openNewPageButton.addEventListener('click', () => this.openInNewPage());
+        }
+
         const applyCustomizationButton = this.containerElement.querySelector('#apply-customization-button');
         if (applyCustomizationButton) {
             applyCustomizationButton.addEventListener('click', () => this.applyCustomization());
+        }
+
+        // Event listeners para seleção de fonte
+        const fontRadios = this.containerElement.querySelectorAll('input[name="font"]');
+        fontRadios.forEach(radio => {
+            radio.addEventListener('change', () => this.applyCustomization());
+        });
+
+        // Event listeners para customização de fonte e background
+        const customFontInput = this.containerElement.querySelector('#custom-font');
+        if (customFontInput) {
+            customFontInput.addEventListener('change', () => this.applyCustomization());
+        }
+
+        const customBackgroundInput = this.containerElement.querySelector('#custom-background');
+        if (customBackgroundInput) {
+            customBackgroundInput.addEventListener('input', () => this.applyCustomization());
         }
 
         // Toggle simples para instruções/ajustes
@@ -207,26 +269,51 @@ class PlaygroundComponent {
     }
 
     async applyCustomization() {
-        const selectedTemplate = this.containerElement.querySelector('input[name="template"]:checked');
-        if (selectedTemplate) {
-            await this.applyTemplate(selectedTemplate.value);
-        } else {
-            alert('Por favor, selecione um template.');
+        const selectedTemplateInput = this.containerElement.querySelector('input[name="template"]:checked');
+        const selectedFontInput = this.containerElement.querySelector('input[name="font"]:checked');
+        const customFontInput = this.containerElement.querySelector('#custom-font');
+        const customBackgroundInput = this.containerElement.querySelector('#custom-background');
+
+        let style = '';
+        if (selectedFontInput) {
+            style += `font-family: ${selectedFontInput.value};`;
         }
+        if (customFontInput && customFontInput.value) {
+            style += `font-family: ${customFontInput.value};`;
+        }
+        if (customBackgroundInput && customBackgroundInput.value) {
+            style += `background-color: ${customBackgroundInput.value};`;
+        }
+
+        let finalHtml = this.containerElement.querySelector('#code-input').value;
+
+        if (selectedTemplateInput) {
+            try {
+                const response = await fetch(selectedTemplateInput.value);
+                if (!response.ok) throw new Error(`Erro ao carregar template: ${selectedTemplateInput.value}`);
+                let templateHtml = await response.text();
+                finalHtml = templateHtml.replace('<!-- CODE_PLACEHOLDER -->', finalHtml);
+            } catch (error) {
+                console.error("Erro ao aplicar template:", error);
+                this.containerElement.querySelector('#code-output').srcdoc = `<p style="color:red;">Erro ao carregar template: ${error.message}</p>`;
+                return;
+            }
+        }
+
+        const headEndTag = finalHtml.indexOf('</head>');
+        if (headEndTag !== -1) {
+            finalHtml = finalHtml.substring(0, headEndTag) + `<style>body { ${style} }</style>` + finalHtml.substring(headEndTag);
+        } else {
+            finalHtml = `<head><style>body { ${style} }</style></head>` + finalHtml;
+        }
+
+        this.containerElement.querySelector('#code-output').srcdoc = finalHtml;
     }
 
-    async applyTemplate(templateUrl) {
-        try {
-            const response = await fetch(templateUrl);
-            if (!response.ok) throw new Error(`Erro ao carregar template: ${templateUrl}`);
-            const templateHtml = await response.text();
-
-            const codeInput = this.containerElement.querySelector('#code-input');
-            const finalHtml = templateHtml.replace('<!-- CODE_PLACEHOLDER -->', codeInput.value);
-            this.containerElement.querySelector('#code-output').srcdoc = finalHtml;
-        } catch (error) {
-            console.error("Erro ao aplicar template:", error);
-            this.containerElement.querySelector('#code-output').srcdoc = `<p style="color:red;">Erro ao carregar template: ${error.message}</p>`;
-        }
+    openInNewPage() {
+        const outputFrame = this.containerElement.querySelector('#code-output');
+        const newWindow = window.open();
+        newWindow.document.write(outputFrame.srcdoc);
+        newWindow.document.close();
     }
 }
