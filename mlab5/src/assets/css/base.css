@@ -188,7 +188,7 @@ nav article {
   min-height: 50px;
   border: 1px solid var(--cor-borda-padrao);
   padding: var(--espacamento-padrao);
-  margin: 10px;
+  box-sizing: border-box;
 }
 
 /* Ícones e utilitários de estado */
@@ -207,17 +207,18 @@ nav article {
 /* Media Queries */
 
 /* Tablet (2 colunas) */
-@media (min-width: 1024px) {
-  .curso {
-    align-self: auto;
-    flex: 1 1 calc(50% - 1rem);
+@media (min-width: 768px) {
+  .item {
+    flex-basis: calc(50% - 20px); /* 2 colunas com gap */
   }
 }
 
-/* Tablet */
-@media (max-width: 600px) {
-  .carousel-wrapper.large .item,
-  .carousel-wrapper.small .item {
-    flex: 0 0 100px;
+/* Desktop (3 colunas) */
+@media (min-width: 1024px) {
+  .item {
+    flex: 1 0 calc(33.333% - 20px); /* 3 colunas com gap, permite crescimento */
+  }
+  .banner-item {
+    flex: 0 0 100%; /* Banner takes full width */
   }
 }

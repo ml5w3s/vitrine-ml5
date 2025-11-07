@@ -27,7 +27,7 @@ class ApiService {
             Debug.table('ApiService', 'Índice de Cursos Recebido', courseIndexData);
 
             if (courseIndexData && Array.isArray(courseIndexData)) {
-                return courseIndexData.map(meta => new Course(meta.id, meta.title, meta.description));
+                return courseIndexData.map(meta => new Course(meta.id, meta.title, meta.description, [], meta.image));
             }
             return [];
 

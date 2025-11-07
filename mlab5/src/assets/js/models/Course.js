@@ -8,11 +8,12 @@ class Course {
      * @param {string} description - A descrição do curso.
      * @param {Lesson[]} lessons - Uma lista de objetos da classe Lesson.
      */
-    constructor(id, title, description, lessons = []) {
+    constructor(id, title, description, lessons = [], image = null) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.lessons = lessons;
+        this.image = image;
     }
 
     /**
@@ -33,8 +34,21 @@ class Course {
      */
     render() {
         const courseElement = document.createElement('article');
-        courseElement.className = 'course-overview';
+        courseElement.className = 'course-overview item';
+
+        let imageHtml = '';
+        if (this.image) {
+            imageHtml = `
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="${this.image.desktop}">
+                    <source media="(min-width: 600px)" srcset="${this.image.tablet}">
+                    <img src="${this.image.mobile}" alt="${this.image.caption}" style="width:100%;">
+                </picture>
+            `;
+        }
+
         courseElement.innerHTML = `
+            ${imageHtml}
             <h2 class="course-title">${this.title}</h2>
             <p class="course-description">${this.description}</p>
             <a href="#/course/${this.id}">Ver Curso</a>
