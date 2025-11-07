@@ -1,27 +1,68 @@
 [
   {
+    "id": "banner-cursos",
+    "title": "Banner Principal dos Cursos",
+    "description": "",
+    "image": {
+      "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_cursos_desktop.png",
+      "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_cursos_tablet.png",
+      "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_cursos_mobile.png",
+      "caption": "Banner dos cursos"
+    }
+  },
+  {
     "id": "css3",
     "title": "CSS3 - Estilizando a Web",
-    "description": "Aprenda a estilizar suas páginas web com CSS3, criando layouts modernos e responsivos."
+    "description": "Aprenda a estilizar suas páginas web com CSS3, criando layouts modernos e responsivos.",
+    "image": {
+      "desktop": "/vitrine-ml5/mlab5/src/assets/images/cursos/css3_desktop.jpg",
+      "tablet": "/vitrine-ml5/mlab5/src/assets/images/cursos/css3_tablet.jpg",
+      "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/css3_mobile.jpg",
+      "caption": "Curso de CSS3"
+    }
   },
   {
     "id": "html5",
-    "title": "HTML - Linguagem de marcação para sites na internet",
-    "description": "Aprenda a base da web. Crie a estrutura de sites e prepare-se para estilizar com CSS e adicionar interatividade com JavaScript."
+    "title": "HTML5 - Linguagem de marcação para web",
+    "description": "Aprenda a base da web. Crie a estrutura de sites e prepare-se para estilizar com CSS e adicionar interatividade com JavaScript.",
+    "image": {
+      "desktop": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5_desktop.jpg",
+      "tablet": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5_tablet.jpg",
+      "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/html5_mobile.jpg",
+      "caption": "Curso de HTML5"
+    }
   },
   {
     "id": "javascript",
     "title": "JavaScript - O Idioma da Web",
-    "description": "Torne suas páginas interativas e dinâmicas com a linguagem de programação fundamental da web."
+    "description": "Torne suas páginas interativas e dinâmicas com a linguagem de programação fundamental da web.",
+    "image": {
+      "desktop": "/vitrine-ml5/mlab5/src/assets/images/cursos/javascript_desktop.jpg",
+      "tablet": "/vitrine-ml5/mlab5/src/assets/images/cursos/javascript_tablet.jpg",
+      "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/javascript_mobile.jpg",
+      "caption": "Curso de JavaScript"
+    }
   },
   {
     "id": "jquery",
     "title": "jQuery - Escreva Menos, Faça Mais",
-    "description": "Simplifique a manipulação de HTML, o tratamento de eventos e as animações com esta biblioteca JavaScript popular."
+    "description": "Simplifique a manipulação de HTML, o tratamento de eventos e as animações com esta biblioteca JavaScript popular.",
+    "image": {
+      "desktop": "/vitrine-ml5/mlab5/src/assets/images/cursos/jquery_desktop.jpg",
+      "tablet": "/vitrine-ml5/mlab5/src/assets/images/cursos/jquery_tablet.jpg",
+      "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/jquery_mobile.jpg",
+      "caption": "Curso de jQuery"
+    }
   },
   {
     "id": "xml",
     "title": "XML - Dados Estruturados",
-    "description": "Aprenda a usar XML para armazenar e transportar dados de forma estruturada."
+    "description": "Aprenda a usar XML para armazenar e transportar dados de forma estruturada.",
+    "image": {
+      "desktop": "/vitrine-ml5/mlab5/src/assets/images/cursos/xml_desktop.jpg",
+      "tablet": "/vitrine-ml5/mlab5/src/assets/images/cursos/xml_tablet.jpg",
+      "mobile": "/vitrine-ml5/mlab5/src/assets/images/cursos/xml_mobile.jpg",
+      "caption": "Curso de XML"
+    }
   }
 ]
