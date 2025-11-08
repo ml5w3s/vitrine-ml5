@@ -70,7 +70,7 @@ class ApiService {
                 return new Lesson(lessonId, lessonTitle, lessonWrapper, lessonType);
             });
 
-            const course = new Course(courseMeta.id, courseMeta.title, courseMeta.description, lessons);
+            const course = new Course(courseMeta.id, courseMeta.title, courseMeta.description, lessons, courseMeta.image);
             Debug.log('ApiService', `Curso '${courseId}' montado com sucesso.`, course);
             return course;
 
