@@ -6,7 +6,7 @@ function defineRoutes(router) {
     // Define a rota para a Home Page (lista de cursos)
     router.addRoute('home', '/', async () => {
         appRoot.innerHTML = 'Carregando cursos...';
-        const homeView = await renderHomeView();
+        const homeView = await renderHomeView(router);
         appRoot.innerHTML = ''; // Limpa o 'Carregando'
         appRoot.appendChild(homeView);
     });

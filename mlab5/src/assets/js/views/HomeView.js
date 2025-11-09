@@ -2,25 +2,10 @@
  * renderHomeView - Busca e renderiza a lista de cursos.
  * @returns {Promise<HTMLElement>} - O elemento HTML com a lista de cursos.
  */
-async function renderHomeView() {
+async function renderHomeView(router) {
     const viewElement = document.createElement('div');
     viewElement.className = 'home-view';
     viewElement.innerHTML = '<h1>Cursos</h1>';
-
-    // Hardcoded frontend banner
-    const frontendBannerContainer = document.createElement('section');
-    frontendBannerContainer.className = 'container';
-    const frontendBannerElement = document.createElement('article');
-    frontendBannerElement.className = 'item banner-item';
-    frontendBannerElement.innerHTML = `
-        <picture>
-            <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png">
-            <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png">
-            <img src="/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png" alt="Banner Frontend" style="width:100%;">
-        </picture>
-    `;
-    frontendBannerContainer.appendChild(frontendBannerElement);
-    viewElement.appendChild(frontendBannerContainer);
 
     const courseListContainer = document.createElement('div');
     courseListContainer.className = 'container';
@@ -31,10 +16,26 @@ async function renderHomeView() {
         if (courses.length === 0) {
             courseListContainer.innerHTML = '<p>Nenhum curso disponível no momento.</p>';
         } else {
+            const bannerCourse = courses.find(course => course.id === 'banner-cursos');
+            if (bannerCourse) {
+                const bannerContainer = document.createElement('section');
+                bannerContainer.className = 'container';
+                const bannerElement = document.createElement('article');
+                bannerElement.className = 'item banner-item';
+                bannerElement.innerHTML = `
+                    <picture>
+                        <source media="(min-width: 1024px)" srcset="${bannerCourse.image.desktop}">
+                        <source media="(min-width: 600px)" srcset="${bannerCourse.image.tablet}">
+                        <img src="${bannerCourse.image.mobile}" alt="${bannerCourse.image.caption}" style="width:100%;">
+                    </picture>
+                `;
+                bannerContainer.appendChild(bannerElement);
+                viewElement.prepend(bannerContainer); // Prepend to ensure it's at the very top
+            }
+
             courses.forEach(course => {
-                // Only render courses, skip the banner-cursos entry if it exists
                 if (course.id !== 'banner-cursos') {
-                    courseListContainer.appendChild(course.render());
+                    courseListContainer.appendChild(course.render(router));
                 }
             });
         }

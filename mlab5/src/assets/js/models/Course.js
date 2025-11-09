@@ -32,7 +32,7 @@ class Course {
      * Renderiza a visualização geral do curso.
      * @returns {HTMLElement} - O elemento HTML que representa o curso.
      */
-    render() {
+    render(router) {
         const courseElement = document.createElement('article');
         courseElement.className = 'course-overview item';
 
@@ -47,11 +47,12 @@ class Course {
             `;
         }
 
+        const courseUrl = router.generateUrl('courseDetail', { courseId: this.id });
         courseElement.innerHTML = `
             ${imageHtml}
             <h2 class="course-title">${this.title}</h2>
             <p class="course-description">${this.description}</p>
-            <a href="#/course/${this.id}">Ver Curso</a>
+            <a href="${courseUrl}">Ver Curso</a>
         `;
         return courseElement;
     }
