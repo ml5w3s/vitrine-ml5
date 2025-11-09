@@ -4,7 +4,7 @@ function defineRoutes(router) {
     const appRoot = document.getElementById('app-root');
 
     // Define a rota para a Home Page (lista de cursos)
-    router.addRoute('/', async () => {
+    router.addRoute('home', '/', async () => {
         appRoot.innerHTML = 'Carregando cursos...';
         const homeView = await renderHomeView();
         appRoot.innerHTML = ''; // Limpa o 'Carregando'
@@ -12,12 +12,12 @@ function defineRoutes(router) {
     });
 
     // Define a rota para a página de detalhes do curso
-    router.addRoute('/course/:courseId', async (params) => {
+    router.addRoute('courseDetail', '/course/:courseId', async (params) => {
         const { courseId } = params;
         appRoot.innerHTML = `Carregando curso ${courseId}...`;
         const course = await apiService.getCourseById(courseId);
         if (course) {
-            const courseView = renderCourseView(course);
+            const courseView = renderCourseView(course, router);
             appRoot.innerHTML = ''; // Limpa o 'Carregando'
             appRoot.appendChild(courseView);
         } else {
@@ -26,7 +26,7 @@ function defineRoutes(router) {
     });
 
     // Define a rota para a página de detalhes da aula
-    router.addRoute('/course/:courseId/lesson/:lessonId', async (params) => {
+    router.addRoute('lessonDetail', '/course/:courseId/lesson/:lessonId', async (params) => {
         const { courseId, lessonId } = params;
         appRoot.innerHTML = `Carregando aula ${lessonId} do curso ${courseId}...`;
         const lesson = await apiService.getLessonById(courseId, lessonId);
@@ -40,7 +40,7 @@ function defineRoutes(router) {
     });
 
     // Define a rota para o Criador de Aulas
-    router.addRoute('/creator', async () => {
+    router.addRoute('lessonCreator', '/creator', async () => {
         appRoot.innerHTML = 'Carregando criador de aulas...';
         const creatorView = renderLessonCreatorView();
         appRoot.innerHTML = ''; // Limpa o 'Carregando'
@@ -48,7 +48,7 @@ function defineRoutes(router) {
     });
 
     // Define a rota para o Playground
-    router.addRoute('/course/:courseId/lesson/:lessonId/playground', async (params) => {
+    router.addRoute('playground', '/course/:courseId/lesson/:lessonId/playground', async (params) => {
         const { courseId, lessonId } = params;
         appRoot.innerHTML = `Carregando Playground para aula ${lessonId} do curso ${courseId}...`;
         const playgroundView = await renderPlaygroundView(courseId, lessonId);

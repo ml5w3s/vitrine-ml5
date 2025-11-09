@@ -18,11 +18,31 @@ class Router {
 
     /**
      * Adiciona uma nova rota ao roteador.
-     * @param {string} path - O caminho da rota (ex: '/', '/course/:id', '/course/:courseId/lesson/:lessonId').
+     * @param {string} name - O nome da rota (ex: 'home', 'courseDetail').
+     * @param {string} path - O caminho da rota (ex: '/', '/course/:id').
      * @param {Function} callback - A função a ser executada quando a rota corresponder.
      */
-    addRoute(path, callback) {
-        this.routes.push({ path, callback });
+    addRoute(name, path, callback) {
+        this.routes.push({ name, path, callback });
+    }
+
+    /**
+     * Gera uma URL para uma rota nomeada com os parâmetros fornecidos.
+     * @param {string} name - O nome da rota.
+     * @param {Object} params - Um objeto com os parâmetros da rota.
+     * @returns {string} - A URL formatada.
+     */
+    generateUrl(name, params = {}) {
+        const route = this.routes.find(r => r.name === name);
+        if (!route) {
+            throw new Error(`Rota não encontrada: ${name}`);
+        }
+
+        let path = route.path;
+        for (const key in params) {
+            path = path.replace(`:${key}`, params[key]);
+        }
+        return `#${path}`;
     }
 
     /**
