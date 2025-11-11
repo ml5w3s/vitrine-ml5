@@ -16,8 +16,8 @@ class PlaygroundComponent {
         this.containerElement = containerElement;
         this.lessonContent = lesson.content.course; // Acessa o objeto 'course' dentro do content
         this.render();
+        this.setInitialCode(); // Call before addEventListeners
         this.addEventListeners();
-        this.setInitialCode(); // Call the new method here
     }
 
     render() {
@@ -114,7 +114,6 @@ class PlaygroundComponent {
                     <h4>Seu Código:</h4>
                     <textarea id="code-input" class="code-input" rows="15" cols="80"></textarea>
                     <button id="run-code-button">Executar Código</button>
-                    <button id="open-new-page-button">Abrir em nova página</button>
                     <h4>Preview:</h4>
                     <iframe id="code-output" class="code-output" sandbox="allow-scripts allow-same-origin"></iframe>
                 </div>
@@ -176,23 +175,6 @@ class PlaygroundComponent {
             templatesHtml += '<button id="apply-customization-button">Aplicar</button>';
             ajustesDiv.innerHTML = templatesHtml;
 
-            let fontOptionsHtml = '<h4>Fontes</h4>';
-            fontOptionsHtml += `
-                <div>
-                    <input type="radio" id="font-arial" name="font" value="Arial, sans-serif">
-                    <label for="font-arial">Arial</label>
-                </div>
-                <div>
-                    <input type="radio" id="font-verdana" name="font" value="Verdana, sans-serif">
-                    <label for="font-verdana">Verdana</label>
-                </div>
-                <div>
-                    <input type="radio" id="font-monospace" name="font" value="monospace">
-                    <label for="font-monospace">Monospace</label>
-                </div>
-            `;
-            ajustesDiv.innerHTML += fontOptionsHtml;
-
             let customOptionsHtml = '<h4>Customização</h4>';
             customOptionsHtml += `
                 <div>
@@ -207,8 +189,28 @@ class PlaygroundComponent {
                     <label for="custom-background">Cor de Fundo Personalizada:</label>
                     <input type="color" id="custom-background" value="#ffffff">
                 </div>
+                <div>
+                    <label for="custom-foreground">Cor do Texto Personalizada:</label>
+                    <input type="color" id="custom-foreground" value="#000000">
+                </div>
             `;
             ajustesDiv.innerHTML += customOptionsHtml;
+
+            // Set initial values for color pickers from lesson data
+            if (this.lessonContent.controls && this.lessonContent.controls.styles) {
+                const { background, foreground } = this.lessonContent.controls.styles;
+                const backgroundInput = this.containerElement.querySelector('#custom-background');
+                const foregroundInput = this.containerElement.querySelector('#custom-foreground');
+
+                if (backgroundInput && background) {
+                    backgroundInput.value = background;
+                }
+                if (foregroundInput && foreground) {
+                    foregroundInput.value = foreground;
+                }
+            }
+
+            ajustesDiv.innerHTML += '<button id="open-new-page-button">Abrir em nova página</button>';
         }
     }
  
@@ -245,6 +247,11 @@ class PlaygroundComponent {
             customBackgroundInput.addEventListener('input', () => this.applyCustomization());
         }
 
+        const customForegroundInput = this.containerElement.querySelector('#custom-foreground');
+        if (customForegroundInput) {
+            customForegroundInput.addEventListener('input', () => this.applyCustomization());
+        }
+
         // Toggle simples para instruções/ajustes
         const linkInstrucoes = this.containerElement.querySelector('#link_instrucoes');
         const texto = this.containerElement.querySelector('#texto');
@@ -273,6 +280,7 @@ class PlaygroundComponent {
         const selectedFontInput = this.containerElement.querySelector('input[name="font"]:checked');
         const customFontInput = this.containerElement.querySelector('#custom-font');
         const customBackgroundInput = this.containerElement.querySelector('#custom-background');
+        const customForegroundInput = this.containerElement.querySelector('#custom-foreground');
 
         let style = '';
         if (selectedFontInput) {
@@ -283,6 +291,9 @@ class PlaygroundComponent {
         }
         if (customBackgroundInput && customBackgroundInput.value) {
             style += `background-color: ${customBackgroundInput.value};`;
+        }
+        if (customForegroundInput && customForegroundInput.value) {
+            style += `color: ${customForegroundInput.value};`;
         }
 
         let finalHtml = this.containerElement.querySelector('#code-input').value;
@@ -310,10 +321,52 @@ class PlaygroundComponent {
         this.containerElement.querySelector('#code-output').srcdoc = finalHtml;
     }
 
-    openInNewPage() {
-        const outputFrame = this.containerElement.querySelector('#code-output');
+    async openInNewPage() {
+        // This method now correctly applies styles to the new page
+        const code = this.containerElement.querySelector('#code-input').value;
+        const selectedTemplateInput = this.containerElement.querySelector('input[name="template"]:checked');
+        const selectedFontInput = this.containerElement.querySelector('input[name="font"]:checked');
+        const customFontInput = this.containerElement.querySelector('#custom-font');
+        const customBackgroundInput = this.containerElement.querySelector('#custom-background');
+        const customForegroundInput = this.containerElement.querySelector('#custom-foreground');
+
+        let style = '';
+        if (selectedFontInput) {
+            style += `font-family: ${selectedFontInput.value};`;
+        }
+        if (customFontInput && customFontInput.value) {
+            style += `font-family: ${customFontInput.value};`;
+        }
+        if (customBackgroundInput && customBackgroundInput.value) {
+            style += `background-color: ${customBackgroundInput.value};`;
+        }
+        if (customForegroundInput && customForegroundInput.value) {
+            style += `color: ${customForegroundInput.value};`;
+        }
+
+        let finalHtml = code;
+
+        if (selectedTemplateInput) {
+            try {
+                const response = await fetch(selectedTemplateInput.value);
+                if (!response.ok) throw new Error(`Erro ao carregar template: ${selectedTemplateInput.value}`);
+                let templateHtml = await response.text();
+                finalHtml = templateHtml.replace('<!-- CODE_PLACEHOLDER -->', finalHtml);
+            } catch (error) {
+                console.error("Erro ao aplicar template:", error);
+                finalHtml = `<p style="color:red;">Erro ao carregar template: ${error.message}</p>`;
+            }
+        }
+
+        const headEndTag = finalHtml.indexOf('</head>');
+        if (headEndTag !== -1) {
+            finalHtml = finalHtml.substring(0, headEndTag) + `<style>body { ${style} }</style>` + finalHtml.substring(headEndTag);
+        } else {
+            finalHtml = `<head><style>body { ${style} }</style></head>` + finalHtml;
+        }
+
         const newWindow = window.open();
-        newWindow.document.write(outputFrame.srcdoc);
+        newWindow.document.write(finalHtml);
         newWindow.document.close();
     }
 }
