@@ -39,6 +39,9 @@
   <!-- CABEÇALHO -->
   <div id="header-placeholder"></div>
 
+  <!-- Placeholder para o componente Lousa -->
+  <div id="lousa-container"></div>
+
   <!-- O conteúdo da SPA será renderizado aqui -->
   <main id="app-root" class="container"></main>
 
@@ -47,7 +50,6 @@
 
   <!-- SCRIPTS -->
   <!-- Componentes -->
-  <script src="src/assets/js/components/LousaComponent.js"></script>
   <script src="src/assets/js/components/PlaygroundComponent.js"></script>
   <!-- Modelos -->
   <script src="src/assets/js/models/Lesson.js"></script>
@@ -81,6 +83,28 @@
           const script = document.createElement('script');
           script.src = 'src/assets/js/ui/components/navbar.js';
           document.body.appendChild(script);
+
+          // Carrega o componente Lousa
+          loadComponent('lousa-container', 'src/assets/js/components/lousa/index.html')
+            .then(() => {
+              const lousaContainer = document.getElementById('lousa-container');
+              if (lousaContainer) {
+                lousaContainer.style.display = 'none'; // Inicialmente oculta a lousa
+
+                const toggleLousa = () => {
+                  if (lousaContainer.style.display === 'none') {
+                    lousaContainer.style.display = 'block';
+                  } else {
+                    lousaContainer.style.display = 'none';
+                  }
+                };
+
+                const lousaToggleButton = document.getElementById('lousa-toggle-button');
+                if (lousaToggleButton) {
+                  lousaToggleButton.addEventListener('click', toggleLousa);
+                }
+              }
+            });
         });
       loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html');
 
