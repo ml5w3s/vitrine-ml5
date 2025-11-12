@@ -76,6 +76,18 @@
       // Inicializa o painel de depuração
       new DebugView();
 
+      let lousaContainer = null; // Declare lousaContainer here to be accessible by toggleLousa
+
+      const toggleLousa = () => {
+        if (lousaContainer) {
+          if (lousaContainer.style.display === 'none') {
+            lousaContainer.style.display = 'block';
+          } else {
+            lousaContainer.style.display = 'none';
+          }
+        }
+      };
+
       // Carrega componentes estáticos (header/footer)
       loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
         .then(() => {
@@ -87,26 +99,24 @@
           // Carrega o componente Lousa
           loadComponent('lousa-container', 'src/assets/js/components/lousa/index.html')
             .then(() => {
-              const lousaContainer = document.getElementById('lousa-container');
+              lousaContainer = document.getElementById('lousa-container');
               if (lousaContainer) {
                 lousaContainer.style.display = 'none'; // Inicialmente oculta a lousa
+              }
 
-                const toggleLousa = () => {
-                  if (lousaContainer.style.display === 'none') {
-                    lousaContainer.style.display = 'block';
-                  } else {
-                    lousaContainer.style.display = 'none';
-                  }
-                };
-
-                const lousaToggleButton = document.getElementById('lousa-toggle-button');
-                if (lousaToggleButton) {
-                  lousaToggleButton.addEventListener('click', toggleLousa);
-                }
+              const lousaToggleButton = document.getElementById('lousa-toggle-button');
+              if (lousaToggleButton) {
+                lousaToggleButton.addEventListener('click', toggleLousa);
               }
             });
         });
-      loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html');
+      loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html')
+        .then(() => {
+            const notasToggleButton = document.getElementById('notas-toggle-button');
+            if (notasToggleButton) {
+                notasToggleButton.addEventListener('click', toggleLousa);
+            }
+        });
 
       // Elemento raiz da aplicação
       const appRoot = document.getElementById('app-root');
