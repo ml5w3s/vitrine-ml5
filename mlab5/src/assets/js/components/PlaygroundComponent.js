@@ -1,7 +1,7 @@
 /**
  * PlaygroundComponent - Componente para renderizar um ambiente de codificação interativo.
  */
-class PlaygroundComponent {
+export class PlaygroundComponent {
     /**
      * @param {HTMLElement} containerElement - O elemento HTML onde o playground será renderizado.
      * @param {Lesson} lesson - O objeto da aula contendo instruções, exercícios e configurações do playground.

@@ -222,3 +222,47 @@ nav article {
     flex: 0 0 100%; /* Banner takes full width */
   }
 }
+
+/* Estilos para o LousaComponent */
+.lousa-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 25vw;
+    height: 25vh;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-top-left-radius: 10px;
+    box-shadow: -2px -2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.lousa-toggle-button {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-top-left-radius: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.lousa-content {
+    padding: 10px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.lousa-content h4 {
+    margin-top: 0;
+}
+
+.lousa-content textarea {
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+}

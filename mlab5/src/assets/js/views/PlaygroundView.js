@@ -1,16 +1,20 @@
+
+import { courseRepository } from '../repositories/CourseRepository.js';
+import { PlaygroundComponent } from '../components/PlaygroundComponent.js';
+
 /**
  * renderPlaygroundView - Renderiza a página do Playground para uma aula específica.
  * @param {string} courseId - O ID do curso.
  * @param {string} lessonId - O ID da aula.
  * @returns {Promise<HTMLElement>} - O elemento HTML com o Playground.
  */
-async function renderPlaygroundView(courseId, lessonId) {
+export async function renderPlaygroundView(courseId, lessonId) {
     const viewElement = document.createElement('div');
-    viewElement.className = 'playground-view';
+    viewElement.className = 'playground-view item';
     viewElement.innerHTML = `<h2>Carregando Playground...</h2>`;
 
     try {
-        const lesson = await apiService.getLessonById(courseId, lessonId);
+        const lesson = await courseRepository.getLessonById(courseId, lessonId);
         if (lesson && typeof PlaygroundComponent !== 'undefined') {
             viewElement.innerHTML = ''; // Limpa o "Carregando..."
             new PlaygroundComponent(viewElement, lesson);
@@ -27,3 +31,4 @@ async function renderPlaygroundView(courseId, lessonId) {
 
     return viewElement;
 }
+

@@ -1,12 +1,12 @@
 /**
  * Representa uma única aula dentro de um curso.
  */
-class Lesson {
+export class Lesson {
     /**
      * @param {string} id - O identificador único da aula.
      * @param {string} title - O título da aula.
      * @param {string|object} content - O conteúdo da aula (pode ser HTML, Markdown, ou um objeto de configuração).
-     * @param {string} type - O tipo de aula (e.g., 'lousa', 'playground', 'video').
+     * @param {string} type - O tipo de aula (e.g., 'notas', 'playground', 'video').
      */
     constructor(id, title, content, type = 'default') {
         this.id = id;
@@ -21,7 +21,7 @@ class Lesson {
      */
     render() {
         const lessonElement = document.createElement('section');
-        lessonElement.className = 'lesson-content';
+        lessonElement.className = 'lesson-content item';
         lessonElement.innerHTML = `<h3 class="lesson-title">${this.title}</h3>`;
 
         const contentContainer = document.createElement('div');
@@ -197,3 +197,4 @@ class Lesson {
         return lessonElement;
     }
 }
+ 

@@ -17,7 +17,7 @@ const bannerConfig = {
         alt: 'Banner Frontend'
     }
 };
-function renderCourseView(course, router) {
+export function renderCourseView(course, router) {
     const viewElement = document.createElement('div');
     viewElement.className = 'course-detail-view';
 

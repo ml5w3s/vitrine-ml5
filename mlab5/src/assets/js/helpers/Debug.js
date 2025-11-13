@@ -1,7 +1,7 @@
 /**
  * Debug.js - Módulo centralizado para logging estratégico.
  */
-class Debug {
+export class Debug {
     static enabled = true; // Flag para ligar/desligar todos os logs
     static view = null; // Referência para a instância de DebugView
 

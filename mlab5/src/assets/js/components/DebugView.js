@@ -1,7 +1,7 @@
 /**
  * DebugView.js - Componente visual para o painel de depuração.
  */
-class DebugView {
+export class DebugView {
     constructor() {
         this.container = null;
         this.infoPanel = null;

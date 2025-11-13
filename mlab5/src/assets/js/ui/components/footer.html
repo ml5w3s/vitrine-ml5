@@ -26,4 +26,12 @@
     <div class="item-full-width">
     <h5>ML5Lab Todos os direitos reservados.</h5>
     </div>
+    <script>
+      const btnNotes = document.querySelector('#btn-notes');
+      if (btnNotes) {
+        btnNotes.addEventListener('click', () => {
+          window.dispatchEvent(new CustomEvent('ui:toggle', { detail: { name: 'notes' } }));
+        });
+      }
+    </script>
 </footer>

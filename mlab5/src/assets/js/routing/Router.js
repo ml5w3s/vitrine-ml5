@@ -2,7 +2,7 @@
  * Router - Uma classe simples para gerenciar rotas em uma SPA (Single-Page Application).
  * Lida com URLs baseadas em hash (ex: #/home, #/course/123).
  */
-class Router {
+export class Router {
     constructor(rootElement) {
         if (!rootElement) {
             throw new Error("O elemento raiz (rootElement) é obrigatório.");
@@ -82,3 +82,4 @@ class Router {
         this.rootElement.innerHTML = '<h2>404 - Página Não Encontrada</h2>';
     }
 }
+ 

@@ -1,7 +1,11 @@
+
+import { Course } from '../models/Course.js';
+import { Lesson } from '../models/Lesson.js';
+
 /**
  * renderLessonCreatorView - Renderiza a página para criação de novas aulas e cursos.
  */
-function renderLessonCreatorView() {
+export function renderLessonCreatorView() {
     const viewElement = document.createElement('div');
     viewElement.className = 'lesson-creator-view';
     viewElement.innerHTML = `
@@ -61,8 +65,11 @@ function renderLessonCreatorView() {
         const newLesson = new Lesson(lessonId, lessonTitle, lessonContent, lessonType);
         const newCourse = new Course(courseId, courseTitle, courseDescription, [newLesson]);
 
-        // Aqui chamaremos o método do ApiService para salvar
-        const success = await apiService.saveCourse(newCourse);
+        // TODO: Implementar a funcionalidade de salvar o curso.
+        // A linha abaixo está comentada porque a funcionalidade de salvar ainda não foi implementada
+        // e o `apiService` não está mais disponível como uma variável global.
+        // const success = await apiService.saveCourse(newCourse);
+        const success = false; // Simula uma falha ao salvar
 
         const messagesDiv = document.getElementById('creator-messages');
         if (success) {
@@ -71,10 +78,11 @@ function renderLessonCreatorView() {
             // Limpar formulário
             event.target.reset();
         } else {
-            messagesDiv.innerText = 'Erro ao salvar Curso/Aula.';
+            messagesDiv.innerText = 'Erro ao salvar Curso/Aula (funcionalidade não implementada).';
             messagesDiv.style.color = 'red';
         }
     });
 
     return viewElement;
 }
+

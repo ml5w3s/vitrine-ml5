@@ -1,7 +1,7 @@
 /**
  * Representa um curso, que é uma coleção de aulas.
  */
-class Course {
+export class Course {
     /**
      * @param {string} id - O identificador único do curso.
      * @param {string} title - O título do curso.
@@ -57,3 +57,4 @@ class Course {
         return courseElement;
     }
 }
+ 

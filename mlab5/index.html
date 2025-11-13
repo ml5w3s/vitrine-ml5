@@ -49,88 +49,26 @@
   <div id="footer-placeholder"></div>
 
   <!-- SCRIPTS -->
-  <!-- Componentes -->
-  <script src="src/assets/js/components/PlaygroundComponent.js"></script>
-  <!-- Modelos -->
-  <script src="src/assets/js/models/Lesson.js"></script>
-  <script src="src/assets/js/models/Course.js"></script>
-  <!-- Serviços -->
-  <script src="src/assets/js/services/ApiService.js"></script>
-  <!-- Views -->
-  <script src="src/assets/js/views/HomeView.js"></script>
-  <script src="src/assets/js/views/CourseView.js"></script>
-  <script src="src/assets/js/views/LessonCreatorView.js"></script>
-  <script src="src/assets/js/views/PlaygroundView.js"></script>
-  <!-- Roteamento -->
-  <script src="src/assets/js/routing/Router.js"></script>
-  <script src="src/assets/js/routes.js"></script>
-  
-  <!-- Helpers -->
-  <script src="src/assets/js/helpers/Debug.js"></script>
-  <script src="src/assets/js/components/DebugView.js"></script>
-  
   <!-- Lógica Principal da Aplicação -->
-  <script src="src/assets/js/main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Inicializa o painel de depuração
-      new DebugView();
+  <script src="src/assets/js/main.js" type="module"></script>
 
-      let lousaContainer = null; // Declare lousaContainer here to be accessible by toggleLousa
-
-      const toggleLousa = () => {
-        if (lousaContainer) {
-          if (lousaContainer.style.display === 'none') {
-            lousaContainer.style.display = 'block';
-          } else {
-            lousaContainer.style.display = 'none';
-          }
+<!-- ...existing code... -->
+  <!-- Garantir que o módulo principal execute sua função de bootstrap (loadComponent/init/ default) -->
+  <script type="module">
+    import * as app from './src/assets/js/main.js';
+    (async () => {
+      try {
+        const fn = app.init || app.loadComponent || app.default || window.loadComponent;
+        if (typeof fn === 'function') {
+          await fn();
+          console.debug('App bootstrap executado:', fn.name || 'anonymous');
+        } else {
+          console.warn('Nenhuma função de bootstrap encontrada em main.js.');
         }
-      };
-
-      // Carrega componentes estáticos (header/footer)
-      loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
-        .then(() => {
-          // Garante que o script da navbar seja carregado após o header
-          const script = document.createElement('script');
-          script.src = 'src/assets/js/ui/components/navbar.js';
-          document.body.appendChild(script);
-
-          // Carrega o componente Lousa
-          loadComponent('lousa-container', 'src/assets/js/components/lousa/index.html')
-            .then(() => {
-              lousaContainer = document.getElementById('lousa-container');
-              if (lousaContainer) {
-                lousaContainer.style.display = 'none'; // Inicialmente oculta a lousa
-              }
-
-              const lousaToggleButton = document.getElementById('lousa-toggle-button');
-              if (lousaToggleButton) {
-                lousaToggleButton.addEventListener('click', toggleLousa);
-              }
-            });
-        });
-      loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html')
-        .then(() => {
-            const notasToggleButton = document.getElementById('notas-toggle-button');
-            if (notasToggleButton) {
-                notasToggleButton.addEventListener('click', toggleLousa);
-            }
-        });
-
-      // Elemento raiz da aplicação
-      const appRoot = document.getElementById('app-root');
-
-      // Instancia o roteador
-      const router = new Router(appRoot);
-
-      // Define as rotas
-      defineRoutes(router);
-      
-      // O router já tem listeners para 'load' e 'hashchange', 
-      // mas chamamos aqui para garantir que a rota inicial seja processada após a definição das rotas.
-      router.handleRouteChange();
-    });
+      } catch (err) {
+        console.error('Falha ao executar bootstrap do app:', err);
+      }
+    })();
   </script>
 </body>
 </html>

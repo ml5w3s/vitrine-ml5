@@ -94,6 +94,15 @@
 </style>
 
 <script>
+// ...existing code...
+// substituir a lógica atual do botão por algo como:
+const btnLousa = document.querySelector('#btn-lousa');
+if (btnLousa) {
+  btnLousa.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('ui:toggle', { detail: { name: 'lousa' } }));
+  });
+}
+
   document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     if(header) {

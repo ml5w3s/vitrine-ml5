@@ -1,8 +1,11 @@
+
+import { courseRepository } from '../repositories/CourseRepository.js';
+
 /**
  * renderHomeView - Busca e renderiza a lista de cursos.
  * @returns {Promise<HTMLElement>} - O elemento HTML com a lista de cursos.
  */
-async function renderHomeView(router) {
+export async function renderHomeView(router) {
     const viewElement = document.createElement('div');
     viewElement.className = 'home-view';
     viewElement.innerHTML = '<h1>Cursos</h1>';
@@ -12,7 +15,7 @@ async function renderHomeView(router) {
     viewElement.appendChild(courseListContainer);
 
     try {
-        const courses = await apiService.getCourseIndex();
+        const courses = await courseRepository.getCourseIndex();
         if (courses.length === 0) {
             courseListContainer.innerHTML = '<p>Nenhum curso disponível no momento.</p>';
         } else {
@@ -46,3 +49,4 @@ async function renderHomeView(router) {
 
     return viewElement;
 }
+
