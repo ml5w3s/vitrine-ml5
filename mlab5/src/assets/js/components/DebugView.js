@@ -1,3 +1,6 @@
+
+import { Debug } from '../helpers/Debug.js';
+
 /**
  * DebugView.js - Componente visual para o painel de depuração.
  */
@@ -104,3 +107,4 @@ export class DebugView {
         this.errorPanel.innerHTML = html;
     }
 }
+
