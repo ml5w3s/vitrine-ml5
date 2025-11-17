@@ -1,74 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/src/assets/images/ml5w3s.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mlab5 - Cursos Online</title>
+    <!-- Meta tags para SEO/CEO -->
+    <meta name="description" content="Plataforma de cursos online interativos da mlab5. Aprenda HTML5, CSS3, JavaScript e muito mais.">
+    <meta name="keywords" content="mlab5, cursos online, HTML5, CSS3, JavaScript, programação, desenvolvimento web">
+    <meta name="author" content="mlab5 Team">
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="mlab5 - Cursos Online">
+    <meta property="og:description" content="Plataforma de cursos online interativos da mlab5. Aprenda HTML5, CSS3, JavaScript e muito mais.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vitrine-ml5.com/mlab5/">
+    <meta property="og:image" content="https://vitrine-ml5.com/images/logo_ml5w3sl4b.png">
+    <!-- Favicon -->
+    <link rel="icon" href="images/ml5w3s.ico" type="image/x-icon">
 
-  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
-
-  <!-- SEO  -->
-  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
-  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://ml5w3s.com.br">
-  <meta http-equiv="content-language" content="pt-BR">
-
-  <!-- OG -->
-  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
-  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
-  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
-  <meta property="og:url" content="http://ml5w3s.com.br">
-  <meta property="og:type" content="website">
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="src/assets/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="src/assets/css/debug.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
-  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
-  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+    <!-- O CSS principal da aplicação -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- CABEÇALHO -->
-  <div id="header-placeholder"></div>
+    <main id="app-root">
+        <!-- O conteúdo da aplicação será renderizado aqui pelo JavaScript -->
+        Carregando aplicação...
+    </main>
 
-  <!-- Placeholder para o componente Lousa -->
-  <div id="lousa-container"></div>
-
-  <!-- O conteúdo da SPA será renderizado aqui -->
-  <main id="app-root" class="container"></main>
-
-  <!-- RODAPÉ  -->
-  <div id="footer-placeholder"></div>
-
-  <!-- SCRIPTS -->
-  <!-- Lógica Principal da Aplicação -->
-  <script src="src/assets/js/main.js" type="module"></script>
-
-<!-- ...existing code... -->
-  <!-- Garantir que o módulo principal execute sua função de bootstrap (loadComponent/init/ default) -->
-  <script type="module">
-    import * as app from './src/assets/js/main.js';
-    (async () => {
-      try {
-        const fn = app.init || app.loadComponent || app.default || window.loadComponent;
-        if (typeof fn === 'function') {
-          await fn();
-          console.debug('App bootstrap executado:', fn.name || 'anonymous');
-        } else {
-          console.warn('Nenhuma função de bootstrap encontrada em main.js.');
-        }
-      } catch (err) {
-        console.error('Falha ao executar bootstrap do app:', err);
-      }
-    })();
-  </script>
+    <!-- O JavaScript principal da aplicação, carregado como módulo -->
+    <script type="module" src="app.js"></script>
 </body>
 </html>
+ 

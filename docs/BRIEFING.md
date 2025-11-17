@@ -17,6 +17,14 @@ O projeto segue uma arquitetura baseada em componentes, com responsabilidades be
 -   **Models (`/models`):** Classes que representam nossas estruturas de dados (`Course`, `Lesson`). Elas garantem que os dados tenham uma estrutura consistente.
 -   **Components (`/components`):** Partes reutilizáveis da UI com lógica própria (ex: `PlaygroundComponent`, `DebugView`).
 
+### 2.1. Detalhes da Arquitetura e Fluxo de Dados
+
+O projeto utiliza JavaScript puro e moderno (com `fetch` e `async/await`) para suas funcionalidades principais, sem depender de bibliotecas externas para a lógica central.
+
+-   **`CourseRepository.js` (`mlab5/src/assets/js/repositories/CourseRepository.js`):** Esta é uma camada arquitetural crucial e indocumentada. Atua como um intermediário entre o `ApiService.js` (responsável pela busca de dados brutos) e o restante da aplicação. Sua função principal é transformar os dados brutos em modelos `Course` e `Lesson` estruturados, implementando o Padrão Repository.
+
+-   **Modelos com Lógica de Renderização (`Course.js` e `Lesson.js` em `mlab5/src/assets/js/models/`):** Diferente de modelos puramente de dados, `Course.js` e `Lesson.js` contêm métodos `render()` complexos. Estes métodos são responsáveis por gerar o HTML correspondente aos modelos. Esta abordagem, que integra lógica de modelo e visualização, é um aspecto arquitetural importante. O método `render()` de `Lesson.js`, em particular, revela um esquema JSON detalhado e atualmente indocumentado para a estrutura de `aulas.json`.
+
 ## 3. Fluxo de Dados dos Cursos
 
 Estabelecemos um padrão claro para a organização e carregamento do conteúdo dos cursos, visando automação e fácil manutenção.
@@ -64,7 +72,7 @@ Para otimizar a depuração e economizar tokens, implementamos um sistema de log
     1.  Crie uma nova pasta em `mlab5/data/`.
     2.  Dentro dela, crie um `meta.json` com `title` e `description`.
     3.  Crie um `aulas.json` com o conteúdo das aulas.
-    4.  Execute o processo (atualmente assistido) para regenerar o `courses.json` principal.
+    4.  Utilize a ferramenta interna `LessonCreatorView.js` (acessível via rota específica ou interface de administração) para auxiliar na criação e validação do conteúdo, e para regenerar o `courses.json` principal.
 
 -   **Para depurar um problema:**
     1.  Abra o painel de depuração (`Ctrl+M`).
