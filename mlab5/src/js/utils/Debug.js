@@ -1,17 +1,28 @@
 // mlab5/src/js/utils/Debug.js
+
+/**
+ * Debug.js
+ * 
+ * A simple utility for logging debug messages.
+ */
 class Debug {
-    static log(group, message, data = null) {
-        console.log(`[${group}] ${message}`, data);
+    /**
+     * Logs a message to the console.
+     * @param {string} source - The source of the log message (e.g., 'App', 'Router').
+     * @param {string} message - The message to log.
+     */
+    static log(source, message) {
+        console.log(`[${source}] ${message}`);
     }
 
-    static error(group, message, error = null) {
-        console.error(`[${group}] ERROR: ${message}`, error);
-    }
-
-    static table(group, title, data) {
-        console.groupCollapsed(`[${group}] TABLE: ${title}`);
-        console.table(data);
-        console.groupEnd();
+    /**
+     * Logs an error message to the console.
+     * @param {string} source - The source of the log message.
+     * @param {string} message - The error message to log.
+     */
+    static error(source, message) {
+        console.error(`[${source}] ${message}`);
     }
 }
+
 export default Debug;

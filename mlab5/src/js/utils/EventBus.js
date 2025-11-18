@@ -1,23 +1,37 @@
 // mlab5/src/js/utils/EventBus.js
+
+/**
+ * EventBus.js
+ * 
+ * A simple pub/sub event bus.
+ */
 class EventBus {
     constructor() {
-        this.listeners = {};
-        console.log('EventBus initialized.');
+        this.events = {};
     }
 
-    subscribe(eventType, callback) {
-        if (!this.listeners[eventType]) {
-            this.listeners[eventType] = [];
+    /**
+     * Subscribe to an event.
+     * @param {string} event - The event name.
+     * @param {function} callback - The function to execute when the event is published.
+     */
+    subscribe(event, callback) {
+        if (!this.events[event]) {
+            this.events[event] = [];
         }
-        this.listeners[eventType].push(callback);
-        console.log(`Subscribed to ${eventType}`);
+        this.events[event].push(callback);
     }
 
-    publish(eventType, data) {
-        if (this.listeners[eventType]) {
-            this.listeners[eventType].forEach(callback => callback(data));
-            console.log(`Published ${eventType} with data:`, data);
+    /**
+     * Publish an event.
+     * @param {string} event - The event name.
+     * @param {any} data - The data to pass to the subscribers.
+     */
+    publish(event, data) {
+        if (this.events[event]) {
+            this.events[event].forEach(callback => callback(data));
         }
     }
 }
+
 export default EventBus;
