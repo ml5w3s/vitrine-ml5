@@ -23,7 +23,7 @@
   },
   {
     "id": "html5",
-    "title": "HTML5 - Linguagem de marcação para web",
+    "title": "HTML5 - Linguagem web de marcação",
     "description": "Aprenda a base da web. Crie a estrutura de sites e prepare-se para estilizar com CSS e adicionar interatividade com JavaScript.",
     "image": {
       "desktop": "src/images/cursos/html5_desktop.jpg",

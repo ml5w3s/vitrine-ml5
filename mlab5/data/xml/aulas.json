@@ -3,17 +3,17 @@
     "course": {
       "name": "🏥 XML - Sistemas Hospitalares (TISS)",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -212,17 +212,17 @@
     "course": {
       "name": "📄 XML - Nota Fiscal Eletrônica (NFe)",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -421,17 +421,17 @@
     "course": {
       "name": "✅ XML Schema e Validação Empresarial",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -608,17 +608,17 @@
     "course": {
       "name": "🏛️ XML - Sistemas Governamentais (eSocial, SPED)",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -816,17 +816,17 @@
     "course": {
       "name": "🔄 XSLT - Transformação de Dados Governamentais",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_frontend_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
           }
         },
         {

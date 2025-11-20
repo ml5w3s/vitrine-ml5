@@ -15,9 +15,9 @@
     "course": {
       "name": "Aula 02 - Efeitos e Animações",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
       },
       "articles": [
         {
@@ -117,9 +117,9 @@
     "course": {
       "name": "Aula 03 - Manipulação Avançada do DOM",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
       },
       "articles": [
         {
@@ -184,9 +184,9 @@
     "course": {
       "name": "Aula 04 - Slides e Carrosséis",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
       },
       "articles": [
         {
@@ -241,9 +241,9 @@
     "course": {
       "name": "Aula 05 - Menus e Navegação",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
       },
       "articles": [
         {
@@ -321,9 +321,9 @@
     "course": {
       "name": "Aula 07 - Galerias e Modais",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/assets/images/banner_legado_mobile.png"
+        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
+        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
+        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
       },
       "articles": [
         {
