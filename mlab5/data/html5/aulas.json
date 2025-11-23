@@ -7,9 +7,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -30,9 +30,9 @@
         {
           "position": 2,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/cursos/html5/etiqueta_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/cursos/html5/etiqueta_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/cursos/html5/etiqueta_mobile.png",
+            "desktop": "src/images/cursos/html5/etiqueta_desktop.png",
+            "tablet": "src/images/cursos/html5/etiqueta_tablet.png",
+            "mobile": "src/images/cursos/html5/etiqueta_mobile.png",
             "caption": "Etiqueta com as marcações"
           }
         },
@@ -60,23 +60,24 @@
         },
         {
           "position": 4,
-          "text": "Entenda que alguns comandos não aparecem na tela, mas são necessários para o bom funcionamento da página. Veja o resultado do uso desses códigos, na imagem a seguir:",
           "alternativeHeadline": "Exemplo",
           "subheadline": "Papeis desempenhados por essas tag's:",
+          "text": "Entenda que alguns comandos não aparecem na tela, mas são necessários para o bom funcionamento da página. Veja o resultado do uso desses códigos, na imagem a seguir:",
           "programmingLanguage": "HTML",
           "code": [
-            "<!DOCTYPE html> – Tipo do documento - não visível na tela;",
-            "<html> – Raiz do documento - não visível na tela;",
-            "<head> – <title>, <meta>, <link> - não visível na tela;",
-            "<h1>Nome Empresa LTDA.</h1>",
-            "<p>Produzido no Brasil.</p>",
-            "<img src=\"camiseta.jpg> Aqui aparece a imagem."
+            "&lt;!DOCTYPE html&gt; - Tipo do documento;",
+            "&lt;html&gt; - Início do código HTML;",
+            "&lt;head&gt; - Cabeçalho (metadados);",
+            "&lt;h1&gt;Nome Empresa LTDA.&lt;/h1&gt;",
+            "&lt;p&gt;Produzido no Brasil.&lt;/p&gt;",
+            "&lt;img src='camiseta.jpg'&gt; Aqui aparece a imagem."
           ]
+
         },
         {
           "position": 5,
           "image": {
-            "src": "/vitrine-ml5/mlab5/src/images/cursos/html5/exemplo.png",
+            "src": "src/images/cursos/html5/exemplo.png",
             "caption": "Estrutura básica de uma página HTML"
           }
         },
@@ -84,8 +85,7 @@
           "position": 6,
           "headline": "Diretrizes para Playground",
           "text": "USE ESTE ARTICLE APENAS PARA O PLAYGROUND",
-          "forPlayground": true,
-          "hidden": true
+          "forPlayground": true
         },
         {
           "position": 7,
@@ -97,8 +97,7 @@
             "Parágrafo: O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
             "Subtítulo: Fundamentos Essenciais",
             "HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
-          ],
-          "hidden": true
+          ]
         }
       ],
       "exercise": {
@@ -113,9 +112,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "templates/classico.html",
+          "templates/moderno.html",
+          "templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -134,17 +133,17 @@
     "course": {
       "name": "🏗️ HTML5 - Novos Elementos Semânticos",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -163,9 +162,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/elementos_semanticos_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/elementos_semanticos_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/elementos_semanticos_mobile.png"
+            "desktop": "src/images/elementos_semanticos_desktop.png",
+            "tablet": "src/images/elementos_semanticos_tablet.png",
+            "mobile": "src/images/elementos_semanticos_mobile.png"
           }
         },
         {
@@ -199,9 +198,9 @@
         {
           "position": 7,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/navegacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/navegacao_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/navegacao_mobile.png"
+            "desktop": "src/images/navegacao_desktop.png",
+            "tablet": "src/images/navegacao_tablet.png",
+            "mobile": "src/images/navegacao_mobile.png"
           }
         },
         {
@@ -235,9 +234,9 @@
         {
           "position": 11,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/section_article_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/section_article_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/section_article_mobile.png"
+            "desktop": "src/images/section_article_desktop.png",
+            "tablet": "src/images/section_article_tablet.png",
+            "mobile": "src/images/section_article_mobile.png"
           }
         },
         {
@@ -279,9 +278,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/js/componentes/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/js/componentes/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/js/componentes/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -290,7 +289,7 @@
         }
       },
       "playground": {
-        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
+        "url": "src/js/views/PlaygroundView.js"
       }
     }
   },
@@ -298,17 +297,17 @@
     "course": {
       "name": "🎬 HTML5 - Elementos de Mídia",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -328,9 +327,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_mobile.png"
+            "desktop": "src/images/cursos/html5/elementos_midia_desktop.png",
+            "tablet": "src/images/cursos/html5/elementos_midia_tablet.png",
+            "mobile": "src/images/cursos/html5/elementos_midia_mobile.png"
           }
         },
         {
@@ -372,9 +371,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo de Uso:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/audio_video_mobile.png"
+            "desktop": "cursos/html5/04/images/audio_video_desktop.png",
+            "tablet": "cursos/html5/04/images/audio_video_tablet.png",
+            "mobile": "src/images/audio_video_mobile.png"
           }
         },
         {
@@ -436,9 +435,9 @@
         {
           "position": 13,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/eventos_midia_mobile.png"
+            "desktop": "cursos/html5/04/images/eventos_midia_desktop.png",
+            "tablet": "cursos/html5/04/images/eventos_midia_tablet.png",
+            "mobile": "src/images/eventos_midia_mobile.png"
           }
         }
       ],
@@ -456,9 +455,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "templates/classico.html",
+          "templates/moderno.html",
+          "templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -467,7 +466,7 @@
         }
       },
       "playground": {
-        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
+        "url": "src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -475,17 +474,17 @@
     "course": {
       "name": "📝 HTML5 - Novos Tipos de Input",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -505,9 +504,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/tipos_input_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/tipos_input_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/tipos_input_mobile.png"
+            "desktop": "src/images/tipos_input_desktop.png",
+            "tablet": "src/images/tipos_input_tablet.png",
+            "mobile": "src/images/tipos_input_mobile.png"
           }
         },
         {
@@ -544,9 +543,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo com Number e Range:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/inputs_numericos_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/inputs_numericos_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/inputs_numericos_mobile.png"
+            "desktop": "src/images/inputs_numericos_desktop.png",
+            "tablet": "src/images/inputs_numericos_tablet.png",
+            "mobile": "src/images/inputs_numericos_mobile.png"
           }
         },
         {
@@ -602,9 +601,9 @@
           "position": 13,
           "alternativeHeadline": "Exemplo com Validação:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/validacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/assets/imagess/validacao_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/validacao_mobile.png"
+            "desktop": "src/images/validacao_desktop.png",
+            "tablet": "src/assets/imagess/validacao_tablet.png",
+            "mobile": "src/images/validacao_mobile.png"
           }
         },
         {
@@ -639,9 +638,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/src/assets/js/templates/classico.html",
-          "/vitrine-ml5/mlab5/src/assets/js/templates/moderno.html",
-          "/vitrine-ml5/mlab5/src/assets/js/templates/dark_mode.html"
+          "src/assets/js/templates/classico.html",
+          "src/assets/js/templates/moderno.html",
+          "src/assets/js/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -650,7 +649,7 @@
         }
       },
       "playground": {
-        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
+        "url": "src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -658,17 +657,17 @@
     "course": {
       "name": "💾 HTML5 - Armazenamento Local",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -688,9 +687,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/web_storage_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/web_storage_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/web_storage_mobile.png"
+            "desktop": "src/images/web_storage_desktop.png",
+            "tablet": "src/images/web_storage_tablet.png",
+            "mobile": "src/images/web_storage_mobile.png"
           }
         },
         {
@@ -751,9 +750,9 @@
           "position": 9,
           "alternativeHeadline": "Funções Utilitárias:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/objetos_json_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/objetos_json_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/objetos_json_mobile.png"
+            "desktop": "src/images/objetos_json_desktop.png",
+            "tablet": "src/images/objetos_json_tablet.png",
+            "mobile": "src/images/objetos_json_mobile.png"
           }
         },
         {
@@ -790,9 +789,9 @@
           "position": 13,
           "alternativeHeadline": "Exemplo: Sistema de Preferências:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/casos_uso_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/casos_uso_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/casos_uso_mobile.png"
+            "desktop": "src/images/casos_uso_desktop.png",
+            "tablet": "src/images/casos_uso_tablet.png",
+            "mobile": "src/images/casos_uso_mobile.png"
           }
         },
         {
@@ -835,9 +834,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/src/js/ui/templates/classico.html",
-          "/vitrine-ml5/mlab5/src/js/ui/templates/moderno.html",
-          "/vitrine-ml5/mlab5/src/js/ui/templates/dark_mode.html"
+          "src/js/ui/templates/classico.html",
+          "src/js/ui/templates/moderno.html",
+          "src/js/ui/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -846,7 +845,7 @@
         }
       },
       "playground": {
-        "url": "/vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
+        "url": "src/assets/js/views/PlaygroundView.js"
       }
     }
   },
@@ -854,17 +853,17 @@
     "course": {
       "name": "🌍 HTML5 - Geolocalização e APIs Web",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -884,9 +883,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/geolocalizacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/geolocalizacao_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/geolocalizacao_mobile.png"
+            "desktop": "src/images/geolocalizacao_desktop.png",
+            "tablet": "src/images/geolocalizacao_tablet.png",
+            "mobile": "src/images/geolocalizacao_mobile.png"
           }
         },
         {
@@ -924,9 +923,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo Detalhado:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/objeto_position_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5//src/assets/images/objeto_position_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/objeto_position_mobile.png"
+            "desktop": "src/images/objeto_position_desktop.png",
+            "tablet": "/src/assets/images/objeto_position_tablet.png",
+            "mobile": "src/images/objeto_position_mobile.png"
           }
         },
         {
@@ -961,8 +960,8 @@
           "position": 11,
           "alternativeHeadline": "Exemplo de Monitoramento:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/monitoramento_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/monitoramento_tablet.png",
+            "desktop": "src/images/monitoramento_desktop.png",
+            "tablet": "src/images/monitoramento_tablet.png",
             "mobile": "vitrine-ml5/mlab5/src/assets/images/monitoramento_mobile.png"
           }
         },
@@ -999,9 +998,9 @@
           "position": 15,
           "alternativeHeadline": "Exemplo: Device Orientation:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/outras_apis_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/outras_apis_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/outras_apis_mobile.png"
+            "desktop": "src/images/outras_apis_desktop.png",
+            "tablet": "src/images/outras_apis_tablet.png",
+            "mobile": "src/images/outras_apis_mobile.png"
           }
         },
         {
@@ -1037,9 +1036,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/src/js/ui/templates/classico.html",
-          "/vitrine-ml5/mlab5/src/js/ui/templates/moderno.html",
-          "/vitrine-ml5/mlab5/src/js/ui/templates/dark_mode.html"
+          "src/js/ui/templates/classico.html",
+          "src/js/ui/templates/moderno.html",
+          "src/js/ui/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -1048,8 +1047,9 @@
         }
       },
       "playground": {
-        "url": "//vitrine-ml5/mlab5/src/assets/js/views/PlaygroundView.js"
+        "url": "/src/assets/js/views/PlaygroundView.js"
       }
     }
   }
 ]
+ 

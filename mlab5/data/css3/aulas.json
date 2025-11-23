@@ -153,9 +153,9 @@
           "position": 15,
           "alternativeHeadline": "Layout Responsivo:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/cursos/css3/03/images/responsivo_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/cursos/css3/03/images/responsivo_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/cursos/css3/03/images/responsivo_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/src/images/cursos/css3/responsivo_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/cursos/css3/responsivo_tablet.png",
+            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/src/images/cursos/css3/responsivo_mobile.png"
           }
         }
       ],
@@ -173,9 +173,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/templates/classico.html",
-          "/vitrine-ml5/mlab5/templates/moderno.html",
-          "/vitrine-ml5/mlab5/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/js/componentes/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/js/componentes/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/js/componentes/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",

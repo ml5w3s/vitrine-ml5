@@ -91,12 +91,12 @@ const renderLessonDetails = async (params) => {
 
         let lessonHtml = `
             <h1>${lesson.course.name}</h1>
-            <div class="lesson-content">
+            <section class="container">
         `;
 
         // Render each article within the lesson, excluding hidden ones
         lesson.course.articles.filter(article => !article.hidden).forEach(article => {
-            lessonHtml += `<div class="lesson-article">`;
+            lessonHtml += `<article class="item">`;
             if (article.headline) {
                 lessonHtml += `<h2>${article.headline}</h2>`;
             }
@@ -121,11 +121,11 @@ const renderLessonDetails = async (params) => {
                 lessonHtml += '</code></pre>';
             }
             // Note: Image rendering is skipped for simplicity for now
-            lessonHtml += `</div>`;
+            lessonHtml += `</article>`;
         });
 
         lessonHtml += `
-            </div>`;
+            </article>`;
 
         // Add Playground button if a playground is defined for this lesson
         if (lesson.course.playground) {

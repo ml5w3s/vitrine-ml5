@@ -31,15 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Carrega componentes estáticos (header/footer)
-  loadComponent('header-placeholder', 'src/assets/js/ui/components/header.html')
+  loadComponent('header-placeholder', 'src/js/ui/components/header.html')
     .then(() => {
       // Garante que o script da navbar seja carregado após o header
       const script = document.createElement('script');
-      script.src = 'src/assets/js/ui/components/navbar.js';
+      script.src = 'src/js/ui/components/navbar.js';
       document.body.appendChild(script);
 
       // Carrega o componente Lousa
-      loadComponent('lousa-container', 'src/assets/js/components/lousa/index.html')
+      loadComponent('lousa-container', 'src/js/components/lousa/index.html')
         .then(() => {
           lousaContainer = document.getElementById('lousa-container');
           if (lousaContainer) {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
     });
-  loadComponent('footer-placeholder', 'src/assets/js/ui/components/footer.html')
+  loadComponent('footer-placeholder', 'src/js/ui/components/footer.html')
     .then(() => {
         const notasToggleButton = document.getElementById('notas-toggle-button');
         if (notasToggleButton) {
