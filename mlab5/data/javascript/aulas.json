@@ -180,9 +180,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   },
@@ -364,9 +361,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   },
@@ -527,9 +521,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   },
@@ -688,9 +679,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   },
@@ -853,9 +841,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   },
@@ -1019,9 +1004,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   },
@@ -1163,9 +1145,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/vitrine-ml5/mlab5/src/js/components/PlaygroundWiew.js"
       }
     }
   }

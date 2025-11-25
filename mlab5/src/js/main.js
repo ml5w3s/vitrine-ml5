@@ -1,7 +1,7 @@
-import { Router } from './routing/Router.js';
+import Router from './router/Router.js';
 import { defineRoutes } from './routes.js';
-import { DebugView } from './components/DebugView.js';
 import { Debug } from './helpers/Debug.js';
+import EventBus from './utils/EventBus.js';
 
 
 async function loadComponent(placeholderId, file) {
@@ -15,8 +15,6 @@ async function loadComponent(placeholderId, file) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Inicializa o painel de depuração
-  new DebugView();
 
   let lousaContainer = null;
 
@@ -31,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Carrega componentes estáticos (header/footer)
-  loadComponent('header-placeholder', 'src/js/ui/components/header.html')
+  /* loadComponent('header-placeholder', 'src/js/ui/components/header.html')
     .then(() => {
       // Garante que o script da navbar seja carregado após o header
       const script = document.createElement('script');
@@ -51,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lousaToggleButton.addEventListener('click', toggleLousa);
           }
         });
-    });
+    }); */
   loadComponent('footer-placeholder', 'src/js/ui/components/footer.html')
     .then(() => {
         const notasToggleButton = document.getElementById('notas-toggle-button');
@@ -60,16 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-  // Elemento raiz da aplicação
-  const appRoot = document.getElementById('app-root');
-
-  // Instancia o roteador
-  const router = new Router(appRoot);
+  // Instancia o EventBus e o Roteador
+  const eventBus = new EventBus();
+  const router = new Router(eventBus);
 
   // Define as rotas
   defineRoutes(router);
   
-  // O router já tem listeners para 'load' e 'hashchange', 
-  // mas chamamos aqui para garantir que a rota inicial seja processada após a definição das rotas.
-  router.handleRouteChange();
+  // Inicializa o roteador
+  router.init();
 });

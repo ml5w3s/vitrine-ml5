@@ -202,9 +202,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
       }
     }
   },
@@ -411,9 +408,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
       }
     }
   },
@@ -598,9 +592,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
       }
     }
   },
@@ -806,9 +797,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
       }
     }
   },
@@ -998,9 +986,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "http://localhost:3000/vitrine-ml5/mlab5/playground"
       }
     }
   }

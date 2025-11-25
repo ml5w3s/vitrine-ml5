@@ -100,16 +100,6 @@
           ]
         }
       ],
-      "exercise": {
-        "headline": "Exercício 01 de HTML",
-        "text": "Crie uma página usando HTML com:",
-        "steps": [
-          "Título: O Caminho do Desenvolvimento Front-End",
-          "Parágrafo: O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
-          "Subtítulo: Fundamentos Essenciais",
-          "HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
-        ]
-      },
       "controls": {
         "templates": [
           "templates/classico.html",
@@ -132,12 +122,16 @@
   {
     "course": {
       "name": "🏗️ HTML5 - Novos Elementos Semânticos",
-      "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
-      },
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
+          }
+        },
         {
           "position": 1,
           "image": {
@@ -296,12 +290,16 @@
   {
     "course": {
       "name": "🎬 HTML5 - Elementos de Mídia",
-      "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
-      },
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
+          }
+        },
         {
           "position": 1,
           "image": {
@@ -473,12 +471,16 @@
   {
     "course": {
       "name": "📝 HTML5 - Novos Tipos de Input",
-      "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
-      },
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
+          }
+        },
         {
           "position": 1,
           "image": {
@@ -652,16 +654,20 @@
         "url": "src/assets/js/views/PlaygroundView.js"
       }
     }
-  },
+    },
   {
     "course": {
       "name": "💾 HTML5 - Armazenamento Local",
-      "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
-      },
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
+          }
+        },
         {
           "position": 1,
           "image": {
@@ -852,12 +858,16 @@
   {
     "course": {
       "name": "🌍 HTML5 - Geolocalização e APIs Web",
-      "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
-      },
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
+          }
+        },
         {
           "position": 1,
           "image": {
@@ -1045,9 +1055,6 @@
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
-      },
-      "playground": {
-        "url": "/src/assets/js/views/PlaygroundView.js"
       }
     }
   }

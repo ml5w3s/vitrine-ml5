@@ -27,20 +27,40 @@ class Router {
     /**
      * Adds a new route to the router.
      * Supports route parameters like ':paramName'.
-     * @param {string} path - The path for the route (e.g., '#/home', '#/course/:courseId').
+     * @param {string} name - The name of the route (e.g., 'home', 'courseDetail').
+     * @param {string} path - The path for the route (e.g., '/', '/course/:courseId').
      * @param {function} handler - The function to execute when the route is matched.
      */
-    addRoute(path, handler) {
+    addRoute(name, path, handler) {
         const paramNames = [];
-        // Convert path to a regex, capturing parameter values
         const regexPath = path.replace(/:(\w+)/g, (match, paramName) => {
             paramNames.push(paramName);
             return '([^/]+)'; // Capture group for the parameter value
         });
-        const regex = new RegExp(`^${regexPath}$`); // Match from start to end
+        const regex = new RegExp(`^#${regexPath}$`);
 
-        this.routes.push({ regex, handler, paramNames });
-        Debug.log('Router', `Route added: ${path}`);
+        this.routes.push({ name, path, regex, handler, paramNames });
+        Debug.log('Router', `Route added: ${name} -> ${path}`);
+    }
+
+    /**
+     * Generates a URL for a named route with the given parameters.
+     * @param {string} name - The name of the route.
+     * @param {object} params - An object with parameter values.
+     * @returns {string} The generated URL.
+     */
+    generateUrl(name, params = {}) {
+        const route = this.routes.find(r => r.name === name);
+        if (!route) {
+            Debug.error('Router', `Route with name '${name}' not found.`);
+            return '#/not-found';
+        }
+
+        let path = route.path;
+        for (const key in params) {
+            path = path.replace(`:${key}`, params[key]);
+        }
+        return `#${path}`;
     }
 
     /**
@@ -54,13 +74,12 @@ class Router {
             const match = hash.match(route.regex);
             if (match) {
                 const params = {};
-                // Populate params object with captured values
                 for (let i = 0; i < route.paramNames.length; i++) {
-                    params[route.paramNames[i]] = match[i + 1]; // match[0] is the full string
+                    params[route.paramNames[i]] = match[i + 1];
                 }
                 Debug.log('Router', `Executing handler for route: ${hash} with params:`, params);
                 route.handler(params);
-                return; // Stop after the first match
+                return;
             }
         }
 

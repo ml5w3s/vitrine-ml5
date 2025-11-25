@@ -45,7 +45,7 @@ export class Lesson {
                     articleElement.classList.add('item-banner');
                     const figure = document.createElement('figure');
                     const img = document.createElement('img');
-                    img.src = articleData.image.desktop || articleData.image.src;
+                    img.src = '/vitrine-ml5/mlab5/' + (articleData.image.desktop || articleData.image.src);
                     img.alt = articleData.image.caption || this.title;
                     figure.appendChild(img);
                     articleElement.appendChild(figure);
@@ -106,7 +106,7 @@ export class Lesson {
                 if (articleData.image && (articleData.image.desktop || articleData.image.src)) {
                     const figure = document.createElement('figure');
                     const img = document.createElement('img');
-                    img.src = articleData.image.desktop || articleData.image.src;
+                    img.src = '/vitrine-ml5/mlab5/' + (articleData.image.desktop || articleData.image.src);
                     img.alt = articleData.image.caption || this.title;
                     figure.appendChild(img);
                     if (articleData.image.caption) {
@@ -134,32 +134,6 @@ export class Lesson {
                     container.appendChild(articleElement);
                 }
             });
-
-            // Adiciona o botão do Playground no final, se existir
-            const playgroundData = lessonData.playground;
-            if (playgroundData) {
-                const playgroundArticle = document.createElement('article');
-                playgroundArticle.className = 'item item-playground';
-
-                if (playgroundData.headline) {
-                    const headline = document.createElement('h4');
-                    headline.textContent = playgroundData.headline;
-                    playgroundArticle.appendChild(headline);
-                }
-                if (playgroundData.instructions) {
-                    const instructions = document.createElement('p');
-                    instructions.textContent = playgroundData.instructions;
-                    playgroundArticle.appendChild(instructions);
-                }
-                const playgroundButton = document.createElement('button');
-                playgroundButton.className = 'open-playground-button';
-                playgroundButton.textContent = 'Abrir Playground';
-                playgroundButton.addEventListener('click', () => {
-                    window.location.hash = `${window.location.hash}/playground`;
-                });
-                playgroundArticle.appendChild(playgroundButton);
-                container.appendChild(playgroundArticle);
-            }
 
             lessonElement.appendChild(container);
 
