@@ -60,19 +60,18 @@
         },
         {
           "position": 4,
+          "text": "Entenda que alguns comandos não aparecem na tela, mas são necessários para o bom funcionamento da página. Veja o resultado do uso desses códigos, na imagem a seguir:",
           "alternativeHeadline": "Exemplo",
           "subheadline": "Papeis desempenhados por essas tag's:",
-          "text": "Entenda que alguns comandos não aparecem na tela, mas são necessários para o bom funcionamento da página. Veja o resultado do uso desses códigos, na imagem a seguir:",
           "programmingLanguage": "HTML",
           "code": [
-            "&lt;!DOCTYPE html&gt; - Tipo do documento;",
-            "&lt;html&gt; - Início do código HTML;",
-            "&lt;head&gt; - Cabeçalho (metadados);",
-            "&lt;h1&gt;Nome Empresa LTDA.&lt;/h1&gt;",
-            "&lt;p&gt;Produzido no Brasil.&lt;/p&gt;",
-            "&lt;img src='camiseta.jpg'&gt; Aqui aparece a imagem."
+            "<!DOCTYPE html> – Tipo do documento - não visível na tela;",
+            "<html> – Raiz do documento - não visível na tela;",
+            "<head> – <title>, <meta>, <link> - não visível na tela;",
+            "<h1>Nome Empresa LTDA.</h1>",
+            "<p>Produzido no Brasil.</p>",
+            "<img src=\"camiseta.jpg> Aqui aparece a imagem."
           ]
-
         },
         {
           "position": 5,
@@ -85,7 +84,8 @@
           "position": 6,
           "headline": "Diretrizes para Playground",
           "text": "USE ESTE ARTICLE APENAS PARA O PLAYGROUND",
-          "forPlayground": true
+          "forPlayground": true,
+          "hidden": true
         },
         {
           "position": 7,
@@ -97,14 +97,25 @@
             "Parágrafo: O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
             "Subtítulo: Fundamentos Essenciais",
             "HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
-          ]
+          ],
+          "hidden": true
         }
       ],
+      "exercise": {
+        "headline": "Exercício 01 de HTML",
+        "text": "Crie uma página usando HTML com:",
+        "steps": [
+          "Título: O Caminho do Desenvolvimento Front-End",
+          "Parágrafo: O desenvolvimento front-end é a arte de transformar ideias em experiências visuais e interativas. Para quem está iniciando, a jornada começa com compreender HTML, CSS e JavaScript.",
+          "Subtítulo: Fundamentos Essenciais",
+          "HTML é a espinha dorsal de qualquer página web, definindo a estrutura e o conteúdo. CSS traz vida ao design, ajustando cores, fontes e layouts. JavaScript dá movimento e lógica à interface, criando interatividade."
+        ]
+      },
       "controls": {
         "templates": [
-          "templates/classico.html",
-          "templates/moderno.html",
-          "templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -122,10 +133,14 @@
   {
     "course": {
       "name": "🏗️ HTML5 - Novos Elementos Semânticos",
+      "image": {
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
+      },
       "articles": [
         {
           "position": 1,
-          "type": "banner",
           "image": {
             "desktop": "src/images/banner_frontend_desktop.png",
             "tablet": "src/images/banner_frontend_tablet.png",
@@ -264,9 +279,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/src/js/componentes/templates/classico.html",
-          "/vitrine-ml5/mlab5/src/js/componentes/templates/moderno.html",
-          "/vitrine-ml5/mlab5/src/js/componentes/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -275,17 +290,21 @@
         }
       },
       "playground": {
-        "url": "src/js/views/PlaygroundView.js"
+        "url": "/vitrine-ml5/mlab5/src//js/views/PlaygroundView.js"
       }
     }
   },
   {
     "course": {
       "name": "🎬 HTML5 - Elementos de Mídia",
+      "image": {
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
+      },
       "articles": [
         {
           "position": 1,
-          "type": "banner",
           "image": {
             "desktop": "src/images/banner_frontend_desktop.png",
             "tablet": "src/images/banner_frontend_tablet.png",
@@ -309,9 +328,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "src/images/cursos/html5/elementos_midia_desktop.png",
-            "tablet": "src/images/cursos/html5/elementos_midia_tablet.png",
-            "mobile": "src/images/cursos/html5/elementos_midia_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/cursos/html5/04/images/elementos_midia_mobile.png"
           }
         },
         {
@@ -353,8 +372,8 @@
           "position": 7,
           "alternativeHeadline": "Exemplo de Uso:",
           "image": {
-            "desktop": "cursos/html5/04/images/audio_video_desktop.png",
-            "tablet": "cursos/html5/04/images/audio_video_tablet.png",
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/audio_video_tablet.png",
             "mobile": "src/images/audio_video_mobile.png"
           }
         },
@@ -417,8 +436,8 @@
         {
           "position": 13,
           "image": {
-            "desktop": "cursos/html5/04/images/eventos_midia_desktop.png",
-            "tablet": "cursos/html5/04/images/eventos_midia_tablet.png",
+            "desktop": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/cursos/html5/04/images/eventos_midia_tablet.png",
             "mobile": "src/images/eventos_midia_mobile.png"
           }
         }
@@ -437,9 +456,9 @@
       },
       "controls": {
         "templates": [
-          "templates/classico.html",
-          "templates/moderno.html",
-          "templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/templates/classico.html",
+          "/vitrine-ml5/mlab5/templates/moderno.html",
+          "/vitrine-ml5/mlab5/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -448,17 +467,21 @@
         }
       },
       "playground": {
-        "url": "src/assets/js/views/PlaygroundView.js"
+        "url": "/vitrine-ml5/mlab5/src//js/views/PlaygroundView.js"
       }
     }
   },
   {
     "course": {
       "name": "📝 HTML5 - Novos Tipos de Input",
+      "image": {
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
+      },
       "articles": [
         {
           "position": 1,
-          "type": "banner",
           "image": {
             "desktop": "src/images/banner_frontend_desktop.png",
             "tablet": "src/images/banner_frontend_tablet.png",
@@ -580,7 +603,7 @@
           "alternativeHeadline": "Exemplo com Validação:",
           "image": {
             "desktop": "src/images/validacao_desktop.png",
-            "tablet": "src/assets/imagess/validacao_tablet.png",
+            "tablet": "/vitrine-ml5/mlab5/src//imagess/validacao_tablet.png",
             "mobile": "src/images/validacao_mobile.png"
           }
         },
@@ -616,9 +639,9 @@
       },
       "controls": {
         "templates": [
-          "src/assets/js/templates/classico.html",
-          "src/assets/js/templates/moderno.html",
-          "src/assets/js/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src//js/templates/classico.html",
+          "/vitrine-ml5/mlab5/src//js/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src//js/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -627,17 +650,21 @@
         }
       },
       "playground": {
-        "url": "src/assets/js/views/PlaygroundView.js"
+        "url": "/vitrine-ml5/mlab5/src//js/views/PlaygroundView.js"
       }
     }
-    },
+  },
   {
     "course": {
       "name": "💾 HTML5 - Armazenamento Local",
+      "image": {
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
+      },
       "articles": [
         {
           "position": 1,
-          "type": "banner",
           "image": {
             "desktop": "src/images/banner_frontend_desktop.png",
             "tablet": "src/images/banner_frontend_tablet.png",
@@ -808,9 +835,9 @@
       },
       "controls": {
         "templates": [
-          "src/js/ui/templates/classico.html",
-          "src/js/ui/templates/moderno.html",
-          "src/js/ui/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/js/ui/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -819,17 +846,21 @@
         }
       },
       "playground": {
-        "url": "src/assets/js/views/PlaygroundView.js"
+        "url": "/vitrine-ml5/mlab5/src//js/views/PlaygroundView.js"
       }
     }
   },
   {
     "course": {
       "name": "🌍 HTML5 - Geolocalização e APIs Web",
+      "image": {
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
+      },
       "articles": [
         {
           "position": 1,
-          "type": "banner",
           "image": {
             "desktop": "src/images/banner_frontend_desktop.png",
             "tablet": "src/images/banner_frontend_tablet.png",
@@ -894,7 +925,7 @@
           "alternativeHeadline": "Exemplo Detalhado:",
           "image": {
             "desktop": "src/images/objeto_position_desktop.png",
-            "tablet": "/src/assets/images/objeto_position_tablet.png",
+            "tablet": "/vitrine-ml5/mlab5//src//images/objeto_position_tablet.png",
             "mobile": "src/images/objeto_position_mobile.png"
           }
         },
@@ -932,7 +963,7 @@
           "image": {
             "desktop": "src/images/monitoramento_desktop.png",
             "tablet": "src/images/monitoramento_tablet.png",
-            "mobile": "vitrine-ml5/mlab5/src/assets/images/monitoramento_mobile.png"
+            "mobile": "vitrine-ml5/mlab5/src//images/monitoramento_mobile.png"
           }
         },
         {
@@ -1006,17 +1037,19 @@
       },
       "controls": {
         "templates": [
-          "src/js/ui/templates/classico.html",
-          "src/js/ui/templates/moderno.html",
-          "src/js/ui/templates/dark_mode.html"
+          "/vitrine-ml5/mlab5/src/js/ui/templates/classico.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/moderno.html",
+          "/vitrine-ml5/mlab5/src/js/ui/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
           "foreground": "#000000",
           "fontFamily": "Arial, sans-serif"
         }
+      },
+      "playground": {
+        "url": "//vitrine-ml5/mlab5/src//js/views/PlaygroundView.js"
       }
     }
   }
 ]
- 

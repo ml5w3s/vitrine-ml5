@@ -1,4 +1,4 @@
-// Em src/assets/js/components/NotasComponent.js
+// Em src//js/components/NotasComponent.js
 
 class NotasComponent {
     constructor() {

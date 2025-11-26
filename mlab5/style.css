@@ -10,7 +10,7 @@ body {
 }
 
 main#app-root {
-    max-width: 800px;
+    max-width: auto;
     margin: 50px auto;
     padding: 30px;
     background-color: #fff;
@@ -392,4 +392,77 @@ nav article {
     border-radius: 5px;
     padding: 10px;
     font-family: 'Courier New', Courier, monospace;
+}
+
+/* Lousa Styles */
+.lousa-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lousa-view .toolbar {
+    position: relative; /* Ajustado para ser relativo ao .lousa-view */
+    top: auto;
+    left: auto;
+    display: flex;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Adicionado para responsividade */
+    justify-content: center;
+}
+
+.lousa-view .toolbar button, .lousa-view .toolbar input {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.lousa-view .toolbar button:hover {
+    background-color: #e0e0e0;
+}
+
+.lousa-view canvas#whiteboard {
+    border: 1px solid black;
+    background-color: #f7f7f7;
+    /* Remover width/height 100vw/100vh para que o canvas seja contido pelo seu pai */
+    /* width: 100vw; */
+    /* height: 100vh; */
+    position: relative; /* Ajustado para ser relativo ao .lousa-view */
+    top: auto;
+    left: auto;
+    z-index: 0;
+    max-width: 100%; /* Garante que o canvas não transborde */
+    height: auto;
+}
+
+.sticky-note {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #ffc;
+    padding: 10px;
+    box-shadow: 5px 5px 7px rgba(0,0,0,0.2);
+    cursor: grab; /* Melhor semântica para arrastar */
+    z-index: 2; /* Para garantir que as notas fiquem acima do canvas */
+}
+
+.sticky-note textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    resize: none;
+    font-family: sans-serif;
+    font-size: 16px;
+    box-sizing: border-box; /* Incluir padding no width/height */
 }

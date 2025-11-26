@@ -4,6 +4,8 @@ import { renderHomeView } from './views/HomeView.js';
 import { renderCourseView } from './views/CourseView.js';
 import { renderLessonCreatorView } from './views/LessonCreatorView.js';
 import { renderPlaygroundView } from './views/PlaygroundView.js';
+import { renderLousaView } from './views/LousaView.js';
+import { renderNotasView } from './views/NotasView.js';
 
 /**
  * Gerencia a visibilidade e o comportamento do botão do playground no rodapé.
@@ -27,7 +29,7 @@ function managePlaygroundButton(lesson) {
 }
 
 
-// Em mlab5/src/assets/js/routes.js
+// Em mlab5/src//js/routes.js
 export function defineRoutes(router) {
     const appRoot = document.getElementById('app-root');
     // Define a rota para a Home Page (lista de cursos)
@@ -87,5 +89,23 @@ export function defineRoutes(router) {
         const playgroundView = await renderPlaygroundView(courseId, lessonId);
         appRoot.innerHTML = ''; // Limpa o 'Carregando'
         appRoot.appendChild(playgroundView);
+    });
+
+    // Define a rota para a Lousa
+    router.addRoute('lousa', '/lousa', async () => {
+        appRoot.innerHTML = 'Carregando Lousa...';
+        managePlaygroundButton(null); // Oculta o botão do playground na página da lousa
+        const lousaView = await renderLousaView();
+        appRoot.innerHTML = '';
+        appRoot.appendChild(lousaView);
+    });
+
+    // Define a rota para as Notas
+    router.addRoute('notas', '/notas', async () => {
+        appRoot.innerHTML = 'Carregando Notas...';
+        managePlaygroundButton(null);
+        const notasView = renderNotasView();
+        appRoot.innerHTML = '';
+        appRoot.appendChild(notasView);
     });
 }

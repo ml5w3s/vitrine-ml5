@@ -18,6 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lousaContainer = null;
 
+  // Carrega componentes estáticos (header/footer)
+  loadComponent('header-placeholder', 'src/js/ui/components/header.html')
+    .then(() => {
+      // Garante que o script da navbar seja carregado após o header
+      const script = document.createElement('script');
+      script.src = 'src/js/ui/components/navbar.js';
+      document.body.appendChild(script);
+    });
+
+  loadComponent('footer-placeholder', 'src/js/ui/components/footer.html')
+    .then(() => {
+        const notasToggleButton = document.getElementById('notas-toggle-button');
+        if (notasToggleButton) {
+            notasToggleButton.addEventListener('click', toggleLousa);
+        }
+    });
+
+    // Carrega o componente Lousa
+  loadComponent('lousa-container', 'src/js/components/lousa/index.html')
+    .then(() => {
+      lousaContainer = document.getElementById('lousa-container');
+      if (lousaContainer) {
+        lousaContainer.style.display = 'none'; // Inicialmente oculta a lousa
+      }
+
+      const lousaToggleButton = document.getElementById('lousa-toggle-button');
+      if (lousaToggleButton) {
+        lousaToggleButton.addEventListener('click', toggleLousa);
+      }
+    });
+
   const toggleLousa = () => {
     if (lousaContainer) {
       if (lousaContainer.style.display === 'none') {
@@ -27,36 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   };
-
-  // Carrega componentes estáticos (header/footer)
-  /* loadComponent('header-placeholder', 'src/js/ui/components/header.html')
-    .then(() => {
-      // Garante que o script da navbar seja carregado após o header
-      const script = document.createElement('script');
-      script.src = 'src/js/ui/components/navbar.js';
-      document.body.appendChild(script);
-
-      // Carrega o componente Lousa
-      loadComponent('lousa-container', 'src/js/components/lousa/index.html')
-        .then(() => {
-          lousaContainer = document.getElementById('lousa-container');
-          if (lousaContainer) {
-            lousaContainer.style.display = 'none'; // Inicialmente oculta a lousa
-          }
-
-          const lousaToggleButton = document.getElementById('lousa-toggle-button');
-          if (lousaToggleButton) {
-            lousaToggleButton.addEventListener('click', toggleLousa);
-          }
-        });
-    }); */
-  loadComponent('footer-placeholder', 'src/js/ui/components/footer.html')
-    .then(() => {
-        const notasToggleButton = document.getElementById('notas-toggle-button');
-        if (notasToggleButton) {
-            notasToggleButton.addEventListener('click', toggleLousa);
-        }
-    });
 
   // Instancia o EventBus e o Roteador
   const eventBus = new EventBus();
@@ -68,3 +69,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializa o roteador
   router.init();
 });
+  

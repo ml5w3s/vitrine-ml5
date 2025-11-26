@@ -1,0 +1,30 @@
+@startuml
+actor Usuario as U
+participant "View" as V
+participant "Router" as R
+participant "EventBus" as E
+participant "AppController\n(app.js)" as A
+participant "ApiService" as S
+participant "Model" as M
+participant "View Renderer\n(Ex: LessonView)" as VR
+participant "DOM" as D
+
+U -> V: Clica em link "/sobre"
+V -> R: interceptLinkClick(route="/sobre")
+R -> R: Atualiza estado da rota
+R -> E: emit("route:changed", params)
+
+E -> A: on("route:changed", params)
+A -> S: fetchData(dataUrl)
+
+S -> S: Carrega arquivo .json
+S --> A: Retorna dados JSON
+
+A -> M: setData(JSON)
+M --> A: Dados organizados
+
+A -> VR: render(data)
+VR -> D: Atualiza interface\n(innerHTML ou DOM API)
+
+@enduml
+

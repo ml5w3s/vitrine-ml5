@@ -91,9 +91,9 @@ export class PlaygroundComponent {
             <section class="container">
                 <article class="item">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/src/assets/images/banner_play_desktop.png">
-                    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/src/assets/images/banner_play_tablet.png">
-                    <img src="/vitrine-ml5/mlab5/src/assets/images/banner_play_mobile.png" alt="Playground Banner" style="width:100%;">
+                    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/src//images/banner_play_desktop.png">
+                    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/src//images/banner_play_tablet.png">
+                    <img src="/vitrine-ml5/mlab5/src//images/banner_play_mobile.png" alt="Playground Banner" style="width:100%;">
                 </picture>
                 </article>
             </section>
@@ -162,14 +162,14 @@ export class PlaygroundComponent {
                 const templateName = template.replace('.html', '');
                 templatesHtml += `
                     <div>
-                        <input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src/assets/js/components/templates/${template}">
+                        <input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src//js/components/templates/${template}">
                         <label for="${templateName}">${templateName}</label>
                     </div>
                 `;
                 console.log('Valor de template:', template);
                 console.log('Valor de templateName:', templateName);
 
-                const html = `<input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src/assets/js/components/templates/${template}">`;
+                const html = `<input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src//js/components/templates/${template}">`;
                 console.log(html);
             });
             templatesHtml += '<button id="apply-customization-button">Aplicar</button>';

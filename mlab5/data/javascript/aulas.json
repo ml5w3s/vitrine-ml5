@@ -218,7 +218,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/src/images/programacao_funcional_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/src/images/programacao_funcional_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/imagesprogramacao_funcional_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src//imagesprogramacao_funcional_mobile.png"
           }
         },
         {
@@ -290,7 +290,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/src/images/array_methods_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/src/images/array_methods_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/imagesarray_methods_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src//imagesarray_methods_mobile.png"
           }
         },
         {
@@ -333,7 +333,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/src/images/html_dinamico_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/src/images/html_dinamico_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/imageshtml_dinamico_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src//imageshtml_dinamico_mobile.png"
           }
         }
       ],
@@ -452,7 +452,7 @@
           "alternativeHeadline": "Exemplos de Encapsulamento:",
           "image": {
             "desktop": "/vitrine-ml5/mlab5/src/images/encapsulamento_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5//src/assets/images/encapsulamento_tablet.png",
+            "tablet": "/vitrine-ml5/mlab5//src//images/encapsulamento_tablet.png",
             "mobile": "/vitrine-ml5/mlab5/src/images/encapsulamento_mobile.png"
           }
         },
@@ -717,7 +717,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/imagesevent_loop_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src//imagesevent_loop_mobile.png"
           }
         },
         {
@@ -772,7 +772,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/imagesfetch_api_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src//imagesfetch_api_mobile.png"
           }
         },
         {
@@ -813,7 +813,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/src/images/aplicacao_dados_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/src/images/aplicacao_dados_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/assets/imagesaplicacao_dados_mobile.png"
+            "mobile": "/vitrine-ml5/mlab5/src//imagesaplicacao_dados_mobile.png"
           }
         }
       ],

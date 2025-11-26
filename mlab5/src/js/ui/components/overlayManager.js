@@ -27,7 +27,7 @@
       if (!state.lousa.container) state.lousa.container = createOverlayContainer('lousa').querySelector('[data-body="lousa"]');
       if (!state.lousa.loaded) {
         try {
-          const mod = await import('/src/assets/js/components/LousaComponent.js');
+          const mod = await import('/src//js/components/LousaComponent.js');
           const ctor = mod.default || mod.LousaComponent || mod;
           if (typeof ctor === 'function') {
             state.lousa.instance = new ctor(state.lousa.container);
@@ -48,7 +48,7 @@
       if (!state.notes.container) state.notes.container = createOverlayContainer('notes').querySelector('[data-body="notes"]');
       if (!state.notes.loaded) {
         try {
-          const mod = await import('/src/assets/js/components/NotesComponent.js');
+          const mod = await import('/src//js/components/NotesComponent.js');
           const ctor = mod.default || mod.NotesComponent || mod;
           if (typeof ctor === 'function') {
             state.notes.instance = new ctor(state.notes.container);
