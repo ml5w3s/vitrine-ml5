@@ -74,7 +74,7 @@ export function defineRoutes(router) {
 
     // Define a rota para o Criador de Aulas
     router.addRoute('lessonCreator', '/creator', async () => {
-        appRoot.innerHTML = 'Carregando criador de aulas...';
+        appRoot.innerHTML = 'Carregando criador de aulas...'; 
         managePlaygroundButton(null);
         const creatorView = renderLessonCreatorView();
         appRoot.innerHTML = ''; // Limpa o 'Carregando'
@@ -91,7 +91,6 @@ export function defineRoutes(router) {
         appRoot.appendChild(playgroundView);
     });
 
-    // Define a rota para a Lousa
     router.addRoute('lousa', '/lousa', async () => {
         appRoot.innerHTML = 'Carregando Lousa...';
         managePlaygroundButton(null); // Oculta o botão do playground na página da lousa
