@@ -13,9 +13,11 @@ export class TextTool extends BaseTool {
     }
 
     onPointerStart(coords) {
-        this.x = coords.x;
-        this.y = coords.y;
-        this.createTextInput(this.x, this.y);
+        requestAnimationFrame(() => {
+            this.x = coords.x;
+            this.y = coords.y;
+            this.createTextInput(this.x, this.y);
+        });
     }
 
     createTextInput(x, y) {
@@ -29,8 +31,20 @@ export class TextTool extends BaseTool {
 
         // Style the input to overlay on the canvas
         this.textInput.style.position = 'absolute';
-        this.textInput.style.left = `${this.canvas.offsetLeft + x}px`;
-        this.textInput.style.top = `${this.canvas.offsetTop + y}px`;
+
+        // Obter as dimensões do canvas no viewport
+        const rect = this.canvas.getBoundingClientRect();
+        // Obter os fatores de escala entre o buffer e o CSS
+        const scaleX = this.canvas.width / rect.width;
+        const scaleY = this.canvas.height / rect.height;
+
+        // Converter as coordenadas do buffer (x, y) para coordenadas CSS
+        const cssX = x / scaleX;
+        const cssY = y / scaleY;
+
+        // Posicionar o input usando as coordenadas CSS e o offset do canvas no viewport
+        this.textInput.style.left = `${rect.left + cssX}px`;
+        this.textInput.style.top = `${rect.top + cssY}px`;
         this.textInput.style.font = this.currentFont;
         this.textInput.style.color = this.currentFillStyle;
         this.textInput.style.background = 'rgba(255,255,255,0.8)';
