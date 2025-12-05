@@ -1,7 +1,7 @@
 [
   {
     "course": {
-      "name": "Aula 01 - Introdução ao jQuery",
+      "name": "🆕 Aula 01 - Introdução ao jQuery",
       "articles": [
         {
           "position": 1,
@@ -13,13 +13,17 @@
   },
   {
     "course": {
-      "name": "Aula 02 - Efeitos e Animações",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
-      },
+      "name": "✨ Aula 02 - Efeitos e Animações",
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
+          }
+        },
         {
           "position": 1,
           "headline": "Efeitos jQuery",
@@ -115,13 +119,17 @@
   },
   {
     "course": {
-      "name": "Aula 03 - Manipulação Avançada do DOM",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
-      },
+      "name": "🛠️ Aula 03 - Manipulação Avançada do DOM",
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_legado_desktop.png",
+            "tablet": "src/images/banner_legado_tablet.png",
+            "mobile": "src/images/banner_legado_mobile.png"
+          }
+        },
         {
           "position": 1,
           "headline": "Adicionando Elementos",
@@ -179,13 +187,17 @@
   },
   {
     "course": {
-      "name": "Aula 04 - Slides e Carrosséis",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
-      },
+      "name": "🖼️ Aula 04 - Slides e Carrosséis",
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_legado_desktop.png",
+            "tablet": "src/images/banner_legado_tablet.png",
+            "mobile": "src/images/banner_legado_mobile.png"
+          }
+        },
         {
           "position": 1,
           "headline": "Slideshow Básico",
@@ -233,13 +245,17 @@
   },
   {
     "course": {
-      "name": "Aula 05 - Menus e Navegação",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
-      },
+      "name": "🧭 Aula 05 - Menus e Navegação",
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_legado_desktop.png",
+            "tablet": "src/images/banner_legado_tablet.png",
+            "mobile": "src/images/banner_legado_mobile.png"
+          }
+        },
         {
           "position": 1,
           "headline": "Menus Dropdown",
@@ -298,7 +314,7 @@
   },
   {
     "course": {
-      "name": "Aula 06 - Validação de Formulários",
+      "name": "✅ Aula 06 - Validação de Formulários",
       "articles": [
         {
           "position": 1,
@@ -310,13 +326,17 @@
   },
   {
     "course": {
-      "name": "Aula 07 - Galerias e Modais",
-      "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
-      },
+      "name": "💡 Aula 07 - Galerias e Modais",
       "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_legado_desktop.png",
+            "tablet": "src/images/banner_legado_tablet.png",
+            "mobile": "src/images/banner_legado_mobile.png"
+          }
+        },
         {
           "position": 1,
           "headline": "Galerias de Imagens",
@@ -364,7 +384,7 @@
   },
   {
     "course": {
-      "name": "Aula 08 - Plugins e Extensões",
+      "name": "🔌 Aula 08 - Plugins e Extensões",
       "articles": [
         {
           "position": 1,

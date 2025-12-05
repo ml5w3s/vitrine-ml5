@@ -3,17 +3,18 @@
     "course": {
       "name": "📐 CSS3 - Flexbox Layout",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -153,9 +154,9 @@
           "position": 15,
           "alternativeHeadline": "Layout Responsivo:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/cursos/css3/responsivo_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/cursos/css3/responsivo_tablet.png",
-            "mobile": "http://localhost:3000/vitrine-ml5/mlab5/src/images/cursos/css3/responsivo_mobile.png"
+            "desktop": "src/images/cursos/css3/responsivo_desktop.png",
+            "tablet": "src/images/cursos/css3/responsivo_tablet.png",
+            "mobile": "http://localhost:3000src/images/cursos/css3/responsivo_mobile.png"
           }
         }
       ],
@@ -173,9 +174,9 @@
       },
       "controls": {
         "templates": [
-          "/vitrine-ml5/mlab5/src/js/componentes/templates/classico.html",
-          "/vitrine-ml5/mlab5/src/js/componentes/templates/moderno.html",
-          "/vitrine-ml5/mlab5/src/js/componentes/templates/dark_mode.html"
+          "src/js/componentes/templates/classico.html",
+          "src/js/componentes/templates/moderno.html",
+          "src/js/componentes/templates/dark_mode.html"
         ],
         "styles": {
           "background": "#ffffff",
@@ -189,17 +190,18 @@
     "course": {
       "name": "🎯 CSS3 - Grid Layout",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -396,17 +398,18 @@
     "course": {
       "name": "✨ CSS3 - Transições e Animações",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -601,17 +604,18 @@
     "course": {
       "name": "🔄 CSS3 - Transformações 2D e 3D",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -801,17 +805,18 @@
     "course": {
       "name": "📱 CSS3 - Media Queries e Responsividade",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {

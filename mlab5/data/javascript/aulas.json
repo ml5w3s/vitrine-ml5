@@ -3,17 +3,18 @@
     "course": {
       "name": "🚀 JavaScript Moderno - Revisão Inteligente",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -34,9 +35,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/paradigmas_js_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/paradigmas_js_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/paradigmas_js_mobile.png"
+            "desktop": "src/images/paradigmas_js_desktop.png",
+            "tablet": "src/images/paradigmas_js_tablet.png",
+            "mobile": "src/images/paradigmas_js_mobile.png"
           }
         },
         {
@@ -93,9 +94,9 @@
             "${usuario}"
           ],
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/template_literals_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/template_literals_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/template_literals_mobile.png"
+            "desktop": "src/images/template_literals_desktop.png",
+            "tablet": "src/images/template_literals_tablet.png",
+            "mobile": "src/images/template_literals_mobile.png"
           }
         },
         {
@@ -150,9 +151,9 @@
           "position": 15,
           "alternativeHeadline": "Código para Converter:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/conversao_codigo_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/conversao_codigo_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/conversao_codigo_mobile.png"
+            "desktop": "src/images/conversao_codigo_desktop.png",
+            "tablet": "src/images/conversao_codigo_tablet.png",
+            "mobile": "src/images/conversao_codigo_mobile.png"
           }
         }
       ],
@@ -187,17 +188,18 @@
     "course": {
       "name": "🧮 JavaScript Funcional - Map, Filter, Reduce",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -216,9 +218,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/programacao_funcional_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/programacao_funcional_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src//imagesprogramacao_funcional_mobile.png"
+            "desktop": "src/images/programacao_funcional_desktop.png",
+            "tablet": "src/images/programacao_funcional_tablet.png",
+            "mobile": "src//imagesprogramacao_funcional_mobile.png"
           }
         },
         {
@@ -288,9 +290,9 @@
           "position": 11,
           "alternativeHeadline": "Exemplos Práticos do Reduce:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/array_methods_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/array_methods_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src//imagesarray_methods_mobile.png"
+            "desktop": "src/images/array_methods_desktop.png",
+            "tablet": "src/images/array_methods_tablet.png",
+            "mobile": "src//imagesarray_methods_mobile.png"
           }
         },
         {
@@ -331,9 +333,9 @@
           "alternativeHeadline": "Exemplo Prático Completo:",
           "text": "${funcionario.cargo}",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/html_dinamico_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/html_dinamico_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src//imageshtml_dinamico_mobile.png"
+            "desktop": "src/images/html_dinamico_desktop.png",
+            "tablet": "src/images/html_dinamico_tablet.png",
+            "mobile": "src//imageshtml_dinamico_mobile.png"
           }
         }
       ],
@@ -368,17 +370,18 @@
     "course": {
       "name": "🏗️ JavaScript OO - Classes ES6 e Protótipos",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -397,9 +400,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/oo_javascript_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/oo_javascript_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/oo_javascript_mobile.png"
+            "desktop": "src/images/oo_javascript_desktop.png",
+            "tablet": "src/images/oo_javascript_tablet.png",
+            "mobile": "src/images/oo_javascript_mobile.png"
           }
         },
         {
@@ -451,9 +454,9 @@
           "position": 9,
           "alternativeHeadline": "Exemplos de Encapsulamento:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/encapsulamento_desktop.png",
+            "desktop": "src/images/encapsulamento_desktop.png",
             "tablet": "/vitrine-ml5/mlab5//src//images/encapsulamento_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/encapsulamento_mobile.png"
+            "mobile": "src/images/encapsulamento_mobile.png"
           }
         },
         {
@@ -528,17 +531,18 @@
     "course": {
       "name": "🌐 DOM e Eventos Modernos",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -559,7 +563,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/04/images/dom_moderno_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/dom_moderno_mobile.png"
+            "mobile": "src/images/dom_moderno_mobile.png"
           }
         },
         {
@@ -633,7 +637,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/04/images/delegacao_eventos_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/delegacao_eventos_mobile.png"
+            "mobile": "src/images/delegacao_eventos_mobile.png"
           }
         },
         {
@@ -686,17 +690,18 @@
     "course": {
       "name": "⚡ Assincronismo e Comunicação",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -717,7 +722,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/event_loop_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src//imagesevent_loop_mobile.png"
+            "mobile": "src//imagesevent_loop_mobile.png"
           }
         },
         {
@@ -772,7 +777,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/05/images/fetch_api_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src//imagesfetch_api_mobile.png"
+            "mobile": "src//imagesfetch_api_mobile.png"
           }
         },
         {
@@ -811,9 +816,9 @@
           "alternativeHeadline": "Aplicação Completa:",
           "text": "Carregando dados...",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/aplicacao_dados_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/aplicacao_dados_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src//imagesaplicacao_dados_mobile.png"
+            "desktop": "src/images/aplicacao_dados_desktop.png",
+            "tablet": "src/images/aplicacao_dados_tablet.png",
+            "mobile": "src//imagesaplicacao_dados_mobile.png"
           }
         }
       ],
@@ -848,17 +853,18 @@
     "course": {
       "name": "🔗 Integração HTML5, CSS3 e APIs",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -877,9 +883,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/web_storage_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/web_storage_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/web_storage_mobile.png"
+            "desktop": "src/images/web_storage_desktop.png",
+            "tablet": "src/images/web_storage_tablet.png",
+            "mobile": "src/images/web_storage_mobile.png"
           }
         },
         {
@@ -933,9 +939,9 @@
           "position": 9,
           "alternativeHeadline": "Exemplos de Canvas:",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/canvas_api_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/canvas_api_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/canvas_api_mobile.png"
+            "desktop": "src/images/canvas_api_desktop.png",
+            "tablet": "src/images/canvas_api_tablet.png",
+            "mobile": "src/images/canvas_api_mobile.png"
           }
         },
         {
@@ -974,9 +980,9 @@
           "alternativeHeadline": "Aplicação Integrada Completa:",
           "text": "Nenhum dado salvo ainda.",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/app_integrada_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/app_integrada_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/app_integrada_mobile.png"
+            "desktop": "src/images/app_integrada_desktop.png",
+            "tablet": "src/images/app_integrada_tablet.png",
+            "mobile": "src/images/app_integrada_mobile.png"
           }
         }
       ],
@@ -1011,17 +1017,18 @@
     "course": {
       "name": "🏗️ Boas Práticas e Arquitetura Moderna",
       "image": {
-        "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-        "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-        "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+        "desktop": "src/images/banner_frontend_desktop.png",
+        "tablet": "src/images/banner_frontend_tablet.png",
+        "mobile": "src/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
+          "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_frontend_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_frontend_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_frontend_mobile.png"
+            "desktop": "src/images/banner_frontend_desktop.png",
+            "tablet": "src/images/banner_frontend_tablet.png",
+            "mobile": "src/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -1040,9 +1047,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/modularizacao_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/modularizacao_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/images/modularizacao_mobile.png"
+            "desktop": "src/images/modularizacao_desktop.png",
+            "tablet": "src/images/modularizacao_tablet.png",
+            "mobile": "src/images/images/modularizacao_mobile.png"
           }
         },
         {
@@ -1117,7 +1124,7 @@
           "image": {
             "desktop": "/vitrine-ml5/mlab5/cursos/javascript/07/images/projeto_final_desktop.png",
             "tablet": "/vitrine-ml5/mlab5/cursos/javascript/07/images/projeto_final_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/images/projeto_final_mobile.png"
+            "mobile": "src/images/images/projeto_final_mobile.png"
           }
         }
       ],

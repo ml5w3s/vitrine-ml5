@@ -54,6 +54,10 @@ export class LousaComponent {
     // API Pública
     // ==============================
 
+    handleResize() {
+        this.canvasManager.resizeCanvas();
+    }
+
     setBrushColor(c) {
         this.toolManager.setStrokeStyle(c);
     }

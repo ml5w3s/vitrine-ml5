@@ -4,6 +4,7 @@ import { EraserTool } from './tools/EraserTool.js';
 import { RectangleTool } from './tools/RectangleTool.js';
 import { TextTool } from './tools/TextTool.js';
 import { EllipseTool } from './tools/EllipseTool.js';
+import { LineTool } from './tools/LineTool.js';
 
 export class ToolManager {
     constructor(canvasManager, pointerTracker) {
@@ -62,6 +63,7 @@ export class ToolManager {
         this.registerTool('eraser', new EraserTool(this.ctx, canvasManager));
         this.registerTool('rectangle', new RectangleTool(this.ctx, canvasManager));
         this.registerTool('ellipse', new EllipseTool(this.ctx, canvasManager));
+        this.registerTool('line', new LineTool(this.ctx, canvasManager));
         this.registerTool('text', new TextTool(this.ctx, canvasManager.getCanvas())); // Pass the canvas element to TextTool
 
         this.pointerTracker.on('start', (coords, event) => this.currentTool?.onPointerStart(coords, event));

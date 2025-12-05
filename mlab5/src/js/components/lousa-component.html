@@ -1,77 +1,11 @@
-<style>
-    .lousa-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        font-family: sans-serif;
-    }
-
-    /* Barra superior */
-    .lousa-container .toolbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #222;
-        color: white;
-        display: flex;
-        padding: 8px;
-        gap: 8px;
-        justify-content: center;
-        z-index: 10;
-    }
-
-    .lousa-container .tool-btn {
-        padding: 10px 16px;
-        background: #444;
-        border-radius: 6px;
-        user-select: none;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .lousa-container .tool-btn.active {
-        background: #00b3ff;
-        color: black;
-        font-weight: bold;
-    }
-
-    /* Barra inferior */
-    .lousa-container .bottom-bar {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        padding: 10px;
-        background: #222;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-    }
-
-    .lousa-container .color-picker, .lousa-container .size-picker {
-        cursor: pointer;
-    }
-
-    .lousa-container canvas {
-        background: white;
-        position: absolute;
-        top: 50px; /* Adjusted for toolbar height */
-        left: 0;
-        bottom: 50px; /* Adjusted for bottom bar height */
-        width: 100%;
-        height: calc(100% - 100px);
-    }
-</style>
 <div class="lousa-container">
     <!-- ferramentas -->
     <div class="toolbar">
         <div class="tool-btn active" data-tool="brush">✏️</div>
         <div class="tool-btn" data-tool="rectangle">▭</div>
         <div class="tool-btn" data-tool="ellipse">⬭</div>
+        <div class="tool-btn" data-tool="line">/</div>
+        <div class="tool-btn" data-tool="text">T</div>
         <div class="tool-btn" data-tool="eraser">🩹</div>
     </div>
 
