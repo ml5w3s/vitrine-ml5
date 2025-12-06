@@ -4,16 +4,16 @@
     "title": "",
     "description": "",
     "image": {
-      "desktop": "src/images/banner_cursos_desktop.png",
-      "tablet": "src/images/banner_cursos_tablet.png",
-      "mobile": "src/images/banner_cursos_mobile.png",
+      "desktop": "/vitrine-ml5/mlab5/src/images/banner_cursos_desktop.png",
+      "tablet": "/vitrine-ml5/mlab5/src/images/banner_cursos_tablet.png",
+      "mobile": "/vitrine-ml5/mlab5/src/images/banner_cursos_mobile.png",
       "caption": "Banner dos cursos"
     }
   },
   {
     "id": "css3",
     "title": "CSS3 - Estilizando a Web",
-    "description": "Aprenda a estilizar suas páginas web com CSS3, criando layouts modernos e responsivos.",
+    "description": "Aprenda a estilizar suas páginas web com CSS3.",
     "image": {
       "desktop": "src/images/cursos/css3_desktop.jpg",
       "tablet": "src/images/cursos/css3_tablet.jpg",
@@ -23,8 +23,8 @@
   },
   {
     "id": "html5",
-    "title": "HTML5 - Linguagem web de marcação",
-    "description": "Aprenda a base da web. Crie a estrutura de sites e prepare-se para estilizar com CSS e adicionar interatividade com JavaScript.",
+    "title": "HTML5 - Linguagem web",
+    "description": "Aprenda a base da web. Crie a estrutura de sites.",
     "image": {
       "desktop": "src/images/cursos/html5_desktop.jpg",
       "tablet": "src/images/cursos/html5_tablet.jpg",
@@ -35,7 +35,7 @@
   {
     "id": "javascript",
     "title": "JavaScript - O Idioma da Web",
-    "description": "Torne suas páginas interativas e dinâmicas com a linguagem de programação fundamental da web.",
+    "description": "Torne suas páginas interativas e dinâmicas.",
     "image": {
       "desktop": "src/images/cursos/javascript_desktop.jpg",
       "tablet": "src/images/cursos/javascript_tablet.jpg",
@@ -46,7 +46,7 @@
   {
     "id": "jquery",
     "title": "jQuery - Escreva Menos, Faça Mais",
-    "description": "Simplifique a manipulação de HTML, o tratamento de eventos e as animações com esta biblioteca JavaScript popular.",
+    "description": "Simplifique a manipulação de HTML.",
     "image": {
       "desktop": "src/images/cursos/jquery_desktop.jpg",
       "tablet": "src/images/cursos/jquery_tablet.jpg",
@@ -57,12 +57,23 @@
   {
     "id": "xml",
     "title": "XML - Dados Estruturados",
-    "description": "Aprenda a usar XML para armazenar e transportar dados de forma estruturada.",
+    "description": "Aprenda a usar XML para armazenar e transportar dados.",
     "image": {
       "desktop": "src/images/cursos/xml_desktop.jpg",
       "tablet": "src/images/cursos/xml_tablet.jpg",
       "mobile": "src/images/cursos/xml_mobile.jpg",
       "caption": "Curso de XML"
+    }
+  },
+  {
+    "id": "linux-seguranca",
+    "title": "Linux para Segurança",
+    "description": "Aprenda a usar o Linux com foco em segurança da informação.",
+    "image": {
+      "desktop": "src/images/cursos/linux_desktop.jpg",
+      "tablet": "src/images/cursos/linux_tablet.jpg",
+      "mobile": "src/images/cursos/linux_mobile.jpg",
+      "caption": "Curso de Linux para Segurança"
     }
   }
 ]

@@ -1,0 +1,320 @@
+[
+  {
+    "course": {
+      "name": "🐧 Linux para Segurança - Fundamentos Essenciais",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_linux_desktop.png",
+            "tablet": "src/images/banner_linux_tablet.png",
+            "mobile": "src/images/banner_linux_mobile.png"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Por que Linux para Segurança da Informação?",
+          "alternativeHeadline": "Vantagens do Linux em Segurança:",
+          "text": "Linux é o sistema operacional preferido por profissionais de segurança por sua natureza de código aberto, flexibilidade e controle granular. Ele oferece um ambiente robusto para análise, defesa e auditoria de sistemas.",
+          "list": [
+            "Transparência e auditoria do código-fonte.",
+            "Controle total sobre o sistema.",
+            "Vasta gama de ferramentas de segurança.",
+            "Comunidade ativa e suporte robusto.",
+            "Estabilidade e desempenho."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Conceitos Básicos do Terminal",
+          "text": "O terminal é a principal ferramenta de trabalho no Linux. Dominar seus comandos básicos é o primeiro passo para se tornar um profissional de segurança eficaz. O terminal, também conhecido como shell, é onde você digita comandos para o sistema operacional executar.",
+          "code": [
+            "ls - Lista arquivos e diretórios.",
+            "cd - Muda de diretório.",
+            "pwd - Mostra o diretório atual.",
+            "mkdir - Cria um novo diretório.",
+            "rm - Remove arquivos ou diretórios.",
+            "cat - Exibe o conteúdo de um arquivo.",
+            "grep - Procura por padrões em textos."
+          ],
+          "forPlayground": false
+        },
+        {
+          "position": 3,
+          "headline": "Estrutura de Diretórios do Linux",
+          "text": "Entender a organização dos diretórios é crucial para saber onde os arquivos de configuração, logs e executáveis estão localizados. Isso é fundamental para qualquer análise de segurança.",
+          "list": [
+            "/: Raiz do sistema.",
+            "/bin: Binários essenciais do sistema.",
+            "/etc: Arquivos de configuração.",
+            "/home: Diretórios dos usuários.",
+            "/var/log: Arquivos de log do sistema.",
+            "/tmp: Arquivos temporários."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "👤 Gerenciamento de Usuários e Permissões",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_linux_desktop.png",
+            "tablet": "src/images/banner_linux_tablet.png",
+            "mobile": "src/images/banner_linux_mobile.png"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Administração de Contas de Usuário",
+          "text": "Um dos pilares da segurança é garantir que apenas usuários autorizados tenham acesso ao sistema. Cada usuário deve ter a menor quantidade de privilégios necessários para realizar seu trabalho (Princípio do Menor Privilégio).",
+          "code": [
+            "sudo adduser [nome_usuario] - Adiciona um novo usuário.",
+            "sudo deluser [nome_usuario] - Remove um usuário.",
+            "passwd [nome_usuario] - Altera a senha de um usuário.",
+            "su [nome_usuario] - Troca para o usuário especificado.",
+            "sudo [comando] - Executa um comando com privilégios de superusuário."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Entendendo as Permissões de Arquivos",
+          "text": "O Linux possui um sistema de permissões detalhado para arquivos e diretórios. As permissões são divididas em três categorias: proprietário (user), grupo (group) e outros (others). Para cada categoria, há três tipos de permissão: leitura (r), escrita (w) e execução (x).",
+          "programmingLanguage": "Bash",
+          "code": [
+            "ls -l -> Lista arquivos com detalhes de permissão.",
+            "chmod 755 [arquivo] -> Altera permissões (rwx para proprietário, r-x para grupo e outros).",
+            "chown [usuario]:[grupo] [arquivo] -> Altera o proprietário e o grupo de um arquivo."
+          ]
+        },
+        {
+          "position": 3,
+          "text": "As permissões são representadas por números (notação octal) ou letras. Por exemplo, 'rwx' corresponde a 7 (4+2+1), 'r-x' a 5 (4+0+1), e 'rw-' a 6 (4+2+0)."
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🛡️ Segurança de Rede e Monitoramento",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "src/images/banner_linux_desktop.png",
+            "tablet": "src/images/banner_linux_tablet.png",
+            "mobile": "src/images/banner_linux_mobile.png"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Comandos Básicos de Rede",
+          "text": "Analisar e proteger o tráfego de rede é uma tarefa diária em segurança da informação. O Linux oferece ferramentas poderosas para essa finalidade.",
+          "code": [
+            "ifconfig / ip addr - Exibe as configurações de rede.",
+            "ping [host] - Testa a conectividade com um host.",
+            "netstat -antp - Mostra conexões de rede ativas.",
+            "ss -tulwn - Alternativa moderna ao netstat.",
+            "iptables - Ferramenta de firewall do kernel Linux."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Firewall com Iptables",
+          "text": "Configurar um firewall é a primeira linha de defesa da sua rede. O `iptables` permite criar regras para filtrar o tráfego de entrada, saída e encaminhamento.",
+          "list": [
+            "Bloquear todo o tráfego de entrada por padrão.",
+            "Liberar portas específicas para serviços (SSH, HTTP, etc.).",
+            "Registrar tentativas de acesso suspeitas.",
+            "Limitar o número de conexões para prevenir ataques de negação de serviço (DoS)."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Análise de Logs",
+          "text": "Logs são registros de eventos que ocorrem no sistema. Analisá-los é fundamental para detectar atividades maliciosas, solucionar problemas e realizar auditorias de segurança.",
+          "alternativeHeadline": "Principais arquivos de log:",
+          "list": [
+            "/var/log/syslog (ou /var/log/messages): Log geral do sistema.",
+            "/var/log/auth.log (ou /var/log/secure): Logs de autenticação.",
+            "/var/log/apache2/access.log: Logs de acesso do servidor web Apache (se instalado)."
+          ],
+          "code": [
+            "tail -f /var/log/auth.log -> Acompanha o log de autenticação em tempo real.",
+            "grep 'Failed password' /var/log/auth.log -> Procura por tentativas de login falhas."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+        "name": "🔍 Coleta de informações e análise do sistema",
+        "articles": [
+            {
+              "position": 0,
+              "type": "banner",
+              "image": {
+                "desktop": "src/images/banner_linux_desktop.png",
+                "tablet": "src/images/banner_linux_tablet.png",
+                "mobile": "src/images/banner_linux_mobile.png"
+              }
+            },
+            {
+                "position": 1,
+                "headline": "Monitoramento e Inspeção de Processos",
+                "text": "Ferramentas para monitorar e inspecionar processos em tempo real, essenciais para identificar atividades suspeitas ou anormais no sistema.",
+                "code": [
+                    "top / htop - Monitoramento de processos, uso de CPU, RAM, I/O.",
+                    "ps - Inspeção de processos (ex.: encontrar processos suspeitos).",
+                    "lsof - Lista arquivos abertos por processos — ótimo para detectar conexões ou acessos incomuns.",
+                    "strace - Rastreia syscalls de um processo (bom para detectar comportamentos maliciosos).",
+                    "dmesg - Mostra mensagens do kernel — útil para investigar falhas, USBs conectados, drivers, etc."
+                ]
+            }
+        ]
+    }
+  },
+  {
+      "course": {
+          "name": "🌐 Rede e Forense de Rede",
+          "articles": [
+              {
+                "position": 0,
+                "type": "banner",
+                "image": {
+                  "desktop": "src/images/banner_linux_desktop.png",
+                  "tablet": "src/images/banner_linux_tablet.png",
+                  "mobile": "src/images/banner_linux_mobile.png"
+                }
+              },
+              {
+                  "position": 1,
+                  "headline": "Ferramentas de Análise de Rede",
+                  "text": "Comandos para visualizar, capturar e analisar o tráfego de rede, além de descobrir informações sobre outros sistemas na rede.",
+                  "code": [
+                      "netstat (ou ss, mais moderno) - Visualiza portas abertas e conexões ativas.",
+                      "tcpdump - Sniffer nativo para captura de pacotes.",
+                      "ip - Ferramenta moderna de rede (substitui ifconfig, route, etc).",
+                      "nmap (quase sempre no repo oficial) - Scanner de rede para descoberta de hosts, portas e serviços.",
+                      "dig / nslookup - Consulta DNS, resolve domínios."
+                  ]
+              }
+          ]
+      }
+  },
+  {
+      "course": {
+          "name": "🔐 Segurança, permissões e auditoria",
+          "articles": [
+              {
+                "position": 0,
+                "type": "banner",
+                "image": {
+                  "desktop": "src/images/banner_linux_desktop.png",
+                  "tablet": "src/images/banner_linux_tablet.png",
+                  "mobile": "src/images/banner_linux_mobile.png"
+                }
+              },
+              {
+                  "position": 1,
+                  "headline": "Controle de Acesso e Auditoria",
+                  "text": "Ferramentas para gerenciar privilégios, permissões de arquivos e auditar eventos de segurança no sistema.",
+                  "code": [
+                      "sudo - Controle de privilégios.",
+                      "chmod, chown, setfacl, getfacl - Gerenciamento de permissões e ACLs.",
+                      "auditd - Sistema de auditoria do Linux (para rastrear acessos, gravações, syscalls etc.).",
+                      "selinux ou apparmor - Mecanismos de controle de acesso obrigatório."
+                  ]
+              }
+          ]
+      }
+  },
+  {
+      "course": {
+          "name": "📁 Análise de arquivos e integridade",
+          "articles": [
+              {
+                "position": 0,
+                "type": "banner",
+                "image": {
+                  "desktop": "src/images/banner_linux_desktop.png",
+                  "tablet": "src/images/banner_linux_tablet.png",
+                  "mobile": "src/images/banner_linux_mobile.png"
+                }
+              },
+              {
+                  "position": 1,
+                  "headline": "Verificação e Análise de Arquivos",
+                  "text": "Comandos para verificar a integridade de arquivos, identificar seus tipos reais e analisar conteúdo, especialmente útil para logs e detecção de malware.",
+                  "code": [
+                      "sha256sum, md5sum - Verificação de integridade.",
+                      "file - Detecta tipo real de arquivo (bom para identificar malware disfarçado).",
+                      "grep, awk, sed, cut - Ferramentas essenciais para análise de logs.",
+                      "journalctl - Visualização dos logs do systemd."
+                  ]
+              }
+          ]
+      }
+  },
+  {
+      "course": {
+          "name": "🧪 Hardening e diagnósticos de segurança do sistema",
+          "articles": [
+              {
+                "position": 0,
+                "type": "banner",
+                "image": {
+                  "desktop": "src/images/banner_linux_desktop.png",
+                  "tablet": "src/images/banner_linux_tablet.png",
+                  "mobile": "src/images/banner_linux_mobile.png"
+                }
+              },
+              {
+                  "position": 1,
+                  "headline": "Fortalecimento do Sistema (Hardening)",
+                  "text": "Ferramentas para fortalecer a segurança do sistema, configurando firewalls e protegendo contra ataques comuns.",
+                  "code": [
+                      "ufw / firewalld - Firewalls nativos de distros modernas.",
+                      "iptables / nftables - Controle direto e avançado do tráfego.",
+                      "fail2ban - Proteção contra brute-force (SSH, FTP etc) — comum em servidores.",
+                      "chkrootkit / rkhunter - Ferramentas de detecção de rootkits (geralmente disponíveis nos repositórios)."
+                  ]
+              }
+          ]
+      }
+  },
+  {
+      "course": {
+          "name": "🛠️ Ferramentas avançadas",
+          "articles": [
+              {
+                "position": 0,
+                "type": "banner",
+                "image": {
+                  "desktop": "src/images/banner_linux_desktop.png",
+                  "tablet": "src/images/banner_linux_tablet.png",
+                  "mobile": "src/images/banner_linux_mobile.png"
+                }
+              },
+              {
+                  "position": 1,
+                  "headline": "Análise Avançada e Depuração",
+                  "text": "Ferramentas mais avançadas, muitas vezes usadas para engenharia reversa, análise de malware e depuração de baixo nível.",
+                  "code": [
+                      "wireshark - Sniffer com interface gráfica.",
+                      "gdb - Depurador avançado para análise de binários.",
+                      "valgrind - Detecta memory leaks, ajuda a analisar malwares.",
+                      "binwalk, strings, objdump, readelf - Ferramentas essenciais para análise de binários."
+                  ]
+              }
+          ]
+      }
+  }
+]
