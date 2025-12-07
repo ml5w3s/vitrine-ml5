@@ -1,80 +1,76 @@
-# Briefing do Projeto: mlab5
+# Briefing do Projeto: Vitrine ML5
 
-Bem-vindo(a) ao `mlab5`, "pessoa de carbono" ou "pessoa de silício"! Este documento serve como um guia rápido para entender a arquitetura, o fluxo de dados e as ferramentas de depuração do projeto.
+Bem-vindo(a) ao `vitrine-ml5`! Este documento serve como um guia rápido para entender a arquitetura geral do projeto, a organização dos módulos e o fluxo de dados do principal componente, o `mlab5`.
 
 ## 1. Visão Geral do Projeto
 
-O `mlab5` é uma Single-Page Application (SPA) para visualização de cursos online. O objetivo é fornecer um ambiente interativo para aprendizado, onde o conteúdo dos cursos é carregado dinamicamente.
+O `vitrine-ml5` é um portal que serve como uma vitrine para diversos projetos e experimentos de desenvolvimento web. Ele não é uma Single-Page Application (SPA) única, mas um contêiner para vários subprojetos, cada um com sua própria estrutura e propósito.
 
-## 2. Arquitetura Principal
+## 2. Estrutura de Diretórios Principal
 
-O projeto segue uma arquitetura baseada em componentes, com responsabilidades bem definidas:
+O projeto está organizado de forma modular na raiz:
 
--   **`index.html`**: O ponto de entrada da aplicação. Carrega todos os scripts e CSS necessários.
--   **`Router.js`**: Gerencia a navegação baseada em hash (`#/`). Ele mapeia as URLs para as funções que renderizam as "Views" corretas.
--   **`ApiService.js`**: A camada de dados. É o único responsável por buscar e processar os dados dos cursos e aulas a partir dos arquivos JSON.
--   **Views (`/views`):** Funções que geram o HTML para cada "página" da aplicação (ex: `HomeView`, `CourseView`). Elas consomem os dados do `ApiService`.
--   **Models (`/models`):** Classes que representam nossas estruturas de dados (`Course`, `Lesson`). Elas garantem que os dados tenham uma estrutura consistente.
--   **Components (`/components`):** Partes reutilizáveis da UI com lógica própria (ex: `PlaygroundComponent`, `DebugView`).
+-   **`index.html`**: O ponto de entrada principal, a "vitrine" que apresenta os demais projetos.
+-   **`estilo/`**: Contém os arquivos CSS globais (`portal.css`, `styles.css`) que estilizam a página principal.
+-   **`assets/`**: Armazena recursos globais como scripts (`app.js`, `controller.js`) e imagens.
+-   **`docs/`**: Toda a documentação do projeto, incluindo este `BRIEFING.md`.
+-   **`academy/`**: Um subprojeto completo, com seu próprio `index.html`, estilos, imagens e componentes, como o calendário (`calendario2025/`) e um To-Do List (`todolist/`).
+-   **`mlab5/`**: O subprojeto mais complexo, focado em ser uma plataforma de visualização de cursos online. Seus detalhes estão descritos abaixo.
+-   **`projetos/`**: Outra seção para abrigar projetos menores ou em desenvolvimento, como a `lousa/`.
 
-### 2.1. Detalhes da Arquitetura e Fluxo de Dados
+---
 
-O projeto utiliza JavaScript puro e moderno (com `fetch` e `async/await`) para suas funcionalidades principais, sem depender de bibliotecas externas para a lógica central.
+## 3. Detalhes do Módulo `mlab5`
 
--   **`CourseRepository.js` (`mlab5/src/assets/js/repositories/CourseRepository.js`):** Esta é uma camada arquitetural crucial e indocumentada. Atua como um intermediário entre o `ApiService.js` (responsável pela busca de dados brutos) e o restante da aplicação. Sua função principal é transformar os dados brutos em modelos `Course` e `Lesson` estruturados, implementando o Padrão Repository.
+O `mlab5` funciona como uma SPA para visualização de cursos. Sua lógica principal está concentrada nos seguintes arquivos:
 
--   **Modelos com Lógica de Renderização (`Course.js` e `Lesson.js` em `mlab5/src/assets/js/models/`):** Diferente de modelos puramente de dados, `Course.js` e `Lesson.js` contêm métodos `render()` complexos. Estes métodos são responsáveis por gerar o HTML correspondente aos modelos. Esta abordagem, que integra lógica de modelo e visualização, é um aspecto arquitetural importante. O método `render()` de `Lesson.js`, em particular, revela um esquema JSON detalhado e atualmente indocumentado para a estrutura de `aulas.json`.
+-   **`mlab5/index.html`**: O ponto de entrada da aplicação de cursos.
+-   **`mlab5/app.js`**: O coração da aplicação. É responsável por gerenciar a navegação, buscar o conteúdo dos cursos e renderizar as informações na tela.
+-   **`mlab5/style.css`**: Folha de estilos específica para o `mlab5`.
+-   **`mlab5/data/`**: Diretório fundamental que contém os dados de todos os cursos, seguindo uma estrutura bem definida.
 
-## 3. Fluxo de Dados dos Cursos
+### 3.1. Fluxo de Dados dos Cursos no `mlab5`
 
-Estabelecemos um padrão claro para a organização e carregamento do conteúdo dos cursos, visando automação e fácil manutenção.
+O conteúdo dos cursos é carregado dinamicamente, visando automação e fácil manutenção.
 
 1.  **Estrutura de Pastas:** Cada curso reside em sua própria pasta dentro de `mlab5/data/`.
     -   Exemplo: `mlab5/data/html5/`, `mlab5/data/jquery/`
 
 2.  **Índice de Cursos (`courses.json`):**
     -   Localizado em `mlab5/data/courses.json`.
-    -   Este arquivo é o **índice principal** de todos os cursos.
-    -   **Importante:** Ele é **gerado automaticamente** e não deve ser editado manualmente. O processo de "build" (atualmente manual e assistido) lê os metadados de cada curso e gera este arquivo.
+    -   Este arquivo é o **índice principal** de todos os cursos disponíveis.
+    -   **Importante:** Ele é projetado para ser **gerado automaticamente** e não deve ser editado manualmente. Um processo de build (atualmente manual ou assistido) lê os metadados de cada curso para gerar este arquivo.
 
 3.  **Metadados do Curso (`meta.json`):**
     -   Dentro de **cada pasta de curso**, deve existir um arquivo `meta.json`.
-    -   Ele contém o título e a descrição principal do curso. É a fonte de verdade para o `courses.json`.
+    -   Ele contém o título e a descrição daquele curso, servindo como fonte da verdade para a geração do `courses.json`.
 
 4.  **Conteúdo das Aulas (`aulas.json`):**
-    -   Dentro de **cada pasta de curso**, deve existir um arquivo `aulas.json`.
-    -   Este arquivo contém um array com o conteúdo detalhado de **todas as aulas** daquele curso.
+    -   Dentro de **cada pasta de curso**, um arquivo `aulas.json` contém um array com o conteúdo detalhado de **todas as aulas** daquele curso.
 
-## 4. Estratégia de Depuração ("Assistente de Depuração")
+### 3.2. Arquitetura e Lógica Interna do `mlab5`
 
-Para otimizar a depuração e economizar tokens, implementamos um sistema de log centralizado e uma UI de depuração.
+Apesar de a lógica estar centralizada em `app.js`, o design segue padrões modernos de desenvolvimento:
 
--   **Módulo `Debug.js`:**
-    -   Centraliza todo o logging. Use-o em vez de `console.log`.
-    -   **Como usar:**
-        -   `Debug.log('Grupo', 'Mensagem', dadosOpcionais)`: Para logs de fluxo geral.
-        -   `Debug.error('Grupo', 'Mensagem de Erro', erroObjeto)`: Para registrar erros.
-        -   `Debug.table('Grupo', 'Título', arrayDeDados)`: Para exibir dados complexos de forma legível no console.
-    -   O "Grupo" (ex: 'Router', 'ApiService') cria seções organizadas no console.
+-   **Camada de Repositório:** O código provavelmente implementa uma camada (anteriormente em `CourseRepository.js`) que atua como um intermediário para buscar os dados brutos dos arquivos JSON e transformá-los em modelos estruturados (ex: `Course`, `Lesson`).
+-   **Modelos com Renderização:** A lógica para transformar os dados dos cursos em HTML provavelmente está contida em funções ou classes que recebem os dados e retornam o elemento a ser exibido, uma abordagem que encapsula a visualização junto ao seu modelo de dados.
 
--   **Painel Visual (`DebugView`):**
-    -   Um painel flutuante aparece no canto inferior direito.
-    -   **Atalho:** Pressione **`Ctrl+M`** para mostrar ou ocultar o painel.
-    -   **O que ele mostra:**
-        -   A rota que está sendo visualizada.
-        -   O ID do último curso e/ou aula carregados.
-        -   Um histórico dos últimos logs e erros.
-    -   Isso fornece contexto imediato sobre o estado da aplicação sem a necessidade de inspecionar o console a fundo.
+## 4. Estratégia de Depuração (Legado)
 
-## 5. Workflow de Desenvolvimento
+Para otimizar a depuração no `mlab5`, foi implementado um sistema de log e uma UI de depuração. Embora os arquivos não estejam visíveis na estrutura atual, o conceito permanece relevante:
+
+-   **Módulo de Log (`Debug.js`):** A ideia era centralizar todo o logging (`Debug.log`, `Debug.error`) para criar saídas organizadas no console, agrupadas por componente (ex: 'Router', 'ApiService').
+-   **Painel Visual (`DebugView`):** Um painel flutuante (atalho: `Ctrl+M`) foi criado para exibir informações de estado em tempo real, como a rota atual, o último curso carregado e um histórico de logs, reduzindo a necessidade de inspecionar o console constantemente.
+
+## 5. Workflow de Desenvolvimento (para o `mlab5`)
 
 -   **Para adicionar um novo curso:**
     1.  Crie uma nova pasta em `mlab5/data/`.
     2.  Dentro dela, crie um `meta.json` com `title` e `description`.
     3.  Crie um `aulas.json` com o conteúdo das aulas.
-    4.  Utilize a ferramenta interna `LessonCreatorView.js` (acessível via rota específica ou interface de administração) para auxiliar na criação e validação do conteúdo, e para regenerar o `courses.json` principal.
+    4.  Execute a ferramenta ou script de build para regenerar o `courses.json` principal.
 
--   **Para depurar um problema:**
-    1.  Abra o painel de depuração (`Ctrl+M`).
-    2.  Navegue até a página com o problema e observe as informações no painel e os logs no console.
-    3.  Adicione novas chamadas `Debug.log()` nos pontos suspeitos do código para obter mais detalhes.
+-   **Para depurar um problema no `mlab5`:**
+    1.  Verifique se o painel de depuração (`Ctrl+M`) está ativo.
+    2.  Navegue até a página com o problema e observe o painel e os logs no console.
+    3.  Se necessário, adicione novas chamadas de log nos pontos suspeitos do código em `app.js` para obter mais detalhes.

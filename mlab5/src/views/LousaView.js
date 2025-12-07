@@ -23,9 +23,9 @@ export async function renderLousaView() {
     // root.style.height = "100vh"; // Removida a altura fixa
 
     // Carrega o CSS do componente da Lousa
-    const cssLink = loadCss('/vitrine-ml5/mlab5/src/js/components/lousa-component.css');
+    const cssLink = loadCss('/vitrine-ml5/mlab5/assets/ui/lousa-component.css');
 
-    const lousaHtml = await fetch("/vitrine-ml5/mlab5/src/js/components/lousa-component.html").then(r => r.text());
+    const lousaHtml = await fetch("/vitrine-ml5/mlab5/assets/ui/lousa-component.html").then(r => r.text());
     root.innerHTML = lousaHtml;
 
     // Adiciona o banner ao root element antes do conteúdo da lousa
@@ -33,9 +33,9 @@ export async function renderLousaView() {
         <section class="container">
             <article class="item banner-item">
                 <picture>
-                    <source media="(min-width: 1024px)" srcset="src/images/banner_lousa_desktop.png">
-                    <source media="(min-width: 600px)" srcset="src/images/banner_lousa_tablet.png">
-                    <img src="src/images/banner_lousa_mobile.png" alt="Banner Lousa" style="width:100%;">
+                    <source media="(min-width: 1024px)" srcset="assets/images/banner_lousa_desktop.png">
+                    <source media="(min-width: 600px)" srcset="assets/images/banner_lousa_tablet.png">
+                    <img src="assets/images/banner_lousa_mobile.png" alt="Banner Lousa" style="width:100%;">
                 </picture>
             </article>
         </section>

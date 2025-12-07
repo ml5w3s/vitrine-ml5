@@ -4,12 +4,14 @@
  * This is a placeholder for a simple hash-based router.
  * It will handle routing for the application.
  */
-import Debug from '../utils/Debug.js';
+import { Debug } from '../helpers/Debug.js';
 
 class Router {
     constructor(eventBus) {
-        this.routes = []; // Changed to an array to store route objects
+        this.routes = [];
         this.eventBus = eventBus;
+        this.currentView = null; // Guarda a referência da view atual para limpeza
+        this.appRoot = document.getElementById('app-root'); // O elemento raiz da aplicação
         Debug.log('Router', 'Router instantiated.');
     }
 
@@ -20,7 +22,6 @@ class Router {
         window.addEventListener('hashchange', this.handleRouteChange.bind(this));
         window.addEventListener('load', this.handleRouteChange.bind(this));
         Debug.log('Router', 'Router initialized and listening for changes.');
-        // Call handleRouteChange immediately to process the initial URL
         this.handleRouteChange();
     }
 
@@ -29,15 +30,15 @@ class Router {
      * Supports route parameters like ':paramName'.
      * @param {string} name - The name of the route (e.g., 'home', 'courseDetail').
      * @param {string} path - The path for the route (e.g., '/', '/course/:courseId').
-     * @param {function} handler - The function to execute when the route is matched.
+     * @param {function} handler - The function to execute when the route is matched. It must return an HTMLElement.
      */
     addRoute(name, path, handler) {
         const paramNames = [];
         const regexPath = path.replace(/:(\w+)/g, (match, paramName) => {
             paramNames.push(paramName);
-            return '([^/]+)'; // Capture group for the parameter value
+            return '([^/]+)';
         });
-        const regex = new RegExp(`^#${regexPath}$`);
+        const regex = new RegExp(`^${regexPath}$`);
 
         this.routes.push({ name, path, regex, handler, paramNames });
         Debug.log('Router', `Route added: ${name} -> ${path}`);
@@ -66,24 +67,40 @@ class Router {
     /**
      * Handles the route change event.
      */
-    handleRouteChange() {
+    async handleRouteChange() {
         const hash = window.location.hash || '#/';
-        Debug.log('Router', `Handling route change for: ${hash}`);
+        const path = hash.substring(1); // Remove the '#'
+        Debug.log('Router', `Handling route change for: ${path}`);
 
         for (const route of this.routes) {
-            const match = hash.match(route.regex);
+            const match = path.match(route.regex);
             if (match) {
                 const params = {};
                 for (let i = 0; i < route.paramNames.length; i++) {
                     params[route.paramNames[i]] = match[i + 1];
                 }
-                Debug.log('Router', `Executing handler for route: ${hash} with params:`, params);
-                route.handler(params);
+                Debug.log('Router', `Executing handler for route: ${path} with params:`, params);
+
+                // 1. Destruir a view antiga
+                if (this.currentView && typeof this.currentView.destroy === 'function') {
+                    this.currentView.destroy();
+                    Debug.log('Router', 'Previous view destroyed.');
+                }
+
+                // 2. Obter a nova view do handler (que agora retorna um elemento)
+                const newViewElement = await route.handler(params);
+
+                // 3. Limpar o root e adicionar a nova view
+                this.appRoot.innerHTML = '';
+                this.appRoot.appendChild(newViewElement);
+                this.currentView = newViewElement; // Armazena a nova view
+
+                Debug.log('Router', 'New view rendered and attached.');
                 return;
             }
         }
 
-        Debug.log('Router', `No handler found for route: ${hash}`);
+        Debug.log('Router', `No handler found for route: ${path}`);
         this.eventBus.publish('routeNotFound', hash);
     }
 

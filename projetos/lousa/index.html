@@ -1,41 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-<title>Lousa Virtual</title>
+<meta charset="UTF-8">
+<title>Editor Mobile</title>
 <style>
-  canvas {
-    border: 1px solid black;
-  }
+    body {
+        margin: 0;
+        overflow: hidden;
+        font-family: sans-serif;
+    }
+
+    /* Barra superior */
+    .toolbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #222;
+        color: white;
+        display: flex;
+        padding: 8px;
+        gap: 8px;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .tool-btn {
+        padding: 10px 16px;
+        background: #444;
+        border-radius: 6px;
+        user-select: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .tool-btn.active {
+        background: #00b3ff;
+        color: black;
+        font-weight: bold;
+    }
+
+    /* Barra inferior */
+    .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        background: #222;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .color-picker, .size-picker {
+        cursor: pointer;
+    }
+
+    canvas {
+        background: white;
+        position: absolute;
+        top: 56px;
+        left: 0;
+    }
 </style>
 </head>
+
 <body>
-  <canvas id="lousa" width="600" height="400"></canvas>
+    <!-- ferramentas -->
+    <div class="toolbar">
+        <div class="tool-btn active" data-tool="brush">✏️</div>
+        <div class="tool-btn" data-tool="rect">▭</div>
+        <div class="tool-btn" data-tool="ellipse">⬭</div>
+        <div class="tool-btn" data-tool="erase">🩹</div>
+    </div>
 
-  <script>
-    const canvas = document.getElementById('lousa');
-    const ctx = canvas.getContext('2d');
-    let desenhando = false;
-    let ultimoX = 0;
-    let ultimoY = 0;
+    <!-- ajustes -->
+    <div class="bottom-bar">
+        <input type="color" id="color" class="color-picker" value="#000000">
+        <input type="range" id="size" class="size-picker" min="1" max="40" value="3">
+    </div>
 
-    canvas.addEventListener('mousedown', (e) => {
-      desenhando = true;
-      [ultimoX, ultimoY] = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
-    });
+    <canvas id="canvas"></canvas>
 
-    canvas.addEventListener('mouseup', () => {
-      desenhando = false;
-    });
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-    canvas.addEventListener('mousemove', (e) => {
-      if (!desenhando) return;
-      const [x, y] = [e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop];
-      ctx.beginPath();
-      ctx.moveTo(ultimoX, ultimoY);
-      ctx.lineTo(x, y);
-      ctx.stroke();
-      [ultimoX, ultimoY] = [x, y];
-    });
-  </script>
-</body>
-</html>
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight - 56 - 50; // espaço do topo + base
+
+let currentTool = "brush";
+let drawing = false;
+let startX = 0;
+let startY = 0;
+let imgBeforeDraw;

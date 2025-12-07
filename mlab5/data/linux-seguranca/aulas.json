@@ -7,9 +7,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_linux_desktop.png",
-            "tablet": "src/images/banner_linux_tablet.png",
-            "mobile": "src/images/banner_linux_mobile.png"
+            "desktop": "assets/images/banner_linux_desktop.png",
+            "tablet": "assets/images/banner_linux_tablet.png",
+            "mobile": "assets/images/banner_linux_mobile.png"
           }
         },
         {
@@ -64,9 +64,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_linux_desktop.png",
-            "tablet": "src/images/banner_linux_tablet.png",
-            "mobile": "src/images/banner_linux_mobile.png"
+            "desktop": "assets/images/banner_linux_desktop.png",
+            "tablet": "assets/images/banner_linux_tablet.png",
+            "mobile": "assets/images/banner_linux_mobile.png"
           }
         },
         {
@@ -107,9 +107,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_linux_desktop.png",
-            "tablet": "src/images/banner_linux_tablet.png",
-            "mobile": "src/images/banner_linux_mobile.png"
+            "desktop": "assets/images/banner_linux_desktop.png",
+            "tablet": "assets/images/banner_linux_tablet.png",
+            "mobile": "assets/images/banner_linux_mobile.png"
           }
         },
         {
@@ -161,9 +161,9 @@
               "position": 0,
               "type": "banner",
               "image": {
-                "desktop": "src/images/banner_linux_desktop.png",
-                "tablet": "src/images/banner_linux_tablet.png",
-                "mobile": "src/images/banner_linux_mobile.png"
+                "desktop": "assets/images/banner_linux_desktop.png",
+                "tablet": "assets/images/banner_linux_tablet.png",
+                "mobile": "assets/images/banner_linux_mobile.png"
               }
             },
             {
@@ -189,9 +189,9 @@
                 "position": 0,
                 "type": "banner",
                 "image": {
-                  "desktop": "src/images/banner_linux_desktop.png",
-                  "tablet": "src/images/banner_linux_tablet.png",
-                  "mobile": "src/images/banner_linux_mobile.png"
+                  "desktop": "assets/images/banner_linux_desktop.png",
+                  "tablet": "assets/images/banner_linux_tablet.png",
+                  "mobile": "assets/images/banner_linux_mobile.png"
                 }
               },
               {
@@ -217,9 +217,9 @@
                 "position": 0,
                 "type": "banner",
                 "image": {
-                  "desktop": "src/images/banner_linux_desktop.png",
-                  "tablet": "src/images/banner_linux_tablet.png",
-                  "mobile": "src/images/banner_linux_mobile.png"
+                  "desktop": "assets/images/banner_linux_desktop.png",
+                  "tablet": "assets/images/banner_linux_tablet.png",
+                  "mobile": "assets/images/banner_linux_mobile.png"
                 }
               },
               {
@@ -244,9 +244,9 @@
                 "position": 0,
                 "type": "banner",
                 "image": {
-                  "desktop": "src/images/banner_linux_desktop.png",
-                  "tablet": "src/images/banner_linux_tablet.png",
-                  "mobile": "src/images/banner_linux_mobile.png"
+                  "desktop": "assets/images/banner_linux_desktop.png",
+                  "tablet": "assets/images/banner_linux_tablet.png",
+                  "mobile": "assets/images/banner_linux_mobile.png"
                 }
               },
               {
@@ -271,9 +271,9 @@
                 "position": 0,
                 "type": "banner",
                 "image": {
-                  "desktop": "src/images/banner_linux_desktop.png",
-                  "tablet": "src/images/banner_linux_tablet.png",
-                  "mobile": "src/images/banner_linux_mobile.png"
+                  "desktop": "assets/images/banner_linux_desktop.png",
+                  "tablet": "assets/images/banner_linux_tablet.png",
+                  "mobile": "assets/images/banner_linux_mobile.png"
                 }
               },
               {
@@ -298,9 +298,9 @@
                 "position": 0,
                 "type": "banner",
                 "image": {
-                  "desktop": "src/images/banner_linux_desktop.png",
-                  "tablet": "src/images/banner_linux_tablet.png",
-                  "mobile": "src/images/banner_linux_mobile.png"
+                  "desktop": "assets/images/banner_linux_desktop.png",
+                  "tablet": "assets/images/banner_linux_tablet.png",
+                  "mobile": "assets/images/banner_linux_mobile.png"
                 }
               },
               {

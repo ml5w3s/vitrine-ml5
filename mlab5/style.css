@@ -19,14 +19,14 @@ main#app-root {
     text-align: center;
 }
 
-h2, h3 { 
-  margin-top: 0.5em; 
-}
-
 h1 {
     color: #0056b3;
     margin-top: 0.5em; 
     margin-bottom: 20px;
+}
+
+h2, h3 { 
+  margin-top: 0.5em; 
 }
 
 p {
@@ -152,12 +152,6 @@ button, .button-style {
   border-radius: var(--raio-borda-grande);
   text-decoration: none; /* Adicionado para consistência se usado em links */
   display: inline-block; /* Adicionado para consistência */
-}
-
-.button-large {
-  width: 200px;
-  height: 50px;
-  margin-top: 20px;
 }
 
 footer {
@@ -351,49 +345,6 @@ nav article {
     font-size: 0.9em;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .course-card, .lesson-card {
-        flex: 1 1 calc(50% - 30px); /* 2 items per row */
-        max-width: calc(50% - 30px);
-    }
-}
-
-@media (max-width: 480px) {
-    .course-card, .lesson-card {
-        flex: 1 1 100%; /* 1 item per row */
-        max-width: 100%;
-    }
-}
-
-/* Playground Styles */
-.playground-container {
-    display: flex;
-    gap: 20px;
-    text-align: left;
-    margin-top: 20px;
-}
-
-.playground-instructions {
-    flex: 1;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.playground-editor {
-    flex: 2;
-}
-
-.playground-editor textarea {
-    width: 100%;
-    height: 400px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 /* Lousa Styles */
 .lousa-view {
     display: flex;
@@ -434,13 +385,8 @@ nav article {
 .lousa-view canvas#whiteboard {
     border: 1px solid black;
     background-color: #f7f7f7;
-    /* Remover width/height 100vw/100vh para que o canvas seja contido pelo seu pai */
-    /* width: 100vw; */
-    /* height: 100vh; */
-    position: relative; /* Ajustado para ser relativo ao .lousa-view */
     top: auto;
     left: auto;
-    z-index: 0;
     max-width: 100%; /* Garante que o canvas não transborde */
     height: auto;
 }
@@ -465,4 +411,71 @@ nav article {
     font-family: sans-serif;
     font-size: 16px;
     box-sizing: border-box; /* Incluir padding no width/height */
+}
+
+/* --- NotasComponent Styles --- */
+.notas-container {
+    background-color: #ffffe0; /* Cor amarela clara para notas */
+    border: 1px solid #e0e0a0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 280px;
+    min-height: 150px;
+    max-height: 300px; /* Limita a altura para o slide-up */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    resize: both; /* Permite redimensionar */
+}
+
+.notas-toggle-button {
+    background-color: #f0f0c0;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-bottom: 1px solid #e0e0a0;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: left;
+}
+
+.notas-toggle-button:hover {
+    background-color: #e8e8b0;
+}
+
+.notas-content {
+    padding: 10px;
+    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+    display: flex; /* Para centralizar os itens internos */
+    flex-direction: column;
+}
+
+.notas-content h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.notas-content p {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.notas-container textarea {
+    width: calc(100% - 10px); /* Ajuste para padding */
+    height: 100%; /* Ocupa todo o espaço disponível */
+    border: 1px dashed #ccc;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: var(--fonte-secundaria);
+    font-size: 0.9em;
+    background: transparent;
+    resize: none; /* Desabilita o resize padrão do textarea, o container já faz */
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Garante que a imagem se comporte como um bloco para o max-width */
 }

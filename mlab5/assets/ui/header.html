@@ -3,7 +3,7 @@
   <nav>
     <div class="logo">
       <a href="/vitrine-ml5/mlab5">
-        <img src="/vitrine-ml5/mlab5/src/images/logo_mobile.png" alt="Logo ML5Lab">
+        <img src="/vitrine-ml5/mlab5/assets/images/logo_mobile.png" alt="Logo ML5Lab">
       </a>
     </div>
 
@@ -17,8 +17,8 @@
       <li><a href="#">Cadastre-se</a></li>
       <li><a href="#">Entrar</a></li>
       <li><a href="#">Administrativo</a></li>
+      <li><a href="#/">&larr; lista de cursos</a></li>
     </ul>
-    <button id="lousa-toggle-button">Lousa</button>
   </nav>
 </header>
 
@@ -94,15 +94,6 @@
 </style>
 
 <script>
-// ...existing code...
-// substituir a lógica atual do botão por algo como:
-const btnLousa = document.querySelector('#btn-lousa');
-if (btnLousa) {
-  btnLousa.addEventListener('click', () => {
-    window.dispatchEvent(new CustomEvent('ui:toggle', { detail: { name: 'lousa' } }));
-  });
-}
-
   document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     if(header) {

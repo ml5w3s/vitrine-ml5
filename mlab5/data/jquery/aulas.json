@@ -19,9 +19,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "/vitrine-ml5/mlab5/src/images/banner_legado_desktop.png",
-            "tablet": "/vitrine-ml5/mlab5/src/images/banner_legado_tablet.png",
-            "mobile": "/vitrine-ml5/mlab5/src/images/banner_legado_mobile.png"
+            "desktop": "/vitrine-ml5/mlab5/assets/images/banner_legado_desktop.png",
+            "tablet": "/vitrine-ml5/mlab5/assets/images/banner_legado_tablet.png",
+            "mobile": "/vitrine-ml5/mlab5/assets/images/banner_legado_mobile.png"
           }
         },
         {
@@ -125,9 +125,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_legado_desktop.png",
-            "tablet": "src/images/banner_legado_tablet.png",
-            "mobile": "src/images/banner_legado_mobile.png"
+            "desktop": "assets/images/banner_legado_desktop.png",
+            "tablet": "assets/images/banner_legado_tablet.png",
+            "mobile": "assets/images/banner_legado_mobile.png"
           }
         },
         {
@@ -193,9 +193,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_legado_desktop.png",
-            "tablet": "src/images/banner_legado_tablet.png",
-            "mobile": "src/images/banner_legado_mobile.png"
+            "desktop": "assets/images/banner_legado_desktop.png",
+            "tablet": "assets/images/banner_legado_tablet.png",
+            "mobile": "assets/images/banner_legado_mobile.png"
           }
         },
         {
@@ -251,9 +251,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_legado_desktop.png",
-            "tablet": "src/images/banner_legado_tablet.png",
-            "mobile": "src/images/banner_legado_mobile.png"
+            "desktop": "assets/images/banner_legado_desktop.png",
+            "tablet": "assets/images/banner_legado_tablet.png",
+            "mobile": "assets/images/banner_legado_mobile.png"
           }
         },
         {
@@ -332,9 +332,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_legado_desktop.png",
-            "tablet": "src/images/banner_legado_tablet.png",
-            "mobile": "src/images/banner_legado_mobile.png"
+            "desktop": "assets/images/banner_legado_desktop.png",
+            "tablet": "assets/images/banner_legado_tablet.png",
+            "mobile": "assets/images/banner_legado_mobile.png"
           }
         },
         {

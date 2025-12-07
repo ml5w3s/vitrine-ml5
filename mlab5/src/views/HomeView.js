@@ -8,8 +8,7 @@ import { courseRepository } from '../repositories/CourseRepository.js';
 export async function renderHomeView(router) {
     const viewElement = document.createElement('div');
     viewElement.className = 'home-view';
-    viewElement.innerHTML = '<h1>Cursos</h1>';
-
+    
     const courseListContainer = document.createElement('div');
     courseListContainer.className = 'container';
     viewElement.appendChild(courseListContainer);

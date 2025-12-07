@@ -7,9 +7,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -30,9 +30,9 @@
         {
           "position": 2,
           "image": {
-            "desktop": "src/images/cursos/html5/etiqueta_desktop.png",
-            "tablet": "src/images/cursos/html5/etiqueta_tablet.png",
-            "mobile": "src/images/cursos/html5/etiqueta_mobile.png",
+            "desktop": "assets/images/cursos/html5/etiqueta_desktop.png",
+            "tablet": "assets/images/cursos/html5/etiqueta_tablet.png",
+            "mobile": "assets/images/cursos/html5/etiqueta_mobile.png",
             "caption": "Etiqueta com as marcações"
           }
         },
@@ -77,7 +77,7 @@
         {
           "position": 5,
           "image": {
-            "src": "src/images/cursos/html5/exemplo.png",
+            "src": "assets/images/cursos/html5/exemplo.png",
             "caption": "Estrutura básica de uma página HTML"
           }
         },
@@ -127,9 +127,9 @@
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -148,9 +148,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "src/images/elementos_semanticos_desktop.png",
-            "tablet": "src/images/elementos_semanticos_tablet.png",
-            "mobile": "src/images/elementos_semanticos_mobile.png"
+            "desktop": "assets/images/elementos_semanticos_desktop.png",
+            "tablet": "assets/images/elementos_semanticos_tablet.png",
+            "mobile": "assets/images/elementos_semanticos_mobile.png"
           }
         },
         {
@@ -184,9 +184,9 @@
         {
           "position": 7,
           "image": {
-            "desktop": "src/images/navegacao_desktop.png",
-            "tablet": "src/images/navegacao_tablet.png",
-            "mobile": "src/images/navegacao_mobile.png"
+            "desktop": "assets/images/navegacao_desktop.png",
+            "tablet": "assets/images/navegacao_tablet.png",
+            "mobile": "assets/images/navegacao_mobile.png"
           }
         },
         {
@@ -220,9 +220,9 @@
         {
           "position": 11,
           "image": {
-            "desktop": "src/images/section_article_desktop.png",
-            "tablet": "src/images/section_article_tablet.png",
-            "mobile": "src/images/section_article_mobile.png"
+            "desktop": "assets/images/section_article_desktop.png",
+            "tablet": "assets/images/section_article_tablet.png",
+            "mobile": "assets/images/section_article_mobile.png"
           }
         },
         {
@@ -287,9 +287,9 @@
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -309,9 +309,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "src/images/cursos/html5/elementos_midia_desktop.png",
-            "tablet": "src/images/cursos/html5/elementos_midia_tablet.png",
-            "mobile": "src/images/cursos/html5/elementos_midia_mobile.png"
+            "desktop": "assets/images/cursos/html5/elementos_midia_desktop.png",
+            "tablet": "assets/images/cursos/html5/elementos_midia_tablet.png",
+            "mobile": "assets/images/cursos/html5/elementos_midia_mobile.png"
           }
         },
         {
@@ -355,7 +355,7 @@
           "image": {
             "desktop": "cursos/html5/04/images/audio_video_desktop.png",
             "tablet": "cursos/html5/04/images/audio_video_tablet.png",
-            "mobile": "src/images/audio_video_mobile.png"
+            "mobile": "assets/images/audio_video_mobile.png"
           }
         },
         {
@@ -419,7 +419,7 @@
           "image": {
             "desktop": "cursos/html5/04/images/eventos_midia_desktop.png",
             "tablet": "cursos/html5/04/images/eventos_midia_tablet.png",
-            "mobile": "src/images/eventos_midia_mobile.png"
+            "mobile": "assets/images/eventos_midia_mobile.png"
           }
         }
       ],
@@ -460,9 +460,9 @@
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -482,9 +482,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "src/images/tipos_input_desktop.png",
-            "tablet": "src/images/tipos_input_tablet.png",
-            "mobile": "src/images/tipos_input_mobile.png"
+            "desktop": "assets/images/tipos_input_desktop.png",
+            "tablet": "assets/images/tipos_input_tablet.png",
+            "mobile": "assets/images/tipos_input_mobile.png"
           }
         },
         {
@@ -521,9 +521,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo com Number e Range:",
           "image": {
-            "desktop": "src/images/inputs_numericos_desktop.png",
-            "tablet": "src/images/inputs_numericos_tablet.png",
-            "mobile": "src/images/inputs_numericos_mobile.png"
+            "desktop": "assets/images/inputs_numericos_desktop.png",
+            "tablet": "assets/images/inputs_numericos_tablet.png",
+            "mobile": "assets/images/inputs_numericos_mobile.png"
           }
         },
         {
@@ -579,9 +579,9 @@
           "position": 13,
           "alternativeHeadline": "Exemplo com Validação:",
           "image": {
-            "desktop": "src/images/validacao_desktop.png",
+            "desktop": "assets/images/validacao_desktop.png",
             "tablet": "src/assets/imagess/validacao_tablet.png",
-            "mobile": "src/images/validacao_mobile.png"
+            "mobile": "assets/images/validacao_mobile.png"
           }
         },
         {
@@ -639,9 +639,9 @@
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -661,9 +661,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "src/images/web_storage_desktop.png",
-            "tablet": "src/images/web_storage_tablet.png",
-            "mobile": "src/images/web_storage_mobile.png"
+            "desktop": "assets/images/web_storage_desktop.png",
+            "tablet": "assets/images/web_storage_tablet.png",
+            "mobile": "assets/images/web_storage_mobile.png"
           }
         },
         {
@@ -724,9 +724,9 @@
           "position": 9,
           "alternativeHeadline": "Funções Utilitárias:",
           "image": {
-            "desktop": "src/images/objetos_json_desktop.png",
-            "tablet": "src/images/objetos_json_tablet.png",
-            "mobile": "src/images/objetos_json_mobile.png"
+            "desktop": "assets/images/objetos_json_desktop.png",
+            "tablet": "assets/images/objetos_json_tablet.png",
+            "mobile": "assets/images/objetos_json_mobile.png"
           }
         },
         {
@@ -763,9 +763,9 @@
           "position": 13,
           "alternativeHeadline": "Exemplo: Sistema de Preferências:",
           "image": {
-            "desktop": "src/images/casos_uso_desktop.png",
-            "tablet": "src/images/casos_uso_tablet.png",
-            "mobile": "src/images/casos_uso_mobile.png"
+            "desktop": "assets/images/casos_uso_desktop.png",
+            "tablet": "assets/images/casos_uso_tablet.png",
+            "mobile": "assets/images/casos_uso_mobile.png"
           }
         },
         {
@@ -831,9 +831,9 @@
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -853,9 +853,9 @@
         {
           "position": 3,
           "image": {
-            "desktop": "src/images/geolocalizacao_desktop.png",
-            "tablet": "src/images/geolocalizacao_tablet.png",
-            "mobile": "src/images/geolocalizacao_mobile.png"
+            "desktop": "assets/images/geolocalizacao_desktop.png",
+            "tablet": "assets/images/geolocalizacao_tablet.png",
+            "mobile": "assets/images/geolocalizacao_mobile.png"
           }
         },
         {
@@ -893,9 +893,9 @@
           "position": 7,
           "alternativeHeadline": "Exemplo Detalhado:",
           "image": {
-            "desktop": "src/images/objeto_position_desktop.png",
+            "desktop": "assets/images/objeto_position_desktop.png",
             "tablet": "/src/assets/images/objeto_position_tablet.png",
-            "mobile": "src/images/objeto_position_mobile.png"
+            "mobile": "assets/images/objeto_position_mobile.png"
           }
         },
         {
@@ -930,8 +930,8 @@
           "position": 11,
           "alternativeHeadline": "Exemplo de Monitoramento:",
           "image": {
-            "desktop": "src/images/monitoramento_desktop.png",
-            "tablet": "src/images/monitoramento_tablet.png",
+            "desktop": "assets/images/monitoramento_desktop.png",
+            "tablet": "assets/images/monitoramento_tablet.png",
             "mobile": "vitrine-ml5/mlab5/src/assets/images/monitoramento_mobile.png"
           }
         },
@@ -968,9 +968,9 @@
           "position": 15,
           "alternativeHeadline": "Exemplo: Device Orientation:",
           "image": {
-            "desktop": "src/images/outras_apis_desktop.png",
-            "tablet": "src/images/outras_apis_tablet.png",
-            "mobile": "src/images/outras_apis_mobile.png"
+            "desktop": "assets/images/outras_apis_desktop.png",
+            "tablet": "assets/images/outras_apis_tablet.png",
+            "mobile": "assets/images/outras_apis_mobile.png"
           }
         },
         {

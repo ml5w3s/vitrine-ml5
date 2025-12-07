@@ -3,18 +3,18 @@
     "course": {
       "name": "📐 CSS3 - Flexbox Layout",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -154,9 +154,9 @@
           "position": 15,
           "alternativeHeadline": "Layout Responsivo:",
           "image": {
-            "desktop": "src/images/cursos/css3/responsivo_desktop.png",
-            "tablet": "src/images/cursos/css3/responsivo_tablet.png",
-            "mobile": "http://localhost:3000src/images/cursos/css3/responsivo_mobile.png"
+            "desktop": "assets/images/cursos/css3/responsivo_desktop.png",
+            "tablet": "assets/images/cursos/css3/responsivo_tablet.png",
+            "mobile": "http://localhost:3000assets/images/cursos/css3/responsivo_mobile.png"
           }
         }
       ],
@@ -190,18 +190,18 @@
     "course": {
       "name": "🎯 CSS3 - Grid Layout",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -398,18 +398,18 @@
     "course": {
       "name": "✨ CSS3 - Transições e Animações",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -604,18 +604,18 @@
     "course": {
       "name": "🔄 CSS3 - Transformações 2D e 3D",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -805,18 +805,18 @@
     "course": {
       "name": "📱 CSS3 - Media Queries e Responsividade",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "type": "banner",
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {

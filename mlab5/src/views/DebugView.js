@@ -27,7 +27,7 @@ export class DebugView {
 
         const header = document.createElement('div');
         header.className = 'debug-header';
-        header.textContent = 'Painel de Depuração (Ctrl+M para ocultar)';
+        header.textContent = 'Painel de Depuração (Ctrl+Shift+D para ocultar)';
         this.container.appendChild(header);
 
         this.infoPanel = document.createElement('div');
@@ -49,7 +49,7 @@ export class DebugView {
 
     _addEventListeners() {
         window.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'm') {
+            if (e.ctrlKey && e.shiftKey && e.key === 'D') { // Novo atalho: Ctrl+Shift+D
                 this.toggleVisibility();
             }
         });

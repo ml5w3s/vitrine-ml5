@@ -6,9 +6,9 @@
         {
           "position": 1,
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -204,17 +204,17 @@
     "course": {
       "name": "📄 XML - Nota Fiscal Eletrônica (NFe)",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -410,17 +410,17 @@
     "course": {
       "name": "✅ XML Schema e Validação Empresarial",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -594,17 +594,17 @@
     "course": {
       "name": "🏛️ XML - Sistemas Governamentais (eSocial, SPED)",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {
@@ -799,17 +799,17 @@
     "course": {
       "name": "🔄 XSLT - Transformação de Dados Governamentais",
       "image": {
-        "desktop": "src/images/banner_frontend_desktop.png",
-        "tablet": "src/images/banner_frontend_tablet.png",
-        "mobile": "src/images/banner_frontend_mobile.png"
+        "desktop": "assets/images/banner_frontend_desktop.png",
+        "tablet": "assets/images/banner_frontend_tablet.png",
+        "mobile": "assets/images/banner_frontend_mobile.png"
       },
       "articles": [
         {
           "position": 1,
           "image": {
-            "desktop": "src/images/banner_frontend_desktop.png",
-            "tablet": "src/images/banner_frontend_tablet.png",
-            "mobile": "src/images/banner_frontend_mobile.png"
+            "desktop": "assets/images/banner_frontend_desktop.png",
+            "tablet": "assets/images/banner_frontend_tablet.png",
+            "mobile": "assets/images/banner_frontend_mobile.png"
           }
         },
         {

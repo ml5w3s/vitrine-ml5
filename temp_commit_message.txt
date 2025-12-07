@@ -1,0 +1,22 @@
+feat: Implementa LineTool, refatora banners de aulas e layout da lousa
+
+Este commit consolida diversas melhorias e correções no projeto:
+
+- **Ferramenta de Linha (LineTool):**
+  - Adiciona `LineTool.js` para desenho de linhas no canvas.
+  - Registra a `LineTool` no `ToolManager.js`.
+  - Inclui botão para a `LineTool` na barra de ferramentas da lousa.
+  - `LousaComponent.js` (adiciona `handleResize()`) e `LousaView.js` (aciona via `setTimeout`) para garantir redimensionamento correto do canvas.
+
+- **Banners de Aulas (`aulas.json`):**
+  - Padroniza a estrutura de dados de banners em todos os arquivos `aulas.json` (`css3`, `javascript`, `jquery`, `xml`), garantindo que a propriedade `type: "banner"` esteja presente e que os dados de imagem estejam corretamente posicionados em artigos.
+  - Refatora o método `render()` em `Lesson.js` para isolar o banner em sua própria `<section>` (container-banner) para melhor semântica e layout.
+  - Adiciona ícones (emojis) aos nomes das lições no `jquery/aulas.json` para alinhamento visual com outros cursos.
+
+- **Layout e Estilo da Lousa:**
+  - Adiciona um banner responsivo à `LousaView.js` para padronizar o visual.
+  - Refatora o CSS da lousa: move estilos embutidos de `lousa-component.html` para `lousa-component.css`.
+  - Revisa o CSS para usar layout de fluxo normal (flexbox) em vez de posicionamento absoluto, eliminando a dependência de alturas fixas e corrigindo problemas de sobreposição e desaparecimento.
+
+- **Correção no Footer:**
+  - Corrige erro de digitação de classe (`button-atyle` para `button-style`) e padroniza as classes de botões no `mlab5/src/js/ui/components/footer.html`.

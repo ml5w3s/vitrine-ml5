@@ -4,9 +4,9 @@
     "title": "",
     "description": "",
     "image": {
-      "desktop": "/vitrine-ml5/mlab5/src/images/banner_cursos_desktop.png",
-      "tablet": "/vitrine-ml5/mlab5/src/images/banner_cursos_tablet.png",
-      "mobile": "/vitrine-ml5/mlab5/src/images/banner_cursos_mobile.png",
+      "desktop": "/vitrine-ml5/mlab5/assets/images/banner_cursos_desktop.png",
+      "tablet": "/vitrine-ml5/mlab5/assets/images/banner_cursos_tablet.png",
+      "mobile": "/vitrine-ml5/mlab5/assets/images/banner_cursos_mobile.png",
       "caption": "Banner dos cursos"
     }
   },
@@ -15,9 +15,9 @@
     "title": "CSS3 - Estilizando a Web",
     "description": "Aprenda a estilizar suas páginas web com CSS3.",
     "image": {
-      "desktop": "src/images/cursos/css3_desktop.jpg",
-      "tablet": "src/images/cursos/css3_tablet.jpg",
-      "mobile": "src/images/cursos/css3_mobile.jpg",
+      "desktop": "assets/images/cursos/css3_desktop.jpg",
+      "tablet": "assets/images/cursos/css3_tablet.jpg",
+      "mobile": "assets/images/cursos/css3_mobile.jpg",
       "caption": "Curso de CSS3"
     }
   },
@@ -26,9 +26,9 @@
     "title": "HTML5 - Linguagem web",
     "description": "Aprenda a base da web. Crie a estrutura de sites.",
     "image": {
-      "desktop": "src/images/cursos/html5_desktop.jpg",
-      "tablet": "src/images/cursos/html5_tablet.jpg",
-      "mobile": "src/images/cursos/html5_mobile.jpg",
+      "desktop": "assets/images/cursos/html5_desktop.jpg",
+      "tablet": "assets/images/cursos/html5_tablet.jpg",
+      "mobile": "assets/images/cursos/html5_mobile.jpg",
       "caption": "Curso de HTML5"
     }
   },
@@ -37,9 +37,9 @@
     "title": "JavaScript - O Idioma da Web",
     "description": "Torne suas páginas interativas e dinâmicas.",
     "image": {
-      "desktop": "src/images/cursos/javascript_desktop.jpg",
-      "tablet": "src/images/cursos/javascript_tablet.jpg",
-      "mobile": "src/images/cursos/javascript_mobile.jpg",
+      "desktop": "assets/images/cursos/javascript_desktop.jpg",
+      "tablet": "assets/images/cursos/javascript_tablet.jpg",
+      "mobile": "assets/images/cursos/javascript_mobile.jpg",
       "caption": "Curso de JavaScript"
     }
   },
@@ -48,9 +48,9 @@
     "title": "jQuery - Escreva Menos, Faça Mais",
     "description": "Simplifique a manipulação de HTML.",
     "image": {
-      "desktop": "src/images/cursos/jquery_desktop.jpg",
-      "tablet": "src/images/cursos/jquery_tablet.jpg",
-      "mobile": "src/images/cursos/jquery_mobile.jpg",
+      "desktop": "assets/images/cursos/jquery_desktop.jpg",
+      "tablet": "assets/images/cursos/jquery_tablet.jpg",
+      "mobile": "assets/images/cursos/jquery_mobile.jpg",
       "caption": "Curso de jQuery"
     }
   },
@@ -59,9 +59,9 @@
     "title": "XML - Dados Estruturados",
     "description": "Aprenda a usar XML para armazenar e transportar dados.",
     "image": {
-      "desktop": "src/images/cursos/xml_desktop.jpg",
-      "tablet": "src/images/cursos/xml_tablet.jpg",
-      "mobile": "src/images/cursos/xml_mobile.jpg",
+      "desktop": "assets/images/cursos/xml_desktop.jpg",
+      "tablet": "assets/images/cursos/xml_tablet.jpg",
+      "mobile": "assets/images/cursos/xml_mobile.jpg",
       "caption": "Curso de XML"
     }
   },
@@ -70,9 +70,9 @@
     "title": "Linux para Segurança",
     "description": "Aprenda a usar o Linux com foco em segurança da informação.",
     "image": {
-      "desktop": "src/images/cursos/linux_desktop.jpg",
-      "tablet": "src/images/cursos/linux_tablet.jpg",
-      "mobile": "src/images/cursos/linux_mobile.jpg",
+      "desktop": "assets/images/cursos/linux_desktop.jpg",
+      "tablet": "assets/images/cursos/linux_tablet.jpg",
+      "mobile": "assets/images/cursos/linux_mobile.jpg",
       "caption": "Curso de Linux para Segurança"
     }
   }
