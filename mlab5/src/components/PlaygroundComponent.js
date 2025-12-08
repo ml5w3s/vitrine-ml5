@@ -110,7 +110,7 @@ export class PlaygroundComponent {
                     </section>
                 </div>
                 <div class="playground-editor">
-                    <!-- controlsHtml removido daqui conforme solicitado -->
+                    <!-- controlsHtml removido daqui -->
                     <h4>Seu Código:</h4>
                     <textarea id="code-input" class="code-input" rows="15" cols="80"></textarea>
                     <button id="run-code-button">Executar Código</button>
@@ -135,7 +135,7 @@ export class PlaygroundComponent {
             return;
         }
 
-        // O code-input agora inicia vazio por padrão, conforme solicitado.
+        // O code-input agora inicia vazio por padrão.
 
         // Popular instruções
         const instrucoesEl = this.containerElement.querySelector('#instrucoes');
@@ -177,6 +177,7 @@ export class PlaygroundComponent {
 
             let customOptionsHtml = '<h4>Customização</h4>';
             customOptionsHtml += `
+            <div id="customization-options">    
                 <div>
                     <label for="custom-font">Fonte Personalizada:</label>
                     <select id="custom-font">
@@ -193,6 +194,7 @@ export class PlaygroundComponent {
                     <label for="custom-foreground">Cor do Texto Personalizada:</label>
                     <input type="color" id="custom-foreground" value="#000000">
                 </div>
+            </div>
             `;
             ajustesDiv.innerHTML += customOptionsHtml;
 

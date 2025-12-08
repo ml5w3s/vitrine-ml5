@@ -1,481 +1,405 @@
-/* mlab5/style.css */
+/* mlab5/style.css
+   Versão Mobile-First limpa, organizada por layers
+   Mantém variáveis e identidade visual; corrige overflow e responsividade
+*/
 
-/* Basic styles for demonstration */
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    font-family: var(--fonte-principal);
+@layer base, layout, components, utilities;
+
+/* ---------------------------
+   LAYER: base
+   --------------------------- */
+@layer base {
+  /* Variáveis (mantidas + ajustes) */
+  :root{
+    --cor-primaria: #09c;
+    --cor-destaque: #ff8c00;
+    --cor-fundo-item: #f0f0f0;
+    --cor-fundo-pre: #f4f4f4;
+    --cor-borda-padrao: #ccc;
+    --cor-borda-fraca: #ddd;
+
+    --fonte-principal: Arial, sans-serif;
+    --fonte-secundaria: Verdana, Geneva, sans-serif;
+
+    /* espaçamentos base em rem, fluidez com clamp */
+    --espacamento-padrao: 1rem;
+    --espacamento-pequeno: 0.5rem;
+    --espacamento-duplo: 2rem;
+    --gap-default: 1rem;
+
+    --raio-borda-grande: 15px;
+    --raio-borda-medio: 8px;
+    --raio-borda-pequeno: 5px;
+
+    /* largura máxima do layout */
+    --site-max-width: 1200px;
+  }
+
+  /* Reset simples e box-sizing universal */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+  body {
     margin: 0;
     padding: var(--espacamento-padrao);
-}
+    font-family: var(--fonte-principal);
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-main#app-root {
-    max-width: auto;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h1 {
+  h1 { 
     color: #0056b3;
-    margin-top: 0.5em; 
-    margin-bottom: 20px;
-}
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+  }
 
-h2, h3 { 
-  margin-top: 0.5em; 
-}
+  h2 {
+    font-size: 1.1rem;
+    color: #4d2153;
+    margin: 0 0 0.5rem 0;
+  }
 
-p {
+  p {
     font-family: var(--fonte-secundaria);
-    font-size: 14px; /* Mantido em px conforme original, mas 'rem' seria mais acessível */
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
+    font-size: 0.875rem;
+    margin: 0 0 0.75rem 0;
+  }
 
-a {
-    text-align: left;
-    text-decoration: none;
+  a {
     color: #007bff;
     text-decoration: none;
-}
+  }
+  a:hover { text-decoration: underline; }
 
-a:hover {
-    text-decoration: underline;
-}
+  img, video, iframe, canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 
-/* 
- * Layout básico refatorado 
- * ./css/base.css
- */
+  pre {
+    background: var(--cor-fundo-pre);
+    padding: var(--espacamento-padrao);
+    border-radius: var(--raio-borda-pequeno);
+    overflow-x: auto;
+    font-family: Menlo, Monaco, monospace;
+    font-size: 0.9rem;
+  }
 
-:root {
-  --cor-primaria: #09c;
-  --cor-destaque: #ff8c00;
-  --cor-fundo-item: #f0f0f0;
-  --cor-fundo-pre: #f4f4f4;
-  --cor-borda-padrao: #ccc;
-  --cor-borda-fraca: #ddd;
-  
-  --fonte-principal: Arial, sans-serif;
-  --fonte-secundaria: Verdana, Geneva, sans-serif;
-  
-  --espacamento-padrao: 1rem;
-  --espacamento-duplo: 2em;
-  
-  --raio-borda-grande: 15px;
-  --raio-borda-medio: 8px;
-  --raio-borda-pequeno: 5px;
-}
+  figure { margin: 0; }
+  figcaption { font-style: italic; font-size: 0.875rem; color: #666; }
 
-/* Classes de layout e componentes */
-
-.content-section {
-  margin-bottom: var(--espacamento-duplo);
-}
-
-.item-article {
-  border: 1px solid var(--cor-borda-fraca);
-  padding: var(--espacamento-padrao); 
-  margin-bottom: var(--espacamento-padrao); 
-  border-radius: var(--raio-borda-medio); 
-}
-
-.item-full-width {
-  width: 100%;
-  height: auto;
-  border: 1px solid var(--cor-borda-padrao);
-  padding: 20px;
-  text-align: center;
-}
-
-.output-area {
-  background-color: var(--cor-destaque);
-}
-
-.title {
-  text-align: center;
-}
-
-.left_list {
-  list-style: disc; 
-  margin-left: 20px;
-  text-align: left;
-}
-
-/* Estilos de elementos base */
-
-pre {
-  background: var(--cor-fundo-pre);
-  padding: var(--espacamento-padrao);
-  border-radius: var(--raio-borda-pequeno);
-  overflow-x: auto; 
-}
-
-figure {
-  text-align: center;
-}
-
-figcaption { 
-  font-style: italic; 
-}
-
-textarea,
-input[type="text"],
-input[type="url"] {
-  background-color: var(--cor-destaque);
-  width: 100%;
-  margin-bottom: var(--espacamento-padrao);
-  padding: 8px;
-  border: 1px solid var(--cor-borda-padrao);
-  border-radius: var(--raio-borda-pequeno);
-  box-sizing: border-box;
-}
-
-textarea { 
-  height: 125px;
-  resize: vertical;
-}
- 
-iframe { 
-  width: 100%; 
-  margin-bottom: var(--espacamento-padrao); 
-}
-
-button, .button-style {
-  padding: 5px 20px;
-  text-align: center;
-  border: 1px solid var(--cor-primaria);
-  border-radius: var(--raio-borda-grande);
-  text-decoration: none; /* Adicionado para consistência se usado em links */
-  display: inline-block; /* Adicionado para consistência */
-}
-
-footer {
-  text-align: left;
-  padding: var(--espacamento-padrao) 0;
-}
-
-footer li {
-    list-style: none;
-}
-
-/* Layout Flexbox */
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; /* separa as colunas */
-  align-items: stretch;           /* garante que as sections tenham a mesma altura */
-  gap: 2rem;                      /* espaçamento entre colunas */
-  width: 100%;
-}
-
-nav section {
-  flex: 1;                        /* ambas crescem igualmente */
-  display: flex;
-  flex-direction: row;
-  justify-content: stretch;       /* garante alinhamento vertical igual */
-  gap: 1rem;
-}
-
-nav article {
-  flex: 1;                        /* faz com que cada artigo tenha altura igual dentro da section */
-  display: flex;
-  align-items: center;            /* centraliza verticalmente */
-  justify-content: center;
-  padding: 1rem;
-  background-color: #f4f4f4;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  gap: 10px 20px;
-}
-
-.item {
-  flex-grow: 1;
-  flex-basis: 200px;
-  background-color: var(--cor-fundo-item);
-  text-align: center;
-  border-radius: var(--raio-borda-medio);
-  min-height: 50px;
-  border: 1px solid var(--cor-borda-padrao);
-  padding: var(--espacamento-padrao);
-  margin: 10px;
-}
-
-/* Ícones e utilitários de estado */
-
-.material-icons {
-  font-size: 72px;
-}
-
-#texto,
-#exercicio,
-#ajustes,
-#logo {
-  display: none;
-}
-
-/* Media Queries */
-
-/* Tablet (2 colunas) */
-@media (min-width: 1024px) {
-  .curso {
-    align-self: auto;
-    flex: 1 1 calc(50% - 1rem);
+  /* Blocos sem overflow por padrão */
+  article, section, nav, main, header, footer {
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: break-word;
   }
 }
 
-/* Tablet */
-@media (max-width: 600px) {
-  .carousel-wrapper.large .item,
-  .carousel-wrapper.small .item {
-    flex: 0 0 100px;
+/* ---------------------------
+   LAYER: layout
+   --------------------------- */
+@layer layout {
+  /* Contêiner principal */
+  main#app-root {
+    width: 100%;
+    max-width: var(--site-max-width);
+    margin: 0.5rem auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    box-sizing: border-box;
   }
-}
 
-/* New Flexbox styles for dynamic content */
-.course-list, .lesson-list {
+  /* Navegação (mobile-first: coluna) */
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-default);
+    width: 100%;
+  }
+
+  nav section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-default);
+  }
+
+  nav article {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    padding: 0.5rem;
+    background: transparent;
+    margin: 0;
+  }
+
+  /* Ajuste para telas largas: nav em linha */
+  @media (min-width: 768px) {
+    nav {
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: calc(var(--gap-default) * 1.5);
+    }
+
+    nav section {
+      flex-direction: row;
+      gap: var(--gap-default);
+    }
+
+    nav article {
+      flex: 1 1 auto;
+    }
+  }
+
+  /* Container geral para listas de cards */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-default);
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
+  /* Course-list / lesson-list: definem container queries */
+  .lesson-title{
+    font-size: 0.9rem;
+  }
+
+  .course-list, .lesson-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: stretch;
+    margin-top: 0.5rem;
+
+    /* container queries setup */
+    container-type: inline-size;
+    container-name: card-container;
+    /* define --card-gap para cálculo seguro nas queries */
+    --card-gap: 20px;
+  }
+
+  /* Lousa / canvas */
+  .lousa-view {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.25rem;
+  }
+  .lousa-view .toolbar { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; }
+  canvas#whiteboard { max-width:100%; height:auto; border:1px solid #000; }
 }
 
-.course-card, .lesson-card {
+/* ---------------------------
+   LAYER: components
+   --------------------------- */
+@layer components {
+  /* Itens genéricos */
+  .content-section { margin-bottom: var(--espacamento-duplo); }
+
+  .item-article {
+    border: 1px solid var(--cor-borda-fraca);
+    padding: var(--espacamento-padrao);
+    margin-bottom: var(--espacamento-padrao);
+    border-radius: var(--raio-borda-medio);
+    background: #fff;
+  }
+
+  .item-full-width {
+    width: 100%;
+    border: 1px solid var(--cor-borda-padrao);
+    padding: 0.5rem;
+    border-radius: var(--raio-borda-pequeno);
+    box-sizing: border-box;
+  }
+
+  textarea, input[type="text"], input[type="url"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: var(--espacamento-padrao);
+    border: 1px solid var(--cor-borda-padrao);
+    border-radius: var(--raio-borda-pequeno);
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  button, .button-style {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--cor-primaria);
+    background: var(--cor-primaria);
+    color: #fff;
+    border-radius: var(--raio-borda-grande);
+    cursor: pointer;
+    display: inline-block;
+  }
+  button:hover { opacity: 0.95; }
+
+  /* Item flex básico */
+  .item {
+    flex: 1 1 200px;
+    min-width: 160px;
+    background-color: var(--cor-fundo-item);
+    border-radius: var(--raio-borda-medio);
+    border: 1px solid var(--cor-borda-padrao);
+    padding: var(--espacamento-pequeno);
+    margin: 0; /* controle centralizado pelo gap do container */
+    box-sizing: border-box;
+  }
+
+  /* Course / Lesson Card (Mobile-First) */
+  .course-card, .lesson-card {
+    --inner-padding: 0.625rem;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
+    padding: var(--inner-padding);
     text-align: left;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    flex: 1 1 calc(33% - 40px); /* 3 items per row, responsive */
-    max-width: calc(33% - 40px);
-    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
 
-.course-card img, .lesson-card img {
+    /* mobile: 1 coluna, sem overflow */
+    flex: 1 1 100%;
+    min-width: 0;          /* evita overflow por flex item */
     max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .course-card img, .lesson-card img {
+    width: 100%;
     height: auto;
     border-radius: 4px;
-    margin-bottom: 10px;
-}
+    margin-bottom: 0.5rem;
+    display:block;
+  }
 
-.course-card h2, .lesson-card h2 {
+  .course-card h2, .lesson-card h2 {
     color: #0056b3;
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
+    font-size: 1.05rem;
+    margin: 0 0 0.4rem 0;
+  }
 
-.course-card p, .lesson-card p {
-    font-size: 0.9em;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    flex-grow: 1; /* Allow description to take available space */
-}
+  .course-card p, .lesson-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0 0 0.6rem 0;
+    color: #333;
+  }
 
-.course-card a, .lesson-card a {
+  .course-card a, .lesson-card a {
     display: inline-block;
     background-color: #007bff;
-    color: white;
-    padding: 8px 15px;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
     border-radius: 5px;
     text-decoration: none;
-    align-self: flex-start; /* Align button to the start */
-}
+    align-self: flex-start;
+    font-size: 0.9rem;
+  }
+  .course-card a:hover, .lesson-card a:hover { background-color: #0056b3; }
 
-.course-card a:hover, .lesson-card a:hover {
-    background-color: #0056b3;
-    text-decoration: none;
-}
+  /* -----------------------------
+     Container Queries (cards)
+     ----------------------------- */
+  /* 2 colunas quando container for largo o suficiente */
+  @container card-container (min-width: 700px) {
+    .course-card, .lesson-card {
+      flex: 1 1 calc(50% - var(--card-gap, 20px));
+      max-width: calc(50% - var(--card-gap, 20px));
+    }
+  }
 
-/* Lesson Content Styling */
-.lesson-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: left;
-    margin-top: 20px;
-}
+  /* 3 colunas quando container maior */
+  @container card-container (min-width: 980px) {
+    .course-card, .lesson-card {
+      flex: 1 1 calc(33.333% - var(--card-gap, 20px));
+      max-width: calc(33.333% - var(--card-gap, 20px));
+    }
+  }
 
-.lesson-article {
+  /* Segurança extra: evite que qualquer card ultrapasse o container */
+  .course-card, .lesson-card, .item-article {
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .lesson-article {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
-}
-
-.lesson-content h2, .lesson-content h3 {
-    color: #0056b3;
-    margin-bottom: 10px;
-}
-
-.lesson-content p {
-    margin-bottom: 10px;
-}
-
-.lesson-content ul {
-    list-style: disc;
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
-.lesson-content pre {
-    background-color: #eee;
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9em;
-}
-
-/* Lousa Styles */
-.lousa-view {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    padding: 0.5rem;
     box-sizing: border-box;
-}
+  }
 
-.lousa-view .toolbar {
-    position: relative; /* Ajustado para ser relativo ao .lousa-view */
-    top: auto;
-    left: auto;
-    display: flex;
-    gap: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1;
-    margin-bottom: 20px;
-    flex-wrap: wrap; /* Adicionado para responsividade */
-    justify-content: center;
-}
-
-.lousa-view .toolbar button, .lousa-view .toolbar input {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 3px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
-
-.lousa-view .toolbar button:hover {
-    background-color: #e0e0e0;
-}
-
-.lousa-view canvas#whiteboard {
-    border: 1px solid black;
-    background-color: #f7f7f7;
-    top: auto;
-    left: auto;
-    max-width: 100%; /* Garante que o canvas não transborde */
-    height: auto;
-}
-
-.sticky-note {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background-color: #ffc;
-    padding: 10px;
-    box-shadow: 5px 5px 7px rgba(0,0,0,0.2);
-    cursor: grab; /* Melhor semântica para arrastar */
-    z-index: 2; /* Para garantir que as notas fiquem acima do canvas */
-}
-
-.sticky-note textarea {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    resize: none;
-    font-family: sans-serif;
-    font-size: 16px;
-    box-sizing: border-box; /* Incluir padding no width/height */
-}
-
-/* --- NotasComponent Styles --- */
-.notas-container {
-    background-color: #ffffe0; /* Cor amarela clara para notas */
+  /* Notas e sticky */
+  .notas-container {
+    background-color: #ffffe0;
     border: 1px solid #e0e0a0;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 280px;
-    min-height: 150px;
-    max-height: 300px; /* Limita a altura para o slide-up */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Garante que o conteúdo não vaze */
-    resize: both; /* Permite redimensionar */
-}
-
-.notas-toggle-button {
-    background-color: #f0f0c0;
-    color: #333;
-    border: none;
-    padding: 8px 15px;
-    border-bottom: 1px solid #e0e0a0;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: left;
-}
-
-.notas-toggle-button:hover {
-    background-color: #e8e8b0;
-}
-
-.notas-content {
-    padding: 10px;
-    flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
-    display: flex; /* Para centralizar os itens internos */
-    flex-direction: column;
-}
-
-.notas-content h4 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-.notas-content p {
-    font-size: 0.85em;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.notas-container textarea {
-    width: calc(100% - 10px); /* Ajuste para padding */
-    height: 100%; /* Ocupa todo o espaço disponível */
-    border: 1px dashed #ccc;
-    padding: 5px;
+    width: 100%;
+    max-width: 280px;
+    min-height: 120px;
     box-sizing: border-box;
-    font-family: var(--fonte-secundaria);
-    font-size: 0.9em;
-    background: transparent;
-    resize: none; /* Desabilita o resize padrão do textarea, o container já faz */
+    overflow: auto;
+  }
 }
 
-article img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Garante que a imagem se comporte como um bloco para o max-width */
+/* ---------------------------
+   LAYER: utilities
+   --------------------------- */
+@layer utilities {
+  /* Utilitários úteis */
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    white-space: nowrap;
+  }
+
+  .sr-only { /* alias */
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    white-space: nowrap;
+  }
+
+  /* Ajustes de espaçamento fluido usando clamp */
+  .sp-vertical {
+    padding-top: clamp(0.5rem, 2vw, 1.5rem);
+    padding-bottom: clamp(0.5rem, 2vw, 1.5rem);
+  }
+
+  /* Helpers para evitar overflow em textos longos */
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Legado: manter compatibilidade com .curso, mas segura */
+  .curso {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  /* Pequenas telas - regras adicionais */
+  @media (max-width: 399px) {
+    h1 { font-size: 1.25rem; }
+    body { padding: 0.75rem; }
+  }
 }

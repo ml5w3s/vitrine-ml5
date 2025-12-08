@@ -64,3 +64,4 @@ export function renderCourseView(course, router) {
 
     return viewElement;
 }
+ 
