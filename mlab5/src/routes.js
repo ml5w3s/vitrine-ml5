@@ -5,6 +5,7 @@ import { renderCourseView } from './views/CourseView.js';
 import { renderLessonCreatorView } from './views/LessonCreatorView.js';
 import { renderPlaygroundView } from './views/PlaygroundView.js';
 import { renderLousaView } from './views/LousaView.js';
+import { renderAdmView } from './views/AdmView.js';
 
 /**
  * Gerencia a visibilidade e o comportamento do botão do playground no rodapé.
@@ -79,5 +80,16 @@ export function defineRoutes(router) {
     router.addRoute('lousa', '/lousa', async () => {
         managePlaygroundButton(null);
         return renderLousaView();
+    });
+
+    // Handler para a área administrativa
+    router.addRoute('adm', '/adm', async (params) => {
+        managePlaygroundButton(null);
+        return await renderAdmView(router);
+    });
+
+    router.addRoute('adm-cadastro-aulas', '/adm/cadastro-aulas', async (params) => {
+        managePlaygroundButton(null);
+        return await renderAdmView(router);
     });
 }

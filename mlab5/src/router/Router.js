@@ -94,6 +94,7 @@ class Router {
                 this.appRoot.innerHTML = '';
                 this.appRoot.appendChild(newViewElement);
                 this.currentView = newViewElement; // Armazena a nova view
+                window.scrollTo(0, 0);
 
                 Debug.log('Router', 'New view rendered and attached.');
                 return;

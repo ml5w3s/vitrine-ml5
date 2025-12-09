@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="icon" type="image/x-icon" href="/vitrine-ml5/mlab5/images/ml5w3s.ico">
+
+  <title>Cursos de Tecnologia e Projetos e Vagas de Emprego | ML5Lab</title>
+
+  <!-- SEO  -->
+  <meta name="description" content="Cursos e treinamentos online em tecnologia, projetos práticos e vagas de emprego atualizadas para impulsionar sua carreira.">
+  <meta name="keywords" content="cursos online, treinamentos tecnologia, vagas de emprego, projetos práticos, programação, Experiência profissional, desenvolvimento web">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ml5w3s.com.br">
+  <meta http-equiv="content-language" content="pt-BR">
+
+  <!-- OG -->
+  <meta property="og:title" content="Cursos e Treinamentos em Tecnologia | [Nome do Site]">
+  <meta property="og:description" content="Aprenda com cursos práticos, participe de projetos e encontre vagas de emprego na área de tecnologia.">
+  <meta property="og:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+  <meta property="og:url" content="http://ml5w3s.com.br">
+  <meta property="og:type" content="website">
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/vitrine-ml5/mlab5/css/base.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cursos Online e Vagas de Emprego | [ML5Lab]">
+  <meta name="twitter:description" content="Cursos práticos, projetos reais e vagas de emprego em tecnologia. Comece agora!">
+  <meta name="twitter:image" content="http://ml5w3s.com.br/images/banner_barramento.png">
+</head>
+
+<body>
+<!-- CABEÇALHO -->
+<div id="header-placeholder"></div>
+
+<section class="container">
+  <!--BANNER-->
+  <article class="item">
+    <picture>
+      <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/images/banner_controle_desktop.png">
+      <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/images/banner_controle_desktop.png">
+      <img src="/vitrine-ml5/mlab5/images/banner_controle_desktop.png">
+    </picture>
+    <h1>Gerador de Aulas (.JSON)</h1>
+  </article>
+</section>
+
+<section class="content-section">
+  <article class="item-article">
+    <h2><i class="material-icons"><span class="material-symbols-outlined">settings</span></i></h2>
+    <h3><a class="button-style button-large" href="/vitrine-ml5/mlab5/controle/cadastro_aulas.html">Gerador de aulas</a></h3>
+    <p >Você pode estudar, praticar, discutir e se aprofundar nessa plataforma.</p>
+  </article>
+</section>
+
+<!-- RODAPÉ  -->
+<div id="footer-placeholder"></div>
+
+<!-- SCRIPTS -->
+<script>
+  async function loadComponent(placeholderId, file) {
+    try {
+      const response = await fetch(file);
+      if (!response.ok) throw new Error(`Erro ao carregar ${file}`);
+      document.getElementById(placeholderId).innerHTML = await response.text();
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadComponent('header-placeholder', '/vitrine-ml5/mlab5/js/ui/components/header.html')
+      .then(() => {
+        const script = document.createElement('script');
+        script.src = '/vitrine-ml5/mlab5/js/ui/components/navbar.js';
+        document.body.appendChild(script);
+      })
+      .catch(error => {
+        console.error("Erro ao carregar o header:", error);
+      });
+
+    loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/js/ui/components/footer.html');
+  });
+</script>
+</body>
+</html>
