@@ -2,7 +2,7 @@
 <header class="container">
   <nav>
     <div class="logo">
-      <a href="/vitrine-ml5/mlab5">
+      <a href="#/">
         <img src="/vitrine-ml5/mlab5/assets/images/logo_mobile.png" alt="Logo ML5Lab">
       </a>
     </div>
@@ -94,17 +94,15 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header');
-    if(header) {
-        const hamburger = header.querySelector('.hamburger');
-        const navLinks = header.querySelector('.nav-links');
+  const header = document.querySelector('header');
+  if(header) {
+      const hamburger = header.querySelector('.hamburger');
+      const navLinks = header.querySelector('.nav-links');
 
-        if(hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('open');
-            });
-        }
-    }
-  });
+      if(hamburger && navLinks) {
+          hamburger.addEventListener('click', () => {
+              navLinks.classList.toggle('open');
+          });
+      }
+  }
 </script>

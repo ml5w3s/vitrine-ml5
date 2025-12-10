@@ -97,6 +97,7 @@ class Router {
                 window.scrollTo(0, 0);
 
                 Debug.log('Router', 'New view rendered and attached.');
+                this.eventBus.publish('contentRendered');
                 return;
             }
         }

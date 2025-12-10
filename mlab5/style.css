@@ -99,6 +99,7 @@
     max-width: 100%;
     width: 100%;
     overflow-wrap: break-word;
+    margin-bottom: 5px;
   }
 }
 
@@ -217,6 +218,10 @@
     background: #fff;
   }
 
+  .container article.item:has(h1) {
+    margin-bottom: var(--espacamento-duplo);
+  }
+
   .item-full-width {
     width: 100%;
     border: 1px solid var(--cor-borda-padrao);
@@ -256,6 +261,14 @@
     padding: var(--espacamento-pequeno);
     margin: 0; /* controle centralizado pelo gap do container */
     box-sizing: border-box;
+  }
+
+  @media (min-width: 769px) {
+    .item.is-expanded {
+      flex-basis: 400px; /* Double the default flex-basis of 200px */
+      max-width: unset; /* Allow it to grow beyond 100% if needed, while respecting flex-basis */
+      white-space: normal;
+    }
   }
 
   /* Course / Lesson Card (Mobile-First) */

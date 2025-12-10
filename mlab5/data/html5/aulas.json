@@ -65,12 +65,12 @@
           "text": "Entenda que alguns comandos não aparecem na tela, mas são necessários para o bom funcionamento da página. Veja o resultado do uso desses códigos, na imagem a seguir:",
           "programmingLanguage": "HTML",
           "code": [
-            "&lt;!DOCTYPE html&gt; - Tipo do documento;",
-            "&lt;html&gt; - Início do código HTML;",
-            "&lt;head&gt; - Cabeçalho (metadados);",
-            "&lt;h1&gt;Nome Empresa LTDA.&lt;/h1&gt;",
-            "&lt;p&gt;Produzido no Brasil.&lt;/p&gt;",
-            "&lt;img src='camiseta.jpg'&gt; Aqui aparece a imagem."
+            "<!DOCTYPE> - Tipo do documento;",
+            "<html> - Início do código HTML;",
+            "<head> - Cabeçalho (metadados);",
+            "<h1>Nome Empresa LTDA.</h1>",
+            "<p>Produzido no Brasil.</p>",
+            "<img src='camiseta.jpg'> Aqui aparece a imagem."
           ]
 
         },

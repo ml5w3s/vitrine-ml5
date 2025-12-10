@@ -3,6 +3,7 @@ import { defineRoutes } from './routes.js';
 import { Debug } from './helpers/Debug.js';
 import EventBus from './utils/EventBus.js';
 import { NotasComponent } from './components/NotasComponent.js';
+import { initOverflowManager } from './utils/OverflowManager.js';
 
 // Instancia o NotasComponent globalmente para que seja acessível
 const notasComponent = new NotasComponent();
@@ -62,5 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Inicializa o roteador
   router.init();
-});
-  
+
+  // Inicializa o OverflowManager
+  initOverflowManager(eventBus);
+});  
