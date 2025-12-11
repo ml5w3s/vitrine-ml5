@@ -1,0 +1,103 @@
+[
+  {
+    "course": {
+      "name": "🧭 Como Estudar Linux na Prática para Segurança",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_linux_desktop.png",
+            "tablet": "assets/images/banner_linux_tablet.png",
+            "mobile": "assets/images/banner_linux_mobile.png"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Como escolher o melhor ambiente para estudar Linux com foco em segurança",
+          "alternativeHeadline": "Do iniciante ao avançado: onde praticar sem medo",
+          "text": "Para quem está começando no Linux com foco em segurança, o ambiente de prática é tão importante quanto o conteúdo estudado. Cada forma de instalar ou executar Linux oferece benefícios diferentes. O ideal é evoluir progressivamente, começando por ambientes seguros e sem risco de quebrar sua máquina principal.",
+          "list": [
+            "Evitar riscos desnecessários enquanto aprende comandos privilegiados.",
+            "Escolher um ambiente que não atrapalhe as tarefas do dia a dia.",
+            "Treinar em cenários reais conforme avança no estudo."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "1. Windows Subsystem for Linux (WSL)",
+          "text": "A porta de entrada mais suave. Perfeito para quem nunca usou Linux e não quer arriscar o sistema principal. No WSL você tem um Linux real rodando dentro do Windows, e ainda pode instalar ferramentas de segurança como Nmap, tcpdump, tshark, strings, binwalk e frameworks de análise.",
+          "list": [
+            "Sem risco de quebrar o sistema operacional principal.",
+            "Integração direta com Windows para editores e arquivos.",
+            "Permite testes leves, rede, análise e automação.",
+            "Limitação: não ideal para testes avançados que exigem kernel completo."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "2. Máquina virtual (VirtualBox ou VMware)",
+          "text": "O ambiente ideal para começar a praticar segurança sem medo. Você pode criar e destruir máquinas à vontade, testar firewalls, simular redes e até montar laboratórios completos.",
+          "list": [
+            "Snapshot para voltar no tempo sem dor de cabeça.",
+            "Perfeito para treinar firewall, permissões, logs, rede e hardening.",
+            "Permite simular ataques controlados usando duas VMs (atacante e alvo).",
+            "Mais pesado que WSL, exige um computador com 8GB+ de RAM."
+          ]
+        },
+        {
+          "position": 4,
+          "headline": "3. Pendrive bootável (Live USB)",
+          "text": "Excelente para sentir a experiência real de um Linux rodando nativamente, sem instalar nada no disco. Bom para quem quer explorar desempenho real e ambientes forenses.",
+          "list": [
+            "Zero risco para o sistema já instalado.",
+            "Ótimo para testar distribuições voltadas a segurança (Kali, Parrot, BlackArch).",
+            "Pode salvar sessões (modo persistente).",
+            "Mais limitado para estudos longos ou de rede."
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "4. Instalar Linux em dual boot",
+          "text": "Recomendado apenas quando o estudante já domina o básico e confia em suas ações. Ideal para quem quer usar Linux diariamente para segurança, desenvolvimento ou administração.",
+          "text2": "Porém, atenção: se o Linux é seu laboratório, e você depende do computador para trabalhar/estudar, quebras no sistema podem ser um problema.",
+          "list": [
+            "Desempenho máximo para ferramentas de segurança.",
+            "Ambiente perfeito para quem quer viver 100% no Linux.",
+            "Exige cuidado: comandos como chown, chmod, mount e manipulação de boot podem quebrar o sistema.",
+            "Precisa dividir o disco e garantir backup."
+          ]
+        },
+        {
+          "position": 6,
+          "headline": "5. Docker ou containers",
+          "text": "Ótimo para estudar serviços, simular alvos e montar ambientes isolados. Não substitui um Linux completo para aprender administração, mas é perfeito para montar laboratórios rápidos.",
+          "list": [
+            "Crie ambientes descartáveis em segundos.",
+            "Simule ataques a serviços isolados (SSH, Nginx, bancos).",
+            "Ideal para testar scanners, exploits e detecção.",
+            "Não substitui o estudo do sistema operacional em si."
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "Recomendação de progressão prática",
+          "text": "Para aprender segurança sem comprometer seu sistema principal, o caminho ideal é aumentar o realismo conforme ganha confiança.",
+          "list": [
+            "Etapa 1: WSL para dominar comandos e conceitos básicos.",
+            "Etapa 2: Máquina virtual para treinar redes, logs, firewall, permissões e hardening.",
+            "Etapa 3: Laboratórios de ataque e defesa simulados em VMs.",
+            "Etapa 4: Live USB para praticar análises e testes reais.",
+            "Etapa 5: Instalar Linux nativamente e usar como ambiente principal."
+          ]
+        },
+        {
+          "position": 8,
+          "headline": "Resumo: qual escolher?",
+          "text": "Se você é iniciante total, comece com WSL. Se quer praticar segurança a sério, vá para máquinas virtuais. Quando dominar o básico, use Live USB. E só instale nativamente quando se sentir confortável com permissões, logs e operações administrativas.",
+          "alternativeHeadline": "Progresso com segurança e sem dor de cabeça."
+        }
+      ]
+    }
+  }
+]

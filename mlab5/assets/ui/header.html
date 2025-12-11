@@ -95,13 +95,22 @@
 
 <script>
   const header = document.querySelector('header');
-  if(header) {
+  if (header) {
       const hamburger = header.querySelector('.hamburger');
       const navLinks = header.querySelector('.nav-links');
 
-      if(hamburger && navLinks) {
+      if (hamburger && navLinks) {
+          // Toggle menu on hamburger click
           hamburger.addEventListener('click', () => {
               navLinks.classList.toggle('open');
+          });
+
+          // Close menu on link click
+          navLinks.addEventListener('click', (event) => {
+              // Check if a link was clicked
+              if (event.target.tagName === 'A') {
+                  navLinks.classList.remove('open');
+              }
           });
       }
   }

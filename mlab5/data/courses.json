@@ -66,6 +66,17 @@
     }
   },
   {
+    "id": "linux-seguranca-prologo",
+    "title": "Linux para Segurança - Prologo",
+    "description": "Aprenda a usar o Linux com foco em segurança da informação.",
+    "image": {
+      "desktop": "assets/images/cursos/linux_desktop.jpg",
+      "tablet": "assets/images/cursos/linux_tablet.jpg",
+      "mobile": "assets/images/cursos/linux_mobile.jpg",
+      "caption": "Prologo do curso de Linux para Segurança"
+    }
+  },
+   {
     "id": "linux-seguranca",
     "title": "Linux para Segurança",
     "description": "Aprenda a usar o Linux com foco em segurança da informação.",
