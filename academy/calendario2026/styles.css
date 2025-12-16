@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#month-year-title {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin: 0;
+    min-width: 200px;
+    text-align: center;
+}
+
+header button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+header button:hover {
+    background-color: #0056b3;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#calendar-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
+}
+
+#calendar-view {
+    flex: 2; /* Ocupa 2/3 do espaço */
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+#days-header .day-name {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    color: #666;
+}
+
+#days-grid .day {
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+#days-grid .day.empty {
+    background-color: transparent;
+    border: none;
+}
+
+#days-grid .day.today {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+#details-view {
+    flex: 1; /* Ocupa 1/3 do espaço */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#month-image-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#month-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#notes-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#notes-section h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    color: #0056b3;
+}
+
+#notes-textarea {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+#notes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+#notes-list li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#notes-list li button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    #calendar-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .nav-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    #month-year-title {
+        font-size: 1.2rem;
+        min-width: auto;
+    }
+
+    #days-grid .day {
+        padding: 10px 5px;
+    }
+}

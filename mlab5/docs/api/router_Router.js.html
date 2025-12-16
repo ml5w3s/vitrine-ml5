@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: router/Router.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: router/Router.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Router.js
+ * 
+ * This is a placeholder for a simple hash-based router.
+ * It will handle routing for the application.
+ */
+import { Debug } from '../helpers/Debug.js';
+
+class Router {
+    constructor(eventBus) {
+        this.routes = [];
+        this.eventBus = eventBus;
+        this.currentView = null; // Guarda a referência da view atual para limpeza
+        this.appRoot = document.getElementById('app-root'); // O elemento raiz da aplicação
+        Debug.log('Router', 'Router instantiated.');
+    }
+
+    /**
+     * Initializes the router, starting to listen for route changes.
+     */
+    init() {
+        window.addEventListener('hashchange', this.handleRouteChange.bind(this));
+        window.addEventListener('load', this.handleRouteChange.bind(this));
+        Debug.log('Router', 'Router initialized and listening for changes.');
+        this.handleRouteChange();
+    }
+
+    /**
+     * Adds a new route to the router.
+     * Supports route parameters like ':paramName'.
+     * @param {string} name - The name of the route (e.g., 'home', 'courseDetail').
+     * @param {string} path - The path for the route (e.g., '/', '/course/:courseId').
+     * @param {function} handler - The function to execute when the route is matched. It must return an HTMLElement.
+     */
+    addRoute(name, path, handler) {
+        const paramNames = [];
+        const regexPath = path.replace(/:(\w+)/g, (match, paramName) => {
+            paramNames.push(paramName);
+            return '([^/]+)';
+        });
+        const regex = new RegExp(`^${regexPath}$`);
+
+        this.routes.push({ name, path, regex, handler, paramNames });
+        Debug.log('Router', `Route added: ${name} -> ${path}`);
+    }
+
+    /**
+     * Generates a URL for a named route with the given parameters.
+     * @param {string} name - The name of the route.
+     * @param {object} params - An object with parameter values.
+     * @returns {string} The generated URL.
+     */
+    generateUrl(name, params = {}) {
+        const route = this.routes.find(r => r.name === name);
+        if (!route) {
+            Debug.error('Router', `Route with name '${name}' not found.`);
+            return '#/not-found';
+        }
+
+        let path = route.path;
+        for (const key in params) {
+            path = path.replace(`:${key}`, params[key]);
+        }
+        return `#${path}`;
+    }
+
+    /**
+     * Handles the route change event.
+     */
+    async handleRouteChange() {
+        const hash = window.location.hash || '#/';
+        const path = hash.substring(1); // Remove the '#'
+        Debug.log('Router', `Handling route change for: ${path}`);
+
+        for (const route of this.routes) {
+            const match = path.match(route.regex);
+            if (match) {
+                const params = {};
+                for (let i = 0; i &lt; route.paramNames.length; i++) {
+                    params[route.paramNames[i]] = match[i + 1];
+                }
+                Debug.log('Router', `Executing handler for route: ${path} with params:`, params);
+
+                // 1. Destruir a view antiga
+                if (this.currentView &amp;&amp; typeof this.currentView.destroy === 'function') {
+                    this.currentView.destroy();
+                    Debug.log('Router', 'Previous view destroyed.');
+                }
+
+                // 2. Obter a nova view do handler (que agora retorna um elemento)
+                const newViewElement = await route.handler(params);
+
+                // 3. Limpar o root e adicionar a nova view
+                this.appRoot.innerHTML = '';
+                this.appRoot.appendChild(newViewElement);
+                this.currentView = newViewElement; // Armazena a nova view
+                window.scrollTo(0, 0);
+
+                Debug.log('Router', 'New view rendered and attached.');
+                this.eventBus.publish('contentRendered');
+                return;
+            }
+        }
+
+        Debug.log('Router', `No handler found for route: ${path}`);
+        this.eventBus.publish('routeNotFound', hash);
+    }
+
+    /**
+     * Navigates to the specified path.
+     * @param {string} path - The path to navigate to.
+     */
+    navigateTo(path) {
+        window.location.hash = path;
+    }
+}
+
+export default Router;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ApiService.html">ApiService</a></li><li><a href="Course.html">Course</a></li><li><a href="CourseRepository.html">CourseRepository</a></li><li><a href="DebugView.html">DebugView</a></li><li><a href="EventBus.html">EventBus</a></li><li><a href="Lesson.html">Lesson</a></li><li><a href="PlaygroundComponent.html">PlaygroundComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bannerConfig">bannerConfig</a></li><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#managePlaygroundButton">managePlaygroundButton</a></li><li><a href="global.html#renderHomeView">renderHomeView</a></li><li><a href="global.html#renderLessonCreatorView">renderLessonCreatorView</a></li><li><a href="global.html#renderPlaygroundView">renderPlaygroundView</a></li><li><a href="global.html#reverseString">reverseString</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

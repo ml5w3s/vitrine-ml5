@@ -228,6 +228,10 @@
     padding: 0.5rem;
     border-radius: var(--raio-borda-pequeno);
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   textarea, input[type="text"], input[type="url"] {
@@ -262,6 +266,11 @@
     margin: 0; /* controle centralizado pelo gap do container */
     box-sizing: border-box;
   }
+
+footer article.item:first-of-type {
+  display: flex;
+  justify-content: space-around;
+}
 
   @media (min-width: 769px) {
     .item.is-expanded {

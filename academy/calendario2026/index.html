@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário 2026</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="../../images/logo_ml5w3sl4b.svg">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="../../images/logo_ml5w3sl4b.svg" alt="Logo" class="logo">
+            <div class="nav-buttons">
+                <button id="prev-month-btn">Anterior</button>
+                <h1 id="month-year-title"></h1>
+                <button id="next-month-btn">Próximo</button>
+            </div>
+        </div>
+    </header>
+    
+    <main id="calendar-container">
+        <!-- Coluna da Esquerda: Calendário -->
+        <div id="calendar-view">
+            <div id="days-header" class="days-grid">
+                <!-- Nomes dos dias da semana aqui -->
+            </div>
+            <div id="days-grid" class="days-grid">
+                <!-- Dias do mês aqui -->
+            </div>
+        </div>
+
+        <!-- Coluna da Direita: Imagem e Anotações -->
+        <div id="details-view">
+            <div id="month-image-container">
+                <img id="month-image" src="" alt="Imagem do Mês">
+            </div>
+            <div id="notes-section">
+                <h2>Anotações do Mês</h2>
+                <textarea id="notes-textarea" placeholder="Suas anotações..."></textarea>
+                <ul id="notes-list"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

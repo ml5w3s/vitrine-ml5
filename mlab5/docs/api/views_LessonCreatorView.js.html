@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: views/LessonCreatorView.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: views/LessonCreatorView.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+import { Course } from '../models/Course.js';
+import { Lesson } from '../models/Lesson.js';
+
+/**
+ * renderLessonCreatorView - Renderiza a página para criação de novas aulas e cursos.
+ */
+export function renderLessonCreatorView() {
+    const viewElement = document.createElement('div');
+    viewElement.className = 'lesson-creator-view';
+    viewElement.innerHTML = `
+        &lt;h2>Criador de Aulas e Cursos&lt;/h2>
+        &lt;form id="lesson-creator-form">
+            &lt;h3>Dados do Curso&lt;/h3>
+            &lt;label for="course-id">ID do Curso:&lt;/label>
+            &lt;input type="text" id="course-id" required>&lt;br>
+            &lt;label for="course-title">Título do Curso:&lt;/label>
+            &lt;input type="text" id="course-title" required>&lt;br>
+            &lt;label for="course-description">Descrição do Curso:&lt;/label>
+            &lt;textarea id="course-description" rows="3" required>&lt;/textarea>&lt;br>
+
+            &lt;h3>Dados da Aula&lt;/h3>
+            &lt;label for="lesson-id">ID da Aula:&lt;/label>
+            &lt;input type="text" id="lesson-id" required>&lt;br>
+            &lt;label for="lesson-title">Título da Aula:&lt;/label>
+            &lt;input type="text" id="lesson-title" required>&lt;br>
+            &lt;label for="lesson-type">Tipo da Aula:&lt;/label>
+            &lt;select id="lesson-type">
+                &lt;option value="default">Padrão&lt;/option>
+                &lt;option value="lousa">Lousa&lt;/option>
+                &lt;option value="playground">Playground&lt;/option>
+            &lt;/select>&lt;br>
+            &lt;label for="lesson-content">Conteúdo da Aula (JSON para Playground):&lt;/label>
+            &lt;textarea id="lesson-content" rows="10">&lt;/textarea>&lt;br>
+
+            &lt;button type="submit">Salvar Curso/Aula&lt;/button>
+        &lt;/form>
+        &lt;div id="creator-messages" style="color: green; margin-top: 10px;">&lt;/div>
+    `;
+
+    // Adiciona o event listener para o formulário
+    viewElement.querySelector('#lesson-creator-form').addEventListener('submit', async (event) => {
+        event.preventDefault(); // Previne o recarregamento da página
+
+        const courseId = document.getElementById('course-id').value;
+        const courseTitle = document.getElementById('course-title').value;
+        const courseDescription = document.getElementById('course-description').value;
+
+        const lessonId = document.getElementById('lesson-id').value;
+        const lessonTitle = document.getElementById('lesson-title').value;
+        const lessonType = document.getElementById('lesson-type').value;
+        let lessonContent = document.getElementById('lesson-content').value;
+
+        // Tenta parsear o conteúdo da aula se for JSON (para playground)
+        if (lessonType === 'playground') {
+            try {
+                lessonContent = JSON.parse(lessonContent);
+            } catch (e) {
+                document.getElementById('creator-messages').innerText = 'Erro: Conteúdo da aula Playground deve ser um JSON válido.';
+                document.getElementById('creator-messages').style.color = 'red';
+                return;
+            }
+        }
+
+        const newLesson = new Lesson(lessonId, lessonTitle, lessonContent, lessonType);
+        const newCourse = new Course(courseId, courseTitle, courseDescription, [newLesson]);
+
+        // TODO: Implementar a funcionalidade de salvar o curso.
+        // A linha abaixo está comentada porque a funcionalidade de salvar ainda não foi implementada
+        // e o `apiService` não está mais disponível como uma variável global.
+        // const success = await apiService.saveCourse(newCourse);
+        const success = false; // Simula uma falha ao salvar
+
+        const messagesDiv = document.getElementById('creator-messages');
+        if (success) {
+            messagesDiv.innerText = 'Curso/Aula salvo com sucesso! Recarregue a página para ver as alterações.';
+            messagesDiv.style.color = 'green';
+            // Limpar formulário
+            event.target.reset();
+        } else {
+            messagesDiv.innerText = 'Erro ao salvar Curso/Aula (funcionalidade não implementada).';
+            messagesDiv.style.color = 'red';
+        }
+    });
+
+    return viewElement;
+}
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ApiService.html">ApiService</a></li><li><a href="Course.html">Course</a></li><li><a href="CourseRepository.html">CourseRepository</a></li><li><a href="DebugView.html">DebugView</a></li><li><a href="EventBus.html">EventBus</a></li><li><a href="Lesson.html">Lesson</a></li><li><a href="PlaygroundComponent.html">PlaygroundComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bannerConfig">bannerConfig</a></li><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#managePlaygroundButton">managePlaygroundButton</a></li><li><a href="global.html#renderHomeView">renderHomeView</a></li><li><a href="global.html#renderLessonCreatorView">renderLessonCreatorView</a></li><li><a href="global.html#renderPlaygroundView">renderPlaygroundView</a></li><li><a href="global.html#reverseString">reverseString</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

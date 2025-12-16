@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/PlaygroundComponent.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/PlaygroundComponent.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * PlaygroundComponent - Componente para renderizar um ambiente de codificação interativo.
  */
 export class PlaygroundComponent {
@@ -32,98 +60,98 @@ export class PlaygroundComponent {
                     return;
                 }
 
-                articlesHtml += `<article>`;
-                if (article.headline) articlesHtml += `<h4>${article.headline}</h4>`;
-                if (article.alternativeHeadline) articlesHtml += `<h5>${article.alternativeHeadline}</h5>`;
-                if (article.text) articlesHtml += `<p>${article.text}</p>`;
+                articlesHtml += `&lt;article>`;
+                if (article.headline) articlesHtml += `&lt;h4>${article.headline}&lt;/h4>`;
+                if (article.alternativeHeadline) articlesHtml += `&lt;h5>${article.alternativeHeadline}&lt;/h5>`;
+                if (article.text) articlesHtml += `&lt;p>${article.text}&lt;/p>`;
                 if (article.list) {
-                    articlesHtml += `<ul>`;
-                    article.list.forEach(item => articlesHtml += `<li>${item}</li>`);
-                    articlesHtml += `</ul>`;
+                    articlesHtml += `&lt;ul>`;
+                    article.list.forEach(item => articlesHtml += `&lt;li>${item}&lt;/li>`);
+                    articlesHtml += `&lt;/ul>`;
                 }
                 if (article.image) {
                     // Simplificado para desktop por enquanto
-                    articlesHtml += `<img src="${article.image.desktop || article.image.src}" alt="${article.image.caption || ''}">`;
-                    if (article.image.caption) articlesHtml += `<p class="caption">${article.image.caption}</p>`;
+                    articlesHtml += `&lt;img src="${article.image.desktop || article.image.src}" alt="${article.image.caption || ''}">`;
+                    if (article.image.caption) articlesHtml += `&lt;p class="caption">${article.image.caption}&lt;/p>`;
                 }
                 if (article.code) {
                     const codeText = Array.isArray(article.code) ? article.code.join('\n') : String(article.code);
-                    articlesHtml += `<pre><code class="language-${article.programmingLanguage || 'html'}">${codeText}</code></pre>`;
+                    articlesHtml += `&lt;pre>&lt;code class="language-${article.programmingLanguage || 'html'}">${codeText}&lt;/code>&lt;/pre>`;
                 }
-                articlesHtml += `</article>`;
+                articlesHtml += `&lt;/article>`;
             });
         }
 
         let exerciseHtml = '';
         if (exercise) {
-            exerciseHtml += `<section class="exercise">`;
-            exerciseHtml += `<h3>${exercise.headline}</h3>`;
-            exerciseHtml += `<p>${exercise.text}</p>`;
+            exerciseHtml += `&lt;section class="exercise">`;
+            exerciseHtml += `&lt;h3>${exercise.headline}&lt;/h3>`;
+            exerciseHtml += `&lt;p>${exercise.text}&lt;/p>`;
             if (exercise.steps) {
-                exerciseHtml += `<ol>`;
-                exercise.steps.forEach(step => exerciseHtml += `<li>${step}</li>`);
-                exerciseHtml += `</ol>`;
+                exerciseHtml += `&lt;ol>`;
+                exercise.steps.forEach(step => exerciseHtml += `&lt;li>${step}&lt;/li>`);
+                exerciseHtml += `&lt;/ol>`;
             }
-            exerciseHtml += `</section>`;
+            exerciseHtml += `&lt;/section>`;
         }
 
         let controlsHtml = '';
-        if (controls && Array.isArray(controls.templates)) {
-            controlsHtml += `<div class="playground-controls">`;
-            controlsHtml += `<label for="template-select">Template:</label>`;
-            controlsHtml += `<select id="template-select">`;
+        if (controls &amp;&amp; Array.isArray(controls.templates)) {
+            controlsHtml += `&lt;div class="playground-controls">`;
+            controlsHtml += `&lt;label for="template-select">Template:&lt;/label>`;
+            controlsHtml += `&lt;select id="template-select">`;
             controls.templates.forEach(template => {
                 const templateName = template.split('/').pop().replace('.html', '');
-                controlsHtml += `<option value="${template}">${templateName}</option>`;
+                controlsHtml += `&lt;option value="${template}">${templateName}&lt;/option>`;
             });
-            controlsHtml += `</select>`;
+            controlsHtml += `&lt;/select>`;
             // Adicionar mais controles de estilo aqui no futuro
-            controlsHtml += `</div>`;
+            controlsHtml += `&lt;/div>`;
         }
 
         // Use playground.headline and playground.instructions for the main playground instructions
-        const playgroundHeadline = playground && playground.headline ? `<h3>${playground.headline}</h3>` : '';
-        const playgroundInstructions = playground && playground.instructions ? `<p>${playground.instructions}</p>` : '';
+        const playgroundHeadline = playground &amp;&amp; playground.headline ? `&lt;h3>${playground.headline}&lt;/h3>` : '';
+        const playgroundInstructions = playground &amp;&amp; playground.instructions ? `&lt;p>${playground.instructions}&lt;/p>` : '';
 
 
         this.containerElement.innerHTML = `
-            <div class="playground-wrapper">
-            <section class="container">
-                <article class="item">
-                <picture>
-                    <source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/assets/images/banner_play_desktop.png">
-                    <source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/assets/images/banner_play_tablet.png">
-                    <img src="/vitrine-ml5/mlab5/assets/images/banner_play_mobile.png" alt="Playground Banner" style="width:100%;">
-                </picture>
-                </article>
-            </section>
-                <div class="playground-instructions">
+            &lt;div class="playground-wrapper">
+            &lt;section class="container">
+                &lt;article class="item">
+                &lt;picture>
+                    &lt;source media="(min-width: 1024px)" srcset="/vitrine-ml5/mlab5/assets/images/banner_play_desktop.png">
+                    &lt;source media="(min-width: 600px)" srcset="/vitrine-ml5/mlab5/assets/images/banner_play_tablet.png">
+                    &lt;img src="/vitrine-ml5/mlab5/assets/images/banner_play_mobile.png" alt="Playground Banner" style="width:100%;">
+                &lt;/picture>
+                &lt;/article>
+            &lt;/section>
+                &lt;div class="playground-instructions">
                     ${playgroundHeadline}
                     ${playgroundInstructions}
-                    <section class="container">
-                        <article class="item">
-                            <h3 id="link_instrucoes" style="cursor:pointer">Instruções</h3>
-                            <div id="texto" style="display:none;">
-                                <p id="instrucoes"></p>
-                            </div>
-                        </article>
-                    </section>
-                </div>
-                <div class="playground-editor">
-                    <!-- controlsHtml removido daqui -->
-                    <h4>Seu Código:</h4>
-                    <textarea id="code-input" class="code-input" rows="15" cols="80"></textarea>
-                    <button id="run-code-button">Executar Código</button>
-                    <h4>Preview:</h4>
-                    <iframe id="code-output" class="code-output" sandbox="allow-scripts allow-same-origin" style="border: none; width: 90%; margin: 0 auto; display: block;"></iframe>
-                </div>
-            </div>
-            <section class="container">
-                <article class="item">
-                    <h3 id="link_ajustes" style="cursor:pointer">Ajustes</h3>
-                    <div id="ajustes" style="display:none;"></div>
-                </article>
-            </section>
+                    &lt;section class="container">
+                        &lt;article class="item">
+                            &lt;h3 id="link_instrucoes" style="cursor:pointer">Instruções&lt;/h3>
+                            &lt;div id="texto" style="display:none;">
+                                &lt;p id="instrucoes">&lt;/p>
+                            &lt;/div>
+                        &lt;/article>
+                    &lt;/section>
+                &lt;/div>
+                &lt;div class="playground-editor">
+                    &lt;!-- controlsHtml removido daqui -->
+                    &lt;h4>Seu Código:&lt;/h4>
+                    &lt;textarea id="code-input" class="code-input" rows="15" cols="80">&lt;/textarea>
+                    &lt;button id="run-code-button">Executar Código&lt;/button>
+                    &lt;h4>Preview:&lt;/h4>
+                    &lt;iframe id="code-output" class="code-output" sandbox="allow-scripts allow-same-origin">&lt;/iframe>
+                &lt;/div>
+            &lt;/div>
+            &lt;section class="container">
+                &lt;article class="item">
+                    &lt;h3 id="link_ajustes" style="cursor:pointer">Ajustes&lt;/h3>
+                    &lt;div id="ajustes" style="display:none;">&lt;/div>
+                &lt;/article>
+            &lt;/section>
         `;
     }
 
@@ -141,7 +169,7 @@ export class PlaygroundComponent {
         const instrucoesEl = this.containerElement.querySelector('#instrucoes');
         if (instrucoesEl) {
             let instructionsText = '';
-            const instrArticle = Array.isArray(articles) ? articles.find(a => a.forPlayground && (a.text || a.list)) : null;
+            const instrArticle = Array.isArray(articles) ? articles.find(a => a.forPlayground &amp;&amp; (a.text || a.list)) : null;
             if (instrArticle) {
                 if (instrArticle.text) instructionsText += instrArticle.text + '\n';
                 if (instrArticle.list) instructionsText += instrArticle.list.map(i => `• ${i}`).join('\n');
@@ -157,62 +185,62 @@ export class PlaygroundComponent {
         const ajustesDiv = this.containerElement.querySelector('#ajustes');
         if (ajustesDiv) {
             const templates = ['classico.html', 'dark_mode.html', 'moderno.html'];
-            let templatesHtml = '<h4>Templates</h4>';
+            let templatesHtml = '&lt;h4>Templates&lt;/h4>';
             templates.forEach(template => {
                 const templateName = template.replace('.html', '');
                 templatesHtml += `
-                    <div>
-                        <input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src//js/components/templates/${template}">
-                        <label for="${templateName}">${templateName}</label>
-                    </div>
+                    &lt;div>
+                        &lt;input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src//js/components/templates/${template}">
+                        &lt;label for="${templateName}">${templateName}&lt;/label>
+                    &lt;/div>
                 `;
                 console.log('Valor de template:', template);
                 console.log('Valor de templateName:', templateName);
 
-                const html = `<input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src//js/components/templates/${template}">`;
+                const html = `&lt;input type="radio" id="${templateName}" name="template" value="/vitrine-ml5/mlab5/src//js/components/templates/${template}">`;
                 console.log(html);
             });
-            templatesHtml += '<button id="apply-customization-button">Aplicar</button>';
+            templatesHtml += '&lt;button id="apply-customization-button">Aplicar&lt;/button>';
             ajustesDiv.innerHTML = templatesHtml;
 
-            let customOptionsHtml = '<h4>Customização</h4>';
+            let customOptionsHtml = '&lt;h4>Customização&lt;/h4>';
             customOptionsHtml += `
-            <div id="customization-options">    
-                <div>
-                    <label for="custom-font">Fonte Personalizada:</label>
-                    <select id="custom-font">
-                        <option value="'Times New Roman', serif">Times New Roman</option>
-                        <option value="'Courier New', monospace">Courier New</option>
-                        <option value="'Lucida Console', monospace">Lucida Console</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="custom-background">Cor de Fundo Personalizada:</label>
-                    <input type="color" id="custom-background" value="#ffffff">
-                </div>
-                <div>
-                    <label for="custom-foreground">Cor do Texto Personalizada:</label>
-                    <input type="color" id="custom-foreground" value="#000000">
-                </div>
-            </div>
+            &lt;div id="customization-options">    
+                &lt;div>
+                    &lt;label for="custom-font">Fonte Personalizada:&lt;/label>
+                    &lt;select id="custom-font">
+                        &lt;option value="'Times New Roman', serif">Times New Roman&lt;/option>
+                        &lt;option value="'Courier New', monospace">Courier New&lt;/option>
+                        &lt;option value="'Lucida Console', monospace">Lucida Console&lt;/option>
+                    &lt;/select>
+                &lt;/div>
+                &lt;div>
+                    &lt;label for="custom-background">Cor de Fundo Personalizada:&lt;/label>
+                    &lt;input type="color" id="custom-background" value="#ffffff">
+                &lt;/div>
+                &lt;div>
+                    &lt;label for="custom-foreground">Cor do Texto Personalizada:&lt;/label>
+                    &lt;input type="color" id="custom-foreground" value="#000000">
+                &lt;/div>
+            &lt;/div>
             `;
             ajustesDiv.innerHTML += customOptionsHtml;
 
             // Set initial values for color pickers from lesson data
-            if (this.lessonContent.controls && this.lessonContent.controls.styles) {
+            if (this.lessonContent.controls &amp;&amp; this.lessonContent.controls.styles) {
                 const { background, foreground } = this.lessonContent.controls.styles;
                 const backgroundInput = this.containerElement.querySelector('#custom-background');
                 const foregroundInput = this.containerElement.querySelector('#custom-foreground');
 
-                if (backgroundInput && background) {
+                if (backgroundInput &amp;&amp; background) {
                     backgroundInput.value = background;
                 }
-                if (foregroundInput && foreground) {
+                if (foregroundInput &amp;&amp; foreground) {
                     foregroundInput.value = foreground;
                 }
             }
 
-            ajustesDiv.innerHTML += '<button id="open-new-page-button">Abrir em nova página</button>';
+            ajustesDiv.innerHTML += '&lt;button id="open-new-page-button">Abrir em nova página&lt;/button>';
         }
     }
  
@@ -257,14 +285,14 @@ export class PlaygroundComponent {
         // Toggle simples para instruções/ajustes
         const linkInstrucoes = this.containerElement.querySelector('#link_instrucoes');
         const texto = this.containerElement.querySelector('#texto');
-        if (linkInstrucoes && texto) {
+        if (linkInstrucoes &amp;&amp; texto) {
             linkInstrucoes.addEventListener('click', () => {
                 texto.style.display = texto.style.display === 'none' ? 'block' : 'none';
             });
         }
         const linkAjustes = this.containerElement.querySelector('#link_ajustes');
         const ajustes = this.containerElement.querySelector('#ajustes');
-        if (linkAjustes && ajustes) {
+        if (linkAjustes &amp;&amp; ajustes) {
             linkAjustes.addEventListener('click', () => {
                 ajustes.style.display = ajustes.style.display === 'none' ? 'block' : 'none';
             });
@@ -288,13 +316,13 @@ export class PlaygroundComponent {
         if (selectedFontInput) {
             style += `font-family: ${selectedFontInput.value};`;
         }
-        if (customFontInput && customFontInput.value) {
+        if (customFontInput &amp;&amp; customFontInput.value) {
             style += `font-family: ${customFontInput.value};`;
         }
-        if (customBackgroundInput && customBackgroundInput.value) {
+        if (customBackgroundInput &amp;&amp; customBackgroundInput.value) {
             style += `background-color: ${customBackgroundInput.value};`;
         }
-        if (customForegroundInput && customForegroundInput.value) {
+        if (customForegroundInput &amp;&amp; customForegroundInput.value) {
             style += `color: ${customForegroundInput.value};`;
         }
 
@@ -305,19 +333,19 @@ export class PlaygroundComponent {
                 const response = await fetch(selectedTemplateInput.value);
                 if (!response.ok) throw new Error(`Erro ao carregar template: ${selectedTemplateInput.value}`);
                 let templateHtml = await response.text();
-                finalHtml = templateHtml.replace('<!-- CODE_PLACEHOLDER -->', finalHtml);
+                finalHtml = templateHtml.replace('&lt;!-- CODE_PLACEHOLDER -->', finalHtml);
             } catch (error) {
                 console.error("Erro ao aplicar template:", error);
-                this.containerElement.querySelector('#code-output').srcdoc = `<p style="color:red;">Erro ao carregar template: ${error.message}</p>`;
+                this.containerElement.querySelector('#code-output').srcdoc = `&lt;p style="color:red;">Erro ao carregar template: ${error.message}&lt;/p>`;
                 return;
             }
         }
 
-        const headEndTag = finalHtml.indexOf('</head>');
+        const headEndTag = finalHtml.indexOf('&lt;/head>');
         if (headEndTag !== -1) {
-            finalHtml = finalHtml.substring(0, headEndTag) + `<style>body { ${style} }</style>` + finalHtml.substring(headEndTag);
+            finalHtml = finalHtml.substring(0, headEndTag) + `&lt;style>body { ${style} }&lt;/style>` + finalHtml.substring(headEndTag);
         } else {
-            finalHtml = `<head><style>body { ${style} }</style></head>` + finalHtml;
+            finalHtml = `&lt;head>&lt;style>body { ${style} }&lt;/style>&lt;/head>` + finalHtml;
         }
 
         this.containerElement.querySelector('#code-output').srcdoc = finalHtml;
@@ -336,13 +364,13 @@ export class PlaygroundComponent {
         if (selectedFontInput) {
             style += `font-family: ${selectedFontInput.value};`;
         }
-        if (customFontInput && customFontInput.value) {
+        if (customFontInput &amp;&amp; customFontInput.value) {
             style += `font-family: ${customFontInput.value};`;
         }
-        if (customBackgroundInput && customBackgroundInput.value) {
+        if (customBackgroundInput &amp;&amp; customBackgroundInput.value) {
             style += `background-color: ${customBackgroundInput.value};`;
         }
-        if (customForegroundInput && customForegroundInput.value) {
+        if (customForegroundInput &amp;&amp; customForegroundInput.value) {
             style += `color: ${customForegroundInput.value};`;
         }
 
@@ -353,18 +381,18 @@ export class PlaygroundComponent {
                 const response = await fetch(selectedTemplateInput.value);
                 if (!response.ok) throw new Error(`Erro ao carregar template: ${selectedTemplateInput.value}`);
                 let templateHtml = await response.text();
-                finalHtml = templateHtml.replace('<!-- CODE_PLACEHOLDER -->', finalHtml);
+                finalHtml = templateHtml.replace('&lt;!-- CODE_PLACEHOLDER -->', finalHtml);
             } catch (error) {
                 console.error("Erro ao aplicar template:", error);
-                finalHtml = `<p style="color:red;">Erro ao carregar template: ${error.message}</p>`;
+                finalHtml = `&lt;p style="color:red;">Erro ao carregar template: ${error.message}&lt;/p>`;
             }
         }
 
-        const headEndTag = finalHtml.indexOf('</head>');
+        const headEndTag = finalHtml.indexOf('&lt;/head>');
         if (headEndTag !== -1) {
-            finalHtml = finalHtml.substring(0, headEndTag) + `<style>body { ${style} }</style>` + finalHtml.substring(headEndTag);
+            finalHtml = finalHtml.substring(0, headEndTag) + `&lt;style>body { ${style} }&lt;/style>` + finalHtml.substring(headEndTag);
         } else {
-            finalHtml = `<head><style>body { ${style} }</style></head>` + finalHtml;
+            finalHtml = `&lt;head>&lt;style>body { ${style} }&lt;/style>&lt;/head>` + finalHtml;
         }
 
         const newWindow = window.open();
@@ -372,3 +400,26 @@ export class PlaygroundComponent {
         newWindow.document.close();
     }
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ApiService.html">ApiService</a></li><li><a href="Course.html">Course</a></li><li><a href="CourseRepository.html">CourseRepository</a></li><li><a href="DebugView.html">DebugView</a></li><li><a href="EventBus.html">EventBus</a></li><li><a href="Lesson.html">Lesson</a></li><li><a href="PlaygroundComponent.html">PlaygroundComponent</a></li></ul><h3>Global</h3><ul><li><a href="global.html#bannerConfig">bannerConfig</a></li><li><a href="global.html#capitalizeFirstLetter">capitalizeFirstLetter</a></li><li><a href="global.html#managePlaygroundButton">managePlaygroundButton</a></li><li><a href="global.html#renderHomeView">renderHomeView</a></li><li><a href="global.html#renderLessonCreatorView">renderLessonCreatorView</a></li><li><a href="global.html#renderPlaygroundView">renderPlaygroundView</a></li><li><a href="global.html#reverseString">reverseString</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

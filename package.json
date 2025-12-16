@@ -1,0 +1,36 @@
+{
+  "name": "vitrine-ml5",
+  "version": "1.0.0",
+  "description": "![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow) ![Linguagem](https://img.shields.io/badge/linguagem-JavaScript-blue) ![Licença](https://img.shields.io/badge/licen%C3%A7a-MIT-green)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest",
+    "docs": "jsdoc -c jsdoc.conf.json",
+    "docs:watch": "npx nodemon --watch mlab5/src --ext js --exec 'npm run docs'",
+    "docs-html": "jsdoc -c jsdoc.conf.json -d mlab5/docs/html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ml5w3s/vitrine-ml5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ml5w3s/vitrine-ml5/issues"
+  },
+  "homepage": "https://github.com/ml5w3s/vitrine-ml5#readme",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-jest": "^30.2.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "jsdoc": "^4.0.5",
+    "nodemon": "^3.1.11"
+  }
+}

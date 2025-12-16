@@ -1,0 +1,22 @@
+{
+  "source": {
+    "include": ["mlab5/src"],
+    "exclude": ["mlab5/src/__tests__"]
+  },
+  "plugins": [],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false,
+    "default": {
+      "outputSourceFiles": true,
+      "includeDate": false
+    }
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./mlab5/docs/api/",
+    "recurse": true,
+    "verbose": true
+  }
+}
+

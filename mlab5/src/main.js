@@ -1,6 +1,7 @@
 import Router from './router/Router.js';
 import { defineRoutes } from './routes.js';
 import { Debug } from './helpers/Debug.js';
+import { DebugView } from './views/DebugView.js'; // Importar DebugView
 import EventBus from './utils/EventBus.js';
 import { NotasComponent } from './components/NotasComponent.js';
 import { initOverflowManager } from './utils/OverflowManager.js';
@@ -34,8 +35,17 @@ async function loadComponent(placeholderId, file) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Anexa o NotasComponent ao body assim que o DOM estiver pronto
+  // Anexa o NotasComponent e o DebugView ao body assim que o DOM estiver pronto
   document.body.appendChild(notasComponent.render());
+  const debugView = new DebugView(); // Instanciar DebugView
+
+  // Adiciona o atalho Ctrl+M para o painel de debug
+  window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'm') {
+      e.preventDefault(); // Prevenir comportamento padrão do navegador
+      debugView.toggleVisibility();
+    }
+  });
 
   // Carrega componentes estáticos (header/footer)
   loadComponent('header-placeholder', '/vitrine-ml5/mlab5/assets/ui/header.html')
@@ -45,11 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/assets/ui/footer.html')
     .then(() => {
-        // Conecta o botão de notas do rodapé ao NotasComponent APÓS o rodapé ser carregado
-        const notasButton = document.getElementById('notas-button'); // ID corrigido
+        // Conecta os botões do rodapé às suas funcionalidades
+        const notasButton = document.getElementById('notas-button');
         if (notasButton) {
             notasButton.addEventListener('click', () => {
                 notasComponent.toggle();
+            });
+        }
+
+        const debugButton = document.getElementById('debug-button');
+        if (debugButton) {
+            debugButton.addEventListener('click', () => {
+                debugView.toggleVisibility();
             });
         }
     });
