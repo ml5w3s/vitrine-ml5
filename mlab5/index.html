@@ -22,9 +22,10 @@
     <style>
         #debug-panel {
             position: fixed;
-            bottom: 12px;
-            left: 70%;
-            width: 400px;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            max-width: 90%;
             height: 400px;
             background-color: #333;
             color: #fff;
@@ -32,6 +33,7 @@
             z-index: 1000;
             overflow: auto;
             padding: 10px;
+            margin: 0 auto;
         }
 
         .debug-header {
@@ -55,7 +57,8 @@
         }
     </style>
 </head>
-<body>
+<body class="splash-active">
+    <div id="splash-screen"></div>
     <div id="header-placeholder"></div>
     <main id="app-root">
         <!-- O conteúdo da aplicação será renderizado aqui pelo JavaScript -->
@@ -66,6 +69,12 @@
 
     <!-- O JavaScript principal da aplicação, carregado como módulo -->
     <script type="module" src="/vitrine-ml5/mlab5/src/main.js"></script>
+    <script>
+      setTimeout(function() {
+        document.getElementById('splash-screen').style.display = 'none';
+        document.body.classList.remove('splash-active');
+      }, 3000);
+    </script>
 </body>
 </html>
   
