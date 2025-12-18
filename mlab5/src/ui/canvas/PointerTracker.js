@@ -14,6 +14,9 @@ export class PointerTracker {
         this._onMouseMove = this._onMouseMove.bind(this);
         this._onMouseUp = this._onMouseUp.bind(this);
         this._onMouseLeave = this._onMouseLeave.bind(this);
+        this._onTouchStart = this._onTouchStart.bind(this);
+        this._onTouchMove = this._onTouchMove.bind(this);
+        this._onTouchEnd = this._onTouchEnd.bind(this);
 
         this._addEventListeners();
     }
@@ -23,6 +26,10 @@ export class PointerTracker {
         this.canvas.addEventListener('mousemove', this._onMouseMove);
         this.canvas.addEventListener('mouseup', this._onMouseUp);
         this.canvas.addEventListener('mouseleave', this._onMouseLeave);
+
+        this.canvas.addEventListener('touchstart', this._onTouchStart);
+        this.canvas.addEventListener('touchmove', this._onTouchMove);
+        this.canvas.addEventListener('touchend', this._onTouchEnd);
     }
 
     _removeEventListeners() {
@@ -30,6 +37,10 @@ export class PointerTracker {
         this.canvas.removeEventListener('mousemove', this._onMouseMove);
         this.canvas.removeEventListener('mouseup', this._onMouseUp);
         this.canvas.removeEventListener('mouseleave', this._onMouseLeave);
+
+        this.canvas.removeEventListener('touchstart', this._onTouchStart);
+        this.canvas.removeEventListener('touchmove', this._onTouchMove);
+        this.canvas.removeEventListener('touchend', this._onTouchEnd);
     }
 
     _getCoordinates(event) {
@@ -72,6 +83,28 @@ export class PointerTracker {
             this.callbacks.end.forEach(callback => callback(coords));
         }
     }
+
+    _onTouchStart(event) {
+        event.preventDefault(); // Prevent scrolling
+        this.painting = true;
+        const coords = this._getCoordinates(event.touches[0]);
+        this.callbacks.start.forEach(callback => callback(coords));
+    }
+
+    _onTouchMove(event) {
+        if (!this.painting) return;
+        event.preventDefault(); // Prevent scrolling
+        const coords = this._getCoordinates(event.touches[0]);
+        this.callbacks.move.forEach(callback => callback(coords));
+    }
+
+    _onTouchEnd(event) {
+        if (this.painting) {
+            this.painting = false;
+            // No coordinates on touchend
+        }
+    }
+
 
     on(eventType, callback) {
         if (this.callbacks[eventType]) {
