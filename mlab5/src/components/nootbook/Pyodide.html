@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Notebook-like em Vanilla JS</title>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script> <!-- Versão atual em 2025 -->
+  <style>
+    #editor, #output { width: 100%; height: 200px; font-family: monospace; }
+    #output { background: #f0f0f0; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h2>Célula Python</h2>
+  <textarea id="editor">import sys
+print("Olá do Python!")
+print(sys.version)
+
+import numpy as np
+print(np.array([1,2,3]) ** 2)</textarea>
+  <button id="run">Executar</button>
+  <pre id="output"></pre>
+
+  <script type="text/javascript">
+    let pyodide;
+
+    async function initPyodide() {
+      if (!pyodide) {
+        pyodide = await loadPyodide();
+        // Opcional: instalar pacotes
+        await pyodide.loadPackage(['numpy', 'matplotlib']);
+      }
+    }
+
+    document.getElementById('run').addEventListener('click', async () => {
+      await initPyodide();
+      const code = document.getElementById('editor').value;
+      const output = document.getElementById('output');
+
+      try {
+        // Captura stdout
+        pyodide.runPython(`
+          import sys
+          from js import output
+          class Capture:
+              def write(self, text):
+                  output.innerHTML += text
+              def flush(self): pass
+          sys.stdout = Capture()
+          sys.stderr = Capture()
+        `);
+
+        // Executa o código do usuário
+        let result = pyodide.runPython(code);
+
+        // Se houver retorno (última expressão), exibe
+        if (result !== undefined) {
+          output.innerHTML += "\nResultado: " + result.toString();
+        }
+      } catch (err) {
+        output.innerHTML += "\nErro: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+# Ementa do Curso: Algoritmos Essenciais para Desenvolvedores Júnior
+
+**Carga horária sugerida:** 40 horas (divididas em 10 módulos de aproximadamente 4 horas cada)
+**Público-alvo:** Desenvolvedores júnior ou estudantes que desejam dominar os algoritmos mais usados em projetos reais modernos
+**Objetivo geral:** Capacitar o aluno a identificar, implementar e analisar algoritmos fundamentais, escolhendo soluções eficientes em termos de tempo e espaço, independentemente da linguagem de programação ou paradigma utilizado.
+
+## Módulos do Curso
+
+### Módulo 1: Introdução à Análise de Algoritmos
+*   Conceitos de complexidade de tempo e espaço (Notação Big O, Ω, Θ)
+*   Casos melhor, médio e pior
+*   Análise prática de algoritmos simples
+*   Ferramentas para medição de performance em código real
+
+### Módulo 2: Busca Linear e Busca Binária
+*   Busca sequencial: implementação, vantagens e limitações
+*   Busca binária: pré-requisitos, implementação iterativa e recursiva
+*   Aplicações reais (bibliotecas padrão, índices de banco de dados, autocomplete)
+*   Exercícios com duplicatas e variações (lower/upper bound)
+
+### Módulo 3: Algoritmos de Ordenação
+*   Algoritmos quadráticos: Bubble Sort, Insertion Sort, Selection Sort (para compreensão conceitual)
+*   Algoritmos eficientes: Quick Sort, Merge Sort e Heap Sort
+*   Comparação prática de performance
+*   Uso e customização de funções nativas de ordenação (`.sort()`, `sorted()`, etc.)
+
+### Módulo 4: Estruturas de Dados Lineares Avançadas
+*   Pilhas (Stack) e Filas (Queue)
+*   Deques e suas aplicações
+*   Listas encadeadas simples (opcional, para compreensão de limitações de arrays)
+
+### Módulo 5: Árvores Binárias e Traversals
+*   Conceitos de árvores binárias e árvores binárias de busca (BST)
+*   Traversals: In-order, Pre-order, Post-order e por níveis (BFS)
+*   Implementação e aplicações (DOM, parsing JSON, sistemas de arquivos)
+
+### Módulo 6: Grafos – Representação e Buscas Básicas
+*   Representação de grafos (lista de adjacência vs. matriz)
+*   Busca em Profundidade (DFS) – recursiva e iterativa
+*   Busca em Largura (BFS)
+*   Aplicações reais (redes sociais, dependências de pacotes)
+
+### Módulo 7: Algoritmos em Grafos – Caminhos Mais Curtos
+*   BFS em grafos não ponderados
+*   Algoritmo de Dijkstra (grafos ponderados com pesos não negativos)
+*   Aplicações práticas (GPS, roteamento, jogos)
+
+### Módulo 8: Hash Tables e Hashing
+*   Funções de hash e tratamento de colisões
+*   Operações O(1) médio: inserção, busca e remoção
+*   Uso prático de Maps/Dictionaries em diferentes linguagens
+*   Aplicações (cache, contagem de frequências, autenticação básica)
+
+### Módulo 9: Heaps e Priority Queues
+*   Estrutura de heap (min-heap e max-heap)
+*   Operações principais e Heap Sort
+*   Priority Queues e aplicações (agendamento de tarefas, top-K, leaderboards)
+
+### Módulo 10: Técnicas Avançadas Essenciais
+*   Programação Dinâmica básica (Fibonacci, Knapsack, LCS)
+*   Backtracking (N-Queens, combinações/permutações, Sudoku)
+*   Algoritmos em strings (busca simples e introdução ao KMP)
+*   Projeto final integrador (ex.: sistema de recomendação ou mini GPS)
+
+## Metodologia
+*   Aulas teóricas curtas seguidas de implementação prática
+*   Exemplos em múltiplas linguagens (Python, JavaScript, Java ou C++)
+*   Exercícios progressivos (fáceis → médios) inspirados em LeetCode/HackerRank
+*   Ênfase constante em análise de complexidade e boas práticas

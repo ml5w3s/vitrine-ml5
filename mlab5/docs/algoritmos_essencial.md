@@ -1,8 +1,8 @@
-# Curso de Algoritmos Essencial para Desenvolvedores Júnior
+# Curso de Algoritmos Essencial para Desenvolvedores
 
-Para que um desenvolvedor júnior performe de forma minimamente aceitável em projetos reais atuais (independentemente de linguagem — Python, JavaScript, Java, C++ etc. —, paradigma — imperativo, orientado a objetos ou funcional — ou arquitetura — web, mobile, backend, cloud), recomendo focar nos algoritmos e estruturas mais comumente usados em 2025.
+Conjunto de algorítimos e aplicação práticas, com assimilação desses algorítimos o desenvolvedor tem um arcabolso para atuar em projetos modernos. Nessa lista temos desde algorítimos basícos aos avançados, penso em organizar em móduos independentes, que permitem o ingresso do estudante no curso, a cada inínio de módulo, ou seja inícion imediato, e assim se gera um ciclo de constante, outros algorítimos entrarão, mas nessa lista estão os carros chefes, os cabeças de chave dos móduos, ou para inicializar, ou para o grand finale!
 
-## Fundamentos Básicos (Essenciais para qualquer júnior)
+## Fundamentos Básicos (Essenciais)
 
 ### Busca Linear e Busca Binária
 **Motivo:** Busca binária é amplamente usada em dados ordenados (APIs, bancos de dados, autocomplete). A linear ensina os conceitos básicos de complexidade.
@@ -53,13 +53,3 @@ Dijkstra (grafos ponderados) ou BFS (não ponderados).
 **Exemplos:** KMP ou abordagens simples.
 **Motivo:** Busca e manipulação eficiente de texto.
 **Aplicação:** Funcionalidades de search em editores, processamento de logs, engines de regex.
-
-## Dicas para Estruturação do Curso
-
-*   **Análise de Complexidade (Big O):** Sempre inclua análise de tempo e espaço — fundamental para o júnior escolher soluções eficientes e evitar bottlenecks reais.
-*   **Implementação Multi-linguagem:** Mostre equivalências (arrays em JS × listas em Python × vectors em C++).
-*   **Paradigmas:** Compare abordagens recursivas (comum em funcional) versus iterativas.
-*   **Prática Realista:** Use problemas fáceis/médios de plataformas como LeetCode ou HackerRank, e projetos práticos (ex.: mini Google Maps, sistema de recomendação simples).
-*   **Nível Mínimo Aceitável:** Dominando os itens 1 a 6, o júnior já resolve ~80% dos desafios algorítmicos em posições entry-level e evita ineficiências graves em código produtivo.
-
-Esse conjunto cobre a maioria dos cenários em projetos modernos sem entrar em tópicos altamente especializados (ML avançado, criptografia profunda etc.). Foque em compreensão conceitual + implementação prática para resultados rápidos!

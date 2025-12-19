@@ -1,0 +1,127 @@
+Introdução
+A busca (ou pesquisa) é uma das operações mais fundamentais em programação: dado um conjunto de dados e um valor alvo, queremos descobrir se o valor existe e, se sim, em qual posição.
+Existem duas abordagens clássicas e complementares:
+    • Busca Linear (ou Sequencial): simples e direta. 
+    • Busca Binária: extremamente eficiente, mas com pré-requisitos. 
+Ambas são essenciais para qualquer desenvolvedor júnior entender, pois aparecem constantemente em projetos reais.
+1. Busca Linear (Sequencial)
+Como funciona
+Percorre os elementos da coleção um por um, do início ao fim (ou até encontrar o alvo).
+Complexidade
+    • Tempo:
+        ◦ Melhor caso: O(1) → alvo está na primeira posição 
+        ◦ Pior/Médio caso: O(n) → precisa percorrer toda a lista 
+    • Espaço: O(1) → não precisa de memória extra 
+Implementação em Python
+def busca_linear(lista, alvo):
+    for i in range(len(lista)):
+        if lista[i] == alvo:
+            return i  # retorna o índice
+    return -1  # não encontrado
+
+Vantagens e Desvantagens
+
+Vantagens
+Desvantagens
+Simples de implementar
+Lenta em listas grandes
+Funciona em dados não ordenados
+Sempre O(n) no pior caso
+Funciona em estruturas encadeadas
+
+
+Quando usar
+    • Lista pequena ou não ordenada 
+    • Quando a ordenação prévia custaria mais que a busca linear repetida 
+    • Estruturas como listas ligadas (onde acesso aleatório é caro) 
+2. Busca Binária
+Como funciona
+Só funciona em dados ordenados. A ideia é dividir o espaço de busca pela metade a cada passo:
+    1. Olha o elemento do meio 
+    2. Se for o alvo → encontrado 
+    3. Se alvo for menor → descarta a metade direita 
+    4. Se alvo for maior → descarta a metade esquerda 
+    5. Repete até encontrar ou esgotar o intervalo 
+Complexidade
+    • Tempo: O(log n) em todos os casos (melhor, médio e pior) 
+    • Espaço: O(1) para versão iterativa; O(log n) para recursiva (pilha de chamadas) 
+Implementação Iterativa em Python
+def busca_binaria(lista, alvo):
+    esquerda = 0
+    direita = len(lista) - 1
+    
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if lista[meio] == alvo:
+            return meio
+        elif lista[meio] < alvo:
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+    
+    return -1  # não encontrado
+
+def busca_binaria_recursiva(lista, alvo, esquerda=0, direita=None):
+    if direita is None:
+        direita = len(lista) - 1
+    
+    if esquerda > direita:
+        return -1
+    
+    meio = (esquerda + direita) // 2
+    if lista[meio] == alvo:
+        return meio
+    elif lista[meio] < alvo:
+        return busca_binaria_recursiva(lista, alvo, meio + 1, direita)
+    else:
+        return busca_binaria_recursiva(lista, alvo, esquerda, meio – 1)
+Vantagens e Desvantagens
+
+Vantagens
+Desvantagens
+Extremamente rápida: O(log n)
+Exige dados previamente ordenados
+Muito eficiente para grandes volumes
+Inserções frequentes podem exigir reordenação
+Base de muitas estruturas avançadas (BSTs)
+
+
+Comparação Prática
+
+Tamanho da lista (n)
+Busca Linear (passos máx.)
+Busca Binária (passos máx.)
+100
+100
+~7
+1.000
+1.000
+~10
+1.000.000
+1.000.000
+~20
+1.000.000.000
+1.000.000.000
+~30
+→ Com apenas ~30 comparações, a busca binária lida com bilhões de elementos!
+Aplicações Reais
+    • Bibliotecas padrão:
+        ◦ Python: módulo bisect (mantém lista ordenada e faz busca binária) 
+        ◦ Java: Arrays.binarySearch() e Collections.binarySearch() 
+        ◦ JavaScript: pode ser implementada manualmente ou com bibliotecas 
+        ◦ C++: std::binary_search, std::lower_bound 
+    • Bancos de dados: índices ordenados usam variantes de busca binária (B-trees) 
+    • Autocomplete: sugestões baseadas em prefixos ordenados 
+    • APIs paginadas: encontrar posição aproximada em datasets ordenados 
+    • Jogos: busca em tabelas de pontuação ordenadas 
+    • Sistemas embarcados: quando memória é limitada, mas dados são estáticos e ordenados 
+Dicas para Entrevistas e Projetos
+    1. Sempre pergunte/verifique se os dados estão ordenados antes de usar busca binária. 
+    2. Cuidado com overflow ao calcular o meio: em linguagens como Java/C++, use esquerda + (direita - esquerda) // 2. 
+    3. Saiba implementar ambas as versões (iterativa e recursiva). 
+    4. Entenda lower_bound / upper_bound: variações que retornam a posição de inserção. 
+Exercícios Sugeridos
+    1. Implemente ambas as buscas e teste com listas de tamanhos variados. 
+    2. Modifique a busca binária para contar quantas vezes o elemento aparece (lista com duplicatas). 
+    3. Use o módulo bisect do Python para manter uma lista ordenada enquanto insere elementos aleatórios. 
+Dominar essas duas buscas é o primeiro passo sólido para entender eficiência algorítmica e resolver problemas reais de forma performática!

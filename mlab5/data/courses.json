@@ -11,6 +11,17 @@
     }
   },
   {
+    "id": "algoritmos-essenciais",
+    "title": "Algoritmos Essenciais para Júnior",
+    "description": "Algoritmos essenciais para desenvolvedores júnior.",
+    "image": {
+      "desktop": "assets/images/cursos/algoritimos_desktop.jpg",
+      "tablet": "assets/images/cursos/algoritimos_tablet.jpg",
+      "mobile": "assets/images/cursos/algoritimos_mobile.jpg",
+      "caption": "Básico de algoritmos"
+    }
+  },
+  {
     "id": "css3",
     "title": "CSS3 - Estilizando a Web",
     "description": "Aprenda a estilizar suas páginas web com CSS3.",
