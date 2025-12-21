@@ -1,7 +1,7 @@
 [
   {
     "course": {
-      "name": "Busca Linear e Busca Binária",
+      "name": "🔍 Busca Linear e Busca Binária",
       "articles": [
         {
           "position": 0,
@@ -39,6 +39,15 @@
             "    return -1  # não encontrado"
           ],
           "position": 3
+        },
+        {
+          "position": 2,
+          "image": {
+            "desktop": "assets/images/cursos/algoritimos/teste_busca_linear_desktop.png",
+            "tablet": "assets/images/cursos/algoritimos/etiqueta_tablet.png",
+            "mobile": "assets/images/cursos/algoritimos/etiqueta_mobile.png",
+            "caption": "Etiqueta com as marcações"
+          }
         },
         {
           "headline": "Vantagens e Desvantagens",
@@ -156,6 +165,757 @@
           ],
           "text": "Dominar essas duas buscas é o primeiro passo sólido para entender eficiência algorítmica e resolver problemas reais de forma performática!",
           "position": 14
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🔢 Algoritmos de Ordenação",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução",
+          "text": "A ordenação de dados é fundamental para otimizar buscas e processamento. Existem diversos algoritmos, divididos geralmente em quadráticos (mais simples e lentos) e log-lineares (mais complexos e eficientes)."
+        },
+        {
+          "position": 2,
+          "headline": "1. Algoritmos Quadráticos (O(n²))",
+          "text": "São algoritmos simples, úteis para pequenas listas ou fins didáticos, mas ineficientes para grandes volumes de dados.",
+          "list": [
+            "Bubble Sort: Flutua os maiores elementos para o fim.",
+            "Insertion Sort: Constrói a lista ordenada um item por vez (como cartas de baralho).",
+            "Selection Sort: Seleciona o menor elemento e o coloca na posição correta."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Exemplo: Bubble Sort em Python",
+          "code": [
+            "def bubble_sort(lista):",
+            "    n = len(lista)",
+            "    for i in range(n):",
+            "        for j in range(0, n-i-1):",
+            "            if lista[j] > lista[j+1]:",
+            "                lista[j], lista[j+1] = lista[j+1], lista[j]",
+            "    return lista"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 4,
+          "headline": "2. Algoritmos Eficientes (O(n log n))",
+          "text": "Utilizam a estratégia 'Dividir para Conquistar' para lidar com grandes volumes de dados.",
+          "list": [
+            "Quick Sort: Escolhe um pivô e particiona a lista.",
+            "Merge Sort: Divide a lista ao meio recursivamente e intercala as partes ordenadas.",
+            "Heap Sort: Utiliza uma estrutura de heap binário."
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "Exemplo: Quick Sort (Simplificado)",
+          "code": [
+            "def quick_sort(lista):",
+            "    if len(lista) <= 1:",
+            "        return lista",
+            "    pivo = lista[len(lista) // 2]",
+            "    esquerda = [x for x in lista if x < pivo]",
+            "    meio = [x for x in lista if x == pivo]",
+            "    direita = [x for x in lista if x > pivo]",
+            "    return quick_sort(esquerda) + meio + quick_sort(direita)"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 6,
+          "headline": "3. Comparação de Performance",
+          "text": "Em testes práticos com listas aleatórias, algoritmos O(n log n) superam drasticamente os quadráticos conforme n cresce.",
+          "list": [
+            "1.000 itens: Quase imperceptível.",
+            "10.000 itens: Quadráticos começam a engasgar (~1s vs ~0.01s).",
+            "100.000 itens: Quadráticos podem levar minutos; Eficientes levam frações de segundo."
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "4. Funções Nativas",
+          "text": "Na prática, raramente implementamos esses algoritmos do zero. Usamos as funções otimizadas da linguagem (Timsort no Python/Java).",
+          "list": [
+            "Python: lista.sort() (in-place) ou sorted(lista) (nova lista).",
+            "JavaScript: array.sort().",
+            "Java: Arrays.sort() ou Collections.sort()."
+          ]
+        },
+        {
+          "position": 8,
+          "headline": "Customização (Python)",
+          "text": "Podemos ordenar objetos complexos usando o parâmetro 'key'.",
+          "code": [
+            "alunos = [{'nome': 'Ana', 'nota': 8}, {'nome': 'Beto', 'nota': 5}]",
+            "# Ordenar por nota",
+            "alunos.sort(key=lambda x: x['nota'])"
+          ],
+          "programmingLanguage": "python"
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📏 Estruturas de Dados Lineares Avançadas",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução",
+          "text": "Além dos arrays básicos, existem estruturas especializadas que otimizam certas operações de inserção e remoção, fundamentais para resolver problemas específicos de forma eficiente."
+        },
+        {
+          "position": 2,
+          "headline": "1. Pilhas (Stacks)",
+          "text": "Seguem o princípio LIFO (Last In, First Out) - o último a entrar é o primeiro a sair. Pense em uma pilha de pratos.",
+          "list": [
+            "Operações principais: Push (inserir no topo) e Pop (remover do topo).",
+            "Complexidade: O(1) para inserção e remoção no topo.",
+            "Aplicações: Controle de chamadas de função (call stack), desfazer (undo) em editores, verificação de parênteses."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Exemplo: Pilha em Python",
+          "text": "Em Python, usamos listas comuns como pilhas, pois o método .append() e .pop() (sem argumento) são otimizados para o final da lista.",
+          "code": [
+            "pilha = []",
+            "pilha.append('A')  # Push",
+            "pilha.append('B')  # Push",
+            "",
+            "topo = pilha.pop() # Pop -> Retorna 'B'",
+            "print(pilha)       # ['A']"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 4,
+          "headline": "2. Filas (Queues)",
+          "text": "Seguem o princípio FIFO (First In, First Out) - o primeiro a entrar é o primeiro a sair. Pense em uma fila de banco.",
+          "list": [
+            "Operações principais: Enqueue (inserir no final) e Dequeue (remover do início).",
+            "Aplicações: Gerenciamento de impressoras, processamento de tarefas em background, BFS (Busca em Largura)."
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "Exemplo: Fila Eficiente em Python",
+          "text": "Usar listas como fila (pop(0)) é ineficiente O(n). A forma correta é usar 'collections.deque'.",
+          "code": [
+            "from collections import deque",
+            "",
+            "fila = deque(['Cliente 1', 'Cliente 2'])",
+            "fila.append('Cliente 3')      # Enqueue",
+            "",
+            "atendido = fila.popleft()     # Dequeue eficiente O(1)",
+            "print(atendido)               # 'Cliente 1'"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 6,
+          "headline": "3. Deques (Double-Ended Queues)",
+          "text": "Uma generalização de pilhas e filas. Permite inserção e remoção eficientes O(1) em ambas as extremidades.",
+          "list": [
+            "Estrutura flexível: Pode atuar como pilha ou fila dependendo da necessidade.",
+            "Aplicações: Algoritmo de janelas deslizantes (Sliding Window), histórico de navegação, filas de prioridade com extremidades fixas."
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "4. Listas Encadeadas (Linked Lists)",
+          "text": "Diferente dos arrays, onde os dados são contíguos na memória, listas encadeadas são compostas por 'nós' que apontam para o próximo elemento.",
+          "list": [
+            "Vantagem: Tamanho dinâmico real (não precisa realocar memória como arrays dinâmicos) e inserções/remoções no meio são mais simples se você já tem a referência do nó.",
+            "Desvantagem: Não permite acesso aleatório (índice direto). Para pegar o 10º elemento, precisa percorrer os 9 anteriores. Acesso é O(n).",
+            "Uso prático: Base para implementação de Grafos e tabelas Hash com encadeamento."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🌳 Árvores Binárias e Traversals",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução às Árvores",
+          "text": "Diferente de arrays e listas (lineares), árvores são estruturas hierárquicas. São compostas por nós, onde um nó 'pai' pode ter referências para nós 'filhos'."
+        },
+        {
+          "position": 2,
+          "headline": "1. Árvore Binária de Busca (BST)",
+          "text": "Uma Árvore Binária é aquela onde cada nó tem no máximo dois filhos (esquerda e direita). Uma BST (Binary Search Tree) segue uma regra estrita que permite buscas rápidas:",
+          "list": [
+            "Todos os nós à ESQUERDA são MENORES que o nó atual.",
+            "Todos os nós à DIREITA são MAIORES que o nó atual.",
+            "Isso permite busca, inserção e remoção com complexidade média de O(log n)."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Implementação de Nó (Python)",
+          "code": [
+            "class Node:",
+            "    def __init__(self, valor):",
+            "        self.valor = valor",
+            "        self.esquerda = None",
+            "        self.direita = None"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 4,
+          "headline": "2. Traversals (Percursos)",
+          "text": "Traversal é o processo de visitar todos os nós da árvore. A ordem muda tudo.",
+          "list": [
+            "In-order (E-R-D): Esquerda, Raiz, Direita. (Em BST, imprime ordenado!).",
+            "Pre-order (R-E-D): Raiz, Esquerda, Direita. (Útil para copiar árvores).",
+            "Post-order (E-D-R): Esquerda, Direita, Raiz. (Útil para deletar árvores ou calcular expressões matemáticas)."
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "Exemplo: In-Order Recursivo",
+          "code": [
+            "def in_order(no):",
+            "    if no:",
+            "        in_order(no.esquerda)",
+            "        print(no.valor)",
+            "        in_order(no.direita)"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 6,
+          "headline": "3. Breadth-First Search (BFS)",
+          "text": "Conhecido como percurso 'por níveis'. Visita a raiz, depois todos do nível 1, depois todos do nível 2, etc.",
+          "list": [
+            "Não usa recursão simples, usa uma Fila (Queue) auxiliar.",
+            "Útil para encontrar o caminho mais curto em árvores não ponderadas ou para serializar a árvore nível por nível."
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "Exemplo: BFS com Fila",
+          "code": [
+            "from collections import deque",
+            "",
+            "def bfs(raiz):",
+            "    if not raiz: return",
+            "    fila = deque([raiz])",
+            "    while fila:",
+            "        no = fila.popleft()",
+            "        print(no.valor)",
+            "        if no.esquerda: fila.append(no.esquerda)",
+            "        if no.direita: fila.append(no.direita)"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 8,
+          "headline": "4. Aplicações Práticas",
+          "text": "Árvores estão em toda parte na computação, não apenas em bancos de dados.",
+          "list": [
+            "DOM (Document Object Model): O HTML é uma árvore de elementos.",
+            "JSON: Objetos aninhados formam uma estrutura de árvore.",
+            "Sistemas de Arquivos: Pastas dentro de pastas.",
+            "Compiladores: Árvores de Sintaxe Abstrata (AST) para entender código."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🕸️ Grafos – Representação e Buscas Básicas",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "O que são Grafos?",
+          "text": "Um grafo é uma estrutura não-linear composta por vértices (nós) e arestas (conexões entre os nós). É a estrutura mais versátil para modelar relacionamentos complexos."
+        },
+        {
+          "position": 2,
+          "headline": "1. Representação de Grafos",
+          "text": "Como armazenamos um grafo na memória? Duas formas principais:",
+          "list": [
+            "Lista de Adjacência: Um dicionário onde cada chave é um nó e o valor é uma lista de vizinhos. Eficiente em espaço para grafos esparsos (poucas conexões).",
+            "Matriz de Adjacência: Uma grade 2D (tabela). Rápida para verificar se existe conexão direta entre dois nós específicos (O(1)), mas gasta muita memória (O(V²))."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Exemplo: Lista de Adjacência (Python)",
+          "code": [
+            "grafo = {",
+            "    'A': ['B', 'C'],",
+            "    'B': ['A', 'D', 'E'],",
+            "    'C': ['A', 'F'],",
+            "    'D': ['B'],",
+            "    'E': ['B', 'F'],",
+            "    'F': ['C', 'E']",
+            "}"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 4,
+          "headline": "2. Busca em Profundidade (DFS)",
+          "text": "Explora o grafo indo o mais fundo possível em cada ramificação antes de retroceder (backtracking). Utiliza uma Pilha (Stack) ou a própria pilha de chamada da recursão.",
+          "list": [
+            "Estratégia: Visite o nó, marque como visitado, chame a DFS para cada vizinho não visitado.",
+            "Aplicações: Detectar ciclos, encontrar componentes conectados, resolver labirintos, ordenação topológica."
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "Implementação DFS (Recursiva)",
+          "code": [
+            "def dfs_recursiva(grafo, vertice, visitados=None):",
+            "    if visitados is None:",
+            "        visitados = set()",
+            "    ",
+            "    visitados.add(vertice)",
+            "    print(vertice)",
+            "    ",
+            "    for vizinho in grafo[vertice]:",
+            "        if vizinho not in visitados:",
+            "            dfs_recursiva(grafo, vizinho, visitados)",
+            "    return visitados"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 6,
+          "headline": "3. Busca em Largura (BFS)",
+          "text": "Explora os nós vizinhos antes de ir para os vizinhos dos vizinhos (camadas). Utiliza uma Fila (Queue).",
+          "list": [
+            "Estratégia: Adicione o nó na fila, enquanto a fila não estiver vazia, remova o primeiro, visite seus vizinhos não marcados e adicione-os na fila.",
+            "Propriedade Importante: Garante encontrar o caminho mais curto (menor número de arestas) em grafos não ponderados."
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "Implementação BFS",
+          "code": [
+            "from collections import deque",
+            "",
+            "def bfs(grafo, inicio):",
+            "    visitados = set([inicio])",
+            "    fila = deque([inicio])",
+            "",
+            "    while fila:",
+            "        vertice = fila.popleft()",
+            "        print(vertice)",
+            "",
+            "        for vizinho in grafo[vertice]:",
+            "            if vizinho not in visitados:",
+            "                visitados.add(vizinho)",
+            "                fila.append(vizinho)"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 8,
+          "headline": "4. Aplicações Reais",
+          "list": [
+            "Redes Sociais: Sugestão de 'Pessoas que você talvez conheça' (BFS para encontrar amigos de amigos).",
+            "GPS e Mapas: Encontrar rotas entre dois pontos (BFS ou Dijkstra).",
+            "Gerenciadores de Pacotes (npm, pip): Resolver ordem de instalação de dependências para evitar conflitos (DFS/Topological Sort).",
+            "Web Crawlers: O Google usa grafos para navegar e indexar links da internet."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📍 Algoritmos em Grafos – Caminhos Mais Curtos",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução",
+          "text": "Encontrar o caminho mais curto entre dois pontos é um dos problemas mais clássicos da computação. A solução ideal depende se as arestas do grafo têm pesos (custos/distâncias) ou não."
+        },
+        {
+          "position": 2,
+          "headline": "1. Grafos Não Ponderados: BFS",
+          "text": "Quando todas as arestas têm o mesmo 'custo' (ou nenhum peso), a Busca em Largura (BFS) é a solução ótima.",
+          "list": [
+            "Por que funciona? A BFS explora camada por camada. A primeira vez que ela alcança o nó destino, garante que foi pelo menor número de saltos possível.",
+            "Complexidade: O(V + E) - Linear em relação ao tamanho do grafo."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "2. Grafos Ponderados: Algoritmo de Dijkstra",
+          "text": "Em mapas reais, estradas têm comprimentos diferentes. Ir de A para B em 1 salto de 100km é pior que 2 saltos de 10km. A BFS falha aqui. Precisamos do Dijkstra.",
+          "list": [
+            "Conceito: Mantém uma estimativa da menor distância conhecida para cada nó. Sempre escolhe expandir o nó não visitado com a MENOR distância acumulada atual (abordagem gulosa/greedy).",
+            "Estrutura chave: Uma Fila de Prioridade (Priority Queue) para pegar eficientemente o nó mais 'barato' a cada passo."
+          ]
+        },
+        {
+          "position": 4,
+          "headline": "Exemplo: Dijkstra com heapq (Python)",
+          "code": [
+            "import heapq",
+            "",
+            "def dijkstra(grafo, inicio):",
+            "    # Distâncias iniciais infinitas",
+            "    distancias = {no: float('inf') for no in grafo}",
+            "    distancias[inicio] = 0",
+            "    ",
+            "    # Fila de prioridade: (distância, nó)",
+            "    pq = [(0, inicio)]",
+            "    ",
+            "    while pq:",
+            "        dist_atual, u = heapq.heappop(pq)",
+            "        ",
+            "        # Se achamos um caminho pior, ignoramos",
+            "        if dist_atual > distancias[u]:",
+            "            continue",
+            "        ",
+            "        for vizinho, peso in grafo[u].items():",
+            "            dist = dist_atual + peso",
+            "            ",
+            "            # Relaxamento: se achamos caminho melhor",
+            "            if dist < distancias[vizinho]:",
+            "                distancias[vizinho] = dist",
+            "                heapq.heappush(pq, (dist, vizinho))",
+            "                ",
+            "    return distancias"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 5,
+          "headline": "3. Limitações do Dijkstra",
+          "text": "O algoritmo de Dijkstra NÃO funciona corretamente se houver arestas com pesos negativos (pode entrar em loops infinitos ou dar respostas erradas).",
+          "list": [
+            "Solução para pesos negativos: Algoritmo de Bellman-Ford (mais lento, mas robusto)."
+          ]
+        },
+        {
+          "position": 6,
+          "headline": "4. Aplicações Práticas",
+          "list": [
+            "Sistemas de Navegação (GPS): Waze, Google Maps (usa variações como A* que é um Dijkstra direcionado por heurística).",
+            "Redes de Computadores: Protocolos de roteamento (OSPF) para decidir o caminho dos pacotes de dados.",
+            "Jogos: Movimentação de personagens (Pathfinding) em mapas com terrenos de custos variados (água, montanha, estrada)."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🔑 Hash Tables e Hashing",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução às Hash Tables",
+          "text": "As Tabelas Hash (ou Dicionários/Mapas) são fundamentais para o desenvolvimento moderno. Elas permitem associar chaves a valores, permitindo uma recuperação de dados extremamente rápida, quase instantânea."
+        },
+        {
+          "position": 2,
+          "headline": "1. Funções de Hash e Colisões",
+          "text": "Uma função de hash transforma uma chave (como uma string) em um índice numérico. O principal desafio é a 'Colisão', que ocorre quando duas chaves diferentes resultam no mesmo índice.",
+          "list": [
+            "Função de Hash: Deve ser rápida e distribuir as chaves de forma uniforme.",
+            "Tratamento por Encadeamento: O índice aponta para uma lista de elementos que colidiram.",
+            "Endereçamento Aberto: Procura o próximo espaço vazio disponível na tabela."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "2. Operações O(1)",
+          "text": "Diferente de listas (O(n)) ou árvores (O(log n)), as Tabelas Hash oferecem, em média, tempo constante para as operações principais:",
+          "list": [
+            "Inserção: O(1) médio.",
+            "Busca: O(1) médio.",
+            "Remoção: O(1) médio."
+          ]
+        },
+        {
+          "position": 4,
+          "headline": "Exemplo Prático em Python",
+          "text": "Em Python, a implementação padrão de Hash Table é o dicionário (`dict`).",
+          "code": [
+            "tabela = {}",
+            "tabela['usuario_123'] = {'nome': 'Alice', 'nivel': 5}",
+            "",
+            "# Busca instantânea pela chave",
+            "print(tabela['usuario_123']['nome'])  # Saída: Alice",
+            "",
+            "# Remoção",
+            "del tabela['usuario_123']"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 5,
+          "headline": "3. Dicionários e Mapas em outras linguagens",
+          "text": "Embora o conceito seja o mesmo, a sintaxe e algumas propriedades variam entre as linguagens:",
+          "list": [
+            "JavaScript: Objetos `{}` e a classe `Map`.",
+            "Java: `HashMap` e `Hashtable`.",
+            "C++: `std::unordered_map`."
+          ]
+        },
+        {
+          "position": 6,
+          "headline": "4. Aplicação: Contagem de Frequências",
+          "text": "Um dos usos mais comuns é contar a ocorrência de itens em uma coleção.",
+          "code": [
+            "def contar_frequencia(lista):",
+            "    contador = {}",
+            "    for item in lista:",
+            "        contador[item] = contador.get(item, 0) + 1",
+            "    return contador",
+            "",
+            "dados = ['uva', 'maçã', 'uva', 'laranja', 'maçã', 'uva']",
+            "print(contar_frequencia(dados)) ",
+            "# Saída: {'uva': 3, 'maçã': 2, 'laranja': 1}"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 7,
+          "headline": "5. Outras Aplicações Reais",
+          "list": [
+            "Sistemas de Cache: Armazenar resultados de consultas lentas indexados por seus parâmetros (Memoization).",
+            "Autenticação: Tabelas Hash são usadas para verificar rapidamente se um token de sessão é válido.",
+            "Bancos de Dados NoSQL: Muitos utilizam o modelo chave-valor baseado em hashing para alta performance."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🏔️ Heaps e Priority Queues",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "O que é um Heap?",
+          "text": "Um Heap é uma árvore binária especializada que satisfaz a 'Propriedade do Heap'. É a estrutura ideal quando precisamos acesso rápido ao 'maior' ou 'menor' elemento."
+        },
+        {
+          "position": 2,
+          "headline": "1. Tipos de Heap",
+          "list": [
+            "Min-Heap: O pai é sempre MENOR ou igual aos filhos. A raiz é o MÍNIMO global.",
+            "Max-Heap: O pai é sempre MAIOR ou igual aos filhos. A raiz é o MÁXIMO global."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "2. Operações Principais",
+          "text": "Heaps são geralmente implementados sobre arrays simples.",
+          "list": [
+            "Inserção (Push): O(log n) - Adiciona no final e sobe (bubble-up).",
+            "Remoção da Raiz (Pop): O(log n) - Remove o topo, move o último para o topo e desce (bubble-down).",
+            "Espiar (Peek): O(1) - Acesso imediato à prioridade máxima."
+          ]
+        },
+        {
+          "position": 4,
+          "headline": "3. Heap Sort",
+          "text": "Um algoritmo de ordenação eficiente O(n log n) que usa a estrutura de heap.",
+          "code": [
+            "import heapq",
+            "",
+            "def heapsort(iterable):",
+            "    h = []",
+            "    for value in iterable:",
+            "        heapq.heappush(h, value)",
+            "    ",
+            "    return [heapq.heappop(h) for i in range(len(h))]",
+            "",
+            "print(heapsort([1, 3, 5, 7, 9, 2, 4, 6, 8, 0]))"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 5,
+          "headline": "4. Priority Queues (Filas de Prioridade)",
+          "text": "Diferente de uma fila comum (FIFO), aqui sai primeiro quem tem maior prioridade (ou menor valor, dependendo da implementação).",
+          "list": [
+            "Aplicações: Agendamento de processos (CPU), pathfinding (Dijkstra/A*), compressão de dados (Huffman)."
+          ]
+        },
+        {
+          "position": 6,
+          "headline": "5. Problema do Top-K (Leaderboards)",
+          "text": "Como manter o 'Top 10' jogadores em tempo real com milhões de usuários? Usar um Min-Heap de tamanho K é muito mais eficiente que ordenar tudo.",
+          "code": [
+            "import heapq",
+            "",
+            "pontuacoes = [10, 500, 20, 5, 100, 30]",
+            "",
+            "# Encontra os 3 maiores eficientemente O(n log k)",
+            "top3 = heapq.nlargest(3, pontuacoes)",
+            "print(top3)  # [500, 100, 30]"
+          ],
+          "programmingLanguage": "python"
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🚀 Técnicas Avançadas Essenciais",
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
+            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
+            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução",
+          "text": "Nesta aula final, exploramos técnicas que resolvem problemas de alta complexidade. Enquanto algoritmos básicos focam em 'como fazer', técnicas avançadas focam em 'como fazer de forma eficiente' ou 'como explorar todas as possibilidades sem travar o sistema'."
+        },
+        {
+          "position": 2,
+          "headline": "1. Programação Dinâmica (DP)",
+          "text": "A Programação Dinâmica é usada quando um problema pode ser dividido em subproblemas sobrepostos. Em vez de calcular a mesma coisa várias vezes, salvamos o resultado (Memoization) para uso futuro.",
+          "list": [
+            "Memoization: Técnica Top-Down (recursiva com cache).",
+            "Tabulation: Técnica Bottom-Up (iterativa preenchendo uma tabela).",
+            "Exemplos: Fibonacci, Problema da Mochila (Knapsack), Maior Subsequência Comum (LCS)."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Exemplo: Fibonacci O(n) com Memoization",
+          "code": [
+            "def fib_dinamico(n, memo={}):",
+            "    if n in memo: return memo[n]",
+            "    if n <= 2: return 1",
+            "    memo[n] = fib_dinamico(n-1, memo) + fib_dinamico(n-2, memo)",
+            "    return memo[n]"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 4,
+          "headline": "2. Backtracking",
+          "text": "Backtracking é um refinamento da busca bruta. Ele tenta construir uma solução passo a passo e, se perceber que o caminho atual não levará a uma solução válida, ele volta (backtrack) para o ponto anterior e tenta outra opção.",
+          "list": [
+            "Pruning (Poda): Ignorar ramos da árvore de decisão que sabemos ser inúteis.",
+            "Aplicações: Sudoku, Problema das N-Rainhas, Gerar todas as Permutações de uma lista."
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "Exemplo: Gerando Permutações",
+          "code": [
+            "def permutar(lista, inicio=0):",
+            "    if inicio == len(lista):",
+            "        print(lista)",
+            "    for i in range(inicio, len(lista)):",
+            "        lista[inicio], lista[i] = lista[i], lista[inicio]",
+            "        permutar(lista, inicio + 1)",
+            "        lista[inicio], lista[i] = lista[i], lista[inicio] # backtrack"
+          ],
+          "programmingLanguage": "python"
+        },
+        {
+          "position": 6,
+          "headline": "3. Algoritmos em Strings",
+          "text": "Busca de padrões em textos é vital. A busca simples (Brute Force) compara cada posição, o que pode ser ineficiente em textos gigantes.",
+          "list": [
+            "KMP (Knuth-Morris-Pratt): Evita voltar no texto principal pré-processando o padrão.",
+            "Rabin-Karp: Usa hashing para encontrar padrões de forma probabilística.",
+            "Aplicações: Editores de texto (Ctrl+F), Bioinformática, Compiladores."
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "4. Projeto Final Integrador",
+          "text": "Para consolidar o curso, o aluno deve aplicar múltiplas técnicas em um sistema real.",
+          "list": [
+            "Mini-GPS: Usa Grafos (Dijkstra) para rotas e Tabelas Hash para indexar nomes de ruas.",
+            "Sistema de Recomendação: Usa Algoritmos de Ordenação e Filtragem Baseada em Preferências (Hash Tables).",
+            "Solucionador de Quebra-Cabeças: Usa Backtracking para resolver desafios lógicos."
+          ]
         }
       ]
     }
