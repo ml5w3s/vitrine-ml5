@@ -7,9 +7,10 @@
       </a>
     </div>
 
-    <div class="search-container">
-      <input type="text" id="lesson-search" placeholder="Buscar aula..." autocomplete="off">
-      <div id="search-results" class="search-results" style="display: none;"></div>
+    <!-- Container de busca - Visível apenas no Desktop nesta posição -->
+    <div class="search-container desktop-search">
+      <input type="text" id="lesson-search-desktop" class="search-input" placeholder="Buscar aula..." autocomplete="off">
+      <div id="search-results-desktop" class="search-results" style="display: none;"></div>
     </div>
 
     <div class="hamburger">
@@ -19,6 +20,13 @@
     </div>
 
     <ul class="nav-links">
+      <!-- Busca integrada no menu para Mobile -->
+      <li class="mobile-search-item">
+        <div class="search-container mobile-search">
+          <input type="text" id="lesson-search-mobile" class="search-input" placeholder="Buscar aula..." autocomplete="off">
+          <div id="search-results-mobile" class="search-results" style="display: none;"></div>
+        </div>
+      </li>
       <li><a href="#">Cadastre-se</a></li>
       <li><a href="#">Entrar</a></li>
       <li><a href="#/adm/cadastro-aulas">Administrativo</a></li>
@@ -28,31 +36,31 @@
 </header>
 
 <style>
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  header nav {
+    display: flex !important;
+    flex-direction: row !important; /* Força horizontal no mobile */
+    justify-content: space-between !important;
+    align-items: center !important;
     position: relative;
+    width: 100%;
   }
 
   .logo {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
   }
 
   .logo img {
     width: 100px;
+    height: auto;
   }
 
-  /* Search Styles */
+  /* Estilos Base da Busca */
   .search-container {
     position: relative;
-    flex: 1;
-    max-width: 400px;
-    margin: 0 20px;
   }
 
-  #lesson-search {
+  .search-input {
     width: 100%;
     padding: 8px 15px;
     border: 1px solid #ccc;
@@ -80,54 +88,60 @@
     padding: 10px 15px;
     border-bottom: 1px solid #f0f0f0;
     cursor: pointer;
+    text-align: left;
   }
 
-  .search-result-item:last-child {
-    border-bottom: none;
+  .search-result-item:hover { background-color: #f9f9f9; }
+  .search-result-title { display: block; font-weight: bold; font-size: 0.85rem; color: #333; }
+  .search-result-course { display: block; font-size: 0.75rem; color: #666; }
+
+  /* Desktop vs Mobile Search Toggle */
+  .desktop-search {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
   }
 
-  .search-result-item:hover {
-    background-color: #f9f9f9;
-  }
-
-  .search-result-title {
-    display: block;
-    font-weight: bold;
-    font-size: 0.85rem;
-    color: #333;
-  }
-
-  .search-result-course {
-    display: block;
-    font-size: 0.75rem;
-    color: #666;
-  }
-
-  .hamburger {
+  .mobile-search-item {
     display: none;
-    cursor: pointer;
-  }
-
-  .hamburger .line {
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px;
+    width: 90%;
+    margin-bottom: 20px;
   }
 
   .nav-links {
     display: flex;
     list-style: none;
+    align-items: center;
   }
 
   .nav-links li {
     margin-left: 20px;
   }
 
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px; /* Área de clique maior */
+  }
+
+  .hamburger .line {
+    width: 24px; /* Reduzido de 30px */
+    height: 2px; /* Reduzido de 3px */
+    background-color: #333;
+    margin: 4px; /* Ajustado de 5px */
+    transition: 0.3s;
+  }
+
   @media screen and (max-width: 768px) {
-    .search-container {
-      margin: 0 10px;
-      max-width: 200px;
+    .desktop-search {
+      display: none;
+    }
+
+    .mobile-search-item {
+      display: block;
+      width: 100%;
+      padding: 0 10px; /* Reduzido para o input ocupar mais largura */
+      margin-bottom: 20px;
     }
 
     .nav-links {
@@ -135,13 +149,15 @@
       top: 0;
       left: -100%;
       height: 100vh;
-      width: 250px;
-      background-color: #f1f1f1;
+      width: 240px; /* Largura reduzida do menu */
+      background-color: #fff;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start; /* Alinhado à esquerda */
+      padding-top: 80px;
+      padding-left: 10px; /* Base de alinhamento lateral */
       transition: left 0.3s ease;
       z-index: 1000;
+      box-shadow: 5px 0 15px rgba(0,0,0,0.2);
     }
 
     .nav-links.open {
@@ -149,26 +165,31 @@
     }
 
     .nav-links li {
-      margin: 20px 0;
+      margin: 10px 0;
+      width: 100%;
+      text-align: left; /* Alinhado à esquerda */
+      padding-left: 10px; /* Pequeno recuo para os links */
     }
 
     .hamburger {
       display: block;
       z-index: 1001;
+      margin-left: auto; /* Garante que o menu fique na direita */
     }
   }
 </style>
 
 <script type="module">
   import { courseRepository } from '/vitrine-ml5/mlab5/src/repositories/CourseRepository.js';
-  import { Debug } from '/vitrine-ml5/mlab5/src/helpers/Debug.js';
 
-  const searchInput = document.getElementById('lesson-search');
-  const resultsContainer = document.getElementById('search-results');
-  let debounceTimer;
+  function initSearch(inputId, resultsId) {
+      const input = document.getElementById(inputId);
+      const resultsContainer = document.getElementById(resultsId);
+      let debounceTimer;
 
-  if (searchInput && resultsContainer) {
-      searchInput.addEventListener('input', (e) => {
+      if (!input || !resultsContainer) return;
+
+      input.addEventListener('input', (e) => {
           clearTimeout(debounceTimer);
           const query = e.target.value;
 
@@ -179,60 +200,63 @@
 
           debounceTimer = setTimeout(async () => {
               const results = await courseRepository.searchLessons(query);
-              renderResults(results);
+              renderResults(results, resultsContainer, input);
           }, 300);
       });
 
-      // Fechar resultados ao clicar fora
+      // Fechar ao clicar fora
       document.addEventListener('click', (e) => {
-          if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+          if (!input.contains(e.target) && !resultsContainer.contains(e.target)) {
               resultsContainer.style.display = 'none';
           }
       });
   }
 
-  function renderResults(results) {
+  function renderResults(results, container, input) {
       if (results.length === 0) {
-          resultsContainer.innerHTML = '<div class="search-result-item">Nenhuma aula encontrada.</div>';
+          container.innerHTML = '<div class="search-result-item">Nenhuma aula encontrada.</div>';
       } else {
-          resultsContainer.innerHTML = results.map(res => `
+          container.innerHTML = results.map(res => `
               <div class="search-result-item" data-url="#/course/${res.courseId}/lesson/${res.lessonId}">
                   <span class="search-result-title">${res.title}</span>
                   <span class="search-result-course">${res.courseTitle}</span>
               </div>
           `).join('');
 
-          const items = resultsContainer.querySelectorAll('.search-result-item');
+          const items = container.querySelectorAll('.search-result-item');
           items.forEach(item => {
               item.addEventListener('click', () => {
                   const url = item.getAttribute('data-url');
                   if (url) {
                       window.location.hash = url;
-                      resultsContainer.style.display = 'none';
-                      searchInput.value = '';
+                      container.style.display = 'none';
+                      input.value = '';
+                      // Fecha o menu mobile se estiver aberto
+                      document.querySelector('.nav-links').classList.remove('open');
                   }
               });
           });
       }
-      resultsContainer.style.display = 'block';
+      container.style.display = 'block';
   }
 
+  // Inicializa as duas buscas
+  initSearch('lesson-search-desktop', 'search-results-desktop');
+  initSearch('lesson-search-mobile', 'search-results-mobile');
+
   // Hamburger menu logic
-  const header = document.querySelector('header');
-  if (header) {
-      const hamburger = header.querySelector('.hamburger');
-      const navLinks = header.querySelector('.nav-links');
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
 
-      if (hamburger && navLinks) {
-          hamburger.addEventListener('click', () => {
-              navLinks.classList.toggle('open');
-          });
+  if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+      });
 
-          navLinks.addEventListener('click', (event) => {
-              if (event.target.tagName === 'A') {
-                  navLinks.classList.remove('open');
-              }
-          });
-      }
+      navLinks.addEventListener('click', (event) => {
+          if (event.target.tagName === 'A') {
+              navLinks.classList.remove('open');
+          }
+      });
   }
 </script>
