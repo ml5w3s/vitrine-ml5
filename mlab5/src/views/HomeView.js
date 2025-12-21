@@ -1,11 +1,21 @@
 
 import { courseRepository } from '../repositories/CourseRepository.js';
 
+function loadCss(filename) {
+    const link = document.createElement('link');
+    link.href = filename;
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+    return link;
+}
+
 /**
  * renderHomeView - Busca e renderiza a lista de cursos.
  * @returns {Promise<HTMLElement>} - O elemento HTML com a lista de cursos.
  */
 export async function renderHomeView(router) {
+    loadCss('/vitrine-ml5/mlab5/src/views/home-view.css'); // Load view-specific CSS
+
     const viewElement = document.createElement('div');
     viewElement.className = 'home-view';
     

@@ -21,7 +21,7 @@ export class Lesson {
      */
     render() {
         const lessonElement = document.createElement('section');
-        lessonElement.className = 'lesson-content';
+        lessonElement.className = 'lesson-content lesson-detail-view';
         lessonElement.innerHTML = `<h3 class="lesson-title">${this.title}</h3>`;
 
         const lessonData = this.content.course;

@@ -347,7 +347,7 @@ footer article.item:first-of-type {
   /* 3 colunas quando container maior */
   @container card-container (min-width: 980px) {
     .course-card, .lesson-card {
-      flex: 1 1 calc(33.333% - var(--card-gap, 20px));
+      flex: 0 0 calc(33.333% - var(--card-gap, 20px));
       max-width: calc(33.333% - var(--card-gap, 20px));
     }
   }
@@ -469,3 +469,59 @@ footer article.item:first-of-type button {
 
 .notebook-container #editor, .notebook-container #output { width: 100%; height: 200px; font-family: monospace; }
 .notebook-container #output { background: #f0f0f0; padding: 10px; border: 1px solid #ccc; }
+
+.home-view .container {
+    justify-content: center;
+}
+
+.home-view .container .course-overview.item {
+    flex: 1 1 calc(20% - var(--gap-default));
+}
+
+@media (max-width: 1200px) {
+    .home-view .container .course-overview.item {
+        flex: 1 1 calc(25% - var(--gap-default));
+    }
+}
+
+@media (max-width: 980px) {
+    .home-view .container .course-overview.item {
+        flex: 1 1 calc(33.333% - var(--gap-default));
+    }
+}
+
+@media (max-width: 768px) {
+    .home-view .container .course-overview.item {
+        flex: 1 1 calc(50% - var(--gap-default));
+    }
+}
+
+@media (max-width: 480px) {
+    .home-view .container .course-overview.item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.lesson-detail-view .container article,
+.playground-view .container article {
+    flex: 1 1 calc(33.333% - var(--gap-default)); /* 3 columns with gap */
+    max-width: calc(33.333% - var(--gap-default));
+}
+
+@media (max-width: 768px) { /* Adjust for smaller screens */
+    .lesson-detail-view .container article,
+    .playground-view .container article {
+        flex: 1 1 calc(50% - var(--gap-default)); /* 2 columns */
+        max-width: calc(50% - var(--gap-default));
+    }
+}
+
+@media (max-width: 480px) { /* Adjust for very small screens */
+    .lesson-detail-view .container article,
+    .playground-view .container article {
+        flex: 1 1 100%; /* 1 column */
+        max-width: 100%;
+    }
+}
+
