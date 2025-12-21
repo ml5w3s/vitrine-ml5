@@ -1,0 +1,233 @@
+[
+  {
+    "course": {
+      "name": "🐍 Python Básico para Algoritmos",
+      "playground": {
+        "url": "#/course/python_para_algoritmos/lesson/01/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Introdução",
+          "text": "Este curso é um guia rápido e prático de Python, pensado como apoio direto ao aprendizado de algoritmos. O foco não é dominar toda a linguagem, mas aprender exatamente o que você precisa para resolver problemas clássicos de lógica e algoritmos."
+        },
+        {
+          "position": 2,
+          "headline": "1. Variáveis e Tipos Básicos",
+          "text": "Algoritmos trabalham com dados. Entender tipos evita erros lógicos e facilita cálculos. Os tipos principais são:",
+          "list": [
+            "int: Números inteiros.",
+            "float: Números com casas decimais.",
+            "str: Textos (strings).",
+            "bool: Valores booleanos (True/False)."
+          ]
+        },
+        {
+          "position": 3,
+          "programmingLanguage": "python",
+          "code": [
+            "x = 10           # int",
+            "pi = 3.14        # float",
+            "nome = \"Ana\"     # str",
+            "ativo = True     # bool"
+          ]
+        },
+        {
+          "position": 4,
+          "headline": "Conversão de tipos (Casting)",
+          "text": "Muitas vezes precisamos converter um tipo em outro, especialmente ao ler dados da entrada.",
+          "programmingLanguage": "python",
+          "code": [
+            "idade = int(\"20\")",
+            "preco = float(\"9.99\")",
+            "texto = str(123)"
+          ]
+        },
+        {
+          "position": 5,
+          "headline": "2. Estruturas de Controle (if, for, while)",
+          "text": "São a base de decisões e repetições em qualquer algoritmo."
+        },
+        {
+          "position": 6,
+          "headline": "Condicional if",
+          "programmingLanguage": "python",
+          "code": [
+            "if x > 0:",
+            "    print(\"positivo\")",
+            "elif x == 0:",
+            "    print(\"zero\")",
+            "else:",
+            "    print(\"negativo\")"
+          ]
+        },
+        {
+          "position": 7,
+          "headline": "Laço for",
+          "text": "Usado para iterar sobre uma sequência (como um intervalo de números ou uma lista).",
+          "programmingLanguage": "python",
+          "code": [
+            "for i in range(5):",
+            "    print(i)"
+          ]
+        },
+        {
+          "position": 8,
+          "headline": "Laço while",
+          "text": "Executa enquanto uma condição for verdadeira.",
+          "programmingLanguage": "python",
+          "code": [
+            "while x > 0:",
+            "    x -= 1"
+          ]
+        },
+        {
+          "position": 9,
+          "headline": "3. Funções",
+          "text": "Permite modularizar, reutilizar e testar partes do algoritmo. Seguir boas práticas ajuda na clareza:",
+          "list": [
+            "Uma função = uma responsabilidade.",
+            "Nome claro e objetivo."
+          ]
+        },
+        {
+          "position": 10,
+          "programmingLanguage": "python",
+          "code": [
+            "def soma(a, b):",
+            "    return a + b",
+            "",
+            "resultado = soma(3, 5)"
+          ]
+        },
+        {
+          "position": 11,
+          "headline": "4. Listas e Operações Básicas",
+          "text": "Estrutura mais usada em problemas iniciais (vetores, sequências).",
+          "programmingLanguage": "python",
+          "code": [
+            "numeros = [1, 2, 3, 4]",
+            "",
+            "numeros.append(5) # Adiciona ao fim",
+            "print(numeros[0]) # Acesso por índice",
+            "print(len(numeros)) # Tamanho da lista"
+          ]
+        },
+        {
+          "position": 12,
+          "headline": "Percorrendo listas",
+          "programmingLanguage": "python",
+          "code": [
+            "for n in numeros:",
+            "    print(n)"
+          ]
+        },
+        {
+          "position": 13,
+          "headline": "5. Strings e Manipulação",
+          "text": "Muitos problemas envolvem texto, parsing e validação.",
+          "programmingLanguage": "python",
+          "code": [
+            "texto = \"algoritmos\"",
+            "print(len(texto))",
+            "print(texto.upper())",
+            "print(texto.split(\"o\"))"
+          ]
+        },
+        {
+          "position": 14,
+          "headline": "Percorrer caracteres",
+          "programmingLanguage": "python",
+          "code": [
+            "for c in texto:",
+            "    print(c)"
+          ]
+        },
+        {
+          "position": 15,
+          "headline": "6. Dicionários (dict)",
+          "text": "Base para hash tables, contagem de frequência e cache.",
+          "programmingLanguage": "python",
+          "code": [
+            "freq = {}",
+            "",
+            "for c in \"banana\":",
+            "    freq[c] = freq.get(c, 0) + 1",
+            "",
+            "print(freq) # {'b': 1, 'a': 3, 'n': 2}"
+          ]
+        },
+        {
+          "position": 16,
+          "headline": "Acesso e verificação",
+          "programmingLanguage": "python",
+          "code": [
+            "if 'a' in freq:",
+            "    print(freq['a'])"
+          ]
+        },
+        {
+          "position": 17,
+          "headline": "7. Compreensão de Lista e Dicionário (Comprehensions)",
+          "text": "Torna o código mais conciso, legível e muitas vezes mais eficiente.",
+          "programmingLanguage": "python",
+          "code": [
+            "# List comprehension",
+            "quadrados = [x*x for x in range(5)]",
+            "",
+            "# Dict comprehension",
+            "pares = {x: x*x for x in range(6) if x % 2 == 0}"
+          ]
+        },
+        {
+          "position": 18,
+          "headline": "8. Tratamento Básico de Exceções",
+          "text": "Evita crashes durante testes e entradas inválidas.",
+          "programmingLanguage": "python",
+          "code": [
+            "try:",
+            "    x = int(input())",
+            "    print(10 / x)",
+            "except ValueError:",
+            "    print(\"Entrada inválida\")",
+            "except ZeroDivisionError:",
+            "    print(\"Divisão por zero\")"
+          ]
+        },
+        {
+          "position": 19,
+          "headline": "9. Leitura de Entrada (input)",
+          "text": "Essencial para plataformas de maratona de programação.",
+          "programmingLanguage": "python",
+          "code": [
+            "# Entrada simples",
+            "n = int(input())",
+            "",
+            "# Múltiplos valores na mesma linha",
+            "a, b = map(int, input().split())",
+            "",
+            "# Ler lista de inteiros",
+            "nums = list(map(int, input().split()))"
+          ]
+        },
+        {
+          "position": 20,
+          "headline": "Conclusão",
+          "text": "Com este conteúdo, você já consegue implementar algoritmos básicos, resolver problemas de lógica e trabalhar com vetores, strings e mapas de forma clara e eficiente.",
+          "list": [
+            "Próximo passo: aplicar isso em problemas clássicos (soma, máximo, busca, contagem, loops aninhados)."
+          ]
+        }
+      ]
+    }
+  }
+]

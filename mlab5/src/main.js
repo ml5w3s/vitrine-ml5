@@ -22,8 +22,11 @@ async function loadComponent(placeholderId, file) {
       const scripts = placeholder.querySelectorAll('script');
       scripts.forEach(oldScript => {
         const newScript = document.createElement('script');
+        newScript.type = 'module'; // Permite o uso de imports nos scripts dos componentes
         Array.from(oldScript.attributes).forEach(attr => {
-          newScript.setAttribute(attr.name, attr.value);
+          if (attr.name !== 'type') {
+            newScript.setAttribute(attr.name, attr.value);
+          }
         });
         newScript.textContent = oldScript.textContent;
         oldScript.parentNode.replaceChild(newScript, oldScript);

@@ -99,6 +99,56 @@ class CourseRepository {
             return null;
         }
     }
+
+    /**
+     * Pesquisa lições em todos os cursos.
+     * @param {string} query O termo de busca.
+     * @returns {Promise<Array<{courseId: string, lessonId: string, title: string, courseTitle: string}>>}
+     */
+    async searchLessons(query) {
+        if (!query || query.trim().length < 2) return [];
+        
+        const normalizedQuery = query.toLowerCase().trim();
+        
+        if (!this._lessonIndex) {
+            await this._buildLessonIndex();
+        }
+
+        return this._lessonIndex.filter(lesson => 
+            lesson.title.toLowerCase().includes(normalizedQuery) ||
+            lesson.courseTitle.toLowerCase().includes(normalizedQuery)
+        );
+    }
+
+    /**
+     * Constrói um índice em memória de todas as lições de todos os cursos.
+     * @private
+     */
+    async _buildLessonIndex() {
+        Debug.log('CourseRepository', 'Construindo índice de busca de aulas...');
+        const index = [];
+        try {
+            const coursesMeta = await this.getCourseIndex();
+            for (const meta of coursesMeta) {
+                if (meta.id === 'banner-cursos') continue;
+                const course = await this.getCourseById(meta.id);
+                if (course && course.lessons) {
+                    course.lessons.forEach(lesson => {
+                        index.push({
+                            courseId: course.id,
+                            lessonId: lesson.id,
+                            title: lesson.title,
+                            courseTitle: course.title
+                        });
+                    });
+                }
+            }
+            this._lessonIndex = index;
+            Debug.log('CourseRepository', `Índice de busca construído com ${index.length} aulas.`);
+        } catch (error) {
+            Debug.error('CourseRepository', 'Erro ao construir índice de busca:', error);
+        }
+    }
 }
 
 // Exporta a instância única do repositório.

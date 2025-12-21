@@ -22,6 +22,17 @@
     }
   },
   {
+    "id": "python_para_algoritmos",
+    "title": "Python Básico para Algoritmos",
+    "description": "Aprenda o essencial de Python focado em lógica e algoritmos.",
+    "image": {
+      "desktop": "assets/images/cursos/python_desktop.jpg",
+      "tablet": "assets/images/cursos/python_tablet.jpg",
+      "mobile": "assets/images/cursos/python_mobile.jpg",
+      "caption": "Python básico"
+    }
+  },
+  {
     "id": "css3",
     "title": "CSS3 - Estilizando a Web",
     "description": "Aprenda a estilizar suas páginas web com CSS3.",
@@ -78,13 +89,13 @@
   },
   {
     "id": "linux-seguranca-prologo",
-    "title": "Linux para Segurança - Prologo",
+    "title": "Linux para Segurança - Prólogo",
     "description": "Aprenda a usar o Linux com foco em segurança da informação.",
     "image": {
       "desktop": "assets/images/cursos/linux_desktop.jpg",
       "tablet": "assets/images/cursos/linux_tablet.jpg",
       "mobile": "assets/images/cursos/linux_mobile.jpg",
-      "caption": "Prologo do curso de Linux para Segurança"
+      "caption": "Prólogo do curso de Linux para Segurança"
     }
   },
    {

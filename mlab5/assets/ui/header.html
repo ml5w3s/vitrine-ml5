@@ -7,6 +7,11 @@
       </a>
     </div>
 
+    <div class="search-container">
+      <input type="text" id="lesson-search" placeholder="Buscar aula..." autocomplete="off">
+      <div id="search-results" class="search-results" style="display: none;"></div>
+    </div>
+
     <div class="hamburger">
       <div class="line"></div>
       <div class="line"></div>
@@ -27,6 +32,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
 
   .logo {
@@ -34,9 +40,67 @@
     vertical-align: middle;
   }
 
-
   .logo img {
     width: 100px;
+  }
+
+  /* Search Styles */
+  .search-container {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+  }
+
+  #lesson-search {
+    width: 100%;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 0.9rem;
+  }
+
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2000;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .search-result-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+  }
+
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+
+  .search-result-item:hover {
+    background-color: #f9f9f9;
+  }
+
+  .search-result-title {
+    display: block;
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #333;
+  }
+
+  .search-result-course {
+    display: block;
+    font-size: 0.75rem;
+    color: #666;
   }
 
   .hamburger {
@@ -61,6 +125,11 @@
   }
 
   @media screen and (max-width: 768px) {
+    .search-container {
+      margin: 0 10px;
+      max-width: 200px;
+    }
+
     .nav-links {
       position: fixed;
       top: 0;
@@ -85,29 +154,81 @@
 
     .hamburger {
       display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
       z-index: 1001;
     }
   }
 </style>
 
-<script>
+<script type="module">
+  import { courseRepository } from '/vitrine-ml5/mlab5/src/repositories/CourseRepository.js';
+  import { Debug } from '/vitrine-ml5/mlab5/src/helpers/Debug.js';
+
+  const searchInput = document.getElementById('lesson-search');
+  const resultsContainer = document.getElementById('search-results');
+  let debounceTimer;
+
+  if (searchInput && resultsContainer) {
+      searchInput.addEventListener('input', (e) => {
+          clearTimeout(debounceTimer);
+          const query = e.target.value;
+
+          if (query.length < 2) {
+              resultsContainer.style.display = 'none';
+              return;
+          }
+
+          debounceTimer = setTimeout(async () => {
+              const results = await courseRepository.searchLessons(query);
+              renderResults(results);
+          }, 300);
+      });
+
+      // Fechar resultados ao clicar fora
+      document.addEventListener('click', (e) => {
+          if (!searchInput.contains(e.target) && !resultsContainer.contains(e.target)) {
+              resultsContainer.style.display = 'none';
+          }
+      });
+  }
+
+  function renderResults(results) {
+      if (results.length === 0) {
+          resultsContainer.innerHTML = '<div class="search-result-item">Nenhuma aula encontrada.</div>';
+      } else {
+          resultsContainer.innerHTML = results.map(res => `
+              <div class="search-result-item" data-url="#/course/${res.courseId}/lesson/${res.lessonId}">
+                  <span class="search-result-title">${res.title}</span>
+                  <span class="search-result-course">${res.courseTitle}</span>
+              </div>
+          `).join('');
+
+          const items = resultsContainer.querySelectorAll('.search-result-item');
+          items.forEach(item => {
+              item.addEventListener('click', () => {
+                  const url = item.getAttribute('data-url');
+                  if (url) {
+                      window.location.hash = url;
+                      resultsContainer.style.display = 'none';
+                      searchInput.value = '';
+                  }
+              });
+          });
+      }
+      resultsContainer.style.display = 'block';
+  }
+
+  // Hamburger menu logic
   const header = document.querySelector('header');
   if (header) {
       const hamburger = header.querySelector('.hamburger');
       const navLinks = header.querySelector('.nav-links');
 
       if (hamburger && navLinks) {
-          // Toggle menu on hamburger click
           hamburger.addEventListener('click', () => {
               navLinks.classList.toggle('open');
           });
 
-          // Close menu on link click
           navLinks.addEventListener('click', (event) => {
-              // Check if a link was clicked
               if (event.target.tagName === 'A') {
                   navLinks.classList.remove('open');
               }
