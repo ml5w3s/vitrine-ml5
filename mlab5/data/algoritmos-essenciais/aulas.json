@@ -7,9 +7,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -166,7 +166,10 @@
           "text": "Dominar essas duas buscas é o primeiro passo sólido para entender eficiência algorítmica e resolver problemas reais de forma performática!",
           "position": 14
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/01/playground"
+      }
     }
   },
   {
@@ -177,9 +180,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -267,7 +270,10 @@
           ],
           "programmingLanguage": "python"
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/02/playground"
+      }
     }
   },
   {
@@ -278,9 +284,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -355,7 +361,10 @@
             "Uso prático: Base para implementação de Grafos e tabelas Hash com encadeamento."
           ]
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/03/playground"
+      }
     }
   },
   {
@@ -366,9 +375,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -457,7 +466,10 @@
             "Compiladores: Árvores de Sintaxe Abstrata (AST) para entender código."
           ]
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/04/playground"
+      }
     }
   },
   {
@@ -468,9 +480,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -569,7 +581,10 @@
             "Web Crawlers: O Google usa grafos para navegar e indexar links da internet."
           ]
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/05/playground"
+      }
     }
   },
   {
@@ -580,9 +595,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -658,7 +673,10 @@
             "Jogos: Movimentação de personagens (Pathfinding) em mapas com terrenos de custos variados (água, montanha, estrada)."
           ]
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/06/playground"
+      }
     }
   },
   {
@@ -669,9 +687,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -751,7 +769,10 @@
             "Bancos de Dados NoSQL: Muitos utilizam o modelo chave-valor baseado em hashing para alta performance."
           ]
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/07/playground"
+      }
     }
   },
   {
@@ -762,9 +783,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -831,7 +852,10 @@
           ],
           "programmingLanguage": "python"
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/08/playground"
+      }
     }
   },
   {
@@ -842,9 +866,9 @@
           "position": 0,
           "type": "banner",
           "image": {
-            "desktop": "assets/images/banner_algoritmos_desktop.jpg",
-            "tablet": "assets/images/banner_algoritmos_tablet.jpg",
-            "mobile": "assets/images/banner_algoritmos_mobile.jpg"
+            "desktop": "assets/images/banner_algoritmos_desktop.png",
+            "tablet": "assets/images/banner_algoritmos_tablet.png",
+            "mobile": "assets/images/banner_algoritmos_mobile.png"
           }
         },
         {
@@ -917,7 +941,10 @@
             "Solucionador de Quebra-Cabeças: Usa Backtracking para resolver desafios lógicos."
           ]
         }
-      ]
+      ],
+      "playground": {
+        "url": "#/course/algoritmos-essenciais/lesson/09/playground"
+      }
     }
   }
 ]

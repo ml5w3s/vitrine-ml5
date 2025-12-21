@@ -9,23 +9,38 @@ import { renderAdmView } from './views/AdmView.js';
 import { NotebookComponent } from './components/NotebookComponent.js';
 
 /**
- * Gerencia a visibilidade e o comportamento do botão do playground no rodapé.
- * @param {Lesson|null} lesson - O objeto da lição atual, ou null para ocultar o botão.
+ * Gerencia o comportamento do botão do playground no rodapé.
+ * @param {Lesson|null} lesson - O objeto da lição atual.
  */
 function managePlaygroundButton(lesson) {
     const playgroundButton = document.getElementById('playground-button');
     if (!playgroundButton) return;
 
+    playgroundButton.style.display = 'inline-block'; // Sempre visível
+
     const lessonData = lesson ? lesson.content.course : null;
 
     if (lessonData && lessonData.playground && lessonData.playground.url) {
-        playgroundButton.style.display = 'inline-block';
         playgroundButton.onclick = () => {
             window.location.hash = lessonData.playground.url;
         };
     } else {
-        playgroundButton.style.display = 'none';
-        playgroundButton.onclick = null;
+        // Comportamento padrão: se não houver aula específica, vai para um playground genérico
+        // ou mantém o comportamento de ir para o último configurado se for o caso.
+        // Aqui vamos definir para uma rota genérica se possível.
+        playgroundButton.onclick = () => {
+             // Tenta ir para o playground da aula atual se estivermos em uma aula
+             const hash = window.location.hash;
+             if (hash.includes('/course/') && hash.includes('/lesson/')) {
+                 const match = hash.match(/\/course\/([^\/]+)\/lesson\/([^\/]+)/);
+                 if (match) {
+                     window.location.hash = `#/course/${match[1]}/lesson/${match[2]}/playground`;
+                     return;
+                 }
+             }
+             // Fallback para o primeiro curso/aula se nada for encontrado (ou apenas alerta)
+             window.location.hash = '#/course/algoritmos-essenciais/lesson/01/playground';
+        };
     }
 }
 
