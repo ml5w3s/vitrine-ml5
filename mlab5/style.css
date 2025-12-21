@@ -506,14 +506,12 @@ footer article.item:first-of-type button {
 .lesson-detail-view .container article,
 .playground-view .container article {
     flex: 1 1 calc(33.333% - var(--gap-default)); /* 3 columns with gap */
-    max-width: calc(33.333% - var(--gap-default));
 }
 
 @media (max-width: 768px) { /* Adjust for smaller screens */
     .lesson-detail-view .container article,
     .playground-view .container article {
         flex: 1 1 calc(50% - var(--gap-default)); /* 2 columns */
-        max-width: calc(50% - var(--gap-default));
     }
 }
 
@@ -521,7 +519,12 @@ footer article.item:first-of-type button {
     .lesson-detail-view .container article,
     .playground-view .container article {
         flex: 1 1 100%; /* 1 column */
-        max-width: 100%;
     }
+}
+
+/* Itens estruturais que devem ocupar a largura total */
+.item-banner {
+    flex-basis: 100% !important;
+    max-width: 100% !important;
 }
 
