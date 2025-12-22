@@ -48,11 +48,16 @@ export class Course {
         }
 
         const courseUrl = router.generateUrl('courseDetail', { courseId: this.id });
+        
+        // Todo o conteúdo interno é envolto por um link para tornar o card inteiro clicável
         courseElement.innerHTML = `
-            ${imageHtml}
-            <h2 class="course-title">${this.title}</h2>
-            <p class="course-description">${this.description}</p>
-            <a href="${courseUrl}">Ver Curso</a>
+            <a href="${courseUrl}" class="card-link">
+                ${imageHtml}
+                <div class="card-content">
+                    <h2 class="course-title">${this.title}</h2>
+                    <p class="course-description">${this.description}</p>
+                </div>
+            </a>
         `;
         return courseElement;
     }

@@ -1,0 +1,160 @@
+[
+  {
+    "course": {
+      "name": "📊 Assistente Contábil",
+      "playground": {
+        "url": "#/course/assistente_contabil/lesson/01/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/cursos/contabilidade_desktop.jpg",
+            "tablet": "assets/images/cursos/contabilidade_tablet.jpg",
+            "mobile": "assets/images/cursos/contabilidade_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Capítulo 01: Conhecendo a Contabilidade",
+          "text": "A contabilidade é a ciência social responsável pelo controle do patrimônio de uma entidade. Ela permite registrar a história, os valores e antever cenários para a continuidade dos negócios.",
+          "list": [
+            "Conceito de Contabilidade: Controle de bens, direitos e obrigações.",
+            "Pessoa Jurídica: Entidade com existência própria e independente de seus sócios.",
+            "Patrimônio: Conjunto de Ativos (bens e direitos) e Passivos (obrigações).",
+            "Equação Fundamental: Patrimônio Líquido = Ativo - Passivo."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Princípios Contábeis",
+          "text": "São as premissas universais que norteiam o trabalho contábil.",
+          "list": [
+            "Princípio da Entidade: O patrimônio da empresa não se mistura com o dos donos.",
+            "Princípio da Continuidade: Assume-se que a empresa funcionará por tempo indeterminado.",
+            "Competência e Prudência: Regras para registro de receitas e despesas."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📋 Elementos e Contas Contábeis",
+      "playground": {
+        "url": "#/course/assistente_contabil/lesson/02/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 02: Plano de Contas",
+          "text": "O Plano de Contas é a ferramenta básica que detalha o patrimônio e os resultados da empresa, organizando as informações para a tomada de decisão.",
+          "list": [
+            "ATIVO: Bens e direitos (aplicações de recursos).",
+            "PASSIVO: Dívidas e obrigações (origens de recursos de terceiros).",
+            "RECEITAS E DESPESAS: Contas de resultado que indicam lucro ou prejuízo."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Liquidez e Exigibilidade",
+          "text": "As contas são organizadas seguindo critérios técnicos.",
+          "list": [
+            "Ordem de Liquidez: No Ativo, das contas mais fáceis para as mais difíceis de virar dinheiro (Caixa, Bancos, Estoques).",
+            "Ordem de Exigibilidade: No Passivo, das dívidas com vencimento mais próximo para as de longo prazo."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "✍️ Escrituração Contábil",
+      "playground": {
+        "url": "#/course/assistente_contabil/lesson/03/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 03: O Método das Partidas Dobradas",
+          "text": "Todo registro contábil exige uma origem e uma aplicação. Para cada débito, deve haver um crédito de igual valor.",
+          "list": [
+            "Débito (D): Lado esquerdo do razonete. Representa aplicações (Ativo) ou aumento de despesas.",
+            "Crédito (C): Lado direito do razonete. Representa origens (Passivo/PL) ou aumento de receitas."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Livros e Registros",
+          "text": "A formalização dos fatos administrativos ocorre em livros específicos.",
+          "list": [
+            "Livro Diário: Registro cronológico e obrigatório de todos os fatos diários.",
+            "Livro Razão: Controla o movimento individual de cada conta contábil.",
+            "Razonete: Representação gráfica em 'T' para fins didáticos e de conferência rápida."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "⚖️ Tributos e Escrita Fiscal",
+      "playground": {
+        "url": "#/course/assistente_contabil/lesson/04/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 04: Impostos e Contribuições",
+          "text": "O assistente contábil deve compreender a carga tributária que incide sobre as operações da empresa.",
+          "list": [
+            "ICMS: Imposto sobre circulação de mercadorias e serviços.",
+            "ISS: Imposto sobre serviços de qualquer natureza.",
+            "IPI: Imposto sobre produtos industrializados.",
+            "PIS/COFINS: Contribuições para a seguridade social."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Rotinas Fiscais",
+          "text": "Documentação e conformidade com a legislação.",
+          "list": [
+            "Notas Fiscais: Documento obrigatório para transações comerciais.",
+            "CFOP: Código Fiscal de Operações e Prestações que identifica a natureza da operação.",
+            "Retenções na Fonte: Antecipação de impostos como INSS e IRRF na folha de pagamento."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📈 Demonstrações Contábeis",
+      "playground": {
+        "url": "#/course/assistente_contabil/lesson/05/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 05: Balanço e Resultados",
+          "text": "As demonstrações são o produto final da contabilidade, fornecendo a 'fotografia' financeira da entidade.",
+          "list": [
+            "Balanço Patrimonial (BP): Demonstra a posição financeira em uma determinada data.",
+            "DRE (Demonstração do Resultado): Confronta receitas e despesas para apurar o lucro ou prejuízo do período.",
+            "Balancete de Verificação: Ferramenta de conferência para garantir que débitos e créditos estão equilibrados."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Indicadores de Desempenho",
+          "text": "Análise da saúde financeira por meio de índices.",
+          "list": [
+            "Liquidez Corrente: Capacidade de pagar dívidas de curto prazo.",
+            "Endividamento: Relação entre capital de terceiros e capital próprio."
+          ]
+        }
+      ]
+    }
+  }
+]

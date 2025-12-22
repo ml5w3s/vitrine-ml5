@@ -1,0 +1,162 @@
+[
+  {
+    "course": {
+      "name": "👥 Recursos Humanos e Gestão de Pessoas",
+      "playground": {
+        "url": "#/course/assistente_rh/lesson/01/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/cursos/rh_desktop.jpg",
+            "tablet": "assets/images/cursos/rh_tablet.jpg",
+            "mobile": "assets/images/cursos/rh_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Capítulo 01: O Papel do RH na Organização",
+          "text": "Recursos Humanos (RH) é a área responsável por gerir o bem mais precioso de uma empresa: as pessoas. Entender as relações humanas e a cultura organizacional é o primeiro passo.",
+          "list": [
+            "Missão, Visão e Valores: A base estratégica do desenvolvimento organizacional.",
+            "Relações Humanas: Integração, motivação e visão sistêmica dos colaboradores.",
+            "Comunicação Eficaz: A importância da clareza e do feedback no ambiente de trabalho.",
+            "Análise de Cargos: Definição clara de tarefas, responsabilidades e qualificações."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Recrutamento e Seleção",
+          "text": "Processos para atrair e escolher os talentos certos para a organização.",
+          "list": [
+            "Recrutamento Interno: Promoção de talentos da própria casa (prós: fidelidade; contras: conservadorismo).",
+            "Recrutamento Externo: Novos conhecimentos e renovação cultural (prós: sangue novo; contras: custos operacionais).",
+            "Técnicas de Seleção: Entrevistas, provas de conhecimento, testes psicrométricos e simulações."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📄 Rotinas de Departamento Pessoal",
+      "playground": {
+        "url": "#/course/assistente_rh/lesson/02/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 02: Admissão e Contratos",
+          "text": "O Departamento Pessoal (DP) foca nos processos burocráticos e legais da relação de emprego.",
+          "list": [
+            "Processo de Admissão: Coleta de documentos (CTPS, RG, CPF, PIS) e exames admissionais.",
+            "Formas Contratuais: CLT, contrato temporário, estágio, terceirização, trabalhador autônomo e menor aprendiz.",
+            "Jornada de Trabalho: Limites legais (8h diárias, 44h semanais), controle de ponto e intervalos de repouso."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Poder Disciplinar",
+          "text": "Manter a ordem e a disciplina exige um uso justo das penalidades previstas em lei.",
+          "list": [
+            "Advertência: Aviso ao empregado sobre comportamento inadequado.",
+            "Suspensão: Medida disciplinar grave que pode levar à rescisão por justa causa.",
+            "Ética e Respeito: Proteção contra arbitrariedades e humilhações no ambiente de trabalho."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "💰 Remuneração e Benefícios",
+      "playground": {
+        "url": "#/course/assistente_rh/lesson/03/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 03: Componentes do Salário",
+          "text": "Entender como se compõe a remuneração é vital para o cálculo correto da folha de pagamento.",
+          "list": [
+            "Salário Mínimo: O valor base legal para todos os trabalhadores.",
+            "Tipos de Salário: Mensalista, horista, diarista e tarefeiro.",
+            "Adicionais: Insalubridade (riscos à saúde), periculosidade (riscos imediatos), noturno e horas extras."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Benefícios e Encargos",
+          "text": "Direitos que complementam a remuneração do trabalhador.",
+          "list": [
+            "Vale-Transporte: Uso exclusivo para deslocamento residência-trabalho.",
+            "DSR (Descanso Semanal Remunerado): Repouso de 24h consecutivas, preferencialmente aos domingos.",
+            "Encargos Sociais: Recolhimento de FGTS (8%) e contribuições para o INSS."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🧾 Folha de Pagamento e Rescisão",
+      "playground": {
+        "url": "#/course/assistente_rh/lesson/04/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 04: Processamento da Folha",
+          "text": "A formalização mensal dos ganhos e descontos do colaborador.",
+          "list": [
+            "Proventos: Salário, adicionais, comissões e gratificações.",
+            "Descontos: Previdência Social (INSS), Imposto de Renda (IRRF) e faltas/atrasos.",
+            "Prazos: Pagamento até o 5º dia útil do mês subsequente."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Férias e 13º Salário",
+          "text": "Direitos anuais garantidos pela Constituição e CLT.",
+          "list": [
+            "Férias: Período aquisitivo (12 meses de trabalho) e período de gozo (descanso remunerado).",
+            "Abono Pecuniário: Conversão de 1/3 das férias em dinheiro.",
+            "13º Salário: Gratificação natalina paga em duas parcelas ou integralmente."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Rescisão de Contrato",
+          "text": "Encerramento do vínculo empregatício.",
+          "list": [
+            "Tipos de Dispensa: Sem justa causa, por justa causa (desídia, indisciplina) ou pedido de demissão.",
+            "Aviso Prévio: Comunicação antecipada da rescisão por uma das partes.",
+            "Seguro-Desemprego: Assistência financeira temporária ao trabalhador desempregado sem justa causa."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📅 Obrigações Anuais e Fiscalização",
+      "playground": {
+        "url": "#/course/assistente_rh/lesson/05/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 05: Relatórios e Auditoria",
+          "text": "A transparência das informações trabalhistas perante o governo.",
+          "list": [
+            "RAIS (Relação Anual de Informações Sociais): Dados estatísticos sobre os trabalhadores.",
+            "DIRF (Declaração do Imposto de Renda Retido na Fonte): Informe à Receita sobre rendimentos pagos.",
+            "Fiscalização do Trabalho: Livro de inspeção e atuação do Auditor-Fiscal nas empresas."
+          ]
+        }
+      ]
+    }
+  }
+]

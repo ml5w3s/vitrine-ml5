@@ -4,6 +4,41 @@
 
 .home-view .container .course-overview.item {
     flex: 1 1 calc(20% - var(--gap-default));
+    padding: 0; /* Padding movido para o link interno */
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-view .container .course-overview.item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.home-view .container .course-overview.item .card-link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.home-view .container .course-overview.item .card-content {
+    padding: var(--espacamento-padrao);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-view .container .course-overview.item .course-title {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: var(--cor-primaria);
+}
+
+.home-view .container .course-overview.item .course-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0;
 }
 
 @media (max-width: 1200px) {

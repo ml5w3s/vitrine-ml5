@@ -108,5 +108,49 @@
       "mobile": "assets/images/cursos/linux_mobile.jpg",
       "caption": "Curso de Linux para Segurança"
     }
+  },
+  {
+    "id": "assistente_administrativo",
+    "title": "👔 Assistente Administrativo",
+    "description": "Curso essencial para formação de assistentes administrativos.",
+    "image": {
+      "desktop": "assets/images/cursos/administracao_desktop.jpg",
+      "tablet": "assets/images/cursos/administracao_tablet.jpg",
+      "mobile": "assets/images/cursos/administracao_mobile.jpg",
+      "caption": "Curso Assistente Administrativo"
+    }
+  },
+  {
+    "id": "assistente_contabil",
+    "title": "📊 Assistente Contábil",
+    "description": "Curso abrangente sobre contabilidade.",
+    "image": {
+      "desktop": "assets/images/cursos/contabilidade_desktop.jpg",
+      "tablet": "assets/images/cursos/contabilidade_tablet.jpg",
+      "mobile": "assets/images/cursos/contabilidade_mobile.jpg",
+      "caption": "Curso Assistente Contábil"
+    }
+  },
+  {
+    "id": "assistente_rh",
+    "title": "👥 Assistente de RH",
+    "description": "Curso completo sobre rotinas de RH e Departamento Pessoal.",
+    "image": {
+      "desktop": "assets/images/cursos/rh_desktop.jpg",
+      "tablet": "assets/images/cursos/rh_tablet.jpg",
+      "mobile": "assets/images/cursos/rh_mobile.jpg",
+      "caption": "Curso Assistente de RH"
+    }
+  },
+  {
+    "id": "assistente_financas",
+    "title": "💰 Assistente de Finanças",
+    "description": "Curso focado em gestão financeira empresarial.",
+    "image": {
+      "desktop": "assets/images/cursos/financas_desktop.jpg",
+      "tablet": "assets/images/cursos/financas_tablet.jpg",
+      "mobile": "assets/images/cursos/financas_mobile.jpg",
+      "caption": "Curso Assistente de Finanças"
+    }
   }
 ]

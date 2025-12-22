@@ -1,0 +1,145 @@
+[
+  {
+    "course": {
+      "name": "💰 Gestão Financeira e Mercado",
+      "playground": {
+        "url": "#/course/assistente_financas/lesson/01/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/cursos/financas_desktop.jpg",
+            "tablet": "assets/images/cursos/financas_tablet.jpg",
+            "mobile": "assets/images/cursos/financas_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Capítulo 01: Introdução às Finanças",
+          "text": "Finanças é a ciência que estuda a administração das movimentações de dinheiro. Compreender o departamento financeiro é entender o coração das operações de qualquer estabelecimento.",
+          "list": [
+            "Divisões de Finanças: Públicas, Comportamentais, Solidárias e Corporativas.",
+            "Oportunidade Profissional: Atuação em orçamentos, contas a pagar/receber e planejamento.",
+            "Fluxo Financeiro: Compras (entrada de mercadorias) vs. Vendas (saída de serviços/produtos)."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Capítulo 02: Crédito e Cadastro",
+          "text": "O crédito é a base das negociações seguras. Uma boa análise de crédito minimiza riscos de inadimplência.",
+          "list": [
+            "Abertura de Crédito: Primeiro passo antes de qualquer pedido.",
+            "Proteção ao Crédito: Uso de serviços como SPC e Serasa.",
+            "Análise Cadastral: Verificação de documentos (CPF/CNPJ), referências bancárias e patrimônio.",
+            "Cálculo de Limite: Definição de valores seguros baseados na média de rendimentos (ex: regra dos 30%)."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🧾 Faturamento e Cobrança",
+      "playground": {
+        "url": "#/course/assistente_financas/lesson/02/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 03: Gerando Documentos",
+          "text": "A formalização da venda ocorre através do faturamento, gerando a obrigação de pagamento por parte do cliente.",
+          "list": [
+            "Venda vs. Pedido: O compromisso de entrega e as condições comerciais.",
+            "Faturamento: Emissão da Nota Fiscal como consolidação da venda.",
+            "Dados da Fatura: Valor, duplicatas e datas de vencimento.",
+            "Prazos de Pagamento: Antecipado, à vista ou parcelado."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Capítulo 04: Meios de Pagamento",
+          "text": "Existem diversas modalidades para realizar e receber pagamentos, cada uma com seu nível de segurança.",
+          "list": [
+            "Dinheiro e Depósito: Operações diretas.",
+            "Cheque e Recibo: Títulos de crédito e comprovantes formais.",
+            "Boleto Bancário: Modalidade versátil que permite cobrança registrada e protesto.",
+            "Cartão de Crédito/Débito: Essencial para o comércio eletrônico (B2B, B2C)."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📈 Matemática Financeira e Tributos",
+      "playground": {
+        "url": "#/course/assistente_financas/lesson/03/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 05: Juros e Descontos",
+          "text": "O valor do dinheiro no tempo é calculado através de juros e abatimentos.",
+          "list": [
+            "Juros Simples: Incidência apenas sobre o capital inicial.",
+            "Juros Compostos: Juros sobre juros, onde a base muda a cada período.",
+            "Taxa de Equivalência: Comparação de taxas em períodos diferentes (ex: mensal vs. anual).",
+            "Retenção na Fonte: Descontos de impostos (PIS, COFINS, ISS, IR) no momento do pagamento."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📊 Tesouraria e Fluxo de Caixa",
+      "playground": {
+        "url": "#/course/assistente_financas/lesson/04/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 06: Controle de Fluxo",
+          "text": "A tesouraria administra o dia a dia financeiro, conciliando o que entra e o que sai.",
+          "list": [
+            "Fluxo de Caixa: Planejamento de sobras ou faltas de dinheiro.",
+            "Conciliação Bancária: Conferência entre lançamentos e extratos.",
+            "Capital de Giro: Valores necessários para a empresa manter suas operações."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Capítulo 07: Inadimplência",
+          "text": "Tratamento de dívidas não pagas e recuperação de crédito.",
+          "list": [
+            "Cobrança: Fases de solicitação, reclamação e cobrança formal.",
+            "Protesto: Ato solene em cartório para provar a falta de pagamento.",
+            "Reabilitação: Procedimentos para limpar o nome nos órgãos de proteção (SPC/Serasa)."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "💎 Investimentos e Indicadores",
+      "playground": {
+        "url": "#/course/assistente_financas/lesson/05/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 08: Aplicações Financeiras",
+          "text": "A gestão de excedentes visa o crescimento do capital e aumento do patrimônio.",
+          "list": [
+            "Investimentos em Ativos: Aquisição de bens (veículos, máquinas).",
+            "Investimentos Financeiros: Renda fixa (CDB, Tesouro) e Renda variável (Ações).",
+            "Indicadores: Taxa de câmbio, IBOVESPA, IPC e Taxa Referencial (TR)."
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -252,8 +252,15 @@
     border-radius: var(--raio-borda-grande);
     cursor: pointer;
     display: inline-block;
+    min-width: 85px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
-  button:hover { opacity: 0.95; }
+  button:hover, .button-style:hover { 
+    opacity: 0.9; 
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
 
   /* Item flex básico */
   .item {

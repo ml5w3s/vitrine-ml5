@@ -1,0 +1,171 @@
+[
+  {
+    "course": {
+      "name": "👔 Assistente Administrativo",
+      "playground": {
+        "url": "#/course/assistente_administrativo/lesson/01/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "type": "banner",
+          "image": {
+            "desktop": "assets/images/cursos/administracao_desktop.jpg",
+            "tablet": "assets/images/cursos/administracao_tablet.jpg",
+            "mobile": "assets/images/cursos/administracao_mobile.jpg"
+          }
+        },
+        {
+          "position": 1,
+          "headline": "Capítulo 01: A Empresa e o Ambiente Organizacional",
+          "text": "Nesta aula introdutória, entenderemos o que define uma organização e como as empresas interagem com o mundo ao seu redor.",
+          "list": [
+            "Conceito de Organização: Combinação de pessoas e tecnologia para atingir objetivos.",
+            "Tipos de Empresas: Nacionais, Multinacionais e Transnacionais.",
+            "Estrutura: Matriz (sede principal) e Filial (unidades dependentes).",
+            "BNDES: Papel do Banco Nacional de Desenvolvimento Econômico e Social no fomento de negócios."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Ambientes de uma Empresa",
+          "text": "As empresas não existem no vácuo; elas são afetadas por diversos fatores externos e internos.",
+          "list": [
+            "Ambiente Geral: Fatores políticos, econômicos, sociais, culturais e legais do país.",
+            "Ambiente Operacional: Clientes, fornecedores, concorrentes e mão de obra.",
+            "Ambiente Interno: Departamentos como Marketing, RH, Finanças e Produção."
+          ]
+        },
+        {
+          "position": 3,
+          "headline": "Globalização e Empreendedorismo",
+          "text": "No mundo atual, os negócios ultrapassam fronteiras. Ser empreendedor exige visão global e conhecimento de mercado.",
+          "list": [
+            "Importação e Exportação: Troca de bens e serviços com o exterior.",
+            "Joint Venture: Alianças estratégicas entre empresas de diferentes países.",
+            "Perfil Empreendedor: Realizador, criativo e com iniciativa."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "💼 O Profissional na Área Administrativa",
+      "playground": {
+        "url": "#/course/assistente_administrativo/lesson/02/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 02: Habilidades e Comportamento",
+          "text": "O assistente administrativo é o suporte de todas as áreas de uma empresa. Para ter sucesso, certas regras de comportamento e habilidades técnicas são fundamentais.",
+          "list": [
+            "Atributos Pessoais: Seriedade, pontualidade, organização e liderança.",
+            "Postura Profissional: Equilíbrio emocional, bom senso e autoconfiança.",
+            "Ética Profissional: Respeito às normas e sigilo das informações."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Técnicas de Arquivo e Redação",
+          "text": "Organizar documentos e comunicar-se de forma clara são pilares do trabalho administrativo.",
+          "list": [
+            "Arquivamento: Critérios de organização para facilitar a busca de informações.",
+            "Redação Empresarial: Elaboração de cartas, e-mails, memorandos e relatórios.",
+            "Uso de Tecnologia: Domínio de ferramentas como Word e Excel para produtividade."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Comunicação e Etiqueta",
+          "text": "Como você se porta reflete a imagem da empresa.",
+          "list": [
+            "Atendimento Telefônico: Identificação clara, saudação e presteza no recado.",
+            "Apresentação Pessoal: Vestimentas adequadas ao ambiente e higiene.",
+            "Comunicação Verbal: Uso de 'palavras mágicas' (por favor, obrigado) e clareza na fala."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "🏗️ Áreas e Departamentos de uma Empresa",
+      "playground": {
+        "url": "#/course/assistente_administrativo/lesson/03/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 03: A Estrutura Departamental",
+          "text": "Entender as divisões internas ajuda o assistente a saber para onde direcionar cada demanda.",
+          "list": [
+            "Comercial e Vendas: Foco no cliente, política de preços e treinamento de equipe.",
+            "Marketing: O poder da marca e a estratégia dos 4Ps (Produto, Preço, Praça, Promoção).",
+            "Recursos Humanos (RH): Recrutamento, seleção, treinamento e folha de pagamento."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Operações e Produção",
+          "text": "Transformação de insumos em produtos ou entrega de serviços.",
+          "list": [
+            "Indústria e Fábrica: Transformação de matéria-prima.",
+            "Empresas de Serviço: Terceirização de atividades especializadas.",
+            "Suporte Administrativo: Criação de formulários e controle de processos produtivos."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Atendimento e Jurídico",
+          "text": "Relacionamento com o público e conformidade legal.",
+          "list": [
+            "SAC: Serviço de Atendimento ao Consumidor como porta de entrada de feedbacks.",
+            "Departamento Jurídico: Elaboração de contratos, representação em audiências e assessoria legal."
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "course": {
+      "name": "📊 Rotinas e Ferramentas Administrativas",
+      "playground": {
+        "url": "#/course/assistente_administrativo/lesson/04/playground"
+      },
+      "articles": [
+        {
+          "position": 0,
+          "headline": "Capítulo 04: Gestão de Tarefas e Qualidade",
+          "text": "Administrar é, acima de tudo, gerir o tempo e resolver problemas de forma eficiente.",
+          "list": [
+            "Ordem Lógica: Priorização de tarefas para facilitar o fluxo de trabalho.",
+            "Gestão do Tempo: Estimativa de prazos e otimização de processos.",
+            "Resolução de Problemas: Calma e foco na busca por soluções viáveis."
+          ]
+        },
+        {
+          "position": 1,
+          "headline": "Softwares de Apoio",
+          "text": "A informática é a maior aliada do assistente moderno.",
+          "list": [
+            "MS Project: Planejamento e acompanhamento de cronogramas de projetos.",
+            "MS Visio: Criação de diagramas, fluxogramas e processos.",
+            "Office (Word/Excel): Ferramentas essenciais para documentação e planilhas."
+          ]
+        },
+        {
+          "position": 2,
+          "headline": "Rotinas Financeiras Básicas",
+          "text": "O assistente administrativo lida frequentemente com documentos bancários.",
+          "list": [
+            "Documentos: Cheques, notas promissórias e títulos de crédito.",
+            "Bancos: Conta corrente, cartões, transferências (TED/DOC) e tarifas.",
+            "Preenchimento: Correção e cuidado ao emitir ou conferir documentos financeiros."
+          ]
+        }
+      ]
+    }
+  }
+]
