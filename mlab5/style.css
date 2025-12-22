@@ -245,14 +245,15 @@
   }
 
   button, .button-style {
-    padding: 0.5rem 0.75rem;
+    padding: 0.4rem 0.5rem;
     border: 1px solid var(--cor-primaria);
     background: var(--cor-primaria);
     color: #fff;
     border-radius: var(--raio-borda-grande);
     cursor: pointer;
     display: inline-block;
-    min-width: 85px;
+    min-width: 60px;
+    font-size: 0.8rem;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
   }
@@ -260,6 +261,14 @@
     opacity: 0.9; 
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  @media (min-width: 768px) {
+    button, .button-style {
+      padding: 0.5rem 0.75rem;
+      min-width: 85px;
+      font-size: 0.9rem;
+    }
   }
 
   /* Item flex básico */
@@ -277,6 +286,8 @@
 footer article.item:first-of-type {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
   @media (min-width: 769px) {
