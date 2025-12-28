@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Executar Java Real no Browser - Busca Linear</title>
+  <script src="https://www.cheerpj.com/cj3loader.js"></script>
+</head>
+<body>
+  <h1>Busca Linear em Java (rodando na JVM do browser)</h1>
+  <pre id="output"></pre>
+
+  <script>
+    async function runJava() {
+      // Inicializa CheerpJ
+      await cheerpjInit();
+
+      // Adiciona seu .jar ou .class (aqui simulo com código inline, mas pode upload)
+      await cheerpjAddStringFile("/str/BuscaLinear.class", await fetch("BuscaLinear.class").arrayBuffer());
+
+      // Redireciona System.out para o elemento
+      cheerpjCreateConsole((msg) => document.getElementById("output").textContent += msg + "\n");
+
+      // Executa o main
+      await cheerpjRunMain("BuscaLinear", "/str/");
+    }
+
+    runJava();
+  </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador Leve de JVM - Educacional</title>
+  <style>
+    body { font-family: monospace; padding: 20px; background: #f4f4f4; }
+    textarea, pre { width: 100%; height: 150px; margin: 10px 0; }
+    button { padding: 10px; font-size: 16px; margin-right: 10px; }
+    .section { background: white; padding: 15px; border: 1px solid #ccc; margin-bottom: 20px; border-radius: 8px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #999; padding: 8px; text-align: center; }
+    .highlight { background: #ffff99; }
+  </style>
+</head>
+<body>
+  <h1>Simulador Educacional de JVM (Mini Stack Machine)</h1>
+
+  <div class="section">
+    <h3>Bytecode (instruções simples)</h3>
+    <textarea id="code" rows="10">
+// Exemplo: soma 5 + 7 e imprime
+iconst_5      // empilha 5
+iconst_7      // empilha 7
+iadd          // soma os dois topo da pilha
+istore_0      // armazena resultado na variável local 0
+iload_0       // carrega variável local 0
+print         // imprime topo da pilha
+halt          // termina execução
+</textarea>
+  </div>
+
+  <button id="run">Executar Tudo</button>
+  <button id="step">Passo a Passo</button>
+  <button id="reset">Resetar</button>
+
+  <div class="section">
+    <h3>Saída</h3>
+    <pre id="output"></pre>
+  </div>
+
+  <div class="section">
+    <h3>Estado da Máquina</h3>
+    <table>
+      <tr>
+        <th>PC (Program Counter)</th>
+        <th>Pilha de Operandos</th>
+        <th>Variáveis Locais</th>
+      </tr>
+      <tr>
+        <td id="pc">0</td>
+        <td id="stack">[]</td>
+        <td id="locals">[0, 0, 0]</td>
+      </tr>
+    </table>
+    <p>Instrução atual: <span id="currentInstr">-</span></p>
+  </div>
+
+  <script>
+    const codeTextarea = document.getElementById('code');
+    const output = document.getElementById('output');
+    const pcEl = document.getElementById('pc');
+    const stackEl = document.getElementById('stack');
+    const localsEl = document.getElementById('locals');
+    const currentInstrEl = document.getElementById('currentInstr');
+
+    let program = [];
+    let pc = 0;
+    let stack = [];
+    let locals = [0, 0, 0]; // 3 variáveis locais (índices 0,1,2)
+    let running = false;
+
+    function parseCode() {
+      const lines = codeTextarea.value.trim().split('\n');
+      program = lines
+        .map(line => line.trim().split('//')[0].trim()) // remove comentários
+        .filter(line => line.length > 0);
+      resetVM();
+    }
+
+    function resetVM() {
+      pc = 0;
+      stack = [];
+      locals = [0, 0, 0];
+      updateUI();
+      output.textContent = '';
+    }
+
+    function updateUI() {
+      pcEl.textContent = pc;
+      stackEl.textContent = JSON.stringify(stack);
+      localsEl.textContent = JSON.stringify(locals);
+      currentInstrEl.textContent = pc < program.length ? program[pc] : 'FIM';
+      // Destacar linha atual no código (opcional avançado)
+    }
+
+    function executeInstruction() {
+      if (pc >= program.length) return false;
+
+      const instr = program[pc].toLowerCase();
+      let parts = instr.split(' ');
+      let op = parts[0];
+
+      switch (op) {
+        case 'iconst_0': stack.push(0); break;
+        case 'iconst_1': stack.push(1); break;
+        case 'iconst_2': stack.push(2); break;
+        case 'iconst_3': stack.push(3); break;
+        case 'iconst_4': stack.push(4); break;
+        case 'iconst_5': stack.push(5); break;
+        case 'iconst_7': stack.push(7); break;
+        case 'iadd':
+          if (stack.length < 2) { output.textContent += "Erro: pilha vazia!\n"; return false; }
+          let b = stack.pop();
+          let a = stack.pop();
+          stack.push(a + b);
+          break;
+        case 'isub':
+          let bb = stack.pop();
+          let aa = stack.pop();
+          stack.push(aa - bb);
+          break;
+        case 'iload_0': stack.push(locals[0]); break;
+        case 'iload_1': stack.push(locals[1]); break;
+        case 'iload_2': stack.push(locals[2]); break;
+        case 'istore_0': locals[0] = stack.pop(); break;
+        case 'istore_1': locals[1] = stack.pop(); break;
+        case 'istore_2': locals[2] = stack.pop(); break;
+        case 'print':
+          if (stack.length === 0) { output.textContent += "Nada para imprimir\n"; }
+          else { output.textContent += stack[stack.length - 1] + '\n'; }
+          break;
+        case 'halt':
+          output.textContent += "Execução terminada.\n";
+          return false;
+        default:
+          output.textContent += `Instrução desconhecida: ${instr}\n`;
+      }
+
+      pc++;
+      updateUI();
+      return true;
+    }
+
+    document.getElementById('run').onclick = () => {
+      parseCode();
+      while (executeInstruction()) {}
+    };
+
+    document.getElementById('step').onclick = () => {
+      if (pc === 0 && program.length === 0) parseCode();
+      if (!executeInstruction()) {
+        output.textContent += "Fim do programa.\n";
+      }
+    };
+
+    document.getElementById('reset').onclick = () => {
+      resetVM();
+    };
+
+    // Inicializa
+    resetVM();
+  </script>
+</body>
+</html>

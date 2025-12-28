@@ -42,7 +42,8 @@ export class Course {
                 <picture>
                     <source media="(min-width: 1024px)" srcset="${this.image.desktop}">
                     <source media="(min-width: 600px)" srcset="${this.image.tablet}">
-                    <img src="${this.image.mobile}" alt="${this.image.caption}" style="width:100%;">
+                    <!-- Usando a imagem de tablet como fallback para mobile para garantir maior nitidez -->
+                    <img src="${this.image.tablet}" alt="${this.image.caption}" style="width:100%;">
                 </picture>
             `;
         }

@@ -42,12 +42,8 @@
         },
         {
           "position": 2,
-          "image": {
-            "desktop": "assets/images/cursos/algoritimos/teste_busca_linear_desktop.png",
-            "tablet": "assets/images/cursos/algoritimos/etiqueta_tablet.png",
-            "mobile": "assets/images/cursos/algoritimos/etiqueta_mobile.png",
-            "caption": "Etiqueta com as marcações"
-          }
+          "text": "Usando o laço de repetição, como o for por exemplo, é possível verificar cada posição da lista, em busca do alvo.",
+          "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/dESIzDq4kIw?si=bGdAsmW8vq4iLfY2' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>"
         },
         {
           "headline": "Vantagens e Desvantagens",
@@ -98,7 +94,25 @@
           "position": 7
         },
         {
+          "position": 7.5,
+          "text": "Se a lista tem 100 itens, verifica se o alvo é iqual a 50, se não, verifica se o alvo é menor que 50, se sim, elimina a metade maior maior iqual a 50, e verifica se o alvo é igual a 25, se não verifica se ...",
+          "image": {
+            "desktop": "assets/images/cursos/algoritmos/fluxo_busca_binaria.png",
+            "tablet": "assets/images/cursos/algoritmos/fluxo_busca_binaria.png",
+            "mobile": "assets/images/cursos/algoritmos/fluxo_busca_binaria.png",
+            "caption": "Eliminando as metades onde não está"
+          }
+        },
+        {
           "headline": "Implementação Iterativa em Python",
+          "text": "Você pode importar biblioteca para gerar uma lista com números aleatórios e também uma biblioteca para medir o tempo da busca para efeito de comparação.",
+          "code": [
+            "import random",
+            "import time",
+            "    ",
+            "tamanho_lista = 1_000_000",
+            "numeros = sorted(random.sample(range(1, 10_000_001), tamanho_lista))"
+          ],
           "position": 8
         },
         {

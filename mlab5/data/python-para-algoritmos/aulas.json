@@ -32,6 +32,16 @@
           ]
         },
         {
+          "position": 2.5,
+          "text": "Mochilas podem ter em um momento roupas para viagem ou outras coisas, como mantimentos, porém uma mochila para nootbook pode ser usada para armazenar apenas equipamentos.",
+          "image": {
+            "desktop": "assets/images/cursos/algoritmos/mochila.jpeg",
+            "tablet": "assets/images/cursos/algoritmos/mochila.jpeg",
+            "mobile": "assets/images/cursos/algoritmos/mochila.jpeg",
+            "caption": "Conteúdos variados, ou não"
+          }
+        },
+        {
           "position": 3,
           "programmingLanguage": "python",
           "code": [

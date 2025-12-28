@@ -128,6 +128,7 @@ export class Lesson {
                             img.src = '/vitrine-ml5/mlab5/' + (articleData.image.desktop || articleData.image.src);
                             img.alt = articleData.image.caption || this.title;
                             figure.appendChild(img);
+                            
                             if (articleData.image.caption) {
                                 const figcaption = document.createElement('figcaption');
                                 figcaption.className = 'caption';
@@ -135,6 +136,12 @@ export class Lesson {
                                 figure.appendChild(figcaption);
                             }
                             articleElement.appendChild(figure);
+                        }
+                        if (articleData.video) {
+                            const videoWrapper = document.createElement('div');
+                            videoWrapper.className = 'video-container';
+                            videoWrapper.innerHTML = articleData.video;
+                            articleElement.appendChild(videoWrapper);
                         }
                         if (articleData.code) {
                             const pre = document.createElement('pre');

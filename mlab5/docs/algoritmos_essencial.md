@@ -53,3 +53,13 @@ Dijkstra (grafos ponderados) ou BFS (não ponderados).
 **Exemplos:** KMP ou abordagens simples.
 **Motivo:** Busca e manipulação eficiente de texto.
 **Aplicação:** Funcionalidades de search em editores, processamento de logs, engines de regex.
+
+## Dicas para Estruturação do Curso
+
+*   **Análise de Complexidade (Big O):** Sempre inclua análise de tempo e espaço — fundamental para o júnior escolher soluções eficientes e evitar bottlenecks reais.
+*   **Implementação Multi-linguagem:** Mostre equivalências (arrays em JS × listas em Python × vectors em C++).
+*   **Paradigmas:** Compare abordagens recursivas (comum em funcional) versus iterativas.
+*   **Prática Realista:** Use problemas fáceis/médios de plataformas como LeetCode ou HackerRank, e projetos práticos (ex.: mini Google Maps, sistema de recomendação simples).
+*   **Nível Mínimo Aceitável:** Dominando os itens 1 a 6, o júnior já resolve ~80% dos desafios algorítmicos em posições entry-level e evita ineficiências graves em código produtivo.
+
+Esse conjunto cobre a maioria dos cenários em projetos modernos sem entrar em tópicos altamente especializados (ML avançado, criptografia profunda etc.). Foque em compreensão conceitual + implementação prática para resultados rápidos!

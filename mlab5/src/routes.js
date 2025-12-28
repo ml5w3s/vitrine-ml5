@@ -4,6 +4,7 @@ import { renderHomeView } from './views/HomeView.js';
 import { renderCourseView } from './views/CourseView.js';
 import { renderLessonCreatorView } from './views/LessonCreatorView.js';
 import { renderPlaygroundView } from './views/PlaygroundView.js';
+import { renderNotebookView } from './views/NotebookView.js';
 import { renderLousaView } from './views/LousaView.js';
 import { renderAdmView } from './views/AdmView.js';
 import { NotebookComponent } from './components/NotebookComponent.js';
@@ -98,7 +99,14 @@ export function defineRoutes(router) {
         return renderLousaView();
     });
 
-    // Handler para o Notebook
+    // Handler para o Notebook (com lição específica)
+    router.addRoute('lessonNotebook', '/course/:courseId/lesson/:lessonId/notebook', async (params) => {
+        const { courseId, lessonId } = params;
+        managePlaygroundButton(null);
+        return renderNotebookView(courseId, lessonId);
+    });
+
+    // Handler para o Notebook genérico
     router.addRoute('notebook', '/notebook', () => {
         managePlaygroundButton(null);
         const viewElement = document.createElement('div');

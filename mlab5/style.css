@@ -285,9 +285,15 @@
 
 footer article.item:first-of-type {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
+  width: 100%;
+}
+
+footer article.item:first-of-type button {
+  flex: 1 1 100px; /* Todos crescem igualmente a partir de 100px */
+  max-width: 150px; /* Evita que fiquem exageradamente largos em telas grandes */
 }
 
   @media (min-width: 769px) {
@@ -524,6 +530,25 @@ footer article.item:first-of-type button {
 .lesson-detail-view .container article,
 .playground-view .container article {
     flex: 1 1 calc(33.333% - var(--gap-default)); /* 3 columns with gap */
+}
+
+/* Video Responsive Container */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 @media (max-width: 768px) { /* Adjust for smaller screens */

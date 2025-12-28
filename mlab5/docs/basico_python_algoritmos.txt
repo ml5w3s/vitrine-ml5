@@ -1,0 +1,108 @@
+﻿Curso a Jato de Python para Algoritmos Essenciais
+Este curso é um guia rápido e prático de Python, pensado como apoio direto ao aprendizado de algoritmos. O foco não é dominar toda a linguagem, mas aprender exatamente o que você precisa para resolver problemas clássicos de lógica e algoritmos.
+
+1. Variáveis e Tipos Básicos
+Por que é importante para algoritmos: Algoritmos trabalham com dados. Entender tipos evita erros lógicos e facilita cálculos.
+Tipos principais
+x = 10 # int
+pi = 3.14 # float
+nome = "Ana" # str
+ativo = True # bool
+Conversão de tipos
+idade = int("20")
+preco = float("9.99")
+texto = str(123)
+
+2. Estruturas de Controle (if, for, while)
+Por que é importante para algoritmos: São a base de decisões e repetições em qualquer algoritmo.
+Condicional if
+if x > 0:
+print("positivo")
+elif x == 0:
+print("zero")
+else:
+print("negativo")
+Laço for
+for i in range(5):
+print(i)
+Laço while
+while x > 0:
+x -= 1
+
+3. Funções
+Por que é importante para algoritmos: Permite modularizar, reutilizar e testar partes do algoritmo.
+def soma(a, b):
+return a + b
+
+resultado = soma(3, 5)
+Boas práticas
+    • Uma função = uma responsabilidade
+    • Nome claro e objetivo
+
+4. Listas e Operações Básicas
+Por que é importante para algoritmos: Estrutura mais usada em problemas iniciais (vetores, sequências).
+numeros = [1, 2, 3, 4]
+
+numeros.append(5)
+print(numeros[0])
+print(len(numeros))
+Percorrendo listas
+for n in numeros:
+print(n)
+
+5. Strings e Manipulação
+Por que é importante para algoritmos: Muitos problemas envolvem texto, parsing e validação.
+texto = "algoritmos"
+print(len(texto))
+print(texto.upper())
+print(texto.split("o"))
+Percorrer caracteres
+for c in texto:
+print(c)
+
+6. Dicionários (dict)
+Por que é importante para algoritmos: Base para hash tables, contagem de frequência e cache.
+freq = {}
+
+for c in "banana":
+freq[c] = freq.get(c, 0) + 1
+
+print(freq)
+Acesso e verificação
+if 'a' in freq:
+print(freq['a'])
+
+7. Compreensão de Lista e Dicionário
+Por que é importante para algoritmos: Código mais conciso, legível e eficiente.
+List comprehension
+quadrados = [x*x for x in range(5)]
+Dict comprehension
+pares = {x: x*x for x in range(6) if x % 2 == 0}
+
+8. Tratamento Básico de Exceções
+Por que é importante para algoritmos: Evita crashes durante testes e entradas inválidas.
+try:
+x = int(input())
+print(10 / x)
+except ValueError:
+print("Entrada inválida")
+except ZeroDivisionError:
+print("Divisão por zero")
+
+9. Leitura de Entrada (input)
+Por que é importante para algoritmos: Essencial para plataformas como Beecrowd, LeetCode e Codeforces.
+Entrada simples
+n = int(input())
+Múltiplos valores na mesma linha
+a, b = map(int, input().split())
+Ler lista de inteiros
+nums = list(map(int, input().split()))
+
+Conclusão
+Com este conteúdo, você já consegue:
+    • Implementar algoritmos básicos
+    • Resolver problemas de lógica
+    • Trabalhar com vetores, strings e mapas
+    • Programar com clareza e eficiência em Python
+👉 Próximo passo: aplicar isso em problemas clássicos (soma, máximo, busca, contagem, loops aninhados).
+

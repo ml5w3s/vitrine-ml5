@@ -22,7 +22,7 @@
     }
   },
   {
-    "id": "python_para_algoritmos",
+    "id": "python-para-algoritmos",
     "title": "Python Básico para Algoritmos",
     "description": "Aprenda o essencial de Python focado em lógica e algoritmos.",
     "image": {
@@ -110,7 +110,7 @@
     }
   },
   {
-    "id": "assistente_administrativo",
+    "id": "assistente-administrativo",
     "title": "👔 Assistente Administrativo",
     "description": "Curso essencial para formação de assistentes administrativos.",
     "image": {
@@ -121,7 +121,7 @@
     }
   },
   {
-    "id": "assistente_contabil",
+    "id": "assistente-contabil",
     "title": "📊 Assistente Contábil",
     "description": "Curso abrangente sobre contabilidade.",
     "image": {
@@ -143,7 +143,7 @@
     }
   },
   {
-    "id": "assistente_financas",
+    "id": "assistente-financas",
     "title": "💰 Assistente de Finanças",
     "description": "Curso focado em gestão financeira empresarial.",
     "image": {
