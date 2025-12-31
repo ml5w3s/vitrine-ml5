@@ -1,0 +1,114 @@
+Título: Busca linear
+    for i in range(len(lista)):
+        if lista[i] == alvo:
+            return i
+    return -1
+
+Título: Lista encadeada
+class ListaEncadeada:
+    def __init__(self):
+        self.cabeca = None    # início da lista
+    
+    def adicionar_no_final(self, valor):
+        novo_no = No(valor)
+        if self.cabeca is None:
+            self.cabeca = novo_no
+            return
+        
+        atual = self.cabeca
+        while atual.proximo is not None:
+            atual = atual.proximo
+        atual.proximo = novo_no
+    
+    def buscar(self, alvo):
+        atual = self.cabeca
+        indice = 0
+        
+        while atual is not None:
+            if atual.valor == alvo:
+                return indice  # encontrou!
+            atual = atual.proximo
+            indice += 1
+        return -1  # não encontrado
+    
+    def __str__(self):
+        valores = []
+        atual = self.cabeca
+        while atual is not None:
+            valores.append(str(atual.valor))
+            atual = atual.proximo
+        return " -> ".join(valores) if valores else "Lista vazia"
+
+Criando a lista
+lista = ListaEncadeada()
+valores = [10, 23, 45, 70, 11, 15]
+for v in valores:
+    lista.adicionar_no_final(v)
+print("Lista encadeada:", lista)
+
+ Testes da busca linear
+print(f"Busca por 70  → índice: {lista.buscar(70)}")   # 3
+print(f"Busca por 10  → índice: {lista.buscar(10)}")   # 0
+print(f"Busca por 15  → índice: {lista.buscar(15)}")   # 5
+print(f"Busca por 99  → índice: {lista.buscar(99)}")   # -1
+print(f"Busca por 11  → índice: {lista.buscar(11)}")   # 4
+
+Título: Busca por strings
+frutas = ["maçã", "banana", "laranja", "kiwi", "uva"]
+
+def busca_linear(lista, alvo):
+    for i in range(len(lista)):
+        if lista[i] == alvo:    # comparação de strings com ==
+            return i
+    return -1
+
+print(busca_linear(frutas, "laranja"))  # → 2
+print(busca_linear(frutas, "abacaxi"))   # → -1 (não encontrado)
+
+Título: Busca binária com strings
+frutas_ordenadas = ["banana", "kiwi", "laranja", "maçã", "uva"]
+def busca_binaria(lista, alvo):
+    esquerda = 0
+    direita = len(lista) - 1
+    while esquerda <= direita:
+        meio = (esquerda + direita) // 2
+        if lista[meio] == alvo:
+            return meio
+        elif lista[meio] < alvo:         # comparação lexicográfica (alfabética)
+            esquerda = meio + 1
+        else:
+            direita = meio - 1
+    return -1
+print(busca_binaria(frutas_ordenadas, "laranja"))  # → 2
+print(busca_binaria(frutas_ordenadas, "abacaxi"))  # → -1
+
+Título: Lista de frutas (array comum em JS)
+const frutas = ["maçã", "banana", "laranja", "kiwi", "uva"];
+
+function buscaLinear(lista, alvo) {
+    for (let i = 0; i < lista.length; i++) {
+        if (lista[i] === alvo) {  // comparação estrita de strings (recomendado)
+            return i;             // retorna o índice da primeira ocorrência
+        }
+    }
+    return -1;  // não encontrado
+}
+
+console.log(buscaLinear(frutas, "laranja"));  // → 2
+console.log(buscaLinear(frutas, "abacaxi")); // → -1
+console.log(buscaLinear(frutas, "maçã"));    // → 0
+console.log(buscaLinear(frutas, "uva"));     // → 4
+console.log(buscaLinear(frutas, "banana"));  // → 1
+
+Título quick sort
+numeros = [8,1,10,3,55,98,65,9,21,46,61]
+def quick_sort(lista):
+    if len(lista) <= 1:
+        return lista
+    pivo = lista[len(lista) // 2]
+    esquerda = [x for x in lista if x < pivo]
+    meio = [x for x in lista if x == pivo]
+    direita = [x for x in lista if x > pivo]
+    return quick_sort(esquerda) + meio + quick_sort(direita)
+print(quick_sort(numeros))
+

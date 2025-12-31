@@ -1,0 +1,88 @@
+{
+  "curso": "Algoritmos Essenciais para Júnior",
+  "banner": {
+    "desktop": "assets/images/banner_respostas_desktop.png",
+    "tablet": "assets/images/banner_respostas_tablet.png",
+    "mobile": "assets/images/banner_respostas_mobile.png"
+  },
+  "aulas": [
+    {
+      "id": "aula-01",
+      "titulo": "Aula 01: Algoritmos de Busca",
+      "algoritmos": [
+        {
+          "titulo": "Busca Linear",
+          "descricao": "Percorre a lista elemento por elemento até encontrar o alvo.",
+          "codigos": {
+            "python": "def busca_linear(lista, alvo):\n    for i in range(len(lista)):\n        if lista[i] == alvo:\n            return i\n    return -1",
+            "javascript": "function buscaLinear(lista, alvo) {\n    for (let i = 0; i < lista.length; i++) {\n        if (lista[i] === alvo) return i;\n    }\n    return -1;\n}",
+            "php": "function buscaLinear($lista, $alvo) {\n    foreach ($lista as $i => $item) {\n        if ($item === $alvo) return $i;\n    }\n    return -1;\n}",
+            "java": "public static int buscaLinear(int[] lista, int alvo) {\n    for (int i = 0; i < lista.length; i++) {\n        if (lista[i] == alvo) return i;\n    }\n    return -1;\n}"
+          }
+        },
+        {
+          "titulo": "Busca Linear em Strings",
+          "descricao": "Busca linear adaptada para encontrar strings em uma lista.",
+          "codigos": {
+            "python": "def busca_linear_strings(lista, alvo):\n    for i in range(len(lista)):\n        if lista[i] == alvo:\n            return i\n    return -1",
+            "javascript": "function buscaLinearStrings(lista, alvo) {\n    for (let i = 0; i < lista.length; i++) {\n        if (lista[i] === alvo) return i;\n    }\n    return -1;\n}",
+            "php": "function buscaLinearStrings($lista, $alvo) {\n    foreach ($lista as $i => $item) {\n        if ($item === $alvo) return $i;\n    }\n    return -1;\n}",
+            "java": "public static int buscaLinearStrings(String[] lista, String alvo) {\n    for (int i = 0; i < lista.length; i++) {\n        if (lista[i].equals(alvo)) return i;\n    }\n    return -1;\n}"
+          }
+        },
+        {
+          "titulo": "Busca Binária (Strings)",
+          "descricao": "Algoritmo eficiente para listas ordenadas. Divide a busca pela metade a cada passo.",
+          "codigos": {
+            "python": "def busca_binaria(lista, alvo):\n    esquerda = 0\n    direita = len(lista) - 1\n    while esquerda <= direita:\n        meio = (esquerda + direita) // 2\n        if lista[meio] == alvo:\n            return meio\n        elif lista[meio] < alvo:\n            esquerda = meio + 1\n        else:\n            direita = meio - 1\n    return -1",
+            "javascript": "function buscaBinaria(lista, alvo) {\n    let esquerda = 0;\n    let direita = lista.length - 1;\n    while (esquerda <= direita) {\n        const meio = Math.floor((esquerda + direita) / 2);\n        if (lista[meio] === alvo) return meio;\n        else if (lista[meio] < alvo) esquerda = meio + 1;\n        else direita = meio - 1;\n    }\n    return -1;\n}",
+            "php": "function buscaBinaria($lista, $alvo) {\n    $esquerda = 0;\n    $direita = count($lista) - 1;\n    while ($esquerda <= $direita) {\n        $meio = floor(($esquerda + $direita) / 2);\n        if ($lista[$meio] === $alvo) return $meio;\n        elseif ($lista[$meio] < $alvo) $esquerda = $meio + 1;\n        else $direita = $meio - 1;\n    }\n    return -1;\n}",
+            "java": "public static int buscaBinaria(String[] lista, String alvo) {\n    int esquerda = 0;\n    int direita = lista.length - 1;\n    while (esquerda <= direita) {\n        int meio = (esquerda + direita) / 2;\n        int res = lista[meio].compareTo(alvo);\n        if (res == 0) return meio;\n        else if (res < 0) esquerda = meio + 1;\n        else direita = meio - 1;\n    }\n    return -1;\n}"
+          }
+        },
+        {
+            "titulo": "Exemplo Prático: Lista de Frutas (JS)",
+            "descricao": "Exemplo simples de busca linear em um array de frutas usando JavaScript.",
+            "codigos": {
+                "javascript": "const frutas = [\"maçã\", \"banana\", \"laranja\", \"kiwi\", \"uva\"];\n\nfunction buscaLinear(lista, alvo) {\n    for (let i = 0; i < lista.length; i++) {\n        if (lista[i] === alvo) {\n            return i;\n        }\n    }\n    return -1;\n}\n\nconsole.log(buscaLinear(frutas, \"laranja\"));",
+                "python": "# Equivalente em Python\nfrutas = [\"maçã\", \"banana\", \"laranja\", \"kiwi\", \"uva\"]\n\ndef busca_linear(lista, alvo):\n    for i in range(len(lista)):\n        if lista[i] == alvo:\n            return i\n    return -1\n\nprint(busca_linear(frutas, \"laranja\"))",
+                "php": "// Equivalente em PHP\n$frutas = [\"maçã\", \"banana\", \"laranja\", \"kiwi\", \"uva\"];\n\nfunction buscaLinear($lista, $alvo) {\n    foreach ($lista as $i => $item) {\n        if ($item === $alvo) return $i;\n    }\n    return -1;\n}\n\necho buscaLinear($frutas, \"laranja\");",
+                "java": "// Equivalente em Java\npublic class Frutas {\n    public static void main(String[] args) {\n        String[] frutas = {\"maçã\", \"banana\", \"laranja\", \"kiwi\", \"uva\"};\n        System.out.println(buscaLinear(frutas, \"laranja\"));\n    }\n    public static int buscaLinear(String[] lista, String alvo) {\n        for (int i = 0; i < lista.length; i++) {\n            if (lista[i].equals(alvo)) return i;\n        }\n        return -1;\n    }\n}"
+            }
+        }
+      ]
+    },
+    {
+      "id": "aula-02",
+      "titulo": "Aula 02: Estruturas de Dados Lineares",
+      "algoritmos": [
+        {
+          "titulo": "Lista Encadeada",
+          "descricao": "Implementação básica de uma lista simplesmente encadeada.",
+          "codigos": {
+            "python": "class No:\n    def __init__(self, valor):\n        self.valor = valor\n        self.proximo = None\n\nclass ListaEncadeada:\n    def __init__(self):\n        self.cabeca = None\n    \n    def adicionar_no_final(self, valor):\n        novo_no = No(valor)\n        if self.cabeca is None:\n            self.cabeca = novo_no\n            return\n        \n        atual = self.cabeca\n        while atual.proximo is not None:\n            atual = atual.proximo\n        atual.proximo = novo_no\n    \n    def buscar(self, alvo):\n        atual = self.cabeca\n        indice = 0\n        while atual is not None:\n            if atual.valor == alvo:\n                return indice\n            atual = atual.proximo\n            indice += 1\n        return -1",
+            "javascript": "class No {\n    constructor(valor) {\n        this.valor = valor;\n        this.proximo = null;\n    }\n}\n\nclass ListaEncadeada {\n    constructor() {\n        this.cabeca = null;\n    }\n\n    adicionarNoFinal(valor) {\n        const novoNo = new No(valor);\n        if (!this.cabeca) {\n            this.cabeca = novoNo;\n            return;\n        }\n        let atual = this.cabeca;\n        while (atual.proximo) {\n            atual = atual.proximo;\n        }\n        atual.proximo = novoNo;\n    }\n\n    buscar(alvo) {\n        let atual = this.cabeca;\n        let indice = 0;\n        while (atual) {\n            if (atual.valor === alvo) return indice;\n            atual = atual.proximo;\n            indice++;\n        }\n        return -1;\n    }\n}",
+            "php": "class No {\n    public $valor;\n    public $proximo;\n\n    public function __construct($valor) {\n        $this->valor = $valor;\n        $this->proximo = null;\n    }\n}\n\nclass ListaEncadeada {\n    public $cabeca;\n\n    public function __construct() {\n        $this->cabeca = null;\n    }\n\n    public function adicionarNoFinal($valor) {\n        $novoNo = new No($valor);\n        if ($this->cabeca === null) {\n            $this->cabeca = $novoNo;\n            return;\n        }\n        $atual = $this->cabeca;\n        while ($atual->proximo !== null) {\n            $atual = $atual->proximo;\n        }\n        $atual->proximo = $novoNo;\n    }\n\n    public function buscar($alvo) {\n        $atual = $this->cabeca;\n        $indice = 0;\n        while ($atual !== null) {\n            if ($atual->valor === $alvo) return $indice;\n            $atual = $atual->proximo;\n            $indice++;\n        }\n        return -1;\n    }\n}",
+            "java": "class No {\n    int valor;\n    No proximo;\n    No(int valor) { this.valor = valor; }\n}\n\npublic class ListaEncadeada {\n    No cabeca;\n\n    public void adicionarNoFinal(int valor) {\n        No novoNo = new No(valor);\n        if (cabeca == null) {\n            cabeca = novoNo;\n            return;\n        }\n        No atual = cabeca;\n        while (atual.proximo != null) {\n            atual = atual.proximo;\n        }\n        atual.proximo = novoNo;\n    }\n\n    public int buscar(int alvo) {\n        No atual = cabeca;\n        int indice = 0;\n        while (atual != null) {\n            if (atual.valor == alvo) return indice;\n            atual = atual.proximo;\n            indice++;\n        }\n        return -1;\n    }\n}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "aula-03",
+      "titulo": "Aula 03: Algoritmos de Ordenação",
+      "algoritmos": [
+        {
+          "titulo": "Quick Sort",
+          "descricao": "Algoritmo de ordenação eficiente usando divisão e conquista.",
+          "codigos": {
+            "python": "def quick_sort(lista):\n    if len(lista) <= 1:\n        return lista\n    pivo = lista[len(lista) // 2]\n    esquerda = [x for x in lista if x < pivo]\n    meio = [x for x in lista if x == pivo]\n    direita = [x for x in lista if x > pivo]\n    return quick_sort(esquerda) + meio + quick_sort(direita)",
+            "javascript": "function quickSort(lista) {\n    if (lista.length <= 1) return lista;\n    const pivo = lista[Math.floor(lista.length / 2)];\n    const esquerda = lista.filter(x => x < pivo);\n    const meio = lista.filter(x => x === pivo);\n    const direita = lista.filter(x => x > pivo);\n    return [...quickSort(esquerda), ...meio, ...quickSort(direita)];\n}",
+            "php": "function quickSort($lista) {\n    if (count($lista) <= 1) return $lista;\n    $pivo = $lista[(int)(count($lista) / 2)];\n    $esquerda = array_filter($lista, fn($x) => $x < $pivo);\n    $meio = array_filter($lista, fn($x) => $x == $pivo);\n    $direita = array_filter($lista, fn($x) => $x > $pivo);\n    return array_merge(quickSort($esquerda), $meio, quickSort($direita));\n}",
+            "java": "import java.util.*;\n\npublic class QuickSort {\n    public static List<Integer> quickSort(List<Integer> lista) {\n        if (lista.size() <= 1) return lista;\n        int pivo = lista.get(lista.size() / 2);\n        List<Integer> esquerda = new ArrayList<>();\n        List<Integer> meio = new ArrayList<>();\n        List<Integer> direita = new ArrayList<>();\n        for (int x : lista) {\n            if (x < pivo) esquerda.add(x);\n            else if (x == pivo) meio.add(x);\n            else direita.add(x);\n        }\n        List<Integer> resultado = new ArrayList<>();\n        resultado.addAll(quickSort(esquerda));\n        resultado.addAll(meio);\n        resultado.addAll(quickSort(direita));\n        return resultado;\n    }\n}"
+          }
+        }
+      ]
+    }
+  ]
+}

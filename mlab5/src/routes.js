@@ -7,6 +7,8 @@ import { renderPlaygroundView } from './views/PlaygroundView.js';
 import { renderNotebookView } from './views/NotebookView.js';
 import { renderLousaView } from './views/LousaView.js';
 import { renderAdmView } from './views/AdmView.js';
+import { renderLivroMestreView } from './views/LivroMestreView.js';
+import { renderPhpPlaygroundView } from './views/PhpPlaygroundView.js';
 import { NotebookComponent } from './components/NotebookComponent.js';
 
 /**
@@ -123,5 +125,17 @@ export function defineRoutes(router) {
     router.addRoute('adm-cadastro-aulas', '/adm/cadastro-aulas', async (params) => {
         managePlaygroundButton(null);
         return await renderAdmView(router);
+    });
+
+    // Handler para o Livro Mestre (Livro do Professor)
+    router.addRoute('livroMestre', '/livro-mestre', () => {
+        managePlaygroundButton(null);
+        return renderLivroMestreView();
+    });
+
+    // Handler para o Playground PHP
+    router.addRoute('phpPlayground', '/php-playground', () => {
+        managePlaygroundButton(null);
+        return renderPhpPlaygroundView();
     });
 }
