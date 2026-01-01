@@ -1,3 +1,5 @@
+import { FloatingVideo } from '../components/FloatingVideo.js';
+
 /**
  * renderCourseView - Renderiza a página de detalhes de um curso.
  * @param {Course} course - O objeto do curso a ser renderizado.
@@ -52,6 +54,18 @@ export function renderCourseView(course, router) {
                 <div class="card-body">
                     <h2>${course.title}</h2>
                     <p>${course.description}</p>
+                    ${(course.live && course.live.active) ? `
+                        <button id="btn-live-enter" class="button-style" style="background-color: #e74c3c; border-color: #c0392b; animation: pulse 2s infinite;">
+                            🔴 AO VIVO: ${course.live.title || 'Entrar na Sala'}
+                        </button>
+                        <style>
+                            @keyframes pulse {
+                                0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); }
+                                70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+                                100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+                            }
+                        </style>
+                    ` : ''}
                 </div>
             </header>
             <section>
@@ -61,6 +75,14 @@ export function renderCourseView(course, router) {
             </section>
         </div>
     `;
+
+    // Attach event listener for the live button if it exists
+    const liveBtn = viewElement.querySelector('#btn-live-enter');
+    if (liveBtn) {
+        liveBtn.addEventListener('click', () => {
+            new FloatingVideo(course.live.videoId, course.live.title);
+        });
+    }
 
     return viewElement;
 }

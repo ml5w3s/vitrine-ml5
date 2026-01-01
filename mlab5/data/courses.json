@@ -14,6 +14,11 @@
     "id": "algoritmos-essenciais",
     "title": "Algoritmos Essenciais para Júnior",
     "description": "Algoritmos essenciais para desenvolvedores júnior.",
+    "live": {
+        "active": true,
+        "videoId": "jfKfPfyJRdk",
+        "title": "Plantão de Dúvidas: Estruturas de Dados"
+    },
     "image": {
       "desktop": "assets/images/cursos/algoritimos_desktop.jpg",
       "tablet": "assets/images/cursos/algoritimos_tablet.jpg",

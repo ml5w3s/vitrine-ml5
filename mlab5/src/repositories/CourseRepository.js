@@ -29,7 +29,7 @@ class CourseRepository {
             Debug.table('CourseRepository', 'Índice de Cursos (Raw)', courseIndexData);
 
             if (courseIndexData && Array.isArray(courseIndexData)) {
-                return courseIndexData.map(meta => new Course(meta.id, meta.title, meta.description, [], meta.image));
+                return courseIndexData.map(meta => new Course(meta.id, meta.title, meta.description, [], meta.image, meta.live));
             }
             return [];
 
@@ -64,7 +64,7 @@ class CourseRepository {
                 return new Lesson(lessonId, lessonTitle, lessonWrapper, lessonType);
             });
 
-            const course = new Course(courseMeta.id, courseMeta.title, courseMeta.description, lessons, courseMeta.image);
+            const course = new Course(courseMeta.id, courseMeta.title, courseMeta.description, lessons, courseMeta.image, courseMeta.live);
             Debug.log('CourseRepository', `Curso '${courseId}' montado com sucesso.`, course);
             return course;
 

@@ -7,13 +7,16 @@ export class Course {
      * @param {string} title - O título do curso.
      * @param {string} description - A descrição do curso.
      * @param {Lesson[]} lessons - Uma lista de objetos da classe Lesson.
+     * @param {object} image - Metadados da imagem do curso.
+     * @param {object} live - Dados da transmissão ao vivo.
      */
-    constructor(id, title, description, lessons = [], image = null) {
+    constructor(id, title, description, lessons = [], image = null, live = null) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.lessons = lessons;
         this.image = image;
+        this.live = live;
     }
 
     /**
