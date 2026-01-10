@@ -140,24 +140,25 @@ export class PhpPlayground {
         try {
             this.updateStatus('Baixando PHP WebAssembly...', true);
             
-            // Verifica se está rodando localmente sem servidor
             if (window.location.protocol === 'file:') {
                 throw new Error('CORS Error: Módulos ES6 e WebAssembly não funcionam via protocolo "file://". Por favor, use um servidor local.');
             }
 
-            // Importa as funções necessárias do CDN esm.sh
-            const { getPHPLoaderModule, loadPHPRuntime } = await import('https://esm.sh/@php-wasm/web@3.0.35');
+            // Importa as funções necessárias dos pacotes corretos
+            const { PHP, loadPHPRuntime } = await import('https://esm.sh/@php-wasm/universal@3.0.35');
+            const { getPHPLoaderModule } = await import('https://esm.sh/@php-wasm/web@3.0.35');
             
-            this.updateStatus('Carregando runtime PHP 8.2...', true);
-            
-            // Obtém o módulo carregador para a versão específica do PHP (8.2 é uma boa escolha padrão)
+            this.updateStatus('Carregando módulo loader PHP 8.2...', true);
             const loaderModule = await getPHPLoaderModule("8.2");
             
-            // Inicializa o runtime
-            this.php = await loadPHPRuntime(loaderModule);
+            this.updateStatus('Carregando runtime PHP...', true);
+            const phpRuntime = await loadPHPRuntime(loaderModule);
             
-            // Adiciona listener para capturar STDOUT e STDERR
-            this.php.addEventListener('output', (event) => {
+            this.updateStatus('Criando instância do PHP...', true);
+            const php = new PHP(phpRuntime);
+
+            // Adiciona listener para capturar STDOUT
+            php.addEventListener('output', (event) => {
                 let text = '';
                 if (typeof event.detail === 'string') {
                     text = event.detail;
@@ -168,6 +169,16 @@ export class PhpPlayground {
                 }
                 this.appendOutput(text);
             });
+
+            // Adiciona listener para capturar STDERR
+            php.addEventListener('error', (event) => {
+                this.appendOutput(`\nPHP Error: ${event.detail}\n`);
+            });
+
+            this.updateStatus('Aguardando inicialização do módulo...', true);
+            await php.isReady();
+            
+            this.php = php; // Atribui a instância pronta
 
             this.updateStatus('Pronto (PHP 8.2)', false);
             this.runBtn.disabled = false;
