@@ -1,1 +1,37 @@
-node_modules
+# Dependências
+node_modules/
+package-lock.json
+
+# Segredos e Configurações Sensíveis
+client_secret.json
+mlab5/client_secret.json
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# IDEs e Ferramentas de Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.project
+.settings/
+.classpath
+
+# Sistema e Temporários
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache/
+.tmp/
+
+# Documentação Gerada e Builds
+mlab5/docs/html/
+dist/
+build/
+out/
