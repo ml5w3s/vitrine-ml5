@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Cursor</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        /* O script espera um elemento com ID ou variável "cursor" */
+        #cursor {
+            width: 50px; 
+            height: 50px;
+            background-image: url('patas/u_01.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: fixed;
+            pointer-events: none;
+            left: 0;
+            top: 0;
+            /* Centralizar a pegada no mouse */
+            margin-left: -25px;
+            margin-top: -25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+
+    <script src="cursor.js"></script>
+</body>
+</html>
