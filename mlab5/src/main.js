@@ -5,9 +5,11 @@ import { DebugView } from './views/DebugView.js'; // Importar DebugView
 import EventBus from './utils/EventBus.js';
 import { NotasComponent } from './components/NotasComponent.js';
 import { initOverflowManager } from './utils/OverflowManager.js';
+import { AuthService } from './services/AuthService.js';
 
 // Instancia o NotasComponent globalmente para que seja acessível
 const notasComponent = new NotasComponent();
+let authService; // Variável global (neste escopo) para o serviço de autenticação
 
 async function loadComponent(placeholderId, file) {
   try {
@@ -28,9 +30,21 @@ async function loadComponent(placeholderId, file) {
             newScript.setAttribute(attr.name, attr.value);
           }
         });
+        // Injetar o authService no escopo global do script se necessário, 
+        // ou despachar um evento customizado para avisar que o componente carregou
         newScript.textContent = oldScript.textContent;
         oldScript.parentNode.replaceChild(newScript, oldScript);
       });
+      
+      // Notificar que o componente foi carregado (útil para inicializar UI dependente)
+      if (authService) {
+          // Pequeno hack para re-bindar eventos de UI se necessário
+          // Idealmente a UI ouviria o EventBus, mas como o HTML é injetado, 
+          // precisamos garantir que os listeners sejam anexados.
+          // Vamos emitir um evento global de DOM
+          const event = new CustomEvent('component:loaded', { detail: { id: placeholderId } });
+          document.dispatchEvent(event);
+      }
     }
   } catch (error) {
     console.error(error);
@@ -38,6 +52,17 @@ async function loadComponent(placeholderId, file) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DEBUG ORIGIN: ", window.location.origin);
+  // Instancia o EventBus
+  const eventBus = new EventBus();
+  
+  // Inicializa o AuthService
+  authService = new AuthService(eventBus);
+  authService.init();
+
+  // Disponibiliza o authService globalmente para ser acessado por componentes injetados via loadComponent (ex: header)
+  window.mlab5Auth = authService; 
+
   // Anexa o NotasComponent e o DebugView ao body assim que o DOM estiver pronto
   document.body.appendChild(notasComponent.render());
   const debugView = new DebugView(); // Instanciar DebugView
@@ -51,12 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Carrega componentes estáticos (header/footer)
-  loadComponent('header-placeholder', '/vitrine-ml5/mlab5/assets/ui/header.html')
+  loadComponent('header-placeholder', 'assets/ui/header.html')
     .then(() => {
       // O script da navbar agora está embutido no header.html e é executado automaticamente por loadComponent.
+      // No entanto, precisamos garantir que a UI de login atualize se o usuário já estiver logado
+      if (authService.isAuthenticated()) {
+          eventBus.publish('auth:login', authService.getUser());
+      }
     });
 
-  loadComponent('footer-placeholder', '/vitrine-ml5/mlab5/assets/ui/footer.html')
+  loadComponent('footer-placeholder', 'assets/ui/footer.html')
     .then(() => {
         // Conecta os botões do rodapé às suas funcionalidades
         const notasButton = document.getElementById('notas-button');
@@ -74,8 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-  // Instancia o EventBus e o Roteador
-  const eventBus = new EventBus();
+  // Instancia o Roteador
   const router = new Router(eventBus);
 
   // Define as rotas

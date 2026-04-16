@@ -139,9 +139,11 @@ export class PhpPlayground {
     async initPhp() {
         try {
             this.updateStatus('Baixando PHP WebAssembly...', true);
-            
+
             if (window.location.protocol === 'file:') {
-                throw new Error('CORS Error: Módulos ES6 e WebAssembly não funcionam via protocolo "file://". Por favor, use um servidor local.');
+                throw new Error(
+                    'CORS Error: WebAssembly não funciona via file://. Use um servidor local.'
+                );
             }
 
             // Importa as funções necessárias dos pacotes corretos
@@ -186,7 +188,9 @@ export class PhpPlayground {
         } catch (error) {
             console.error("Erro ao carregar PHP WASM:", error);
             this.updateStatus('Erro ao carregar PHP.', false);
-            this.appendOutput(`Erro crítico: Não foi possível carregar o motor PHP.\n${error.message}\nVerifique o console para mais detalhes.`);
+            this.appendOutput(
+                `Erro crítico: Não foi possível carregar o motor PHP.\n${error.message}`
+            );
         }
     }
 
@@ -201,11 +205,12 @@ export class PhpPlayground {
 
         try {
             // Executa o código
-            // A API run do PhpWeb retorna o exit code
-            const exitCode = await this.php.run(code);
+            const result = await this.php.run({
+                code: code
+            });
             
-            if (exitCode !== 0) {
-                this.appendOutput(`\n\n[Processo finalizado com código ${exitCode}]`);
+            if (result.exitCode !== 0) {
+                this.appendOutput(`\n\n[Processo finalizado com código ${result.exitCode}]`);
             }
         } catch (error) {
             this.appendOutput(`\nErro de Execução: ${error.message}`);

@@ -245,6 +245,102 @@
 <script type="module">
   import { courseRepository } from '/vitrine-ml5/mlab5/src/repositories/CourseRepository.js';
 
+  // Auth Logic
+  function initAuthUI() {
+      const authLink = document.querySelector('a[href="#"]:nth-child(1)'); // Pega o "Entrar" (supondo ordem) - Melhor usar ID
+      // Vamos adicionar IDs aos itens de menu para facilitar
+      const navLinks = document.querySelector('.nav-links');
+      
+      // Encontra os links existentes
+      const loginItem = Array.from(navLinks.children).find(li => li.textContent.trim().includes('Entrar'));
+      const signupItem = Array.from(navLinks.children).find(li => li.textContent.trim().includes('Cadastre-se'));
+
+      if (loginItem) loginItem.id = 'nav-login';
+      if (signupItem) signupItem.id = 'nav-signup';
+
+      const authService = window.mlab5Auth;
+      if (!authService) {
+          console.warn('AuthService não encontrado no window');
+          return;
+      }
+
+      // Função para atualizar a UI baseada no estado
+      const updateAuthUI = (user) => {
+          console.log('Header: Atualizando UI de Auth. Usuário:', user ? 'Logado' : 'Deslogado');
+          if (user) {
+              if (loginItem) {
+                  loginItem.innerHTML = `
+                      <a href="#" class="user-profile" style="display: flex; align-items: center; gap: 8px;">
+                          <img src="${user.picture}" alt="${user.name}" style="width: 24px; height: 24px; border-radius: 50%;">
+                          <span>${user.given_name || user.name.split(' ')[0]}</span>
+                      </a>
+                      <ul class="dropdown-content">
+                          <li><a href="#" id="btn-logout">Sair</a></li>
+                      </ul>
+                  `;
+                  loginItem.classList.add('dropdown'); // Adiciona comportamento de dropdown
+                  
+                  // Rebind do evento de logout
+                  setTimeout(() => {
+                      const logoutBtn = document.getElementById('btn-logout');
+                      if (logoutBtn) {
+                          logoutBtn.addEventListener('click', (e) => {
+                              e.preventDefault();
+                              console.log('Header: Clicou em Sair');
+                              authService.signOut();
+                          });
+                      }
+                  }, 100);
+              }
+              if (signupItem) signupItem.style.display = 'none';
+          } else {
+              if (loginItem) {
+                  loginItem.innerHTML = `<a href="#">Entrar</a>`;
+                  loginItem.classList.remove('dropdown');
+                  const loginLink = loginItem.querySelector('a');
+                  if (loginLink) {
+                      loginLink.addEventListener('click', (e) => {
+                          e.preventDefault();
+                          console.log('Header: Clicou em Entrar');
+                          authService.signIn();
+                      });
+                  } else {
+                      console.error('Header: Link "Entrar" não encontrado dentro do item de lista.');
+                  }
+              }
+              if (signupItem) signupItem.style.display = 'block';
+          }
+      };
+
+      // Escuta eventos de login/logout
+      authService.eventBus.subscribe('auth:login', (user) => updateAuthUI(user));
+      authService.eventBus.subscribe('auth:logout', () => updateAuthUI(null));
+
+      // Verifica estado inicial
+      if (authService.isAuthenticated()) {
+          updateAuthUI(authService.getUser());
+      } else {
+          // Bind inicial do botão entrar
+           if (loginItem) {
+              const loginLink = loginItem.querySelector('a');
+              if (loginLink) {
+                  console.log('Header: Adicionando listener inicial ao botão Entrar');
+                  loginLink.addEventListener('click', (e) => {
+                      e.preventDefault();
+                      console.log('Header: Clicou em Entrar (Listener Inicial)');
+                      authService.signIn();
+                  });
+              }
+           } else {
+               console.warn('Header: Item de menu "Entrar" não encontrado na inicialização.');
+           }
+      }
+  }
+
+  // Executa a lógica de Auth após um pequeno delay para garantir que o DOM do header foi processado
+  setTimeout(initAuthUI, 100);
+
+
   function initSearch(inputId, resultsId) {
       const input = document.getElementById(inputId);
       const resultsContainer = document.getElementById(resultsId);
