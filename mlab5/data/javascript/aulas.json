@@ -23,9 +23,6 @@
           "alternativeHeadline": "Paradigmas Principais:",
           "text": "JavaScript moderno (ES6+) combina três paradigmas principais e conceitos transversais essenciais para o desenvolvimento web atual, integrando-se perfeitamente com HTML5 semântico e CSS3 responsivo.",
           "list": [
-            "Imperativo e Estruturado: Base fundamental (controle de fluxo, funções, escopo)",
-            "Funcional: Funções puras, imutabilidade, arrow functions, map/filter/reduce",
-            "Orientado a Objetos: Prototipado e classes ES6, modelagem, encapsulamento",
             "Boas práticas modernas (const/let, modularização, imutabilidade)",
             "Manipulação de DOM moderna (querySelector, classList, eventos)",
             "APIs modernas do navegador (Fetch, LocalStorage, Web Components)",
@@ -34,17 +31,27 @@
         },
         {
           "position": 3,
+          "headline": "Paradigmas de programação",
+          "list": [
+            "Imperativo e Estruturado: Base fundamental (controle de fluxo, funções, escopo)",
+            "Funcional: Funções puras, imutabilidade, arrow functions, map/filter/reduce",
+            "Orientado a Objetos: Prototipado e classes ES6, modelagem, encapsulamento"
+          ],
           "image": {
-            "desktop": "assets/images/paradigmas_js_desktop.png",
-            "tablet": "assets/images/paradigmas_js_tablet.png",
-            "mobile": "assets/images/paradigmas_js_mobile.png"
+            "desktop": "assets/images/cursos/js/paradigmas_js_desktop.png",
+            "tablet": "assets/images/cursos/js/paradigmas_js_tablet.png",
+            "mobile": "assets/images/cursos/js/paradigmas_js_mobile.png"
           }
         },
         {
           "position": 4,
           "headline": "Let vs Var vs Const - Declarações Modernas",
           "alternativeHeadline": "Comparação das Declarações:",
-          "text": "O ES6 introduziu novas formas de declaração de variáveis que resolvem problemas do var tradicional e promovem código mais previsível e seguro.",
+          "image": {
+            "desktop": "assets/images/cursos/js/letvarconst.png",
+            "tablet": "assets/images/cursos/js/letvarconst.png",
+            "mobile": "assets/images/cursos/js/letvarconst.png"
+          },
           "list": [
             "var: Escopo de função, hoisting, redeclaração permitida",
             "let: Escopo de bloco, hoisting sem inicialização, redeclaração proibida",
@@ -53,7 +60,17 @@
         },
         {
           "position": 5,
-          "alternativeHeadline": "Exemplos Práticos:"
+          "alternativeHeadline": "Exemplos Práticos:",
+          "text": "O ES6 introduziu novas formas de declaração de variáveis que resolvem problemas do var tradicional e promovem código mais previsível e seguro..",
+          "code": [
+            "const nome = 'João';",
+            "let idade = 20;"
+          ],
+          "list": [
+            "const → não muda.",
+            "let → pode mudar.",
+            "var → evite o var"
+          ]
         },
         {
           "position": 6,
@@ -70,7 +87,18 @@
         },
         {
           "position": 7,
-          "alternativeHeadline": "Comparação: Função Tradicional vs Arrow Function:"
+          "alternativeHeadline": "Comparação: Função Tradicional vs Arrow Function:",
+          "code": [
+            "// Função tradicional",
+            "const somaPadrao = function(a, b) {",
+              "return a + b;",
+            "};",
+          "console.log(somaPadrao(2, 3)); // 5",
+          "",
+          "//Arrow Function",
+          "const somaArrow = (a, b) => a + b;",
+          "console.log(somaArrow(2, 3)); // 5"
+          ]
         },
         {
           "position": 8,
