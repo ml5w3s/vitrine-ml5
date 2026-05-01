@@ -1,0 +1,41 @@
+Estou desenvolvendo um sistema para gestão operacional e financeira de uma empresa de logística reversa de óleo lubrificante.
+
+O sistema será orientado a eventos (event-driven architecture), onde um aplicativo simula a operação de campo (coletas e pagamentos via Pix).
+
+Objetivo do sistema:
+- Registrar coletas realizadas em campo
+- Registrar pagamentos no momento da coleta
+- Gerar eventos a partir dessas ações
+- Propagar esses eventos para outros serviços (financeiro, BI, etc.)
+- Evitar duplicidade de dados e retrabalho
+
+Arquitetura inicial:
+- Backend em Node.js (API REST)
+- Banco de dados PostgreSQL
+- Sistema de filas (BullMQ com Redis)
+- Um app frontend simples para simulação das operações
+
+Eventos principais:
+- coleta_criada
+- coleta_finalizada
+- pagamento_confirmado
+
+Cada evento deve ser persistido e enviado para uma fila para processamento assíncrono.
+
+Requisitos técnicos importantes:
+- Idempotência (evitar duplicação de eventos)
+- Estrutura de logs clara
+- Facilidade de integração futura com APIs externas (ex: sistemas financeiros)
+- Separação entre camadas (API, serviços, workers)
+
+O sistema deve ser simples, funcional e preparado para escalar.
+
+Quero ajuda para:
+- estruturar código
+- definir padrões de arquitetura
+- implementar filas e workers
+- organizar eventos e payloads
+- boas práticas de backend
+
+Sempre priorize simplicidade, clareza e escalabilidade.
+Evite soluções excessivamente complexas neste momento.
