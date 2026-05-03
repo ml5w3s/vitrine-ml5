@@ -39,3 +39,42 @@ Fase inicial de prototipação (MVP em desenvolvimento)
 ## 👨‍💻 Objetivo técnico
 
 Validar arquitetura antes de integrar com sistemas reais como financeiro e frota.
+
+## 📦 Estado atual do projeto
+
+O sistema já possui:
+
+- API inicial estruturada
+- Banco de dados PostgreSQL modelado
+- Estrutura de eventos definida
+
+---
+
+## 🗄️ Banco de dados
+
+O banco foi modelado com base na operação de coletas e pagamentos.
+
+- Script de criação: `infra/db/init.sql`
+- Diagrama: `docs/databaseder.md`
+
+---
+
+## 🚀 Como rodar (modo simples)
+
+### Opção 1 — Usando Docker (recomendado para devs)
+
+docker-compose up
+
+### Opção 2 — Sem Docker
+
+- Instalar PostgreSQL local
+- Executar script: `infra/db/init.sql`
+
+---
+
+## 📚 Documentação
+
+- Arquitetura: `docs/architecture.md`
+- Fluxos: `docs/flows.md`
+- Eventos: `docs/events.md`
+- Banco (DER): `docs/databaseder.md`

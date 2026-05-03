@@ -1,0 +1,18 @@
+Interface de Dadas (SQL Schema)
+infra/db/init.sql
+tabelas: coletas, pagamentos, outbox
+
+Interface de Infraestrutura (Docker)
+infra/docker/docker-compose.yml
+PostgreSQL: Porta 5432
+Redis: Porta 6379 (onde os eventos serão processados via BullMQ)
+
+Interface de Design (documentação)
+docs/architecture.md 
+
+Acessar base com ferramenta visual:
+Host: localhost
+Porta: 5432
+Usuário: user_oleo
+Senha: password_oleo
+Banco de dados: oleo_db
