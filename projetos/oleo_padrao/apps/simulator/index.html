@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Óleo Padrão - Simulador de Campo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🛢️ Óleo Padrão</h1>
+        <p>Logística Reversa - Simulador de Operação de Campo</p>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Registrar Nova Coleta</h2>
+            <form id="coleta-form">
+                <div class="field">
+                    <label for="cliente_id">ID do Cliente:</label>
+                    <input type="text" id="cliente_id" name="cliente_id" placeholder="Ex: 550e8400-e29b..." required>
+                </div>
+
+                <div class="field">
+                    <label for="volume_estimado">Volume Estimado (L):</label>
+                    <input type="number" id="volume_estimado" name="volume_estimado" step="0.1" placeholder="Ex: 150.5" required>
+                </div>
+
+                <div class="field">
+                    <label>ID da Operação (Gerado):</label>
+                    <code id="op-id-display">Aguardando...</code>
+                </div>
+
+                <button type="submit" id="btn-enviar">Finalizar Registro</button>
+            </form>
+        </section>
+
+        <section id="status-section">
+            <h2>Histórico Recente</h2>
+            <ul id="log-list">
+                <li class="empty">Nenhuma operação realizada nesta sessão.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Vitrine ML5 - Laboratório de Experimentos</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

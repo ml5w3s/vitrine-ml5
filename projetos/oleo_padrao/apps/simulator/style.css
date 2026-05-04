@@ -1,0 +1,114 @@
+:root {
+    --bg-color: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --text-color: #e0e0e0;
+    --primary-color: #f39c12; /* Laranja Óleo */
+    --accent-color: #3498db;
+    --success-color: #27ae60;
+    --error-color: #e74c3c;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 { margin: 0; color: var(--primary-color); }
+
+main {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+h2 { margin-top: 0; font-size: 1.2rem; border-left: 4px solid var(--accent-color); padding-left: 10px; }
+
+.field {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label { font-weight: bold; font-size: 0.9rem; }
+
+input {
+    background: #121212;
+    border: 1px solid #444;
+    padding: 0.8rem;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+code {
+    background: #121212;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: black;
+    border: none;
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.1s;
+    width: 100%;
+}
+
+button:hover { filter: brightness(1.1); }
+button:active { transform: scale(0.98); }
+
+#log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+#log-list li {
+    padding: 0.5rem;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-success { color: var(--success-color); }
+.status-error { color: var(--error-color); }
+.empty { color: #888; font-style: italic; }

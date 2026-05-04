@@ -1,9 +1,14 @@
 import 'dotenv/config';
 import Fastify from 'fastify';
+import cors from '@fastify/cors';
 import { ColetaController } from './controllers/ColetaController.js';
 
 const fastify = Fastify({
   logger: true
+});
+
+fastify.register(cors, {
+  origin: '*', // Em produção, você deve restringir isso
 });
 
 const coletaController = new ColetaController();
