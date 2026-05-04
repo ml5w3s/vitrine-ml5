@@ -1,14 +1,19 @@
 import 'dotenv/config';
 import Fastify from 'fastify';
+import { ColetaController } from './controllers/ColetaController.js';
 
 const fastify = Fastify({
   logger: true
 });
 
-// Placeholder para rotas futuramente
+const coletaController = new ColetaController();
+
+// Rotas
 fastify.get('/health', async () => {
   return { status: 'ok', timestamp: new Date().toISOString() };
 });
+
+fastify.post('/v1/coletas', (req, rep) => coletaController.handleCreate(req, rep));
 
 const start = async () => {
   try {
