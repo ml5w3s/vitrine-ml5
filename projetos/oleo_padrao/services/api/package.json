@@ -1,0 +1,23 @@
+{
+  "name": "@oleo/api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "@oleo/shared": "*",
+    "fastify": "^4.26.2",
+    "pg": "^8.11.3",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/pg": "^8.11.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  }
+}
