@@ -3,48 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Óleo Padrão - Simulador de Campo</title>
+    <title>Sampaio Óleo - MR. OLUC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>🛢️ Óleo Padrão</h1>
-        <p>Logística Reversa - Simulador de Operação de Campo</p>
+        <div class="header-content">
+            <h1>Sampaio Óleo</h1>
+            <h2>Simulardor da tela apresentada do MR. OLUC</h2>
+        </div>
     </header>
 
     <main>
-        <section id="form-section">
-            <h2>Registrar Nova Coleta</h2>
-            <form id="coleta-form">
-                <div class="field">
-                    <label for="cliente_id">ID do Cliente:</label>
-                    <input type="text" id="cliente_id" name="cliente_id" placeholder="Ex: 550e8400-e29b..." required>
+        <form id="coleta-form">
+            <!-- Seção do Fornecedor -->
+            <section class="card">
+                <h3>Dados do Fornecedor</h3>
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="nome_razao_social">Nome/Razão social:</label>
+                        <input type="text" id="nome_razao_social" name="nome_razao_social" required>
+                    </div>
+                    <div class="field">
+                        <label for="cpf_cnpj">CPF/CNPJ:</label>
+                        <input type="text" id="cpf_cnpj" name="cpf_cnpj" required>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="tipo_fornecedor">Tipo do Fornecedor:</label>
+                        <input type="text" id="tipo_fornecedor" name="tipo_fornecedor">
+                    </div>
+                    <div class="field">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="field">
+                        <label for="cep">CEP:</label>
+                        <input type="text" id="cep" name="cep">
+                    </div>
+                    <div class="field">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco">
+                    </div>
+                    <div class="field">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" name="cidade">
+                    </div>
+                </div>
+                
+                <div class="field checkbox">
+                    <input type="checkbox" id="tem_contrato" name="tem_contrato">
+                    <label for="tem_contrato">Tem contrato?</label>
+                </div>
+            </section>
+
+            <!-- Dados da Coleta -->
+            <section class="card">
+                <h3>Dados da Coleta</h3>
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="volume_coletado">Litros coletados:</label>
+                        <input type="number" id="volume_coletado" name="volume_coletado" step="0.1" required>
+                    </div>
+                    <div class="field">
+                        <label for="valor_a_pagar">Valor a pagar:</label>
+                        <input type="number" id="valor_a_pagar" name="valor_a_pagar" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="numero_inicio">Número Início:</label>
+                        <input type="number" id="numero_inicio" name="numero_inicio">
+                    </div>
+                    <div class="field">
+                        <label for="numero_fim">Número Fim:</label>
+                        <input type="number" id="numero_fim" name="numero_fim">
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="data_devolucao">Data Devolução:</label>
+                        <input type="date" id="data_devolucao" name="data_devolucao">
+                    </div>
+                    <div class="field">
+                        <label for="cco">CCO:</label>
+                        <input type="text" id="cco" name="cco">
+                    </div>
                 </div>
 
                 <div class="field">
-                    <label for="volume_estimado">Volume Estimado (L):</label>
-                    <input type="number" id="volume_estimado" name="volume_estimado" step="0.1" placeholder="Ex: 150.5" required>
+                    <label for="observacoes">Observações:</label>
+                    <textarea id="observacoes" name="observacoes" rows="2"></textarea>
                 </div>
+            </section>
 
+            <!-- Pagamento -->
+            <section class="card">
+                <h3>Pagamento</h3>
                 <div class="field">
-                    <label>ID da Operação (Gerado):</label>
-                    <code id="op-id-display">Aguardando...</code>
+                    <label for="metodo_pagamento">Forma de Pagamento:</label>
+                    <select id="metodo_pagamento" name="metodo_pagamento" required>
+                        <option value="PIX">PIX</option>
+                        <option value="DINHEIRO">DINHEIRO</option>
+                        <option value="CONTRATO">CONTRATO</option>
+                    </select>
                 </div>
 
-                <button type="submit" id="btn-enviar">Finalizar Registro</button>
-            </form>
-        </section>
+                <div id="pix-fields">
+                    <div class="grid-2">
+                        <div class="field">
+                            <label for="chave_pix_1">Chave PIX 1:</label>
+                            <input type="text" id="chave_pix_1" name="chave_pix_1">
+                        </div>
+                        <div class="field">
+                            <label for="tipo_pix_1">Tipo PIX 1:</label>
+                            <input type="text" id="tipo_pix_1" name="tipo_pix_1">
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="field">
+                            <label for="chave_pix_2">Chave PIX 2:</label>
+                            <input type="text" id="chave_pix_2" name="chave_pix_2">
+                        </div>
+                        <div class="field">
+                            <label for="tipo_pix_2">Tipo PIX 2:</label>
+                            <input type="text" id="tipo_pix_2" name="tipo_pix_2">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="actions">
+                <div class="idempotency">
+                    <span>ID Operação:</span>
+                    <code id="op-id-display">...</code>
+                </div>
+                <button type="submit" id="btn-enviar">Finalizar Coleta</button>
+            </div>
+        </form>
 
         <section id="status-section">
-            <h2>Histórico Recente</h2>
+            <h3>Últimas Coletas</h3>
             <ul id="log-list">
-                <li class="empty">Nenhuma operação realizada nesta sessão.</li>
+                <li class="empty">Nenhuma coleta registrada.</li>
             </ul>
         </section>
     </main>
 
     <footer>
-        <p>Vitrine ML5 - Laboratório de Experimentos</p>
+        <p>Vitrine ML5 - Projeto Óleo Padrão</p>
     </footer>
 
     <script src="app.js"></script>

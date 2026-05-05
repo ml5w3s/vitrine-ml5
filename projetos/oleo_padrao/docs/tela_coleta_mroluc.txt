@@ -1,0 +1,254 @@
+Sampaio óleo
+
+MR. OLUC
+Registro
+Nome/Razão social/CPF/CNPJ
+Origem do resíduo
+Motorista responsável
+Data/hora/local
+Litros coletados
+Valor a pagar
+Nome do Fornecedor:
+Tipo do Fornecedor
+CPF/CNPJ
+Tem contrato?
+Email:
+Chave PIX 1:
+Tipo:
+Chave PIX 2:
+Tipo
+Data do cadastro
+Endereço
+Cidade
+CEP
+CCO
+PIX;DINHEIRO;CONTRATO
+Finalizar coleta
+{
+	"umeroInicio": 0,
+	"umeroFim": 0,
+	dataDevolucao": "2026-0503",
+	"observacoes": "string"
+}
+
+FINANCEIRO
+Registros
+Contas a pagar
+Contas a receber
+Fluxo de caixa
+Conciliação
+Pagamentos
+Emissão financeira
+
+BI E INDICADORES
+Dashboards
+Produtividade
+Indicadores
+Análise gerencial
+
+GESTÃO DE FROTA
+Manutenção
+Combustível
+Pneus
+Rastreamento
+Disponibilidade
+Custo por veículo
+
+PONTOS A SER OBSERVADOS
+Integração
+Governança de dados
+Processo padronizado
+Centro único de decisão
+
+CONTROLE COMUMENTE USADOS
+🧭 1. Controle de Receita por Coleta (o DNA do negócio)
+
+Cada coleta é uma unidade financeira.
+
+Você precisa saber, por coleta:
+
+cliente (gerador)
+volume coletado (litros)
+valor pago/recebido
+tipo de operação (compra, retirada, contrato)
+forma de pagamento (Pix, faturado)
+
+👉 Métrica-chave:
+
+R$/litro por coleta
+
+Sem isso, você pode estar rodando muito… e ganhando pouco.
+
+🚛 2. Custo por Rota
+
+Aqui mora metade do lucro (ou do prejuízo).
+
+Para cada rota:
+
+combustível
+pedágio
+tempo do motorista
+desgaste do veículo
+distância rodada
+
+👉 Métrica:
+
+Custo total da rota / litros coletados
+
+Se esse número sobe, sua margem evapora silenciosamente.
+
+⚙️ 3. Custo por Veículo
+
+Integra direto com gestão de frota (tipo Sofit):
+
+manutenção preventiva
+corretiva
+consumo de combustível
+custo por km
+custo por litro transportado
+
+👉 Métrica poderosa:
+
+R$/litro por caminhão
+
+Você descobre quais veículos são heróis… e quais são vilões disfarçados.
+
+📉 4. Margem por Coleta / Cliente
+
+Não basta faturar.
+
+Você precisa saber:
+
+quanto cada cliente gera de margem real
+quais são deficitários
+quais sustentam o negócio
+
+👉 Fórmula mental:
+
+receita – (custo da rota proporcional + custo operacional)
+
+💸 5. Controle de Pagamentos na Origem (Pix operacional)
+
+Esse é crítico no seu modelo.
+
+Você precisa garantir:
+
+todo Pix feito → registrado
+todo Pix registrado → refletido no financeiro
+zero diferença entre operação e caixa
+
+👉 Controle essencial:
+
+Conciliação diária automática
+
+Se deixar acumular:
+
+vira bola de neve invisível.
+
+📊 6. Fluxo de Caixa Diário (não mensal)
+
+Esquece visão mensal apenas.
+
+Aqui o jogo é diário:
+
+entradas (coletas)
+saídas (combustível, manutenção, equipe)
+saldo operacional
+
+👉 Por quê?
+
+Porque o custo roda todo dia.
+E o caixa pode morrer antes do lucro aparecer.
+
+🧾 7. Contas a Pagar Operacionais
+
+Principais:
+
+combustível
+manutenção
+pneus
+folha de pagamento
+terceirizados
+fretes
+
+👉 Importante:
+
+classificar por centro de custo, não só por categoria.
+
+🧮 8. Custo por Litro (a métrica rainha 👑)
+
+Essa é a síntese de tudo:
+
+quanto custa coletar 1 litro de óleo
+
+Inclui:
+
+frota
+equipe
+operação
+indiretos
+
+👉 E você compara com:
+
+valor de venda / repasse para refinaria
+
+Se isso não for acompanhado:
+
+você pode crescer… e perder dinheiro em escala.
+
+🏭 9. Receita por Destinação (refinarias)
+
+Controle:
+
+quanto cada refinaria paga
+volume enviado
+condições comerciais
+prazos
+
+👉 Permite:
+
+negociar melhor
+escolher melhor destino
+maximizar margem
+⚠️ 10. Controle de Perdas Operacionais
+
+Esse é silencioso e perigoso:
+
+divergência de volume
+erro de registro
+vazamentos
+coleta não registrada
+pagamento não conciliado
+
+👉 Isso não aparece no DRE fácil.
+
+Mas corrói o lucro.
+
+📦 11. Controle de Compliance Ambiental (financeiro também)
+
+Não é só regulatório.
+
+Impacta financeiramente:
+
+multas
+licenças
+certificados
+rastreabilidade
+
+👉 Empresas organizadas monetizam isso (inclusive comercialmente).
+
+📈 12. Indicadores de Produtividade
+
+Ligação direta com financeiro:
+
+coletas por dia
+litros por rota
+litros por motorista
+tempo por coleta
+
+👉 Mais produtividade = menor custo por litro
+
+FROTAS
+sofit
+
+

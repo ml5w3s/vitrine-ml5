@@ -13,8 +13,18 @@ export class ColetaController {
     try {
       const dto = request.body as CreateColetaDTO;
       
-      if (!dto.id_operacao || !dto.cliente_id || !dto.volume_estimado) {
-        return reply.status(400).send({ error: 'Campos obrigatórios ausentes' });
+      const requiredFields = [
+        'id_operacao', 
+        'fornecedor_id', 
+        'volume_coletado', 
+        'valor_a_pagar', 
+        'metodo_pagamento'
+      ];
+
+      for (const field of requiredFields) {
+        if (dto[field as keyof CreateColetaDTO] === undefined || dto[field as keyof CreateColetaDTO] === null) {
+          return reply.status(400).send({ error: `Campo obrigatório ausente: ${field}` });
+        }
       }
 
       const coleta = await this.service.registrarColeta(dto);

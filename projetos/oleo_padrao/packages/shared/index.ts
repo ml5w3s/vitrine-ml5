@@ -2,16 +2,57 @@
  * Definições compartilhadas para o ecossistema Óleo Padrão
  */
 
+// --- Domínio de Fornecedores ---
+
+export interface Fornecedor {
+  id: string;
+  nome_razao_social: string;
+  cpf_cnpj: string;
+  tipo_fornecedor?: string;
+  email?: string;
+  endereco?: string;
+  cidade?: string;
+  cep?: string;
+  data_cadastro: Date;
+}
+
+export interface CreateFornecedorDTO {
+  nome_razao_social: string;
+  cpf_cnpj: string;
+  tipo_fornecedor?: string;
+  email?: string;
+  endereco?: string;
+  cidade?: string;
+  cep?: string;
+}
+
 // --- Domínio de Coletas ---
 
 export type ColetaStatus = 'pendente' | 'finalizada' | 'cancelada';
+export type MetodoPagamento = 'PIX' | 'DINHEIRO' | 'CONTRATO';
 
 export interface Coleta {
   id: string;
   id_operacao: string; // Chave de idempotência
-  cliente_id: string;
-  volume_estimado: number;
-  volume_coletado?: number;
+  fornecedor_id: string;
+  volume_coletado: number;
+  valor_a_pagar: number;
+  metodo_pagamento: MetodoPagamento;
+  
+  // PIX
+  chave_pix_1?: string;
+  tipo_pix_1?: string;
+  chave_pix_2?: string;
+  tipo_pix_2?: string;
+
+  // Logística/Controle
+  numero_inicio?: number;
+  numero_fim?: number;
+  data_devolucao?: string;
+  observacoes?: string;
+  cco?: string;
+  tem_contrato: boolean;
+
   status: ColetaStatus;
   criado_at: Date;
   atualizado_at: Date;
@@ -19,14 +60,28 @@ export interface Coleta {
 
 export interface CreateColetaDTO {
   id_operacao: string;
-  cliente_id: string;
-  volume_estimado: number;
+  fornecedor_id: string;
+  volume_coletado: number;
+  valor_a_pagar: number;
+  metodo_pagamento: MetodoPagamento;
+  
+  chave_pix_1?: string;
+  tipo_pix_1?: string;
+  chave_pix_2?: string;
+  tipo_pix_2?: string;
+
+  numero_inicio?: number;
+  numero_fim?: number;
+  data_devolucao?: string;
+  observacoes?: string;
+  cco?: string;
+  tem_contrato: boolean;
 }
 
 // --- Domínio de Pagamentos ---
 
 export type PagamentoStatus = 'pendente' | 'confirmado' | 'falha';
-export type PagamentoMetodo = 'pix';
+export type PagamentoMetodo = 'pix' | 'dinheiro' | 'contrato';
 
 export interface Pagamento {
   id: string;

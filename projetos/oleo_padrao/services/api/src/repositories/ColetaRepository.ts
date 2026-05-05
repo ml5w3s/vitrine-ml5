@@ -16,21 +16,47 @@ export class ColetaRepository {
     try {
       await client.query('BEGIN');
 
-      // 1. Inserir a Coleta
-      const coletaResult = await client.query(
-        `INSERT INTO coletas (cliente_id, volume_estimado, id_operacao) 
-         VALUES ($1, $2, $3) 
-         RETURNING *`,
-        [dto.cliente_id, dto.volume_estimado, dto.id_operacao]
-      );
+      // 1. Inserir a Coleta com todos os novos campos
+      const query = `
+        INSERT INTO coletas (
+          id_operacao, fornecedor_id, volume_coletado, valor_a_pagar, metodo_pagamento,
+          chave_pix_1, tipo_pix_1, chave_pix_2, tipo_pix_2,
+          numero_inicio, numero_fim, data_devolucao, observacoes, cco, tem_contrato, status
+        ) 
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) 
+        RETURNING *
+      `;
 
+      const values = [
+        dto.id_operacao,
+        dto.fornecedor_id,
+        dto.volume_coletado,
+        dto.valor_a_pagar,
+        dto.metodo_pagamento,
+        dto.chave_pix_1 || null,
+        dto.tipo_pix_1 || null,
+        dto.chave_pix_2 || null,
+        dto.tipo_pix_2 || null,
+        dto.numero_inicio || null,
+        dto.numero_fim || null,
+        dto.data_devolucao || null,
+        dto.observacoes || null,
+        dto.cco || null,
+        dto.tem_contrato,
+        'pendente'
+      ];
+
+      const coletaResult = await client.query(query, values);
       const newColeta = coletaResult.rows[0];
 
-      // 2. Inserir no Outbox (Mesma Transação)
+      // 2. Inserir no Outbox (Mesma Transação) - Payload enriquecido
       const eventPayload = {
         coleta_id: newColeta.id,
         id_operacao: newColeta.id_operacao,
-        volume_estimado: newColeta.volume_estimado,
+        fornecedor_id: newColeta.fornecedor_id,
+        volume_coletado: newColeta.volume_coletado,
+        valor_a_pagar: newColeta.valor_a_pagar,
+        metodo_pagamento: newColeta.metodo_pagamento
       };
 
       await client.query(
