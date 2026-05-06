@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "test": "vitest run"
   },
   "dependencies": {
     "@fastify/cors": "^11.2.0",
@@ -20,6 +21,7 @@
     "@types/node": "^20.11.24",
     "@types/pg": "^8.11.2",
     "tsx": "^4.7.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^3.0.0"
   }
 }
