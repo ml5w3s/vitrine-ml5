@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal da Quadra - Prefeitura Comunitária</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <img src="assets/images/marca.png" alt="Logo Prefeitura Comunitária" class="hero-logo">
+            </div>
+        </div>
+    </header>
+
+    <nav class="metro-nav">
+        <div class="container">
+            <ul class="nav-lines">
+                <li class="line-item yellow" data-target="avisos">
+                    <span class="dot"></span>
+                    <span class="label">Avisos</span>
+                </li>
+                <li class="line-item blue" data-target="transparencia">
+                    <span class="dot"></span>
+                    <span class="label">Transparência</span>
+                </li>
+                <li class="line-item green" data-target="comunidade">
+                    <span class="dot"></span>
+                    <span class="label">Comunidade</span>
+                </li>
+                <li class="line-item red" data-target="mapa">
+                    <span class="dot"></span>
+                    <span class="label">Mapa</span>
+                </li>
+                <li class="line-item dark" data-target="admin">
+                    <span class="dot"></span>
+                    <span class="label">Admin</span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content-area">
+        <section id="avisos" class="section active">
+            <h2>Avisos Importantes</h2>
+            <div id="avisos-list" class="grid-cards">
+                <!-- Carregado via JS -->
+            </div>
+            <a href="#" class="btn-whatsapp">Entrar no WhatsApp da Quadra</a>
+        </section>
+
+        <section id="transparencia" class="section">
+            <h2>Transparência</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>Atas</h3>
+                    <p>Documentos das reuniões mensais.</p>
+                </div>
+                <div class="card">
+                    <h3>Prestação de Contas</h3>
+                    <p>Relatórios financeiros da quadra.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="admin" class="section">
+            <h2>Painel de Gestão</h2>
+            <p class="subtitle" style="margin-bottom: 1rem;">Crie novos avisos para o portal.</p>
+            
+            <div class="card admin-form-card">
+                <form id="post-form">
+                    <div class="form-group">
+                        <label for="post-titulo">Título do Aviso</label>
+                        <input type="text" id="post-titulo" placeholder="Ex: Falta de Luz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-desc">Descrição</label>
+                        <textarea id="post-desc" rows="3" placeholder="Detalhes do comunicado..." required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="post-data">Data</label>
+                            <input type="text" id="post-data" value="24/05/2026">
+                        </div>
+                        <div class="form-group">
+                            <label for="post-tipo">Tipo</label>
+                            <select id="post-tipo">
+                                <option value="info">Informativo</option>
+                                <option value="urgente">Urgente</option>
+                                <option value="evento">Evento</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-generate">Gerar Postagem</button>
+                </form>
+            </div>
+
+            <div id="result-area" class="result-area" style="display: none;">
+                <h3>Conteúdo Gerado</h3>
+                <p>Copie o código abaixo e envie para o administrador ou cole no `data.js`:</p>
+                <pre id="json-output"></pre>
+                <button id="btn-copy" class="btn-secondary">Copiar Código</button>
+                <a id="whatsapp-send" href="#" class="btn-whatsapp" style="margin-top: 1rem;">Enviar via WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 Portal da Quadra - Projeto Comunitário</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

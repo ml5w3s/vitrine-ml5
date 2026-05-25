@@ -1,0 +1,81 @@
+Vamos trabalhar em um projeto, frontend, de Estrutura híbrida: “Institucional comunitário”
+
+Imagine algo entre:
+
+um mini portal de bairro,
+uma central administrativa,
+e um mural de condomínio aberto.
+
+Algo simples, rápido e acessível pelo celular, exemplo:
+
+saber se faltará água;
+ver a ata;
+descobrir quando é a reunião;
+acessar um telefone;
+votar;
+reclamar de iluminação;
+acompanhar melhorias.
+
+O ideal é que o site tenha uma arquitetura quase de estação de metrô: poucas linhas, placas claras, ninguém se perde. 🚇
+
+Algo assim:
+
+Página inicial
+Avisos importantes
+Próxima reunião
+Botão “Entrar no WhatsApp”
+Últimas atualizações
+Ocorrências da quadra
+Transparência
+Atas
+Estatuto
+Prestação de contas
+Documentos
+Comunidade
+Enquetes
+Sugestões
+Voluntários
+Campanhas
+Serviços
+Contatos úteis
+Administração regional
+Segurança
+SLU
+Neoenergia
+Caesb
+Eleições
+Regras
+Calendário
+Chapas
+Resultados
+Extra interessante
+
+Uma coisa que encaixa muito em Brasília:
+
+“Mapa da Quadra”
+
+Com:
+
+blocos;
+comércio;
+pontos problemáticos;
+árvores;
+iluminação;
+câmeras;
+áreas comuns.
+
+Criar uma sensação de pertencimento. A quadra vira quase um pequeno guia urbano. 🌳📍
+
+Evitaria algo pesado ou “prefeitura demais”. Se parecer burocrático demais, as pessoas abandonam. O segredo está em:
+
+visual limpo;
+acesso rápido;
+linguagem humana;
+foco em celular;
+pouca complexidade.
+
+Uma boa combinação para começar:
+
+Frontend: simples bem feito;
+Integração com WhatsApp (talvés);
+    Estrutura simples de mural de avisos.
