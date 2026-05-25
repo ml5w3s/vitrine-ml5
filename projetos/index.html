@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitrine de Projetos - Laboratório ML5</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8f9fa;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-dim);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-footer span {
+            margin-right: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .badge-new { background-color: #064e3b; color: #34d399; }
+        .badge-exp { background-color: #450a0a; color: #f87171; }
+        .badge-prod { background-color: #1e3a8a; color: #60a5fa; }
+
+        footer {
+            margin-top: auto;
+            padding-top: 4rem;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 640px) {
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vitrine ML5</h1>
+        <p>Laboratório de Experimentos e Protótipos</p>
+    </header>
+
+    <div class="grid">
+        <!-- Prefeitura -->
+        <a href="prefeitura/index.html" class="card">
+            <div>
+                <span class="badge badge-new">Novo</span>
+                <div class="card-icon">🏛️</div>
+                <h2>Portal da Quadra</h2>
+                <p>Portal comunitário focado em Brasília, com design inspirado em sistemas de metrô. Gestão de avisos e transparência.</p>
+            </div>
+            <div class="card-footer">
+                <span>Explorar projeto</span> →
+            </div>
+        </a>
+
+        <!-- Lousa -->
+        <a href="lousa/index.html" class="card">
+            <div>
+                <span class="badge badge-exp">Experimental</span>
+                <div class="card-icon">🎨</div>
+                <h2>Lousa Digital</h2>
+                <p>Ferramenta de quadro branco simples para brainstorming e anotações rápidas direto no navegador.</p>
+            </div>
+            <div class="card-footer">
+                <span>Abrir ferramenta</span> →
+            </div>
+        </a>
+
+        <!-- Óleo Padrão -->
+        <a href="oleo_padrao/apps/simulator/index.html" class="card">
+            <div>
+                <span class="badge badge-prod">Simulador</span>
+                <div class="card-icon">🛢️</div>
+                <h2>Óleo Padrão</h2>
+                <p>Simulador de sistema para gestão e coleta de óleo, focado em fluxos administrativos e logística.</p>
+            </div>
+            <div class="card-footer">
+                <span>Ver simulador</span> →
+            </div>
+        </a>
+    </div>
+
+    <footer>
+        &copy; 2026 Laboratório ML5 - Desenvolvido com Vanilla Tech
+    </footer>
+</body>
+</html>
