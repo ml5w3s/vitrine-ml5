@@ -16,9 +16,8 @@
             margin: 0;
         }
         #chat-container {
-            width: 450px;
-            max-width: 95%;
-            height: 85vh;
+            width: 400px;
+            max-width: 90%;
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -33,87 +32,84 @@
             text-align: center;
             font-weight: bold;
             font-size: 1.2rem;
-            flex-shrink: 0;
         }
         #chat-messages {
             flex: 1;
             padding: 15px;
             overflow-y: auto;
+            max-height: 400px;
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
         .message {
-            padding: 10px 14px;
-            border-radius: 18px;
-            max-width: 85%;
+            padding: 8px 12px;
+            border-radius: 15px;
+            max-width: 80%;
             font-size: 0.95rem;
-            line-height: 1.4;
-            word-wrap: break-word;
         }
         .bot {
-            background: #f1f2f6;
+            background: #e9ecef;
             align-self: flex-start;
-            border-bottom-left-radius: 4px;
+            border-bottom-left-radius: 2px;
         }
         .user {
             background: #ff9f43;
             color: white;
             align-self: flex-end;
-            border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 2px;
         }
         #chat-input-area {
             display: flex;
-            padding: 12px;
+            padding: 10px;
             border-top: 1px solid #eee;
-            background: #fff;
-            flex-shrink: 0;
         }
         #chat-input {
             flex: 1;
-            padding: 12px 15px;
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 25px;
+            border-radius: 20px;
             outline: none;
-            font-size: 16px; /* Evita zoom automático no iOS */
         }
         #send-btn {
             background: #ff9f43;
             color: white;
             border: none;
-            padding: 0 18px;
+            padding: 8px 15px;
             margin-left: 8px;
-            border-radius: 25px;
+            border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
-            transition: background 0.3s;
         }
-        #send-btn:active {
+        #send-btn:hover {
             background: #ee5253;
         }
         .back-link {
             text-align: center;
-            padding: 8px;
-            font-size: 0.85rem;
-            background: #f8f9fa;
+            padding: 10px;
+            font-size: 0.8rem;
         }
         .back-link a {
             color: #666;
             text-decoration: none;
         }
+    </style>
+</head>
+<body>
 
-        /* Ajustes para telas muito pequenas */
-        @media (max-width: 480px) {
-            #chat-container {
-                width: 100%;
-                height: 100vh;
-                max-width: 100%;
-                border-radius: 0;
-            }
-            .message {
-                font-size: 0.9rem;
-            }
-        }
+<div id="chat-container">
+    <div id="chat-header">🐾 MiauChat</div>
+    <div id="chat-messages">
+        <div class="message bot">Miau! Eu sou o Bruce Bot. Como posso ajudar você hoje? 🐱</div>
+    </div>
+    <div id="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Pergunte algo ao gato..." autocomplete="off">
+        <button id="send-btn">Enviar</button>
+    </div>
+    <div class="back-link">
+        <a href="../index.html">← Voltar para a Academy</a>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
