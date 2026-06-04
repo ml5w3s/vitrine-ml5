@@ -13,10 +13,25 @@
         <div class="header-content">
             <img src="../../images/logo_ml5w3sl4b.svg" alt="Logo" class="logo">
             <div class="nav-buttons">
-                <button id="prev-month-btn">Anterior</button>
-                <h1 id="month-year-title"></h1>
-                <button id="next-month-btn">Próximo</button>
+                <button onclick="goToMonth(-1)">Capa</button>
+                <button onclick="goToMonth(0)">Jan</button>
+                <button onclick="goToMonth(1)">Fev</button>
+                <button onclick="goToMonth(2)">Mar</button>
+                <button onclick="goToMonth(3)">Abr</button>
+                <button onclick="goToMonth(4)">Mai</button>
+                <button onclick="goToMonth(5)">Jun</button>
+                <button onclick="goToMonth(6)">Jul</button>
+                <button onclick="goToMonth(7)">Ago</button>
+                <button onclick="goToMonth(8)">Set</button>
+                <button onclick="goToMonth(9)">Out</button>
+                <button onclick="goToMonth(10)">Nov</button>
+                <button onclick="goToMonth(11)">Dez</button>
             </div>
+        </div>
+        <div class="sub-nav">
+            <button id="prev-month-btn">Anterior</button>
+            <h1 id="month-year-title"></h1>
+            <button id="next-month-btn">Próximo</button>
         </div>
     </header>
     
@@ -43,6 +58,14 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <div id="footer-content">
+            <p>Obrigado pela sua visita! 🐱❤️</p>
+            <img src="qr_code.png" alt="QR Code" id="qr-code" onclick="copyPixKey()" style="cursor: pointer; width: 80px;">
+            <p id="copy-message" style="display: none; color: green; font-weight: bold;">Chave PIX copiada!</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

@@ -3,8 +3,8 @@ const APP_DATA = {
         {
             id: 1,
             titulo: "Falta de Água Prevista",
-            descricao: "Manutenção programada pela CAESB para quarta-feira, das 08h às 18h.",
-            data: "22/05/2026",
+            descricao: "Manutenção programada pela CAESB para segunda-feira, das 08h às 18h.",
+            data: "24/05/2026",
             tipo: "urgente"
         },
         {

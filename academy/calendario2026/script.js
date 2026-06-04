@@ -29,6 +29,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- FUNÇÕES ---
 
     /**
+     * Vai para um mês específico ou para a capa (-1).
+     */
+    window.goToMonth = function(monthIndex) {
+        if (monthIndex === -1) {
+            monthImage.src = 'placeholder-cover.jpg';
+            monthImage.alt = 'Capa do Calendário';
+            monthYearTitle.textContent = 'Calendário 2026';
+            // Limpa o grid de dias na capa
+            daysGrid.innerHTML = '<div style="grid-column: span 7; padding: 20px;">Bem-vindo ao Calendário 2026!</div>';
+            return;
+        }
+        currentDate.setMonth(monthIndex);
+        render();
+    };
+
+    /**
+     * Copia a chave PIX para a área de transferência.
+     */
+    window.copyPixKey = function() {
+        const pixKey = "61985498185"; 
+        navigator.clipboard.writeText(pixKey).then(() => {
+            const message = document.getElementById('copy-message');
+            message.style.display = 'block';
+            setTimeout(() => { message.style.display = 'none'; }, 3000);
+        }).catch(err => {
+            console.error('Erro ao copiar a chave PIX:', err);
+        });
+    };
+
+    /**
      * Busca a data inicial do servidor.
      */
     async function fetchInitialDate() {

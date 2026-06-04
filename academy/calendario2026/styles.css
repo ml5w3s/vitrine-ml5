@@ -32,7 +32,19 @@ header {
 .nav-buttons {
     display: flex;
     align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sub-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #ddd;
 }
 
 #month-year-title {
@@ -44,18 +56,43 @@ header {
 }
 
 header button {
-    padding: 8px 16px;
+    padding: 6px 12px;
     cursor: pointer;
     border: none;
     background-color: #007BFF;
     color: white;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
     transition: background-color 0.2s;
 }
 
 header button:hover {
     background-color: #0056b3;
+}
+
+/* Footer Styles from 2025 */
+footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+}
+
+#footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#qr-code:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 main {
