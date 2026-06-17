@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR. OLUC Ambiental | Gestão Inteligente de Resíduos</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Há mais de 40 anos contribuindo para a destinação ambientalmente correta de resíduos. Coleta de OLUC, água contaminada, borras e rastreabilidade completa em Brasília e entorno.">
+  <meta name="keywords" content="OLUC, Coleta de Óleo Usado, Gestão de Resíduos, MTR, CCO, Rastreabilidade Ambiental, Brasília, Sustentabilidade, Rerrefino">
+  <meta name="author" content="MR. OLUC Ambiental">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/icon.png">
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Estilos Personalizados -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de Utilidades Superior -->
+  <div class="utility-bar">
+    <div class="container utility-container">
+      <div class="utility-left">
+        <span><i class="fa-solid fa-location-dot"></i> Atendimento em Brasília - DF e Entorno</span>
+        <span class="status-badge-container">
+          <span class="status-dot green"></span>
+          <span id="business-status">Verificando expediente...</span>
+        </span>
+      </div>
+      <div class="utility-right">
+        <a href="#simulador" class="utility-link"><i class="fa-solid fa-calculator"></i> Simulador</a>
+        <a href="#rastreabilidade" class="utility-link"><i class="fa-solid fa-file-contract"></i> Portal de Certificados</a>
+        <a href="tel:+556195235000" class="utility-link"><i class="fa-solid fa-phone"></i> (61) 9523-5000</a>
+        <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navegação Principal -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo-area">
+        <img src="assets/images/icon.png" alt="Logo MR. OLUC Ambiental" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">MR. OLUC</span>
+          <span class="logo-subtitle">Ambiental</span>
+        </div>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#sobre">Quem Somos</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#rastreabilidade">MTR & CCO</a></li>
+          <li><a href="#simulador">Solicitar Coleta</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#faq">Dúvidas</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão de Ação Rápida -->
+      <div class="nav-actions">
+        <a href="#simulador" class="btn btn-primary btn-nav">Solicitar Coleta <i class="fa-solid fa-arrow-right"></i></a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu Mobile Expandido -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="#" class="logo-area">
+        <img src="assets/images/icon.png" alt="Logo" class="logo-img">
+        <div class="logo-text">
+          <span class="logo-title">MR. OLUC</span>
+        </div>
+      </a>
+      <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Fechar Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="mobile-nav-links">
+      <ul>
+        <li><a href="#sobre" class="mobile-link">Quem Somos</a></li>
+        <li><a href="#servicos" class="mobile-link">Serviços</a></li>
+        <li><a href="#rastreabilidade" class="mobile-link">MTR & CCO</a></li>
+        <li><a href="#simulador" class="mobile-link">Solicitar Coleta</a></li>
+        <li><a href="#noticias" class="mobile-link">Notícias</a></li>
+        <li><a href="#faq" class="mobile-link">Dúvidas</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-footer">
+      <p>Atendimento de Segunda a Sábado</p>
+      <a href="https://wa.me/556195235000" target="_blank" class="btn btn-primary w-full text-center">Fale Conosco</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg" style="background-image: linear-gradient(135deg, rgba(11, 34, 64, 0.9) 30%, rgba(11, 34, 64, 0.4) 100%), url('assets/images/banner.jpeg');"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <span class="hero-badge"><i class="fa-solid fa-leaf"></i> Líder em Coleta Ambiental</span>
+        <h1 class="hero-title">Tecnologia, rastreabilidade e gestão inteligente para resíduos ambientais</h1>
+        <p class="hero-subtitle">Há mais de 40 anos contribuindo para a destinação ambientalmente correta de resíduos. Coleta autorizada de OLUC, águas contaminadas e borras oleosas com emissão de MTR e CCO imediatos.</p>
+        <div class="hero-btns">
+          <a href="#simulador" class="btn btn-primary btn-large">Simular Agendamento <i class="fa-solid fa-calculator"></i></a>
+          <a href="#sobre" class="btn btn-secondary btn-large">Conhecer Soluções <i class="fa-solid fa-chevron-down"></i></a>
+        </div>
+      </div>
+      
+      <!-- Card Flutuante de Acesso Rápido -->
+      <div class="hero-card-floating">
+        <div class="floating-card-header">
+          <h3>Certificado Exigido?</h3>
+          <p>Seja um parceiro em conformidade com o IBAMA e ANP</p>
+        </div>
+        <div class="floating-card-body">
+          <div class="floating-step">
+            <div class="step-num">1</div>
+            <div class="step-text"><strong>Agende a Coleta</strong> de forma simples e rápida</div>
+          </div>
+          <div class="floating-step">
+            <div class="step-num">2</div>
+            <div class="step-text"><strong>Rastreabilidade Total</strong> via MTR digital</div>
+          </div>
+          <div class="floating-step">
+            <div class="step-num">3</div>
+            <div class="step-text"><strong>Emissão de CCO</strong> garantindo conformidade legal</div>
+          </div>
+        </div>
+        <a href="#rastreabilidade" class="floating-card-btn">Saber mais sobre CCO <i class="fa-solid fa-angle-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Estatísticas Rápidas (Stats Bar) -->
+  <section class="stats-bar">
+    <div class="container stats-container">
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="stat-info">
+          <h4 class="stat-num">40+ Anos</h4>
+          <p class="stat-label">De Experiência no Setor</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-truck-moving"></i></div>
+        <div class="stat-info">
+          <h4 class="stat-num">100%</h4>
+          <p class="stat-label">Frota Certificada e Rastreável</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-file-shield"></i></div>
+        <div class="stat-info">
+          <h4 class="stat-num">ANP / IBAMA</h4>
+          <p class="stat-label">Total Regularidade Legal</p>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon"><i class="fa-solid fa-recycle"></i></div>
+        <div class="stat-info">
+          <h4 class="stat-num">Ecológico</h4>
+          <p class="stat-label">Foco no Rerrefino e Circularidade</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quem Somos Section -->
+  <section id="sobre" class="section sobre-section">
+    <div class="container grid-2">
+      <div class="sobre-image-container">
+        <img src="assets/images/oleo.png" alt="Armazenamento seguro de óleo lubrificante usado" class="sobre-main-img">
+        <div class="sobre-accent-box">
+          <i class="fa-solid fa-quote-left"></i>
+          <p>"Destinação ambiental correta não é apenas conformidade, é o compromisso com o futuro da nossa região."</p>
+          <span>— MR. OLUC Ambiental</span>
+        </div>
+      </div>
+      <div class="sobre-content-container">
+        <span class="section-tag">Nossa História & Propósito</span>
+        <h2 class="section-title">Mais de quatro décadas de compromisso e sustentabilidade</h2>
+        <p class="section-desc">A **MR. OLUC Ambiental** nasceu com o propósito de blindar empresas contra passivos ambientais e garantir a economia circular dos lubrificantes usados. Atuamos com sistema próprio de controle operacional, oferecendo rastreabilidade completa desde o gerador até a indústria de rerrefino.</p>
+        
+        <div class="features-list">
+          <div class="feature-bullet">
+            <div class="bullet-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="bullet-text">
+              <h5>Proteção Jurídica Total</h5>
+              <p>Evite multas pesadas da fiscalização ambiental. Emitimos toda a documentação legal exigida pelos órgãos reguladores.</p>
+            </div>
+          </div>
+          <div class="feature-bullet">
+            <div class="bullet-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="bullet-text">
+              <h5>Tecnologia & Rastreabilidade</h5>
+              <p>Sistemas modernos para acompanhamento da carga, garantindo que o seu óleo chegue com segurança ao destino final homologado.</p>
+            </div>
+          </div>
+          <div class="feature-bullet">
+            <div class="bullet-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="bullet-text">
+              <h5>Logística Reversa Integrada</h5>
+              <p>Reinserimos o óleo lubrificante na cadeia produtiva através do rerrefino, diminuindo a dependência de novas importações de petróleo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Serviços Section -->
+  <section id="servicos" class="section servicos-section bg-light">
+    <div class="container text-center-header">
+      <span class="section-tag">O Que Fazemos</span>
+      <h2 class="section-title">Soluções completas para gestão de resíduos industriais</h2>
+      <p class="section-subtitle">Atendimento especializado em postos de combustível, concessionárias, oficinas, transportadoras e indústrias em Brasília-DF e no Entorno.</p>
+    </div>
+    
+    <div class="container services-grid">
+      <!-- Serviço 1: OLUC -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <img src="assets/images/oleo.png" alt="Óleo Lubrificante Usado ou Contaminado" class="service-img">
+        </div>
+        <div class="service-card-body">
+          <span class="service-category">Principal</span>
+          <h3>Coleta de OLUC</h3>
+          <p>O óleo lubrificante usado ou contaminado é um resíduo altamente perigoso. Realizamos a sucção e transporte seguro com caminhões tanque licenciados, direcionando o resíduo para o rerrefino.</p>
+          <div class="service-meta">
+            <span><i class="fa-solid fa-file-invoice"></i> CCO Imediato</span>
+            <span><i class="fa-solid fa-truck"></i> Frota Própria</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Serviço 2: Logística Reversa -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <img src="assets/images/logistica_reversa.jpg" alt="Logística Reversa de Embalagens e Óleo" class="service-img">
+        </div>
+        <div class="service-card-body">
+          <span class="service-category">Sustentabilidade</span>
+          <h3>Logística Reversa</h3>
+          <p>Garantia de conformidade com a Política Nacional de Resíduos Sólidos (PNRS). Estruturamos o ciclo de retorno de embalagens plásticas de óleo usadas e filtros contaminados para a reciclagem adequada.</p>
+          <div class="service-meta">
+            <span><i class="fa-solid fa-rotate"></i> Ciclo Fechado</span>
+            <span><i class="fa-solid fa-leaf"></i> Selo Verde</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Serviço 3: Água e Borras -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <div class="placeholder-service-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+        </div>
+        <div class="service-card-body">
+          <span class="service-category">Manutenção</span>
+          <h3>Água & Borras Oleosas</h3>
+          <p>Coleta de resíduos líquidos de caixas separadoras de água e óleo (SAO). Limpeza profissional de caixas de contenção de postos e oficinas, evitando contaminações de solo e galerias pluviais.</p>
+          <div class="service-meta">
+            <span><i class="fa-solid fa-broom-fluid"></i> Limpeza SAO</span>
+            <span><i class="fa-solid fa-circle-check"></i> Laudo Técnico</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Serviço 4: Resíduos Industriais -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <div class="placeholder-service-icon"><i class="fa-solid fa-industry"></i></div>
+        </div>
+        <div class="service-card-body">
+          <span class="service-category">Corporativo</span>
+          <h3>Resíduos Industriais</h3>
+          <p>Gerenciamento, classificação e transporte de resíduos perigosos (Classe I) comuns em atividades automotivas e de manufatura, como panos contaminados, EPIs usados, serragem e filtros.</p>
+          <div class="service-meta">
+            <span><i class="fa-solid fa-triangle-exclamation"></i> Classe I e II</span>
+            <span><i class="fa-solid fa-truck-ramp-box"></i> Coleta Agendada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conformidade e Certificados Section -->
+  <section id="rastreabilidade" class="section tracker-section dark-bg">
+    <div class="container grid-2">
+      <div class="tracker-text">
+        <span class="section-tag yellow">Rastreabilidade e Segurança Legal</span>
+        <h2 class="section-title text-white">Você sabe o que acontece com o resíduo da sua empresa?</h2>
+        <p class="text-gray-light">A responsabilidade ambiental pelo resíduo é solidária. Se o óleo for descartado de forma incorreta ou transportado por empresas clandestinas, o gerador responde civil e criminalmente.</p>
+        
+        <div class="document-blocks">
+          <div class="doc-block">
+            <div class="doc-icon"><i class="fa-solid fa-file-shield"></i></div>
+            <div class="doc-content">
+              <h4>MTR (Manifesto de Transporte de Resíduos)</h4>
+              <p>Emitido eletronicamente via sistema SINIR/IBAMA, garante que a carga de resíduos está declarada e autorizada para o transporte rodoviário.</p>
+            </div>
+          </div>
+          
+          <div class="doc-block">
+            <div class="doc-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="doc-content">
+              <h4>CCO (Certificado de Coleta de Óleo)</h4>
+              <p>O único documento legal que comprova perante a ANP que o estabelecimento entregou o OLUC para um coletor autorizado. Essencial para renovação de licenças.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-timeline">
+          <h3>O Fluxo Seguro da MR. OLUC</h3>
+          <div class="timeline-steps">
+            <div class="timeline-step">
+              <div class="step-icon"><i class="fa-solid fa-truck-pickup"></i></div>
+              <span>Coleta no Gerador</span>
+            </div>
+            <div class="timeline-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="timeline-step">
+              <div class="step-icon"><i class="fa-solid fa-receipt"></i></div>
+              <span>Emissão MTR / CCO</span>
+            </div>
+            <div class="timeline-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="timeline-step">
+              <div class="step-icon"><i class="fa-solid fa-industry"></i></div>
+              <span>Rerrefino Industrial</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Box de Destaque / Imagem da Logística Reversa -->
+      <div class="tracker-visual">
+        <div class="visual-card">
+          <img src="assets/images/logistica_reversa.jpg" alt="Processo de Rerrefino e Sustentabilidade" class="visual-img">
+          <div class="visual-card-info">
+            <div class="badge badge-green">Economia Circular</div>
+            <h4>Rerrefino: O Futuro dos Lubrificantes</h4>
+            <p>Mais de 95% do óleo lubrificante coletado é purificado e retorna ao mercado como óleo básico de alta qualidade, reduzindo o impacto ecológico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulador de Coleta & WhatsApp Integrado -->
+  <section id="simulador" class="section simulador-section">
+    <div class="container grid-2">
+      <!-- Formulário do Simulador -->
+      <div class="simulador-form-container">
+        <span class="section-tag">Agendamento & Simulação</span>
+        <h2 class="section-title">Agende sua Coleta em segundos</h2>
+        <p class="section-desc">Informe os dados básicos do seu resíduo para simular o atendimento e gerar a documentação de coleta prévia.</p>
+        
+        <form id="waste-simulator-form" class="simulador-form">
+          <div class="form-group">
+            <label for="company-name"><i class="fa-solid fa-building"></i> Nome da Empresa / Razão Social</label>
+            <input type="text" id="company-name" placeholder="Ex: Autocenter Brasília Ltda" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="collection-address"><i class="fa-solid fa-map-location-dot"></i> Endereço da Coleta</label>
+            <input type="text" id="collection-address" placeholder="Ex: Setor de Oficinas Sul, Bloco C, Guará" required>
+          </div>
+
+          <div class="grid-2-inputs">
+            <div class="form-group">
+              <label for="waste-type"><i class="fa-solid fa-recycle"></i> Tipo de Resíduo</label>
+              <select id="waste-type" required>
+                <option value="Óleo Lubrificante Usado (OLUC)" selected>Óleo Lubrificante Usado (OLUC)</option>
+                <option value="Água Oleosa">Água Oleosa / Contaminada</option>
+                <option value="Borra Oleosa">Borra Oleosa de Caixa Separadora</option>
+                <option value="Resíduos Industriais Classe I">Resíduos Industriais Classe I</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="waste-volume"><i class="fa-solid fa-gauge-high"></i> Volume Estimado (Litros)</label>
+              <div class="range-container">
+                <input type="range" id="waste-volume-range" min="100" max="10000" step="50" value="500">
+                <div class="range-values">
+                  <input type="number" id="waste-volume" min="100" max="50000" value="500">
+                  <span class="unit">L</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mensagem Auxiliar de Volume Mínimo -->
+          <div id="volume-alert" class="alert-info hidden">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>Para volumes acima de 1.000 Litros, consulte condições especiais de bonificação.</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-large w-full mt-20" id="btn-submit-simulator">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Solicitação via WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Preview do WhatsApp & QR Code -->
+      <div class="whatsapp-preview-container">
+        <div class="phone-frame">
+          <div class="phone-header">
+            <div class="phone-header-left">
+              <img src="assets/images/icon.png" alt="Avatar MR. OLUC" class="phone-avatar">
+              <div class="phone-header-info">
+                <h4>MR. OLUC Ambiental</h4>
+                <span>Online agora</span>
+              </div>
+            </div>
+            <div class="phone-header-icons">
+              <i class="fa-solid fa-phone"></i>
+              <i class="fa-solid fa-video"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+          </div>
+          
+          <div class="phone-body">
+            <div class="chat-day">HOJE</div>
+            
+            <!-- Balão de Saudação da Empresa -->
+            <div class="message received">
+              <p>Olá! 👋<br>Seja bem-vindo à <strong>MR. OLUC Ambiental</strong>.<br><br>Atuamos na coleta e destinação ambientalmente correta de resíduos.<br><br>Para agilizar seu atendimento, informe os dados da coleta.</p>
+              <span class="message-time">13:39</span>
+            </div>
+
+            <!-- Balão de Resposta do Cliente (Dinâmico) -->
+            <div class="message sent">
+              <p id="chat-preview-text">
+                Olá! Gostaria de agendar uma coleta.<br>
+                1️⃣ <strong>Empresa:</strong> [Informe o nome]<br>
+                2️⃣ <strong>Endereço:</strong> [Informe o endereço]<br>
+                3️⃣ <strong>Resíduo:</strong> Óleo Lubrificante Usado (OLUC)<br>
+                4️⃣ <strong>Volume:</strong> 500 Litros
+              </p>
+              <span class="message-time" id="chat-time">18:31</span>
+            </div>
+          </div>
+          
+          <div class="phone-footer">
+            <i class="fa-regular fa-face-smile"></i>
+            <div class="phone-input-placeholder">Mensagem pronta para envio...</div>
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+        </div>
+
+        <div class="qrcode-box">
+          <img src="assets/images/qrcode.png" alt="QR Code WhatsApp" class="qr-img">
+          <div class="qr-text">
+            <h5>Está no Computador?</h5>
+            <p>Escaneie o QR Code com a câmera do celular para iniciar o atendimento no WhatsApp instantaneamente.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notícias do Ramo (Energy & Environmental News Grid) -->
+  <section id="noticias" class="section news-section bg-light">
+    <div class="container text-center-header">
+      <span class="section-tag">Blog & Notícias</span>
+      <h2 class="section-title">O que acontece no setor de lubrificantes e meio ambiente</h2>
+      <p class="section-subtitle">Acompanhe regulamentações da ANP, boas práticas de logística reversa e inovações em sustentabilidade.</p>
+      
+      <!-- Filtro de Notícias -->
+      <div class="news-filters">
+        <button class="filter-btn active" data-category="all">Todas</button>
+        <button class="filter-btn" data-category="regulamento">Regulamentação</button>
+        <button class="filter-btn" data-category="sustentabilidade">Sustentabilidade</button>
+        <button class="filter-btn" data-category="mercado">Mercado & Economia</button>
+      </div>
+    </div>
+
+    <div class="container news-grid">
+      <!-- Notícia 1: ANP e Fiscalização -->
+      <article class="news-card" data-category="regulamento">
+        <div class="news-img-wrapper">
+          <div class="news-cat-badge">Regulamentação</div>
+          <img src="assets/images/oleo.png" alt="Tambor de óleo lubrificante" class="news-img">
+        </div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span><i class="fa-regular fa-calendar"></i> 15 Jun 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 4 min de leitura</span>
+          </div>
+          <h3><a href="#noticias" class="news-title-link">ANP intensifica fiscalização de MTR e CCO no Distrito Federal</a></h3>
+          <p>A Agência Nacional do Petróleo (ANP) em parceria com órgãos de fiscalização ambiental do DF iniciou uma série de vistorias em postos de combustível e oficinas para verificar a destinação do OLUC. Empresas sem o Certificado de Coleta de Óleo (CCO) podem sofrer multas que variam de R$ 5 mil a R$ 50 mil.</p>
+          <a href="#noticias" class="news-readmore">Ler notícia completa <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Notícia 2: Logística Reversa -->
+      <article class="news-card" data-category="sustentabilidade">
+        <div class="news-img-wrapper">
+          <div class="news-cat-badge">Sustentabilidade</div>
+          <img src="assets/images/logistica_reversa.jpg" alt="Reciclagem e economia circular" class="news-img">
+        </div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span><i class="fa-regular fa-calendar"></i> 08 Jun 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 5 min de leitura</span>
+          </div>
+          <h3><a href="#noticias" class="news-title-link">Logística Reversa de Lubrificantes bate recorde no primeiro semestre</a></h3>
+          <p>O índice de recolhimento e destinação adequada de embalagens e óleo lubrificante pós-consumo atingiu a marca de 48% em todo o país. O programa setorial de logística reversa avança com a adesão de novos geradores e a conscientização sobre a reciclagem do plástico contaminado.</p>
+          <a href="#noticias" class="news-readmore">Ler notícia completa <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <!-- Notícia 3: Rerrefino vs Queima -->
+      <article class="news-card" data-category="mercado">
+        <div class="news-img-wrapper">
+          <div class="news-cat-badge">Mercado & Economia</div>
+          <img src="assets/images/banner.jpeg" alt="Instalação industrial de rerrefino" class="news-img">
+        </div>
+        <div class="news-body">
+          <div class="news-meta">
+            <span><i class="fa-regular fa-calendar"></i> 28 Mai 2026</span>
+            <span><i class="fa-regular fa-clock"></i> 6 min de leitura</span>
+          </div>
+          <h3><a href="#noticias" class="news-title-link">Rerrefino de OLUC se consolida como pilar da transição energética</a></h3>
+          <p>O rerrefino do óleo lubrificante usado poupa a exploração de novos poços de petróleo e gera um produto com qualidade idêntica à do óleo básico de primeiro refino. O processo reduz a emissão de CO2 em até 70% se comparado à produção a partir do petróleo bruto, impulsionando metas corporativas de ESG.</p>
+          <a href="#noticias" class="news-readmore">Ler notícia completa <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ / Seção de Dúvidas Comuns -->
+  <section id="faq" class="section faq-section">
+    <div class="container grid-2">
+      <div class="faq-intro">
+        <span class="section-tag">Suporte & FAQ</span>
+        <h2 class="section-title">Tem dúvidas sobre a coleta de resíduos oleosos?</h2>
+        <p class="section-desc">Reunimos as principais dúvidas dos geradores de resíduos em postos, oficinas e indústrias sobre a legislação e o processo logístico.</p>
+        
+        <div class="faq-contact-card">
+          <h4>Não encontrou o que procurava?</h4>
+          <p>Nossa equipe de engenharia ambiental está à disposição para tirar qualquer dúvida regulatória.</p>
+          <a href="https://wa.me/556195235000" target="_blank" class="btn btn-secondary"><i class="fa-brands fa-whatsapp"></i> Falar com Especialista</a>
+        </div>
+      </div>
+      
+      <div class="faq-accordion-list">
+        <!-- Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>O que é OLUC e por que ele deve ser coletado?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O OLUC é o Óleo Lubrificante Usado ou Contaminado. Devido à sua toxicidade e persistência no meio ambiente, ele é classificado como resíduo perigoso (Classe I). Um único litro de óleo lubrificante usado pode contaminar um milhão de litros de água. Por lei, todo gerador deve destinar o OLUC para coletores autorizados pela ANP para que seja enviado ao rerrefino.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Qual a diferença entre MTR e CCO?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>O MTR (Manifesto de Transporte de Resíduos) é um documento que acompanha o transporte do resíduo do gerador ao destino final, registrando a saída física da carga. O CCO (Certificado de Coleta de Óleo) é o documento emitido pelo coletor autorizado no ato da coleta, comprovando a entrega regular do OLUC. Ambos são indispensáveis para comprovar a conformidade perante órgãos de fiscalização ambiental e a ANP.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Existe um volume mínimo para a realização da coleta?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Realizamos coletas programadas de acordo com a região. O volume padrão recomendado para otimização da rota de coleta é de no mínimo 150 a 200 litros. Contudo, atendemos volumes menores ou maiores sob programação. Consulte nossa equipe comercial para entender a melhor frequência para seu estabelecimento.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>O que a MR. OLUC faz com as águas oleosas da caixa separadora (SAO)?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>A água oleosa coletada da caixa separadora passa por um processo físico-químico de tratamento em nossa unidade de destinação ou em parceiros homologados. A porção oleosa é separada e destinada ao rerrefino, enquanto a fase aquosa tratada é neutralizada e descartada conforme os rigorosos limites definidos pelo CONAMA e órgãos ambientais do Distrito Federal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé Corporativo (Footer) -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- Coluna 1: Logo & Info -->
+      <div class="footer-col footer-about">
+        <a href="#" class="logo-area light">
+          <img src="assets/images/icon.png" alt="Logo MR. OLUC Ambiental" class="logo-img">
+          <div class="logo-text">
+            <span class="logo-title text-white">MR. OLUC</span>
+            <span class="logo-subtitle text-yellow">Ambiental</span>
+          </div>
+        </a>
+        <p class="mt-15">Gestão Inteligente de Resíduos. Há mais de 40 anos garantindo conformidade, segurança ambiental e economia circular em Brasília e Entorno.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://wa.me/556195235000" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <!-- Coluna 2: Navegação -->
+      <div class="footer-col">
+        <h3>Menu Corporativo</h3>
+        <ul>
+          <li><a href="#sobre">Quem Somos</a></li>
+          <li><a href="#servicos">Nossos Serviços</a></li>
+          <li><a href="#rastreabilidade">Conformidade MTR</a></li>
+          <li><a href="#simulador">Agendar Coleta</a></li>
+          <li><a href="#noticias">Notícias do Setor</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Contato & Expediente -->
+      <div class="footer-col">
+        <h3>Atendimento e Horários</h3>
+        <p class="contact-info-item"><i class="fa-solid fa-clock"></i> <strong>Expediente Comercial:</strong><br>Segunda a Sexta: 07h50 às 17h00<br>Sábado: 07h50 às 13h00</p>
+        <p class="contact-info-item"><i class="fa-solid fa-phone"></i> <strong>Telefone / WhatsApp:</strong><br><a href="tel:+556195235000">(61) 9523-5000</a></p>
+        <p class="contact-info-item"><i class="fa-solid fa-envelope"></i> <strong>E-mail Comercial:</strong><br><a href="mailto:contato@mroluc.com.br">contato@mroluc.com.br</a></p>
+      </div>
+
+      <!-- Coluna 4: Localização e QR Code -->
+      <div class="footer-col">
+        <h3>Sede & Operação</h3>
+        <p class="contact-info-item"><i class="fa-solid fa-location-dot"></i> Brasília-DF e Região Integrada de Desenvolvimento (RIDE - Entorno).</p>
+        <div class="footer-certifications">
+          <span class="cert-badge">ANP</span>
+          <span class="cert-badge">IBAMA</span>
+          <span class="cert-badge">IBRAM</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Subfooter / Copyright -->
+    <div class="sub-footer">
+      <div class="container sub-footer-container">
+        <p>&copy; 2026 MR. OLUC Ambiental. Todos os direitos reservados. Gestão Inteligente de Resíduos.</p>
+        <div class="sub-footer-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+          <a href="/vitrine-ml5/">Portal Vitrine ML5</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante de WhatsApp -->
+  <a href="https://wa.me/556195235000" class="whatsapp-float" id="whatsapp-float-btn" target="_blank" aria-label="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="tooltip-whatsapp">Fale Conosco</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
