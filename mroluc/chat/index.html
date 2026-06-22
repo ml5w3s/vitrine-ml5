@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiauChat - Assistente Felino</title>
+    <link rel="icon" type="image/x-icon" href="../../images/ml5w3s.ico">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #chat-container {
+            width: 400px;
+            max-width: 90%;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        #chat-header {
+            background: #ff9f43;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        #chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            max-height: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message {
+            padding: 8px 12px;
+            border-radius: 15px;
+            max-width: 80%;
+            font-size: 0.95rem;
+        }
+        .bot {
+            background: #e9ecef;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+        .user {
+            background: #ff9f43;
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+        #chat-input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #eee;
+        }
+        #chat-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        #send-btn {
+            background: #ff9f43;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin-left: 8px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #send-btn:hover {
+            background: #ee5253;
+        }
+        .back-link {
+            text-align: center;
+            padding: 10px;
+            font-size: 0.8rem;
+        }
+        .back-link a {
+            color: #666;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chat-container">
+    <div id="chat-header">🐾 AmyChat</div>
+    <div id="chat-messages">
+        <div class="message bot">Au! Eu sou o Amy Bot. Como posso ajudar você hoje? 🐱</div>
+    </div>
+    <div id="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Pergunte algo a Amy..." autocomplete="off">
+        <button id="send-btn">Enviar</button>
+    </div>
+    <div class="back-link">
+        <a href="./prototipo.html">← Voltar para o Protótipo</a>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
