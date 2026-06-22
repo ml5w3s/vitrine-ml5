@@ -27,6 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             patterns: [/nome/i, /quem é você/i],
             responses: ["Eu sou o Amy Bot, a orquestradora de agentes da Mr.Oluc e interface de usuário!"]
+        },
+        {
+            patterns: [/boletos/i, /boleto a vencer/i, /vencimentos/i],
+            responses: ["Vou acionar nosso agente financeiro, ele vai fazer uma varredura nos boletos a vencer e te trazer um resumo dos boletos com vencimentos para os próximos 5 dias...Desculpe, nosso agente financeiro retornou que ainda não foi treinado para tratar de contas a pagar"]
         }
     ];
 

@@ -680,7 +680,87 @@
     <span class="tooltip-whatsapp">Fale Conosco</span>
   </a>
 
+  <!-- Widget Flutuante de Chat -->
+  <div class="chat-widget" id="chat-widget">
+    <!-- Botão de toggle -->
+    <button class="chat-toggle-btn" id="chat-toggle-btn" aria-label="Abrir Chat" aria-expanded="false">
+      <i class="fa-solid fa-comment-dots chat-icon-open"></i>
+      <i class="fa-solid fa-xmark chat-icon-close"></i>
+      <span class="chat-notification-badge" id="chat-badge">1</span>
+    </button>
+    <span class="chat-toggle-tooltip">AmyChat</span>
+
+    <!-- Janela do Chat -->
+    <div class="chat-popup" id="chat-popup" role="dialog" aria-label="AmyChat - Assistente Virtual" aria-hidden="true">
+      <div class="chat-popup-header">
+        <div class="chat-popup-header-info">
+          <span class="chat-popup-avatar">🐾</span>
+          <div>
+            <strong>AmyChat</strong>
+            <span class="chat-popup-status"><span class="status-dot green"></span> Online agora</span>
+          </div>
+        </div>
+        <div class="chat-popup-actions">
+          <a href="chat/index.html" target="_blank" class="chat-popup-expand" title="Abrir em nova aba" aria-label="Abrir chat em nova aba">
+            <i class="fa-solid fa-up-right-from-square"></i>
+          </a>
+          <button class="chat-popup-close" id="chat-popup-close" aria-label="Fechar chat">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="chat-popup-body">
+        <iframe
+          id="chat-iframe"
+          src="chat/index.html"
+          title="AmyChat - Assistente Virtual MR. OLUC"
+          loading="lazy"
+          scrolling="no">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="script.js"></script>
+  <script>
+    // --- Widget de Chat Flutuante ---
+    (function () {
+      const widget   = document.getElementById('chat-widget');
+      const toggleBtn = document.getElementById('chat-toggle-btn');
+      const popup    = document.getElementById('chat-popup');
+      const closeBtn = document.getElementById('chat-popup-close');
+      const badge    = document.getElementById('chat-badge');
+
+      function openChat() {
+        popup.classList.add('is-open');
+        toggleBtn.classList.add('is-active');
+        toggleBtn.setAttribute('aria-expanded', 'true');
+        popup.setAttribute('aria-hidden', 'false');
+        badge.style.display = 'none';
+      }
+
+      function closeChat() {
+        popup.classList.remove('is-open');
+        toggleBtn.classList.remove('is-active');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        popup.setAttribute('aria-hidden', 'true');
+      }
+
+      toggleBtn.addEventListener('click', function () {
+        popup.classList.contains('is-open') ? closeChat() : openChat();
+      });
+
+      closeBtn.addEventListener('click', closeChat);
+
+      // Mostrar notificação após 4s se não abriu ainda
+      setTimeout(function () {
+        if (!popup.classList.contains('is-open')) {
+          badge.style.display = 'flex';
+          widget.classList.add('has-notification');
+        }
+      }, 4000);
+    })();
+  </script>
 </body>
 </html>
