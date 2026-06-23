@@ -1042,6 +1042,83 @@ img {
   color: var(--brand-green);
 }
 
+.badge-yellow {
+  background-color: rgba(255, 213, 0, 0.15);
+  color: #b08800;
+}
+
+body.dark-theme .badge-yellow {
+  background-color: rgba(255, 213, 0, 0.12);
+  color: var(--brand-yellow);
+}
+
+/* --- Abas de Certificados --- */
+.cert-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.cert-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.cert-tab:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cert-tab.active {
+  background: var(--brand-yellow);
+  color: var(--brand-blue);
+  border-color: var(--brand-yellow);
+  font-weight: 700;
+}
+
+.cert-tab i {
+  font-size: 0.85rem;
+}
+
+/* Painéis de conteúdo */
+.cert-panel {
+  animation: cert-fade-in 0.3s ease forwards;
+}
+
+.cert-panel[hidden] {
+  display: none !important;
+}
+
+@keyframes cert-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* Imagem de certificado: contain para não cortar o documento */
+.cert-img-contain {
+  object-fit: contain !important;
+  background: #f8f9fa;
+}
+
+body.dark-theme .cert-img-contain {
+  background: #1a1f2e;
+}
+
 .dark-theme .visual-card-info h4 {
   color: #FFFFFF;
 }
@@ -1056,6 +1133,7 @@ img {
   color: var(--text-secondary);
   line-height: 1.5;
 }
+
 
 /* 12. SIMULADOR E WHATSAPP */
 .simulador-section {

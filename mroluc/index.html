@@ -243,7 +243,7 @@
         <div class="service-card-body">
           <span class="service-category">Principal</span>
           <h3>Coleta de OLUC</h3>
-          <p>O óleo lubrificante usado ou contaminado é um resíduo altamente perigoso. Realizamos a sucção e transporte seguro com caminhões tanque licenciados, direcionando o resíduo para o rerrefino.</p>
+          <p>O óleo lubrificante usado ou contaminado (OLUC) é um resíduo altamente poluente. Apenas 1 litro pode contaminar até 1 milhão de litros de água. Realizamos a coleta e o transporte seguro para o rerrefino, garantindo a destinação ambiental correta..</p>
           <div class="service-meta">
             <span><i class="fa-solid fa-file-invoice"></i> CCO Imediato</span>
             <span><i class="fa-solid fa-truck"></i> Frota Própria</span>
@@ -348,9 +348,21 @@
         </div>
       </div>
       
-      <!-- Box de Destaque / Imagem da Logística Reversa -->
+      <!-- Box de Destaque / Imagem com Abas -->
       <div class="tracker-visual">
-        <div class="visual-card">
+
+        <!-- Abas de navegação -->
+        <div class="cert-tabs" role="tablist" aria-label="Certificados exigidos">
+          <button class="cert-tab active" id="tab-rerrefino" role="tab" aria-selected="true" aria-controls="panel-rerrefino">
+            <i class="fa-solid fa-recycle"></i> Rerrefino
+          </button>
+          <button class="cert-tab" id="tab-mtr" role="tab" aria-selected="false" aria-controls="panel-mtr">
+            <i class="fa-solid fa-file-shield"></i> Certificado MTR
+          </button>
+        </div>
+
+        <!-- Painel: Rerrefino -->
+        <div class="visual-card cert-panel active" id="panel-rerrefino" role="tabpanel" aria-labelledby="tab-rerrefino">
           <img src="assets/images/logistica_reversa.jpg" alt="Processo de Rerrefino e Sustentabilidade" class="visual-img">
           <div class="visual-card-info">
             <div class="badge badge-green">Economia Circular</div>
@@ -358,6 +370,17 @@
             <p>Mais de 95% do óleo lubrificante coletado é purificado e retorna ao mercado como óleo básico de alta qualidade, reduzindo o impacto ecológico.</p>
           </div>
         </div>
+
+        <!-- Painel: Certificado MTR -->
+        <div class="visual-card cert-panel" id="panel-mtr" role="tabpanel" aria-labelledby="tab-mtr" hidden>
+          <img src="assets/images/certificado_MTR.png" alt="Modelo de Certificado MTR - Manifesto de Transporte de Resíduos" class="visual-img cert-img-contain">
+          <div class="visual-card-info">
+            <div class="badge badge-yellow">Documento Obrigatório</div>
+            <h4>MTR — Manifesto de Transporte de Resíduos</h4>
+            <p>Documento emitido eletronicamente via SINIR/IBAMA que comprova a destinação ambientalmente correta do resíduo. Exigido em fiscalizações da ANP.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -724,6 +747,37 @@
   <!-- Scripts -->
   <script src="script.js"></script>
   <script>
+    // --- Abas de Certificados ---
+    (function () {
+      const tabs   = document.querySelectorAll('.cert-tab');
+      const panels = document.querySelectorAll('.cert-panel');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          const targetId = tab.getAttribute('aria-controls');
+
+          // Atualiza abas
+          tabs.forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+
+          // Atualiza painéis
+          panels.forEach(function (panel) {
+            if (panel.id === targetId) {
+              panel.removeAttribute('hidden');
+              panel.classList.add('active');
+            } else {
+              panel.setAttribute('hidden', '');
+              panel.classList.remove('active');
+            }
+          });
+        });
+      });
+    })();
+
     // --- Widget de Chat Flutuante ---
     (function () {
       const widget   = document.getElementById('chat-widget');
