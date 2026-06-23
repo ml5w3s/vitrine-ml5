@@ -54,8 +54,8 @@
       <a href="#" class="logo-area">
         <img src="assets/images/icon.png" alt="Logo MR. OLUC Ambiental" class="logo-img">
         <div class="logo-text">
-          <span class="logo-title">MR. OLUC</span>
-          <span class="logo-subtitle">Ambiental</span>
+          <span class="logo-title">Soluções e</span>
+          <span class="logo-subtitle">Conformidade</span>
         </div>
       </a>
 
@@ -130,21 +130,59 @@
           <h3>Certificado Exigido?</h3>
           <p>Seja um parceiro em conformidade com o IBAMA e ANP</p>
         </div>
-        <div class="floating-card-body">
-          <div class="floating-step">
-            <div class="step-num">1</div>
-            <div class="step-text"><strong>Agende a Coleta</strong> de forma simples e rápida</div>
-          </div>
-          <div class="floating-step">
-            <div class="step-num">2</div>
-            <div class="step-text"><strong>Rastreabilidade Total</strong> via MTR digital</div>
-          </div>
-          <div class="floating-step">
-            <div class="step-num">3</div>
-            <div class="step-text"><strong>Emissão de CCO</strong> garantindo conformidade legal</div>
-          </div>
+
+        <!-- Abas do card -->
+        <div class="hcf-tabs" role="tablist" aria-label="Tipos de certificado">
+          <button class="hcf-tab active" id="hcf-tab-cco" role="tab" aria-selected="true" aria-controls="hcf-panel-cco">
+            <i class="fa-solid fa-award"></i> CCO
+          </button>
+          <button class="hcf-tab" id="hcf-tab-mtr" role="tab" aria-selected="false" aria-controls="hcf-panel-mtr">
+            <i class="fa-solid fa-file-shield"></i> MTR
+          </button>
         </div>
-        <a href="#rastreabilidade" class="floating-card-btn">Saber mais sobre CCO <i class="fa-solid fa-angle-right"></i></a>
+
+        <!-- Painel CCO: passos -->
+        <div class="hcf-panel" id="hcf-panel-cco" role="tabpanel" aria-labelledby="hcf-tab-cco">
+          <div class="floating-card-body">
+            <div class="floating-step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Agende a Coleta</strong> de forma simples e rápida</div>
+            </div>
+            <div class="floating-step">
+              <div class="step-num">2</div>
+              <div class="step-text"><strong>Rastreabilidade Total</strong> via MTR digital</div>
+            </div>
+            <div class="floating-step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Emissão de CCO</strong> garantindo conformidade legal</div>
+            </div>
+          </div>
+          <a href="#rastreabilidade" class="floating-card-btn">Saber mais sobre CCO <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+
+        <!-- Painel MTR: passos -->
+        <div class="hcf-panel" id="hcf-panel-mtr" role="tabpanel" aria-labelledby="hcf-tab-mtr" hidden>
+          <div class="floating-card-body">
+            <div class="floating-step">
+              <div class="step-num">1</div>
+              <div class="step-text"><strong>Acesse o Sistema</strong> Faça login no Portal MTR SINIR/IBAMA e selecione a emissão</div>
+            </div>
+            <div class="floating-step">
+              <div class="step-num">2</div>
+              <div class="step-text"><strong>Detalhe os Resíduos</strong> Informe tipologia (Código IBAMA), quantidade e classificação</div>
+            </div>
+            <div class="floating-step">
+              <div class="step-num">3</div>
+              <div class="step-text"><strong>Emita e Acompanhe</strong> Gere o manifesto, assine e entregue ao transportador</div>
+            </div>
+            <div class="floating-step">
+              <div class="step-num">4</div>
+              <div class="step-text"><strong>Receba a Confirmação</strong> Verifique o recebimento pelo destinador final no sistema</div>
+            </div>
+          </div>
+          <a href="#rastreabilidade" class="floating-card-btn">Saber mais sobre MTR <i class="fa-solid fa-angle-right"></i></a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -747,6 +785,33 @@
   <!-- Scripts -->
   <script src="script.js"></script>
   <script>
+    // --- Abas do Hero Card Flutuante (hcf) ---
+    (function () {
+      const tabs   = document.querySelectorAll('.hcf-tab');
+      const panels = document.querySelectorAll('.hcf-panel');
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          const targetId = tab.getAttribute('aria-controls');
+
+          tabs.forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+
+          panels.forEach(function (panel) {
+            if (panel.id === targetId) {
+              panel.removeAttribute('hidden');
+            } else {
+              panel.setAttribute('hidden', '');
+            }
+          });
+        });
+      });
+    })();
+
     // --- Abas de Certificados ---
     (function () {
       const tabs   = document.querySelectorAll('.cert-tab');

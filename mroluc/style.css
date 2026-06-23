@@ -635,6 +635,78 @@ img {
   padding-left: 4px;
 }
 
+/* --- Abas do Hero Card Flutuante (hcf) --- */
+.hcf-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.hcf-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.hcf-tab:hover {
+  border-color: var(--brand-red);
+  color: var(--brand-red);
+}
+
+.hcf-tab.active {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: #fff;
+  font-weight: 700;
+}
+
+.hcf-panel[hidden] {
+  display: none !important;
+}
+
+.hcf-panel {
+  animation: cert-fade-in 0.25s ease forwards;
+}
+
+/* Imagem do certificado dentro do card */
+.hcf-cert-img-wrap {
+  width: 100%;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: #f8f9fa;
+  margin-bottom: 14px;
+  max-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark-theme .hcf-cert-img-wrap {
+  background: #1a1f2e;
+}
+
+.hcf-cert-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+
 /* 8. BARRA DE ESTATÍSTICAS */
 .stats-bar {
   background-color: var(--bg-card);
