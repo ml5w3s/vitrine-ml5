@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             patterns: [/boletos/i, /boleto a vencer/i, /vencimentos/i],
             responses: ["Vou acionar nosso agente financeiro, ele vai fazer uma varredura nos boletos a vencer e te trazer um resumo dos boletos com vencimentos para os próximos 5 dias...Desculpe, nosso agente financeiro retornou que ainda não foi treinado para tratar de contas a pagar"]
+        },
+        {
+            patterns: [/celular/i, /cel/i, /telefone/i, /fone/i],
+            responses: ["Transferindo para o <a href=\"https://fascinating-guardian-fleet-flow.base44.app/\" target=\"_blank\">controle de custódia de celulares</a>..."]
         }
     ];
 
@@ -41,7 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function addMessage(text, side) {
         const msgDiv = document.createElement('div');
         msgDiv.classList.add('message', side);
-        msgDiv.textContent = text;
+        if (side === 'bot') {
+            msgDiv.innerHTML = text;
+        } else {
+            msgDiv.textContent = text;
+        }
         chatMessages.appendChild(msgDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
@@ -69,6 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             const response = getResponse(text);
             addMessage(response, 'bot');
+
+            // Redirecionamento automático se a resposta for sobre custódia de celulares
+            if (response.includes("https://fascinating-guardian-fleet-flow.base44.app/")) {
+                setTimeout(() => {
+                    window.top.location.href = "https://fascinating-guardian-fleet-flow.base44.app/";
+                }, 1500);
+            }
         }, 600);
     }
 
