@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        return "Miau? Não entendi muito bem. Pode perguntar de outro jeito? (Tente falar sobre comida, caixas ou como saber se estou feliz)";
+        return "Au? Não entendi muito bem. Pode perguntar de outro jeito? (Tente falar sobre Gestão de celulares, Boletos a vencer ou como saber se estou Meu objetivo)";
     }
 
     function handleSend() {
@@ -94,5 +94,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    console.log("MiauChat carregado com sucesso! 🐾");
+    console.log("AuChat carregado com sucesso! 🐾");
 });

@@ -68,6 +68,7 @@ body {
   color: var(--text-secondary);
   line-height: 1.6;
   transition: var(--transition-smooth);
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1992,6 +1993,19 @@ body.dark-theme .cert-img-contain {
 }
 
 @media (max-width: 768px) {
+  .utility-bar {
+    display: none;
+  }
+
+  .timeline-steps {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .timeline-arrow {
+    transform: rotate(90deg);
+  }
+
   .section {
     padding: 60px 0;
   }

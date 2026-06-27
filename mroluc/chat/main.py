@@ -55,7 +55,7 @@ while True:
 
   else:
 
-      print("Chatbot: Desculpe, não entendi sua pergunta. Por favor, tente novamente.")
+      print("Chatbot: Desculpe, não entendi sua pergunta. Por favor, tente novamente, de outra forma.")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
