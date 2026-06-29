@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             responses: ["De nada! Qualquer coisa, é só me chamar.", "Disponha, humano."]
         },
         {
-            patterns: [/tchau/i, /até logo/i, /sair/i],
+            patterns: [/tchau/i, /até logo/i, /sair/i, /^3$/],
             responses: ["Até a próxima!", "Vou ali dormir 18 horas seguidas. Até mais!"]
         },
         {
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
             responses: ["Eu sou o Amy Bot, a orquestradora de agentes da Mr.Oluc e interface de usuário!"]
         },
         {
-            patterns: [/boletos/i, /boleto a vencer/i, /vencimentos/i],
+            patterns: [/boletos/i, /boleto a vencer/i, /vencimentos/i, /^2$/],
             responses: ["Vou acionar nosso agente financeiro, ele vai fazer uma varredura nos boletos a vencer e te trazer um resumo dos boletos com vencimentos para os próximos 5 dias...Desculpe, nosso agente financeiro retornou que ainda não foi treinado para tratar de contas a pagar"]
         },
         {
-            patterns: [/celular/i, /cel/i, /telefone/i, /fone/i],
+            patterns: [/celular/i, /cel/i, /telefone/i, /fone/i, /cco/i, /custódia/i, /^1$/],
             responses: ["Transferindo para o <a href=\"https://fascinating-guardian-fleet-flow.base44.app/\" target=\"_blank\">controle de custódia de celulares</a>..."]
         }
     ];
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-        return "Au? Não entendi muito bem. Pode perguntar de outro jeito? (Tente falar sobre Gestão de celulares, Boletos a vencer ou como saber se estou Meu objetivo)";
+        return "Não encontrei exatamente o que você deseja.\n\nVocê pode escolher:\n\n1 - Acessar central de custódia\n2 - Ver vencimento de boletos\n3 - Sair";
     }
 
     function handleSend() {
