@@ -1,0 +1,59 @@
+[
+  {
+     "course":{
+        "name":"♻️ Logística Reversa de OLUC - Introdução",
+        "floatingVideo": {
+           "id": "dVCgj3OzPZM",
+           "title": "Logística Reversa de OLUC"
+        },
+        "articles":[
+          {
+            "position": 0,
+            "type": "banner",
+            "image": {
+              "desktop": "assets/images/banner_oluc_desktop.png",
+              "tablet": "assets/images/banner_oluc_desktop.png",
+              "mobile": "assets/images/banner_oluc_desktop.png"
+            }
+          },
+           {
+              "position":1,
+              "headline":"O que é OLUC?",
+              "alternativeHeadline":"Óleo Lubrificante Usado ou Contaminado",
+              "text":"Após cumprir sua função de lubrificação, o óleo torna-se um resíduo Classe I, contendo metais pesados e contaminantes que exigem destinação ambientalmente adequada.",
+              "list":[
+                 "Resíduo perigoso",
+                 "Classe I",
+                 "Não pode ser descartado no solo",
+                 "Não pode ser queimado",
+                 "Deve ser encaminhado ao rerrefino"
+              ]
+           },
+           {
+              "position":2,
+              "image":{
+                 "desktop":"assets/images/cursos/oluc/ciclo_desktop.png",
+                 "tablet":"assets/images/cursos/oluc/ciclo_tablet.png",
+                 "mobile":"assets/images/cursos/oluc/ciclo_mobile.png",
+                 "caption":"Fluxo da Logística Reversa do OLUC"
+              }
+           },
+           {
+              "position":3,
+              "headline":"Quem participa da cadeia?",
+              "text":"A logística reversa envolve diversos participantes que possuem responsabilidades específicas.",
+              "list":[
+                 "Gerador",
+                 "Coletora",
+                 "Transportador",
+                 "Base Operacional",
+                 "Laboratório",
+                 "Rerrefinaria",
+                 "ANP",
+                 "IBAMA"
+              ]
+           }
+        ]
+     }
+  }
+]

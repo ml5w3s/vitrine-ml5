@@ -164,6 +164,17 @@ export class Lesson {
                 lessonElement.appendChild(contentContainer);
             }
 
+            // 3. Inicializa o vídeo flutuante se houver um configurado na aula
+            if (lessonData.floatingVideo && lessonData.floatingVideo.id) {
+                import('../components/FloatingVideo.js')
+                    .then(module => {
+                        new module.FloatingVideo(lessonData.floatingVideo.id, lessonData.floatingVideo.title || this.title);
+                    })
+                    .catch(err => {
+                        console.error('Falha ao carregar o componente de vídeo flutuante:', err);
+                    });
+            }
+
         } else {
             lessonElement.innerHTML += `<div class="content-default">Conteúdo da aula mal formatado ou ausente.</div>`;
         }

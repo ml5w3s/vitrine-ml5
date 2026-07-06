@@ -157,5 +157,16 @@
       "mobile": "assets/images/cursos/financas_mobile.jpg",
       "caption": "Curso Assistente de Finanças"
     }
+  },
+  {
+    "id": "logistica-reversa-oluc",
+    "title": "♻️ Logística Reversa — OLUC",
+    "description": "Curso sobre gestão e destinação de Óleo Lubrificante Usado ou Contaminado (OLUC).",
+    "image": {
+      "desktop": "assets/images/cursos/oluc_desktop.png",
+      "tablet": "assets/images/cursos/oluc_desktop.png",
+      "mobile": "assets/images/cursos/oluc_desktop.png",
+      "caption": "OLUC — Logística Reversa"
+    }
   }
 ]
