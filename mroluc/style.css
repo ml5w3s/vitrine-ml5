@@ -1560,7 +1560,8 @@ body.dark-theme .cert-img-contain {
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Two columns for better readability on desktop and tablet */
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
 }
 
@@ -1973,6 +1974,10 @@ body.dark-theme .cert-img-contain {
 }
 
 /* 17. RESPONSIVIDADE (MEDIA QUERIES) */
+
+@media (min-width: 1360px) {
+  .news-grid { grid-template-columns: repeat(3, 1fr); }
+}
 
 @media (max-width: 1024px) {
   .hero-container {
