@@ -1008,6 +1008,41 @@ body.dark-theme .hcf-cert-img-wrap {
 
 .doc-content h4 {
   font-size: 1.1rem;
+}
+
+/* Rastreabilidade full-width article */
+.rastreio-article {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--border-color);
+}
+
+.rastreio-article .rastreio-text p {
+  margin: 0 0 12px 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.rastreio-article .rastreio-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .rastreio-article {
+    grid-template-columns: 1fr;
+  }
+  .rastreio-img { order: -1; }
+}
   color: #FFFFFF;
   margin-bottom: 6px;
 }
