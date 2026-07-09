@@ -1,4 +1,18 @@
 <footer class="container">
+<style>
+  /* Estilos para o bloco Horário de Funcionamento */
+  #opening-hours{ padding-top:12px; border-top:1px solid #eee; }
+  #opening-hours dl{ display:grid; grid-template-columns:80px 1fr; gap:4px 12px; align-items:center; }
+  #opening-hours dt{ font-weight:700; color:#222; }
+  #opening-hours dd{ margin:0; color:#444; }
+  #opening-hours time{ font-variant-numeric:tabular-nums; }
+  #opening-status{ color:#006400; }
+  /* Quando fechado, usa cor de alerta suave */
+  .closed #opening-status{ color:#8b0000; }
+  @media (max-width:600px){
+    #opening-hours dl{ grid-template-columns:1fr 1fr; }
+  }
+</style>
     <article class="item">
         <button id="playground-button" class="button-style">Praticar</button>
         <button id="php-playground-button" class="button-style" onclick="window.location.hash = '#/php-playground';">PHP Lab</button>
