@@ -61,35 +61,35 @@ document.addEventListener("DOMContentLoaded", () => {
       // Segunda a Sexta
       if (currentTime >= openTime && currentTime < closeTimeWeek) {
         isOpen = true;
-        nextState = "Aberto agora (Fecha às 17h00)";
+        nextState = "Aberto agora (Fecha às 18h00)";
       } else if (currentTime < openTime) {
         isOpen = false;
-        nextState = "Fechado (Abre hoje às 07h50)";
+        nextState = "Fechado (Abre hoje às 08h00)";
       } else {
         isOpen = false;
-        // Se for sexta depois das 17h, o próximo é sábado
+        // Se for sexta depois das 18h, o próximo é sábado
         if (day === 5) {
-          nextState = "Fechado (Abre amanhã às 07h50)";
+          nextState = "Fechado (Abre amanhã às 08h00)";
         } else {
-          nextState = "Fechado (Abre amanhã às 07h50)";
+          nextState = "Fechado (Abre amanhã às 08h00)";
         }
       }
     } else if (day === 6) {
       // Sábado
       if (currentTime >= openTime && currentTime < closeTimeSat) {
         isOpen = true;
-        nextState = "Aberto agora (Fecha às 13h00)";
+        nextState = "Aberto agora (Fecha às 12h00)";
       } else if (currentTime < openTime) {
         isOpen = false;
-        nextState = "Fechado (Abre hoje às 07h50)";
+        nextState = "Fechado (Abre hoje às 08h00)";
       } else {
         isOpen = false;
-        nextState = "Fechado (Abre segunda às 07h50)";
+        nextState = "Fechado (Abre segunda às 08h00)";
       }
     } else {
       // Domingo
       isOpen = false;
-      nextState = "Fechado (Abre segunda às 07h50)";
+      nextState = "Fechado (Abre segunda às 08h00)";
     }
     
     // Atualiza a interface
