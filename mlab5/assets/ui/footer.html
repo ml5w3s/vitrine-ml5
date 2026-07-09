@@ -45,27 +45,26 @@
     </article>
 
 <script>
-// Horários centralizados — use 0=Dom,1=Seg,...,6=Sáb
+// Horário compacto: durante a semana 08:00–18:00, sábado 08:00–12:00
 (function(){
   const schedule = {
-    1: [{start: '08:00', end: '18:00'}], // 2ªf.
-    2: [{start: '08:00', end: '18:00'}], // 3ªf.
-    3: [{start: '08:00', end: '18:00'}], // 4ªf.
-    4: [{start: '08:00', end: '18:00'}], // 5ªf.
-    5: [{start: '08:00', end: '18:00'}], // 6ªf.
-    6: [{start: '08:00', end: '12:00'}]  // Sáb.
+    weekdays: [{start: '08:00', end: '18:00'}], // Segunda a Sexta
+    6: [{start: '08:00', end: '12:00'}]         // Sábado (6)
   };
-
-  const dayNames = ['Dom.', '2ªf.', '3ªf.', '4ªf.', '5ªf.', '6ªf.', 'Sáb.'];
 
   function toMinutes(t){
     const [h,m='0'] = t.split(':');
     return Number(h)*60 + Number(m);
   }
 
+  function getIntervalsForDay(day){
+    if(day >= 1 && day <= 5) return schedule.weekdays;
+    return schedule[day] || null; // domingo ficará null (fechado)
+  }
+
   function isOpen(date = new Date()){
     const day = date.getDay();
-    const intervals = schedule[day];
+    const intervals = getIntervalsForDay(day);
     if(!intervals) return false;
     const now = date.getHours()*60 + date.getMinutes();
     return intervals.some(i => now >= toMinutes(i.start) && now < toMinutes(i.end));
@@ -74,32 +73,45 @@
   function renderSchedule(){
     const dl = document.getElementById('opening-list');
     if(!dl) return;
-    // Ensure consistent order Dom..Sáb.
-    const parts = [];
-    for(let d=0; d<=6; d++){
-      const intervals = schedule[d];
-      const dt = document.createElement('dt');
-      dt.textContent = dayNames[d];
-      const dd = document.createElement('dd');
-      if(!intervals){
-        dd.textContent = 'Fechado';
-      } else {
-        dd.innerHTML = intervals.map(i => `<time datetime="${i.start}">${i.start}</time> às <time datetime="${i.end}">${i.end}</time>`).join(', ');
-      }
-      dl.appendChild(dt);
-      dl.appendChild(dd);
-    }
+    dl.innerHTML = '';
+    // Durante a semana (Seg–Sex)
+    const dtWeek = document.createElement('dt');
+    dtWeek.textContent = 'Durante a semana';
+    const ddWeek = document.createElement('dd');
+    const w = schedule.weekdays[0];
+    ddWeek.innerHTML = `<time datetime="${w.start}">${w.start}</time> às <time datetime="${w.end}">${w.end}</time>`;
+    dl.appendChild(dtWeek);
+    dl.appendChild(ddWeek);
+
+    // Sábado
+    const dtSat = document.createElement('dt');
+    dtSat.textContent = 'Sáb.';
+    const ddSat = document.createElement('dd');
+    const sat = schedule[6][0];
+    ddSat.innerHTML = `<time datetime="${sat.start}">${sat.start}</time> às <time datetime="${sat.end}">${sat.end}</time>`;
+    dl.appendChild(dtSat);
+    dl.appendChild(ddSat);
+
+    // Domingo — fechado
+    const dtSun = document.createElement('dt');
+    dtSun.textContent = 'Dom.';
+    const ddSun = document.createElement('dd');
+    ddSun.textContent = 'Fechado';
+    dl.appendChild(dtSun);
+    dl.appendChild(ddSun);
   }
 
   function updateStatus(){
     const s = document.getElementById('opening-status');
-    if(!s) return;
-    s.textContent = isOpen() ? 'Aberto agora' : 'Fechado';
+    const container = document.getElementById('opening-hours');
+    if(!s || !container) return;
+    const open = isOpen();
+    s.textContent = open ? 'Aberto agora' : 'Fechado';
+    if(open) container.classList.remove('closed'); else container.classList.add('closed');
   }
 
   renderSchedule();
   updateStatus();
-  // Atualiza a cada 30s para responsividade sem consumo excessivo
   setInterval(updateStatus, 30_000);
 })();
 </script>
