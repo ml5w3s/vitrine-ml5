@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentTime = hours * 60 + minutes; // Tempo atual em minutos desde a meia-noite
     
     // Horários em minutos
-    const openTime = 7 * 60 + 50; // 07h50 = 470 min
-    const closeTimeWeek = 17 * 60; // 17h00 = 1020 min
-    const closeTimeSat = 13 * 60; // 13h00 = 780 min
+    const openTime = 8 * 60; // 08h = 470 min
+    const closeTimeWeek = 18 * 60; // 18h00 = 1020 min
+    const closeTimeSat = 12 * 60; // 12h00 = 780 min
     
     let isOpen = false;
     let nextState = "";
