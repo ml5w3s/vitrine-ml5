@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             responses: ["Vou acionar nosso agente financeiro, ele vai fazer uma varredura nos boletos a vencer e te trazer um resumo dos boletos com vencimentos para os próximos 5 dias...Desculpe, nosso agente financeiro retornou que ainda não foi treinado para tratar de contas a pagar"]
         },
         {
-            patterns: [/celular/i, /cel/i, /telefone/i, /fone/i, /cco/i, /custódia/i, /^1$/],
+            patterns: [/celular/i, /cel/i, /telefone/i, /fone/i, /cco/i, /custódia/i, /veículo/i, /carro/i, /caminhão/i, /^1$/],
             responses: ["Transferindo para o <a href=\"https://fascinating-guardian-fleet-flow.base44.app/\" target=\"_blank\">controle de custódia de celulares</a>..."]
         }
     ];
