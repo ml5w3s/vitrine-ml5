@@ -17,7 +17,76 @@
         <li><a href="#!">marcelo.lauriano@gmail.com</a></li>
         </ul>
     </article>
+    <article class="item-full-width" id="opening-hours">
+        <h5 id="opening-hours-label">Horário de Funcionamento</h5>
+        <div aria-labelledby="opening-hours-label">
+            <p id="opening-status" aria-live="polite" style="font-weight:600;margin:0 0 6px">Carregando status...</p>
+            <dl id="opening-list" style="margin:0">
+                <!-- Será gerado pelo script -->
+            </dl>
+        </div>
+    </article>
     <article class="item-full-width">
         <h5>ML5Lab Todos os direitos reservados.</h5>
     </article>
+
+<script>
+// Horários centralizados — use 0=Dom,1=Seg,...,6=Sáb
+(function(){
+  const schedule = {
+    1: [{start: '08:00', end: '18:00'}], // 2ªf.
+    2: [{start: '08:00', end: '18:00'}], // 3ªf.
+    3: [{start: '08:00', end: '18:00'}], // 4ªf.
+    4: [{start: '08:00', end: '18:00'}], // 5ªf.
+    5: [{start: '08:00', end: '18:00'}], // 6ªf.
+    6: [{start: '08:00', end: '12:00'}]  // Sáb.
+  };
+
+  const dayNames = ['Dom.', '2ªf.', '3ªf.', '4ªf.', '5ªf.', '6ªf.', 'Sáb.'];
+
+  function toMinutes(t){
+    const [h,m='0'] = t.split(':');
+    return Number(h)*60 + Number(m);
+  }
+
+  function isOpen(date = new Date()){
+    const day = date.getDay();
+    const intervals = schedule[day];
+    if(!intervals) return false;
+    const now = date.getHours()*60 + date.getMinutes();
+    return intervals.some(i => now >= toMinutes(i.start) && now < toMinutes(i.end));
+  }
+
+  function renderSchedule(){
+    const dl = document.getElementById('opening-list');
+    if(!dl) return;
+    // Ensure consistent order Dom..Sáb.
+    const parts = [];
+    for(let d=0; d<=6; d++){
+      const intervals = schedule[d];
+      const dt = document.createElement('dt');
+      dt.textContent = dayNames[d];
+      const dd = document.createElement('dd');
+      if(!intervals){
+        dd.textContent = 'Fechado';
+      } else {
+        dd.innerHTML = intervals.map(i => `<time datetime="${i.start}">${i.start}</time> às <time datetime="${i.end}">${i.end}</time>`).join(', ');
+      }
+      dl.appendChild(dt);
+      dl.appendChild(dd);
+    }
+  }
+
+  function updateStatus(){
+    const s = document.getElementById('opening-status');
+    if(!s) return;
+    s.textContent = isOpen() ? 'Aberto agora' : 'Fechado';
+  }
+
+  renderSchedule();
+  updateStatus();
+  // Atualiza a cada 30s para responsividade sem consumo excessivo
+  setInterval(updateStatus, 30_000);
+})();
+</script>
 </footer>
