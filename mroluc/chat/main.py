@@ -5,27 +5,26 @@
 
 # Importando bibliotecas necessárias
 
+import os, json, random
 from nltk.chat.util import Chat, reflections
 
-# Definindo pares de perguntas e respostas
+# Definindo pares de perguntas e respostas a partir de chatbot_responses.json
+data_path = os.path.join(os.path.dirname(__file__), "chatbot_responses.json")
+with open(data_path, "r", encoding="utf-8") as f:
+    data = json.load(f)
 
-pairs = [
-
-  ["olá", ["Olá! Como posso ajudá-lo hoje?"]],
-
-  ["como faço para renovar meu documento?",
-
-   ["Você pode renovar seus documentos acessando o site do órgão responsável ou comparecendo a uma unidade próxima."]],
-
-  ["quais documentos eu preciso?",
-
-   ["Você precisará de um documento de identificação, comprovante de residência e CPF."]],
-
-  ["obrigado", ["De nada! Estou aqui para ajudar."]],
-
-  ["tchau", ["Até logo! Tenha um ótimo dia."]]
-
-]
+pairs = []
+fallback_responses = ["Desculpe, não entendi. Por favor, tente novamente."]
+for intent in data.get("intents", []):
+    tag = intent.get("tag", "")
+    patterns = intent.get("patterns", [])
+    responses = intent.get("responses", [])
+    if tag == "fallback":
+        if responses:
+            fallback_responses = responses
+        continue
+    for pattern in patterns:
+        pairs.append([pattern, responses])
 
 # Criando o chatbot
 
@@ -47,7 +46,7 @@ while True:
 
       break
 
-  response = chatbot.respond(user_input)
+  response = chatbot.respond(user_input.lower())
 
   if response:
 
@@ -55,7 +54,7 @@ while True:
 
   else:
 
-      print("Chatbot: Desculpe, não entendi sua pergunta. Por favor, tente novamente, de outra forma.")
+      print(f"Chatbot: {random.choice(fallback_responses)}")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':

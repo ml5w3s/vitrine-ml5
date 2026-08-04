@@ -1,0 +1,84 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["olá", "oi", "bom dia", "boa tarde", "boa noite"],
+      "responses": ["Olá! Bem-vindo à MR. OLUC Ambiental. Como posso ajudar?"]
+    },
+    {
+      "tag": "about",
+      "patterns": ["quem são", "sobre a empresa", "sobre", "história", "propósito"],
+      "responses": ["A MR. OLUC Ambiental atua há mais de 40 anos oferecendo gestão inteligente de resíduos, focada em coleta de OLUC, água contaminada e logística reversa, garantindo conformidade legal e economia circular em Brasília e entorno."]
+    },
+    {
+      "tag": "services",
+      "patterns": ["quais serviços", "serviços oferecidos", "o que vocês fazem"],
+      "responses": ["Oferecemos coleta de Óleo Lubrificante Usado (OLUC), logística reversa de embalagens e óleo, coleta de água e borras oleosas, e gerenciamento de resíduos industriais classe I. Todas as coletas contam com frota certificada, CCO imediato e emissão de MTR digital."]
+    },
+    {
+      "tag": "schedule_collection",
+      "patterns": ["agendar coleta", "solicitar coleta", "simular agendamento"],
+      "responses": ["Para agendar uma coleta, informe: nome da empresa, endereço da coleta, tipo de resíduo (OLUC, água oleosa, borras, resíduos industriais) e volume estimado. Nosso simulador gera a documentação preliminar."]
+    },
+    {
+      "tag": "track_residue",
+      "patterns": ["rastrear coleta", "onde está meu resíduo", "status da coleta"],
+      "responses": ["Você pode acompanhar o status da coleta pelo Manifesto de Transporte de Resíduos (MTR) emitido eletronicamente. O MTR demonstra a localização e o progresso da carga até o rerrefino."]
+    },
+    {
+      "tag": "certificates",
+      "patterns": ["certificado cco", "certificado mtr", "documentos necessários"],
+      "responses": ["O CCO (Certificado de Coleta de Óleo) comprova a entrega do OLUC ao coletor autorizado. O MTR (Manifesto de Transporte de Resíduos) acompanha a carga durante o transporte. Ambos são exigidos pela ANP e IBAMA."]
+    },
+    {
+      "tag": "faq_oluc",
+      "patterns": ["o que é oluc", "por que coletar oluc"],
+      "responses": ["OLUC é Óleo Lubrificante Usado ou Contaminado. É considerado resíduo perigoso (Classe I) porque 1 L pode contaminar até 1 milhão de litros de água. Por lei, deve ser encaminhado a coletores autorizados para rerrefino."]
+    },
+    {
+      "tag": "faq_mtr_vs_cco",
+      "patterns": ["diferença entre mtr e cco", "mtr ou cco"],
+      "responses": ["MTR (Manifesto de Transporte de Resíduos) acompanha a movimentação física da carga do gerador ao destino final. CCO (Certificado de Coleta de Óleo) é emitido pelo coletor no ato da coleta, comprovando a entrega. Ambos são indispensáveis para comprovar a conformidade."]
+    },
+    {
+      "tag": "contact",
+      "patterns": ["contato", "telefone", "whatsapp", "e‑mail"],
+      "responses": ["Você pode nos contatar via WhatsApp (61) 98625‑6396, telefone (61) 9523‑5000 ou e‑mail contato@mroluc.com.br. Estamos à disposição!"]
+    },
+    {
+      "tag": "hours",
+      "patterns": ["horário de atendimento", "expediente"],
+      "responses": ["Nosso expediente comercial é de segunda a sexta das 08h00 às 18h00 e sábado das 08h00 às 12h00."]
+    },
+    {
+      "tag": "news",
+      "patterns": ["notícias", "últimas notícias", "blog"],
+      "responses": ["Confira as últimas notícias do setor na nossa seção de notícias, incluindo atualizações sobre ANP, logística reversa e tendências de rerrefino."]
+    },
+    {
+      "tag": "environmental_benefits",
+      "patterns": ["benefícios ambientais", "sustentabilidade", "ciclo de rerrefino"],
+      "responses": ["Rerrefinar o OLUC reduz a necessidade de extração de petróleo e diminui as emissões de CO₂ em até 70%, promovendo economia circular e menor impacto ecológico."]
+    },
+    {
+      "tag": "small_volume",
+      "patterns": ["volume mínimo", "coleta pequena quantidade"],
+      "responses": ["Atendemos volumes a partir de 150 – 200 L para otimização da rota, mas também coletamos quantidades menores mediante agendamento especial."]
+    },
+    {
+      "tag": "water_oil_separation",
+      "patterns": ["água oleosa", "tratamento de água oleosa"],
+      "responses": ["A água oleosa coletada das caixas separadoras passa por tratamento físico‑químico. A fase oleosa é enviada ao rerrefino e a fase aquosa é neutralizada conforme normas do CONAMA."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["obrigado", "valeu", "agradecido"],
+      "responses": ["De nada! Se precisar de mais alguma coisa, estou à disposição."]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": ["Desculpe, não entendi. Poderia reformular sua pergunta?" ]
+    }
+  ]
+}
